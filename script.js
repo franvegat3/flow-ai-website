@@ -2,7 +2,7 @@
    CONFIG — cambia tu número de WhatsApp aquí (formato internacional,
    solo dígitos, sin + ni espacios). Ej. México: 5215512345678
    ============================================================ */
-const WHATSAPP_NUMBER = "5210000000000"; // <-- PON TU NÚMERO REAL
+const WHATSAPP_NUMBER = "525573241649"; // Francisco Vega
 
 /* ---- WhatsApp links ---- */
 function buildWaLink(msg) {
