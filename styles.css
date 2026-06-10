@@ -188,8 +188,9 @@ h2 { font-size: clamp(27px, 3.8vw, 42px); }
 .proof-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .proof-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px 24px; transition: transform .25s, border-color .25s; }
 .proof-card:hover { transform: translateY(-4px); border-color: var(--line-strong); }
-.proof-card-name { display: block; font-weight: 700; font-size: 18px; color: var(--ink); margin-bottom: 5px; }
-.proof-card-desc { font-size: 14px; color: var(--ink-mut); }
+.proof-card { padding: 26px 26px; }
+.proof-card-name { display: block; font-weight: 700; font-size: 19px; color: var(--ink); margin-bottom: 8px; }
+.proof-card-desc { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
 
 /* steps row */
 .steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
