@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francisco Vega — Vuelvo tu empresa AI-native | Flow AI</title>
-  <meta name="description" content="Francisco Vega ayuda a empresas a volverse AI-native. No solo te digo qué hacer con IA: meto las manos y lo construyo contigo. Flow AI — consultoría que implementa." />
+  <title>Flow AI — Convertimos tu empresa en una organización AI-native</title>
+  <meta name="description" content="Flow AI es la consultora de inteligencia artificial que no solo asesora: implementa. Diseñamos y construimos sistemas de IA dentro de tu operación para que tu equipo venda más y opere mejor. Fundada por Francisco Vega." />
 
-  <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Francisco Vega — Vuelvo tu empresa AI-native" />
-  <meta property="og:description" content="No solo te digo qué hacer con IA. Lo construyo contigo. Flow AI — consultoría de inteligencia artificial que implementa." />
+  <meta property="og:title" content="Flow AI — Convertimos tu empresa en AI-native" />
+  <meta property="og:description" content="Consultoría de inteligencia artificial que implementa. Diseñamos y construimos los sistemas de IA dentro de tu operación. Fundada por Francisco Vega." />
   <meta property="og:locale" content="es_MX" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>document.documentElement.className += ' has-js';</script>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236d28d9'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
 <body>
 
@@ -25,14 +25,16 @@
   <header class="nav" id="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand">
-        <span class="brand-mark">F</span>
-        <span class="brand-text">Francisco Vega</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
       </a>
-      <nav class="nav-links">
-        <a href="#sobre">Quién soy</a>
-        <a href="#flowai">Flow AI</a>
-        <a href="#sistema">El sistema</a>
-        <a href="#proceso">Cómo trabajo</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#founder">Founder</a>
+        <a href="#clientes">Con quién trabajo</a>
         <a href="#contacto" class="btn btn-sm btn-primary">Hablemos</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
@@ -41,198 +43,199 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow reveal">Consultoría de inteligencia artificial aplicada</p>
-        <h1 class="reveal">Convierto tu empresa en una organización <span class="grad">AI-native</span>.</h1>
-        <p class="lead reveal">Soy Francisco Vega. Diseño e implemento sistemas de inteligencia artificial dentro de tu operación —no en una presentación— para que tu equipo trabaje con más capacidad, venda más y opere mejor. Esa es la diferencia de <strong>Flow&nbsp;AI</strong>.</p>
-        <div class="hero-cta reveal">
-          <a href="#contacto" class="btn btn-primary btn-lg">Agenda una conversación</a>
-          <a href="#sistema" class="btn btn-ghost btn-lg">Conoce el método →</a>
-        </div>
-        <div class="hero-proof reveal">
-          <span>Customer Success @ <strong>Handle</strong></span>
-          <span class="dot">·</span>
-          <span>Head of AI @ <strong>Revolución de la Riqueza</strong></span>
-          <span class="dot">·</span>
-          <span>Sistemas AIOS para empresas</span>
-        </div>
+      <p class="eyebrow anim">Consultoría de inteligencia artificial aplicada</p>
+      <h1 class="anim">Convertimos tu empresa en una organización <span class="grad">AI-native</span>.</h1>
+      <p class="lead anim">Flow AI no se queda en la recomendación. Diseñamos e implementamos los sistemas de inteligencia artificial dentro de tu operación —no en una presentación— para que tu equipo trabaje con más capacidad, venda más y opere mejor.</p>
+      <div class="hero-cta anim">
+        <a href="#contacto" class="btn btn-primary btn-lg">Agenda una conversación</a>
+        <a href="#metodo" class="btn btn-ghost btn-lg">Conoce el método</a>
       </div>
-      <div class="hero-photo reveal" aria-hidden="true">
-        <div class="hero-photo-glow"></div>
-        <img src="fran.jpg" alt="Francisco Vega" id="heroImg" onerror="this.style.display='none'" />
+    </div>
+
+    <!-- Social proof band -->
+    <div class="container">
+      <div class="proof-band anim">
+        <span class="proof-label">Empresas y líderes con los que he trabajado</span>
+        <div class="proof-logos">
+          <span class="logo-word">Handle</span>
+          <span class="logo-word">Revolution</span>
+          <span class="logo-word">Cracks</span>
+          <span class="logo-sep">·</span>
+          <span class="logo-name">Óscar “Oso” Trava</span>
+          <span class="logo-name">Javier Morodo</span>
+          <span class="logo-name">Alfonso “Poncho” de los Ríos</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PROBLEMA -->
   <section class="section section-problem">
-    <div class="container narrow">
-      <h2 class="reveal">Todos hablan de inteligencia artificial. Pocos la implementan de verdad.</h2>
-      <p class="reveal">Cursos, conferencias y presentaciones sobran. Lo que escasea es la ejecución. La IA no transforma tu negocio porque la veas en un webinar; lo transforma cuando está <strong>integrada en tu operación diaria</strong>: vendiendo, cobrando, atendiendo y decidiendo junto a tu equipo.</p>
-      <p class="reveal">Ahí es donde aporto valor.</p>
+    <div class="container narrow center">
+      <h2 class="anim">Todos hablan de inteligencia artificial. Pocos la implementan de verdad.</h2>
+      <p class="anim">Cursos, conferencias y presentaciones sobran. Lo que escasea es la ejecución. La IA no transforma tu negocio porque la veas en un webinar; lo transforma cuando está integrada en tu operación diaria, trabajando junto a tu equipo. Ese es el trabajo de Flow AI.</p>
     </div>
   </section>
 
-  <!-- SOBRE MÍ -->
-  <section class="section" id="sobre">
-    <div class="container grid-2">
-      <div class="reveal">
-        <p class="kicker">Quién soy</p>
-        <h2>Operador de IA, no solo asesor.</h2>
-        <p>Mi experiencia viene de construir y escalar producto de inteligencia artificial en entornos reales, no en teoría. Lideré <strong>Customer Success en Handle</strong> —agentes de IA B2B para el sector seguros en México—, donde mi responsabilidad era lograr que la IA funcionara dentro de la operación de cada cliente.</p>
-        <p>Actualmente soy <strong>Head of AI</strong> en un grupo de wealth management, donde dirijo la transformación AI-native de toda la empresa: desde la captación y el contenido hasta los procesos internos y la inteligencia de negocio.</p>
-        <p>Trabajo de una forma poco habitual: <strong>opero compañías completas apoyado en IA agéntica</strong>. Eso me permite diseñar e implementar sistemas que antes exigían equipos enteros, y entregarlos funcionando.</p>
-      </div>
-      <div class="reveal">
-        <div class="card-stats">
-          <div class="stat">
-            <span class="stat-num">AI-native</span>
-            <span class="stat-label">Empresas transformadas de punta a punta, no por áreas sueltas.</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">Hands-on</span>
-            <span class="stat-label">Diseño e implemento los sistemas. No entrego una presentación y me retiro.</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">B2B real</span>
-            <span class="stat-label">Experiencia en seguros, finanzas y operaciones — sectores serios y regulados.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW AI -->
-  <section class="section section-dark" id="flowai">
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker kicker-light">Qué hago</p>
-        <h2>Flow AI: la consultora que convierte empresas en AI-native.</h2>
-        <p class="section-sub">No solo te digo qué hacer. Lo hago contigo y por ti. Tres formas de trabajar:</p>
+      <div class="section-head anim">
+        <p class="kicker">Qué hacemos</p>
+        <h2>Tres formas de trabajar con Flow AI.</h2>
+        <p class="section-sub">No solo te decimos qué hacer. Lo hacemos contigo y por ti, hasta que funciona.</p>
       </div>
       <div class="cards-3">
-        <article class="card reveal">
-          <div class="card-icon">🧭</div>
+        <article class="card anim">
+          <span class="card-num">01</span>
           <h3>Diagnóstico AI-native</h3>
-          <p>Analizo tu operación completa e identifico dónde la inteligencia artificial genera mayor impacto: ventas, cobranza, atención, datos y procesos. Obtienes una hoja de ruta clara de qué automatizar primero y por qué.</p>
+          <p>Analizamos tu operación completa e identificamos dónde la inteligencia artificial genera mayor impacto: ventas, cobranza, atención, datos y procesos. Obtienes una hoja de ruta clara de qué automatizar primero y por qué.</p>
         </article>
-        <article class="card reveal">
-          <div class="card-icon">🛠️</div>
+        <article class="card anim">
+          <span class="card-num">02</span>
           <h3>Implementación llave en mano</h3>
-          <p>Construyo los sistemas, los integro con tus herramientas y los dejo en funcionamiento: agentes, automatizaciones y flujos que operan de forma autónoma. Te entrego resultados, no complejidad técnica.</p>
+          <p>Construimos los sistemas, los integramos con tus herramientas y los dejamos en funcionamiento: agentes, automatizaciones y flujos que operan de forma autónoma. Te entregamos resultados, no complejidad técnica.</p>
         </article>
-        <article class="card reveal">
-          <div class="card-icon">🚀</div>
-          <h3>Empresa AI-native</h3>
-          <p>El proyecto completo: transformo tu negocio para que la IA sea parte de cómo opera, no un experimento. Acompañamiento continuo hasta que tu equipo lo maneja solo.</p>
+        <article class="card anim">
+          <span class="card-num">03</span>
+          <h3>Transformación AI-native</h3>
+          <p>El proyecto completo: llevamos la inteligencia artificial al centro de cómo opera tu empresa, no como un experimento aislado. Acompañamiento continuo hasta que tu equipo lo domina por completo.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- EL SISTEMA / MÁQUINA DE VENTAS -->
-  <section class="section" id="sistema">
+  <!-- MÉTODO / SISTEMA -->
+  <section class="section section-panel" id="metodo">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head anim">
         <p class="kicker">El sistema estrella</p>
-        <h2>Potencio a tu equipo de ventas con <span class="grad">inteligencia artificial</span>.</h2>
-        <p class="section-sub">Construyo un motor de adquisición que alimenta a tu fuerza comercial con oportunidades calificadas y contexto listo —para que tu gente cierre más, no para reemplazarla.</p>
+        <h2>Potenciamos a tu equipo de ventas con <span class="grad">inteligencia artificial</span>.</h2>
+        <p class="section-sub">Construimos un motor de adquisición que alimenta a tu fuerza comercial con oportunidades calificadas y contexto listo —para que tu gente cierre más, no para reemplazarla.</p>
       </div>
 
       <div class="flow-steps">
-        <div class="flow-step reveal">
+        <div class="flow-step anim">
           <span class="flow-num">01</span>
           <h4>Inteligencia</h4>
-          <p>Analizo tu mercado y a los referentes de tu categoría para definir con precisión qué comunicar y a quién.</p>
+          <p>Analizamos tu mercado y a los referentes de tu categoría para definir con precisión qué comunicar y a quién.</p>
         </div>
-        <div class="flow-step reveal">
+        <div class="flow-step anim">
           <span class="flow-num">02</span>
           <h4>Oferta y mensaje</h4>
-          <p>Desarrollo una oferta diferenciada y el contenido —anuncios, video, copy— listos para atraer a tu cliente ideal.</p>
+          <p>Desarrollamos una oferta diferenciada y el contenido —anuncios, video, copy— listos para atraer a tu cliente ideal.</p>
         </div>
-        <div class="flow-step reveal">
+        <div class="flow-step anim">
           <span class="flow-num">03</span>
           <h4>Anuncios y landing</h4>
           <p>Pauta optimizada y páginas que califican al prospecto en segundos, para que solo avancen los que realmente encajan.</p>
         </div>
-        <div class="flow-step reveal">
+        <div class="flow-step anim">
           <span class="flow-num">04</span>
           <h4>Tu equipo, potenciado</h4>
           <p>La IA atiende y da seguimiento al instante, y entrega cada prospecto a tu equipo con todo el contexto para cerrar mejor.</p>
         </div>
-        <div class="flow-step reveal">
+        <div class="flow-step anim">
           <span class="flow-num">05</span>
           <h4>Más ventas para tu fuerza comercial</h4>
           <p>Tu equipo recibe oportunidades calificadas y listas para cerrar. El sistema mide, aprende y mejora de forma continua.</p>
         </div>
       </div>
 
-      <div class="callout reveal">
-        <p><strong>La premisa es simple:</strong> construyo el motor que llena el pipeline de tu equipo con oportunidades calificadas y bien preparadas. Tu gente se dedica a lo que mejor sabe hacer —vender y atender— con la inteligencia artificial trabajando a su favor.</p>
+      <div class="callout anim">
+        <p>Construimos el motor que llena el pipeline de tu equipo con oportunidades calificadas y bien preparadas. Tu gente se dedica a lo que mejor sabe hacer —vender y atender— con la inteligencia artificial trabajando a su favor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section" id="founder">
+    <div class="container founder-grid">
+      <div class="founder-photo anim" aria-hidden="true">
+        <div class="founder-frame">
+          <div class="founder-fallback">FV</div>
+          <img src="fran.jpg" alt="Francisco Vega, fundador de Flow AI" id="founderImg" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="founder-copy anim">
+        <p class="kicker">El founder</p>
+        <h2>Francisco Vega</h2>
+        <p class="founder-role">Fundador de Flow AI · Head of AI en Revolución de la Riqueza</p>
+        <p>Mi trabajo es llevar la inteligencia artificial del discurso a la operación. Lideré <strong>Customer Success en Handle</strong> —agentes de IA B2B para el sector seguros en México—, donde mi responsabilidad era que la IA funcionara de verdad dentro del negocio de cada cliente.</p>
+        <p>Hoy dirijo como <strong>Head of AI</strong> la transformación AI-native de <strong>Revolución de la Riqueza</strong>, el grupo de Javier Morodo: desde la captación y el contenido hasta los procesos internos y la inteligencia de negocio.</p>
+        <p>He colaborado con fundadores y empresas como <strong>Óscar “Oso” Trava (Cracks)</strong>, <strong>Javier Morodo (Revolution)</strong> y <strong>Alfonso “Poncho” de los Ríos (Handle)</strong>. Trabajo de una forma poco habitual: opero compañías completas apoyado en IA agéntica, lo que me permite construir sistemas que antes exigían equipos enteros —y entregarlos funcionando.</p>
+        <a href="https://www.linkedin.com/in/franciscovegateruggi/" target="_blank" rel="noopener" class="founder-link">Ver perfil en LinkedIn →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES / SOCIAL PROOF -->
+  <section class="section section-panel" id="clientes">
+    <div class="container">
+      <div class="section-head anim">
+        <p class="kicker">Confianza</p>
+        <h2>Líderes y empresas que han confiado en mi trabajo.</h2>
+      </div>
+      <div class="proof-cards">
+        <div class="proof-card anim"><span class="proof-card-name">Handle</span><span class="proof-card-desc">Agentes de IA B2B para seguros · Customer Success</span></div>
+        <div class="proof-card anim"><span class="proof-card-name">Revolution</span><span class="proof-card-desc">Grupo de Javier Morodo · Head of AI</span></div>
+        <div class="proof-card anim"><span class="proof-card-name">Cracks</span><span class="proof-card-desc">Óscar “Oso” Trava</span></div>
+        <div class="proof-card anim"><span class="proof-card-name">Javier Morodo</span><span class="proof-card-desc">Revolución de la Riqueza</span></div>
+        <div class="proof-card anim"><span class="proof-card-name">Alfonso “Poncho” de los Ríos</span><span class="proof-card-desc">Handle · Nowports</span></div>
+        <div class="proof-card anim"><span class="proof-card-name">Óscar “Oso” Trava</span><span class="proof-card-desc">Cracks</span></div>
       </div>
     </div>
   </section>
 
   <!-- PROCESO -->
-  <section class="section section-soft" id="proceso">
+  <section class="section" id="proceso">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Cómo trabajo</p>
+      <div class="section-head anim">
+        <p class="kicker">Cómo trabajamos</p>
         <h2>Simple, directo y con piel en el juego.</h2>
       </div>
       <div class="steps-row">
-        <div class="step reveal">
-          <span class="step-n">1</span>
-          <h4>Hablamos</h4>
-          <p>Una conversación corta para entender tu negocio y ver si puedo ayudarte de verdad.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step-n">2</span>
-          <h4>Diseño el plan</h4>
-          <p>Te muestro exactamente qué voy a construir, cómo se ve el resultado y en qué orden.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step-n">3</span>
-          <h4>Implemento</h4>
-          <p>Construyo los sistemas dentro de tu operación real, integrados con tus herramientas, no en un demo.</p>
-        </div>
-        <div class="step reveal">
-          <span class="step-n">4</span>
-          <h4>Entrego funcionando</h4>
-          <p>Dejo todo operativo y acompaño a tu equipo hasta que lo domina por completo.</p>
-        </div>
+        <div class="step anim"><span class="step-n">1</span><h4>Conversamos</h4><p>Una conversación breve para entender tu negocio y determinar si podemos aportarte valor real.</p></div>
+        <div class="step anim"><span class="step-n">2</span><h4>Diseñamos el plan</h4><p>Te mostramos exactamente qué vamos a construir, cómo se ve el resultado y en qué orden.</p></div>
+        <div class="step anim"><span class="step-n">3</span><h4>Implementamos</h4><p>Construimos los sistemas dentro de tu operación real, integrados con tus herramientas.</p></div>
+        <div class="step anim"><span class="step-n">4</span><h4>Entregamos funcionando</h4><p>Dejamos todo operativo y acompañamos a tu equipo hasta que lo domina por completo.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA / CONTACTO -->
+  <!-- CTA -->
   <section class="section section-cta" id="contacto">
     <div class="container narrow center">
-      <p class="kicker kicker-light reveal">Hablemos</p>
-      <h2 class="reveal">¿Listo para convertir tu empresa en AI-native?</h2>
-      <p class="lead reveal">Colaboro con un número reducido de empresas a la vez para involucrarme a fondo en cada proyecto. Si consideras que la tuya encaja, escríbeme y conversemos.</p>
-      <div class="hero-cta center reveal">
-        <a href="#" class="btn btn-primary btn-lg" id="waBtn" data-msg="Hola Francisco, vi tu página y me interesa conversar sobre convertir mi empresa en AI-native.">
-          <span class="wa-icon">💬</span> Escríbeme por WhatsApp
+      <p class="kicker anim">Hablemos</p>
+      <h2 class="anim">¿Listo para convertir tu empresa en AI-native?</h2>
+      <p class="lead anim">En Flow AI colaboramos con un número reducido de empresas a la vez para involucrarnos a fondo en cada proyecto. Si consideras que la tuya encaja, escríbeme y conversemos.</p>
+      <div class="hero-cta center anim">
+        <a href="#" class="btn btn-primary btn-lg" id="waBtn" data-msg="Hola Francisco, vi la página de Flow AI y me interesa conversar sobre convertir mi empresa en AI-native.">
+          <span class="wa-icon">›</span> Escríbeme por WhatsApp
         </a>
       </div>
-      <p class="contact-alt reveal">o conéctate conmigo en <a href="https://www.linkedin.com/in/franciscovegateruggi/" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p class="contact-alt anim">o conéctate conmigo en <a href="https://www.linkedin.com/in/franciscovegateruggi/" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Francisco Vega · Flow AI</span>
-      <span class="footer-tag">Vuelvo empresas AI-native.</span>
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="#" class="wa-float" id="waFloat" aria-label="WhatsApp" data-msg="Hola Francisco, vi tu página y me gustaría conversar.">💬</a>
+  <a href="#" class="wa-float" id="waFloat" aria-label="WhatsApp" data-msg="Hola Francisco, vi la página de Flow AI y me gustaría conversar.">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.027zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+  </a>
 
+  <!-- GSAP (animaciones) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
