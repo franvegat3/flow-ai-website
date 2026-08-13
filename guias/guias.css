@@ -5,15 +5,17 @@
    ============================================================ */
 
 /* ---------- Cabecera de la biblioteca ---------- */
-.lib-hero { position: relative; overflow: hidden; padding: 84px 0 40px; }
-.lib-hero h1 { font-size: clamp(38px, 6vw, 62px); margin-bottom: 18px; }
-.lib-hero .lead { color: var(--ink-soft); font-size: 18px; max-width: 660px; }
-.lib-count { color: var(--ink-mut); font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 22px; }
+.lib-hero { position: relative; overflow: hidden; padding: 92px 0 48px; text-align: center; }
+.lib-hero .container > * { margin-left: auto; margin-right: auto; }
+.lib-hero h1 { font-size: clamp(46px, 8vw, 88px); line-height: 1.02; letter-spacing: -.04em; font-weight: 800; margin-bottom: 22px; max-width: 15ch; }
+.lib-hero .lead { color: var(--ink-soft); font-size: clamp(17px, 2vw, 20px); max-width: 640px; }
+.lib-count { color: var(--ink-mut); font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 26px; }
 
 /* ---------- Filtros ---------- */
 .filters { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; margin-bottom: 40px; background: var(--bg-2); }
-.filter-row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.filter-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .filter-row + .filter-row { margin-top: 16px; }
+.chips { justify-content: center; }
 .filter-label { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-mut); min-width: 96px; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .chip {
@@ -59,16 +61,21 @@
 .optin-msg { margin-top: 16px; font-weight: 600; color: var(--blue-bright); min-height: 22px; }
 
 /* ---------- Plantilla de guía ---------- */
-.guide-head { padding: 76px 0 30px; border-bottom: 1px solid var(--line); }
-.crumb { font-size: 14px; color: var(--ink-mut); font-weight: 500; margin-bottom: 20px; }
+.guide-head { position: relative; overflow: hidden; padding: 84px 0 46px; border-bottom: 1px solid var(--line); text-align: center; }
+.guide-head .container > * { margin-left: auto; margin-right: auto; }
+.crumb { font-size: 14px; color: var(--ink-mut); font-weight: 500; margin-bottom: 24px; }
 .crumb a { color: var(--blue-2); }
-.guide-head h1 { font-size: clamp(32px, 5vw, 52px); margin-bottom: 18px; }
-.guide-head .lead { color: var(--ink-soft); font-size: 18.5px; max-width: 680px; }
-.guide-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.guide-head h1 {
+  font-size: clamp(40px, 7vw, 82px); line-height: 1.02; letter-spacing: -.042em; font-weight: 800;
+  margin-bottom: 22px; max-width: 17ch;
+}
+.guide-head .lead { color: var(--ink-soft); font-size: clamp(17px, 2vw, 20px); max-width: 660px; }
+.guide-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
 .tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-bright); background: rgba(59,130,246,.12); border: 1px solid rgba(96,165,250,.28); padding: 5px 11px; border-radius: 999px; }
-.byline { color: var(--ink-mut); font-size: 14.5px; margin-top: 24px; }
+.byline { color: var(--ink-mut); font-size: 14.5px; margin-top: 26px; }
 
-.prose { max-width: 760px; padding: 44px 0 20px; font-size: 17px; }
+/* La columna de lectura va centrada en la página; el texto adentro, alineado a la izquierda. */
+.prose { max-width: 760px; margin: 0 auto; padding: 48px 0 20px; font-size: 17px; }
 .prose > * + * { margin-top: 20px; }
 .prose h2 { font-size: clamp(24px, 3.2vw, 31px); margin-top: 52px; padding-top: 4px; }
 .prose h3 { font-size: 20px; margin-top: 36px; color: var(--ink); }

@@ -1,0 +1,12 @@
+Retratos de la sección "Trayectoria" de la home.
+
+Nombres exactos que espera index.html:
+  oso-trava.jpg
+  poncho-de-los-rios.jpg
+  javier-morodo.jpg
+
+Cuadradas, 400x400 px o más. Si el archivo no existe, la tarjeta cae
+sola al círculo con iniciales — no se rompe nada.
+
+No metí las fotos yo: son de cada persona y esta es una página
+comercial. Pídeselas o usa una donde ya tengas permiso.
