@@ -1,0 +1,115 @@
+/* ============================================================
+   Flow AI — Guías gratuitas.
+   Hereda los tokens de styles.css. Solo agrega lo propio de la
+   biblioteca y de la plantilla de guía.
+   ============================================================ */
+
+/* ---------- Cabecera de la biblioteca ---------- */
+.lib-hero { position: relative; overflow: hidden; padding: 84px 0 40px; }
+.lib-hero h1 { font-size: clamp(38px, 6vw, 62px); margin-bottom: 18px; }
+.lib-hero .lead { color: var(--ink-soft); font-size: 18px; max-width: 660px; }
+.lib-count { color: var(--ink-mut); font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 22px; }
+
+/* ---------- Filtros ---------- */
+.filters { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; margin-bottom: 40px; background: var(--bg-2); }
+.filter-row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.filter-row + .filter-row { margin-top: 16px; }
+.filter-label { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-mut); min-width: 96px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+  padding: 7px 15px; border-radius: 999px; min-height: 36px;
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.chip:hover { border-color: var(--line-strong); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--blue-3); border-color: var(--blue-2); color: #fff; }
+
+/* ---------- Rejilla de guías ---------- */
+.guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.guide-card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 26px 24px 22px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line);
+  transition: transform .2s ease, border-color .2s, background .2s;
+}
+.guide-card:hover { transform: translateY(-3px); border-color: var(--blue-2); background: var(--surface-2); }
+.guide-badge { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--blue-bright); }
+.guide-card h3 { font-size: 19px; }
+.guide-card p { color: var(--ink-soft); font-size: 15px; flex: 1; }
+.guide-meta { color: var(--ink-mut); font-size: 13px; font-weight: 500; }
+.guide-go { color: var(--blue-2); font-weight: 600; font-size: 15px; margin-top: 4px; }
+.guide-empty { grid-column: 1 / -1; text-align: center; color: var(--ink-mut); padding: 60px 0; }
+
+/* ---------- Captura de correo ---------- */
+.optin { margin: 72px 0 0; padding: 44px 32px; border-radius: var(--radius); background: var(--bg-3); border: 1px solid var(--line-strong); text-align: center; }
+.optin h2 { font-size: clamp(24px, 3.4vw, 32px); margin-bottom: 12px; }
+.optin p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 24px; }
+.optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 520px; margin: 0 auto; }
+.optin-form input {
+  flex: 1 1 260px; min-height: 48px; padding: 12px 18px; font-family: inherit; font-size: 16px;
+  border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+}
+.optin-form input::placeholder { color: var(--ink-mut); }
+.optin-form input:focus { border-color: var(--blue-2); outline: none; }
+/* styles.css deja el padding a .btn-sm/.btn-lg; este botón necesita el suyo. */
+.optin-form .btn { padding: 13px 26px; font-size: 15.5px; min-height: 48px; flex: 0 0 auto; }
+.optin-form .btn[disabled] { opacity: .6; cursor: progress; transform: none; }
+.optin-note { font-size: 13.5px; color: var(--ink-mut); margin-top: 16px; }
+.optin-msg { margin-top: 16px; font-weight: 600; color: var(--blue-bright); min-height: 22px; }
+
+/* ---------- Plantilla de guía ---------- */
+.guide-head { padding: 76px 0 30px; border-bottom: 1px solid var(--line); }
+.crumb { font-size: 14px; color: var(--ink-mut); font-weight: 500; margin-bottom: 20px; }
+.crumb a { color: var(--blue-2); }
+.guide-head h1 { font-size: clamp(32px, 5vw, 52px); margin-bottom: 18px; }
+.guide-head .lead { color: var(--ink-soft); font-size: 18.5px; max-width: 680px; }
+.guide-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-bright); background: rgba(59,130,246,.12); border: 1px solid rgba(96,165,250,.28); padding: 5px 11px; border-radius: 999px; }
+.byline { color: var(--ink-mut); font-size: 14.5px; margin-top: 24px; }
+
+.prose { max-width: 760px; padding: 44px 0 20px; font-size: 17px; }
+.prose > * + * { margin-top: 20px; }
+.prose h2 { font-size: clamp(24px, 3.2vw, 31px); margin-top: 52px; padding-top: 4px; }
+.prose h3 { font-size: 20px; margin-top: 36px; color: var(--ink); }
+.prose p, .prose li { color: var(--ink-soft); }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li + li { margin-top: 9px; }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose a { color: var(--blue-2); text-decoration: underline; text-underline-offset: 3px; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0; }
+
+.plugin-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 24px 24px 20px; }
+.plugin-card + .plugin-card { margin-top: 16px; }
+.plugin-card h3 { margin-top: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.plugin-card h3 code { font-size: 15px; }
+.plugin-for { font-size: 14px; color: var(--ink-mut); margin-top: 10px; }
+.plugin-for strong { color: var(--ink-soft); }
+
+.callout-box { border-left: 3px solid var(--blue-2); background: var(--bg-3); padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0; }
+.callout-box p { color: var(--ink-soft); }
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: rgba(255,255,255,.07); padding: 2px 7px; border-radius: 5px; color: var(--blue-bright); }
+pre { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; overflow-x: auto; }
+pre code { background: none; padding: 0; color: var(--ink); font-size: 14.5px; line-height: 1.7; }
+
+.stack { margin: 56px 0 0; padding-top: 32px; border-top: 1px solid var(--line); }
+.stack h4 { font-size: 13px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-mut); margin-bottom: 16px; }
+.stack-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.stack-link { padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); transition: border-color .2s, transform .2s; }
+.stack-link:hover { border-color: var(--blue-2); transform: translateY(-2px); }
+.stack-link span { display: block; color: var(--blue-2); font-weight: 600; font-size: 15.5px; }
+.stack-link small { color: var(--ink-mut); font-size: 13.5px; }
+
+@media (max-width: 900px) {
+  .guide-grid { grid-template-columns: repeat(2, 1fr); }
+  .stack-links { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .guide-grid { grid-template-columns: 1fr; }
+  .filter-label { min-width: 100%; }
+  .prose { font-size: 16.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-card:hover, .stack-link:hover { transform: none; }
+}

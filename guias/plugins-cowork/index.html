@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los 10 plugins de Claude Cowork que sí cambian tu día — Guías Flow AI</title>
+  <meta name="description" content="Qué es un plugin de Claude Cowork, cómo se instala en dos clics, y los 10 plugins oficiales de Anthropic que valen la pena según el área en la que trabajas. Guía práctica de Flow AI." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/plugins-cowork/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Los 10 plugins de Claude Cowork que sí cambian tu día" />
+  <meta property="og:description" content="Los 10 plugins oficiales de Anthropic para Cowork, qué conecta cada uno y en qué orden instalarlos. Guía gratuita de Flow AI." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/plugins-cowork/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags">
+        <span class="tag">Cowork</span>
+        <span class="tag">Empezar</span>
+      </div>
+      <h1>Los 10 plugins de Claude Cowork que sí cambian tu día</h1>
+      <p class="lead">Un plugin instala habilidades, conectores y comandos de golpe: dejas de explicarle a Claude cómo se trabaja en tu área y empiezas a pedirle resultados. Aquí están los oficiales de Anthropic, qué conecta cada uno, y en qué orden instalarlos.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+      <p>La mayoría de la gente usa Claude como si fuera un buscador con mejores modales: le pega una pregunta, copia la respuesta y se va. Eso deja el 90% del valor sobre la mesa.</p>
+
+      <p>Los plugins son el atajo para salir de ahí. Y son nuevos, así que casi nadie los está usando todavía.</p>
+
+      <h2>Qué es un plugin, en una frase</h2>
+
+      <p>Un plugin es un paquete que le instala a Claude todo lo que necesita para trabajar en un área específica, en un solo paso.</p>
+
+      <p>Adentro vienen tres cosas:</p>
+
+      <ul>
+        <li><strong>Skills</strong> — conocimiento del oficio que Claude usa solo, sin que se lo pidas. Es la diferencia entre pedirle "hazme un forecast" y tener que explicarle primero cómo se arma un forecast.</li>
+        <li><strong>Conectores</strong> — los accesos a tus herramientas reales: tu Slack, tu HubSpot, tu Notion.</li>
+        <li><strong>Comandos</strong> — atajos explícitos que invocas cuando quieres, tipo <code>/sales:call-prep</code> o <code>/data:write-query</code>.</li>
+      </ul>
+
+      <p>La confusión típica: un conector suelto le da acceso a <em>una</em> herramienta. Una skill suelta le enseña <em>una</em> forma de trabajar. El plugin trae el paquete completo del área, ya armado y probado.</p>
+
+      <h2>Cómo se instala (dos minutos)</h2>
+
+      <p><strong>Si usas Cowork en el navegador:</strong> entra a <a href="https://claude.com/plugins/" target="_blank" rel="noopener">claude.com/plugins</a> o abre <em>Marketplace</em> en la barra lateral. Ya vienes conectado al marketplace oficial de Anthropic, así que no hay que configurar nada. Buscas, das clic, listo.</p>
+
+      <p><strong>Si usas Claude Code en la terminal:</strong> primero agregas el marketplace y luego instalas lo que quieras.</p>
+
+      <pre><code>claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install sales@knowledge-work-plugins</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> instalar el plugin no conecta tus cuentas. Después de instalarlo tienes que autorizar cada conector que vas a usar de verdad. Si instalas el de ventas y no conectas tu CRM, Claude va a saber cómo se prepara una llamada pero no va a tener con qué. Conecta solo las herramientas que sí usas y deja el resto.</p>
+      </div>
+
+      <h2>Los 10 que valen la pena</h2>
+
+      <p>Todos estos son oficiales de Anthropic, del repositorio público <code>knowledge-work-plugins</code>. Los ordené por lo que veo que más mueve la aguja en empresas reales, no por orden alfabético.</p>
+
+      <div class="plugin-card">
+        <h3>1. Productividad <code>productivity</code></h3>
+        <p>Tareas, calendario, pendientes y tu contexto personal de trabajo. Es el que instalaría primero cualquier persona, sin importar el área: es el que convierte a Claude en alguien que ya sabe qué traes encima esta semana.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Ventas <code>sales</code></h3>
+        <p>Investiga prospectos, prepara llamadas, revisa pipeline, redacta seguimientos y arma battlecards contra tu competencia. Si tienes un equipo comercial, este solo justifica la suscripción: la preparación de llamadas es el trabajo que todos saben que deberían hacer y casi nadie hace.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Marketing <code>marketing</code></h3>
+        <p>Redacta contenido, planea campañas, mantiene el tono de tu marca, te pone al día sobre competidores y reporta desempeño. Lo interesante es que trae conectores de investigación (Ahrefs, SimilarWeb) además de los de ejecución, así que puede cerrar el ciclo completo.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Atención a clientes <code>customer-support</code></h3>
+        <p>Clasifica tickets, redacta respuestas, escala lo que se tiene que escalar, busca el contexto del cliente y convierte los casos repetidos en artículos de base de conocimiento. Esa última parte es la que la mayoría nunca alcanza a hacer.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Datos <code>data</code></h3>
+        <p>Consulta, visualiza e interpreta datasets: escribe SQL, corre el análisis, arma dashboards y valida su propio trabajo. Para el que no es analista, es el plugin que le quita la dependencia de pedirle todo al área de datos.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Snowflake, Databricks, BigQuery, Definite, Hex, Amplitude, Jira.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Buscador interno <code>enterprise-search</code></h3>
+        <p>Una sola pregunta que busca en correo, chat, documentos y wikis a la vez. Suena poco glamoroso hasta que calculas cuántas horas al mes pierde tu equipo buscando el archivo que alguien mandó en marzo.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Notion, Guru, Jira, Asana, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Producto <code>product-management</code></h3>
+        <p>Escribe especificaciones, planea roadmap, sintetiza investigación de usuarios, actualiza a stakeholders y monitorea competidores. Es el de la lista con más conectores, lo cual dice mucho sobre cuántas herramientas tiene abiertas un PM al mismo tiempo.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Finanzas <code>finance</code></h3>
+        <p>Prepara pólizas, concilia cuentas, genera estados financieros, analiza variaciones, ordena el cierre mensual y sostiene auditorías. Aquí la ganancia no es velocidad, es que el cierre deje de depender de una sola persona y su hoja de Excel.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Snowflake, Databricks, BigQuery, Slack, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Legal <code>legal</code></h3>
+        <p>Revisa contratos, tramita NDAs, navega temas de cumplimiento, evalúa riesgo y prepara juntas. Úsalo como primer filtro para no mandarle a tu abogado cosas que no lo necesitan —no como reemplazo de tu abogado.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> Slack, Box, Egnyte, Jira, Microsoft 365.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. Crear tus propios plugins <code>cowork-plugin-management</code></h3>
+        <p>Este es el que casi nadie voltea a ver y es el más importante de todos. Sirve para crear plugins nuevos o personalizar los existentes para tu organización. O sea: los nueve de arriba son el punto de partida, no el destino. Tu operación tiene procesos que no están en ningún marketplace, y este es el que te deja empaquetarlos.</p>
+        <p class="plugin-for"><strong>Conecta con:</strong> nada externo. Es la herramienta para construir.</p>
+      </div>
+
+      <p>Hay un onceavo oficial, <code>bio-research</code>, con conectores a PubMed, bioRxiv, ClinicalTrials.gov, ChEMBL, Benchling y Open Targets. No lo metí en la lista porque solo aplica si trabajas en investigación preclínica —pero si es tu caso, es probablemente el plugin más valioso de todo el catálogo.</p>
+
+      <h2>Además del marketplace oficial</h2>
+
+      <p>Existe un segundo marketplace, también en el GitHub de Anthropic, con plugins de la comunidad. Se agrega igual:</p>
+
+      <pre><code>claude plugin marketplace add anthropics/claude-plugins-community
+claude plugin install &lt;nombre-del-plugin&gt;@claude-community</code></pre>
+
+      <p>Todo lo que entra ahí pasa por escaneo de seguridad automático y aprobación manual antes de publicarse. Aun así, la regla que aplico: del marketplace de la comunidad instalo con la misma cautela con la que instalaría una extensión de navegador. Reviso quién lo hizo y qué conectores pide antes de darle acceso a nada.</p>
+
+      <h2>En qué orden instalarlos</h2>
+
+      <p>La tentación es instalar todos. No lo hagas: cada plugin agrega skills que compiten por la atención del modelo, y acabas con un Claude que sabe de todo y no es bueno en nada.</p>
+
+      <ol>
+        <li><strong>Semana 1 — solo <code>productivity</code>.</strong> Conecta tu calendario y tu gestor de tareas, nada más. Vive con eso unos días hasta que se te haga natural.</li>
+        <li><strong>Semana 2 — el de tu área.</strong> Uno. El que corresponde al trabajo por el que te pagan.</li>
+        <li><strong>Semana 3 — <code>enterprise-search</code>.</strong> Cuando ya tengas varias herramientas conectadas, este es el que empieza a rendir.</li>
+        <li><strong>Después — <code>cowork-plugin-management</code>.</strong> Ya que sabes cómo se siente un plugin bien hecho, empaqueta el proceso que solo existe en tu empresa.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>La prueba de si te está funcionando:</strong> a las dos semanas deberías poder pedirle algo en una sola frase, sin contexto, y que salga bien. Si sigues escribiendo párrafos de explicación antes de cada petición, el plugin está instalado pero los conectores no están dando la información que hacen falta. Revisa ahí antes de instalar otro.</p>
+      </div>
+
+      <h2>Lo que un plugin no arregla</h2>
+
+      <p>Un plugin te da el andamiaje del oficio. No te da tu criterio, ni el contexto de tu empresa, ni la decisión de qué vale la pena automatizar primero.</p>
+
+      <p>Lo que veo en las empresas con las que trabajo es que el problema casi nunca es la herramienta: es que nadie se sentó a mapear dónde se está perdiendo el tiempo de verdad. Instalar diez plugins sobre un proceso roto te da un proceso roto más rápido.</p>
+
+      <p>Empieza por uno. Úsalo dos semanas. Y cuando te des cuenta de qué parte de tu operación es la que realmente pesa, ahí es donde vale la pena construir algo propio.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

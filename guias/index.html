@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guías gratuitas de IA — Flow AI</title>
+  <meta name="description" content="Guías gratuitas de inteligencia artificial aplicada al negocio: prompts, agentes, automatizaciones y sistemas que ya están corriendo en operaciones reales. Por Francisco Vega, Flow AI." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Guías gratuitas de IA — Flow AI" />
+  <meta property="og:description" content="Prompts, agentes y automatizaciones explicados paso a paso. Sistemas que ya corren en operaciones reales, no teoría." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="lib-hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow">Biblioteca gratuita</p>
+      <h1>Guías <span class="grad">gratuitas</span> de IA.</h1>
+      <p class="lead">Sistemas de inteligencia artificial que ya están corriendo en operaciones reales, explicados paso a paso: el prompt completo, las herramientas, el costo y el tiempo que toma. Sin relleno y sin teoría.</p>
+      <p class="lib-count"><span id="guideCount">1</span> guía · nuevas cada semana</p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <div class="container">
+      <div class="filter-row">
+        <span class="filter-label" id="lblTool">Herramienta</span>
+        <div class="chips" role="group" aria-labelledby="lblTool" data-group="tool">
+          <button class="chip" data-value="all" aria-pressed="true">Todas</button>
+          <button class="chip" data-value="claude" aria-pressed="false">Claude</button>
+          <button class="chip" data-value="cowork" aria-pressed="false">Cowork</button>
+          <button class="chip" data-value="claude-code" aria-pressed="false">Claude Code</button>
+          <button class="chip" data-value="n8n" aria-pressed="false">n8n</button>
+          <button class="chip" data-value="meta-ads" aria-pressed="false">Meta Ads</button>
+          <button class="chip" data-value="video" aria-pressed="false">Video e imagen</button>
+          <button class="chip" data-value="multi" aria-pressed="false">Multi-herramienta</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lblTopic">Tema</span>
+        <div class="chips" role="group" aria-labelledby="lblTopic" data-group="topic">
+          <button class="chip" data-value="all" aria-pressed="true">Todos</button>
+          <button class="chip" data-value="empezar" aria-pressed="false">Empezar</button>
+          <button class="chip" data-value="prompts" aria-pressed="false">Prompts</button>
+          <button class="chip" data-value="agentes" aria-pressed="false">Agentes</button>
+          <button class="chip" data-value="automatizacion" aria-pressed="false">Automatización</button>
+          <button class="chip" data-value="contenido" aria-pressed="false">Contenido</button>
+          <button class="chip" data-value="pauta" aria-pressed="false">Pauta</button>
+          <button class="chip" data-value="ventas" aria-pressed="false">Ventas</button>
+          <button class="chip" data-value="negocio" aria-pressed="false">Negocio</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REJILLA -->
+  <main class="container">
+    <div class="guide-grid" id="guideGrid">
+
+      <!-- Cada guía: data-tool y data-topic pueden traer varios valores separados por espacio -->
+      <a class="guide-card" href="/guias/plugins-cowork/" data-tool="cowork claude" data-topic="empezar agentes">
+        <span class="guide-badge">Empieza aquí</span>
+        <h3>Los 10 plugins de Claude Cowork que sí cambian tu día</h3>
+        <p>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</p>
+        <span class="guide-meta">9 min · Cowork</span>
+        <span class="guide-go">Leer la guía →</span>
+      </a>
+
+      <p class="guide-empty" id="guideEmpty" hidden>No hay guías con esa combinación todavía. Prueba con otro filtro.</p>
+    </div>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Te llega al correo en cuanto sale, con el prompt completo listo para copiar. Se cancela con un clic.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="guias.js"></script>
+</body>
+</html>
