@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El analizador de riesgo de tu puesto ante la IA — Guías Flow AI</title>
+  <meta name="description" content="Un prompt listo para usar que analiza qué tan expuesto está tu puesto específico a la IA." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/analizador-de-riesgo-de-tu-puesto/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El analizador de riesgo de tu puesto ante la IA" />
+  <meta property="og:description" content="Un prompt listo para usar que analiza qué tan expuesto está tu puesto específico a la IA." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/analizador-de-riesgo-de-tu-puesto/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Carrera</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Carrera</span></div>
+      <h1>El analizador de riesgo de tu puesto ante la IA</h1>
+      <p class="lead">Un prompt listo para usar que analiza qué tan expuesto está tu puesto específico a la IA.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La pregunta que todo mundo hace es "¿la IA va a reemplazar mi trabajo?". Es la pregunta equivocada. Por eso nadie sale de ahí con algo que pueda hacer el lunes.</p>
+
+      <p>Los puestos no se automatizan completos. Se automatizan por pedazos. Un gerente de compras hace catorce cosas distintas en una semana: tres ya las hace mejor un modelo, ocho no las va a tocar en años, y las otras tres están en el limbo. El veredicto sobre tu título no te dice nada. El desglose de esas catorce sí.</p>
+
+      <p>Abajo está el prompt que hace ese desglose. Se corre una vez, te toma quince minutos contestar bien, y sales con tres cosas: un puntaje de exposición, tres acciones para los próximos 90 días y una habilidad para los próximos seis meses.</p>
+
+      <h2>Por qué el análisis por puesto no sirve</h2>
+
+      <p>Los reportes que circulan en LinkedIn hablan de ocupaciones enteras. "Analista de datos: alto riesgo". Eso es inútil por dos razones.</p>
+
+      <p>La primera es que dos personas con el mismo título hacen trabajos distintos. Un analista que arma reportes en Excel y otro que se sienta con el director comercial a decidir qué medir tienen el mismo puesto en el organigrama y exposiciones opuestas.</p>
+
+      <p>La segunda es que el riesgo no llega parejo. Llega tarea por tarea, y llega antes donde el trabajo es repetible, de alto volumen y de bajas consecuencias si sale mal. Esa es la frontera real. No el título.</p>
+
+      <h2>El prompt completo</h2>
+
+      <p>Pégalo en Claude tal cual y llena los corchetes. Entre más específico seas en la descripción de tu semana, más útil sale. Si escribes "hago reportes" vas a recibir un análisis genérico.</p>
+
+      <pre><code>Quiero que analices qué tan expuesto está mi trabajo específico a la automatización con IA. No mi título: mi trabajo real.
+
+CONTEXTO SOBRE MÍ
+- Puesto: [tu puesto]
+- Industria y tamaño de la empresa: [ej. manufactura, 200 empleados]
+- Años de experiencia: [X]
+- Con quién trabajo: [a quién le reportas, a quién diriges, con qué áreas cruzas]
+- Herramientas que uso a diario: [ej. Excel, SAP, HubSpot, WhatsApp]
+
+MI SEMANA REAL
+Aquí van las tareas que ocupan mi tiempo, con las horas aproximadas que le dedico a cada una:
+- [tarea 1] — [horas por semana]
+- [tarea 2] — [horas por semana]
+- [tarea 3] — [horas por semana]
+- [sigue hasta que sumes tu semana completa]
+
+QUÉ QUIERO QUE HAGAS
+
+1. RIESGO ALTO — Dime cuáles de mis tareas ya se están automatizando hoy, no en el futuro. Para cada una: qué herramienta o modelo lo hace ya, qué tan bien lo hace comparado conmigo, y qué le falta todavía.
+
+2. RIESGO MEDIO — Dime qué partes de mi trabajo se vuelven vulnerables en los próximos 2 o 3 años si la capacidad sigue creciendo al ritmo actual. Para cada una: qué tendría que cambiar en mi forma de trabajar para que esa tarea deje de ser un riesgo y se vuelva una ventaja.
+
+3. RIESGO BAJO — Dime qué partes de mi trabajo resisten la automatización y por qué. Sé honesto: si algo que yo creo que es mi foso en realidad es una tarea repetible con nombre elegante, dímelo.
+
+4. PUNTAJE — Dame un número del 1 al 10 de exposición total, donde 10 es "la mayor parte de tu semana ya la puede hacer un modelo". Explica en dos frases de dónde sale el número.
+
+5. LOS PRÓXIMOS 90 DÍAS — Tres acciones concretas, en orden de impacto. Concretas significa que yo pueda empezar la primera esta semana sin pedirle permiso a nadie ni gastar dinero.
+
+6. LOS PRÓXIMOS 6 MESES — Una sola habilidad. La que más cambie mi posición. Dime por qué esa y no las otras candidatas obvias.
+
+REGLAS
+- No suavices las malas noticias. Prefiero un diagnóstico incómodo a uno cortés.
+- No me digas "aprende IA". Dime qué específicamente, aplicado a mi trabajo.
+- Si algo depende de un dato que no te di, pregúntamelo antes de asumirlo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de "mi semana real". La gente escribe cuatro tareas genéricas y luego se queja de que el análisis salió genérico. Antes de correr el prompt, abre tu calendario de las últimas dos semanas y anota en qué se te fue el tiempo de verdad, incluyendo las juntas y el trabajo que no aparece en tu descripción de puesto. Ahí es donde vive la mitad de tu exposición.</p>
+      </div>
+
+      <h2>Cómo leer el resultado sin entrar en pánico</h2>
+
+      <p>Un puntaje alto no significa que te van a correr. Significa que una parte grande de tu semana es delegable, lo cual es una noticia distinta y bastante mejor si la agarras a tiempo.</p>
+
+      <p>La lectura que sirve es esta: las tareas de riesgo alto son tu presupuesto de tiempo recuperable. Si el análisis te dice que doce horas semanales son automatizables, esas doce horas son lo que puedes reinvertir en el trabajo que sí paga. El problema no es que existan. El problema es que las sigas haciendo a mano mientras alguien más en tu industria ya no.</p>
+
+      <p>Las de riesgo medio son la lista de aprendizaje. Son el trabajo que hoy todavía requiere de ti y en dos años a lo mejor no. Ahí es donde conviene cambiar tu papel de ejecutor a supervisor antes de que te lo cambien.</p>
+
+      <p>Las de riesgo bajo son tu foso, y hay que revisarlas con desconfianza. Casi siempre son las mismas: criterio con información incompleta, relaciones construidas con años, saber qué está bien hecho y qué no, y cargar con la responsabilidad cuando algo sale mal. Si tu lista de riesgo bajo tiene cosas que no caen en ninguna de esas cuatro, pídele a Claude que las vuelva a evaluar.</p>
+
+      <h2>Un ejemplo de operación, no de carrera personal</h2>
+
+      <p>Este prompt también sirve corriéndolo por área en vez de por persona. Lo he usado con equipos comerciales de entre seis y veinte personas, y el resultado cambia la conversación de presupuesto.</p>
+
+      <p>En un equipo de ventas, el análisis casi siempre saca lo mismo: la investigación previa a la llamada, la redacción de seguimientos, la actualización del CRM y el armado del reporte semanal son riesgo alto. La negociación, la lectura de la sala y la relación con la cuenta grande son riesgo bajo. Eso te da un número: cuántas horas de tu equipo se van en trabajo que no requiere un vendedor.</p>
+
+      <p>Con ese número ya puedes decidir. No "vamos a implementar IA", que no significa nada, sino "estas cuatro horas por vendedor por semana se van a un flujo automatizado y el equipo las usa en llamadas". Eso se mide.</p>
+
+      <h2>El error que hace inútil el ejercicio</h2>
+
+      <p>Correrlo una vez, sentir algo, y no hacer nada.</p>
+
+      <p>El análisis no cambia tu posición. Lo que la cambia es que las tres acciones de 90 días queden agendadas con fecha, y que la habilidad de seis meses tenga un proyecto concreto asociado. Si tu habilidad elegida es "diseñar flujos de trabajo con IA", el proyecto es un flujo específico, para un proceso específico de tu empresa, que exista y funcione en marzo.</p>
+
+      <p>Una recomendación práctica: vuelve a correr el prompt en tres meses con tu semana actualizada. Vas a ver moverse tareas de riesgo medio a riesgo alto, y ahí es donde el ejercicio empieza a valer de verdad. La foto sirve poco. La secuencia de fotos sirve mucho.</p>
+
+      <p>Si quieres el siguiente paso natural, la guía de qué soltarle a Claude convierte la lista de riesgo alto en una lista de entregas concretas, y <a href="/guias/5-habilidades-que-valen-mas-ahorita/">las habilidades que más valen ahorita</a> te ayuda a elegir la de seis meses sin adivinar.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/todos-los-recursos-de-ia/" class="stack-link">
+            <span>Todos los recursos de IA que me hubiera gustado tener →</span>
+            <small>La ruta completa de herramientas, documentación y recursos gratuitos de IA, en el orden exacto en que conviene usarlos para de verdad ponerte al día rápido.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

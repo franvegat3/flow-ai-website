@@ -1,0 +1,105 @@
+      <p>Hay un paso que todos damos por normal y que en realidad es absurdo: le pides algo a la IA, te lo da en el chat, y luego pasas veinte minutos copiando, pegando y formateando en Excel o en Word. El trabajo pensante tomó treinta segundos. El trabajo de secretaria tomó veinte minutos.</p>
+
+      <p>Gemini quitó ese paso. Le pides el archivo y te da el archivo: la hoja con las fórmulas ya calculando, el documento con sus encabezados, la presentación armada. No un bloque de texto para que tú lo montes.</p>
+
+      <p>Y hay una razón adicional por la que esto importa más de lo que parece: en muchas empresas el área de sistemas bloquea ChatGPT y Claude, pero deja pasar el dominio de Google porque ya viven ahí. Si ese es tu caso, esta es probablemente la única herramienta de IA que tienes permitida en la computadora del trabajo.</p>
+
+      <h2>Qué genera exactamente</h2>
+
+      <p>Once formatos, y cubren casi todo lo que se manda por correo en una oficina:</p>
+
+      <ul>
+        <li><strong>De Google:</strong> Documentos, Hojas de cálculo y Presentaciones.</li>
+        <li><strong>De Microsoft:</strong> Word en <code>.docx</code> y Excel en <code>.xlsx</code>.</li>
+        <li><strong>Portables:</strong> PDF y CSV.</li>
+        <li><strong>De texto:</strong> texto plano, texto enriquecido, Markdown y LaTeX.</li>
+      </ul>
+
+      <p>Lo importante es que no son exportaciones cosméticas. Una hoja de Excel sale con las fórmulas funcionando, no con los resultados pegados como texto. Ese detalle es la diferencia entre un archivo que puedes usar y uno que hay que rehacer.</p>
+
+      <h2>Cómo se hace</h2>
+
+      <ol>
+        <li>Entra a <a href="https://gemini.google.com/" target="_blank" rel="noopener">gemini.google.com</a> o abre la app. Sirve cualquier cuenta de Google, personal o de trabajo.</li>
+        <li>Escribe lo que necesitas <strong>diciendo el formato de archivo con todas sus letras</strong>.</li>
+        <li>Descárgalo o guárdalo directo en tu Drive.</li>
+      </ol>
+
+      <p>Es gratis. No hace falta plan de pago ni licencia de Workspace: alcanza con tener cuenta de Google.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> nombrar el formato. Si escribes "hazme un presupuesto", te va a dar una tabla dentro del chat y vas a pensar que la función no existe. Tienes que escribir "hazme un archivo de Excel" o "genera esto como Google Sheets". La palabra que dispara el archivo es el nombre del formato, no la palabra "archivo".</p>
+      </div>
+
+      <h2>Cinco prompts que puedes usar hoy</h2>
+
+      <p>Estos cinco cubren los documentos que más se piden en una operación real. Cambia los corchetes y ya.</p>
+
+      <div class="plugin-card">
+        <h3>1. Control de presupuesto <code>.xlsx</code></h3>
+        <pre><code>Genera un archivo de Excel para control de presupuesto mensual de
+[área o proyecto]. Hoja 1: registro de gastos con columnas fecha,
+proveedor, categoría, monto, presupuestado, variación y notas. Hoja 2:
+resumen con el total por categoría, el porcentaje sobre el total y la
+variación contra presupuesto, todo con fórmulas que jalen de la hoja 1.
+Categorías: [lista]. Deja 12 filas de ejemplo y el resto en blanco.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Agenda de junta de equipo <code>Google Docs</code></h3>
+        <pre><code>Genera un Google Doc con la agenda de la junta semanal de [equipo].
+Encabezado con fecha, asistentes y objetivo de la junta. Después:
+bloque de seguimiento a acuerdos de la semana pasada, bloque de
+métricas con espacio para tres números, bloque de temas con tiempo
+asignado a cada uno, y una tabla final de acuerdos con responsable y
+fecha. Duración total: [minutos].</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Propuesta a cliente <code>.docx</code></h3>
+        <pre><code>Genera un documento de Word con una propuesta comercial para [cliente],
+que necesita [problema]. Estructura: portada, entendimiento del
+problema en una página, alcance de lo que sí incluye y lo que no,
+entregables con fechas, inversión con tres opciones, supuestos y
+condiciones, y siguientes pasos. Tono profesional y directo, sin
+adjetivos de folleto. Deja los montos como campos para llenar.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Plan de proyecto <code>Google Sheets</code></h3>
+        <pre><code>Genera un Google Sheets para el plan del proyecto [nombre]. Columnas:
+tarea, responsable, fecha de inicio, fecha de fin, duración calculada,
+dependencia, estatus y porcentaje de avance. Agrupa las tareas en las
+fases [lista de fases]. Incluye una hoja de resumen con avance por fase
+calculado con fórmulas y la fecha de fin proyectada.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Reporte de estatus semanal <code>PDF</code></h3>
+        <pre><code>Genera un PDF con el reporte de estatus semanal de [proyecto o área]
+para [destinatario]. Secciones: resumen ejecutivo de tres puntos, lo
+terminado esta semana, lo que está en curso con semáforo de estatus, lo
+detenido con quién lo detiene y qué se necesita, riesgos, y lo que
+sigue la próxima semana. Máximo dos páginas. Formal pero legible en
+tres minutos.</code></pre>
+      </div>
+
+      <h2>Dónde no llega</h2>
+
+      <p>Tres límites que conviene tener claros antes de que te decepcione.</p>
+
+      <p>El primero es que el formato sale correcto, no bonito. Sirve para trabajo interno y para un primer borrador; si el documento va a un cliente importante con tu identidad de marca encima, vas a tener que pasarle la plantilla de tu empresa. Lo que te ahorra es la estructura y el contenido, no el diseño.</p>
+
+      <p>El segundo es que solo puede trabajar con lo que le diste. Si le pides el presupuesto sin darle los números, va a inventar cifras de ejemplo. Eso está bien mientras sepas que son de ejemplo, y es un problema serio el día que alguien mande ese archivo sin revisarlo. Revisa siempre los números antes de que salgan de tu computadora.</p>
+
+      <p>El tercero es de acceso: si tu empresa bloquea el dominio de Gemini junto con los demás, no hay vuelta. Vale la pena preguntar, porque en varias organizaciones lo dejaron abierto por descuido más que por decisión.</p>
+
+      <h2>Cómo lo metería a una operación</h2>
+
+      <p>El error es tratarlo como un generador de documentos sueltos. Lo que rinde es usarlo una vez para crear la plantilla, y de ahí en adelante reusarla.</p>
+
+      <p>El ejemplo concreto: en un área de finanzas que hace el mismo cierre cada mes, no le pidas el reporte del mes. Pídele el archivo de Excel con la estructura y las fórmulas del cierre, una sola vez. Ese archivo se vuelve la plantilla, y lo único que cambia cada mes son los datos. Lo mismo con la propuesta comercial: generas la estructura una vez, la ajustas a tu voz, y esa es la base de las siguientes cincuenta.</p>
+
+      <p>Visto así, lo que te ahorra no son los veinte minutos de formateo. Es que la estructura del documento deja de reinventarse cada vez que alguien distinto lo hace. Eso, en un equipo, vale bastante más.</p>
+
+      <p>Y si lo que traes entre manos son presentaciones y no documentos, la comparación de qué herramienta conviene para cada caso está en <a href="/guias/que-herramienta-de-presentaciones-usar/">esta guía</a>. Ahí el criterio cambia, porque una lámina se juzga por cómo se ve y un archivo de Excel por si las fórmulas jalan.</p>

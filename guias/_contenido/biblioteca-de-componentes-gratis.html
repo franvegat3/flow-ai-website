@@ -1,0 +1,93 @@
+      <p>Hay un momento repetido en todo proyecto hecho con IA: funciona, hace lo que pediste, y se ve exactamente como los otros mil sitios hechos con IA esta semana. Mismo gradiente morado, mismo encabezado centrado, mismas tarjetas con esquinas redondeadas y sombra suave.</p>
+
+      <p>No es culpa del modelo. Es que le estás pidiendo que invente diseño desde cero cada vez, y lo que produce es el promedio de todo lo que ha visto. El promedio siempre se ve genérico.</p>
+
+      <p>La solución no es escribir prompts de diseño más largos. Es darle componentes que ya están bien hechos, escritos por diseñadores, con licencia abierta, y que se enchufan directo a Claude Code.</p>
+
+      <h2>Qué es</h2>
+
+      <p>21st.dev es un registro abierto de componentes de interfaz en React y Tailwind: encabezados, barras de navegación, secciones de precios, tableros, testimoniales, pies de página. Los publican diseñadores, no un generador.</p>
+
+      <p>La licencia es MIT. En español llano: los puedes usar en proyectos personales y comerciales, modificarlos, y no tienes que dar crédito ni pagar nada por el código. Eso es lo que lo separa de las bibliotecas bonitas que resultan tener una cláusula de "no lo uses para clientes".</p>
+
+      <p>Lo interesante no es el catálogo. Es que se conecta a Claude Code por MCP, así que en vez de entrar al sitio, buscar, copiar y pegar, le describes lo que quieres dentro de tu proyecto y él trae el componente, lo adapta a tus colores y lo deja instalado.</p>
+
+      <h2>La conexión, dos minutos</h2>
+
+      <ol>
+        <li><strong>Crea la cuenta</strong> en 21st.dev y abre la consola de Magic, que es la parte de MCP.</li>
+        <li><strong>Copia tu clave de API</strong> de ahí.</li>
+        <li><strong>Corre el instalador</strong> en la terminal, dentro de la carpeta de tu proyecto:</li>
+      </ol>
+
+      <pre><code>npx @21st-dev/cli@latest install claude --api-key TU_CLAVE</code></pre>
+
+      <ol start="4">
+        <li><strong>Reinicia Claude Code</strong> y pruébalo con el comando <code>/ui</code>.</li>
+      </ol>
+
+      <p>Si <code>/ui</code> responde, ya está. Si no aparece, casi siempre es que no reiniciaste la sesión: el conector se carga al arrancar.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> definir tus colores y tipografías <em>antes</em> de traer el primer componente. Si no existe un archivo con tu paleta y tu escala tipográfica, cada componente que llegue va a traer las suyas y en cinco piezas ya tienes un collage. Escribe tus tokens de marca primero y dile a Claude que adapte cada componente a esos valores al instalarlo.</p>
+      </div>
+
+      <h2>Cómo se pide</h2>
+
+      <p>El comando <code>/ui</code> seguido de la descripción. Entre más específico el encargo, menos vas a estar corrigiendo después. Tres que uso tal cual:</p>
+
+      <pre><code>/ui barra de navegación responsiva y moderna, con el logo a la
+izquierda, 4 enlaces al centro y un botón de acción a la derecha.
+En móvil se colapsa en menú hamburguesa. Fondo sólido, no
+transparente, y que se quede fija al hacer scroll.</code></pre>
+
+      <pre><code>/ui sección de encabezado principal con un titular grande a la
+izquierda, un subtítulo de una línea, dos botones (uno primario y
+uno secundario) y una captura de producto a la derecha con marco
+de navegador. Sin gradientes. Mucho espacio en blanco.</code></pre>
+
+      <pre><code>/ui tablero con barra lateral colapsable a la izquierda, una fila
+de 4 tarjetas de métrica arriba (con número grande, etiqueta y
+variación contra el periodo anterior en verde o rojo) y debajo una
+tabla con paginación. Modo claro y oscuro.</code></pre>
+
+      <p>Nota el patrón: describo posición, jerarquía y lo que <em>no</em> quiero. Esa última parte es la que evita el gradiente morado.</p>
+
+      <h2>Qué vale la pena tomar</h2>
+
+      <p>No todo rinde igual. Ordenado por lo que más tiempo te ahorra contra lo que tardarías en hacerlo bien tú:</p>
+
+      <ul>
+        <li><strong>Encabezados principales.</strong> El mejor retorno de la biblioteca. Es la sección que más se rehace, la que decide si alguien se queda, y la que peor sale cuando se genera desde cero.</li>
+        <li><strong>Barras de navegación.</strong> Aburridas de construir, llenas de detalles de comportamiento en móvil, y siempre iguales. Perfectas para tomarlas prestadas.</li>
+        <li><strong>Tableros.</strong> Barra lateral, tarjetas de métrica, tablas. Si estás armando una herramienta interna, esto es medio proyecto resuelto.</li>
+        <li><strong>Páginas de precios.</strong> La estructura de tres columnas con el plan del medio destacado ya está resuelta; lo que tú tienes que aportar es el contenido, no la maquetación.</li>
+        <li><strong>Testimoniales.</strong> Sirven cuando ya tienes testimonios reales. Si no los tienes, no metas el componente vacío con nombres inventados: se nota y quema.</li>
+        <li><strong>Pies de página.</strong> Rápido, sin misterio, y le quita a tu sitio la cara de proyecto sin terminar.</li>
+      </ul>
+
+      <p>Lo que no tomaría de una biblioteca: nada que sea el corazón de tu producto. Si tu herramienta interna tiene una pantalla que es la razón por la que existe, esa se diseña a la medida. Los componentes son para todo lo que rodea a esa pantalla.</p>
+
+      <h2>Los límites, dichos de frente</h2>
+
+      <ul>
+        <li><strong>React y Tailwind.</strong> Si tu proyecto es HTML plano, WordPress o Vue, hay que adaptar. Claude lo puede hacer, pero pierdes buena parte de la ventaja.</li>
+        <li><strong>La capa gratuita se acaba rápido.</strong> Son unas pocas generaciones al mes. Alcanza para probar y para un proyecto personal; en un proyecto real de cliente te la comes en una tarde. Revisa el precio vigente del plan de paga antes de asumir que va a salir gratis.</li>
+        <li><strong>Hay componentes premium</strong> que cuestan aparte del límite mensual.</li>
+        <li><strong>La importación desde Figma</strong> pide configuración extra. No es de dos minutos.</li>
+      </ul>
+
+      <h2>El error que produce el Frankenstein</h2>
+
+      <p>Traer diez componentes de diez autores distintos y esperar que se vean como un sistema. No se van a ver: cada uno viene con su espaciado, su radio de esquina, su peso tipográfico y su lógica de sombras.</p>
+
+      <p>Lo que funciona es tratarlos como materia prima, no como producto terminado. El flujo:</p>
+
+      <ol>
+        <li><strong>Define tus tokens primero.</strong> Dos o tres colores, una escala de espaciado, un radio de esquina, dos pesos de tipografía. En un archivo.</li>
+        <li><strong>Trae un componente a la vez</strong> y pídele a Claude que lo normalice contra ese archivo al instalarlo, no después.</li>
+        <li><strong>Revísalo en el navegador antes del siguiente.</strong> Es más rápido corregir uno que desenredar seis.</li>
+        <li><strong>Cuando lleves tres o cuatro</strong>, párate y pide una pasada de consistencia sobre todo lo instalado.</li>
+      </ol>
+
+      <p>Y si el problema de fondo es que no sabes qué debería verse bien, la biblioteca no lo va a resolver sola. Ahí sirve más partir de una referencia concreta que ya te guste, que es <a href="/guias/robarle-el-diseno-a-un-sitio/">el método de tomarle el diseño a un sitio</a>, y entender <a href="/guias/por-que-tus-disenos-se-ven-hechos-con-ia/">por qué los diseños con IA se ven hechos con IA</a>. Los componentes te dan piezas bien hechas. El criterio de cómo acomodarlas sigue siendo tuyo.</p>

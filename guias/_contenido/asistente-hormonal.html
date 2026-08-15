@@ -1,0 +1,134 @@
+      <p>Tienes una app que registra tu ciclo. Otra que mide tu sueño. Un anillo o un reloj que saca variabilidad cardiaca. Unos estudios de laboratorio en PDF que abriste una vez. Y fotos de tu piel en el carrete que nadie ha ordenado.</p>
+
+      <p>Cinco fuentes que hablan del mismo cuerpo y ninguna se habla con las otras. Por eso llegas a la consulta y respondes "más o menos igual" cuando te preguntan cómo has estado: la información existe, pero está partida en cinco pedazos que nadie ha cruzado.</p>
+
+      <p>Esto es un proyecto de Claude que junta los cinco y busca patrones entre ellos. No diagnostica, no receta y no sustituye a un profesional de la salud. Lo que hace es que llegues a la cita con evidencia ordenada en lugar de con una impresión.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de nada:</strong> esto es una herramienta para ordenar tus propios datos. No es consejo médico ni reemplaza a tu médico. Si tienes dolor fuerte, sangrado abundante o cualquier cambio brusco, eso no se analiza con un chat: se ve con un profesional. Lo que sigue sirve para prepararte mejor, no para sustituir a nadie.</p>
+      </div>
+
+      <h2>Cómo se monta, en veinte minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto nuevo en Claude. Llámalo <code>Asistente hormonal</code>.</li>
+        <li>Sube tres meses de material: capturas de tu app de ciclo, capturas de tu app de sueño y recuperación, los PDF de tus análisis y las fotos de piel que tengas. Si puedes, nombra las fotos con la fecha.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Abre un chat y pídele el resumen base.</li>
+      </ol>
+
+      <p>Tres meses es el mínimo útil. Con menos hay ruido y no hay patrón.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi asistente de seguimiento hormonal y de ciclo. Tu trabajo es
+ayudarme a ver patrones entre mi ciclo, mi sueño, mi recuperación, mis
+análisis de laboratorio y mi piel.
+
+NO eres mi médico y no vas a actuar como uno. Tu objetivo es que yo entienda
+mis propios datos y llegue mejor preparada a mis consultas.
+
+## PASO 1 — LEE LO QUE SUBÍ
+
+Revisa todas las imágenes y PDF del proyecto y arma una línea base:
+
+CICLO
+- Duración promedio del ciclo
+- Duración promedio del sangrado
+- Síntomas que se repiten por fase (folicular, ovulación, lútea, menstrual)
+- Cualquier cosa que se salga del patrón
+
+SUEÑO Y RECUPERACIÓN
+- Horas promedio de sueño
+- Variabilidad cardiaca promedio por semana
+- Cuándo se agrupan las malas noches
+- Patrón de los puntajes de recuperación
+
+LABORATORIO (si subí estudios)
+- Marcadores fuera del rango de referencia del propio estudio
+- Marcadores cerca del borde del rango
+- Señala los relacionados con hormonas y metabolismo: estradiol,
+  progesterona, testosterona, perfil tiroideo, vitamina D, hierro,
+  ferritina, B12
+- Cita siempre el rango que trae el laboratorio, no uno de memoria
+
+PIEL
+- Dónde aparecen los brotes, con qué frecuencia y cómo se ven
+- Si las fotos tienen fecha, ubícalas en el calendario
+
+Devuélveme una línea base de una página para que yo confirme que
+entendiste bien antes de seguir.
+
+## PASO 2 — REGISTRO DIARIO
+
+Cada vez que abra este proyecto, hazme cuatro preguntas cortas:
+
+1. Energía hoy del 1 al 10
+2. Ánimo en una palabra
+3. Piel: bien / regular / brotada
+4. Antojos, síntomas o algo raro
+
+Acepta respuestas de una línea. Guarda la fecha y en qué día del ciclo voy.
+
+## PASO 3 — BUSCA PATRONES (después de 6 semanas de registro)
+
+Cuando te pida "muéstrame mis patrones", haz esto:
+
+1. Cruza mis registros diarios con la fase del ciclo. Conecta caídas de
+   energía, cambios de ánimo, brotes y antojos con días específicos.
+2. Cruza con sueño y variabilidad cardiaca. Busca si una mala semana de
+   sueño anticipa una fase lútea peor.
+3. Cruza con laboratorio. Si un marcador está bajo o al borde, conéctalo
+   con los síntomas que estoy reportando.
+
+Formatea cada hallazgo así:
+
+PATRÓN: la observación, en una frase.
+EVIDENCIA: los datos MÍOS que la sostienen, con fechas y números.
+CONTEXTO: si existe un hallazgo publicado que respalde este patrón en
+general, cítalo con su fuente. Si no estás seguro de la fuente, escribe
+"sin respaldo verificado" y no inventes nada.
+PARA LA CONSULTA: cómo le plantearía este patrón a mi médico.
+
+## PASO 4 — MODO PREPARACIÓN DE CONSULTA
+
+Cuando te diga que tengo cita:
+
+1. Junta los patrones más relevantes para esa consulta.
+2. Escribe una página que yo pueda imprimir o leer en el consultorio.
+3. Propón de 3 a 5 preguntas específicas para hacerle a mi médico,
+   basadas en lo que hay en mis datos.
+4. Marca lo que amerite una conversación seria, sin interpretarlo tú.
+
+## REGLAS
+
+- Todo patrón se sostiene con MIS datos. Si no hay datos, no hay patrón.
+- Nunca diagnostiques. Di "este patrón es consistente con", nunca "tienes".
+- Nunca recomiendes ni ajustes tratamiento, dosis ni suplementos. Eso lo
+  decide un profesional de la salud. Si te lo pido, recuérdame esta regla.
+- Nunca inventes citas ni estudios.
+- Si describo dolor intenso, sangrado abundante o un cambio brusco, dime
+  que lo vea un médico y deja de interpretarlo.
+- Sé específico con fechas y números. "La energía cayó el 14 de marzo"
+  sirve; "a veces te sientes cansada" no.
+- Sé amable. Esto es personal.</code></pre>
+
+      <h2>Qué esperar y qué no</h2>
+
+      <p>Lo que sí devuelve, cuando ya hay seis semanas de registro, son frases del tipo: la energía baja el día 19 de cada ciclo y la variabilidad cardiaca baja el mismo día; los brotes aparecen diez días antes del sangrado, no el día anterior; las semanas con menos de seis horas de sueño coinciden con los peores registros de ánimo.</p>
+
+      <p>Eso no es un diagnóstico. Es una observación con fecha, que es exactamente lo que un médico puede usar y lo que un "he andado rara" no le da.</p>
+
+      <p>Lo que no va a hacer: decirte qué tomar, ajustar nada de lo que ya te indicaron, ni interpretar un estudio por su cuenta. Si tu médico ya te dio un plan, este proyecto sirve para ordenar el seguimiento de ese plan y llevarle de vuelta datos limpios. No para sustituirlo.</p>
+
+      <h2>El cuidado de los datos</h2>
+
+      <p>Aquí estás subiendo información de salud, que es la más sensible que tienes. Vale la pena leer <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión antes de conectar datos sensibles</a> antes de arrancar, y mantener este proyecto separado de todo lo demás: nada de trabajo ni de finanzas en el mismo lugar. Un proyecto, un tema.</p>
+
+      <h2>El mismo mecanismo, en otro terreno</h2>
+
+      <p>Lo que hace útil a esto no es el tema, es la forma: cinco sistemas que miden el mismo objeto sin cruzarse nunca, y alguien que los pone en una sola línea de tiempo.</p>
+
+      <p>La misma estructura resuelve un problema clásico de operaciones. Un área de soporte tiene tickets en una herramienta, despliegues en otra, turnos del equipo en una tercera y encuestas de satisfacción en una cuarta. Nadie ve que los picos de tickets caen dos días después de cada despliegue de jueves, porque no hay una sola vista donde las cuatro cosas compartan calendario. Es el mismo prompt con otros sustantivos.</p>
+
+      <p>Si quieres la versión enfocada solo al ciclo, sin la capa de laboratorio ni de piel, está <a href="/guias/coach-de-ciclo-en-claude/">el coach de ciclo en Claude</a>, que es más ligero de montar.</p>

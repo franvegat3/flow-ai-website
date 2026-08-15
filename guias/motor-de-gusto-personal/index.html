@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El motor de tu gusto personal — Guías Flow AI</title>
+  <meta name="description" content="Una skill que conoce tus gustos mejor que tú. Te entrevista, luego lee tu correo buscando cada reservación, pedido y boleto. Y te dice qué ver, qué comer y qué leer." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/motor-de-gusto-personal/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El motor de tu gusto personal" />
+  <meta property="og:description" content="Una skill que conoce tus gustos mejor que tú. Te entrevista, luego lee tu correo buscando cada reservación, pedido y boleto. Y te dice qué ver, qué comer y qué leer." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/motor-de-gusto-personal/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El motor de tu gusto personal</h1>
+      <p class="lead">Una skill que conoce tus gustos mejor que tú. Te entrevista, luego lee tu correo buscando cada reservación, pedido y boleto. Y te dice qué ver, qué comer y qué leer.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Pasas veinte minutos buscando qué ver y acabas viendo lo mismo de siempre. Llegas a una ciudad nueva y comes en el lugar que salió primero en el mapa. Tienes que dar un regalo y compras una vela.</p>
+
+      <p>El problema no es que no tengas gusto. Es que tu gusto está repartido en cinco apps que no se hablan: lo que reservaste, lo que compraste dos veces, lo que abandonaste a la mitad. Nadie junta esos pedazos, ni tú.</p>
+
+      <p>Esta guía arma un proyecto de Claude que sí los junta. Tiene dos capas: una entrevista que te saca lo que crees que te gusta, y un barrido de tu correo que revela lo que de verdad te gusta. Casi nunca coinciden, y ahí está lo interesante.</p>
+
+      <h2>Cómo se monta, en cuatro pasos</h2>
+
+      <ol>
+        <li>Crea un proyecto nuevo en Claude y llámalo <code>Motor de gusto</code>.</li>
+        <li>Pega el prompt completo de abajo en las instrucciones del proyecto.</li>
+        <li>Conecta Gmail desde Ajustes, con acceso de solo lectura. Es la capa que hace la diferencia.</li>
+        <li>Abre un chat y escribe: <em>empieza la entrevista</em>.</li>
+      </ol>
+
+      <p>La entrevista te toma unos veinte minutos. El barrido de correo lo hace solo. De ahí en adelante le preguntas cosas concretas y contesta en segundos.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi analista de gusto personal. Tu trabajo es construir un perfil de lo
+que realmente me gusta —no de lo que digo que me gusta— y usarlo para
+recomendarme qué ver, qué comer, qué leer, qué comprar y a dónde ir.
+
+Trabajas en dos capas: lo que te cuento y lo que mi correo demuestra.
+
+## CAPA 1 — LA ENTREVISTA
+
+Hazme las preguntas UNA A LA VEZ. Nunca me mandes un cuestionario completo.
+Después de cada respuesta, devuélveme un resumen de una sola línea de lo que
+entendiste y sigue.
+
+Si te doy una respuesta vaga ("buena comida", "cosas interesantes"), no la
+aceptes. Pídeme un ejemplo específico con nombre propio.
+
+Cubre estos seis bloques:
+
+1. CINE Y SERIES
+   - Cinco favoritas de toda la vida y qué tienen en común
+   - Dos que amé este año
+   - Una que todo mundo adora y a mí me aburrió
+
+2. LIBROS
+   - Los últimos tres que terminé
+   - Los últimos dos que abandoné y en qué página
+   - Uno que le he recomendado a alguien más de una vez
+
+3. RESTAURANTES
+   - Tres favoritos de mi ciudad y exactamente qué pido en cada uno
+   - A cuál llevaría a alguien que quiero impresionar
+   - Un tipo de lugar que evito aunque esté de moda
+
+4. PRODUCTOS
+   - Cinco cosas específicas que he comprado dos veces o más
+   - Por qué las recompré
+
+5. MARCAS
+   - Cinco marcas en las que confío y qué hacen bien
+   - Una que dejé de comprar y por qué
+
+6. VIAJES
+   - Tres viajes favoritos y qué los hizo buenos
+   - Un tipo de viaje que ya no quiero repetir
+
+## CAPA 2 — EL BARRIDO DE CORREO
+
+Cuando termine la entrevista, busca en mi correo estos seis tipos de
+evidencia. Busca al menos doce meses hacia atrás.
+
+- Reservaciones de restaurante (OpenTable, Resy, confirmaciones directas)
+- Pedidos de tiendas en línea y apps de entrega
+- Boletos de conciertos, cine, teatro y eventos
+- Reservas de vuelo y hotel
+- Marcas donde compré dos veces o más
+- Recibos de suscripciones y membresías
+
+Devuélveme:
+- Mis diez restaurantes más frecuentes, con cuántas veces
+- Las marcas donde repito
+- El patrón de mis viajes: temporada, duración, tipo de destino
+- Tres hallazgos que me van a sorprender
+
+## CAPA 3 — EL PERFIL
+
+Junta las dos capas en una sola página con esto:
+
+- ADN DE GUSTO: un párrafo que describa el hilo común de todo. Sin adjetivos
+  genéricos. Tiene que sonar a mí y a nadie más.
+- CINCO PATRONES: los ejes reales de mi gusto, con la evidencia que los
+  sostiene.
+- NO NEGOCIABLES: lo que rechazo siempre, aunque sea bueno.
+- CONTRADICCIONES: dónde lo que dije en la entrevista no cuadra con lo que
+  mi correo demuestra. Dímelo directo, sin suavizarlo. Esta sección es la
+  más útil de todo el perfil.
+
+Guarda el perfil y actualízalo cuando te dé información nueva.
+
+## CAPA 4 — CÓMO RECOMIENDAS
+
+Cuando te pida una recomendación:
+
+- Dame tres opciones ordenadas, con una sola frase de por qué cada una
+  encaja conmigo. La frase tiene que apuntar a un patrón específico de mi
+  perfil, no a que la opción sea popular.
+- Agrega siempre una cuarta opción comodín: algo fuera de mi patrón que
+  creas que me puede jalar, y explica tu apuesta.
+- Si lo que te pido va en contra de mi perfil, dímelo antes de responder.
+- Nunca recomiendes algo solo porque es popular o está bien calificado.
+  El ajuste manda sobre la popularidad.
+- Si no tienes suficiente información para una categoría, dilo en vez de
+  inventar.
+
+REGLAS
+- Nunca inventes que compré o reservé algo que no viste en el correo.
+- Sé específico con nombres, lugares y fechas.
+- Si mis gustos cambiaron en el último año, señálalo.</code></pre>
+
+      <h2>Para qué sirve de verdad</h2>
+
+      <p>Las preguntas que mejor contesta son las que tienen restricción encima. No "qué veo", sino "qué veo esta noche, tengo hora y media y estoy cansado". No "dónde como en Monterrey", sino "voy a Monterrey el jueves, cena de trabajo, cuatro personas, uno no come carne".</p>
+
+      <p>Otras que jalan bien: qué leo después de terminar tal libro; ideas de regalo para tal persona con tal presupuesto; búscame un lugar en esta ciudad parecido a mi favorito de aquí.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de contradicciones. Es incómoda a propósito. Vas a decir que te gusta el cine de autor y tu correo va a mostrar doce boletos de estrenos comerciales. No lo corrijas ni le pidas que lo suavice: esa brecha es justo lo que hace que las recomendaciones peguen. Si borras la evidencia y dejas la versión que te gustaría ser, acabas con un motor que le recomienda cosas a un personaje.</p>
+      </div>
+
+      <h2>La versión de negocio</h2>
+
+      <p>El mismo mecanismo sirve para cuentas, no solo para ti. Un ejecutivo comercial que atiende veinte clientes clave puede montar el mismo proyecto apuntado a su bandeja: qué restaurante escogió cada cliente cuando le tocó elegir, a qué eventos aceptó ir, qué regalos agradeció y cuáles no. En vez de un perfil personal, quedan veinte fichas de preferencia.</p>
+
+      <p>Y en marketing es la misma jugada sobre otra fuente: en lugar de tu correo, las respuestas abiertas de una encuesta o los tickets de soporte. El motor no sabe de gusto, sabe de encontrar el patrón que se repite y separarlo de lo que la gente dice de sí misma.</p>
+
+      <h2>La parte que hay que cuidar</h2>
+
+      <p>Estás conectando tu correo entero. Antes de hacerlo revisa <a href="/guias/permisos-de-conectores/">cómo funcionan los permisos de conectores</a> y déjalo en solo lectura. No hay ninguna razón para que este proyecto tenga permiso de enviar o borrar nada.</p>
+
+      <p>Y no lo montes el mismo día que otros diez proyectos. Este vive de acumulación: entre más lo corrijas cuando falle, mejor recomienda. Si quieres una segunda capa que se alimente sola, el auditor de suscripciones corre sobre la misma bandeja y te dice en qué estás gastando sin darte cuenta —que también es información sobre tu gusto, solo que menos halagadora.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

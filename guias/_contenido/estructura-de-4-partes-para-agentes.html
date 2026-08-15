@@ -1,0 +1,126 @@
+      <p>La mayoría de lo que hoy se llama "agente" es un prompt largo con ambición. Funciona la primera vez, impresiona en la demo, y a la tercera semana ya nadie lo usa porque hay que volver a explicarle todo desde cero.</p>
+
+      <p>Los agentes que sí sobreviven en una empresa que factura tienen las mismas cuatro piezas. No es una teoría que leí: es lo que quedó después de tirar a la basura las versiones que no aguantaron el uso diario. Contexto, conexiones, flujos y memoria.</p>
+
+      <p>Si te falta una, ya sé cuál es tu síntoma. Sin contexto, el agente da consejos de blog. Sin conexiones, te pide que le pegues los datos. Sin flujos, solo trabaja cuando te acuerdas de él. Sin memoria, cada lunes vuelve a proponerte lo que ya probaste y no sirvió.</p>
+
+      <h2>Las cuatro partes, en una frase cada una</h2>
+
+      <ul>
+        <li><strong>Contexto</strong> — los archivos que le enseñan quién es, de qué negocio hablamos, qué números son buenos y cómo decidir.</li>
+        <li><strong>Conexiones</strong> — el acceso a los datos vivos: tu plataforma de anuncios, tu tienda, tu correo, tu CRM.</li>
+        <li><strong>Flujos</strong> — los procesos repetibles con su periodicidad: el reporte diario, la auditoría semanal, la revisión mensual.</li>
+        <li><strong>Memoria</strong> — lo que se decidió, qué pasó después, y qué patrones ya se confirmaron.</li>
+      </ul>
+
+      <p>El orden importa. Cada parte se apoya en la anterior y montar la tercera sin la primera es la razón número uno por la que la gente abandona esto.</p>
+
+      <h2>1. Contexto: cuatro archivos, no uno</h2>
+
+      <p>El contexto no se pega en el chat. Vive en archivos de texto plano dentro de la carpeta del agente, para que se pueda versionar, corregir y auditar. Yo lo parto en cuatro.</p>
+
+      <p><strong>El archivo de identidad.</strong> Quién es el agente, qué hace y qué tiene prohibido. Es corto y es el que más ahorra discusiones después.</p>
+
+      <pre><code># Identidad
+
+Eres el analista de adquisición de [empresa]. Tu trabajo es encontrar
+dónde se está fugando dinero y dónde hay espacio para escalar.
+
+Cómo trabajas:
+- Empiezas por los datos, nunca por la opinión. Si no tienes el dato,
+  lo dices y no lo estimas.
+- Escribes para alguien que tiene dos minutos. Conclusión primero,
+  soporte después.
+- Cuando algo va mal, lo dices sin suavizarlo.
+- Si dos lecturas de los datos son razonables, presentas las dos.
+
+Lo que no haces:
+- No publicas nada ni cambias presupuestos sin aprobación explícita.
+- No inventas cifras ni completas huecos con promedios de industria.
+- No recomiendas basado en una muestra de menos de [N] conversiones.</code></pre>
+
+      <p><strong>El perfil del negocio.</strong> Qué vendes, a quién, a qué precio, con qué margen y con qué estacionalidad. Aquí es donde la mayoría se queda corta. Un agente que no sabe tu margen te va a celebrar un retorno que en realidad te está costando dinero.</p>
+
+      <p>Lo mínimo: productos con precio y margen bruto, ticket promedio, valor de vida del cliente si lo tienes medido, meses fuertes y flojos, ciclo de venta, y los tres competidores contra los que peleas de verdad.</p>
+
+      <p><strong>Benchmarks y reglas.</strong> Los números que separan bueno de malo <em>en tu negocio</em>, no en un promedio de internet. Retorno mínimo aceptable, costo máximo por adquisición, umbral de frecuencia, gasto mínimo antes de juzgar una campaña. Y las reglas de acción: cuándo se apaga algo, cuándo se sube presupuesto y de cuánto en cuánto.</p>
+
+      <p><strong>Memoria de decisiones.</strong> Este es el cuarto archivo y lo detallo abajo, porque es el que casi nadie mantiene.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir los benchmarks. Es incómodo porque obliga a decidir qué es aceptable antes de ver los resultados, y mucha gente prefiere la ambigüedad. Pero sin ese archivo tu agente solo puede describir. Con ese archivo puede juzgar, que es lo único que vale la pena delegar.</p>
+      </div>
+
+      <h2>2. Conexiones: datos vivos, no capturas de pantalla</h2>
+
+      <p>Un agente que trabaja con lo que tú le pegas no es un agente. Es un formato de reporte con pasos extra.</p>
+
+      <p>La conexión se hace con los conectores oficiales de cada plataforma cuando existen —Meta Ads, Google Ads, tu tienda, tu correo, tu CRM— y con la API directa cuando no. La regla que sigo: si la plataforma tiene conector oficial, lo uso aunque me limite; si no lo tiene, escribo un script pequeño que baja los datos a un archivo y dejo que el agente lea el archivo.</p>
+
+      <p>Ese matiz importa. Los scripts deterministas hacen la parte mecánica y verificable —bajar los datos, calcular los agregados— y el modelo hace la parte de juicio. Cuando le pides al modelo que también haga la aritmética, tarde o temprano te da un número que no cuadra y pierdes la confianza en todo lo demás.</p>
+
+      <p><strong>Permisos.</strong> Lectura por default. Escritura solo donde la necesites y con la regla escrita en el archivo de identidad: nada se publica ni se sube de presupuesto sin que una persona lo apruebe. Esto no es paranoia; es lo que hace que el agente se pueda usar en una cuenta que sí gasta dinero.</p>
+
+      <h2>3. Flujos: la parte que convierte la herramienta en sistema</h2>
+
+      <p>Un flujo es un archivo con instrucciones para una tarea recurrente, con su periodicidad y su formato de salida. Tres niveles cubren casi todo.</p>
+
+      <p><strong>Diario.</strong> Lectura corta. Qué pasó ayer, contra qué se compara, y las tres cosas que hay que atender hoy. Si no se lee en dos minutos, está mal hecho.</p>
+
+      <p><strong>Semanal.</strong> Auditoría contra los benchmarks. Aquí sí entran los cortes finos: qué está en fatiga, qué se está saliendo del rango, dónde hay gasto sin retorno, y un plan concreto para la semana con tres o cuatro acciones priorizadas.</p>
+
+      <p><strong>Mensual.</strong> La revisión estratégica. Tendencias de 30 y 90 días, qué hipótesis se confirmaron, qué hay que dejar de hacer, y qué apuesta vale la pena para el mes siguiente.</p>
+
+      <p>Cada flujo se guarda como archivo, no como mensaje. Así lo puedes corregir cuando te des cuenta de que faltaba una sección, y la corrección aplica para siempre.</p>
+
+      <h2>4. Memoria: lo que hace que la semana 12 valga más que la 1</h2>
+
+      <p>Sin memoria, tu agente es igual de bueno el primer día que el último. Con memoria, cada mes sabe más de tu negocio que el mes pasado.</p>
+
+      <p>La memoria es un archivo que se escribe con una entrada por decisión y siempre en el mismo formato:</p>
+
+      <pre><code>## [fecha] - [decisión que se tomó]
+Contexto: qué estaba pasando y qué números lo detonaron.
+Decisión: qué se hizo exactamente.
+Hipótesis: qué esperábamos que pasara.
+Resultado: qué pasó de verdad (se llena después, no el mismo día).
+Aprendizaje: qué regla nueva sale de esto, si sale alguna.</code></pre>
+
+      <p>La disciplina está en el campo de resultado. Escribir la decisión es fácil y todo el mundo lo hace. Volver dos semanas después a escribir qué pasó es lo que casi nadie hace, y es exactamente lo que convierte el archivo en un activo.</p>
+
+      <p>Cuando la memoria ya tiene treinta o cuarenta entradas, el agente empieza a decir cosas que no le enseñaste: que ese ángulo creativo ya se probó en marzo, que subir presupuesto los viernes te ha salido mal tres veces, que ese segmento se satura a las dos semanas. Eso no lo saca de ningún modelo. Sale de tu historia.</p>
+
+      <h2>Cómo se ve armado</h2>
+
+      <p>En la práctica es una carpeta por agente, con esta forma:</p>
+
+      <pre><code>agente-adquisicion/
+  contexto/
+    identidad.md
+    negocio.md
+    benchmarks.md
+    memoria.md
+  conexiones/
+    README.md        (qué está conectado y con qué permisos)
+    bajar-datos.py   (el script determinista)
+  flujos/
+    diario.md
+    semanal.md
+    mensual.md
+  reportes/          (aquí escribe el agente)</code></pre>
+
+      <p>Texto plano, versionado en git. Nada de esto necesita una plataforma. Necesita que alguien se siente a escribir los cuatro archivos de contexto, que es el trabajo que la gente evita porque no se siente como construir.</p>
+
+      <h2>El orden en que conviene construirlo</h2>
+
+      <p>No empieces por el agente más impresionante. Empieza por la tarea que más horas te come y que ya sabes hacer bien, porque solo así vas a poder juzgar si el agente lo está haciendo mal.</p>
+
+      <ol>
+        <li><strong>Escribe los cuatro archivos de contexto.</strong> Sin conectar nada. Una tarde.</li>
+        <li><strong>Conecta una sola fuente de datos</strong> y verifica a mano que los números que te devuelve cuadren con la plataforma.</li>
+        <li><strong>Monta solo el flujo diario.</strong> Vívelo una semana completa y córrigelo.</li>
+        <li><strong>Agrega el semanal</strong> cuando el diario ya no te sorprenda.</li>
+        <li><strong>Empieza la memoria desde el día uno</strong>, aunque el agente todavía sea tonto.</li>
+      </ol>
+
+      <p>Un agente estable la primera semana vale más que cinco a medias. Cuando ese ya corre solo, agrega el siguiente y considera si necesitas un supervisor que los coordine, que es <a href="/guias/como-estructurar-tus-agentes/">el tema de la arquitectura de varios agentes</a>. Y si quieres ver esta estructura aplicada completa a un caso real, está en <a href="/guias/agente-comprador-de-medios-meta/">el agente comprador de medios para Meta</a>.</p>

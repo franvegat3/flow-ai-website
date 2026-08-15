@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configura tu primer agente de Notion — Guías Flow AI</title>
+  <meta name="description" content="Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tu-primer-agente-de-notion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Configura tu primer agente de Notion" />
+  <meta property="og:description" content="Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tu-primer-agente-de-notion/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Notion</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>Configura tu primer agente de Notion</h1>
+      <p class="lead">Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Notion lleva años prometiendo ser el lugar donde vive todo y acabando como el lugar donde nadie entra. El problema nunca fue la herramienta. Es que mantener una base de datos al día es trabajo manual, y nadie tiene ganas de hacerlo un martes a las seis de la tarde.</p>
+
+      <p>Los agentes personalizados atacan justo esa parte. No son el chat de Notion AI al que le preguntas algo y te contesta. Son procesos con horario propio que leen tus bases, buscan en la web, escriben páginas y actualizan propiedades sin que tú abras nada.</p>
+
+      <p>Aquí está la configuración completa, lo que cuesta de verdad, y cinco agentes que puedes copiar hoy mismo.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un agente de Notion es un bloque de instrucciones con tres cosas amarradas: qué debe hacer, a qué tiene acceso y cuándo se dispara.</p>
+
+      <p>La diferencia con la IA de siempre es de tiempo. Notion AI responde cuando tú escribes. El agente trabaja cuando tú no estás.</p>
+
+      <p>Sabe leer bases de datos, crear páginas, actualizar propiedades, resumir notas, navegar la web y conectarse con Slack, correo y calendario. Todo lo que hace queda registrado en su pestaña de actividad, que es donde vas a vivir la primera semana.</p>
+
+      <h2>Antes de configurar: dónde sí y dónde no</h2>
+
+      <ul>
+        <li><strong>Plan.</strong> Solo Business y Enterprise. Hay prueba gratis, y vale la pena usarla para armar los agentes antes de comprometer el presupuesto anual.</li>
+        <li><strong>Dispositivo.</strong> Escritorio y navegador. En el celular no los configuras.</li>
+        <li><strong>Costo.</strong> Las corridas consumen créditos de Notion. Es un modelo de consumo, no una tarifa plana, así que un agente cada hora se come el presupuesto sin que nadie lo note. Revisa el precio vigente y calcula cuántas corridas al mes vas a hacer antes de prender cinco.</li>
+        <li><strong>Modelo.</strong> Puedes elegir entre automático, los modelos de Claude o el de OpenAI. Para agentes que solo ordenan información, el automático alcanza. Para los que tienen que decidir prioridades, sube al modelo más capaz.</li>
+      </ul>
+
+      <h2>La configuración, paso a paso</h2>
+
+      <ol>
+        <li><strong>Abre Agents</strong> en la barra lateral y dale al signo de más.</li>
+        <li><strong>Elige cómo lo creas.</strong> Descripción en lenguaje normal, plantilla del catálogo, o vacío. La descripción es la mejor opción: te arma el esqueleto y tú corriges.</li>
+        <li><strong>Escribe las instrucciones.</strong> Aquí se gana o se pierde. Las instrucciones vagas producen agentes que escriben ensayos inútiles. Más abajo están las mías.</li>
+        <li><strong>Define el disparador.</strong> Horario recurrente, evento de Notion (página nueva, propiedad que cambia, comentario), evento de Slack, de calendario o de correo.</li>
+        <li><strong>Configura el acceso</strong> en Settings, sección de Tools &amp; Access. Marca solo las bases que necesita. Un agente con acceso a todo el espacio es un agente que un día escribe donde no debe.</li>
+        <li><strong>Córrelo a mano</strong> con el botón de Run agent y lee la pestaña de actividad. No lo dejes en automático hasta que dos corridas seguidas salgan bien.</li>
+        <li><strong>Prende el disparador.</strong></li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> darle acceso de edición antes de confiar en él. Arranca con acceso de lectura a las bases de origen y de escritura solo a una base nueva y vacía, creada a propósito para que el agente deposite ahí. Si se equivoca, se equivoca en su propia carpeta y no encima de tu tablero de proyectos.</p>
+      </div>
+
+      <h2>Los cinco agentes que armaría primero</h2>
+
+      <p>Cambia lo que está entre corchetes por los nombres reales de tus bases. Ese detalle importa más de lo que parece: si el agente no encuentra la base por nombre exacto, se inventa una.</p>
+
+      <div class="plugin-card">
+        <h3>1. Resumen de la mañana <code>briefing-diario</code></h3>
+        <p>Junta pendientes, calendario y lo que quedó abierto ayer, y te deja una página lista antes de que abras la laptop. Es el que más se nota desde el día uno.</p>
+        <pre><code>Eres mi agente de resumen matutino. Cada vez que corras, crea una
+página nueva en [base de Briefings] con la fecha de hoy como título.
+
+PRIORIDADES DE HOY
+- Revisa [base de Tareas]: todo lo que vence hoy o ya está vencido.
+- Ordena por prioridad. Para cada tarea: título, proyecto, fecha, estado.
+- Si algo está vencido, ponlo hasta arriba con los días de retraso.
+
+AGENDA
+- Juntas de hoy con hora, título, asistentes y la página de preparación
+  si existe. Marca las que van seguidas sin espacio entre ellas.
+- Marca cualquier junta en las próximas 2 horas que no tenga agenda.
+
+LO QUE QUEDÓ ABIERTO
+- Tareas que vencían ayer y siguen sin cerrar.
+- Comentarios o menciones que no he contestado.
+
+UNA SOLA COSA
+- Con todo lo anterior, dime qué debo hacer primero hoy y por qué.
+
+Formato escaneable. Viñetas, encabezados en negritas, cero ensayos.</code></pre>
+        <p class="plugin-for"><strong>Disparador:</strong> diario, una hora antes de que empiece tu jornada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Resumen semanal de notas <code>cierre-semanal</code></h3>
+        <p>Recorre todas las notas de junta de la semana y saca lo único que importa: decisiones, compromisos y cabos sueltos. En una operación con juntas diarias, esto es la diferencia entre tener memoria y no tenerla.</p>
+        <pre><code>Eres mi agente de cierre semanal. Recorre cada nota creada o editada
+en [base de Notas] de lunes a hoy y crea una página en [base de
+Resúmenes] titulada "Semana del [rango de fechas]".
+
+DECISIONES DE LA SEMANA
+- Cada decisión tomada, quién la tomó y en qué contexto.
+
+COMPROMISOS
+- Todos los pendientes que salieron de las notas, agrupados por
+  responsable. Marca los que traen fecha límite.
+
+PATRONES
+- Qué tema se repitió más. Qué bloqueo apareció más de una vez.
+
+CABOS SUELTOS
+- Notas incompletas, preguntas sin resolver, seguimientos que se
+  mencionaron y nunca se agendaron.
+
+Máximo dos páginas. Enlaza cada punto a la nota original.</code></pre>
+        <p class="plugin-for"><strong>Disparador:</strong> viernes por la tarde, antes de que la gente se desconecte.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Investigación en automático <code>research-auto</code></h3>
+        <p>Alguien del equipo crea una página con un tema. El agente lo investiga y devuelve el brief adentro de esa misma página. Sirve para que un área comercial deje de pedirle a marketing que le arme el contexto de una cuenta.</p>
+        <pre><code>Cuando se agregue una página nueva a [base de Investigación], lee el
+título y el contexto del cuerpo. Busca en la web y escribe el brief en
+esa misma página.
+
+QUÉ ES
+- Explícalo en 2 o 3 frases, como si yo nunca lo hubiera visto.
+- Por qué importa ahora.
+
+DATOS DUROS
+- Los 5 a 10 hechos o cifras más relevantes, cada uno con su fuente y
+  su fecha de publicación. Prioriza lo de los últimos 12 meses.
+
+QUIÉN ESTÁ ADENTRO
+- Empresas, personas u organizaciones clave. Posturas distintas.
+
+RIESGOS Y CONTRAS
+- Pros y contras si es una decisión. Oportunidades y riesgos si es una
+  tendencia. Qué está entendiendo mal la mayoría.
+
+QUÉ HAGO CON ESTO
+- 2 o 3 siguientes pasos concretos.
+
+FUENTES
+- Título, liga y fecha. Marca todo lo que tenga más de 12 meses.
+
+No quiero un reporte de 20 páginas. Quiero algo denso que se lea en
+cinco minutos y sirva para decidir.</code></pre>
+        <p class="plugin-for"><strong>Disparador:</strong> página nueva en la base. Requiere navegación web activada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Semáforo de objetivos <code>tracker-okr</code></h3>
+        <p>Actualiza el estado de cada objetivo con base en las tareas que sí se movieron, no en lo que la gente reportó. Es el agente que le quita a un director la mitad de su lunes.</p>
+        <pre><code>Eres mi agente de objetivos. Revisa [base de Objetivos] y [base de
+Proyectos]. Para cada objetivo activo: lee la meta, cuenta tareas
+completadas contra el total y calcula cuánto tiempo queda.
+
+Actualiza la propiedad de estado a:
+- "En ruta": el avance va parejo o adelantado al tiempo transcurrido.
+- "En riesgo": entre 10% y 25% abajo del ritmo esperado.
+- "Atrasado": más de 25% abajo, o con bloqueos mayores.
+- "Cerrado": todo lo ligado está terminado.
+
+Después crea una página de reporte en [base de Check-Ins] con:
+- Tablero de objetivos ordenado por urgencia.
+- Qué avanzó esta semana.
+- Objetivos sin actividad en 7 días y objetivos donde las cuentas ya
+  no dan para la fecha comprometida.
+- Los 1 o 2 objetivos que necesitan atención esta semana.
+
+Sé honesto. Si algo va atrasado, dilo. Prefiero saberlo hoy que el
+día de la entrega.</code></pre>
+        <p class="plugin-for"><strong>Disparador:</strong> lunes temprano. Necesita permiso de edición sobre la propiedad de estado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Triaje de bandeja <code>triaje-correo</code></h3>
+        <p>Clasifica el correo nuevo en cuatro cajones y te deja los borradores de respuesta hechos. Es el que más tiempo devuelve y el que más cuidado pide, porque toca datos de clientes.</p>
+        <pre><code>Eres mi agente de triaje. Revisa el correo nuevo desde tu última
+corrida y crea una página en [base de Triaje] titulada
+"Bandeja - [fecha de hoy]".
+
+CONTESTAR HOY
+- Correos que piden respuesta mía y son urgentes, o vienen de mi jefe,
+  mi equipo directo o un cliente activo.
+- Para cada uno: quién, asunto, qué necesita en una frase, y un
+  borrador de respuesta que yo pueda editar y mandar.
+
+REVISAR ESTA SEMANA
+- Importantes pero no urgentes. Quién, asunto y una frase.
+
+ARCHIVAR
+- Promocionales, notificaciones automáticas, copias donde no soy el
+  destinatario real. Solo remitente y asunto.
+
+ESPERANDO RESPUESTA
+- Correos que mandé y llevan 3 días o más sin contestación. Con quién,
+  de qué, cuánto lleva y un recordatorio sugerido.
+
+Cierra con el conteo: total nuevos, por contestar, archivables, en
+espera.</code></pre>
+        <p class="plugin-for"><strong>Disparador:</strong> diario, temprano. Requiere la conexión de correo autorizada.</p>
+      </div>
+
+      <h2>Por qué se apaga la mayoría de los agentes</h2>
+
+      <p>Casi ninguno muere por una falla técnica. Muere porque nadie lee lo que produce.</p>
+
+      <p>Un agente que escribe una página diaria que nadie abre es un costo con disfraz de sistema. Antes de prender el segundo, define quién lee la salida del primero y en qué momento del día. Si no hay respuesta clara a eso, no lo prendas.</p>
+
+      <p>El segundo motivo es la instrucción de una línea. "Resume mis notas" produce basura genérica. Lo que hace que un agente sirva es el nivel de detalle que ves arriba: qué secciones, en qué orden, con qué criterio de corte, y qué formato. Ese texto es el activo, no la herramienta.</p>
+
+      <p>Empieza con uno solo, déjalo corriendo una semana completa, y ajústale las instrucciones dos o tres veces con lo que veas en la pestaña de actividad. Cuando ese esté aburrido de lo bien que funciona, monta el siguiente. Si quieres ver la misma lógica aplicada fuera de Notion, está en <a href="/guias/estructura-de-4-partes-para-agentes/">la estructura de 4 partes</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

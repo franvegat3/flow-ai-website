@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 skills de Claude que me corren la vida (parte 2) — Guías Flow AI</title>
+  <meta name="description" content="Resumen matutino, mantenimiento de la casa, estilista de guardarropa, planeador de cenas y pulso financiero. Se configuran una vez y sirven todo el año." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-skills-que-corren-mi-vida-parte-2/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 skills de Claude que me corren la vida (parte 2)" />
+  <meta property="og:description" content="Resumen matutino, mantenimiento de la casa, estilista de guardarropa, planeador de cenas y pulso financiero. Se configuran una vez y sirven todo el año." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-skills-que-corren-mi-vida-parte-2/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>5 skills de Claude que me corren la vida (parte 2)</h1>
+      <p class="lead">Resumen matutino, mantenimiento de la casa, estilista de guardarropa, planeador de cenas y pulso financiero. Se configuran una vez y sirven todo el año.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay un trabajo que nadie te paga y que igual haces todos los días: decidir qué comer, acordarte de que el filtro del aire ya lleva ocho meses, revisar si la tarjeta ya cortó, escoger qué ponerte para una junta con cliente. Ninguna de esas decisiones es difícil. Lo caro es que son cincuenta al día y todas te cobran atención.</p>
+
+      <p>Estas cinco skills se llevan ese turno completo. Cada una toma unos diez minutos de configuración inicial y después vive sola. Son la segunda entrega de la serie; las otras están en <a href="/guias/5-skills-que-corren-mi-vida-parte-3/">la parte 3</a>, <a href="/guias/5-skills-que-corren-mi-vida-parte-4/">la parte 4</a> y <a href="/guias/5-skills-que-corren-mi-vida-parte-5/">la parte 5</a>.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>En la app de Claude: el botón <strong>+</strong> junto al chat, luego <em>crear una skill</em>, pegas el texto y lo guardas. En Claude Code es un archivo <code>SKILL.md</code> dentro de <code>.claude/skills/nombre/</code>. En los dos casos la skill queda disponible en conversaciones nuevas sin que la invoques.</p>
+
+      <p>Lo único que cambia el resultado es qué tan completo llenas la primera pasada. Una skill de guardarropa con la mitad del clóset capturado te va a sugerir ropa que ya no tienes.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El resumen matutino <code>resumen-matutino</code></h3>
+        <p>Sustituye tres apps abiertas a las 7 de la mañana. Clima aterrizado a tu agenda del día, tus juntas con el contexto de cada una, lo que quedó abierto de ayer y una sola prioridad. Es la que da retorno más rápido de las cinco.</p>
+        <pre><code>---
+name: resumen-matutino
+description: Arma el resumen diario del usuario —clima, agenda,
+  pendientes abiertos, pagos de la semana y la prioridad del día. Úsala
+  cuando pida su resumen, diga buenos días o pregunte qué trae hoy.
+---
+
+La primera vez pregunta y guarda: ciudad, hora a la que arranca, cómo
+se transporta, en qué proyectos anda, qué días de la semana son los
+pesados, y qué pagos recurrentes tiene con su fecha.
+
+FORMATO. Cinco bloques, en este orden, sin adornos:
+1) Clima con la recomendación práctica, no el pronóstico. Si tiene
+   junta presencial y va a llover, eso es lo que se dice.
+2) La agenda hora por hora. Debajo de cada junta, una línea de qué
+   necesita llevar preparado.
+3) Pendientes abiertos: lo que dijo que iba a hacer y no reportó.
+4) Pagos o vencimientos de los próximos siete días.
+5) UNA prioridad. Una. Si el día tiene tres cosas grandes, elige y di
+   por qué esa.
+
+REGLAS. Máximo 200 palabras en total. Si un bloque está vacío, lo
+omites en vez de escribir "sin novedades". No des ánimo ni frases
+motivacionales. Al cierre del día, si él lo pide, pregunta solo qué
+quedó pendiente y pásalo a mañana.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera con más de tres juntas al día. En equipos, la misma estructura sirve para el resumen que el líder manda a las 8 am sin escribirlo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El mantenimiento de la casa <code>mantenimiento-casa</code></h3>
+        <p>La casa falla en el orden más caro posible: primero se descompone lo que no revisaste. Esta skill lleva sistemas, electrodomésticos, garantías y calendario estacional, y te dice qué se hace solo y qué se paga.</p>
+        <pre><code>---
+name: mantenimiento-casa
+description: Lleva el mantenimiento de la casa del usuario —sistemas,
+  electrodomésticos, garantías y tareas por temporada. Úsala cuando
+  reporte una falla, pregunte qué le toca a la casa, o registre un
+  servicio o una compra de equipo.
+---
+
+La primera vez levanta el inventario: tipo de vivienda, año, clima de
+la ciudad, y por cada sistema y electrodoméstico —clima artificial,
+boiler, bomba, tinaco, filtros, lavadora, refrigerador, estufa— la
+marca, el año de instalación y si tiene garantía vigente.
+
+MENSUAL. Lista de tareas del mes, cada una marcada como hazlo tú o
+llama a alguien. Para las de hacer tú, los pasos y qué se necesita.
+Para las otras, el rango de costo que se acostumbra y qué preguntar
+antes de contratar.
+
+TEMPORADA. Ajusta al clima real de su ciudad, no a un calendario
+genérico. Lo que aplica en Monterrey no aplica en Xalapa.
+
+VIDA ÚTIL. Cuando un equipo pase el 80% de su vida esperada, avísalo y
+di qué conviene: presupuestar el reemplazo o seguir reparando.
+
+GARANTÍAS. Antes de que alguien pague una reparación, revisa si el
+equipo sigue en garantía. Ese es el ahorro grande de esta skill.
+
+REGISTRO. Cada servicio con fecha, qué se hizo, quién y cuánto costó.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que compró casa hace poco. También sirve para una oficina chica o un local: los mismos equipos, la misma lógica de garantías.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El estilista de guardarropa <code>estilista</code></h3>
+        <p>No es una skill de moda. Es una skill de inventario. Sabe qué tienes, con qué combina, y evita que compres la cuarta camisa azul. La parte que más rinde es la de evaluar una compra antes de hacerla.</p>
+        <pre><code>---
+name: estilista
+description: Arma outfits con la ropa que el usuario ya tiene, según
+  clima, agenda y su estilo. Úsala cuando pregunte qué ponerse, evalúe
+  una compra, quiera revisar huecos del clóset o vaya a empacar.
+---
+
+La primera vez levanta el inventario por categorías: tops, bottoms,
+zapatos, abrigos, accesorios. Por prenda: qué es, color, corte, para
+qué tipo de ocasión sirve y si le queda bien. Guarda también su estilo
+en tres palabras, qué colores usa, qué no se pone nunca y qué código de
+vestimenta maneja en el trabajo.
+
+OUTFIT. Cuando pregunte qué ponerse, tres opciones completas usando
+solo lo que está en el inventario. Con el clima del día y el tipo de
+compromiso que tiene. Nada de "una prenda neutra": nombre exacto.
+
+COMPRA. Cuando esté considerando algo, responde tres cosas: con cuántas
+prendas que ya tiene combina, cuántas veces al mes lo usaría de verdad,
+y si ya tiene algo que hace ese mismo trabajo. Si la respuesta es que
+sí lo tiene, dilo sin rodeos.
+
+HUECOS. Cuando lo pida, las cinco prendas que más desbloquearían
+combinaciones nuevas, ordenadas por cuántos outfits agregan.
+
+MALETA. Para un viaje, la lista mínima que cubra todos los compromisos
+de la agenda, con las prendas que se repiten en varios outfits.
+
+REGLAS. Nunca recomiendes comprar sin haber revisado el inventario. Si
+él dice que un outfit no le gustó, registra por qué y no lo repitas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que viaja seguido y el que se le va media hora frente al clóset. El módulo de compra es el que se paga solo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El planeador de cenas <code>que-hay-de-cenar</code></h3>
+        <p>La pregunta que nadie quiere contestar a las 7 pm. Guarda recetas en un formato parejo, propone con lo que ya hay en la casa, y arma el plan de la semana con su lista de mandado.</p>
+        <pre><code>---
+name: que-hay-de-cenar
+description: Guarda recetas, propone cenas con los ingredientes
+  disponibles y arma el plan semanal con lista de compras. Úsala cuando
+  el usuario pregunte qué cenar, guarde una receta o pida su plan de la
+  semana.
+---
+
+La primera vez pregunta y guarda: cuántos comen, restricciones y
+alergias, qué no come nadie en la casa, cuánto tiempo real tiene entre
+semana para cocinar, qué equipo tiene, y tres platillos que siempre
+funcionan.
+
+GUARDAR RECETA. Cuando pegue una, la conviertes al formato: nombre,
+tiempo activo, tiempo total, ingredientes con cantidades, pasos
+numerados, y qué se puede dejar hecho desde antes. Aplica las
+sustituciones de sus restricciones sin preguntar.
+
+HOY. Si dice qué tiene en el refrigerador, tres opciones. Cada una con
+el tiempo que toma y qué falta comprar, si falta algo.
+
+SEMANA. Plan de cinco cenas, no siete. Deja dos días libres a
+propósito. Balancea: no más de dos recetas nuevas por semana, y al
+menos una que rinda para el día siguiente. Al final, la lista de
+mandado agrupada por pasillo del súper.
+
+FAVORITOS. Cuando algo salga bien, registra. A los tres aciertos, esa
+receta entra a la rotación fija.
+
+REGLAS. No propongas nada que pase del tiempo que dijo tener entre
+semana. Si una receta pide un ingrediente de uso único, dilo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> casas donde cocinar entre semana es el cuello de botella. La lista por pasillo baja el mandado de una hora a veinte minutos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El pulso financiero <code>pulso-financiero</code></h3>
+        <p>Un director financiero para tu dinero personal. Ingresos, pagos fijos, suscripciones y categorías de gasto, con un corte semanal corto. La auditoría de suscripciones es la que casi siempre encuentra dinero.</p>
+        <pre><code>---
+name: pulso-financiero
+description: Lleva ingresos, pagos, suscripciones y gasto por categoría
+  del usuario, con corte semanal y mensual. Úsala cuando registre un
+  gasto, pida su pulso, evalúe una compra grande o quiera revisar
+  suscripciones.
+---
+
+La primera vez pregunta y guarda: ingreso mensual y cuándo entra, pagos
+fijos con su fecha de corte, deudas con saldo y tasa, suscripciones con
+monto y renovación, fondo de emergencia actual, y sus metas de dinero
+de los próximos doce meses.
+
+NUNCA guardes números completos de tarjeta ni de cuenta. Últimos cuatro
+dígitos y nada más.
+
+PULSO SEMANAL. Cinco líneas: gastado contra presupuestado por
+categoría, la categoría que se salió, qué se paga esta semana, cuánto
+queda disponible, y una acción concreta. Sin sermón.
+
+MES. Ingreso, gasto, ahorro y cuánto se movió el patrimonio. Compara
+contra los dos meses anteriores, no contra un ideal.
+
+SUSCRIPCIONES. Cada trimestre, la lista completa con lo que se paga al
+año por cada una. Marca las que no ha mencionado usar en 90 días.
+
+COMPRA GRANDE. Cuando evalúe algo caro, contesta tres cosas: cómo queda
+el mes si lo compra, qué meta se retrasa y cuánto, y si hay una versión
+de la mitad que resuelve lo mismo.
+
+DEUDA. Si hay más de una, el orden de pago por tasa y qué cambia si
+adelanta una cantidad extra.
+
+REGLAS. No des consejo de inversión ni recomiendes instrumentos. Si
+lleva quince días sin registrar gastos, pregunta una vez.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que gana bien y no sabe a dónde se le va. Aplica igual en un negocio chico: la auditoría de suscripciones de software encuentra lo mismo.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las cinco viven de que tú les des material. La skill no ve tu cuenta de banco ni tu clóset. Si no registras el gasto, el servicio o el outfit que no funcionó, en tres semanas te está respondiendo con datos de hace un mes y sin avisarte que son viejos. La regla que sí sostengo: registrar en el momento, no en bloque los domingos.</p>
+      </div>
+
+      <h2>En qué orden montarlas</h2>
+
+      <p>No las cinco el mismo día. El resumen matutino primero: es la de configuración más corta y la que te acostumbra a abrir Claude a una hora fija, que es el hábito del que dependen las otras cuatro.</p>
+
+      <p>Después el pulso financiero, porque es la que más se degrada si la dejas para luego. Luego el planeador de cenas, que da alivio inmediato. El estilista y el mantenimiento de la casa al final: las dos piden inventario y por eso son las que la gente abandona a la mitad si las pone primero.</p>
+
+      <p>Si te sirve el patrón, es el mismo que uso al montar skills dentro de una empresa. Primero la que crea el hábito, luego la que se pudre si esperas, y hasta el final las que piden que alguien se siente dos horas a capturar. Ese orden es la diferencia entre una skill viva y cinco abandonadas. Si quieres construir las tuyas desde cero, está en <a href="/guias/3-formas-de-construir-una-skill/">3 formas de construir una skill</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

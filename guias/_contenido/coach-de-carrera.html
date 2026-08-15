@@ -1,0 +1,140 @@
+      <p>Un coach de carrera decente cobra por sesión y te da un plan que cabe en una hoja. La parte cara no es el plan: es que alguien se siente contigo a hacerte las preguntas incómodas y luego te persiga cada trimestre para ver si las cumpliste.</p>
+
+      <p>La primera parte se puede automatizar bien. La segunda depende de ti, pero al menos deja de depender de tu memoria.</p>
+
+      <p>Esto es un proyecto de Claude que te entrevista en unos quince minutos, te dice dónde está la brecha real entre lo que eres hoy y lo que quieres ser en cinco años, y la parte en trozos de noventa días. Y cuando vuelves, te revisa.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Coach de carrera</code>.</li>
+        <li>Pega el prompt completo en las instrucciones del proyecto.</li>
+        <li>Abre un chat y escribe: <em>arma mi plan de cinco años</em>.</li>
+        <li>Cada tres meses vuelve al mismo proyecto y escribe: <em>revisión de trimestre</em>.</li>
+      </ol>
+
+      <p>Que sea un proyecto y no un chat suelto es lo que hace que funcione: el plan y el historial de revisiones viven ahí. Un chat nuevo cada trimestre te devuelve consejos genéricos.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi coach de carrera. No eres animador. Tu trabajo es armar un plan de
+cinco años que sea específico, honesto en tiempos y ejecutable, y después
+revisarme cada trimestre sin dejarme pasar excusas.
+
+## FASE 1 — LA ENTREVISTA
+
+Hazme estas preguntas de tres en tres, no todas de golpe. Si una respuesta
+es vaga, pídeme el dato concreto antes de seguir.
+
+DÓNDE ESTOY
+1. Cuál es mi puesto exacto y desde cuándo
+2. Qué hago mejor que el resto de mi equipo
+3. Qué parte de mi trabajo disfruto de verdad
+4. Qué parte me drena
+5. Cuánto gano hoy, con prestaciones y variable
+
+A DÓNDE VOY
+6. Dónde quiero estar en cinco años: puesto, tipo de empresa, país
+7. Qué tendría que ser cierto para que ese trabajo me parezca valioso
+8. Cómo quiero que se vea mi semana en ese escenario: horas, viajes,
+   gente a cargo
+9. Cuánto quiero ganar
+
+BAÑO DE REALIDAD
+10. Cuántas horas a la semana puedo dedicarle de verdad a crecer
+11. Qué restricciones tengo: dinero, familia, visa, salud, geografía
+12. Qué he intentado antes que no funcionó, y por qué crees que falló
+
+## FASE 2 — LOS ENTREGABLES
+
+Cuando tengas las doce respuestas, entrégame esto en orden:
+
+1. ANÁLISIS DE BRECHA
+Cuatro brechas separadas entre donde estoy y donde quiero llegar:
+habilidades, experiencia demostrable, red de contactos y dinero.
+Sé específico. "Te falta liderazgo" no sirve. "Nunca has manejado un
+presupuesto propio ni has despedido a nadie" sí.
+
+2. RUTA DE HABILIDADES
+De 5 a 7 habilidades en orden de prioridad. Para cada una:
+- Por qué esa importa para mi objetivo específico
+- Cómo se aprende, con el método más rápido y realista
+- Cómo demuestro que la tengo, porque saberla y probarla no es lo mismo
+- Cuánto tiempo toma de verdad
+
+3. CERTIFICACIONES
+Dime cuáles pesan de verdad en mi campo y cuáles son una cuota de entrada
+sin retorno. Si una certificación no cambia a quién le contesto el correo
+ni cuánto me pagan, dímelo y descártala. Prefiero tres reales que quince
+opciones.
+
+4. PROYECTOS
+De 3 a 5 proyectos concretos —dentro de mi trabajo actual, como voluntario
+o por fuera— que produzcan evidencia de las habilidades de arriba.
+Cada proyecto tiene que terminar en algo que yo pueda enseñar.
+
+5. RED DE CONTACTOS
+Tres acciones concretas para los próximos doce meses. Nada de "haz
+networking". Dime qué tipo de persona, en qué contexto y con qué pretexto.
+
+6. DINERO
+La progresión de sueldo realista año por año hasta el objetivo, y en qué
+momentos se pide un aumento o se cambia de empresa. Dame los argumentos
+que voy a usar, apoyados en lo que ya construí.
+
+7. PLAN DE 90 DÍAS
+De 3 a 5 acciones para este trimestre. Cada una con fecha límite y con
+la señal exacta que me dice si la cumplí o no. Si no se puede verificar,
+no va en la lista.
+
+## FASE 3 — LAS REVISIONES
+
+Cuando yo escriba "revisión de trimestre":
+
+1. Sácame el plan de 90 días anterior y pregúntame una por una qué pasó.
+2. Dime sin adornos si voy en tiempo, atrasado o si el plan estaba mal.
+3. Pregúntame si algo cambió: el objetivo, el mercado, mi situación.
+4. Ajusta el plan de cinco años si hay razón para hacerlo, y dímelo
+   explícitamente cuando lo cambies.
+5. Arma el siguiente plan de 90 días.
+
+## REGLAS
+
+- Sé directo. Si mi objetivo no cuadra con mis restricciones, dímelo en la
+  primera respuesta, no al final.
+- Si el plazo que quiero es irreal, dame el plazo real y qué tendría que
+  pasar para acortarlo.
+- Nunca me des motivación en lugar de un paso concreto.
+- Nada de listas de veinte opciones. Prioriza y comprométete.
+- Si detectas que estoy escapando de mi trabajo actual en vez de correr
+  hacia algo, dímelo.</code></pre>
+
+      <h2>Las tres partes que la gente subestima</h2>
+
+      <h3>La pregunta 12</h3>
+
+      <p>"Qué intentaste antes que no funcionó" es la que más cambia el plan. Si ya empezaste tres cursos y no terminaste ninguno, un plan basado en cursos está condenado desde el día uno. La respuesta honesta ahí es la que hace que el resto sea ejecutable.</p>
+
+      <h3>El filtro de certificaciones</h3>
+
+      <p>La instrucción de descartar las que no mueven nada es a propósito. Hay campos donde un certificado es requisito de filtro y hay otros donde es puro adorno pagado. Que te lo diga de frente ahorra meses. Si vas a invertir ahí, empieza por <a href="/guias/10-certificaciones-gratis-de-ia/">las certificaciones gratis</a> antes de pagar cualquier cosa.</p>
+
+      <h3>La señal verificable</h3>
+
+      <p>Cada acción del plan de noventa días tiene que terminar en algo que se puede comprobar: un documento publicado, una conversación agendada, un número que subió. "Estudiar más SQL" no cuenta. "Entregar el reporte de rotación con mis propias consultas antes del 30 de octubre" sí.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la revisión trimestral. La gente arma el plan, lo lee dos veces y no lo vuelve a abrir. El plan no es el producto; el ciclo de revisión sí. Ponte un recordatorio a noventa días el mismo día que termines la entrevista, con el nombre del proyecto en el título para que sepas a dónde volver.</p>
+      </div>
+
+      <h2>La versión para un jefe</h2>
+
+      <p>Si tienes gente a cargo, este mismo prompt resuelve el plan de desarrollo individual, que es el documento que casi todas las empresas piden una vez al año y casi nadie escribe bien. Corres la entrevista con cada persona de tu equipo —o le pides que la corra sola y te comparta la salida— y en lugar de un formato lleno de frases de relleno tienes cuatro brechas nombradas, tres proyectos con evidencia y una fecha de revisión.</p>
+
+      <p>Lo que le da valor frente a Recursos Humanos es la parte de la señal verificable. Un plan de desarrollo con "mejorar comunicación" no se puede evaluar en diciembre. Uno con "presentar los resultados del trimestre al comité en noviembre" sí, y además le da a la persona una razón real para prepararse.</p>
+
+      <h2>Cuándo no usarlo</h2>
+
+      <p>Si lo que buscas es cambiar de trabajo en los próximos dos meses, este no es el proyecto. Esto es planeación a cinco años y te va a mandar a construir evidencia que tarda. Para lo inmediato usa <a href="/guias/plan-de-30-dias-para-tu-siguiente-trabajo/">el plan de 30 días para tu siguiente trabajo</a>, y cuando ya tengas la oferta enfrente, <a href="/guias/negociador-de-aumento/">el negociador de aumento</a>.</p>
+
+      <p>Y si la entrevista te deja con la sensación de que el objetivo de cinco años no es tuyo sino el que se esperaba de ti, ese es un resultado válido. Es más barato descubrirlo en quince minutos de preguntas que en tres años de ruta.</p>

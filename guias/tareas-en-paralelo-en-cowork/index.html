@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deja de esperar a que Claude termine una cosa a la vez — Guías Flow AI</title>
+  <meta name="description" content="Cowork puede correr varias tareas en paralelo. 10 archivos pasaron de 30 minutos a 4. Así se hace." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tareas-en-paralelo-en-cowork/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Deja de esperar a que Claude termine una cosa a la vez" />
+  <meta property="og:description" content="Cowork puede correr varias tareas en paralelo. 10 archivos pasaron de 30 minutos a 4. Así se hace." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tareas-en-paralelo-en-cowork/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Cowork</span><span class="tag">Productividad</span><span class="tag">Agentes</span></div>
+      <h1>Deja de esperar a que Claude termine una cosa a la vez</h1>
+      <p class="lead">Cowork puede correr varias tareas en paralelo. 10 archivos pasaron de 30 minutos a 4. Así se hace.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La escena se repite en toda oficina que ya adoptó IA: alguien le pide a Claude que investigue un competidor, se queda viendo la pantalla hasta que termina, lee, y entonces le pide el siguiente. Diez competidores, diez esperas. Media hora mirando cómo trabaja una máquina.</p>
+
+      <p>Eso no es usar un agente. Eso es tener un becario al que solo le puedes dar una instrucción a la vez porque te da miedo soltarlo.</p>
+
+      <p>Cowork puede partir el trabajo entre varios subagentes que corren al mismo tiempo. El mismo lote de diez archivos que secuencialmente se lleva media hora sale en unos minutos. Y lo activas con dos palabras en el prompt.</p>
+
+      <h2>Cómo se activa</h2>
+
+      <p>Le dices <strong>"en paralelo"</strong>. Literal. Esa frase le indica a Cowork que reparta las tareas entre varios subagentes en lugar de encolarlas una tras otra.</p>
+
+      <p>No es un botón ni una casilla escondida en configuración. Es una instrucción en el prompt, y por eso casi nadie la usa: no aparece en ningún lado de la interfaz, así que si nadie te lo dice, no existe.</p>
+
+      <p>La estructura que funciona es siempre la misma:</p>
+
+      <pre><code>Investiga y completa las siguientes tareas en paralelo:
+
+1. [Primera tarea — sé específico con lo que quieres de salida]
+2. [Segunda tarea — incluye el contexto o los datos que necesite]
+3. [Tercera tarea — entre más específica, mejor sale]
+4. [Agrega las que necesites]
+
+Para cada tarea, guarda el resultado como un archivo separado en mi
+espacio de trabajo. Usa el nombre de la tarea como nombre de archivo.
+
+Cuando terminen todas, dame una sola lista con los archivos creados y
+una línea por cada uno diciéndome qué encontraste.</code></pre>
+
+      <p>Las dos últimas instrucciones importan tanto como la primera. Sin "archivo separado" te devuelve un solo bloque gigante de texto en el chat y pierdes la mitad de la ventaja. Sin la lista final tienes que abrir los diez archivos para saber si alguno vale la pena.</p>
+
+      <h2>La regla que decide si sirve o no</h2>
+
+      <p>Solo se puede paralelizar lo que no depende de sí mismo.</p>
+
+      <p>Si la tarea 3 necesita el resultado de la tarea 1, no hay paralelo posible. El subagente que corre la 3 no puede esperar al que corre la 1: cada uno arranca sin saber que el otro existe. Lo que pasa cuando lo intentas es peor que un error —el modelo se inventa el insumo que le falta y te entrega algo que se ve terminado y está construido sobre aire.</p>
+
+      <p>Antes de escribir el prompt, pásale esta prueba a tu lista: <em>¿puedo entregarle cada punto a una persona distinta que no habla con las demás?</em> Si la respuesta es sí, va en paralelo. Si alguna necesita preguntarle algo a otra, esa se sale de la lista y la corres después.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> partir el trabajo en dos rondas. Casi todo proceso real es un montón de trabajo independiente seguido de un paso de síntesis. Ronda uno en paralelo para juntar el material, ronda dos secuencial para consolidarlo. Meter la síntesis dentro del mismo prompt paralelo es lo que arruina el resultado.</p>
+      </div>
+
+      <h2>Tres casos donde esto cambia el día</h2>
+
+      <h3>Inteligencia de competencia</h3>
+
+      <p>Diez competidores, un perfil por cada uno. Cada perfil es independiente: nadie necesita saber del otro para escribirse.</p>
+
+      <pre><code>Investiga los siguientes competidores en paralelo. Para cada uno quiero
+un archivo con: propuesta de valor en una frase, rango de precios público
+si lo hay, en qué segmento pegan más fuerte, qué dicen sus clientes en
+reseñas públicas, y una debilidad concreta que podamos usar en una llamada
+de ventas.
+
+1. [Competidor 1]
+2. [Competidor 2]
+3. [Competidor 3]
+
+Guarda cada perfil como archivo separado con el nombre del competidor.
+No compares entre ellos todavía: eso lo hacemos después.</code></pre>
+
+      <p>El "no compares todavía" es a propósito. La comparación es la segunda ronda, y ahí sí quieres una sola sesión que lea los diez archivos y encuentre el patrón.</p>
+
+      <h3>Contenido en lote</h3>
+
+      <p>Una operación de contenido que publica en cinco redes tiene el mismo mensaje adaptado cinco veces. Cinco adaptaciones que no dependen entre sí.</p>
+
+      <pre><code>Toma el documento adjunto como fuente y adapta el mensaje en paralelo:
+
+1. Post de LinkedIn, tono profesional, máximo 200 palabras, sin hashtags.
+2. Guion de reel de 45 segundos, con el gancho en los primeros 3 segundos.
+3. Hilo de X de 6 publicaciones.
+4. Correo para la base de datos, asunto incluido, máximo 150 palabras.
+5. Copy para anuncio de Meta, tres variantes de titular.
+
+Guarda cada uno como archivo separado. No cambies el argumento de fondo
+del documento: solo el formato y el largo.</code></pre>
+
+      <h3>Preparación de juntas</h3>
+
+      <p>El uso que más rápido se paga en un equipo comercial. Ocho llamadas en la semana, ocho preparaciones que nadie hace porque no hay tiempo.</p>
+
+      <pre><code>Prepárame en paralelo las llamadas de esta semana. Para cada una quiero
+un archivo con: qué hace la empresa, quién es la persona con la que hablo
+y qué le importa por su puesto, qué pasó en nuestras interacciones previas
+según los archivos del espacio de trabajo, tres preguntas que deba hacer,
+y la objeción más probable con su respuesta.
+
+1. [Empresa — persona — fecha]
+2. [Empresa — persona — fecha]
+3. [Empresa — persona — fecha]
+
+Si no encuentras información pública de alguna, dilo explícitamente en
+el archivo en lugar de rellenar con supuestos.</code></pre>
+
+      <p>Esa última línea es la que evita que ocho preparaciones bonitas te lleven a una llamada donde citas un dato que el modelo se inventó.</p>
+
+      <h2>Qué esperar de verdad</h2>
+
+      <p>El ahorro de tiempo no es lineal y no siempre es espectacular. En tareas cortas la diferencia se nota poco, porque el costo de arrancar varios subagentes se come la ganancia. Donde revienta es cuando cada tarea implica buscar en la web, leer varias fuentes y redactar: ahí la espera secuencial es casi todo el tiempo del proceso, y el paralelo lo colapsa.</p>
+
+      <p>La otra cosa que cambia es de qué se cansa uno. Escribir un prompt de diez tareas bien especificadas cuesta más trabajo mental por adelantado que ir pidiendo de una en una. Pero es trabajo de una sola vez, y el prompt te queda para reutilizar la siguiente semana con otros diez nombres.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Mandar diez tareas mal especificadas y creer que el paralelo las va a arreglar.</p>
+
+      <p>Corriendo de una en una, cuando la primera sale mal la corriges antes de pedir la segunda. En paralelo no: si tu instrucción es ambigua, sale ambigua diez veces y ahora tienes diez archivos que revisar en vez de uno. La velocidad multiplica lo bueno y lo malo por igual.</p>
+
+      <p>Lo que hago yo: corro la tarea 1 sola, veo cómo sale, ajusto la redacción, y hasta entonces mando el lote completo con esa redacción ya probada. Son tres minutos extra que evitan rehacer todo.</p>
+
+      <p>Y sobre lo que sale del lote, la costumbre no cambia: diez archivos generados rápido siguen necesitando revisión. Antes de mandarle cualquiera de esos perfiles a tu equipo, pásalos por un <a href="/guias/nunca-confies-sin-hacer-esto/">agente auditor</a>. Si esto te está gustando, el siguiente paso es dejar de dispararlo a mano y programarlo, que es parte de sacarle todo a Cowork.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El abogado del diablo — Guías Flow AI</title>
+  <meta name="description" content="La skill que despedaza tus ideas antes de que lo haga el mundo real. Análisis de 5 partes sobre cualquier propuesta, pitch o plan." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/abogado-del-diablo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El abogado del diablo" />
+  <meta property="og:description" content="La skill que despedaza tus ideas antes de que lo haga el mundo real. Análisis de 5 partes sobre cualquier propuesta, pitch o plan." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/abogado-del-diablo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Negocio</span></div>
+      <h1>El abogado del diablo</h1>
+      <p class="lead">La skill que despedaza tus ideas antes de que lo haga el mundo real. Análisis de 5 partes sobre cualquier propuesta, pitch o plan.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le pegas tu propuesta a Claude y te dice que está muy bien estructurada. Le pegas tu pitch y te dice que la propuesta de valor es clara. Le pegas un correo delicado y te dice que el tono es profesional.</p>
+
+      <p>Nada de eso es útil. El modelo está entrenado para colaborar contigo, y colaborar se parece mucho a darte la razón. El resultado es que llegas a la junta con un documento que nadie criticó hasta que lo criticó el cliente.</p>
+
+      <p>Esta skill invierte esa postura. En vez de ayudarte a mejorar lo que escribiste, su trabajo es encontrar por dónde se cae. No para deprimirte: para que los agujeros los encuentres tú y no la persona que decide.</p>
+
+      <h2>El análisis de cinco partes</h2>
+
+      <p>Lo que la hace distinta de pedir "critícalo" es que siempre entrega las mismas cinco secciones, en el mismo orden. Un "critícalo" te da tres observaciones cosméticas. La estructura fija obliga a ir a los cinco frentes, incluido el que duele.</p>
+
+      <ul>
+        <li><strong>Fallas fatales</strong> — los supuestos y huecos de lógica que tiran la idea completa, no los que se arreglan con una edición.</li>
+        <li><strong>Lo que no estás viendo</strong> — puntos ciegos, efectos de segundo orden, la perspectiva que te falta por estar demasiado cerca.</li>
+        <li><strong>Del otro lado de la mesa</strong> — las objeciones y preguntas exactas de quien lo va a recibir.</li>
+        <li><strong>Dónde sí está fuerte</strong> — con la razón específica, no como cortesía.</li>
+        <li><strong>El arreglo</strong> — qué cambiar en concreto para cada debilidad, con la redacción alterna cuando aplique.</li>
+      </ul>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi abogado del diablo. Tu trabajo NO es ayudarme a mejorar lo que te
+mando. Tu trabajo es encontrar por dónde se cae, antes de que lo encuentre
+la persona que decide.
+
+Asume que lo que te doy va a ser leído por alguien inteligente, con poco
+tiempo, que tiene una razón para decir que no. Piensa como esa persona.
+
+No me elogies para suavizar la crítica. No abras diciendo que está bien
+estructurado. Empieza directo.
+
+Antes de analizar, pregúntame estas tres cosas si no te las di:
+1. Quién lo va a recibir y qué decisión tiene que tomar
+2. Qué pasa si dice que no
+3. Qué es lo que más me preocupa de esto
+
+Después entrega EXACTAMENTE estas cinco secciones, en este orden:
+
+## 1. FALLAS FATALES
+
+Los problemas que, si son ciertos, tiran la idea completa. No los de forma:
+los de fondo. Busca:
+- Supuestos que doy por hechos y no están sostenidos
+- Saltos de lógica entre el problema y la solución
+- Números que no cierran o que dependen de que todo salga bien
+- La parte donde estoy resolviendo un problema que nadie pidió resolver
+
+Si no hay ninguna falla fatal, dilo con esas palabras. No inventes una para
+cumplir con la sección.
+
+## 2. LO QUE NO ESTÁS VIENDO
+
+Los puntos ciegos por estar demasiado cerca:
+- Efectos de segundo orden: qué pasa después de que esto funcione
+- A quién le quita algo, aunque no sea el destinatario
+- Qué se rompe si sale bien y crece
+- La alternativa obvia que no consideré, incluida no hacer nada
+
+## 3. DEL OTRO LADO DE LA MESA
+
+Ponte en el lugar de quien lo recibe. Dame:
+- Las cinco preguntas exactas que va a hacer, con sus palabras
+- Las tres objeciones que va a tener y no va a decir en voz alta
+- El párrafo específico donde va a dejar de leer
+- Qué necesitaría ver para pasar de "interesante" a "sí"
+
+## 4. DÓNDE SÍ ESTÁ FUERTE
+
+Lo que de verdad funciona, con la razón concreta de por qué funciona.
+Nada de "buena estructura". Di qué parte y por qué esa parte le gana a la
+alternativa. Esta sección importa: si tiro todo, no sé qué proteger cuando
+lo reescriba.
+
+## 5. EL ARREGLO
+
+Para cada debilidad de las secciones 1, 2 y 3, dame el cambio concreto:
+- Qué quito
+- Qué agrego y en qué parte
+- Qué reescribo, con la redacción alterna ya escrita
+
+Ordénalo por impacto. Dime cuál de todos los cambios es el que más mueve
+la aguja si solo pudiera hacer uno.
+
+REGLAS
+- Nunca cierres con un resumen alentador.
+- Si algo está mal, dilo en la primera línea de esa sección.
+- Prefiero que te pases de duro a que te quedes corto.
+- No critiques la ortografía ni el formato a menos que afecten la decisión.
+- Si el documento es bueno, dilo, pero solo en la sección 4 y con evidencia.</code></pre>
+
+      <h2>Cómo dejarla instalada</h2>
+
+      <p>Puedes pegar el prompt cada vez, pero se usa más si la instalas. En Ajustes, dentro de la sección de personalización, está el apartado de skills: se sube como carpeta comprimida en ZIP y a partir de ahí Claude la activa solo cuando le pases algo que huela a propuesta, pitch o documento de decisión.</p>
+
+      <p>Si nunca has empaquetado una, la guía de construir skills de Claude tiene el armado paso a paso. Y si prefieres el camino corto, <a href="/guias/convierte-cualquier-guia-en-skill/">convertir esta misma guía en skill</a> es un solo movimiento.</p>
+
+      <h2>Qué pasarle</h2>
+
+      <p>Funciona con cualquier documento donde alguien más tenga que decir sí: propuestas comerciales, presentaciones a inversionistas, planes de negocio, contratos, correos difíciles, ofertas de precio, memos de estrategia.</p>
+
+      <p>El caso donde más he visto que paga es la propuesta comercial de servicios. El equipo la escribe desde adentro, con las palabras de la empresa, y da por hecho tres cosas que el cliente no da por hechas: que el problema que describimos es su prioridad, que el precio está en su rango y que tienen a alguien que va a operar lo que entregamos. La sección "del otro lado de la mesa" saca esas tres en el primer intento, porque es literalmente la pregunta que hace el director de operaciones cuando abre el documento.</p>
+
+      <p>El segundo caso: la presentación al comité. Ahí lo valioso es la lista de cinco preguntas con las palabras del que las va a hacer. Si tienes las cinco por escrito el día anterior, entras con las respuestas preparadas en vez de improvisando.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las tres preguntas de contexto del arranque. Si no le dices quién lo recibe y qué decide, la crítica sale genérica y suena a manual de negocios. Con "lo lee el director de finanzas y decide si libera presupuesto este trimestre", la misma skill saca objeciones de flujo de efectivo que no habría mencionado nunca. El contexto de quién decide es el 80% de la calidad de la crítica.</p>
+      </div>
+
+      <h2>El error de usarla al final</h2>
+
+      <p>La mayoría la corre cuando el documento ya está terminado y bonito. Ahí sirve poco: ya invertiste tanto que vas a defender la estructura en vez de cambiarla, y acabas aceptando solo las correcciones cosméticas.</p>
+
+      <p>Córrela sobre el borrador feo. Con el esqueleto en bullets, antes de redactar. Si la idea tiene una falla fatal, prefieres enterarte cuando llevas veinte minutos que cuando llevas dos días.</p>
+
+      <p>Y no la corras dos veces sobre la misma versión esperando confirmación. Va a encontrar cosas nuevas cada vez, porque siempre puede encontrar algo. En algún punto la crítica deja de mejorar el documento y empieza a paralizarte. Una pasada al borrador, una pasada a la versión final, y a mandarlo.</p>
+
+      <p>Si el problema de fondo es que Claude te da la razón en todo, no solo en documentos, la raíz está en cómo lo tienes configurado. <a href="/guias/consejo-contra-la-adulacion/">El consejo contra la adulación</a> lo arregla en las instrucciones globales, y <a href="/guias/mentor-ia-que-no-te-da-la-razon/">el mentor que no te da la razón</a> es la versión conversacional de lo mismo.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

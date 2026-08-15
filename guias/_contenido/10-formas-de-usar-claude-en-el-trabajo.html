@@ -1,0 +1,174 @@
+      <p>El problema con las listas de "formas de usar la IA en el trabajo" es que son categorías, no cosas que puedas hacer hoy. "Úsalo para analizar datos". Gracias.</p>
+
+      <p>Estas diez son configuraciones. Cada una se deja puesta una vez, en menos de quince minutos, y de ahí en adelante trabaja sola. Están ordenadas por cuánto cambian tu semana.</p>
+
+      <div class="plugin-card">
+        <h3>1. Mete tu puesto en la memoria</h3>
+        <p>Sin esto, cada conversación arranca con un desconocido adivinando a qué te dedicas. Con esto, arranca con alguien que ya sabe quién decide en tu empresa y qué estás tratando de lograr este trimestre.</p>
+        <pre><code>Guarda esto en tu memoria sobre mí, y úsalo en todas nuestras
+conversaciones de aquí en adelante:
+
+- Me llamo [nombre] y soy [puesto] en [empresa].
+- Mi empresa vende [qué] a [quién].
+- Mi día a día es [las tres o cuatro cosas que de verdad haces].
+- Las personas con las que trabajo son [nombre y rol de cada una],
+  y quien aprueba lo que produzco es [quién].
+- Mis prioridades de este trimestre son [una, dos, tres].
+- Las herramientas donde vive mi trabajo son [cuáles].
+- Un buen entregable mío se ve así: [descríbelo]. Uno malo se ve
+  así: [descríbelo].
+
+Cuando termines, repíteme en una lista corta qué guardaste, para que
+yo pueda corregirte lo que hayas entendido mal.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> diez minutos. Se revisa cada tres meses, no cada semana.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Un proyecto para el trabajo que te paga</h3>
+        <p>Un proyecto es un espacio con instrucciones y archivos fijos. Todas las conversaciones que abras adentro ya conocen el contexto.</p>
+        <p>Crea uno solo, para el área por la que te pagan. Súbele tres a cinco archivos reales: una propuesta que salió bien, tu plantilla de reporte, los lineamientos de la marca. No subas cuarenta documentos "por si acaso": quieres ejemplos de qué se ve bien, no un archivero.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> quince minutos. Cuáles crear después, en <a href="/guias/los-5-proyectos-de-claude-que-necesitas/">los 5 proyectos que necesitas</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Conecta el correo y deja que redacte, no que mande</h3>
+        <p>Conectado a tu bandeja, Claude lee, clasifica y redacta. No manda: todo queda en tu carpeta de borradores. Esa separación es la que lo hace usable sin susto.</p>
+        <pre><code>Lee mi bandeja de las últimas 24 horas. Clasifícala en tres
+grupos: URGENTE, REQUIERE ACCIÓN, y SOLO ENTERARME.
+
+Para cada correo dime en una línea qué quieren de mí y para
+cuándo. Si algo lleva más de tres días sin respuesta mía,
+márcalo.
+
+Después redacta borradores solo para los del grupo URGENTE.
+Cortos, directos, en mi tono. Si un correo requiere información
+que yo no te di, no lo inventes: deja el borrador marcado con
+qué falta.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> cinco minutos de conexión. Después son tres minutos cada mañana en lugar de cuarenta y cinco.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Escribe con contexto, rol, acción, formato y tono</h3>
+        <p>El prompt malo es "escríbeme un correo para un cliente". El bueno trae cinco piezas y se escribe en el mismo tiempo:</p>
+        <pre><code>Contexto: el cliente no responde desde hace dos semanas y
+tenemos una propuesta abierta de [monto].
+Rol: eres yo, [puesto], escribiéndole a alguien con quien ya
+hay confianza.
+Acción: retomar la conversación sin sonar desesperado y sin
+volver a mandar la propuesta completa.
+Formato: menos de cinco oraciones, una sola pregunta al final.
+Tono: cálido y seguro. Nada de "espero que este correo te
+encuentre bien".</code></pre>
+        <p>Lo que hace la diferencia no es la estructura en sí: es que al llenarla te obligas a decidir qué quieres, cosa que en el prompt vago no habías hecho.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> nada, es un hábito. Más a fondo en <a href="/guias/anatomia-del-prompt-perfecto/">la anatomía del prompt perfecto</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Pensamiento extendido para las decisiones caras</h3>
+        <p>Un interruptor que hace que el modelo razone más antes de contestar; se activa desde el menú de herramientas de la conversación. No lo dejes prendido para todo: en tareas mecánicas es tiempo tirado. Préndelo cuando lo que sale de ahí va a mover dinero o gente.</p>
+        <pre><code>Piensa esto con calma antes de contestarme.
+
+Mi situación: [descríbela con números y con restricciones reales].
+
+Quiero tres cosas:
+1. Qué es lo que probablemente no estoy viendo.
+2. Tres opciones de verdad distintas entre sí, no tres versiones
+   de la misma. Para cada una: qué cuesta, qué gano, qué me
+   estoy jugando si sale mal.
+3. Cuál elegirías tú y por qué, aunque yo no te haya pedido tu
+   opinión.
+
+No me des la razón por default. Si mi forma de plantear el
+problema está mal, arréglala antes de responder.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> quien tenga que sostener la decisión frente a un jefe o un consejo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Convierte tu tarea repetida en un comando</h3>
+        <p>Si hay algo que le pides cada semana con las mismas palabras, eso no es un prompt: es un proceso, y se guarda como habilidad con su propio comando. Después escribes <code>/</code> y el nombre, y ya.</p>
+        <pre><code>Quiero guardar esto como una habilidad con el comando
+/resumen-semanal. Cada vez que lo corra, esto es lo que
+siempre quiero:
+
+1. Lee mi correo y mi calendario de los últimos cinco días
+   hábiles.
+2. Sácame los cinco hechos que importan: decisiones tomadas,
+   entregas, y cosas que se atoraron.
+3. Lista lo que quedó abierto y de quién depende cada cosa.
+4. Redacta un resumen de menos de 200 palabras en mi tono,
+   listo para pegar en el canal del equipo.
+5. Guárdalo con el nombre AAAA-MM-DD_resumen-semanal.
+
+Si en alguna semana no hay nada en alguna de las secciones,
+déjala vacía en lugar de rellenarla.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> diez minutos una vez. Cómo se construyen, en <a href="/guias/3-formas-de-construir-una-skill/">las 3 formas de construir una skill</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Modo de voz entre junta y junta</h3>
+        <p>Los cinco minutos entre una junta y la siguiente son el mejor momento del día y casi todo el mundo los tira. Abre la app en el celular, dale al micrófono y suelta el desorden: qué se acordó, quién quedó de mandar qué, qué te preocupó.</p>
+        <p>Un minuto de audio desordenado sale convertido en decisiones, responsables y borradores. Es el único de los diez que no requiere configurar nada.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que sale de una junta y entra a otra sin escribir una nota.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Pídele que construya, no que escriba</h3>
+        <p>Un artifact es una pieza que vive fuera del chat y que puedes compartir por liga: una calculadora, un tablero, una matriz de decisión. Quien lo recibe no necesita cuenta.</p>
+        <pre><code>Constrúyeme una calculadora interactiva como artifact.
+
+Entradas: [las variables que capturas].
+Cálculo: [las reglas exactas, incluyendo los casos raros].
+Salidas: [qué quiero ver, y en qué formato].
+
+Que se vea lo bastante presentable para mandársela a un cliente.
+Sin logos ni colores inventados: fondo claro, tipografía neutra.
+Que funcione bien en celular.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> ventas, finanzas y operaciones. Es el paso donde dejas de esperar a que alguien te haga una herramienta interna.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Investigación en serio, no una búsqueda</h3>
+        <p>El modo de investigación busca en la web y en tus herramientas conectadas a la vez, y devuelve un documento con fuentes.</p>
+        <pre><code>Investiga [tema] y devuélveme un informe con fuentes.
+
+Quiero:
+1. El panorama en un párrafo, como se lo explicarías a alguien
+   que decide con esto.
+2. Los tres movimientos más importantes de los últimos seis
+   meses, con fecha y fuente.
+3. Dónde no hay consenso: quién dice qué y por qué se
+   contradicen.
+4. Qué implica esto para [mi empresa y mi situación].
+
+Si algo no lo pudiste verificar, ponlo en una sección aparte
+llamada "sin confirmar". No lo mezcles con lo demás.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> unos minutos de espera que sustituyen una tarde. Ojo con creerle sin revisar: <a href="/guias/3-formas-en-que-la-ia-te-miente/">las 3 formas en que la IA te miente</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. La rutina del lunes, en cuatro tiros</h3>
+        <p>Las nueve anteriores sueltas no cambian nada. Encadenadas un lunes en la mañana, sustituyen las dos horas de arranque de semana.</p>
+        <ol>
+          <li>Triaje de bandeja con el prompt del punto 3.</li>
+          <li>Preparación de las juntas del día, con el contexto que ya tiene conectado.</li>
+          <li>Prioridades de la semana: qué se vence, qué está en riesgo, qué puedes delegar.</li>
+          <li>El resumen del lunes anterior, para ver qué se quedó a medias.</li>
+        </ol>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> quince minutos. Es el punto donde deja de sentirse como una herramienta y empieza a sentirse como un puesto.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el uno. Sin ese archivo de contexto, el punto 3 clasifica mal tus correos porque no sabe quién es importante en tu empresa, y el punto 9 te investiga el mercado equivocado. Media hora ahí paga los otros nueve.</p>
+      </div>
+
+      <h2>En qué orden hacerlos</h2>
+
+      <p>Hoy, el 1 y el 2. Mañana, el 3. Esta semana, el 4 y el 7, que son hábitos y no configuraciones.</p>
+
+      <p>El 6 no lo hagas antes de tener algo que valga la pena guardar. Guardar una habilidad el día uno, sin haber corrido el proceso a mano tres veces, es escribir instrucciones para un trabajo que todavía no entiendes.</p>
+
+      <h2>Lo que ninguno de los diez arregla</h2>
+
+      <p>En los equipos comerciales donde monto esto, lo que más se nota en la primera semana no es velocidad: es que las propuestas dejan de contradecirse entre vendedores, porque todos trabajan sobre el mismo contexto en vez de improvisar cada quien el suyo.</p>
+
+      <p>Pero eso solo pasa si alguien escribió bien ese contexto. Diez configuraciones encima de un proceso que nadie ha ordenado te dan el mismo desorden, más rápido.</p>

@@ -1,0 +1,111 @@
+      <p>Boris Cherny, el creador de Claude Code, contó que dejó a Cowork trabajando mientras él hacía otra cosa: le abrió el navegador, entró a un montón de sitios y le reservó ocho vuelos y cinco hoteles en una sola sesión.</p>
+
+      <p>Eso no es un chat dándote recomendaciones de viaje. Es un agente llenando formularios en las mismas páginas donde tú los llenarías, con tus datos y tus preferencias.</p>
+
+      <p>El truco no está en el prompt del viaje. Está en las instrucciones del proyecto: diez minutos de configurar una sola vez y después cada viaje se pide en tres líneas. Aquí va el setup completo.</p>
+
+      <h2>Paso 1: el proyecto Travel HQ</h2>
+
+      <p>Crea un proyecto en Cowork llamado <strong>Travel HQ</strong> y pega esto en las instrucciones. Es lo único que hay que llenar bien.</p>
+
+      <pre><code>TRAVEL HQ. INSTRUCCIONES DEL PROYECTO
+
+QUIÉN SOY
+Nombre como aparece en mi identificación: [NOMBRE Y APELLIDOS LEGALES]
+Fecha de nacimiento (algunas aerolíneas la piden): [FECHA]
+Teléfono para confirmaciones: [TELÉFONO]
+Correo para confirmaciones: [CORREO]
+
+VUELOS
+Aeropuerto de origen: [CÓDIGO]
+Asiento: [pasillo / ventana / fila de emergencia]
+Regla de clase: [ej. económica hasta 4 horas, premium arriba de 4, ejecutiva arriba de 8]
+Escalas: [directo siempre que exista; máximo una escala; mínimo 90 minutos de conexión]
+Horarios: [ej. salidas después de las 8am, nada que aterrice después de medianoche]
+Aerolíneas que evito: [LISTA]
+Programas de viajero frecuente: [AEROLÍNEA, NÚMERO DE SOCIO, NIVEL ACTUAL]
+Tarjeta con la que pago vuelos: [TARJETA]
+
+HOTELES
+Cadenas preferidas y mi nivel en cada una: [LISTA]
+Indispensables: [ej. cama king, piso alto, gimnasio, wifi que sirva para videollamadas]
+Deseables: [ej. desayuno incluido, escritorio, cancelación gratis]
+Tope por noche: [MONTO Y MONEDA]
+Tarjeta con la que pago hoteles: [TARJETA]
+
+TIERRA
+Programas de viajero confiable: [ej. TSA PreCheck, Global Entry, número]
+Traslados al aeropuerto: [ej. app de transporte; nunca renta de auto en ciudad]
+Renta de auto: [empresa y número de socio, o "no aplica"]
+
+REGLAS DURAS
+1. Nunca reserves sin mi aprobación explícita.
+2. Antes de comprar, muéstrame el costo total con impuestos y cargos, y la tarjeta que vas a usar.
+3. Dime siempre los puntos que gano con esa opción.
+4. En hoteles, dime si conviene más pagar con puntos que con dinero, y por qué.
+
+FORMATO DE SALIDA
+Asunto de una línea.
+Resumen en texto plano que yo pueda pegar en mis notas.
+Códigos de confirmación completos.
+Puntos ganados.
+Pendientes previos al viaje (documentar, check-in, traslados).</code></pre>
+
+      <p>La sección de reglas duras es la que hace que esto sea usable. Sin ella tienes un agente con tu tarjeta y buenas intenciones.</p>
+
+      <h2>Paso 2: pedir el viaje</h2>
+
+      <p>Con el proyecto configurado, cada viaje se pide así de corto:</p>
+
+      <pre><code>Viaje nuevo.
+Origen: [CIUDAD]
+Destino: [CIUDAD]
+Fechas: [SALIDA] a [REGRESO]
+Motivo: [trabajo / personal / evento]
+Zona donde quiero quedarme: [COLONIA O REFERENCIA]
+Quiénes viajan: [SOLO YO / NÚMERO DE PERSONAS]
+Qué priorizo en este viaje: [precio / horario / cercanía / puntos]
+
+Fase 1, investigación: compárame 3 opciones de vuelo —tu recomendación más 2 alternativas con distintos equilibrios de precio y horario— y 3 opciones de hotel con el mismo criterio. Explica por qué recomiendas cada una.
+Fase 2, reserva: cuando yo apruebe, llena los formularios y detente antes de pagar para que yo confirme.
+Fase 3, reporte: mándame confirmaciones, agrega los vuelos y el hotel a mi Google Calendar, y guarda los comprobantes en mi carpeta de Drive de viajes.</code></pre>
+
+      <p>Las tres fases son lo importante. Investigación, reserva y reporte son tres momentos distintos y en cada uno tú tienes que poder decir que no.</p>
+
+      <h2>Paso 3: dejarlo trabajar</h2>
+
+      <p>Aquí es donde la gente se equivoca: se queda mirando la pantalla. Todo el punto es que le des la instrucción, te vayas, y regreses cuando te avise que ya tiene las opciones o que necesita una aprobación.</p>
+
+      <p>Durante la ejecución va a moverse entre Google Flights, los sitios directos de las aerolíneas, Expedia y Booking. Puede además dejarte listas las reservaciones de restaurante en plataformas como Resy, y las que no tienen conector se resuelven con búsqueda web.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los nombres legales y los números de viajero frecuente. Suena a trámite aburrido y es lo que decide si el agente completa la reserva o se atora en el formulario. Un nombre que no coincide con tu identificación es un boleto que hay que corregir por teléfono, y el número de socio que no pusiste son los puntos que ese viaje ya no te dio. Diez minutos aquí valen más que cualquier prompt.</p>
+      </div>
+
+      <h2>Cuándo no usarlo</h2>
+
+      <p>Tres casos donde te va a costar más tiempo que hacerlo tú:</p>
+
+      <ul>
+        <li><strong>Familia con asientos juntos.</strong> Varios pasajeros con requisitos de asiento contiguo se complica en los formularios y termina en una reserva que hay que arreglar.</li>
+        <li><strong>Viajes con puntos que requieren llamada.</strong> Muchos canjes de aerolínea todavía se hacen por teléfono. Ahí el agente no puede entrar.</li>
+        <li><strong>Empresas con herramienta corporativa de viajes.</strong> Si tu compañía tiene su propio sistema con flujos de aprobación interna, reservar por fuera te mete en un problema administrativo, no te lo quita.</li>
+      </ul>
+
+      <p>Y una advertencia de riesgo que no está de más: un agente con acceso a tu navegador hereda tus sesiones abiertas. Antes de darle ese permiso, vale la pena entender exactamente qué implica. Escribí <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión que corro antes de conectar algo sensible</a> justo para esto.</p>
+
+      <h2>Dónde esto sí paga en una empresa</h2>
+
+      <p>El caso personal es evidente. El que veo rendir más en operación es otro: los viajes repetidos de un equipo comercial.</p>
+
+      <p>Una empresa que manda gente a las mismas cinco ciudades todo el año tiene el mismo problema cada vez: alguien de administración cotiza tres opciones, las manda por correo, espera aprobación, y reserva. Ese ciclo son entre 40 y 90 minutos por viaje, multiplicados por la cantidad de viajes al mes.</p>
+
+      <p>Con un Travel HQ por persona viajera, y las reglas duras bien escritas, ese ciclo se convierte en revisar tres opciones y aprobar. La aprobación humana sigue existiendo —y debe seguir existiendo, porque es dinero de la empresa—, pero la parte de buscar y llenar formularios deja de consumir a alguien.</p>
+
+      <h2>El orden que recomiendo</h2>
+
+      <p>No estrenes esto con el viaje importante. Es el error obvio y el más caro.</p>
+
+      <p>Prueba primero con un viaje sencillo, de ida y vuelta, tú solo, en una ruta que conozcas bien y donde puedas juzgar si la recomendación es buena. Ahí vas a descubrir qué le falta a tus instrucciones: casi siempre son los horarios y el tope de gasto, que la primera vez todo el mundo deja demasiado abiertos.</p>
+
+      <p>Corrige las instrucciones con lo que aprendiste. Y hasta el tercer viaje, cuando las recomendaciones ya te parezcan las que tú hubieras elegido, úsalo para el itinerario complicado. Esa progresión es lenta a propósito: la confianza en un agente que gasta tu dinero se gana en pequeño.</p>

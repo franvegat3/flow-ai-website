@@ -1,0 +1,133 @@
+      <p>El consejo estándar para crecer en redes es "estudia a los que ya lo lograron". Nadie te dice que estudiar en serio a diez creadores es un trabajo de cuatro horas a la semana: abrir cada perfil, ver qué publicaron, anotar qué les funcionó, comparar contra lo tuyo. Nadie lo sostiene más de un mes.</p>
+
+      <p>Así que lo automaticé. Un agente que corre de madrugada, baja lo que publicaron los creadores que me interesan, lo analiza contra el desempeño real de mi propio contenido, y a las 7:30 de la mañana me manda entre tres y cinco ideas a Telegram, cada una con su gancho ya escrito.</p>
+
+      <p>No es magia y no es barato de armar la primera vez —un fin de semana de trabajo—, pero corre solo desde entonces. Este es el desglose completo, incluida la parte que casi nadie menciona: cómo se hace sin quemar tu cuenta.</p>
+
+      <h2>La regla que va antes de la arquitectura</h2>
+
+      <p>Todo lo que sigue es <strong>solo lectura</strong>, y nunca desde una cuenta personal.</p>
+
+      <p>El agente no da likes, no sigue a nadie, no comenta, no manda mensajes. Solo lee contenido público. Y no lee con mi sesión de Instagram: lee a través de un proveedor de scraping que corre con su propia infraestructura.</p>
+
+      <p>Esto no es cautela decorativa. Automatizar interacciones desde tu cuenta es la forma más rápida de que te la limiten o te la tumben, y si esa cuenta es tu negocio, perdiste el negocio para ahorrarte una suscripción. La misma regla aplica al scraping con tus cookies de sesión: aunque solo leas, estás pasando tráfico automatizado por tu identidad. Se paga la herramienta y se mantiene la cuenta limpia.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> separar lectura de acción. Lo que aquí se automatiza es la observación y el análisis. La publicación y la interacción siguen siendo humanas, siempre. Un agente que lee redes te da ventaja; un agente que actúa en redes te da una suspensión.</p>
+      </div>
+
+      <h2>Las piezas</h2>
+
+      <ul>
+        <li><strong>Un servidor chico que no se apague.</strong> Una instancia mínima en la nube o una computadora que viva encendida. Lo que necesitas es que las tareas de madrugada corran aunque tu laptop esté cerrada.</li>
+        <li><strong>Un proveedor de scraping.</strong> Yo uso Apify. Tiene actores ya hechos para perfiles de Instagram y de TikTok, así que no mantienes código de scraping —mantienes una llamada a la API y ya.</li>
+        <li><strong>Transcripción de audio.</strong> Whisper. Lo que dice el video en los primeros segundos es el dato más valioso de todos.</li>
+        <li><strong>Un modelo con visión</strong> para evaluar la miniatura y el primer cuadro.</li>
+        <li><strong>Claude</strong> como el cerebro que lee todo lo anterior y decide qué proponer.</li>
+        <li><strong>Telegram</strong> como salida. Ahí es donde llega el mensaje de la mañana.</li>
+      </ul>
+
+      <p>El orden de magnitud del costo mensual es de decenas de dólares, no de cientos: el servidor es lo más caro, y la transcripción y la visión salen en centavos por video porque estás procesando decenas, no miles.</p>
+
+      <h2>Los tres scripts</h2>
+
+      <h3>1. El que baja los datos</h3>
+
+      <p>Le pega a los actores de scraping con la lista de cuentas que quiero observar. Trae hasta unas decenas de publicaciones por plataforma y guarda el JSON crudo en una carpeta de datos sin tocarlo.</p>
+
+      <p>De cada publicación se queda con lo mismo: vistas, likes, comentarios, el texto del pie, y la fecha. La fecha importa más de lo que parece —sin ella no puedes distinguir un video que explotó de uno que lleva dos años acumulando.</p>
+
+      <p>Guardar el crudo sin procesar es una decisión deliberada. Cuando dentro de tres meses se te ocurra una pregunta nueva, vas a querer los datos originales, no lo que tu script de entonces decidió conservar.</p>
+
+      <h3>2. El que analiza el video</h3>
+
+      <p>Aquí es donde deja de ser un scraper y empieza a ser útil.</p>
+
+      <p>Se descarga el audio, se transcribe, y de la transcripción se extrae específicamente <strong>el gancho</strong>: lo que se dice en los primeros cinco segundos. Ese fragmento se guarda aparte, no dentro del texto completo, porque es el campo contra el que vas a comparar todo después.</p>
+
+      <p>En paralelo, el modelo con visión califica el primer cuadro en cuatro dimensiones: qué tanto detiene el scroll, si tiene texto encima y qué tan legible es, la energía que transmite la persona, y la composición. Cada video termina con una calificación y una explicación corta de por qué.</p>
+
+      <h3>3. El rastreador de tu propio contenido</h3>
+
+      <p>Este es el que casi nadie construye y el que hace que todo lo demás valga.</p>
+
+      <p>Es un archivo con una entrada por cada cosa que tú publicaste: identificador, plataforma, liga, fecha, pie, texto del gancho, calificaciones de visión, y —la parte clave— un arreglo de <strong>fotografías diarias</strong>: vistas, likes, comentarios, compartidos y guardados, medidos cada día.</p>
+
+      <p>Sin esas fotografías diarias solo sabes cuántas vistas tiene un video hoy. Con ellas sabes cuándo las consiguió, y eso es otra cosa completamente distinta. Un video que hizo cincuenta mil vistas en veinticuatro horas y uno que las hizo en tres semanas se ven idénticos en el perfil y no se parecen en nada: el primero pegó con el algoritmo, el segundo se está compartiendo entre personas. Se replican de manera opuesta.</p>
+
+      <h2>Cómo corre solo</h2>
+
+      <p>Tres tareas programadas, no una:</p>
+
+      <ol>
+        <li><strong>De madrugada, la recolección.</strong> Un script sin modelo de por medio: pega a las APIs, baja lo nuevo, procesa los videos que no había visto, actualiza las fotografías diarias. Determinista y verificable. Si falla, falla ruidosamente.</li>
+        <li><strong>Media hora después, el juicio.</strong> Ahí sí entra el modelo. Lee lo que el script dejó y genera las ideas del día.</li>
+        <li><strong>Domingo por la mañana, el reporte.</strong> Repasa la semana completa, mide qué tan bien le fue a las ideas que sí ejecuté, y actualiza el documento de aprendizajes.</li>
+      </ol>
+
+      <p>Separar la recolección del juicio es la decisión de diseño más importante de todo esto. Si el modelo también hace el scraping, cuando algo salga mal no vas a saber si fue la API o fue el criterio. Con la separación, el script te dice exactamente qué se rompió y el modelo solo trabaja con datos que ya sabes que están bien.</p>
+
+      <h2>Los archivos que le dan identidad</h2>
+
+      <p>El agente no vive de prompts sueltos. Vive de cinco archivos de texto que lee en cada corrida:</p>
+
+      <ul>
+        <li><strong>Instrucciones</strong> — qué hace, en qué horario, con qué salida.</li>
+        <li><strong>Tono</strong> — cómo me habla y qué tan directo es al decirme que una idea mía no funcionó.</li>
+        <li><strong>Perfil</strong> — quién soy, de qué hablo, quién me sigue y a quién quiero atraer.</li>
+        <li><strong>Memoria</strong> — lo que ha ido aprendiendo. Este crece solo.</li>
+        <li><strong>Técnico</strong> — configuración, rutas y de dónde saca las llaves de API.</li>
+      </ul>
+
+      <p>El de memoria es el que hace la diferencia entre un agente y un script con esteroides. Cuando el reporte del domingo detecta que los ganchos en forma de pregunta me rinden peor que los que abren con una afirmación incómoda, eso se escribe ahí. La semana siguiente el agente ya no me propone preguntas. No porque alguien lo reprogramó: porque lo leyó.</p>
+
+      <h2>El prompt de las ideas de la mañana</h2>
+
+      <p>Este es el corazón. Sin las restricciones del final, entrega ideas genéricas que podrían ser de cualquiera:</p>
+
+      <pre><code>Eres mi analista de contenido. Ya corrió la recolección de anoche.
+
+Lee, en este orden:
+1. Mi perfil y mi audiencia.
+2. El rastreador de mi propio contenido, con las fotografías diarias.
+3. Lo que publicaron los creadores que sigo en las últimas 48 horas.
+4. El documento de aprendizajes acumulados.
+
+Dame entre 3 y 5 ideas para grabar hoy. Para cada una:
+
+- CONCEPTO: la idea en una frase.
+- GANCHO: los primeros 3 a 5 segundos, escritos palabra por palabra como
+  los voy a decir. No un tema: el texto literal.
+- POR QUÉ AHORA: qué señal concreta de los datos de anoche la justifica.
+  Cita el número o el video del que la sacaste.
+- FORMATO: cámara al frente, tutorial, carrusel o reacción.
+- CONFIANZA: alta, media o baja, y en una línea por qué.
+
+Reglas duras:
+- No repitas ningún tema que yo haya publicado en los últimos 7 días.
+- No propongas nada que no puedas justificar con un dato de los archivos.
+  Si solo tienes 2 ideas sostenidas, dame 2. Prefiero 2 buenas que 5.
+- Si un creador tuvo un video muy por encima de su promedio, dime qué hizo
+  distinto, no solo que le fue bien.
+- Marca aparte cualquier idea que sea una copia directa de otro creador.
+  Quiero saber cuándo estoy copiando y cuándo estoy adaptando.
+
+Manda el resultado a Telegram, en un solo mensaje, sin preámbulo.</code></pre>
+
+      <p>La restricción de "prefiero 2 buenas que 5" es la que más cambió la calidad de la salida. Sin ella, el modelo siempre entrega cinco, y las últimas dos son relleno que te hace desconfiar de las tres primeras.</p>
+
+      <h2>Lo mismo, aplicado a una empresa</h2>
+
+      <p>Esto no es solo para marca personal. La misma arquitectura, apuntada a los competidores de un negocio, es un sistema de inteligencia de mercado que corre sin que nadie lo empuje.</p>
+
+      <p>En vez de creadores, observas las cuentas de tus tres competidores directos. En vez de ideas para grabar, el reporte del lunes le dice a tu área de marketing qué lanzó la competencia, qué mensajes están probando, cuáles les están funcionando y cuáles murieron sin ruido. Eso es lo que hoy alguien intenta hacer a mano una vez al trimestre y siempre llega tarde.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Construir la parte de recolección y nunca la de comparación.</p>
+
+      <p>Es tentador: bajar datos de otros es la parte divertida y se ve impresionante. Pero un agente que solo te dice qué publicaron los demás es un lector de noticias. La utilidad nace cuando cruza lo de ellos con lo tuyo, y para eso tienes que estar midiendo tu propio contenido con la misma disciplina —que es la parte aburrida y la que casi nadie sostiene.</p>
+
+      <p>El segundo error es creerle al agente. Sus ideas son hipótesis, no órdenes. Yo ejecuto quizá la mitad de lo que me propone, y las que descarto también son información: cuando descarto tres seguidas por la misma razón, esa razón se escribe en la memoria y deja de proponérmelas.</p>
+
+      <p>Si nunca has montado nada así, no empieces por aquí. Empieza por <a href="/guias/tu-primer-agente-de-ia/">tu primer agente</a>, que corre en un rato y no requiere servidor. Y si lo que quieres es la parte de investigación sin la infraestructura, se puede hacer manual con <a href="/guias/buscar-dentro-de-instagram-con-ia/">una IA que busca dentro de Instagram</a>.</p>

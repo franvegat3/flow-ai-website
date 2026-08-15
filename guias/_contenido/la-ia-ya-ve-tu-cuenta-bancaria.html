@@ -1,0 +1,112 @@
+      <p>Hasta hace poco, pedirle a una IA que te ayudara con tus finanzas significaba escribirle a mano cuánto ganas y cuánto crees que gastas. El resultado servía de poco, porque lo que crees que gastas y lo que gastas no son el mismo número. Nunca lo son.</p>
+
+      <p>Perplexity conectó a Plaid —la red que usan los bancos para compartir datos con apps de terceros— dentro de su agente. Conectas tus cuentas y el modelo deja de adivinar: lee cada transacción, cada saldo, cada tasa. El salto no es de comodidad. Es que por primera vez el análisis se hace sobre tus movimientos reales.</p>
+
+      <p>Antes de que conectes nada, la parte incómoda: esto es entregar visibilidad de tu vida financiera a una empresa de software. Vale la pena leer completo el siguiente bloque antes de seguir.</p>
+
+      <h2>Qué estás autorizando exactamente</h2>
+
+      <p>El acceso es de solo lectura. El agente no puede mover dinero, hacer transferencias ni pagar nada. Tus credenciales del banco se escriben dentro de la ventana de Plaid, no de Perplexity, y tú eliges qué cuentas compartir.</p>
+
+      <p>Aun así, "solo lectura" no es lo mismo que "sin riesgo". Estás dándole a un tercero el mapa completo de dónde tienes tu dinero, cuánto debes y en qué gastas. Eso es información que a nadie más le has dado junta. Mi criterio: conecta lo mínimo que responda tu pregunta, revisa cada tanto qué cuentas siguen ligadas, y desconéctalas en cuanto termines el ejercicio. Y no lo hagas nunca desde una computadora compartida.</p>
+
+      <div class="callout-box">
+        <p><strong>El límite duro que casi nadie menciona:</strong> la integración está pensada para instituciones de Estados Unidos y Canadá. Si tus cuentas son de un banco mexicano, lo más probable es que no aparezcan. Hay una salida: casi todos los bancos en México te dejan descargar el estado de cuenta en Excel o CSV, y puedes subir ese archivo directamente a la conversación. Pierdes el tiempo real y la conexión automática, pero los tres análisis de abajo funcionan igual sobre el archivo. Si lo haces así, quítale primero el número de cuenta completo.</p>
+      </div>
+
+      <h2>Cómo se conecta</h2>
+
+      <ol>
+        <li>Entra a Perplexity desde una computadora, con tu sesión iniciada.</li>
+        <li>Ve a la configuración, a la sección de integraciones o apps conectadas.</li>
+        <li>Busca tu institución dentro de la ventana de Plaid.</li>
+        <li>Inicia sesión ahí con tus credenciales de banca en línea y completa el segundo factor.</li>
+        <li>Selecciona qué cuentas compartir. Solo las que necesitas.</li>
+      </ol>
+
+      <p>Con cuenta gratuita puedes ligar cuentas y ver el panorama. Las herramientas de análisis a fondo están del lado de la suscripción de paga.</p>
+
+      <h2>Prompt 1 — El presupuesto de lo que sí gastas</h2>
+
+      <pre><code>Toma todas las transacciones de todas mis cuentas conectadas de los ultimos 90
+dias y armame un presupuesto mensual real, basado en lo que gasto de verdad y
+no en lo que creo que gasto.
+
+1. Categoriza cada transaccion en: vivienda, transporte, super, restaurantes y
+   delivery, suscripciones, servicios, seguros, compras, entretenimiento, salud,
+   cuidado personal, pagos de deuda, ahorro e inversion, hijos, mascotas,
+   regalos y donativos, efectivo y transferencias, y sin clasificar. Marca las
+   sin clasificar para que yo las acomode.
+2. Por categoria: total en 90 dias, promedio mensual, que porcentaje de mi gasto
+   representa, y si va subiendo, bajando o plana.
+3. Sacame todos los cargos recurrentes: que es, cuanto cuesta, cada cuando, a
+   que cuenta se carga, y cuanto es al año. Suma el total anual y marca las que
+   parezca que ya no uso.
+4. Ingreso mensual total contra gasto mensual total. Cuanto sobra o cuanto me
+   falta, y que porcentaje de mi ingreso estoy quedandome.
+5. Con eso, propon un presupuesto realista. No uno de fantasia: uno entre 10 y
+   15% mejor que lo que hago hoy. Por categoria: lo que gasto, lo que deberia
+   gastar, y la diferencia.
+6. Y la verdad cruda: mis 3 mayores excesos contra mi ingreso, el recorte mas
+   facil con mayor impacto, y el habito que tengo que cambiar. Si siguiera este
+   presupuesto 12 meses, cuanto mas habria ahorrado.
+
+Formatea para leer en celular. Tablas limpias, numeros claros, sin ensayos.</code></pre>
+
+      <h2>Prompt 2 — El tablero de patrimonio</h2>
+
+      <pre><code>Quiero una foto completa de mi patrimonio con todas mis cuentas conectadas.
+
+1. Lista cada cuenta con su saldo actual, separando activos (cheques, ahorro,
+   inversion, retiro) de pasivos (tarjetas con saldo, limite y tasa; creditos de
+   auto, personales, hipoteca, con saldo y tasa).
+2. Calcula: total de activos, total de pasivos, patrimonio neto.
+3. Dime que porcentaje de mis activos esta en efectivo y que porcentaje
+   invertido. Estoy dejando dinero parado sin rendir? Estoy demasiado
+   concentrado en un solo instrumento?
+4. Del lado de la deuda: cuanto es deuda cara (tarjetas, personales) y cuanto es
+   deuda barata. Cual es mi pago minimo mensual sumado.
+5. Razones clave: deuda contra ingreso, tasa de ahorro, y cuantos meses
+   sobreviviria sin ingreso con mi efectivo actual. Dime que se considera sano
+   en cada una y donde estoy yo.
+6. La palanca mas grande: que es lo que mas me esta frenando el patrimonio hoy,
+   y si solo pudiera hacer UNA cosa este mes, cual seria.
+7. Proyecta mi patrimonio a 1, 3 y 5 años con mi ritmo actual. Luego proyectalo
+   otra vez suponiendo que ahorro 10-15% mas, y enseñame la diferencia en pesos.
+
+Marca cada supuesto que uses. Si un dato no lo tienes, dilo en vez de estimarlo.</code></pre>
+
+      <h2>Prompt 3 — El plan para salir de deudas</h2>
+
+      <pre><code>Quiero un plan completo para llegar a cero. Meses exactos, pagos exactos, e
+intereses exactos.
+
+1. Lista cada deuda: institucion, saldo, tasa anual, pago minimo, limite y
+   porcentaje de uso si es tarjeta. Luego los totales: deuda total, suma de
+   minimos, tasa promedio ponderada y uso total de mis lineas.
+2. Plan A, avalancha: minimos en todo y cada peso extra a la tasa mas alta.
+   Calendario mes por mes hasta cero. Al final: meses totales, intereses
+   pagados, y fecha de liquidacion.
+3. Plan B, bola de nieve: minimos en todo y cada peso extra al saldo mas chico.
+   Mismo calendario, marcando cuando muere cada deuda.
+4. Comparalos lado a lado: cuanto mas cuesta la bola de nieve en intereses y
+   cuantos meses antes elimino la primera deuda. Recomiendame uno y di por que.
+5. Simula pagar extra: que pasa con 1,000, 2,500 y 5,000 pesos adicionales al
+   mes. Cuanto tiempo y cuanto interes me ahorra cada escalon.
+6. Marca lo urgente: cualquier deuda con tasa muy alta, cualquier promocion a
+   meses que este por vencerse, cualquier tarjeta arriba del 80% de su limite, y
+   si mi relacion deuda-ingreso esta en zona de riesgo. Si solo estoy pagando
+   minimos, enseñame cuanto de cada pago se va a interes y cuanto a capital.
+7. Dame 3 acciones para esta semana: el pago mas rentable que puedo hacer, una
+   cosa que investigar o solicitar, y un recorte de mi presupuesto que libere
+   efectivo.
+
+No me sugieras contratar nada especifico. Dame las opciones y los criterios.</code></pre>
+
+      <h2>El orden correcto y el aviso que no me puedo saltar</h2>
+
+      <p>Córrelos en orden: presupuesto, patrimonio, deuda. El tercero necesita saber cuánto puedes destinar de más al mes, y ese número sale del primero. Si empiezas por el plan de deuda, el modelo te va a inventar una capacidad de pago que no tienes.</p>
+
+      <p>Y lo que hay que decir claro: nada de esto es asesoría financiera. Es aritmética bien ordenada sobre tus propios datos, que ya es muchísimo más de lo que la mayoría tiene. Pero antes de mover una hipoteca, consolidar deuda o cambiar tu esquema de inversión, eso se platica con alguien acreditado que responda por lo que te dice. Un modelo no responde por nada.</p>
+
+      <p>El uso donde más lo he visto rendir, por cierto, no es personal: es el mismo ejercicio sobre las cuentas de una empresa chica. La auditoría de cargos recurrentes del prompt 1, corrida sobre la tarjeta corporativa, casi siempre encuentra suscripciones de gente que ya no trabaja ahí.</p>

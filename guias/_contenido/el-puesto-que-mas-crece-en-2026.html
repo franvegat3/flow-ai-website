@@ -1,0 +1,115 @@
+      <p>La pregunta que todo mundo se hace es "¿me va a reemplazar la IA?". Es la pregunta equivocada. La buena es: cuando tu empresa tenga treinta agentes corriendo procesos de verdad, ¿quién los va a supervisar?</p>
+
+      <p>Porque alguien tiene que hacerlo. Los agentes se rompen, se salen del guion, escalan mal, contestan cosas que no debían. Y el que construyó el agente casi nunca es el que entiende el proceso de negocio que está tocando.</p>
+
+      <p>Ese hueco es el puesto que más rápido está creciendo. Harvard Business Review publicó en febrero de 2026 un artículo de Suraj Srinivasan y Vivienne Wei —<em>To Thrive in the AI Era, Companies Need Agent Managers</em>— donde argumentan que este va a ser un título de trabajo estándar en 12 a 18 meses. No en diez años. En el ciclo de contrataciones que ya viene.</p>
+
+      <h2>Qué es exactamente, en una frase</h2>
+
+      <p>Un administrador de agentes no construye agentes. Los dirige: decide cuáles vale la pena tener, los configura, mide si están funcionando y decide cuándo un humano tiene que tomar el control.</p>
+
+      <p>Esa distinción es la que la gente no capta. No es un puesto de ingeniería. Es un puesto de operaciones con literacidad técnica. La analogía más cercana es un gerente de piso: no arma la máquina, pero sabe cuándo está produciendo mal y qué palanca mover.</p>
+
+      <p>El dato que le da urgencia al asunto viene de Gartner: pronostican que 40% de los proyectos de agentes de IA van a fracasar para 2027. No fracasan por el modelo. Fracasan porque nadie se quedó a cargo de ellos después del lanzamiento.</p>
+
+      <h2>Quién ya está contratando y cuánto paga</h2>
+
+      <p>Salesforce contrata para roles alrededor de Agentforce. JPMorgan Chase y Walmart tienen vacantes en la misma dirección. Y va bajando de las empresas grandes hacia el resto.</p>
+
+      <p>En el mercado de Estados Unidos el salario promedio de estos puestos ronda los 103,000 dólares al año, con un rango de 55,000 a más de 175,000 en los polos tecnológicos. En México todavía no hay un mercado con nombre propio para el rol, pero el trabajo ya existe: lo están haciendo gerentes de operaciones a los que les cayó encima sin cambiarles el título ni el sueldo. Ahí está tu argumento para la siguiente negociación.</p>
+
+      <h2>Las cinco responsabilidades reales del puesto</h2>
+
+      <ul>
+        <li><strong>Detectar qué automatizar.</strong> Qué tareas son repetitivas, con patrón claro y suficientemente caras en tiempo como para justificar un agente.</li>
+        <li><strong>Configurar el agente.</strong> Escribir las instrucciones, definir el disparador, decidir a qué datos accede y probar que sea confiable antes de soltarlo.</li>
+        <li><strong>Vigilar la calidad.</strong> Tasa de error, cuántas veces escala, cuánto tarda en devolver el trabajo.</li>
+        <li><strong>Administrar el pase a humano.</strong> Cuándo el agente tiene que levantar la mano y dejar de decidir.</li>
+        <li><strong>Reportar el retorno.</strong> Cuánto tiempo, cuánto dinero, cuánta carga de cabeza se ahorró. En números, no en adjetivos.</li>
+      </ul>
+
+      <p>HBR además lista las habilidades que piden: literacidad operativa en IA, profundidad funcional en el proceso de negocio, pensamiento de sistemas, oficio de prompting y resiliencia al cambio —o sea, aguantar ciclos rápidos de probar, desplegar y corregir sin desmoronarte.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la profundidad funcional pesa más que la parte técnica. Un ingeniero que no sabe cómo se cotiza en tu empresa va a construir un agente que cotiza mal muy rápido. Si llevas seis años en operaciones, cobranza o servicio, ya tienes la mitad más difícil del puesto. Lo que falta es la otra mitad, y esa se aprende en semanas.</p>
+      </div>
+
+      <h2>Cinco cosas para posicionarte esta semana</h2>
+
+      <h3>1. Audita tus propios flujos</h3>
+
+      <p>Antes de configurar nada, clasifica todo lo que haces en una semana en tres cubetas: la IA podría hacerlo completo, la IA podría ayudar, y esto solo lo hace un humano. La mayoría encuentra entre tres y cinco horas semanales automatizables en el primer intento. Este prompt hace el barrido:</p>
+
+      <pre><code>Vas a ayudarme a auditar mi semana de trabajo para encontrar qué se puede
+automatizar con agentes de IA.
+
+Te voy a listar todo lo que hago en una semana normal. Para cada tarea,
+clasifícala en una de estas tres categorías y explica por qué:
+
+- AUTOMATIZABLE COMPLETO: es repetitiva, tiene un patrón claro, las entradas
+  y salidas están definidas, y el criterio para hacerla bien se puede escribir.
+- ASISTIDA: la IA puede hacer el 80% pero necesita que un humano revise,
+  decida o firme.
+- SOLO HUMANO: requiere criterio, relación, negociación o responsabilidad
+  legal que no se puede delegar.
+
+Para cada tarea dime también:
+- Cuántos minutos a la semana me cuesta hoy
+- Qué información necesitaría un agente para hacerla
+- Qué pasa si la hace mal (bajo, medio o alto riesgo)
+
+Al final, ordena las AUTOMATIZABLE COMPLETO por horas ahorradas dividido
+entre riesgo, y dime con cuál empezar. Quiero una sola recomendación,
+no una lista de opciones.
+
+Mis tareas de la semana:
+[pega aquí tu lista]</code></pre>
+
+      <h3>2. Construye un agente y déjalo corriendo</h3>
+
+      <p>Platicar con un chat no cuenta. Lo que cuenta es una tarea programada que corre sola: un resumen diario, un triage de bandeja, un reporte semanal. Puedes armarlo con una skill de Claude en <a href="/guias/claude-dispatch/">Dispatch</a>, con un agente personalizado de Notion o con una tarea de Cowork. Déjalo correr una semana y anota cuántas veces salió bien.</p>
+
+      <h3>3. Escribe instrucciones como si fueran un procedimiento</h3>
+
+      <p>Aquí está la diferencia entre alguien que usa IA y alguien que administra agentes. Un prompt casual dice "hazme el reporte semanal". Un procedimiento dice:</p>
+
+      <pre><code>Eres el agente de reporte semanal.
+
+DISPARADOR: cada viernes a las 3:00 pm.
+
+FUENTES: la base de Proyectos, el tablero de entregables y los correos
+enviados de la semana.
+
+PASOS:
+1. Trae todas las tareas completadas entre lunes y viernes.
+2. Agrúpalas por proyecto.
+3. Calcula el porcentaje de avance de cada proyecto.
+4. Marca todo lo que esté vencido, con cuántos días de retraso y de quién es.
+5. Crea el resumen con estas cinco secciones: avance, riesgos, vencidos,
+   decisiones pendientes y qué necesito de dirección.
+
+CASOS BORDE:
+- Si un proyecto no tuvo movimiento, no lo omitas: repórtalo como sin avance.
+- Si una tarea no tiene responsable, márcala como huérfana en vez de
+  asignarla tú.
+
+ESCALAMIENTO: si hay más de tres entregables vencidos en un mismo proyecto,
+no publiques el reporte. Avísame primero.</code></pre>
+
+      <p>Disparador, fuentes, formato de salida, casos borde y regla de escalamiento. Esas cinco partes son las que convierten un prompt en algo que otra persona puede operar sin ti.</p>
+
+      <h3>4. Documenta un proceso completo</h3>
+
+      <p>Escoge un proceso real de tu área y documéntalo entero: qué lo dispara, qué entra, qué pasos tiene, qué sale, cómo se sabe que quedó bien y en qué punto se le pasa a un humano. Ese documento es tu portafolio. En una entrevista vale más que cualquier certificado, porque demuestra que entiendes la operación antes de tocar la herramienta.</p>
+
+      <h3>5. Lleva la bitácora de resultados</h3>
+
+      <p>Cada semana anota cuatro columnas: qué tarea, cuánto costaba a mano, cuánto costó con IA, y qué porcentaje del resultado sirvió sin retoque. En tres meses tienes tu propio número de retorno. Es exactamente el reporte que el puesto pide, y ya lo estarías haciendo sobre tu trabajo.</p>
+
+      <h2>Quién tiene la ventaja de salida</h2>
+
+      <p>Los que ya administran procesos y resultados: gerentes de proyecto, de operaciones, líderes de equipo, analistas de calidad y gente de éxito de cliente. Todos ya saben lo más difícil —cómo se ve un proceso cuando está roto— y les falta la capa de configuración, que es la parte enseñable.</p>
+
+      <p>El error que veo seguido en empresas que ya arrancaron: nombran administrador de agentes al más técnico del equipo. A los tres meses tienen agentes impecablemente construidos resolviendo el problema equivocado. La secuencia correcta es al revés: pon a quien conoce el proceso y enséñale la herramienta.</p>
+
+      <p>Si quieres ver el mapa más amplio de puestos que están apareciendo, revisa <a href="/guias/10-puestos-de-ia-para-este-ano/">los 10 puestos de IA de este año</a>. Y si tu duda de fondo es qué tan expuesto está tu puesto actual, empieza por <a href="/guias/analizador-de-riesgo-de-tu-puesto/">el analizador de riesgo de tu puesto</a> antes de mover nada en tu currículum.</p>

@@ -1,0 +1,130 @@
+      <p>Casi todo el mundo con quien trabajo ya probó la IA una vez. Le pidieron algo, salió un texto correcto y sin alma, y concluyeron que estaba sobrevalorada.</p>
+
+      <p>Es un diagnóstico razonable a partir de una prueba mal hecha. Hubo dos errores en ese intento, y ninguno tiene que ver con el modelo. El primero: le pediste algo sin darle nada. Un desconocido al que le pides una propuesta para tu cliente, sin saber quién es tu cliente ni qué vendes, produce exactamente eso que te decepcionó. El segundo: le preguntaste hechos a la herramienta que no está hecha para hechos.</p>
+
+      <p>Esto es el arranque bien hecho: cuatro herramientas gratis con un trabajo distinto cada una, siete reglas para pedir las cosas, cinco prompts que puedes copiar hoy, y una semana para pasarlo todo.</p>
+
+      <h2>Las cuatro herramientas y qué hace cada una</h2>
+
+      <p>Ninguna cuesta nada para empezar. Lo que importa es no confundir para qué sirve cada una, porque ahí es donde se produce la mala primera impresión.</p>
+
+      <ul>
+        <li><strong>Claude</strong> <code>claude.ai</code> es para pensar, redactar, analizar documentos y construir cosas. Es donde va a pasar el 80% de tu trabajo.</li>
+        <li><strong>Perplexity</strong> <code>perplexity.ai</code> es para hechos que cambian: precios, quién compró a quién, si algo salió o sigue en espera. Devuelve la fuente y la puedes abrir.</li>
+        <li><strong>NotebookLM</strong> <code>notebooklm.google.com</code> es para entender documentos densos sin leerlos completos. Solo responde con lo que hay en los archivos que subiste.</li>
+        <li><strong>Un dictado por voz</strong> como <code>wisprflow.ai</code> es para dejar de escribir peticiones cortas por flojera de teclear.</li>
+      </ul>
+
+      <p>La regla de reparto que le doy a los equipos: lo que hay que <em>verificar</em> va a Perplexity, lo que hay que <em>entender</em> va a NotebookLM, y lo que hay que <em>producir</em> va a Claude. Si le pides a Claude el dato de mercado del trimestre pasado, te lo puede aproximar con muy buena redacción. Ese es el error que produce el susto y la desconfianza.</p>
+
+      <p>Cuatro es el número correcto para empezar, no siete ni doce. Cada herramienta nueva trae un costo de aprendizaje que no aparece en el precio, y cuatro al mismo tiempo ya es lo máximo que alguien sostiene sin abandonar dos. Si más adelante quieres ampliar, la lista honesta con los topes de cada plan gratis está en <a href="/guias/7-herramientas-gratis-que-si-valen/">las 7 herramientas gratis que sí valen</a>.</p>
+
+      <h2>Las siete reglas para pedir las cosas</h2>
+
+      <ol>
+        <li><strong>Dale un rol.</strong> "Eres el director comercial de una empresa que vende [x] a [y]" cambia el vocabulario, el nivel de detalle y las cosas que da por obvias.</li>
+        <li><strong>Dale antecedentes antes de pedir.</strong> Qué pasó, con quién, con qué números. Tres líneas de contexto valen más que veinte de instrucciones.</li>
+        <li><strong>Di qué no quieres.</strong> Las restricciones ordenan más que las instrucciones. "Sin promesas de rendimiento", "que no mencione el precio", "menos de cinco oraciones".</li>
+        <li><strong>Pega material real.</strong> Tu propuesta anterior, la minuta, el correo del cliente. Analizar algo que existe da resultados de otro nivel que generar desde cero.</li>
+        <li><strong>Conversa, no dispares.</strong> El primer resultado es un borrador. La conversación de cuatro turnos es donde está el valor, y es justo donde la gente cierra la ventana.</li>
+        <li><strong>Úsalo para pensar, no solo para escribir.</strong> Es mejor socio de decisión que redactor, y casi nadie lo usa así.</li>
+        <li><strong>Llena tu perfil.</strong> En la configuración hay un campo donde dices quién eres y cómo quieres que te responda. Es el ajuste con mayor retorno del producto y lo llena una de cada diez personas.</li>
+      </ol>
+
+      <h2>Cinco prompts para copiar hoy</h2>
+
+      <h3>1. El que te construye tu contexto</h3>
+
+      <p>Córrelo el primer día. Lo que salga de aquí lo vas a pegar en tu perfil y en cada proyecto.</p>
+
+      <pre><code>Vas a armar el documento de contexto que vamos a usar de aquí en
+adelante. Entrevístame: una pregunta a la vez, y espera mi
+respuesta antes de la siguiente.
+
+Empieza por lo que más cambiaría tus respuestas si lo supieras.
+Cubre a qué me dedico y cómo entra el dinero, con quién trabajo
+y quién decide, qué decisiones tomo cada semana, cómo se ve un
+buen entregable mío, y qué nunca debes asumir de mi industria.
+
+Cuando ya tengas suficiente para serme útil, para y dímelo. No me
+hagas veinte preguntas si con ocho ya podías.
+
+Devuélveme un solo documento, en tercera persona, ordenado por lo
+que más te sirve a ti y no por lo que suene más presentable.</code></pre>
+
+      <h3>2. El que revisa antes de que lo mandes</h3>
+
+      <pre><code>Te voy a pegar [un correo / una propuesta] que estoy por mandar a
+[quién] con el objetivo de [qué].
+
+No lo reescribas. Dime tres cosas:
+1. Qué va a entender quien lo lea, en una línea, sin buena fe.
+2. Dónde está el punto flojo: la parte que un lector escéptico
+   usaría para decir que no.
+3. Qué sobra. Señálame las oraciones que puedo borrar sin perder
+   nada.
+
+Si crees que no debería mandarlo así, dilo directo.</code></pre>
+
+      <h3>3. El que ordena el desorden</h3>
+
+      <pre><code>Te voy a pegar mis notas crudas de una junta. Están desordenadas
+y tienen cosas a medias.
+
+Devuélveme cuatro secciones: qué se decidió, qué quedó pendiente
+de decidir, quién es responsable de qué y para cuándo, y qué se
+dijo de forma ambigua.
+
+Esa última sección es la importante: no interpretes lo ambiguo,
+márcalo para que yo lo aclare. Y no inventes responsables que no
+aparezcan en mis notas.</code></pre>
+
+      <h3>4. El que te saca de tu primera idea</h3>
+
+      <pre><code>Estoy por decidir [la decisión], y mi plan actual es [qué
+piensas hacer]. Restricciones reales: [presupuesto, tiempo,
+gente].
+
+Antes de opinar, dime qué supuesto mío es el más frágil.
+
+Después dame tres caminos de verdad distintos entre sí, no tres
+versiones del mío. Para cada uno: qué cuesta, qué gano, y cómo
+me daría cuenta temprano de que fue un error.
+
+Cierra diciéndome cuál elegirías tú. No me des la razón por
+default.</code></pre>
+
+      <h3>5. El que te enseña lo que no entiendes</h3>
+
+      <pre><code>Quiero entender [tema] a un nivel en que pueda discutirlo con
+[quién], no a nivel de definición de diccionario.
+
+Explícamelo con un ejemplo de mi mundo: [tu industria].
+
+Después hazme tres preguntas para ver si de verdad lo entendí.
+Si contesto mal, no me corrijas de golpe: dime qué parte de mi
+respuesta está bien y dónde se rompe.</code></pre>
+
+      <h2>La semana</h2>
+
+      <ol>
+        <li><strong>Hoy.</strong> Abre cuenta y corre el prompt 1. Pega el resultado en tu perfil.</li>
+        <li><strong>Martes y miércoles.</strong> Usa el prompt 2 en algo que ibas a mandar de todos modos. Aplica las reglas 1, 2 y 3.</li>
+        <li><strong>Jueves.</strong> Cambia una búsqueda por Perplexity. Nota la diferencia de tener la fuente a un clic.</li>
+        <li><strong>Viernes.</strong> Sube a NotebookLM el documento largo que llevas semanas evitando.</li>
+        <li><strong>Fin de semana.</strong> Corre el prompt 4 con una decisión que traigas encima de verdad.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el prompt 1. Toma veinte minutos, no produce nada que puedas enseñar, y es el único que mejora todas las respuestas que vas a recibir el resto del año. Los otros cuatro funcionan bien o mal dependiendo de si lo corriste.</p>
+      </div>
+
+      <h2>Cómo saber si te está funcionando</h2>
+
+      <p>La señal no es que las respuestas te gusten. Es que dejes de reescribirlas.</p>
+
+      <p>Si al final de la semana sigues recibiendo borradores que tienes que rehacer completos, el problema no es el modelo: es que le estás dando dos líneas de contexto para un trabajo que en tu cabeza tiene veinte. Vuelve a la regla 2 antes de probar otra herramienta.</p>
+
+      <p>En una empresa la señal es todavía más concreta. Cuando entro a instalar esto en un área comercial, lo que cambia en la primera semana no es la velocidad de nadie: es que las propuestas dejan de contradecirse entre vendedores, porque todos parten del mismo documento de contexto en vez de improvisar cada quien el suyo. Ese es el resultado que vale la pena buscar, y llega del prompt 1, no de los otros cuatro.</p>
+
+      <p>Y si algo de esto te sirvió, el siguiente paso ya no es aprender a pedir mejor: es dejar la herramienta configurada para no tener que pedirlo bien cada vez. Eso está en <a href="/guias/tus-primeros-7-dias-con-claude/">tus primeros 7 días con Claude</a>.</p>

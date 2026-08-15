@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El agente comprador de medios para Meta — Guías Flow AI</title>
+  <meta name="description" content="Un comprador de medios de IA para Meta Ads. Vigila tu cuenta a diario, raspa competidores, redacta briefs creativos, y nace en pausa por seguridad." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/agente-comprador-de-medios-meta/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El agente comprador de medios para Meta" />
+  <meta property="og:description" content="Un comprador de medios de IA para Meta Ads. Vigila tu cuenta a diario, raspa competidores, redacta briefs creativos, y nace en pausa por seguridad." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/agente-comprador-de-medios-meta/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Pauta</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Meta Ads</span><span class="tag">Pauta</span><span class="tag">Agentes</span></div>
+      <h1>El agente comprador de medios para Meta</h1>
+      <p class="lead">Un comprador de medios de IA para Meta Ads. Vigila tu cuenta a diario, raspa competidores, redacta briefs creativos, y nace en pausa por seguridad.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 11 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Un comprador de medios bueno hace lo mismo todos los días: abre la cuenta antes de las nueve, compara contra la semana pasada, decide qué apagar y qué empujar, y anota por qué. Ese trabajo no es difícil. Es aburrido, y por eso casi nadie lo sostiene tres meses seguidos.</p>
+
+      <p>Lo que se rompe primero no es la estrategia. Es la disciplina. Las cuentas se pudren por creativos que llevan cinco semanas corriendo con frecuencia de cuatro, por conjuntos que gastan sin comprar y que nadie apagó, y por presupuestos que subieron un viernes porque el día se veía bonito.</p>
+
+      <p>Esto es un agente que hace esa revisión diaria sin fallar, con tus números y tus reglas, y que nace incapaz de gastarte un peso sin permiso.</p>
+
+      <h2>Qué hace, exactamente</h2>
+
+      <ul>
+        <li><strong>Escaneo diario de la cuenta.</strong> Baja gasto, retorno, costo por adquisición, costo por compra, frecuencia, CTR y CPM a nivel campaña, conjunto y anuncio. Compara contra 7 y 30 días.</li>
+        <li><strong>Marca lo que hay que matar y lo que hay que escalar</strong> contra umbrales que tú definiste, no contra un promedio de industria.</li>
+        <li><strong>Auditoría semanal completa</strong> contra tus benchmarks, con detección de fatiga creativa antes de que el desempeño caiga.</li>
+        <li><strong>Inteligencia de competencia</strong> desde la biblioteca de anuncios: qué formatos, ganchos y ofertas están escalando otras marcas de tu categoría.</li>
+        <li><strong>Briefs creativos</strong> que salen de tus datos y de lo que se ve en el mercado, no de una lluvia de ideas.</li>
+      </ul>
+
+      <p>Lo que no hace: publicar. Todo lo que crea nace en pausa y ninguna subida de presupuesto ocurre sin que una persona la apruebe. Vuelvo a eso al final, porque es la parte que decide si esto se puede usar en una cuenta que sí gasta.</p>
+
+      <h2>El setup</h2>
+
+      <p>El agente vive en Claude Code, en una carpeta con la <a href="/guias/estructura-de-4-partes-para-agentes/">estructura de cuatro partes</a>: contexto, conexiones, flujos y memoria. El acceso a la cuenta sale del conector oficial de Meta Ads, que también se puede usar suelto desde el chat —eso está en <a href="/guias/claude-corriendo-tus-meta-ads/">la guía del conector</a>—, pero suelto no tiene ni tus benchmarks ni tu historia.</p>
+
+      <ol>
+        <li><strong>Conecta la cuenta publicitaria.</strong> Necesitas permisos de administrador sobre ella en Meta Business.</li>
+        <li><strong>Escribe el perfil del negocio.</strong> Productos con precio y margen bruto, ticket promedio, valor de vida del cliente si lo mides, meses fuertes y flojos.</li>
+        <li><strong>Escribe los benchmarks.</strong> El archivo más importante. Abajo va la plantilla.</li>
+        <li><strong>Monta el flujo diario</strong> y córrelo a mano una semana antes de automatizarlo.</li>
+        <li><strong>Abre el archivo de memoria</strong> desde el día uno.</li>
+      </ol>
+
+      <h2>El archivo de benchmarks</h2>
+
+      <p>Aquí es donde el agente deja de ser genérico. Estos números son tuyos y salen de tu margen, no de un artículo.</p>
+
+      <pre><code># Benchmarks y reglas - [empresa]
+
+Economía
+- Margen bruto promedio: [%]
+- Retorno mínimo para no perder dinero: [ROAS de equilibrio]
+- Retorno objetivo: [ROAS meta]
+- Costo máximo por adquisición aceptable: [$]
+
+Umbrales de lectura
+- Gasto mínimo antes de juzgar un anuncio: [$ o N conversiones]
+- Frecuencia a la que empiezo a preocuparme: [X]
+- Caída de CTR que considero fatiga: [%] contra los primeros 7 días
+
+Reglas de apagado
+- Anuncio con [2x] el costo objetivo por adquisición y cero compras:
+  se apaga.
+- Conjunto que no alcanza el retorno de equilibrio en [N] días con
+  gasto suficiente: se apaga.
+
+Reglas de escalamiento
+- Solo se propone subir presupuesto si el retorno está por encima del
+  objetivo durante [N] días seguidos.
+- Incremento máximo por movimiento: [%] del presupuesto actual.
+- Nunca más de un movimiento de presupuesto por conjunto cada [N] días.
+- Cualquier subida requiere aprobación humana. Sin excepciones.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el gasto mínimo antes de juzgar. Sin ese número, el agente te va a recomendar apagar anuncios con doce dólares de gasto y vas a matar creativos buenos por ruido estadístico. Ponlo en función de tu costo por adquisición: si adquieres a treinta dólares, no opines de un anuncio con menos de noventa gastados.</p>
+      </div>
+
+      <h2>El flujo diario</h2>
+
+      <p>Este es el archivo que corre cada mañana. La salida tiene que leerse en dos minutos o nadie la va a leer.</p>
+
+      <pre><code>Eres mi comprador de medios de Meta. Corre el escaneo diario.
+
+1. Baja el desempeño de ayer a nivel campaña, conjunto y anuncio:
+   gasto, compras, valor de conversión, ROAS, costo por compra, CPM,
+   CTR de liga, frecuencia. Compara cada métrica contra el promedio
+   de 7 días y el de 30.
+
+2. Lee contexto/benchmarks.md y clasifica cada anuncio activo:
+   - MATAR: cruzó una regla de apagado. Di cuál y con qué números.
+   - VIGILAR: se está degradando pero todavía no cruza el umbral.
+   - ESCALAR: cumple la regla de escalamiento completa.
+   - DEJAR: está bien, no lo toques.
+
+3. Revisa fatiga: para cada anuncio con más de 7 días activo, compara
+   CTR y frecuencia de los últimos 3 días contra sus primeros 7. Si el
+   CTR cayó por encima del umbral o la frecuencia rebasó el máximo,
+   márcalo aunque el retorno todavía aguante.
+
+4. Revisa el archivo de memoria antes de recomendar nada. Si ya
+   propusimos algo parecido y salió mal, dilo y no lo repitas.
+
+Formato de salida, en este orden:
+- Una línea de estado: gasto de ayer, ROAS, compras, contra 7 días.
+- LO QUE HARÍA HOY: máximo 3 acciones, cada una con el anuncio o
+  conjunto exacto, el movimiento y el número que lo justifica.
+- Tabla corta de lo que está en VIGILAR.
+- Cualquier anomalía: gasto que se disparó, entrega que se cayó,
+  anuncio rechazado, píxel sin eventos.
+
+Nada de párrafos. Nada de recomendaciones sin cifra que las sostenga.
+No ejecutes ningún cambio. Solo propón.</code></pre>
+
+      <h2>El flujo semanal</h2>
+
+      <p>El diario mantiene la cuenta viva. El semanal es el que evita que la cuenta se estanque.</p>
+
+      <pre><code>Corre la auditoría semanal.
+
+1. Desempeño de los últimos 7 días contra los 7 anteriores y contra
+   los 30 previos: gasto, ROAS, costo por compra, volumen de compras,
+   CPM. Di si la tendencia es de mejora, deterioro o ruido.
+
+2. Estructura: cuántos conjuntos activos, cuántos anuncios por
+   conjunto, cuánto gasto se concentra en el top 3 de anuncios. Si más
+   del [X]% del gasto vive en un solo creativo, es un riesgo y lo
+   dices.
+
+3. Inventario creativo: cuántos anuncios llevan más de 14 días,
+   cuántos entraron esta semana, y cuántos ángulos distintos están
+   corriendo de verdad (no variaciones del mismo).
+
+4. Fugas: conjuntos con gasto y cero compras en 7 días, audiencias
+   solapadas, anuncios activos que ya no reciben entrega.
+
+5. Plan de la semana: 3 o 4 acciones priorizadas por impacto en
+   dinero, cada una con el número que la justifica y qué esperamos
+   que pase. Escribe cada una como entrada nueva en memoria.md con
+   la hipótesis, para poder calificarla el próximo lunes.
+
+Cierra calificando las acciones de la semana pasada: qué pasó de
+verdad contra lo que esperábamos.</code></pre>
+
+      <h2>Inteligencia de competencia</h2>
+
+      <p>La biblioteca de anuncios de Meta es pública y es la fuente más subestimada que existe. Cualquier anuncio activo de cualquier marca se puede consultar. El conector oficial trae una búsqueda de esa biblioteca, así que el agente la puede leer directo.</p>
+
+      <p>Lo que le pido, una vez por semana:</p>
+
+      <pre><code>Busca en la biblioteca de anuncios los anunciantes [lista de 5 a 8
+competidores reales] en [país]. Para cada uno:
+
+- Cuántos anuncios tiene activos y desde cuándo corre cada uno. Un
+  anuncio con más de 60 días activo es una señal fuerte: nadie
+  sostiene gasto en algo que no funciona.
+- Formato dominante: video, imagen, carrusel, colección.
+- Los primeros 3 segundos de cada video y el primer renglón de cada
+  copy. Agrúpalos por tipo de gancho.
+- Qué oferta están empujando: descuento, envío gratis, garantía,
+  bundle, prueba.
+- Qué ángulo apareció este mes y no estaba el mes pasado.
+
+Cierra con: qué ángulo están corriendo todos y nosotros no, y qué
+ángulo estamos corriendo nosotros y nadie más. Los dos son
+información, por razones opuestas.</code></pre>
+
+      <p>Esa última pregunta es la que más ha rendido en las cuentas que opero. Un ángulo que todos corren suele estar validado. Un ángulo que solo corres tú puede ser tu ventaja o puede ser que ya lo probaron y no sirve.</p>
+
+      <h2>El brief creativo</h2>
+
+      <p>El agente no diseña. Escribe el brief con el que tu editor o tu diseñador produce, y lo escribe con evidencia.</p>
+
+      <p>Le doy los tres anuncios con mejor retorno y los tres peores del mes, y le pido que desarme cada uno por variable: formato, qué tan protagonista es el producto, color y contraste, composición, tipo de gancho en los primeros tres segundos, estructura del copy y llamado a la acción. De ahí sale la hipótesis de qué variable está haciendo la diferencia.</p>
+
+      <p>El brief final trae el ángulo, el gancho literal de los primeros tres segundos, la estructura por bloques con duración, el llamado a la acción, y qué variable estamos probando contra el creativo ganador actual. Sin esa última línea, no es una prueba: es contenido nuevo y ya.</p>
+
+      <h2>Las reglas de seguridad, que no son negociables</h2>
+
+      <p>Esto es lo que separa un agente que puedes dejar corriendo de uno que te va a costar dinero.</p>
+
+      <ul>
+        <li><strong>Lectura por default.</strong> El agente empieza sin permiso de escritura. Se lo das cuando ya llevas semanas leyendo lo que propone y coincides con él.</li>
+        <li><strong>Todo nace en pausa.</strong> Campañas, conjuntos y anuncios se crean pausados. Prender es un clic humano en el Administrador de anuncios.</li>
+        <li><strong>Cero subidas de presupuesto automáticas.</strong> Nunca. El agente propone el movimiento con su justificación; tú lo ejecutas.</li>
+        <li><strong>Media solo por URL pública.</strong> El video o la imagen se sube por liga accesible, no desde tu disco.</li>
+        <li><strong>Un solo cambio por conjunto a la vez.</strong> Si mueves presupuesto, audiencia y creativo el mismo día, ya no vas a saber qué causó qué.</li>
+      </ul>
+
+      <h2>Lo que no arregla</h2>
+
+      <p>Un agente no salva una oferta que no jala. Si tu costo por adquisición está veinte por ciento arriba de lo que aguanta tu margen, ninguna optimización de cuenta te va a cerrar ese hueco: el problema está en el precio, en la página de destino o en el producto.</p>
+
+      <p>Tampoco sustituye el criterio de qué probar. El agente te dice con precisión qué está pasando y qué dejó de funcionar. Qué apuesta hacer el mes que viene sigue siendo tuya, y esa es la parte por la que te pagan.</p>
+
+      <p>Lo que sí te devuelve son las dos horas diarias de revisión que hoy o no haces, o haces mal, o haces tarde. Empieza por el flujo diario, vívelo una semana leyéndolo con la cuenta abierta al lado, y no automatices nada hasta que dos días seguidos el agente vea lo mismo que tú.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

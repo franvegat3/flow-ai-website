@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La matriz de decisión — Guías Flow AI</title>
+  <meta name="description" content="Deja de dar vueltas. Le das a Claude cualquier decisión y arma un marco de puntuación ponderada para que veas la respuesta." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/matriz-de-decision/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La matriz de decisión" />
+  <meta property="og:description" content="Deja de dar vueltas. Le das a Claude cualquier decisión y arma un marco de puntuación ponderada para que veas la respuesta." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/matriz-de-decision/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Negocio</span></div>
+      <h1>La matriz de decisión</h1>
+      <p class="lead">Deja de dar vueltas. Le das a Claude cualquier decisión y arma un marco de puntuación ponderada para que veas la respuesta.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Llevas tres semanas dándole vueltas a lo mismo. Lo platicaste con tu pareja, con dos amigos y contigo mismo en el coche. Y sigues exactamente donde empezaste.</p>
+
+      <p>No es que te falte información. Es que estás sosteniendo siete factores en la cabeza al mismo tiempo y cada día uno de ellos pesa distinto, según cómo amaneciste. El lunes el dinero manda. El jueves manda el miedo. La baraja se revuelve sola.</p>
+
+      <p>Una matriz de decisión rompe eso por una razón mecánica: te obliga a fijar los pesos <em>antes</em> de ver los resultados. Una vez que el peso está escrito, ya no se puede mover para que gane la opción que querías que ganara.</p>
+
+      <p>Y hay algo que vale decir de entrada: el costo de una decisión mala casi siempre es menor que el costo de no decidir. La indecisión es la opción más cara del menú y no aparece en ninguna columna.</p>
+
+      <h2>El prompt completo</h2>
+
+      <p>Es un prompt de un solo uso. Lo pegas en un chat nuevo, describes tu decisión y te lleva de la mano por los seis pasos.</p>
+
+      <pre><code>Eres mi arquitecto de decisiones. Tu trabajo es tomar cualquier decisión en
+la que esté atorado y convertirla en un marco con puntaje, para que deje de
+dar vueltas y vea la respuesta.
+
+Cuando te describa mi decisión, llévame por este proceso:
+
+## PASO 1 — ACLARA LA DECISIÓN
+
+Reformula mi decisión en una sola frase limpia.
+Identifica la tensión de fondo: qué es lo que de verdad la hace difícil.
+Si mis opciones no están claras, ayúdame a definirlas. Normalmente son dos
+o tres, e incluye "no hacer nada" si aplica.
+
+## PASO 2 — SACA LOS FACTORES QUE IMPORTAN
+
+Con lo que te dije, extrae de 5 a 8 factores que deberían mandar en esta
+decisión. Pueden ser: impacto en dinero, tiempo que consume, nivel de
+riesgo, qué tan reversible es, qué tanto me acerca a mi objetivo de largo
+plazo, costo emocional, costo de oportunidad, impacto en otras personas, o
+cualquiera propio de mi caso.
+
+Pregúntame si quitaría o agregaría alguno antes de seguir.
+
+## PASO 3 — PONLE PESO A CADA FACTOR
+
+Asigna a cada factor un peso del 1 al 5 según cuánto debería pesar en ESTA
+decisión. 5 es crítico, 1 es bueno saberlo pero no define nada.
+Explica por qué le pusiste ese peso a cada uno. Yo los puedo ajustar.
+
+No sigas hasta que yo confirme los pesos.
+
+## PASO 4 — CALIFICA CADA OPCIÓN
+
+Califica cada opción contra cada factor, del 1 al 10.
+Da tu razón en una sola frase por cada calificación.
+Arma una tabla clara con las columnas: Factor, Peso, Opción A, Opción B.
+Multiplica calificación por peso y suma los totales al final.
+
+## PASO 5 — EL VEREDICTO
+
+Dime:
+- Qué opción gana y por cuánto
+- Cuál es el factor que más está empujando el resultado
+- Cuál es el factor bisagra: el único que, si cambia, voltea el resultado
+- Una pregunta de contraste: "¿este resultado se siente bien? Si no, eso
+  también nos dice algo"
+
+## PASO 6 — LA PRUEBA 10/10/10
+
+Pregúntame cómo me voy a sentir con esta decisión en 10 minutos, en 10
+meses y en 10 años. Usa mis respuestas para confirmar o para cuestionar
+el resultado de la matriz.
+
+## REGLAS
+
+- Nunca me digas "depende". Comprométete con una recomendación.
+- Si de verdad está muy parejo, dilo y dime exactamente qué información
+  adicional rompería el empate.
+- Si estoy complicando algo simple, dímelo y simplifícalo.
+- Sé directo. Vine a decidir, no a sentirme bien por no decidir.
+- Al terminar el análisis pregúntame: "¿listo para comprometerte, o quieres
+  que le hagamos prueba de estrés a alguna opción?"</code></pre>
+
+      <h2>Los dos pasos que la gente se brinca</h2>
+
+      <h3>Confirmar los pesos antes de ver puntajes</h3>
+
+      <p>Esta es la regla que sostiene todo el ejercicio. Si ves primero los resultados y después ajustas los pesos, no hiciste una matriz: hiciste una justificación. Por eso el prompt se detiene ahí y pide tu confirmación explícita.</p>
+
+      <h3>El factor bisagra</h3>
+
+      <p>Saber qué opción gana sirve poco. Saber cuál es el único factor que voltearía el resultado sirve mucho, porque te dice dónde vale la pena investigar más. Si el resultado depende de si el proveedor entrega en seis semanas o en doce, ya sabes qué correo mandar mañana en vez de seguir pensando.</p>
+
+      <div class="callout-box">
+        <p><strong>La señal que casi nadie sabe leer:</strong> si el resultado te sorprende, o peor, si te decepciona que haya ganado esa opción, esa decepción es el dato. Significa que ya tenías una respuesta y que uno de los pesos que escribiste no era honesto. No taches la matriz: regresa al paso 3 y pregúntate cuál factor calificaste con la cabeza en vez de con la verdad.</p>
+      </div>
+
+      <h2>Dónde pega más</h2>
+
+      <p>Decisiones de carrera: aceptar un puesto, quedarte, irte por tu cuenta. Decisiones de negocio: cuándo lanzar, a quién contratar primero, qué precio poner. Compras grandes: rentar o comprar, en qué zona. Y decisiones de vida: mudarte, estudiar algo, tomar un riesgo.</p>
+
+      <p>El caso de operación donde más rinde es la selección de proveedor o de herramienta. Es la decisión que más se toma mal en las empresas, porque el que decide llega con una favorita y la junta se convierte en buscar argumentos para ella. Cuando los pesos se fijan antes —integración con lo que ya tienes en 5, costo anual en 4, tiempo de implementación en 4, soporte en español en 3— la conversación cambia de tono. Ya no se discute qué herramienta es mejor, se discute si el peso está bien puesto. Y esa discusión sí se puede cerrar.</p>
+
+      <h2>Cuándo no usarla</h2>
+
+      <p>Si la decisión es reversible y barata, no armes matriz: decide y sigue. El marco cuesta veinte minutos y solo se justifica cuando desandar el camino cuesta más que eso.</p>
+
+      <p>Y si lo que tienes no es una decisión entre opciones sino una idea que quieres validar, este no es el prompt. Ahí va <a href="/guias/abogado-del-diablo/">el abogado del diablo</a>, que busca por dónde se cae. Cuando la decisión es grande y quieres varias perspectivas antes de puntuar, <a href="/guias/consejo-de-asesores-para-decisiones/">el consejo de asesores</a> te da las voces y luego traes el resultado aquí para ponerle números.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

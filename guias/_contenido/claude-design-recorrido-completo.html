@@ -1,0 +1,210 @@
+      <p>Hay un tipo de trabajo que la IA no resolvía y que consume una cantidad absurda de tiempo en cualquier empresa chica: lo visual. La propuesta que se ve hecha en Word. El one-pager que lleva tres semanas en la lista de pendientes de alguien. La landing que no existe porque cotizarla salía en varios miles.</p>
+
+      <p>Claude Design ataca eso. Describes lo que quieres, subes tu marca, y sale una pieza terminada: presentación, landing page, prototipo interactivo, gráficos, wireframes. No es un generador de imágenes bonitas —genera documentos y páginas con estructura, que después puedes editar y exportar a donde trabajes.</p>
+
+      <p>Llevo un rato usándolo en trabajo real de clientes. Esto es cómo funciona, qué exporta, siete prompts que puedes copiar tal cual, y dónde te vas a estrellar.</p>
+
+      <h2>Dónde está y qué necesitas</h2>
+
+      <p>Vive en <a href="https://claude.ai/design" target="_blank" rel="noopener">claude.ai/design</a>, separado del chat. No está en el plan gratuito: necesitas un plan de paga, y consume un límite de uso semanal propio, independiente del que gastas conversando. Eso último importa más de lo que parece: puedes toparlo en Design sin haber tocado tu límite de chat, y viceversa.</p>
+
+      <h2>El recorrido, en cinco pasos</h2>
+
+      <ol>
+        <li><strong>Creas un proyecto.</strong> Cada pieza vive en su propio proyecto con su contexto.</li>
+        <li><strong>Cargas el contexto.</strong> Y este es el paso que decide todo. Sube capturas de diseños que te gusten, tu manual de marca en PDF, documentos existentes en Word, PowerPoint o Excel, bocetos hechos a mano. Entre más contexto visual le des, menos genérico sale.</li>
+        <li><strong>Describes lo que quieres:</strong> qué tipo de pieza, para quién, con qué estilo y con qué contenido.</li>
+        <li><strong>Refinas.</strong> Aquí hay tres formas y no son equivalentes. El chat sirve para cambios grandes de dirección. Los comentarios sobre el elemento —clic directo en lo que quieres cambiar— sirven para precisión. Y puedes editar directo en el lienzo lo que sea trivial. Describir en el chat un cambio chico es la forma más lenta de hacerlo.</li>
+        <li><strong>Exportas.</strong></li>
+      </ol>
+
+      <p>Los destinos de exportación son varios y cada uno tiene su caso: <strong>Canva</strong> si tu equipo va a editarlo después, <strong>PowerPoint</strong> si va a una junta, <strong>PDF</strong> si va por correo, <strong>HTML</strong> si es una página que vas a publicar, un <strong>enlace compartible</strong> de solo lectura si solo quieres que lo vean, o pasarlo a <strong>Claude Code</strong> si lo que quieres es un sitio funcional de verdad y no una maqueta.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decir desde el primer prompt en qué pantalla se va a ver. Si no especificas escritorio, tableta o móvil, va a asumir una y las otras dos van a quedar mal. Y pedir la adaptación después, cuando la pieza ya está armada, cuesta calidad —es rehacer decisiones de composición que ya se tomaron.</p>
+      </div>
+
+      <h2>Siete prompts para robarte</h2>
+
+      <h3>1. One-pager de empresa</h3>
+
+      <pre><code>Diseña un one-pager profesional de mi empresa.
+
+Empresa: [NOMBRE]
+Qué hacemos: [UNA SOLA ORACIÓN]
+Cifras clave: [3 a 5 números que impresionen — facturación, clientes,
+crecimiento, años]
+Productos o servicios: [LISTA DE 3 O 4]
+Cliente objetivo: [QUIÉN NOS COMPRA]
+Contacto: [CORREO, SITIO, TELÉFONO]
+
+Estilo: limpio, corporativo sin ser aburrido. Usa los colores de mi marca
+y mi logo (adjunto).
+
+Esto se lo voy a mandar por correo a un socio potencial o a un inversionista:
+tiene que entender en diez segundos qué hacemos y por qué importamos.
+
+Formato carta, para ver en pantalla y para imprimir. Exporta como PDF.</code></pre>
+
+      <h3>2. Paquete de gráficos para redes</h3>
+
+      <pre><code>Créame un paquete de 5 plantillas de redes sociales para mi marca.
+
+Marca: [NOMBRE]
+Colores: [LOS TUYOS]
+Estilo: [limpio / con carácter / minimalista / cálido]
+Plataforma: Instagram, en 1080x1080 y 1080x1350
+
+Necesito:
+1. Post de frase — titular fuerte, fondo de marca, mínimo. Texto: "[TU FRASE]"
+2. Portada de carrusel — primera lámina que detenga el scroll.
+   Título: "[TU TÍTULO]"
+3. Lámina interior de carrusel — layout limpio para el contenido, con texto
+   de relleno, consistente con la portada.
+4. Gráfico promocional — anunciando [TU PRODUCTO U OFERTA], con precio,
+   beneficio principal y llamada a la acción.
+5. Tarjeta de testimonio — cita de cliente, con nombre y puesto de relleno.
+
+Las 5 tienen que verse como si salieran de la misma marca. Exporta a Canva
+para poder reusarlas como plantillas.</code></pre>
+
+      <h3>3. Landing page desde cero</h3>
+
+      <pre><code>Diseña una landing page pensada para convertir.
+
+Producto: [QUÉ VENDES]
+Precio: [PRECIO o "gratis, capto correos"]
+Audiencia: [QUIÉN ES Y QUÉ PROBLEMA TIENE]
+Objetivo: [REGISTROS / COMPRAS / LISTA DE ESPERA]
+
+Secciones, en este orden:
+1. Encabezado: titular que enganche, subtitular, botón de acción, imagen
+   o mockup del producto.
+2. Problema: 3 dolores concretos de mi audiencia, escritos con emoción.
+3. Solución: qué hace mi producto, 3 o 4 beneficios con ícono.
+4. Prueba social: 3 tarjetas de testimonio (usa texto de relleno).
+5. Cómo funciona: proceso visual de 3 pasos.
+6. Precio: tarjeta clara con lista de lo que incluye y botón.
+7. Preguntas frecuentes: 5, con respuesta desplegable.
+8. Cierre: última llamada a la acción con urgencia real, no inventada.
+
+Estilo: moderno, limpio, mucho espacio en blanco, botones que resalten.
+Responsiva: primero móvil, después escritorio.
+
+Exporta como HTML para poder publicarla, y también a Canva para que mi
+equipo pueda editarla.</code></pre>
+
+      <h3>4. Rediseñar un documento que ya existe</h3>
+
+      <pre><code>[Sube tu documento actual: Word, PowerPoint, PDF o una captura]
+
+Esta es mi [propuesta / reporte / presentación / one-pager] actual. El
+contenido está bien. El diseño da pena.
+
+Redisénalo por completo:
+- Conserva TODO el contenido. No borres ni reescribas nada si no te lo pido.
+- Que se vea como si lo hubiera hecho una agencia de diseño.
+- Colores de mi marca: [LOS TUYOS]
+- Mejor tipografía, mejor espaciado, mejor jerarquía visual.
+- Agrega íconos o elementos visuales donde haya bloques de texto muy densos.
+- Las gráficas que se vean modernas, no como gráficas por defecto de Excel.
+- Que se lea bien en pantalla y también impreso.
+
+Exporta en el mismo formato que subí.</code></pre>
+
+      <h3>5. Mockups de producto</h3>
+
+      <pre><code>Necesito mockups que hagan ver real y profesional mi [app / producto
+digital / curso / servicio].
+
+Qué estoy construyendo: [DESCRÍBELO]
+Etapa: [IDEA / EN DESARROLLO / YA LANZADO]
+
+Crea:
+1. Mockup principal: mi producto en la pantalla de una laptop o un celular,
+   del tipo que va en el encabezado de una landing.
+2. Muestra de funciones: 3 o 4 pantallas distintas del producto, acomodadas
+   de forma atractiva.
+3. Antes y después: pantalla dividida con el método viejo (manual, tardado,
+   desordenado) contra el nuevo con mi producto.
+4. Prueba social: el producto con una cita de cliente encima, listo para redes.
+
+Estilo: limpio, moderno, marcos de dispositivo realistas, fondo claro con
+sombras suaves. Que parezca un producto que ya usan personas reales.
+
+Exporta como PNG con fondo transparente donde se pueda, y como plantilla
+de Canva.</code></pre>
+
+      <h3>6. Plantilla de newsletter</h3>
+
+      <pre><code>Diseña una plantilla reutilizable de newsletter por correo para mi marca.
+
+Marca: [NOMBRE]
+Frecuencia: [SEMANAL / QUINCENAL / MENSUAL]
+Audiencia: [QUIÉN LA LEE]
+Contenido típico: [ej. "tips + novedades de producto + un recurso destacado"]
+
+Estructura:
+1. Encabezado: logo + nombre del newsletter + fecha.
+2. Sección principal: artículo o tip destacado, con titular fuerte y un
+   párrafo corto de entrada.
+3. Bloques de contenido: 3 secciones, cada una con imagen chica, titular,
+   descripción de 2 líneas y enlace de "leer más".
+4. Bloque promocional: tarjeta visual con titular, una oración y botón.
+5. Pie: redes, baja de suscripción y datos de la empresa.
+
+Estilo: de marca, limpio, fácil de escanear en móvil. Ancho máximo de 600
+píxeles, que es el estándar de correo.
+
+Exporta como HTML para pegarlo en mi plataforma de correo, y como imagen
+de referencia.</code></pre>
+
+      <h3>7. Prototipo interactivo</h3>
+
+      <pre><code>Constrúyeme un prototipo interactivo de mi idea de app.
+
+Nombre: [NOMBRE]
+Qué hace: [FUNCIÓN PRINCIPAL, 1 o 2 oraciones]
+Usuario objetivo: [QUIÉN LA USA]
+
+Diseña estas 5 pantallas:
+1. Bienvenida: lo primero que ve alguien nuevo — mensaje, propuesta de
+   valor y botón de empezar.
+2. Registro o acceso: correo y contraseña, o botones de acceso social.
+3. Pantalla principal: donde se ve el valor central, a lo que el usuario vino.
+4. Función estrella: lo número uno que la gente hace en la app, con la
+   interacción completa diseñada.
+5. Perfil y ajustes.
+
+Hazlo interactivo: que los botones naveguen entre pantallas de verdad.
+Usa datos de relleno realistas, no "lorem ipsum".
+Primero móvil, dimensiones de celular.
+Estilo: [ej. "limpio como Linear", "juguetón como Duolingo", "sobrio
+como Notion"]
+
+Esto es para mostrárselo a inversionistas y para pruebas con usuarios:
+tiene que sentirse como una app que alguien podría usar hoy.</code></pre>
+
+      <h2>Los tres hábitos que más me cambiaron el resultado</h2>
+
+      <ul>
+        <li><strong>Comentar sobre el elemento, no describir en el chat.</strong> "Que el titular sea más grande" en el chat es ambiguo; el mismo comentario puesto encima del titular, no. Esto solo se aprende usándolo mal primero.</li>
+        <li><strong>Empezar simple y agregar por capas.</strong> Un prompt inicial de tres páginas produce algo cargado. Uno de diez líneas produce una base limpia sobre la que sí puedes construir.</li>
+        <li><strong>Exportar a Canva cuando hay equipo.</strong> Si la pieza la va a tocar alguien más y esa persona no tiene Claude, exportarla a PDF es condenarla a morir. En Canva sigue viva.</li>
+      </ul>
+
+      <h2>Dónde no lo usaría</h2>
+
+      <p>Para un sitio web que tiene que funcionar de verdad —con formularios que guardan datos, con pagos, con contenido que cambia— esto es la maqueta, no el producto. Ahí el camino es diseñar aquí y pasarlo a Claude Code para construirlo.</p>
+
+      <p>Y para identidad de marca desde cero, tampoco. Genera piezas excelentes <em>dentro</em> de una identidad que ya existe. Si no tienes colores, tipografía ni criterio, lo que sale se va a ver competente y sin personalidad, que es exactamente el problema que tiene el noventa por ciento del diseño hecho con IA.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Llegar sin contexto y pedirle "una presentación bonita".</p>
+
+      <p>La calidad de lo que salga es proporcional a lo que subiste antes de pedir nada. Sin manual de marca, sin referencias visuales, sin el documento original, el modelo escoge por ti —y escoge el promedio, que es la definición de genérico.</p>
+
+      <p>La preparación es de una sola vez: junta tu logo, tus colores, tu tipografía y tres capturas de diseños que te gusten y que sean de tu industria. Con eso cargado, la primera versión de cualquier pieza ya sale usable. Sin eso, vas a iterar seis veces para llegar al mismo lugar.</p>
+
+      <p>Si lo tuyo son presentaciones específicamente, el flujo de investigación primero está en <a href="/guias/presentaciones-con-ia-en-minutos/">presentaciones con IA en minutos</a>. Y para producción de redes en volumen, <a href="/guias/canva-ya-no-es-la-misma/">Canva</a> sigue siendo la herramienta correcta.</p>

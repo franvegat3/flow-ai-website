@@ -1,0 +1,63 @@
+      <p>El menú de modelos es la primera cosa que la gente configura mal y la última que revisa. Y el costo no se ve: se paga en límites que se agotan a media tarde, o en respuestas mediocres para trabajo que sí necesitaba pensarse.</p>
+
+      <p>Hay dos errores, y son opuestos. El primero es dejar todo en el modelo más grande porque "es el mejor": quemas tu cuota clasificando correos. El segundo es andar cambiando de modelo en cada mensaje, calculando: pierdes más tiempo decidiendo del que ahorras.</p>
+
+      <p>La solución no es una tabla. Es una regla que se aplica en cinco segundos y un puñado de hábitos que valen más que la elección del modelo.</p>
+
+      <h2>Qué hace cada uno, en una línea</h2>
+
+      <div class="plugin-card">
+        <h3>Haiku <code>el de volumen</code></h3>
+        <p>Rápido y barato. Para tareas simples que corres muchas veces: clasificar, etiquetar, extraer campos, resumir algo corto. En un flujo automatizado es el que pones a leer mientras el modelo caro piensa.</p>
+        <p class="plugin-for"><strong>Dónde truena:</strong> ventana de contexto más chica que la de sus hermanos. Te vas a topar con eso justo cuando le mandes el documento grande.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Sonnet <code>el de todos los días</code></h3>
+        <p>El caballo de batalla. Escritura, análisis, investigación con razonamiento, flujos de varios pasos. Es el que Anthropic recomienda por defecto y es el que resuelve la enorme mayoría de lo que le pides en un día normal.</p>
+        <p class="plugin-for"><strong>Dónde truena:</strong> en problemas genuinamente difíciles se queda a la mitad de un nivel. Cuando sientas que "casi", ahí es donde sube.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Opus <code>el agéntico</code></h3>
+        <p>Para trabajo que corre solo por horas: análisis de muchos archivos, refactorizaciones, agentes que tienen que sostener un objetivo sin que los supervises. También para propuestas largas y decisiones que quieres que alguien piense de verdad.</p>
+        <p class="plugin-for"><strong>Dónde truena:</strong> es verboso y tiende a ampliarte el alcance de la tarea. Te arregla cosas que no pediste.</p>
+      </div>
+
+      <p>Hay un cuarto nivel por arriba de Opus para problemas de razonamiento realmente duros. No es el default de nada y cuesta lo que corresponde. El desglose completo con precios está en <a href="/guias/hoja-de-referencia-de-modelos/">la hoja de referencia</a>.</p>
+
+      <h2>La regla de cinco segundos</h2>
+
+      <p>No compares capacidades. Hazte una sola pregunta: <strong>¿esto lo podría hacer un becario aplicado siguiendo instrucciones?</strong></p>
+
+      <ul>
+        <li><strong>Sí, sin pensarlo</strong> —clasificar, extraer, reformatear, resumir algo corto— va en Haiku.</li>
+        <li><strong>Sí, pero necesita criterio</strong> —escribir, analizar, investigar, programar algo acotado— va en Sonnet. Aquí cae el 80% de tu día.</li>
+        <li><strong>No, esto necesita a alguien con oficio</strong> —una decisión cara, un análisis de muchas fuentes, algo que va a correr sin supervisión— va en Opus.</li>
+      </ul>
+
+      <p>Y si dudas, Sonnet. Es lo bastante capaz para que la mayoría de los problemas no se le salgan, y el costo de equivocarse hacia abajo es una respuesta que rehaces en treinta segundos. El costo de equivocarse hacia arriba es tu cuota de la semana.</p>
+
+      <p>Un ejemplo de operación, para aterrizarlo. Un equipo comercial que procesa formularios de contacto: clasificar cada entrada por industria y tamaño va en Haiku, porque son cientos al mes y la tarea no tiene matiz. Redactar el primer correo de acercamiento va en Sonnet, porque ahí sí hay criterio. Y el análisis trimestral de por qué se están cayendo los tratos en la etapa tres, con el CRM y las transcripciones de llamadas encima, va en Opus. Tres tareas del mismo equipo, tres modelos, y la decisión se toma una vez y no cada día.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir de modelo a media conversación no rehace la conversación. El contexto que ya se llenó de intentos fallidos sigue ahí, y el modelo grande hereda el desorden. Si empezaste en el chico y no salió, no cambies el modelo: abre chat nuevo con el modelo que sí, y pega solo el planteamiento limpio.</p>
+      </div>
+
+      <h2>Cinco hábitos que valen más que elegir bien</h2>
+
+      <ol>
+        <li><strong>Edita el mensaje en vez de mandar otro.</strong> Cuando la respuesta salió mal, la reacción normal es escribir "no, así no". Eso deja la respuesta mala dentro del contexto para siempre. El lápiz de editar el mensaje anterior la borra y arranca de nuevo desde limpio.</li>
+        <li><strong>Junta tareas en un solo mensaje.</strong> Cinco peticiones sueltas reprocesan el contexto cinco veces. Las mismas cinco en un mensaje se procesan una. Es el hábito con mayor efecto de esta lista y el que menos gente aplica.</li>
+        <li><strong>Corta el comentario.</strong> Termina el prompt con "sin preámbulo, solo la salida". En tareas simples eso recorta buena parte de la respuesta, y lo que recorta es exactamente lo que ibas a saltarte al leer.</li>
+        <li><strong>Tema nuevo, chat nuevo.</strong> Seguir en el mismo hilo cuando ya cambiaste de asunto arrastra todo lo anterior en cada mensaje. Un chat nuevo es gratis; el contexto acumulado no.</li>
+        <li><strong>Convierte los PDF pesados a texto plano antes de subirlos.</strong> Un PDF trae maquetación, tablas y basura de formato que se cobra igual que el contenido. Un archivo de texto con lo mismo consume una fracción.</li>
+      </ol>
+
+      <h2>El error que veo en las empresas</h2>
+
+      <p>En operación real el problema casi nunca es que alguien eligió mal el modelo una vez. Es que nadie decidió nada: cada persona del equipo usa el que le tocó por defecto y nadie sabe cuánto se está gastando ni en qué.</p>
+
+      <p>Lo que sí funciona es una regla escrita en una línea: todo va en Sonnet, salvo dos cosas que van en Opus y una lista de tareas repetitivas que van en Haiku. Nombras esas excepciones y ya. Con eso, el equipo deja de decidir en cada mensaje, que es donde de verdad se pierde el tiempo.</p>
+
+      <p>Si tu problema es que topas el límite antes de que acabe la semana, la elección de modelo es solo una parte. Los otros ajustes están en <a href="/guias/4-hacks-para-gastar-menos-tokens/">esta guía</a>.</p>

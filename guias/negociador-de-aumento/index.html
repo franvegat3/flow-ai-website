@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El negociador de tu aumento — Guías Flow AI</title>
+  <meta name="description" content="Claude mina 6 meses de tu correo, tu calendario, tu Slack y tu Notion. Saca cada logro, arma tu caso con evidencia real, y te escribe un guion palabra por palabra." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/negociador-de-aumento/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El negociador de tu aumento" />
+  <meta property="og:description" content="Claude mina 6 meses de tu correo, tu calendario, tu Slack y tu Notion. Saca cada logro, arma tu caso con evidencia real, y te escribe un guion palabra por palabra." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/negociador-de-aumento/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Carrera</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Notion</span><span class="tag">Carrera</span><span class="tag">Skills</span></div>
+      <h1>El negociador de tu aumento</h1>
+      <p class="lead">Claude mina 6 meses de tu correo, tu calendario, tu Slack y tu Notion. Saca cada logro, arma tu caso con evidencia real, y te escribe un guion palabra por palabra.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi nadie pierde la negociación de su aumento en la junta. La pierde tres semanas antes, cuando se sienta a escribir sus logros y solo se acuerda de los últimos quince días.</p>
+
+      <p>Eso no es mala memoria. Es cómo funciona el trabajo: lo importante que hiciste en marzo quedó enterrado en un hilo de correo, en una junta que apareció en tu calendario, en un mensaje de tu jefe diciendo "gracias, esto nos salvó". Todo está ahí. Nadie lo va a ir a buscar por ti.</p>
+
+      <p>Lo que sigue es un sistema que sí lo va a buscar. Claude entra a tu correo, tu calendario, tu Slack y tu Notion, saca seis meses de evidencia real, y con eso arma dos cosas: un documento con tu caso y un guion palabra por palabra para la conversación. Sin inventar nada.</p>
+
+      <h2>Lo que tienes que conectar primero</h2>
+
+      <p>Esto no funciona sin acceso a tus herramientas. En Claude, entra a la configuración de conectores y autoriza los que uses de verdad para trabajar: Gmail o el correo de tu empresa, Google Calendar, Slack y Notion son los cuatro que más rinden. Si tu vida laboral vive en Microsoft 365 o en Jira, conecta esos.</p>
+
+      <p>Cada conector aporta un tipo distinto de prueba. El correo trae el reconocimiento explícito. El calendario trae la evidencia de alcance: a qué juntas te empezaron a invitar que antes no. Slack trae las veces que alguien te buscó porque eras la persona que sabía. Notion o Drive traen lo que construiste y sigue vivo. Con dos conectores ya sale algo útil. Con los cuatro sale un documento que tu jefe no puede discutir.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Llénalo con tus datos y córrelo en una conversación con los conectores activos. Es largo a propósito: cada bloque que le quites es un pedazo de tu caso que no va a existir.</p>
+
+      <pre><code>Eres mi Negociador de Aumento. Tu trabajo es revisar los ultimos 6 meses de mi
+trabajo real -correos, juntas, hilos de Slack, documentos- y construir el caso
+mas fuerte posible de por que merezco un aumento. Nada de generalidades: quiero
+un documento con evidencia concreta sacada de mi historial, y un guion palabra
+por palabra para la conversacion con mi jefe.
+
+MIS DATOS
+Nombre y puesto: [ ]
+Area y empresa: [ ]
+Jefe directo: [nombre y hace cuanto es mi jefe]
+Antiguedad: [en el puesto / en la empresa]
+Sueldo actual: [bruto mensual]
+Lo que quiero pedir: [monto o porcentaje]
+Ultimo aumento: [cuando y de cuanto]
+Proxima revision formal: [fecha, o "no hay"]
+Como esta la empresa: [creciendo / plana / recortando]
+Estoy haciendo trabajo de un nivel arriba: [si/no, cual]
+Tengo ofertas o reclutadores buscandome: [si/no, detalle]
+Herramientas donde vive mi trabajo: [correo, Slack, Notion, Jira, Drive...]
+
+FASE 1 - MINAR MI HISTORIAL
+Busca en cada herramienta conectada, de los ultimos 6 meses:
+- Correo: donde me reconocieron, agradecieron, o donde yo entregue algo grande.
+- Calendario: juntas que revelen alcance, liderazgo o exposicion con direccion.
+- Slack: cuando alguien me busco a mi por ser quien sabia del tema.
+- Notion/Docs: procesos, plantillas o documentos que yo cree y que se siguen usando.
+Para cada hallazgo guarda la fecha, quien lo dijo y la cita textual.
+
+FASE 2 - ORDENAR POR IMPACTO
+Clasifica todo en tres niveles:
+1. Impacto de negocio medible (ingreso, ahorro, tiempo, riesgo evitado).
+2. Liderazgo y crecimiento de alcance (gente, proyectos, decisiones nuevas).
+3. Confiabilidad y valor institucional (lo que se cae si yo no estoy).
+
+FASE 3 - MERCADO
+Investiga el rango de sueldo para mi puesto, mi ciudad y mi nivel. Usa las
+fuentes que apliquen a mi pais y dime cual usaste para cada dato. Damelo como
+rango bajo / medio / alto, y dime en que parte del rango estoy hoy. Si no
+encuentras datos confiables para mi mercado, dilo en vez de estimar.
+
+FASE 4 - EL DOCUMENTO
+Armalo asi:
+- Encabezado (mi nombre, puesto, periodo cubierto).
+- Resumen ejecutivo de 3 o 4 frases.
+- 5 a 8 logros, cada uno con fecha, que hice, que resulto y de donde salio la
+  evidencia.
+- Como crecio mi alcance vs. hace 6 meses.
+- Contexto de mercado.
+- La peticion, explicita y con numero.
+
+FASE 5 - EL GUION
+Escribemelo palabra por palabra, en cuatro partes:
+- Apertura (60 segundos): por que pedi la junta y el marco.
+- Recorrido (2 a 3 minutos): los logros en orden narrativo, no como lista.
+- La peticion (15 segundos): el numero, sin adornos.
+- Y despues: callarme. Escribelo como instruccion explicita.
+Luego dame la respuesta exacta para seis escenarios:
+1. Dice que si.
+2. "Tengo que consultarlo con alguien mas".
+3. "No hay presupuesto".
+4. Ofrece menos de lo que pedi.
+5. Cuestiona mi desempeño.
+6. No contesta nada concreto y la junta se acaba.
+
+FASE 6 - SEGUIMIENTO
+Escribeme el correo de las siguientes 24 horas: que se acordo, cual es el
+siguiente paso, y con que fecha vuelvo a tocar el tema.
+
+REGLAS QUE NO SE ROMPEN
+- Cada logro tiene que estar respaldado por algo que encontraste en mis
+  herramientas. No adivines. No rellenes.
+- Nunca infles ni exageres. Conservador y especifico le gana a agresivo y vago.
+- Fecha y referencia en cada punto.
+- Tono: seguro y profesional. Ni con derecho, ni disculpandome, ni amenazando.
+- Si la evidencia salio flaca, dimelo tal cual: "con lo que pude ver, esto es lo
+  que hay", y sugiereme que documentar en los proximos 60 dias.</code></pre>
+
+      <h2>Por qué el guion importa más que el documento</h2>
+
+      <p>El documento le sirve a tu jefe para defenderte con su propio jefe. El guion te sirve a ti para no arruinarlo en los primeros noventa segundos.</p>
+
+      <p>La parte del guion que más se ignora es la instrucción de callarse después de decir el número. Es incómoda y es la que más dinero mueve. La mayoría de la gente dice su cifra y de inmediato la suaviza: "o sea, obviamente entiendo si no se puede ahorita". Acabas de negociar contra ti mismo antes de que el otro abra la boca. Practica el silencio en voz alta, solo, antes de la junta. Suena ridículo. Funciona.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los rangos de sueldo que salgan de una búsqueda web pueden estar desfasados o ser de otro mercado. Trátalos como un punto de partida y contrástalos con lo que sepas de gente en tu mismo puesto y ciudad. Si Claude te da una cifra sin decirte de dónde salió, pídesela; si no la puede sostener, sácala del documento. Un número que tu jefe puede desmontar en treinta segundos te tira todo lo demás.</p>
+      </div>
+
+      <h2>Cómo lo usaría alguien que dirige un equipo</h2>
+
+      <p>Le doy la vuelta al caso, porque este sistema es igual de útil del otro lado de la mesa. Si tú apruebas aumentos, el mismo prompt —cambiando "mi trabajo" por "el trabajo de esta persona"— te arma la carpeta de evidencia para defender a alguien de tu equipo ante finanzas.</p>
+
+      <p>El problema real en la mayoría de las empresas no es que no haya presupuesto. Es que la revisión anual llega y el gerente escribe tres bullets vagos porque tampoco se acuerda. Ahí se pierden las promociones de la gente buena. Un área comercial que corre esto por persona antes del ciclo de revisión entra con evidencia fechada y sale con las aprobaciones que quería.</p>
+
+      <h2>El orden en que conviene hacerlo</h2>
+
+      <p>No corras esto la noche antes de la junta. La secuencia que funciona es otra:</p>
+
+      <ol>
+        <li><strong>Corre las fases 1 a 3 primero, solas.</strong> Léelas con calma. Vas a descubrir dos o tres cosas que hiciste y ya se te habían olvidado.</li>
+        <li><strong>Edita a mano.</strong> Tú sabes cuál de esos logros pesó de verdad y cuál solo se ve bonito. Bórrale los rellenos.</li>
+        <li><strong>Pide el documento y el guion con lo que quedó.</strong> Más corto y más fuerte.</li>
+        <li><strong>Agenda la junta.</strong> Con asunto claro, no "quiero platicar contigo": nadie llega bien a una junta sin tema.</li>
+      </ol>
+
+      <p>Y si el ejercicio te devuelve poca evidencia, esa es la respuesta más valiosa que te va a dar. No significa que no trabajaste. Significa que tu trabajo no está dejando rastro donde alguien lo pueda ver, y eso se arregla en los siguientes seis meses. Si estás en ese punto, empieza por <a href="/guias/cazador-de-huecos-de-conocimiento/">mapear qué te falta</a> antes de pedir nada.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

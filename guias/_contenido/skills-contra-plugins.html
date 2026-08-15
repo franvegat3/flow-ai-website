@@ -1,0 +1,82 @@
+      <p>El patrón que veo en cada empresa que empieza con Claude es el mismo: alguien entra a la biblioteca de plugins, instala ocho en una tarde, y tres semanas después no usa ninguno. Mientras tanto sigue escribiendo el mismo párrafo de contexto en cada chat.</p>
+
+      <p>La confusión de fondo es que skills y plugins suenan a lo mismo y no lo son. No compiten por el mismo problema, y elegir mal el punto de entrada es lo que hace que todo el esfuerzo se muera antes del mes.</p>
+
+      <h2>La diferencia, en una frase cada uno</h2>
+
+      <p>Una <strong>skill</strong> le enseña a Claude <em>cómo</em> quieres que se haga una cosa. Tu forma de escribir, tu proceso, el orden que sigues, lo que nunca aceptas en un entregable.</p>
+
+      <p>Un <strong>plugin</strong> le da <em>más de qué agarrarse</em>: es un paquete armado que trae varias skills, comandos y conectores a herramientas reales, todo de un área de trabajo.</p>
+
+      <p>Puesto de otra forma: la skill trae criterio, el plugin trae equipo. Un plugin sin criterio te da un Claude con acceso a tu CRM que redacta seguimientos genéricos. Una skill sin acceso te da un Claude que sabe exactamente cómo escribes pero no tiene los datos.</p>
+
+      <h2>La misma tarea, en los dos formatos</h2>
+
+      <p>Tomemos algo concreto: preparar la llamada de mañana con un prospecto.</p>
+
+      <ul>
+        <li><strong>Con skill:</strong> le pegas las notas del CRM y ella arma el brief con tu estructura —qué se dijo la vez pasada, qué objeción se quedó abierta, las tres preguntas que sí mueven la venta, y la señal de que hay que dejar el trato ir. Tú traes los datos.</li>
+        <li><strong>Con plugin:</strong> entra solo a HubSpot, saca el historial, revisa el hilo de correo, busca noticias recientes de la empresa y arma el brief. No le pegas nada. Pero la estructura es la del plugin, no la tuya.</li>
+      </ul>
+
+      <p>El punto no es cuál es mejor. Es que el plugin resuelve el acceso y la skill resuelve el criterio, y en una operación de verdad necesitas los dos. Lo que cambia es el orden.</p>
+
+      <h2>Cómo se instala cada uno</h2>
+
+      <p>Una skill se crea desde Claude mismo: en la app, el botón <strong>+</strong> junto al chat y luego crear una skill; en configuración también aparecen bajo personalización. Le describes lo que quieres, lo guardas con un nombre corto y queda disponible como comando. En Claude Code es un archivo <code>SKILL.md</code> dentro de <code>.claude/skills/</code>.</p>
+
+      <p>Un plugin se instala desde la biblioteca de plugins en Cowork, o con <code>claude plugin install</code> en la terminal. Después de instalarlo hay un paso de personalización que casi nadie hace, y es justo el que decide si el plugin te sirve o no; lo cubro en <a href="/guias/personalizar-plugins/">cómo personalizar los plugins de Claude</a>.</p>
+
+      <h2>Con cuál empezar: la skill</h2>
+
+      <p>Si estás arrancando, una sola skill que uses todas las semanas te va a cambiar más el trabajo que diez plugins que nunca configuraste. La razón es aburrida pero decide todo: la skill la escribes tú, así que ya sabes qué esperar de ella. El plugin llega con supuestos de alguien más y te toma dos semanas descubrir cuáles no aplican en tu empresa.</p>
+
+      <p>La forma de elegir cuál: piensa en la tarea que hiciste esta semana, la semana pasada y la anterior. Esa. No la más glamorosa, la más repetida.</p>
+
+      <p>Este es el ejemplo que uso para arrancar equipos, completo y listo para pegar:</p>
+
+      <pre><code>---
+name: triaje-de-bandeja
+description: Revisa el correo de las últimas 24 horas, lo clasifica por
+  urgencia y deja borradores de respuesta. Úsala cuando el usuario pida
+  revisar su bandeja, ponerse al día con el correo o priorizar
+  pendientes del día.
+---
+
+La primera vez pregunta y guarda: en qué trabaja, quiénes son las cinco
+personas cuyo correo nunca puede esperar, qué temas son urgentes de
+verdad en su rol, qué cosas contesta siempre igual, y cómo firma.
+
+CLASIFICACIÓN. Tres cubetas, en este orden:
+URGENTE — algo se rompe o se pierde dinero si no contesta hoy.
+NECESITA ACCIÓN — le toca hacer algo, pero no hoy. Di para cuándo.
+INFORMATIVO — se lee y se archiva. Una línea por correo, agrupados.
+
+Nada va en URGENTE por el tono del remitente. Va por consecuencia real.
+
+BORRADORES. Para todo lo de las dos primeras cubetas, deja el borrador
+escrito. Corto, directo, con su firma. Si falta un dato para poder
+contestar, di cuál falta en vez de inventarlo.
+
+LO QUE SE ATORÓ. Marca los hilos donde él quedó de responder y ya
+pasaron más de tres días. Esa lista va hasta arriba, antes de todo.
+
+REGLAS. Máximo 300 palabras de resumen. No resumas los correos que
+clasificaste como informativos: solo el asunto y de quién. Si un hilo
+tiene más de diez mensajes, di la decisión pendiente, no la historia.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la parte de la skill que decide si sirve no son las instrucciones, es la línea de <code>description</code>. Ahí es donde le dices a Claude cuándo activarla solo. Si escribes "skill de correo" y ya, nunca se va a disparar y vas a acabar invocándola a mano. Si algo no te está jalando, empieza por ahí: lo desarmo en <a href="/guias/por-que-no-jala-tu-skill/">por qué tu skill de Claude no está jalando</a>.</p>
+      </div>
+
+      <h2>Cuándo sí toca el plugin</h2>
+
+      <p>Cuando ya tienes una skill funcionando y el cuello de botella dejó de ser el criterio: ahora es que tú le estás pegando los datos a mano. Ahí el plugin sí paga, porque trae los conectores del área ya armados y probados.</p>
+
+      <p>La otra señal clara: cuando el trabajo cruza tres o cuatro herramientas en la misma tarea. Un cierre de mes que toca el ERP, el banco y la hoja de compartida no se resuelve con una skill suelta.</p>
+
+      <h2>El error que hace que nada de esto rinda</h2>
+
+      <p>Instalar antes de saber qué duele. Lo veo constante: se instalan ocho plugins, cada uno mete varias skills, y el modelo acaba con demasiadas instrucciones compitiendo por atención. El resultado es peor que no haber instalado nada, porque ahora nadie sabe por qué las respuestas empeoraron.</p>
+
+      <p>El orden que sí funciona: una skill de lo que haces cada semana, la usas quince días, y solo cuando te canses de pegar datos a mano instalas el plugin del área. Si quieres ver el catálogo antes de decidir, están todos en <a href="/guias/11-plugins-gratis-para-tu-puesto/">los 11 plugins gratis por puesto</a>.</p>

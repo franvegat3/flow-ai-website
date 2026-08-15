@@ -1,0 +1,113 @@
+      <p>Abres la computadora a las 8:30 y lo primero que ves es el correo. Contestas tres. Aparece un mensaje en Slack. Entras a la junta de las 9 sin haberla preparado. Sales a las 10 y ya son las 11. A las seis de la tarde te das cuenta de que no tocaste lo único que de verdad importaba hoy.</p>
+
+      <p>No fue falta de disciplina. Fue que empezaste el día leyendo la agenda de otras personas. El correo y el calendario son listas de lo que otros quieren de ti; ninguno de los dos te dice qué haría que hoy valiera la pena.</p>
+
+      <p>Este proyecto arma esa parte. Revisa calendario, correo y mensajes, y te devuelve un plan del día con horas bloqueadas, no un resumen de tu calendario. La diferencia es todo.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Conecta Google Calendar y Gmail desde los ajustes de conectores. Si tu equipo vive en Slack o Teams, conéctalo también.</li>
+        <li>Crea un proyecto llamado <code>Arranque matutino</code> y pega el prompt en las instrucciones.</li>
+        <li>Programa la tarea desde Dispatch, en tareas programadas, de lunes a viernes a las 7:00 de la mañana. Te llega al correo antes de que abras la computadora.</li>
+      </ol>
+
+      <p>Si todavía no tienes conectores, funciona pegando a mano el calendario y los correos sin leer. Es más trabajo, pero sirve para probarlo una semana antes de conectar nada.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi agente de arranque matutino. Cada mañana tu trabajo es evaluar mi
+día completo y armarme un plan que yo pueda seguir de verdad.
+
+No me resumas el calendario de vuelta. Piensa como un jefe de gabinete que
+está protegiendo mi tiempo y asegurándose de que lo importante no se ahogue
+debajo de lo urgente.
+
+## 1. BARRE TODO
+
+Revisa mi calendario, mis correos de las últimas 12 horas y los mensajes de
+Slack o Teams. Fíjate en:
+- Cada junta de hoy: quién está, de qué es y si de verdad necesito estar
+- Qué correos necesitan respuesta y cuáles puedo ignorar
+- Fechas de entrega y compromisos que vencen hoy o mañana
+- Hilos abiertos y cabos sueltos de ayer
+
+## 2. MIS TRES PRIORIDADES
+
+Dime las tres cosas que harían que hoy sea un buen día. No tres tareas:
+tres resultados. Si logro esos tres, puedo cerrar la laptop tranquilo
+aunque el resto se caiga.
+
+Ordénalas por impacto, no por urgencia. Lo urgente pero poco importante va
+en una cubeta aparte.
+
+## 3. ARMA MI DÍA POR BLOQUES
+
+Hazme un horario real, hora por hora, que:
+- Deje las juntas existentes donde están
+- Meta bloques de 60 a 90 minutos de trabajo profundo en los huecos
+- Ponga mi prioridad número uno en el primer bloque libre, antes de que se
+  me caiga la energía
+- Agregue 15 minutos de preparación antes de cualquier junta importante
+- Incluya UN bloque de correo y mensajes de 30 minutos máximo. No me dejes
+  vivir en la bandeja todo el día
+- Deje al menos 30 minutos libres para lo que se atraviese
+- Etiquete cada bloque: [FOCO], [JUNTA], [ADMIN], [BUFFER], [DESCANSO]
+
+## 4. PREPARACIÓN DE JUNTAS
+
+Para cada junta de hoy, dos frases:
+- De qué se trata en realidad, no el título del calendario
+- Lo único que debo llegar listo a decir, preguntar o decidir
+
+## 5. TRIAGE DE CORREO
+
+Clasifica lo que no he leído en tres cubetas:
+- CONTESTAR HOY: necesita respuesta antes del mediodía. Redáctame el
+  borrador
+- CONTESTAR DESPUÉS: importante pero no urgente. Dime en qué bloque cae
+- IGNORAR: informativos, boletines, copias donde no me necesitan
+
+## 6. QUÉ HAGO PRIMERO
+
+Cierra con una sola frase: "cuando cierres este chat, lo primero que tienes
+que hacer es ___". No el primer correo ni la primera junta. La primera
+acción de alto impacto que marca el tono del día.
+
+## REGLAS
+
+- Sé específico. "Avanzar el proyecto" no sirve. "Escribir el resumen
+  ejecutivo del reporte trimestral" sí.
+- Si mi calendario está saturado, dime qué junta debería declinar o
+  recortar, y por qué.
+- Si no me queda nada de tiempo de foco, márcalo. Dime qué mover.
+- Si quedó algo sin resolver de ayer, sácalo a la superficie.
+- Trata mi tiempo como si valiera mucho, porque dónde lo pongo decide si
+  fui productivo o solo estuve ocupado.
+- Al final del plan pregúntame: "¿ajusto algo antes de que empieces?"</code></pre>
+
+      <h2>Las tres instrucciones que hacen la diferencia</h2>
+
+      <p><strong>Resultados, no tareas.</strong> Es la línea que separa esto de una lista de pendientes. "Contestar el correo de Ramírez" es tarea. "Dejar cerrada la negociación con Ramírez" es resultado, y de ahí se desprende qué hacer.</p>
+
+      <p><strong>Dime qué junta declinar.</strong> La mayoría de los asistentes de agenda aceptan tu calendario como un hecho. Este tiene permiso de cuestionarlo, y es donde más valor sale la primera semana.</p>
+
+      <p><strong>La frase final.</strong> Un plan que termina con seis bloques te deja pensando cuál abrir. Uno que termina con una sola instrucción te pone a trabajar. Suena menor y no lo es.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> programarlo. Si tienes que acordarte de abrir el proyecto cada mañana, lo vas a usar cuatro días. Programado a las 7:00 llega al correo y lo lees mientras desayunas, que es justo cuando todavía puedes mover el día. Un plan que lees a las 10:30 ya no es un plan, es un reporte.</p>
+      </div>
+
+      <h2>La versión de equipo</h2>
+
+      <p>El mismo prompt, apuntado al calendario y los canales de un área, es un tablero de operación diaria. En un equipo comercial la salida cambia de tono: las tres prioridades se vuelven las tres cuentas donde hay una decisión hoy, la preparación de juntas se vuelve la ficha de cada llamada con lo último que pasó en el hilo, y el triage de correo separa a los clientes que están esperando respuesta de los que solo mandaron acuse.</p>
+
+      <p>Ahí lo que se gana no son minutos: es que el gerente deje de descubrir a las cinco de la tarde que una cuenta llevaba dos días sin respuesta.</p>
+
+      <h2>El error de la primera semana</h2>
+
+      <p>Vas a recibir el plan y vas a ignorar los bloques de foco, porque llega un correo urgente a las 9:15 y se acabó el horario. Es normal. Lo que hay que hacer no es abandonar el sistema: es decirle al proyecto qué pasó. Si le dices "ayer no pude respetar el bloque de la mañana porque siempre entra algo a las 9", al día siguiente te pone el foco a las 8 o después de comer.</p>
+
+      <p>Se ajusta a tu día real en unas dos semanas. Si a las dos semanas sigue proponiéndote horarios que no existen, el problema no es el prompt: es que tu calendario está saturado y eso ya es una conversación con tu jefe, no con un modelo. Y si el cuello de botella resulta ser que estás haciendo trabajo que no te toca, la siguiente parada es <a href="/guias/delega-esto/">delega esto</a>.</p>
+
+      <p>Para dejarlo corriendo solo todos los días, el detalle de tareas programadas está en <a href="/guias/claude-dispatch/">la guía de Claude Dispatch</a>.</p>

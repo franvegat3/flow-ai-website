@@ -1,0 +1,188 @@
+      <p>Buscar trabajo se convirtió en un juego de volumen. Mandas cincuenta solicitudes, te contestan tres, y de esas tres una llega a oferta. Entonces la gente sube el volumen: cien solicitudes, mismo currículum, mismo resultado.</p>
+
+      <p>El problema no es cuántas mandas. Es que las cincuenta van iguales, la mitad eran vacantes donde nunca ibas a calificar, y cuando por fin llega la oferta la aceptas sin negociar porque ya estabas cansado.</p>
+
+      <p>Estas cinco skills atacan cada punto de esa cadena. Se crean desde la app —el botón <strong>+</strong> junto al chat, crear una skill, pegas el texto— y quedan disponibles solas. Antes de la primera, sube tu currículum al proyecto donde vayas a trabajar: las cinco lo necesitan.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El analizador de encaje <code>analizador-de-fit</code></h3>
+        <p>La que corre primero, siempre. Te dice si esa vacante vale tu tarde antes de que le dediques la tarde. La mayoría de las solicitudes que no contestan eran evitables.</p>
+        <pre><code>---
+name: analizador-de-fit
+description: Califica del 0 al 100 qué tanto encaja el usuario con
+  una vacante y dice si vale la pena aplicar. Úsala cuando pegue una
+  descripción de puesto, una liga de vacante, o pregunte si aplica.
+---
+
+Necesitas su currículum. Si no lo tienes, pídelo antes de calificar.
+
+DESCOMPÓN la vacante en cinco categorías: habilidades duras, años y
+tipo de experiencia, conocimiento de industria, habilidades blandas y
+requisitos formales. Separa lo indispensable de lo deseable: lo que la
+vacante repite o pone primero pesa más.
+
+CALIFICA cada categoría del 0 al 100 y saca un total ponderado.
+Habilidades duras y experiencia valen el doble que el resto.
+
+VEREDICTO en una palabra:
+ENCAJA (75 o más) — aplica y personaliza.
+VALE INTENTAR (55 a 74) — aplica solo si te interesa de verdad, y di
+qué hueco hay que compensar en la carta.
+SÁLTALA (menos de 55) — di exactamente qué falta y cuánto tiempo
+tomaría cerrarlo.
+
+HUECOS. Por cada requisito que no cumple, di si es cerrable con algo
+que ya hizo y nombró distinto, o si de plano falta.
+
+Reglas: no infles la calificación por amabilidad. Si el veredicto es
+sáltala, dilo en la primera línea.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que aplica a todo. Bien usada, baja tu volumen a la mitad y te sube la tasa de respuesta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El sastre del currículum <code>sastre-de-cv</code></h3>
+        <p>Un currículum por vacante, en menos de dos minutos. No reescribe tu vida: mueve el orden, cambia el vocabulario al de la vacante y mete el número que le faltaba a cada logro.</p>
+        <pre><code>---
+name: sastre-de-cv
+description: Adapta el currículum del usuario a una vacante
+  específica: palabras clave, orden y métricas. Úsala cuando pida
+  ajustar su CV, personalizarlo para un puesto o pegue una vacante
+  junto con su currículum.
+---
+
+PALABRAS CLAVE. Saca de la vacante los términos exactos que un filtro
+automático buscaría. Marca cuáles ya aparecen en el CV y cuáles no.
+
+HUECOS. Para cada término que falta, revisa si él ya hizo eso con otro
+nombre. Si sí, cámbiale el nombre. Si no lo hizo, no lo pongas.
+
+VIÑETAS. Reescribe cada logro con verbo de acción al inicio y un
+número al final. Si no hay número, pregúntale por él una sola vez; si
+no lo tiene, deja el resultado cualitativo, nunca inventes la cifra.
+
+ORDEN. Sube lo más relevante para esta vacante. Lo que no aplica se
+comprime a una línea, no se borra.
+
+RESUMEN. Tres líneas escritas para este puesto en particular.
+
+ENTREGA el CV completo y abajo una sección de CAMBIOS: qué moviste y
+por qué, una línea cada uno.
+
+Reglas: no inventes experiencia, títulos ni fechas. Una página, salvo
+que el original ya fuera más largo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que esté mandando el mismo PDF a todos. Complementa lo que ya está en <a href="/guias/sastre-de-curriculum/">el sastre de currículum</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El coach de entrevista <code>coach-de-entrevista</code></h3>
+        <p>Predice las ocho preguntas que sí te van a hacer, cruzando la vacante con tu historial. Y las tres incómodas, que son las que deciden.</p>
+        <pre><code>---
+name: coach-de-entrevista
+description: Prepara al usuario para una entrevista: predice
+  preguntas, arma respuestas con su experiencia real y prepara lo que
+  él debe preguntar. Úsala cuando tenga entrevista agendada o pida
+  practicar.
+---
+
+Pregunta primero en qué etapa va: filtro telefónico, ronda técnica o
+conductual, o final con dirección. Ajusta a eso.
+
+OCHO PREGUNTAS probables, del cruce entre la vacante y su CV. Por cada
+una: la pregunta como se la van a hacer, por qué la están haciendo, la
+respuesta armada con situación, tarea, acción y resultado usando un
+caso real suyo, una línea de cierre, y el error típico ahí.
+
+TRES INCÓMODAS. Las que apuntan justo a su punto más débil frente a
+esta vacante. Sin suavizarlas. Con la respuesta que no miente y
+tampoco se disculpa.
+
+CINCO PREGUNTAS PARA ÉL. Que revelen algo real del puesto: por qué
+está vacante, cómo se mide el éxito a los seis meses, qué salió mal la
+última vez que alguien ocupó ese rol.
+
+Reglas: usa solo lo que está en su CV. Si un ejemplo no da para una
+respuesta sólida, dilo y ayúdale a encontrar otro caso.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que se prepara leyendo listas genéricas de preguntas. Ver también <a href="/guias/preparar-entrevista-con-ia/">preparar la entrevista con IA</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. La carta que no parece plantilla <code>carta-de-presentacion</code></h3>
+        <p>Menos de 300 palabras, tres logros tuyos enganchados a tres necesidades de la vacante, y cero frases de relleno. La mayoría de las cartas se descartan en la primera línea, que es siempre la misma.</p>
+        <pre><code>---
+name: carta-de-presentacion
+description: Escribe cartas de presentación cortas y específicas para
+  una vacante concreta. Úsala cuando el usuario pida una carta, o
+  pegue una vacante diciendo que va a aplicar.
+---
+
+Elige los TRES logros del usuario que mejor responden a las tres
+necesidades más fuertes de la vacante. Si dudas entre dos, gana el que
+tenga un número.
+
+ESTRUCTURA:
+Apertura, dos oraciones. La primera menciona algo concreto de esa
+empresa —no su misión: algo que hicieron. La segunda dice qué haces tú
+que le sirve a eso.
+Tres párrafos, uno por logro. Cada uno enlaza una necesidad de la
+vacante con un resultado medible tuyo.
+Cierre. Qué harías en los primeros 90 días, en una oración, y la
+despedida.
+
+PROHIBIDO: "me emociona", "encajo perfecto", "gran oportunidad",
+"apasionado por", "equipo dinámico". Si una oración no menciona la
+empresa, el puesto o algo específico tuyo, bórrala.
+
+Máximo 300 palabras. Tono seguro y conversacional, no solemne.
+
+Al final, tres líneas de por qué elegiste esos tres logros y qué otro
+ángulo era el segundo mejor.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> quien aplica a empresas chicas y despachos, donde la carta sí se lee.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El negociador de sueldo <code>negociador-de-sueldo</code></h3>
+        <p>La etapa donde se pierde más dinero por cansancio. Esta skill saca tu palanca real, te da un número con justificación y te escribe el guion en tres formatos.</p>
+        <pre><code>---
+name: negociador-de-sueldo
+description: Prepara la negociación de una oferta: rango de mercado,
+  palancas, contraoferta y guiones. Úsala cuando el usuario reciba una
+  oferta o pregunte cuánto pedir.
+---
+
+Pide: puesto, empresa, monto ofrecido, años de experiencia, ciudad, y
+si tiene otra oferta en mano.
+
+MERCADO. Da el rango del puesto por percentiles y di en cuál cae la
+oferta. Advierte explícitamente que tus datos pueden estar
+desactualizados y que verifique en Levels.fyi, Glassdoor o Payscale
+antes de dar un número.
+
+PALANCAS. Qué tiene a favor: otra oferta real, una habilidad escasa,
+prisa de la empresa, conocimiento del sector. Y qué juega en contra.
+
+CONTRAOFERTA. Un número, no un rango, con las dos razones que lo
+sostienen. Y el mínimo aceptable abajo del cual conviene retirarse.
+
+GUIONES. Tres versiones del mismo mensaje: correo, llamada y en
+persona. Cortos.
+
+SI EL SUELDO NO SE MUEVE. Lista ordenada de qué pedir a cambio con
+monto o cantidad concreta: bono de firma, acciones, días de vacaciones,
+título, presupuesto de formación, esquema remoto.
+
+Reglas: nunca sugieras inventar una oferta competidora. Si la oferta
+está por debajo del mercado, dilo antes que nada.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> todos. Es la única de las cinco donde una hora de preparación se traduce en dinero directo.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> córrelas en un proyecto con tu currículum, tus evaluaciones de desempeño y los correos donde alguien te agradeció algo. Sin eso, las cinco escriben bonito y genérico. El material que las hace específicas es el que ya tienes y nunca has juntado en un solo lugar.</p>
+      </div>
+
+      <h2>El orden importa</h2>
+
+      <p>Uno, dos, cuatro, tres y cinco, en ese orden y solo hasta donde llegues. Si el analizador dice que te la saltes, ahí se acaba: no gastes la tarde en un currículum a la medida para una vacante donde no calificabas.</p>
+
+      <p>Ese filtro es todo el punto. La gente que consigue trabajo rápido no manda más solicitudes, manda menos y mejores. Y en el otro lado del escritorio pasa lo mismo: cuando armo procesos de contratación con IA para una empresa, lo primero que montamos no es un filtro de currículums, es la definición honesta de qué se necesita de verdad. Los dos lados fallan por lo mismo, que es no querer decidir antes de gastar el esfuerzo.</p>

@@ -1,0 +1,68 @@
+      <p>Casi todo lo que se escribe sobre skills se queda en lo mismo: qué son y cómo se crea una. Eso lo resuelves en una tarde. Lo que nadie cuenta es lo que aprendes al mes tres, cuando ya tienes doce skills y la mitad no se activa, otra mitad se activa cuando no debe, y sospechas que todo eso te está costando algo.</p>
+
+      <p>Estos cinco trucos son de esa etapa. Ninguno requiere reescribir nada desde cero. Cuatro de los cinco se aplican en menos de dos minutos.</p>
+
+      <h2>Los cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Convierte un chat que salió bien en skill, sin escribirla</h3>
+        <p>Esta es la que más tiempo ahorra y la que menos gente sabe que existe. Cuando una conversación salió exactamente como querías —porque le fuiste corrigiendo el formato, el tono y el nivel de detalle sobre la marcha— esa conversación ya <em>es</em> la skill. Solo falta empaquetarla.</p>
+        <p>En Cowork: abres el chat, das clic en la flecha junto al nombre de la conversación, y eliges convertirlo en skill. Claude extrae las instrucciones que de facto funcionaron y las deja en formato de skill.</p>
+        <p>La ventaja sobre escribirla desde cero es enorme y es la misma razón por la que funciona: no estás documentando cómo <em>crees</em> que trabajas, estás capturando cómo trabajaste de verdad, incluidas las tres correcciones que hiciste a la mitad y que jamás habrías recordado al escribir la skill en frío.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> cada vez que un chat te deje un entregable que sí mandarías. Diez segundos y ya no lo vuelves a construir.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. La línea de "no usar para"</h3>
+        <p>Todas las descripciones de skill están escritas en positivo: para qué sirve. Y resulta que el modelo delimita mejor con una prohibición explícita que con cinco frases más de lo que sí hace.</p>
+        <p>Agrega esta línea al final de la descripción, adaptada:</p>
+        <pre><code>No la uses para: conversación casual, lluvia de ideas, preguntas
+generales, ni nada que no sea [la tarea exacta].</code></pre>
+        <p>Sirve sobre todo cuando tienes skills que se traslapan. Si tienes una de propuestas y otra de cotizaciones, cada una tiene que decir que la otra existe y cuándo le toca a ella. En equipos donde cada quien creó las suyas, esto es lo que evita que Claude escoja la de tu compañero.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> en toda skill que compita con otra. Y en las que se te disparan a destiempo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. La prueba del mensaje real</h3>
+        <p>En vez de adivinar cuál skill se va a activar, haz que Claude te lo diga antes. Le pegas el mensaje tal cual lo escribirías y le pides el pronóstico:</p>
+        <pre><code>No ejecutes nada. Con las skills que tienes instaladas, dime cuál
+se activaría si yo escribiera este mensaje:
+
+"[pega aquí tu mensaje normal, con tus palabras y tus faltas]"
+
+Dame: qué skill se dispara, con qué parte de su descripción hizo
+match, y cuáles otras estuvieron cerca de dispararse. Si ninguna
+aplica, dilo.</code></pre>
+        <p>Lo que casi siempre sale a la luz es que la skill que tú creías obvia ni aparece, y que hay otra rondando que nunca sospechaste. Es un minuto de prueba que te ahorra semanas de creer que el modelo se está portando raro. El arreglo completo del disparador está en <a href="/guias/por-que-no-jala-tu-skill/">por qué tu skill no está jalando</a>.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> antes de darle una skill nueva a tu equipo. Prueba con las frases que ellos usan, no con las tuyas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Instalar de más no te cuesta lo que crees</h3>
+        <p>La duda razonable: si instalo veinte skills, ¿no se satura el contexto y empeoran todas las respuestas? Casi todo el mundo se autolimita por esto y se pierde herramientas útiles.</p>
+        <p>La mecánica es esta: de cada skill instalada, Claude carga permanentemente solo el nombre y la descripción, que son un par de líneas. El cuerpo —tus dos mil palabras de instrucciones— lo abre nada más cuando esa skill aplica. Una skill que no se activa te cuesta lo que cuesta su descripción, y nada más.</p>
+        <p>Así que sí: instala del marketplace, guarda los chats buenos, prueba los plugins. Lo que sí vale la pena cuidar es que dos skills no se traslapen —ese es el problema real de tener muchas, y se resuelve con el truco 2, no instalando menos.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> ahorita. Si te frenaste por miedo a saturar, ese miedo estaba mal calibrado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. La salida floja se arregla en tu mensaje, no en la skill</h3>
+        <p>Síntoma clásico: la skill se activa, la estructura es la correcta, pero el contenido está a medio gas. Tres bullets donde esperabas ocho. La conclusión de siempre es "hay que mejorar la skill", y se van dos horas reescribiendo un archivo que estaba bien.</p>
+        <p>Prueba esto primero, pegado al final de tu petición:</p>
+        <pre><code>Tómate el tiempo que haga falta. Calidad antes que velocidad. No
+te saltes pasos. Dame la versión completa y desarrollada.</code></pre>
+        <p>Funciona mejor ahí que adentro del archivo de la skill. Si lo metes en la skill, aplica a todo por igual, incluidas las veces que sí querías algo rápido. En el mensaje lo decides caso por caso, que es como debe ser: el reporte trimestral pide esto, el resumen de las 8 am no.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> antes de tocar cualquier skill por "floja". Es el diagnóstico más barato y acierta la mayoría de las veces.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el truco 1 solo rinde si aceptas que la skill que salga de ahí es un borrador. Un chat bueno captura tu proceso de ese día, con el cliente de ese día. Úsala tres o cuatro veces y agrégale lo que corregiste a mano cada vez. Ahí es donde una skill deja de ser una plantilla y se vuelve criterio empaquetado.</p>
+      </div>
+
+      <h2>El orden en que los aplicaría</h2>
+
+      <p>Si ya tienes skills funcionando, empieza por el 3. La prueba del mensaje real te va a decir en diez minutos cuáles de tus skills están muertas de facto, y eso reordena todo lo demás: no tiene sentido pulir el contenido de una skill que nunca se dispara.</p>
+
+      <p>Después el 2 sobre las que se traslapen. El 5 lo vas a usar diario sin pensarlo. El 4 es más bien un permiso: deja de racionar instalaciones.</p>
+
+      <p>Y el 1 conviértelo en hábito. En las operaciones donde esto prende, la biblioteca de skills no la escribió nadie en una sesión de documentación: se fue formando de los chats que salieron bien, uno por uno, durante tres meses. Es la única forma que he visto de que un equipo acabe con skills que de verdad usa. Para todo lo demás, hay <a href="/guias/84-skills-gratis-de-claude/">skills gratis ya hechas</a> que puedes tomar como punto de partida.</p>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configura tu primer agente de IA — Guías Flow AI</title>
+  <meta name="description" content="3 niveles de agentes de IA: Cowork, Claude Code y agentes autoalojados. La configuración paso a paso de cada uno, aunque nunca hayas programado." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tu-primer-agente-de-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Configura tu primer agente de IA" />
+  <meta property="og:description" content="3 niveles de agentes de IA: Cowork, Claude Code y agentes autoalojados. La configuración paso a paso de cada uno, aunque nunca hayas programado." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tu-primer-agente-de-ia/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">Agentes</span><span class="tag">Empezar</span></div>
+      <h1>Configura tu primer agente de IA</h1>
+      <p class="lead">3 niveles de agentes de IA: Cowork, Claude Code y agentes autoalojados. La configuración paso a paso de cada uno, aunque nunca hayas programado.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>"Agente de IA" se convirtió en una de esas palabras que todo el mundo usa y nadie define igual. Para unos es un chatbot con memoria. Para otros es una empresa entera de software autónomo. Y en medio queda la persona que quiere probar uno y no sabe ni por dónde empezar.</p>
+
+      <p>La definición que sirve es aburrida y práctica: un agente es una IA a la que le encargas un <em>trabajo</em>, no le haces una <em>pregunta</em>. Trabaja sola, toca archivos y herramientas reales, y vuelve con algo terminado. La diferencia con el chat no es la inteligencia. Es que no tienes que estar ahí.</p>
+
+      <p>Hay tres niveles, y se distinguen por una sola cosa: qué tanto de la infraestructura pones tú. El error más caro es empezar por el tercero.</p>
+
+      <h2>Nivel 1: Cowork. Cinco minutos, cero código</h2>
+
+      <p>Cowork es el agente que ya viene incluido en Claude. Le das una tarea, se pone a trabajar sobre tus archivos y tus aplicaciones conectadas, y tú te dedicas a otra cosa mientras.</p>
+
+      <p><strong>Cómo se arranca:</strong></p>
+
+      <ol>
+        <li>Abre Claude y entra a Cowork desde la barra lateral.</li>
+        <li>Conecta lo mínimo: correo, calendario y una carpeta de tu computadora. Está en configuración, en aplicaciones conectadas. No conectes las quince cosas el primer día.</li>
+        <li>Dale una tarea real, con entregable. No una pregunta.</li>
+      </ol>
+
+      <pre><code>Revisa mis últimos 20 correos. Arma un resumen priorizado de todo lo que
+necesita mi atención hoy.
+
+Formato: tres bloques.
+1. RESPONDER HOY — con quién, de qué se trata en una línea, y qué me están
+   pidiendo exactamente.
+2. PUEDE ESPERAR — mismo formato, en una línea cada uno.
+3. NO REQUIERE RESPUESTA — solo cuenta cuántos son y de qué tipo.
+
+Si alguien me está esperando desde hace más de 3 días, márcalo aparte
+arriba de todo.
+
+Guárdalo como archivo en mi carpeta de trabajo con la fecha de hoy.</code></pre>
+
+      <p>Ese prompt tiene los cuatro elementos que cualquier tarea de Cowork necesita: <strong>qué leer</strong>, <strong>qué hacer</strong>, <strong>en qué formato</strong> y <strong>dónde guardarlo</strong>. Si te falta uno, la salida se degrada. Si te faltan dos, volviste a usar un chat.</p>
+
+      <p>Cuando ya tengas una tarea que funcione, el siguiente paso es no volver a dispararla a mano: en la configuración de Cowork hay tareas programadas. Le pones una hora y un día, y a partir de ahí el resumen te está esperando cuando abres la computadora.</p>
+
+      <p><strong>Para qué sirve de verdad:</strong> investigación, reportes, análisis de documentos, borradores, preparación de juntas, procesamiento de archivos. Todo lo que hoy le pedirías a un asistente con acceso a tu correo y a tus carpetas.</p>
+
+      <h2>Nivel 2: Claude Code. Quince minutos, sigue sin código tuyo</h2>
+
+      <p>El nombre asusta a la gente equivocada. Claude Code no es para programadores: es para cualquiera que necesite una herramienta que no existe.</p>
+
+      <p>La diferencia con Cowork es qué entrega. Cowork te entrega un documento. Claude Code te entrega una <em>cosa que funciona</em>: un tablero, una página, una automatización, un procesador de archivos. Y no solo escribe el código —lee tus archivos, corre comandos, instala lo que necesita, encuentra sus propios errores y los arregla.</p>
+
+      <p>Se descarga desde el sitio de Claude y funciona en Mac y Windows. Le describes en español lo que quieres:</p>
+
+      <pre><code>Constrúyeme un rastreador de clientes con: nombre, correo, empresa, estado
+del proyecto, monto y fecha del siguiente seguimiento.
+
+Requisitos:
+- Que pinte en rojo las filas cuyo seguimiento ya venció.
+- Que se pueda filtrar por estado.
+- Que se pueda exportar a CSV.
+- Que los datos se guarden en mi computadora, no en la nube.
+
+Hazlo simple. Prefiero que funcione bien y se vea limpio a que tenga
+muchas funciones.</code></pre>
+
+      <p>Lo construye, te lo abre, y de ahí en adelante iteras hablando: "ponle una columna de notas", "el rojo está muy fuerte", "agrégale un total abajo". Nunca tocas código.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decirle dónde viven los datos. Si no lo especificas, va a inventar una decisión por ti —y a veces es una que no te gusta cuando ya construiste encima. Datos locales, datos en un archivo, datos en una hoja de cálculo que ya tienes: decídelo antes, no después.</p>
+      </div>
+
+      <p><strong>Cuándo saltar aquí:</strong> cuando notes que le estás pidiendo a Cowork lo mismo cada semana con datos distintos. Eso ya no es una tarea. Es una herramienta que todavía no existe.</p>
+
+      <h2>Nivel 3: agente autoalojado. Media hora y ya no es gratis</h2>
+
+      <p>Los dos primeros niveles corren cuando tú los invocas o cuando el calendario los dispara. El tercero corre siempre, en tu propio hardware, y te contesta por WhatsApp o Telegram como si fuera una persona más en tu lista de chats.</p>
+
+      <p>La opción abierta más usada para esto es <strong>OpenClaw</strong>. Es software libre, tú pones dónde corre y tú pones el modelo.</p>
+
+      <p><strong>Qué necesitas antes de empezar:</strong></p>
+
+      <ul>
+        <li><strong>Algo encendido las 24 horas.</strong> Un servidor virtual barato en la nube, una Mac Mini, o una computadora vieja que no apagues. Sin esto no hay nivel 3.</li>
+        <li><strong>Node.js instalado</strong> en una versión reciente.</li>
+        <li><strong>Tu propia llave de API.</strong> Aquí ya no estás dentro de una suscripción: pagas por uso. Y esa es la trampa presupuestal del nivel 3.</li>
+      </ul>
+
+      <p>El montaje, en orden: lo instalas por línea de comandos con <code>npm install -g openclaw@latest</code>, corres el asistente de configuración inicial —que te deja el servicio de fondo activo para que sobreviva a los reinicios—, conectas un canal de mensajería, y le instalas habilidades desde el repositorio de la comunidad. Para el canal de Telegram necesitas crear un bot con BotFather y pegarle el token; para WhatsApp se vincula escaneando un código QR, y ahí la recomendación seria es usar un número dedicado, no el tuyo.</p>
+
+      <p>La prueba de que quedó vivo es mandarle un mensaje y que conteste: "resume esta liga", "qué tengo mañana en el calendario", "redáctame una respuesta al último correo de Fulano".</p>
+
+      <h2>Lo que nadie te dice del costo</h2>
+
+      <p>Los niveles 1 y 2 vienen dentro de tu suscripción. El nivel 3 no, y ahí el rango es enorme.</p>
+
+      <p>El servidor es lo predecible: unos pocos dólares al mes. El software es gratis. El costo real es el modelo, y depende de dos cosas que la gente no calcula: qué modelo eliges y cuántas veces al día se despierta el agente. Un agente conversacional con un modelo económico puede costar prácticamente nada al mes. El mismo agente, con el modelo más caro y una tarea que corre cada hora, puede costar dos órdenes de magnitud más.</p>
+
+      <p>La regla que aplico: el nivel 3 se justifica cuando el agente sustituye trabajo que hoy alguien hace, no cuando es interesante. Si no puedes nombrar la tarea humana que reemplaza, todavía no es momento.</p>
+
+      <h2>El orden correcto</h2>
+
+      <p>Empieza en Cowork. Construye <strong>un</strong> agente que te ahorre media hora diaria y vive con él dos semanas. En esas dos semanas vas a aprender lo que de verdad importa, que no es técnico: aprender a especificar un encargo y a revisar el resultado sin volver a hacerlo tú.</p>
+
+      <p>Pasa a Claude Code cuando quieras herramientas propias. Pasa al nivel 3 cuando quieras que algo corra sin ti, de noche, contestando por mensajería.</p>
+
+      <p>Y en cualquiera de los tres, lo primero que se automatiza debería ser lo mismo: lo que haces <em>todos</em> los días, no lo que haces una vez al mes. La cosa aburrida y repetitiva es donde está el retorno. Lo espectacular —el agente que hace crecer tus redes, el equipo de agentes que trabaja de noche— viene después y se construye sobre el hábito, no sobre el entusiasmo.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Montar el nivel 3 primero porque suena más serio.</p>
+
+      <p>Lo he visto varias veces: alguien pasa un fin de semana entero levantando un servidor, conectando WhatsApp y peleándose con permisos, y termina con un agente perfectamente funcional al que no sabe qué pedirle. La infraestructura estaba lista y el criterio no.</p>
+
+      <p>La habilidad que hace que un agente sirva es la misma en los tres niveles: saber describir un trabajo con suficiente precisión como para que alguien más lo haga sin preguntarte nada. Esa habilidad se entrena en el nivel 1, donde equivocarte cuesta cinco minutos y no un fin de semana.</p>
+
+      <p>Cuando ya tengas eso, lo siguiente natural es correr varias cosas a la vez —revisa <a href="/guias/tareas-en-paralelo-en-cowork/">tareas en paralelo</a>— y ponerle un <a href="/guias/nunca-confies-sin-hacer-esto/">auditor</a> encima a todo lo que el agente produzca antes de que salga de tu computadora.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

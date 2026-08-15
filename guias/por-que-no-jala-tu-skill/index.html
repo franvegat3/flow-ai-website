@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Por qué tu skill de Claude no está jalando — Guías Flow AI</title>
+  <meta name="description" content="Tu skill probablemente está bien. El problema es el disparador. Aquí está el arreglo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/por-que-no-jala-tu-skill/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Por qué tu skill de Claude no está jalando" />
+  <meta property="og:description" content="Tu skill probablemente está bien. El problema es el disparador. Aquí está el arreglo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/por-que-no-jala-tu-skill/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span></div>
+      <h1>Por qué tu skill de Claude no está jalando</h1>
+      <p class="lead">Tu skill probablemente está bien. El problema es el disparador. Aquí está el arreglo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Escribiste la skill. Está buena: tiene tu formato, tus reglas, el ejemplo de cómo se ve bien. La usas una vez y funciona. A los tres días le pides lo mismo con otras palabras y Claude te contesta como si la skill no existiera.</p>
+
+      <p>La conclusión natural es que la skill está mal escrita, así que la reescribes. Y eso casi nunca es el problema. El cuerpo de tu skill probablemente está bien. Lo que está roto es el disparador.</p>
+
+      <h2>Cómo decide Claude si usar una skill</h2>
+
+      <p>Esto es lo que cambia todo cuando lo entiendes: Claude no lee tus skills completas todo el tiempo. De cada skill instalada solo carga dos cosas, el <code>name</code> y la <code>description</code>. El cuerpo lo abre nada más cuando decide que esa skill aplica.</p>
+
+      <p>O sea que la decisión de activarla se toma leyendo una sola línea. Toda tu skill se juega ahí. Si esa línea dice "skill para escribir correos", Claude tiene que adivinar si tu mensaje de hoy cae adentro o no. A veces le atina. A veces no. Y tú lo lees como que la skill está descompuesta.</p>
+
+      <h2>El diagnóstico, en treinta segundos</h2>
+
+      <p>Antes de tocar nada, pregúntale directo. Abre un chat y pega esto:</p>
+
+      <pre><code>¿Cuándo usarías la skill [nombre]? Léeme su descripción palabra
+por palabra y explícame en qué situaciones la dispararías y en
+cuáles no. Después dame tres mensajes que yo podría escribir y
+que NO la activarían aunque debieran.</code></pre>
+
+      <p>Esos tres mensajes son el diagnóstico completo. Casi siempre son las formas normales en que tú pides la cosa. Y si son las normales, la descripción no está describiendo tu trabajo real.</p>
+
+      <h2>Las tres razones por las que no jala</h2>
+
+      <h3>1. La descripción está escrita como título, no como disparador</h3>
+
+      <p>Es el 80% de los casos. La gente escribe la descripción como si fuera el nombre de una carpeta. Y lo que se necesita ahí es una instrucción de cuándo.</p>
+
+      <p>Así se ve mal: <em>"Escribe correos de seguimiento."</em></p>
+
+      <p>Así se ve bien:</p>
+
+      <pre><code>description: Escribe correos de seguimiento a clientes después de
+  una llamada, en la voz del usuario, en menos de cinco oraciones y
+  con un siguiente paso claro. Úsala cuando pida dar seguimiento,
+  cerrar el pendiente de una junta, escribirle a un prospecto, o
+  cuando pegue notas de una llamada sin decir qué quiere.</code></pre>
+
+      <p>La fórmula que uso: <strong>qué hace, para quién, con qué formato, y después la lista de las frases con las que tú realmente lo pides.</strong> Esa última parte es la que casi nadie escribe y es la que activa la skill. Ponle cuatro o cinco variantes, incluyendo la floja: "dale seguimiento a esto".</p>
+
+      <h3>2. La corres fuera del proyecto donde vive el contexto</h3>
+
+      <p>Una skill que depende de archivos —tu guía de marca, la lista de precios, las plantillas— necesita estar en el proyecto donde esos archivos están cargados. Si la invocas desde un chat suelto, la skill se activa igual pero trabaja a ciegas, y la salida se ve genérica.</p>
+
+      <p>Eso se lee exactamente igual que "la skill no jaló". No es lo mismo. Revisa primero desde dónde la estás corriendo.</p>
+
+      <h3>3. Dos skills se pelean el mismo terreno</h3>
+
+      <p>Pasa mucho en equipos donde cada quien creó las suyas: hay una de <em>propuesta comercial</em> y otra de <em>cotización</em>, con descripciones que se traslapan. Claude elige una y no siempre la que tú querías.</p>
+
+      <p>Arreglo: que cada descripción diga también qué <em>no</em> es. Una línea basta. "No la uses para cotizaciones de renovación, para eso está la skill de renovaciones." Las instrucciones en negativo delimitan mejor que cinco frases más de lo que sí hace.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ponle a cada skill un comando con diagonal, corto y en minúsculas. Es el interruptor manual: cuando la necesitas seguro, la llamas por su nombre y ya no dependes de que el disparador atine. Yo dejo que el disparador trabaje en el día a día y uso el comando cuando el entregable importa. Las dos cosas conviven; no es una u otra.</p>
+      </div>
+
+      <h2>El arreglo, en cuatro pasos</h2>
+
+      <ol>
+        <li><strong>Junta las frases reales.</strong> Busca en tus últimos chats cómo pediste esa tarea. No cómo crees que la pides: cómo la pediste. Tres o cuatro ejemplos.</li>
+        <li><strong>Reescribe la descripción</strong> con la fórmula de arriba y mete esas frases textuales en la parte de "úsala cuando".</li>
+        <li><strong>Agrega el límite:</strong> una línea de para qué no sirve.</li>
+        <li><strong>Vuelve a correr el diagnóstico.</strong> Si los tres mensajes que Claude te da como "no la activarían" ya son casos raros de verdad, quedó.</li>
+      </ol>
+
+      <p>Todo esto toma unos diez minutos y no toca el cuerpo de la skill.</p>
+
+      <h2>El otro síntoma: sí se activa, pero sale floja</h2>
+
+      <p>Distinto problema, distinta cura. Si la skill se dispara y aun así la salida se siente a medias, casi nunca es la skill: es que la petición pedía poco. Agregar en tu mensaje algo como "tómate el tiempo, no te saltes pasos, dame la versión completa" cambia el resultado más que reescribir el archivo. Funciona mejor en el mensaje que adentro de la skill.</p>
+
+      <p>Y la tercera versión del problema, la más común de todas en operación: la skill jala, la salida está bien, pero nunca la iteraste. La primera versión de una skill es un borrador. Después de usarla cinco veces ya sabes qué corriges siempre a mano. Eso que corriges es la regla que falta. Pégasela.</p>
+
+      <h2>Lo que veo en las empresas</h2>
+
+      <p>Cuando entro a una operación que ya tiene quince skills creadas, el patrón es siempre el mismo: nadie las escribió mal, nadie les puso disparadores decentes, y como no se activan solas, cada persona acabó copiando el texto de la skill a mano dentro del chat. Que es exactamente el trabajo que la skill venía a quitar.</p>
+
+      <p>Antes de construir la siguiente, dale diez minutos a las descripciones de las que ya tienes. Es el arreglo más barato de todo el sistema. Si de plano hay que reconstruir, el proceso completo está en <a href="/guias/3-formas-de-construir-una-skill/">3 formas de construir una skill</a>, y hay cinco atajos más en <a href="/guias/5-trucos-de-skills/">5 trucos de skills de los que nadie habla</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

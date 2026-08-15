@@ -1,0 +1,102 @@
+      <p>Nadie se enoja porque le mandaste un regalo barato. Se enoja porque le escribiste a las once de la noche un "feliz cumple" que claramente salió de una notificación de Facebook.</p>
+
+      <p>El problema no es que no te importe la gente. Es que las fechas viven en cinco lugares distintos —el calendario del trabajo, un contacto del celular, un correo de invitación de hace dos años, la memoria de tu pareja— y ninguno te avisa con tiempo suficiente para hacer algo decente.</p>
+
+      <p>Lo que sigue arma una sola lista maestra a partir de lo que ya tienes, y te avisa con una semana de anticipación con ideas de regalo y el mensaje ya escrito. La parte útil no es el recordatorio. Es que llegue con el trabajo hecho.</p>
+
+      <h2>Qué necesitas conectar</h2>
+
+      <p>Dos cosas: tu Gmail y tu Google Calendar. En la configuración de Claude, en conectores, autorizas la cuenta de Google. Con eso basta.</p>
+
+      <p>El correo es la mina de verdad. Ahí están los "feliz cumpleaños" que le mandaste a alguien hace tres años, las invitaciones de fiestas, las confirmaciones de pedidos de regalos, los recibos de florería. De cada uno se saca una fecha y, mejor todavía, un contexto: qué le regalaste y de qué le gusta hablar a esa persona.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Pégalo como skill dentro de Claude, o simplemente en una conversación con los conectores prendidos. Llena tus datos arriba.</p>
+
+      <pre><code>Eres mi Guardian de Fechas Importantes. Tu trabajo es que nunca se me pase un
+cumpleaños ni un aniversario, y que cuando llegue yo ya tenga que regalar y que
+decir.
+
+MIS DATOS
+Mi nombre: [ ]
+Ciudad donde vivo: [ ]
+Presupuesto por circulo: [circulo intimo $ / cercanos $ / normales $ / conocidos $]
+Como escribo yo: [directo / cariñoso / con humor / formal]
+Donde suelo comprar: [tiendas, marcas, o "experiencias mas que cosas"]
+Mi pareja y nuestro aniversario: [ ]
+
+FASE 1 - ARMAR LA LISTA MAESTRA (solo la primera vez)
+Busca en mi correo y mi calendario:
+- Correos con "feliz cumpleaños", "happy birthday", "cumple", "aniversario".
+- Invitaciones a fiestas y eventos.
+- Confirmaciones de pedidos de regalos, florerias, pasteles.
+- Eventos del calendario que digan cumple, bday o aniversario, y los que se
+  repiten cada año.
+- Cumpleaños importados de mis contactos.
+
+Devuelveme una tabla con: nombre, que es mio (familia, amigo, trabajo), fecha de
+cumpleaños, aniversario si aplica, intereses que hayas deducido del contexto,
+regalos que ya le he dado, y en que circulo lo pones.
+
+Circulos: INTIMO (pareja, papas, hijos, mejores amigos), CERCANOS (hermanos,
+buenos amigos, suegros), NORMALES (amigos, compañeros de trabajo, familia
+extendida), CONOCIDOS.
+
+Si dudas de una fecha o de un parentesco, preguntamelo. No lo adivines.
+
+FASE 2 - EL AVISO SEMANAL
+Cada vez que corras, revisa los proximos 14 dias y para cada fecha dame:
+
+1. Cuantos dias faltan y de quien es.
+2. De 3 a 5 ideas de regalo dentro del presupuesto de su circulo, repartidas en
+   tres rangos: economico, medio y para aventarse. Prioriza experiencias sobre
+   objetos. Nunca repitas algo que ya le regale.
+3. Tres versiones del mensaje, escritas como escribo yo: una para WhatsApp, una
+   para tarjeta, y una para publicar.
+4. Si el regalo hay que pedirlo, dime hasta que dia puedo comprarlo para que
+   llegue a tiempo desde mi ciudad.
+5. Marca los numeros redondos (30, 40, 50 años; 5, 10, 25 de aniversario) y para
+   esos sube el nivel de la propuesta.
+
+TIEMPOS POR CIRCULO
+Intimo: aviso 14 dias antes. Cercanos y normales: 7 dias. Conocidos: 3 dias.
+
+MANTENIMIENTO
+- "Agrega a [nombre]": preguntame parentesco, fechas, intereses y circulo.
+- "Actualiza a [nombre]": edita el campo que te diga. Si en la conversacion se
+  me sale que a alguien le gusta algo, guardalo sin que te lo pida.
+- "Registra regalo": guarda que le di, cuando, por que ocasion, cuanto costo y
+  como lo recibio.
+- "Quita a [nombre]": borralo.
+
+COMPORTAMIENTO
+- Lleva cuenta de cuanto llevo gastado al año por persona.
+- Avisame antes si un cumpleaños cae pegado a Navidad o a un puente largo.
+- Ten en cuenta las fiestas que celebre cada persona, no solo las mias.
+- Si se me paso una fecha por menos de 7 dias, dame la version de disculpa que
+  no suena a disculpa.
+- Si llevo tres avisos seguidos sin hacer nada, preguntame si quiero bajarle el
+  nivel a esa persona o quitarla.</code></pre>
+
+      <h2>Déjalo corriendo los lunes</h2>
+
+      <p>En tareas programadas de Claude, crea una que corra la fase 2 todos los lunes por la mañana. Ese día ves las dos semanas que vienen de un jalón, compras lo que haya que comprar, y se acabó.</p>
+
+      <p>Semanal es la frecuencia correcta. Diario se vuelve ruido y lo silencias; mensual llega tarde para cualquier cosa que haya que pedir.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar la lista maestra a mano la primera vez. Va a traer fechas equivocadas, gente que ya no ves y parentescos mal deducidos, porque se armó a partir de rastros indirectos. Media hora de limpieza al principio te evita felicitarle el aniversario a alguien que ya se divorció. Y no confíes en una fecha que Claude marcó como incierta: pregúntale directo a la persona, o revísala en su perfil.</p>
+      </div>
+
+      <h2>La versión de trabajo</h2>
+
+      <p>Este mismo sistema, apuntado a tus clientes en vez de a tus amigos, es de las cosas que más rinden en una operación comercial y de las que casi nadie hace.</p>
+
+      <p>Cambias la lista maestra por tu cartera y las fechas por lo que sí importa ahí: el aniversario de cuando firmaron contigo, el cumpleaños de tu contacto principal, la fecha de renovación. Con eso el aviso semanal deja de ser "felicítalo" y se vuelve un motivo de contacto que no es una llamada de venta. Un vendedor que aparece el día del aniversario del contrato con algo pensado tiene una conversación completamente distinta a uno que aparece el mes de la renovación. Si vas a montarlo así, revisa <a href="/guias/plugins-cowork/">los plugins de Cowork</a>, porque ahí es donde conectas tu CRM y las fechas salen de una fuente confiable en vez de tu correo.</p>
+
+      <h2>El error de siempre</h2>
+
+      <p>Aceptar los mensajes tal como salen. Un texto generado, aunque esté escrito en tu tono, se siente distinto a uno tuyo, y la gente que te quiere lo nota.</p>
+
+      <p>Úsalo como borrador. Cámbiale una frase, mete algo que solo ustedes dos entiendan, quita el adjetivo que tú nunca usarías. Treinta segundos. Lo que el sistema te está regalando no es el mensaje: es que te acordaste con una semana de anticipación y llegaste con algo pensado. Esa parte no la puede falsificar nadie.</p>

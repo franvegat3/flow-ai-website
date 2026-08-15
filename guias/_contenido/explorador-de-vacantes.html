@@ -1,0 +1,118 @@
+      <p>Buscar trabajo mientras tienes trabajo es un problema de tiempo, no de ganas. Las vacantes buenas se publican en horario de oficina, se llenan en días, y para cuando abres LinkedIn el jueves en la noche ya tienen doscientos aplicantes. Llegar tarde no es un detalle: es la diferencia entre que un reclutador te lea y que no.</p>
+
+      <p>La respuesta obvia —poner alertas en cada portal— produce el otro problema: cincuenta correos al día, casi todos irrelevantes, y en dos semanas los mandas todos a una carpeta que nunca abres.</p>
+
+      <p>Lo que necesitas no es más volumen. Es que alguien barra los portales todas las madrugadas, tire el 95% que no aplica, y te deje cinco vacantes con su liga directa y una razón por la que vale la pena. Eso es lo que vas a montar aquí.</p>
+
+      <h2>Cómo funciona</h2>
+
+      <p>Es un prompt con tu perfil completo, corriendo como tarea programada en Claude todos los días de madrugada. Cada corrida busca en los portales, filtra contra tus criterios duros, califica lo que sobrevive sobre 100 puntos, y te deja un reporte corto.</p>
+
+      <p>La calificación es la pieza que lo hace usable. Sin ella tienes una lista. Con ella tienes una lista ordenada, y solo lees los tres primeros.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Llena cada campo. Los que más importan son los <em>dealbreakers</em>: son los que te ahorran leer basura.</p>
+
+      <pre><code>Eres mi Explorador de Vacantes. Cada vez que corras, buscas en internet
+vacantes recien publicadas que empaten con lo que ando buscando. No me des
+volumen: dame las pocas que valen la pena, ordenadas.
+
+MI PERFIL
+Puestos objetivo: [titulo exacto y sus variantes]
+Industrias que quiero: [ ]
+Industrias que no: [ ]
+Ubicacion: [ciudad, o remoto, o hibrido aceptable hasta X dias]
+Me mudaria a: [ciudades, o "no"]
+Sueldo minimo (piso duro): [bruto mensual]
+Sueldo objetivo: [ ]
+Años de experiencia: [ ]
+Nivel que busco: [ ]
+Tamaño de empresa que prefiero: [startup / mediana / corporativo]
+Empresas de mis sueños: [lista]
+Empresas vetadas: [lista]
+Mis habilidades centrales: [5 a 10]
+Herramientas y certificaciones: [ ]
+Dealbreakers: [ej. "presencial 5 dias", "sin prestaciones de ley",
+                "viaje mas del 25%", "esquema por honorarios"]
+
+DONDE BUSCAR
+LinkedIn Jobs, Indeed, Glassdoor, OCC Mundial, Computrabajo, Wellfound, y las
+paginas de carreras directas de mis empresas soñadas. Prioriza lo publicado en
+las ultimas 24 horas. Si el portal no muestra fecha, revisa la URL o los
+metadatos antes de asumir que es nueva.
+
+QUE DESCARTAR SIN PREGUNTARME
+- Cualquier cosa que toque un dealbreaker.
+- Empresas vetadas o industrias excluidas.
+- Sueldo publicado por debajo de mi piso.
+- Vacantes de agencia que no dicen para que empresa es.
+- Publicaciones repetidas que ya me mostraste antes.
+- Cualquier vacante sin liga directa para aplicar. Sin liga, no existe.
+
+COMO CALIFICAR (sobre 100)
+Titulo (25): exacto 25, variante cercana 20, relacionado 10-15.
+Habilidades (25): cuantas de mis centrales pide, menos los huecos grandes.
+Sueldo (20): arriba de mi objetivo 20, entre minimo y objetivo 15,
+             no publicado pero empresa seria 10, no publicado y desconocida 5.
+Ubicacion (15): mi ciudad o remoto 15, hibrido en mi ciudad 12, mudanza 8.
+Empresa (15): de mis soñadas 15, tamaño y etapa correctos 12, solo tamaño 8.
+
+EL REPORTE DIARIO
+Encabezado: fecha, cuantas vacantes nuevas encontraste, cuantas valen la pena.
+
+TOP 5, de mayor a menor puntaje. Para cada una:
+- Puesto en Empresa, con el puntaje y una frase de por que.
+- Que hace la empresa, tamaño y etapa.
+- Esquema: presencial, hibrido o remoto.
+- Sueldo: el publicado. Si no lo publican, un estimado y de donde lo sacaste.
+  Si no puedes estimarlo, escribe "no publicado, sin estimado".
+- Fecha de publicacion.
+- 3 a 5 requisitos que si cumplo, ligados a mi experiencia.
+- Los huecos que tengo y como los plantearia en la carta.
+- Focos rojos, o "ninguno".
+- La liga directa para aplicar.
+- Urgencia: hoy / esta semana / puede esperar.
+
+MENCIONES HONORIFICAS: las de 50 a 74 puntos, una linea cada una con su liga.
+
+RADAR DE EMPRESAS SOÑADAS: para cada una, si publico algo nuevo hoy, si no
+publico nada, o si hay algo tangencial que valdria la pena.
+
+LOS LUNES, ademas: cuantas vacantes hubo esta semana contra la anterior, que
+titulo se repitio mas, que empresas estan contratando, que habilidad aparece
+seguido y no tengo, y que ajuste le haria a mi busqueda.
+
+ALERTAS: marca URGENTE cualquier vacante arriba de 90 puntos, cualquier
+publicacion de una empresa soñada, y cualquier sueldo 20% arriba de mi objetivo.
+
+Cierra con: "Corri a las [hora]. [X] coincidencias nuevas. Quieres que te
+prepare la aplicacion de alguna, o ajustamos criterios?"</code></pre>
+
+      <h2>Déjalo agendado</h2>
+
+      <p>En la configuración de Claude, en tareas programadas, crea una nueva y pega el prompt ya lleno. Ponla todos los días a las 6:30 de la mañana. Cuando despiertes, el reporte ya está.</p>
+
+      <p>La hora importa. Si corre a media tarde vas a competir con quien lo vio en la mañana. Y si el reporte llega a una hora en la que no lo lees, el sistema completo se vuelve decorativo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el filtro no nace bien calibrado. La primera semana te va a colar vacantes que no querías, y eso es información. Cuando veas una que no debió estar ahí, dile por qué y agrégala como <em>dealbreaker</em>. Tres o cuatro correcciones y el reporte se limpia solo. Lo que no funciona es aguantarse el ruido en silencio: en un mes dejas de abrirlo.</p>
+      </div>
+
+      <h2>Qué hacer con el reporte</h2>
+
+      <p>Una vacante identificada no es una vacante aplicada. El reporte trae dos campos que existen para que actúes el mismo día: los huecos y el encuadre. Ahí está el borrador de tu carta de presentación.</p>
+
+      <p>La rutina que rinde: abres el reporte, tomas las que digan "hoy", y en la misma conversación le pides que redacte la aplicación usando tu currículum y la descripción de la vacante. De reporte a aplicación enviada en veinte minutos, antes de irte a trabajar. Eso es lo que te pone en los primeros currículums que lee el reclutador, que es toda la ventaja que estás comprando.</p>
+
+      <p>Si el bloque de los lunes te repite una habilidad que no tienes, no la ignores: es el mercado diciéndote exactamente qué aprender. Ese es el insumo de <a href="/guias/cazador-de-huecos-de-conocimiento/">el cazador de huecos de conocimiento</a>, y con lo que salga de ahí conviene después reacomodar tu perfil con <a href="/guias/iman-de-linkedin/">el imán de LinkedIn</a>.</p>
+
+      <h2>La versión para quien contrata</h2>
+
+      <p>El mismo mecanismo sirve del otro lado. Si tienes una vacante abierta y quieres saber contra qué estás compitiendo, cambias el perfil por el de la posición que ofreces y le pides que barra las vacantes equivalentes de tu ciudad: qué sueldo publican, qué prestaciones, qué esquema de trabajo, cómo redactan el puesto. Un reporte semanal de eso le dice a un área de talento por qué sus vacantes llevan tres meses abiertas, que casi siempre es una razón muy poco misteriosa.</p>
+
+      <h2>El error de siempre</h2>
+
+      <p>La gente pone el sueldo mínimo demasiado bajo "para no perderse nada". Y entonces se pierde de todo, porque el reporte se llena de vacantes que jamás aceptarían y las buenas quedan sepultadas.</p>
+
+      <p>Tu piso duro es el número abajo del cual dirías que no aunque todo lo demás fuera perfecto. Ponlo ahí. Un explorador que te trae dos vacantes al día y las dos te interesan vale infinitamente más que uno que te trae treinta.</p>

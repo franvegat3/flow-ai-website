@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code no es lo que crees — Guías Flow AI</title>
+  <meta name="description" content="Quítale la palabra &quot;code&quot; al nombre. Tú no programas, Claude sí. La instalación de 5 minutos más 3 construcciones de fin de semana con prompts para copiar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-code-no-es-lo-que-crees/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Claude Code no es lo que crees" />
+  <meta property="og:description" content="Quítale la palabra &quot;code&quot; al nombre. Tú no programas, Claude sí. La instalación de 5 minutos más 3 construcciones de fin de semana con prompts para copiar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-code-no-es-lo-que-crees/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Empezar</span><span class="tag">Creativo</span></div>
+      <h1>Claude Code no es lo que crees</h1>
+      <p class="lead">Quítale la palabra "code" al nombre. Tú no programas, Claude sí. La instalación de 5 minutos más 3 construcciones de fin de semana con prompts para copiar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La palabra "code" en el nombre le ha costado a mucha gente un año entero. Suena a herramienta de programadores, la gente que no programa asume que no es para ella, y ahí se queda.</p>
+
+      <p>Tú no programas. Claude sí. Esa es toda la diferencia entre esto y el chat que ya usas: en el chat te explica cómo hacer algo y tú lo haces. Aquí lo hace. Lee archivos de tu computadora, escribe otros, corre lo que escribió, ve el error, lo corrige y vuelve a intentar. Tú describes el resultado que quieres y revisas si te lo dio.</p>
+
+      <p>Se instala en cinco minutos. Abajo van los comandos exactos y tres cosas que puedes construir un sábado, con el prompt completo de cada una.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Claude Code es Claude con permiso de tocar tu computadora: leer, escribir, ejecutar y ver el resultado.</p>
+
+      <p>Esa capacidad cambia el tipo de petición que tiene sentido hacerle. En el chat pides texto. Aquí pides un sistema que corre solo: un reporte que se arma cada lunes con los datos que ya tienes, una herramienta que sustituye el Excel que tres personas actualizan a mano, un proceso que ordena una carpeta con dos mil archivos.</p>
+
+      <p>La terminal asusta hasta que entiendes que solo la vas a usar para escribir una palabra —<code>claude</code>— y a partir de ahí es una conversación normal, en español, dentro de una ventana negra.</p>
+
+      <h2>La instalación, cinco minutos</h2>
+
+      <p><strong>En Mac.</strong> Abre la Terminal (Cmd + barra espaciadora, escribe "Terminal", Enter). Pega esto y dale Enter:</p>
+
+      <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+
+      <p><strong>En Windows.</strong> Tecla de Windows, escribe "PowerShell", Enter. Pega esto:</p>
+
+      <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+
+      <p>Cuando termine, escribe <code>claude</code> y Enter. Se abre el navegador para que inicies sesión con tu cuenta. Vuelves a la terminal y ya estás adentro.</p>
+
+      <p>Un detalle que ahorra confusión: Claude Code trabaja sobre la carpeta desde la que lo abriste. Antes de escribir <code>claude</code>, crea una carpeta nueva para el proyecto y entra a ella. Si no lo haces, va a operar sobre tu carpeta de usuario completa, que es un desorden y además no es buena idea.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar lo que hizo. Claude Code te pide permiso antes de tocar archivos, y la tentación después de dos días es aprobar todo sin leer. No lo hagas en la carpeta donde vive algo que te importa. Trabaja en una carpeta de proyecto, y si vas a apuntarle a datos reales, dale una copia primero.</p>
+      </div>
+
+      <h2>Cómo se le pide algo</h2>
+
+      <p>La diferencia entre una construcción que sale bien y una que se queda a medias casi siempre está en tres cosas del prompt:</p>
+
+      <ul>
+        <li><strong>Dile qué quieres al final, no qué tecnología usar.</strong> Salvo que tengas una razón, deja que elija.</li>
+        <li><strong>Pídele que te haga preguntas antes de construir.</strong> Tres o cinco. Es la instrucción que más calidad agrega por palabra escrita.</li>
+        <li><strong>Dile que se detenga cuando necesite algo tuyo.</strong> Una cuenta, una clave, una decisión. Si no, se inventa un supuesto y sigue.</li>
+      </ul>
+
+      <h2>Tres construcciones de fin de semana</h2>
+
+      <h3>1. Triaje de tu bandeja de entrada</h3>
+
+      <p>La más fácil de las tres y la que más rápido se nota. Corre cada mañana, clasifica lo que llegó y te deja los borradores de respuesta escritos.</p>
+
+      <pre><code>Constrúyeme un sistema de triaje de correo que corra cada día hábil
+a las 7 de la mañana. Debe:
+
+1. Conectarse a mi Gmail. Pregúntame si prefiero el conector o una
+   autorización directa, y explícame la diferencia en dos líneas.
+2. Bajar todo el correo no leído de las últimas 24 horas.
+3. Clasificarlo en 4 cajones: Urgente (contestar hoy), Importante
+   (esta semana), Informativo (no requiere respuesta) y Descartable.
+4. Para Urgente e Importante, redactar un borrador de respuesta
+   usando el contexto de conversaciones anteriores con esa persona.
+5. Escribir el resultado en un archivo llamado triaje-[fecha].md en
+   esta carpeta.
+
+Antes de construir nada, hazme 3 preguntas: mi correo, el tono con el
+que respondo, y qué remitentes quiero que siempre salgan como
+urgentes.
+
+Cuando ya funcione, déjalo programado para que corra solo a las 7 de
+la mañana de lunes a viernes.</code></pre>
+
+      <h3>2. El reporte que alguien arma a mano cada lunes</h3>
+
+      <p>Toda empresa tiene uno. Alguien exporta tres archivos, los pega en una hoja, hace las mismas fórmulas de siempre y manda el resumen. Es entre dos y cuatro horas semanales de una persona que cobra por pensar, no por copiar.</p>
+
+      <pre><code>Quiero automatizar un reporte que hoy armo a mano cada semana.
+
+Cómo funciona hoy:
+- Exporto [describe los archivos: de dónde salen, en qué formato]
+- Los junto por [columna o criterio con el que los cruzas]
+- Calculo [las métricas exactas que sacas]
+- Y mando un resumen a [quién] con [qué secciones tiene hoy]
+
+Lo que quiero:
+1. Un script que tome los archivos exportados de una carpeta, haga
+   todos los cálculos y genere el reporte terminado.
+2. El reporte con las mismas secciones que hoy, más una comparación
+   contra la semana anterior en cada métrica.
+3. Que marque solo lo que se movió más de [X]% para no leerme todo.
+4. Que me avise si un archivo falta o si una cifra sale fuera de un
+   rango razonable, en vez de generar el reporte con datos malos.
+
+Antes de empezar: hazme las preguntas que necesites para entender la
+estructura exacta de los archivos, y pídeme un ejemplo real de cada
+uno. Si un cálculo se puede leer de dos formas, pregúntame cuál es la
+correcta en lugar de asumir.
+
+Empieza por hacer los cálculos sobre los archivos de la semana pasada
+y compáralos contra el reporte que ya mandé, para verificar que dan
+exactamente lo mismo antes de seguir.</code></pre>
+
+      <p>Ese último párrafo es la parte que casi nadie escribe y es la que hace que el reporte sea confiable. Sin la verificación contra un resultado que ya conoces, no tienes forma de saber si el script está bien o solo se ve bien.</p>
+
+      <h3>3. Una herramienta chica que sí cobra</h3>
+
+      <p>La construcción de fin de semana clásica: una aplicación web pequeña, con registro y con cobro. No para volverte millonario el lunes, sino para entender de punta a punta cómo se arma algo que cobra dinero.</p>
+
+      <pre><code>Ayúdame a construir y publicar una aplicación web pequeña este fin
+de semana.
+
+La idea: [descríbela en 2 o 3 frases: para quién es, qué hace, por
+qué pagarían]
+
+Restricciones:
+- Que funcione en el navegador, sin tienda de aplicaciones.
+- Registro con correo y contraseña.
+- Cobro con Stripe para el plan de paga.
+- Hospedaje gratis o por debajo de [presupuesto] al mes.
+- El código en esta carpeta, para que sea mío.
+
+Trabájalo así:
+1. Hazme 5 preguntas para cerrar bien el alcance.
+2. Elige la combinación de herramientas más simple que funcione y
+   explícame en dos líneas por qué esa.
+3. Constrúyelo por partes, mostrándome qué vas haciendo.
+4. Ayúdame a publicarlo.
+5. Escríbeme una página de inicio de un párrafo.
+
+Si en cualquier paso necesitas que yo haga algo —crear una cuenta,
+conseguir una clave— DETENTE y explícame cómo hacerlo antes de
+seguir. No inventes credenciales ni las dejes pendientes.</code></pre>
+
+      <h2>Lo que sí cuesta</h2>
+
+      <p>La herramienta viene con tu suscripción de Claude. Lo que puede costar aparte son las cuentas de terceros que uses: procesador de pagos, servicio de mensajes, hospedaje si lo que construiste crece. Casi todos tienen capa gratuita suficiente para uso personal, y ahí es donde conviene quedarse hasta que algo demuestre que vale la pena pagarlo.</p>
+
+      <p>El otro costo es tu atención. Claude Code es rápido produciendo, y eso se convierte en carpetas llenas de cosas a medias si no cierras una antes de empezar la siguiente.</p>
+
+      <h2>Por dónde empezar de verdad</h2>
+
+      <p>No empieces por la aplicación. Empieza por el reporte manual, o por cualquier tarea que hoy ya hagas bien y que te aburra. Necesitas poder juzgar el resultado, y para eso tienes que conocer la respuesta correcta de antemano.</p>
+
+      <p>Cuando lleves dos o tres construcciones, el paso siguiente es escribir un archivo de contexto para que Claude sepa cómo trabajas sin que se lo repitas cada vez: eso es <a href="/guias/el-archivo-mas-importante-de-claude-code/">el CLAUDE.md</a>. Y si lo que te interesa es construir herramientas sin tocar nada técnico, el camino está en <a href="/guias/claude-code-sin-codigo/">Claude Code sin escribir código</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

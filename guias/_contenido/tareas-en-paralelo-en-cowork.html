@@ -1,0 +1,111 @@
+      <p>La escena se repite en toda oficina que ya adoptó IA: alguien le pide a Claude que investigue un competidor, se queda viendo la pantalla hasta que termina, lee, y entonces le pide el siguiente. Diez competidores, diez esperas. Media hora mirando cómo trabaja una máquina.</p>
+
+      <p>Eso no es usar un agente. Eso es tener un becario al que solo le puedes dar una instrucción a la vez porque te da miedo soltarlo.</p>
+
+      <p>Cowork puede partir el trabajo entre varios subagentes que corren al mismo tiempo. El mismo lote de diez archivos que secuencialmente se lleva media hora sale en unos minutos. Y lo activas con dos palabras en el prompt.</p>
+
+      <h2>Cómo se activa</h2>
+
+      <p>Le dices <strong>"en paralelo"</strong>. Literal. Esa frase le indica a Cowork que reparta las tareas entre varios subagentes en lugar de encolarlas una tras otra.</p>
+
+      <p>No es un botón ni una casilla escondida en configuración. Es una instrucción en el prompt, y por eso casi nadie la usa: no aparece en ningún lado de la interfaz, así que si nadie te lo dice, no existe.</p>
+
+      <p>La estructura que funciona es siempre la misma:</p>
+
+      <pre><code>Investiga y completa las siguientes tareas en paralelo:
+
+1. [Primera tarea — sé específico con lo que quieres de salida]
+2. [Segunda tarea — incluye el contexto o los datos que necesite]
+3. [Tercera tarea — entre más específica, mejor sale]
+4. [Agrega las que necesites]
+
+Para cada tarea, guarda el resultado como un archivo separado en mi
+espacio de trabajo. Usa el nombre de la tarea como nombre de archivo.
+
+Cuando terminen todas, dame una sola lista con los archivos creados y
+una línea por cada uno diciéndome qué encontraste.</code></pre>
+
+      <p>Las dos últimas instrucciones importan tanto como la primera. Sin "archivo separado" te devuelve un solo bloque gigante de texto en el chat y pierdes la mitad de la ventaja. Sin la lista final tienes que abrir los diez archivos para saber si alguno vale la pena.</p>
+
+      <h2>La regla que decide si sirve o no</h2>
+
+      <p>Solo se puede paralelizar lo que no depende de sí mismo.</p>
+
+      <p>Si la tarea 3 necesita el resultado de la tarea 1, no hay paralelo posible. El subagente que corre la 3 no puede esperar al que corre la 1: cada uno arranca sin saber que el otro existe. Lo que pasa cuando lo intentas es peor que un error —el modelo se inventa el insumo que le falta y te entrega algo que se ve terminado y está construido sobre aire.</p>
+
+      <p>Antes de escribir el prompt, pásale esta prueba a tu lista: <em>¿puedo entregarle cada punto a una persona distinta que no habla con las demás?</em> Si la respuesta es sí, va en paralelo. Si alguna necesita preguntarle algo a otra, esa se sale de la lista y la corres después.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> partir el trabajo en dos rondas. Casi todo proceso real es un montón de trabajo independiente seguido de un paso de síntesis. Ronda uno en paralelo para juntar el material, ronda dos secuencial para consolidarlo. Meter la síntesis dentro del mismo prompt paralelo es lo que arruina el resultado.</p>
+      </div>
+
+      <h2>Tres casos donde esto cambia el día</h2>
+
+      <h3>Inteligencia de competencia</h3>
+
+      <p>Diez competidores, un perfil por cada uno. Cada perfil es independiente: nadie necesita saber del otro para escribirse.</p>
+
+      <pre><code>Investiga los siguientes competidores en paralelo. Para cada uno quiero
+un archivo con: propuesta de valor en una frase, rango de precios público
+si lo hay, en qué segmento pegan más fuerte, qué dicen sus clientes en
+reseñas públicas, y una debilidad concreta que podamos usar en una llamada
+de ventas.
+
+1. [Competidor 1]
+2. [Competidor 2]
+3. [Competidor 3]
+
+Guarda cada perfil como archivo separado con el nombre del competidor.
+No compares entre ellos todavía: eso lo hacemos después.</code></pre>
+
+      <p>El "no compares todavía" es a propósito. La comparación es la segunda ronda, y ahí sí quieres una sola sesión que lea los diez archivos y encuentre el patrón.</p>
+
+      <h3>Contenido en lote</h3>
+
+      <p>Una operación de contenido que publica en cinco redes tiene el mismo mensaje adaptado cinco veces. Cinco adaptaciones que no dependen entre sí.</p>
+
+      <pre><code>Toma el documento adjunto como fuente y adapta el mensaje en paralelo:
+
+1. Post de LinkedIn, tono profesional, máximo 200 palabras, sin hashtags.
+2. Guion de reel de 45 segundos, con el gancho en los primeros 3 segundos.
+3. Hilo de X de 6 publicaciones.
+4. Correo para la base de datos, asunto incluido, máximo 150 palabras.
+5. Copy para anuncio de Meta, tres variantes de titular.
+
+Guarda cada uno como archivo separado. No cambies el argumento de fondo
+del documento: solo el formato y el largo.</code></pre>
+
+      <h3>Preparación de juntas</h3>
+
+      <p>El uso que más rápido se paga en un equipo comercial. Ocho llamadas en la semana, ocho preparaciones que nadie hace porque no hay tiempo.</p>
+
+      <pre><code>Prepárame en paralelo las llamadas de esta semana. Para cada una quiero
+un archivo con: qué hace la empresa, quién es la persona con la que hablo
+y qué le importa por su puesto, qué pasó en nuestras interacciones previas
+según los archivos del espacio de trabajo, tres preguntas que deba hacer,
+y la objeción más probable con su respuesta.
+
+1. [Empresa — persona — fecha]
+2. [Empresa — persona — fecha]
+3. [Empresa — persona — fecha]
+
+Si no encuentras información pública de alguna, dilo explícitamente en
+el archivo en lugar de rellenar con supuestos.</code></pre>
+
+      <p>Esa última línea es la que evita que ocho preparaciones bonitas te lleven a una llamada donde citas un dato que el modelo se inventó.</p>
+
+      <h2>Qué esperar de verdad</h2>
+
+      <p>El ahorro de tiempo no es lineal y no siempre es espectacular. En tareas cortas la diferencia se nota poco, porque el costo de arrancar varios subagentes se come la ganancia. Donde revienta es cuando cada tarea implica buscar en la web, leer varias fuentes y redactar: ahí la espera secuencial es casi todo el tiempo del proceso, y el paralelo lo colapsa.</p>
+
+      <p>La otra cosa que cambia es de qué se cansa uno. Escribir un prompt de diez tareas bien especificadas cuesta más trabajo mental por adelantado que ir pidiendo de una en una. Pero es trabajo de una sola vez, y el prompt te queda para reutilizar la siguiente semana con otros diez nombres.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Mandar diez tareas mal especificadas y creer que el paralelo las va a arreglar.</p>
+
+      <p>Corriendo de una en una, cuando la primera sale mal la corriges antes de pedir la segunda. En paralelo no: si tu instrucción es ambigua, sale ambigua diez veces y ahora tienes diez archivos que revisar en vez de uno. La velocidad multiplica lo bueno y lo malo por igual.</p>
+
+      <p>Lo que hago yo: corro la tarea 1 sola, veo cómo sale, ajusto la redacción, y hasta entonces mando el lote completo con esa redacción ya probada. Son tres minutos extra que evitan rehacer todo.</p>
+
+      <p>Y sobre lo que sale del lote, la costumbre no cambia: diez archivos generados rápido siguen necesitando revisión. Antes de mandarle cualquiera de esos perfiles a tu equipo, pásalos por un <a href="/guias/nunca-confies-sin-hacer-esto/">agente auditor</a>. Si esto te está gustando, el siguiente paso es dejar de dispararlo a mano y programarlo, que es parte de <a href="/guias/sacarle-todo-a-cowork/">sacarle todo a Cowork</a>.</p>

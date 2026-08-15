@@ -1,0 +1,78 @@
+      <p>Todo el que ha intentado poner un agente de IA en producción se estrella contra la misma pared. La parte inteligente —el modelo decidiendo qué hacer— es la fácil. La difícil es todo lo demás: el ciclo que le da vueltas a la tarea hasta terminarla, el lugar seguro donde ejecuta comandos, qué pasa cuando el servidor se cae a la mitad, dónde guardas las llaves de las herramientas que va a usar.</p>
+
+      <p>Ese "todo lo demás" es la razón por la que la mayoría de los agentes viven en la laptop de alguien y nunca llegan a ser un proceso de la empresa.</p>
+
+      <p>Los agentes administrados de Anthropic mueven esa parte a sus servidores. Tú describes qué hace el agente; ellos corren el ciclo, levantan el contenedor donde se ejecutan las herramientas, se recuperan de las caídas y te mandan los eventos en vivo.</p>
+
+      <h2>Las cuatro piezas</h2>
+
+      <p>El modelo mental completo son cuatro objetos, y entenderlos bien es el noventa por ciento de la curva de aprendizaje:</p>
+
+      <ul>
+        <li><strong>Agente</strong> — la configuración guardada y versionada: qué modelo usa, su instrucción de sistema, sus herramientas, sus conexiones y sus skills. Se crea <em>una vez</em>.</li>
+        <li><strong>Ambiente</strong> — la plantilla del contenedor donde va a trabajar: qué paquetes trae, a qué red puede salir. Se reutiliza entre agentes.</li>
+        <li><strong>Sesión</strong> — una corrida concreta. Apunta a un agente y a un ambiente, levanta su propio espacio de trabajo aislado, y vive hasta que la tarea termina.</li>
+        <li><strong>Eventos</strong> — la conversación en ambos sentidos. Tú mandas mensajes y resultados de herramientas; el agente te manda lo que va haciendo, en tiempo real.</li>
+      </ul>
+
+      <p>Aquí está la distinción que más se malinterpreta: <strong>el contenedor no es donde piensa el agente</strong>. El razonamiento corre en la infraestructura de Anthropic; el contenedor es donde <em>se ejecutan</em> sus herramientas —el bash, la lectura y escritura de archivos, el código—. El cerebro está de un lado y las manos del otro, y por eso si una instancia se cae, la sesión conserva su historia y continúa sola.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> crear el agente una sola vez. El error más común es llamar a la creación del agente al inicio de cada corrida, como si fuera un parámetro. Eso te deja cientos de agentes huérfanos, te cobra la latencia de creación cada vez, y anula todo el sistema de versiones. Lo correcto: creas el agente en un paso de configuración, guardas su identificador en tu `.env` o tu base de datos, y cada corrida solo abre una sesión apuntando a ese identificador.</p>
+      </div>
+
+      <h2>Por qué el agente está versionado</h2>
+
+      <p>Cada vez que actualizas la configuración de un agente se crea una versión nueva e inmutable, y una sesión se puede clavar a una versión específica.</p>
+
+      <p>Eso resuelve tres problemas reales de operación. Puedes iterar el prompt sin romper las sesiones que ya están corriendo con la versión anterior. Puedes reproducir un resultado de hace tres semanas apuntando a la versión de entonces. Y si un cambio empeora las cosas, regresas las sesiones nuevas a la versión buena mientras investigas, sin desplegar nada.</p>
+
+      <p>La regla para decidir entre actualizar y crear otro agente es simple: si le pondrías el mismo nombre, es una actualización.</p>
+
+      <h2>Qué sabe hacer sin que le enseñes</h2>
+
+      <p>El paquete de herramientas incorporado le da al agente ocho capacidades desde el primer día: ejecutar comandos de shell, leer archivos, escribir, editar, buscar archivos por patrón, buscar texto con expresiones regulares, traer contenido de una URL y buscar en la web.</p>
+
+      <p>Encima de eso puedes conectarle servidores externos —GitHub, Linear, Slack, lo que exponga una interfaz estándar— y definir herramientas propias que tu aplicación ejecuta. Cuando el agente llama a una de las tuyas, la sesión se queda esperando, tú corres lo que sea de tu lado, y le devuelves el resultado.</p>
+
+      <p>Esa última parte es más importante de lo que parece para una empresa: significa que <strong>la llave de tu sistema interno nunca entra al contenedor</strong>. El agente pide, tu servidor ejecuta con sus propias credenciales, y el secreto se queda en tu infraestructura.</p>
+
+      <h2>Cómo se paga</h2>
+
+      <p>Tres conceptos, y conviene entenderlos porque no se parecen a una suscripción:</p>
+
+      <ol>
+        <li><strong>Los tokens del modelo</strong>, a la tarifa del modelo que elijas. Es la parte grande.</li>
+        <li><strong>El tiempo de sesión activa</strong>, medido al milisegundo. Solo se cobra mientras el agente está trabajando de verdad, no mientras espera tu respuesta.</li>
+        <li><strong>Las búsquedas web</strong>, por millar.</li>
+      </ol>
+
+      <p>Lo relevante para presupuestar: puedes ponerle a una sesión un <strong>tope duro en dólares</strong> al crearla. Cuando lo alcanza no truena ni se muere —se pausa, conserva su historia y su contenedor, y espera. Si decides subir el tope, retoma justo donde iba.</p>
+
+      <p>Ese tope es la diferencia entre poder dejar un agente corriendo de noche y no atreverse. Sin él, cualquier proceso autónomo es un riesgo de facturación abierto.</p>
+
+      <h2>Dónde se justifica en una operación</h2>
+
+      <p>El caso que más veo funcionar es el trabajo <strong>recurrente y sin público</strong>. Puedes programar una corrida con una expresión de calendario —cada lunes a las 6, cada día a medianoche— y cada disparo abre su propia sesión sin que nadie apriete nada.</p>
+
+      <p>Un ejemplo concreto de operación real: el reporte semanal de competencia. Todos los lunes a las seis, un agente entra, busca lo que publicaron tres competidores, lee sus páginas, arma el documento, lo deja en un archivo de salida y avisa por webhook. Nadie lo dispara. Y cada disparo queda registrado: si falló, sabes exactamente por qué.</p>
+
+      <p>El segundo caso es el trabajo largo que se abre en ramas. Investigar diez fuentes, procesar cincuenta archivos, revisar un repositorio grande. Un agente coordinador puede delegar cada pedazo a un hilo aparte con su propio contexto, todos compartiendo el mismo espacio de trabajo, y solo el resumen de cada uno regresa. Eso mantiene la memoria del coordinador pequeña, que es lo que normalmente revienta en un proceso largo.</p>
+
+      <h2>Cuándo no</h2>
+
+      <p>Esto es una plataforma de programación, no una herramienta que abres y usas. Si lo que quieres es delegarle trabajo a la IA sin escribir código, la respuesta sigue siendo Cowork con tareas programadas, y te va a llevar cinco minutos en lugar de una tarde.</p>
+
+      <p>Tampoco vale la pena si tu tarea es una sola llamada al modelo. Un agente completo para clasificar un correo es infraestructura por deporte: eso es una petición sencilla y ya.</p>
+
+      <p>La prueba honesta son cuatro preguntas. ¿La tarea tiene varios pasos que no puedes especificar por completo de antemano? ¿El resultado justifica el costo y la espera? ¿El modelo de verdad es capaz de hacerlo? ¿Los errores se pueden detectar y revertir? Si alguna respuesta es no, quédate en el escalón anterior.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Montar la infraestructura antes de tener el proceso.</p>
+
+      <p>He visto equipos pasar una semana levantando ambientes, versionando agentes y configurando credenciales, para acabar con una plataforma impecable ejecutando un proceso que nadie había escrito bien. La plataforma no arregla eso. Le da velocidad y disponibilidad a lo que ya tengas: si lo que tienes está mal definido, ahora está mal definido las veinticuatro horas.</p>
+
+      <p>El orden que funciona es al revés. Primero corre la tarea a mano tres veces y anota exactamente qué hiciste. Después automatízala en algo simple. Y solo cuando la corras tan seguido que apretar el botón se vuelva la molestia, súbela aquí.</p>
+
+      <p>Si todavía no llegas a ese punto, empieza por <a href="/guias/tu-primer-agente-de-ia/">tu primer agente</a>, que corre en un rato y no requiere infraestructura. Y antes de decidir si esto es lo tuyo, vale la pena responder la pregunta previa: <a href="/guias/agente-o-workflow/">si lo que necesitas es un agente o un flujo</a>.</p>

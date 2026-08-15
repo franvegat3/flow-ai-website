@@ -1,0 +1,71 @@
+      <p>Cuando alguien de afuera dice que la IA se va a entrenar sola, es marketing. Cuando lo dice el jefe de política de Anthropic en su propio boletín, con un porcentaje y una fecha, la conversación es otra.</p>
+
+      <p>Jack Clark, cofundador de Anthropic, publicó en mayo de 2026 en su boletín Import AI una estimación que le puso número a algo que la industria discutía en abstracto: 60% o más de probabilidad de que para finales de 2028 exista investigación y desarrollo de IA sin humanos involucrados. Es decir, un sistema que entrena a su propio sucesor sin que nadie lo supervise en el ciclo.</p>
+
+      <p>No llegó ahí por intuición. Pasó semanas leyendo datos públicos sobre el avance de los modelos y salió con esa cifra. Vale la pena entender de dónde sale, qué no significa, y qué conviene hacer con un calendario de 36 meses encima.</p>
+
+      <h2>El dato que sostiene el calendario</h2>
+
+      <p>La medición que hace creíble la fecha no es de Anthropic. Es de METR, una organización que evalúa modelos de forma independiente, y mide algo que se entiende sin ser técnico: el <strong>horizonte temporal</strong>.</p>
+
+      <p>El horizonte temporal es el largo de una tarea, medido en cuánto le toma a un humano experto, que un modelo puede terminar solo acertando la mitad de las veces. Si un modelo tiene un horizonte de una hora, quiere decir que las tareas que a ti te toman una hora las completa bien la mitad de las veces, y las de cuatro horas casi nunca.</p>
+
+      <p>El hallazgo es que ese horizonte se ha estado duplicando aproximadamente cada siete meses desde 2019. Y que si mides solo el tramo de 2024 en adelante, va más rápido que eso. METR lo dice de forma clara: extrapolando la tendencia reciente, los modelos llegarían a tareas del orden de 167 horas con esa confiabilidad del 50% hacia 2027.</p>
+
+      <p>Ciento sesenta y siete horas son cuatro semanas de trabajo de una persona. Ese es el salto que hay detrás de la fecha de Clark. No hace falta creer en una singularidad: basta con que una curva que lleva seis años duplicándose siga otros dos.</p>
+
+      <h2>Qué significa y qué no</h2>
+
+      <p>Aquí es donde conviene bajarle al drama, porque la mitad de lo que se publicó sobre esto lo entendió mal.</p>
+
+      <p><strong>No es una predicción de superinteligencia.</strong> Es una predicción sobre un ciclo: que la IA mejore a la IA sin humanos en medio. Eso puede pasar y aun así el mundo seguirse viendo bastante parecido durante un rato.</p>
+
+      <p><strong>60% no es certeza.</strong> Es una apuesta con cuatro de cada diez posibilidades de estar equivocada, hecha por alguien con incentivos evidentes para que la industria parezca importante. Eso no la invalida, pero sí obliga a leerla como lo que es: un escenario probable, no un hecho agendado.</p>
+
+      <p><strong>El benchmark no es tu operación.</strong> Un modelo que resuelve tareas de software de cuarenta horas en un ambiente controlado no resuelve cuarenta horas de tu área de finanzas, donde la mitad del trabajo es perseguir a alguien para que mande un archivo. La brecha entre lo que un modelo puede hacer y lo que una empresa logra que haga sigue siendo enorme, y esa brecha es exactamente donde está el trabajo bien pagado de los próximos tres años.</p>
+
+      <p>Esa última parte es la que me importa. La pregunta útil no es si Clark tiene razón. Es qué habilidad te deja bien parado en los dos escenarios.</p>
+
+      <h2>Cinco cosas para empezar a aprender ahorita</h2>
+
+      <div class="plugin-card">
+        <h3>1. Construir agentes de verdad, no demos</h3>
+        <p>Un agente es un modelo con herramientas, permisos y un criterio de cuándo parar. La diferencia entre el video de LinkedIn y algo que aguanta un lunes está en lo aburrido: manejo de errores, qué pasa cuando la API no responde, qué hace cuando el dato viene sucio. Empieza con uno solo, que haga una cosa de tu trabajo, y déjalo correr dos semanas seguidas. Lo que aprendes en la semana dos no está en ningún tutorial.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> el proceso más repetitivo de tu semana, el que ya sabes de memoria.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Evaluar salidas, que es la habilidad escasa</h3>
+        <p>Si los sistemas se van a entrenar cada vez con menos humanos en el ciclo, el humano que queda es el que juzga. Evaluar significa tener un criterio explícito de qué es una buena respuesta, poder decir por qué una salida está mal, y armar un conjunto de casos difíciles contra los que pruebas cada cambio. Es la parte menos glamorosa y la única que no se automatiza sola, porque el criterio de qué está bien lo pone el negocio.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> escribe diez casos donde tu flujo actual debería fallar, y córrelos cada vez que le muevas algo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Especializarte en conectar un solo stack</h3>
+        <p>La ventaja no está en saber de todas las herramientas. Está en ser la persona que conecta el modelo con el stack que ya usa un tipo de empresa. El que sabe amarrar Claude con HubSpot, Slack y un almacén de datos en una empresa de servicios vale más que el que ha probado cuarenta herramientas una tarde cada una. Elige un stack, aprende sus límites reales, y conviértete en el que sabe qué se rompe.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> el stack que ya tienes enfrente en tu trabajo actual.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Publicar algo que funcione</h3>
+        <p>Una cosa pública, usable por un desconocido. Puede ser chiquita. El valor no es el producto: es que te obliga a cerrar el ciclo completo, incluyendo las partes que en un proyecto personal se saltan siempre. Además es la única credencial que se revisa en treinta segundos, y en un mercado donde todo mundo dice saber de IA, eso pesa más que un certificado.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> la herramienta que ya te construiste para ti y no le has enseñado a nadie.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Entender el terreno de política y seguridad</h3>
+        <p>No para volverte abogado. Para poder contestar las preguntas que frenan cada proyecto adentro de una empresa mediana: dónde vive el dato, qué pasa con información de clientes, qué se puede y qué no según el contrato que ya firmaron. En las implementaciones que he hecho, lo que detiene un proyecto casi nunca es técnico. Es alguien de legal o de cumplimiento con una duda razonable que nadie del equipo sabe contestar.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> lee la política de manejo de datos del proveedor que ya usa tu empresa.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las cinco se ven como cinco cursos. No lo son. Se hacen en un mismo proyecto: construyes un agente, le armas evaluaciones, lo conectas a tu stack, lo publicas, y contestas las preguntas de seguridad que te hagan. Cinco frentes separados es cómo la gente se queda tres meses leyendo sin entregar nada.</p>
+      </div>
+
+      <h2>Cómo lo leería yo si tuviera 36 meses</h2>
+
+      <p>Si el calendario de Clark se cumple, el trabajo que sobrevive es el de dirigir sistemas, no el de operarlos. Si no se cumple y todo tarda el doble, el trabajo que sobrevive es exactamente el mismo, nada más que con más tiempo para llegar. Las dos ramas apuntan al mismo lado, y por eso vale la pena moverse sin necesidad de creerle al porcentaje.</p>
+
+      <p>Lo que no haría es esperar a que se aclare. Las curvas exponenciales se ven planas hasta que dejan de verse planas, y para entonces el ajuste ya no lo haces tú: te lo hacen. La ventaja de mover algo hoy es que en tres meses ya sabes en qué te equivocaste, y eso no se puede comprimir.</p>
+
+      <p>Un buen punto de partida es medir tu propia exposición con el <a href="/guias/analizador-de-riesgo-de-tu-puesto/">analizador de riesgo de tu puesto</a>, y de ahí elegir en qué de estas cinco te conviene meter las horas.</p>

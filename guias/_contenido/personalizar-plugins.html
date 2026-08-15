@@ -1,0 +1,71 @@
+      <p>Instalas el plugin de ventas. Le pides que prepare la llamada de mañana. Sale un brief correcto, bien estructurado, con las secciones que trae cualquier manual de ventas de internet. Y no lo usas, porque tú ya sabías eso.</p>
+
+      <p>Ese es el punto exacto donde el 90% de la gente concluye que los plugins están sobrevalorados. No lo están. Lo que pasa es que un plugin recién instalado corre con supuestos de fábrica: una empresa promedio, un ciclo de venta promedio, un cliente promedio. Ninguno de esos existe en tu operación.</p>
+
+      <p>Hay un botón que arregla eso y casi nadie lo aprieta.</p>
+
+      <h2>Dónde está</h2>
+
+      <p>Abres el plugin ya instalado y ahí mismo aparece la opción de personalizarlo. Lo que sigue es una entrevista: Claude te pregunta cómo trabajas, con qué herramientas, con qué proceso, con qué preferencias. Y ahí es donde se decide todo.</p>
+
+      <p>La trampa es que la entrevista se puede contestar en tres minutos con respuestas de una línea, y el sistema te deja hacerlo. Contestada así, no cambia nada. Contestada con detalle, es la diferencia entre un plugin curioso y uno que te devuelve horas cada semana.</p>
+
+      <h2>Los cuatro pasos</h2>
+
+      <ol>
+        <li><strong>Contesta la entrevista con detalle y con honestidad.</strong> Honestidad significa describir cómo trabajas de verdad, no cómo dice el manual que debería hacerse. Si tu proceso de venta tiene un paso feo donde le hablas por WhatsApp al contacto para saber si el presupuesto ya se aprobó, eso va en la entrevista. Es exactamente lo que el plugin no puede saber solo.</li>
+        <li><strong>Súbele ejemplos de entregables tuyos.</strong> Dos o tres propuestas que sí ganaste, el reporte que mandas cada mes, el correo de seguimiento que mejor te ha funcionado. Un ejemplo real le enseña más de formato y tono que veinte adjetivos.</li>
+        <li><strong>Revisa las skills una por una.</strong> Este es el paso que se salta hasta el que sí personalizó. Cada plugin trae varias skills adentro, y esas instrucciones corren <em>cada vez</em> que usas el plugin. Ábrelas. Donde una diga algo que no aplica en tu empresa, edítala. No es opcional: una skill con un supuesto equivocado te va a contaminar todas las salidas sin que sepas de dónde viene.</li>
+        <li><strong>Verifica los conectores.</strong> Que apunten a las cuentas correctas y a los espacios correctos. En empresas con varios workspaces de Slack o dos instancias de CRM esto falla más de lo que se piensa, y el síntoma es que el plugin "no encuentra nada".</li>
+      </ol>
+
+      <h2>El guion para contestar la entrevista</h2>
+
+      <p>Si te quedas en blanco cuando te pregunta cómo trabajas —que pasa siempre—, prepara la respuesta antes. Este prompt te la arma en un chat aparte y luego la pegas:</p>
+
+      <pre><code>Ayúdame a preparar el contexto que le voy a dar a un plugin de
+Claude para [área: ventas / finanzas / soporte / marketing].
+
+Hazme una pregunta a la vez, no todas juntas. Cubre estos ocho
+puntos y no pases al siguiente hasta que mi respuesta tenga
+suficiente detalle para que alguien nuevo pudiera operar sin mí:
+
+1. Qué vende o hace la empresa, a quién, y con qué ticket promedio.
+2. Cuál es el proceso real de [área], paso por paso, incluyendo
+   los pasos informales que nadie documentó.
+3. Qué herramientas se usan en cada paso y cuál es la fuente de
+   verdad cuando dos se contradicen.
+4. Qué palabras usamos internamente que afuera significan otra
+   cosa, y qué palabras tengo prohibido usar con clientes.
+5. Cómo se ve un entregable bueno en esta área y cómo se ve uno
+   que rechazaría.
+6. Qué decisiones puede tomar Claude solo y cuáles siempre pasan
+   por una persona.
+7. Los tres errores que más se cometen aquí y qué los causa.
+8. Qué dato o documento nunca debe salir de la empresa.
+
+Al final, entrégame todo esto como un texto corrido de máximo 600
+palabras, escrito para que otra IA lo lea como contexto operativo,
+sin viñetas decorativas ni relleno.</code></pre>
+
+      <p>Ese texto es tu contexto de área. Sirve para el plugin de hoy y para el que instales en tres meses, y en operaciones con varias personas conviene guardarlo en un lugar común: es el mismo para todo el equipo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el punto 4 de ese guion. El vocabulario interno es lo que más rápido delata que una salida la escribió una máquina que no trabaja ahí. Si en tu empresa "cuenta" significa cliente y no cuenta contable, o si le dicen "carpeta" a lo que el resto del mundo llama expediente, escríbelo. Es el ajuste más barato y el que más nota el equipo.</p>
+      </div>
+
+      <h2>Después de personalizar: la prueba</h2>
+
+      <p>No des por buena la personalización hasta probar cada comando del plugin con una tarea real de esta semana. No con un caso de ejemplo: con el cliente que sí tienes y el número que sí es.</p>
+
+      <p>Lo que buscas en esa prueba es una cosa: ¿tuviste que corregir algo a mano? Si tuviste que corregir, eso que corregiste es un dato que faltaba en la entrevista o una skill que quedó con el supuesto de fábrica. Regrésalo al plugin en ese momento, mientras lo tienes fresco. Tres iteraciones de esas y el plugin ya trabaja como tú.</p>
+
+      <h2>Lo que el plugin no va a traer, y hay que agregarle</h2>
+
+      <p>Ningún plugin cubre el proceso que solo existe en tu empresa. Después de dos semanas de uso vas a tener claro cuál es ese hueco. Ahí es donde le agregas una skill propia, encima del plugin: no la reemplaza, la complementa. El plugin trae el oficio genérico, tu skill trae lo que te hace distinto. Cómo se construye está en <a href="/guias/3-formas-de-construir-una-skill/">3 formas de construir una skill</a>, y la diferencia entre las dos piezas la desarmo en <a href="/guias/skills-contra-plugins/">skills contra plugins</a>.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>Tratar la personalización como configuración inicial que se hace una vez. Tu proceso cambia. Cambia el pricing, entra gente nueva, se cae una herramienta y se mete otra. Un plugin personalizado en enero y no revisado desde entonces está trabajando con una empresa que ya no existe, y lo peor es que no te avisa: sigue entregando cosas que se ven bien.</p>
+
+      <p>Márcalo cada trimestre. Vuelves a abrir la personalización, relees el contexto de área y corriges lo que ya no es cierto. Son veinte minutos. Es la diferencia entre una herramienta que el equipo sigue abriendo a los seis meses y otra que quedó en la carpeta de las cosas que probamos.</p>

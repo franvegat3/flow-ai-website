@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tus primeros 7 días con Claude — Guías Flow AI</title>
+  <meta name="description" content="Una guía día por día que va de &quot;me acabo de registrar&quot; a &quot;Claude corre la mitad de mi jornada&quot;. Memoria, conectores, proyectos y artifacts. Cada paso y cada prompt." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tus-primeros-7-dias-con-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Tus primeros 7 días con Claude" />
+  <meta property="og:description" content="Una guía día por día que va de &quot;me acabo de registrar&quot; a &quot;Claude corre la mitad de mi jornada&quot;. Memoria, conectores, proyectos y artifacts. Cada paso y cada prompt." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tus-primeros-7-dias-con-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>Tus primeros 7 días con Claude</h1>
+      <p class="lead">Una guía día por día que va de "me acabo de registrar" a "Claude corre la mitad de mi jornada". Memoria, conectores, proyectos y artifacts. Cada paso y cada prompt.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 11 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La primera semana es la que decide todo. Quien la usa como buscador se queda ahí seis meses. Quien la usa para configurar termina con una herramienta que hace la mitad de su jornada.</p>
+
+      <p>Y no es cuestión de horas. Son diez o quince minutos al día, siete días. El truco está en el orden: cada día usa lo del día anterior, así que si te saltas el dos, el cinco te sale a medias sin que sepas por qué.</p>
+
+      <p>Cada día trae tres cosas: qué haces, el prompt exacto, y una prueba para saber si de verdad quedó. Esa última parte es la que falta en casi todas las guías de arranque. Sin ella terminas la semana con siete palomitas y sin saber si sirvió.</p>
+
+      <p>Con la cuenta gratis alcanza para los siete días. Vas a topar el límite de uso algún día, sobre todo el cinco, y eso está bien: es la señal más honesta de si te conviene pagar, mucho mejor que decidirlo antes de haberlo usado. No necesitas descargar nada todavía; todo esto pasa en el navegador.</p>
+
+      <div class="plugin-card">
+        <h3>Día 1. Enciende la memoria <code>10 min</code></h3>
+        <p>Sin memoria, cada conversación arranca con un desconocido. Con memoria, arranca con alguien que ya sabe cómo se llama tu jefe y qué estás tratando de sacar este trimestre.</p>
+        <p>Se activa desde tu perfil, en la configuración, en la sección de memoria. Después la llenas hablando, no escribiendo un documento en frío:</p>
+        <pre><code>Guarda esto sobre mí y úsalo en todas nuestras conversaciones:
+
+- Me llamo [nombre], soy [puesto] en [empresa].
+- Mi empresa vende [qué] a [quién].
+- Mi día a día es [las tres cosas que de verdad haces].
+- Trabajo con [nombre y rol de cada persona]. Quien aprueba lo
+  que produzco es [quién].
+- Mis prioridades de este trimestre son [una, dos, tres].
+- Cómo quiero que me hables: directo, sin preámbulo, sin
+  resumen final, sin elogiarme la pregunta.
+
+Cuando termines, repíteme en una lista corta qué guardaste,
+para que yo corrija lo que hayas entendido mal.</code></pre>
+        <p class="plugin-for"><strong>Prueba del día:</strong> abre una conversación nueva y pregunta "¿qué sabes de mi trabajo?". Si contesta genérico, no se guardó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 2. Conecta correo, calendario y archivos <code>10 min</code></h3>
+        <p>Aquí es donde deja de adivinar y empieza a leer tus datos reales. Se hace desde la configuración, en la sección de conectores.</p>
+        <p>El permiso que otorgas es de lectura: puede leer tu bandeja y tu calendario, y puede dejar borradores, pero no manda correos ni mueve tus juntas. Los borradores quedan en tu carpeta de borradores esperando a que tú los revises. Esa separación es la que hace que se pueda usar sin susto.</p>
+        <pre><code>Revisa mi bandeja de las últimas 24 horas y mi calendario de
+mañana.
+
+Dime en una lista corta: qué correos requieren respuesta mía y
+para cuándo, qué juntas tengo mañana y con quién, y de qué se
+trata cada una según los correos que ya existen con esas
+personas.
+
+Si algo no lo puedes saber con lo que tienes, dilo en lugar de
+suponerlo.</code></pre>
+        <p class="plugin-for"><strong>Prueba del día:</strong> lo que te devuelva tiene que incluir un nombre y una fecha que tú no le dijiste. Si no, el conector está conectado pero no está sirviendo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 3. Tu primer proyecto <code>15 min</code></h3>
+        <p>Un proyecto es un espacio con archivos e instrucciones fijas. Todas las conversaciones que abras adentro ya vienen con ese contexto puesto.</p>
+        <p>Crea uno solo, para el área por la que te pagan. Súbele de tres a cinco archivos reales: una propuesta que salió bien, tu plantilla de reporte, los lineamientos de la marca, las notas de un cliente importante. Lo que buscas no es un archivero: son ejemplos de cómo se ve bien tu trabajo.</p>
+        <p>En las instrucciones va lo mismo que guardaste el día 1, más lo específico de ese trabajo: quién es la audiencia, qué formato usas, qué nunca se dice en tus documentos.</p>
+        <p class="plugin-for"><strong>Prueba del día:</strong> pídele adentro del proyecto que redacte algo típico tuyo, sin darle contexto. Si sale con el formato correcto a la primera, quedó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 4. Súbele un archivo de verdad <code>10 min</code></h3>
+        <p>Este es el día en que a la mayoría se le cae el veinte. Lee PDFs, documentos, hojas de cálculo, imágenes y capturas de pantalla. Se sube con el clip de la caja de mensaje.</p>
+        <p>Escoge algo real y feo: el reporte de sesenta páginas que no has leído, la exportación del sistema con las columnas revueltas, la minuta que nadie ordenó. Lo bonito no prueba nada.</p>
+        <p>Pídele tres cosas del archivo: qué dice en tres oraciones, qué hay que hacer y quién, y qué le falta o no cuadra. Ese tercer punto es el que más rinde y el que nadie pide.</p>
+        <p class="plugin-for"><strong>Prueba del día:</strong> que te señale algo del documento que tú no habías notado. Si solo te resume lo obvio, dale un archivo más difícil.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 5. Dale la tarea que a ti te toma una hora <code>15 min</code></h3>
+        <p>Los cuatro días anteriores fueron preparación. Este es el primer trabajo de verdad.</p>
+        <p>Elige algo que hagas cada semana y que te pese: el reporte de avance, el plan de un proyecto, el correo difícil que has estado postergando. Y descríbelo completo. La calidad de la salida está determinada casi por completo por cuánto contexto le diste, no por lo bien redactado que esté el prompt.</p>
+        <pre><code>Necesito [el entregable] para [quién lo va a leer].
+
+Situación: [qué pasó, con números y nombres].
+Qué tiene que lograr: [la decisión o la acción que quieres del
+lector].
+Qué no puede decir: [lo que está fuera de la mesa].
+Formato: [largo, secciones, tono].
+Cómo se ve uno bueno: [descríbelo, o dime que revise el que
+subí al proyecto].
+
+Antes de escribir, dime en tres líneas cómo lo vas a plantear.
+Si estás de acuerdo con mi enfoque no me lo confirmes: dime
+qué le está fallando.</code></pre>
+        <p class="plugin-for"><strong>Prueba del día:</strong> que el primer borrador te sirva con dos correcciones, no con diez. Si van diez, faltó contexto, no talento.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 6. Construye tu primer artifact <code>10 min</code></h3>
+        <p>Un artifact es una pieza que vive en un panel aparte y funciona de verdad: una calculadora, un tablero, una matriz de decisión, un planeador. Se puede publicar por liga y quien la abre no necesita cuenta.</p>
+        <p>El cambio es de verbo. En vez de pedirle que escriba, pídele que construya.</p>
+        <pre><code>Constrúyeme como artifact una matriz de decisión para elegir
+entre [las opciones que estás evaluando].
+
+Criterios: [lista los tuyos, con el peso que le das a cada uno].
+Que yo pueda mover los pesos y ver cómo cambia el resultado.
+Que muestre no solo el ganador, sino qué tan cerca quedó el
+segundo.
+
+Fondo claro, tipografía neutra, sin colores de marca. Que se vea
+bien en celular.</code></pre>
+        <p class="plugin-for"><strong>Prueba del día:</strong> pídele un cambio, "agrégale un buscador" o "ponle modo oscuro", y velo reconstruirse. Ahí entiendes que es una herramienta, no una imagen.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Día 7. Junta las seis piezas <code>15 min</code></h3>
+        <p>El último día no aprendes nada nuevo. Encadenas lo de los seis anteriores y ves qué se siente cuando funcionan juntos.</p>
+        <p>Entra a tu proyecto del día 3, que ya tiene contexto. Pídele que revise tu correo y tu calendario, que construya un tablero de la semana como artifact, y que te diga en qué enfocarte:</p>
+        <pre><code>Con el contexto de este proyecto, revisa mi correo y mi
+calendario de la semana que entra.
+
+1. Resúmeme qué se viene y qué está en riesgo de no salir.
+2. Constrúyeme un tablero como artifact con mis pendientes,
+   de quién depende cada uno y qué se vence primero.
+3. Dime mis tres prioridades y por qué esas, no otras. Señala
+   una que debería delegar y a quién, según lo que sabes de mi
+   equipo.</code></pre>
+        <p class="plugin-for"><strong>Prueba del día:</strong> que las tres prioridades que te dé sean discutibles pero razonables. Si son obvias, tu contexto todavía es flaco.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la prueba. Se hacen los siete días, se palomean, y nadie verifica ninguno. Después de tres semanas algo sale mal y no hay forma de saber cuál de las siete piezas está floja. Las pruebas toman treinta segundos cada una y son lo único que te dice dónde volver.</p>
+      </div>
+
+      <h2>Qué tienes el lunes siguiente</h2>
+
+      <p>Un Claude que sabe quién eres sin que se lo cuentes, que ve tu correo y tu calendario, que tiene un espacio con tus archivos y tu formato, y que te construye herramientas cuando las necesitas. Poco más de una hora repartida en siete días.</p>
+
+      <p>Lo que no tienes todavía es lo que trabaja solo sobre tus archivos mientras tú haces otra cosa. Eso es la siguiente capa y está en la guía completa de Cowork. No la empieces antes: sin los días 1 y 3 hechos, un agente con acceso a tus carpetas es velocidad sin criterio.</p>
+
+      <h2>Si se te rompe la racha</h2>
+
+      <p>Se va a romper. Un martes se te atraviesa algo y el miércoles ya no te acuerdas dónde ibas.</p>
+
+      <p>No reinicies desde el día 1. Retoma donde te quedaste, aunque hayan pasado dos semanas: lo que configuraste sigue ahí. Y si solo vas a hacer dos de los siete, haz el 1 y el 3. La memoria y un proyecto con archivos reales rinden más que los otros cinco juntos, porque son los únicos que mejoran <em>todas</em> las conversaciones que vengan después.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

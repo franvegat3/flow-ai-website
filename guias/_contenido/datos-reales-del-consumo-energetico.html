@@ -1,0 +1,60 @@
+      <p>He escuchado esta razón varias veces en juntas, casi siempre de alguien serio: "no quiero usar IA por el consumo de agua y de energía". Es un argumento honesto y merece números honestos, no una respuesta de vendedor.</p>
+
+      <p>Así que aquí van los números, con la fuente pegada a cada uno. Y también va lo que no se sabe, que es más de lo que la conversación en redes deja ver. Si al final decides que sigues sin querer usarla, por lo menos va a ser con las cifras correctas.</p>
+
+      <h2>Las cifras que sí se sostienen</h2>
+
+      <p>La fuente seria del tema es el reporte <em>Energy and AI</em> de la Agencia Internacional de Energía. No es de un laboratorio de IA ni de una ONG con posición tomada, y sus números son los que citan casi todos los demás.</p>
+
+      <ul>
+        <li>Los centros de datos del mundo consumieron alrededor de <strong>415 TWh en 2024</strong>, más o menos el <strong>1.5% de la electricidad mundial</strong>. Eso incluye todo: la nube, el streaming, los correos, las bases de datos y la IA.</li>
+        <li>Ese consumo venía creciendo cerca de <strong>12% al año</strong> en el quinquenio previo.</li>
+        <li>La proyección base es que llegue a <strong>945 TWh en 2030</strong>, es decir, poco menos del <strong>3% de la electricidad mundial</strong>. Es el doble en seis años, con un crecimiento de alrededor de 15% anual.</li>
+        <li>Dentro de ese total, los servidores acelerados —los de IA— son los que jalan: la IEA proyecta que crezcan cerca de <strong>30% al año</strong>, contra 9% de los servidores convencionales.</li>
+      </ul>
+
+      <p>Vale la pena leer el 3% con calma. Es una cifra grande en términos absolutos y chica comparada con lo que la gente imagina cuando lee un titular. Para dimensionarla: el transporte y la industria pesada están en otro orden de magnitud completamente distinto.</p>
+
+      <h2>Tu consumo personal, en números</h2>
+
+      <p>Aquí está el dato que casi nadie tiene. Epoch AI, una organización de investigación independiente, estimó el consumo de una consulta típica de ChatGPT con GPT-4o en <strong>alrededor de 0.3 watts-hora</strong>. La estimación sale de una cuenta explícita: unos 500 tokens de salida, 1,500 W por tarjeta H100 y un 70% de aprovechamiento.</p>
+
+      <p>0.3 Wh es poco. Un microondas de 1,000 W encendido un segundo gasta 0.28 Wh: es aritmética, no un estudio. Cien consultas seguidas son 30 Wh, que es lo que consume un foco LED de 10 W en tres horas.</p>
+
+      <p>El dato importante de ese trabajo de Epoch no es el 0.3. Es que la cifra que se citaba antes en todos lados era de 3 Wh, o sea <strong>diez veces más alta</strong>. Esa cifra vieja es la que sigue circulando en las gráficas de Instagram, y de ahí sale buena parte de la culpa.</p>
+
+      <div class="callout-box">
+        <p><strong>El matiz que el dato de 0.3 Wh no cubre:</strong> Epoch fue explícita en que las consultas con entradas muy largas, o con modelos de razonamiento que piensan antes de responder, pueden consumir bastante más que eso. Si le pegas un PDF de doscientas páginas a un modelo de razonamiento, no estás en el mismo rango. Y la generación de video está en otro planeta. Usar el 0.3 como si aplicara a todo es el mismo error que cometían los que citaban el 3.</p>
+      </div>
+
+      <h2>Lo que no se sabe</h2>
+
+      <p>Esta es la parte que casi nunca aparece, y me parece la más importante para no quedar mal citando algo.</p>
+
+      <p><strong>El consumo por consulta de cada modelo específico no es público.</strong> Ni Anthropic, ni OpenAI, ni Google publican watts-hora por respuesta de sus modelos actuales. Todo lo que circula son estimaciones externas hechas con supuestos de hardware. Buenas estimaciones, pero estimaciones.</p>
+
+      <p><strong>El costo energético de entrenar los modelos de frontera actuales tampoco es público.</strong> Hay cifras de modelos de hace dos o tres años y reconstrucciones a partir del cómputo estimado. No hay números oficiales recientes.</p>
+
+      <p><strong>El agua es el dato más flojo de todos.</strong> Depende del sistema de enfriamiento, del clima del sitio y de si el centro de datos usa circuito cerrado. Los números que se comparten como si fueran universales —tantos mililitros por pregunta— salen de promedios que mezclan instalaciones que no se parecen entre sí. Si alguien te da una cifra de agua por consulta con dos decimales, desconfía.</p>
+
+      <p>Cuando un tema tiene tres huecos así, la respuesta madura no es elegir el número que te conviene. Es decir qué se sabe y qué no.</p>
+
+      <h2>Dónde sí está el problema</h2>
+
+      <p>Nada de lo anterior significa que el asunto sea inventado. Significa que el problema está en otro lado de donde la gente lo está buscando.</p>
+
+      <p>El crecimiento viene de la construcción de centros de datos, no de tus preguntas. Y ese crecimiento se concentra geográficamente: llega de golpe a redes eléctricas locales que no estaban dimensionadas para eso, presiona los precios de la electricidad en esas zonas, y en varios casos se ha resuelto con generación fósil de arranque rápido porque las renovables no se conectan al ritmo que la obra avanza.</p>
+
+      <p>Ese es el debate real, y es un debate de política energética y de permisos, no de si tú le preguntas o no a Claude. Tu decisión individual de no usar IA no mueve esa aguja ni un poco. Lo que sí la mueve es dónde se autoriza construir, con qué fuente se alimenta, y si el operador se compromete a energía limpia adicional en vez de comprar certificados.</p>
+
+      <h2>Cómo lo resuelvo en la práctica</h2>
+
+      <p>En las empresas donde implemento esto, la conversación se ordena con tres cosas.</p>
+
+      <ol>
+        <li><strong>Separa tu uso del problema estructural.</strong> Tu consumo personal es despreciable frente al total y frente a casi cualquier otra decisión de tu vida. Si el impacto ambiental te importa de verdad, tus vuelos y tu transporte pesan órdenes de magnitud más que tus consultas.</li>
+        <li><strong>Usa el modelo del tamaño de la tarea.</strong> No mandes un modelo de razonamiento a resumir un correo de cuatro líneas. Aparte de que consume más, es más lento y no responde mejor. Esa disciplina ahorra energía y dinero al mismo tiempo, que es la única razón por la que se sostiene en un equipo.</li>
+        <li><strong>Si eres empresa, pregunta por la región.</strong> Los proveedores grandes publican qué tan limpia es la energía por región de sus centros de datos. Si tu carga es grande y puedes elegir región, es la decisión con más impacto real de toda esta lista.</li>
+      </ol>
+
+      <p>La conclusión honesta es incómoda para los dos bandos. El consumo individual es tan chico que la culpa personal no tiene mucho sentido. Y el crecimiento agregado es lo bastante rápido como para que decir "es un mito" tampoco lo tenga. Las dos cosas son ciertas a la vez, y ese es exactamente el tipo de tema donde conviene citar la fuente y decir qué no se sabe.</p>

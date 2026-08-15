@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El explorador de vacantes — Guías Flow AI</title>
+  <meta name="description" content="Claude busca vacantes nuevas cada mañana mientras duermes, ajustadas a tu puesto, industria, sueldo y ubicación. Despiertas con tus mejores coincidencias y el link para aplicar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/explorador-de-vacantes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El explorador de vacantes" />
+  <meta property="og:description" content="Claude busca vacantes nuevas cada mañana mientras duermes, ajustadas a tu puesto, industria, sueldo y ubicación. Despiertas con tus mejores coincidencias y el link para aplicar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/explorador-de-vacantes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Carrera</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Carrera</span><span class="tag">Skills</span></div>
+      <h1>El explorador de vacantes</h1>
+      <p class="lead">Claude busca vacantes nuevas cada mañana mientras duermes, ajustadas a tu puesto, industria, sueldo y ubicación. Despiertas con tus mejores coincidencias y el link para aplicar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Buscar trabajo mientras tienes trabajo es un problema de tiempo, no de ganas. Las vacantes buenas se publican en horario de oficina, se llenan en días, y para cuando abres LinkedIn el jueves en la noche ya tienen doscientos aplicantes. Llegar tarde no es un detalle: es la diferencia entre que un reclutador te lea y que no.</p>
+
+      <p>La respuesta obvia —poner alertas en cada portal— produce el otro problema: cincuenta correos al día, casi todos irrelevantes, y en dos semanas los mandas todos a una carpeta que nunca abres.</p>
+
+      <p>Lo que necesitas no es más volumen. Es que alguien barra los portales todas las madrugadas, tire el 95% que no aplica, y te deje cinco vacantes con su liga directa y una razón por la que vale la pena. Eso es lo que vas a montar aquí.</p>
+
+      <h2>Cómo funciona</h2>
+
+      <p>Es un prompt con tu perfil completo, corriendo como tarea programada en Claude todos los días de madrugada. Cada corrida busca en los portales, filtra contra tus criterios duros, califica lo que sobrevive sobre 100 puntos, y te deja un reporte corto.</p>
+
+      <p>La calificación es la pieza que lo hace usable. Sin ella tienes una lista. Con ella tienes una lista ordenada, y solo lees los tres primeros.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Llena cada campo. Los que más importan son los <em>dealbreakers</em>: son los que te ahorran leer basura.</p>
+
+      <pre><code>Eres mi Explorador de Vacantes. Cada vez que corras, buscas en internet
+vacantes recien publicadas que empaten con lo que ando buscando. No me des
+volumen: dame las pocas que valen la pena, ordenadas.
+
+MI PERFIL
+Puestos objetivo: [titulo exacto y sus variantes]
+Industrias que quiero: [ ]
+Industrias que no: [ ]
+Ubicacion: [ciudad, o remoto, o hibrido aceptable hasta X dias]
+Me mudaria a: [ciudades, o "no"]
+Sueldo minimo (piso duro): [bruto mensual]
+Sueldo objetivo: [ ]
+Años de experiencia: [ ]
+Nivel que busco: [ ]
+Tamaño de empresa que prefiero: [startup / mediana / corporativo]
+Empresas de mis sueños: [lista]
+Empresas vetadas: [lista]
+Mis habilidades centrales: [5 a 10]
+Herramientas y certificaciones: [ ]
+Dealbreakers: [ej. "presencial 5 dias", "sin prestaciones de ley",
+                "viaje mas del 25%", "esquema por honorarios"]
+
+DONDE BUSCAR
+LinkedIn Jobs, Indeed, Glassdoor, OCC Mundial, Computrabajo, Wellfound, y las
+paginas de carreras directas de mis empresas soñadas. Prioriza lo publicado en
+las ultimas 24 horas. Si el portal no muestra fecha, revisa la URL o los
+metadatos antes de asumir que es nueva.
+
+QUE DESCARTAR SIN PREGUNTARME
+- Cualquier cosa que toque un dealbreaker.
+- Empresas vetadas o industrias excluidas.
+- Sueldo publicado por debajo de mi piso.
+- Vacantes de agencia que no dicen para que empresa es.
+- Publicaciones repetidas que ya me mostraste antes.
+- Cualquier vacante sin liga directa para aplicar. Sin liga, no existe.
+
+COMO CALIFICAR (sobre 100)
+Titulo (25): exacto 25, variante cercana 20, relacionado 10-15.
+Habilidades (25): cuantas de mis centrales pide, menos los huecos grandes.
+Sueldo (20): arriba de mi objetivo 20, entre minimo y objetivo 15,
+             no publicado pero empresa seria 10, no publicado y desconocida 5.
+Ubicacion (15): mi ciudad o remoto 15, hibrido en mi ciudad 12, mudanza 8.
+Empresa (15): de mis soñadas 15, tamaño y etapa correctos 12, solo tamaño 8.
+
+EL REPORTE DIARIO
+Encabezado: fecha, cuantas vacantes nuevas encontraste, cuantas valen la pena.
+
+TOP 5, de mayor a menor puntaje. Para cada una:
+- Puesto en Empresa, con el puntaje y una frase de por que.
+- Que hace la empresa, tamaño y etapa.
+- Esquema: presencial, hibrido o remoto.
+- Sueldo: el publicado. Si no lo publican, un estimado y de donde lo sacaste.
+  Si no puedes estimarlo, escribe "no publicado, sin estimado".
+- Fecha de publicacion.
+- 3 a 5 requisitos que si cumplo, ligados a mi experiencia.
+- Los huecos que tengo y como los plantearia en la carta.
+- Focos rojos, o "ninguno".
+- La liga directa para aplicar.
+- Urgencia: hoy / esta semana / puede esperar.
+
+MENCIONES HONORIFICAS: las de 50 a 74 puntos, una linea cada una con su liga.
+
+RADAR DE EMPRESAS SOÑADAS: para cada una, si publico algo nuevo hoy, si no
+publico nada, o si hay algo tangencial que valdria la pena.
+
+LOS LUNES, ademas: cuantas vacantes hubo esta semana contra la anterior, que
+titulo se repitio mas, que empresas estan contratando, que habilidad aparece
+seguido y no tengo, y que ajuste le haria a mi busqueda.
+
+ALERTAS: marca URGENTE cualquier vacante arriba de 90 puntos, cualquier
+publicacion de una empresa soñada, y cualquier sueldo 20% arriba de mi objetivo.
+
+Cierra con: "Corri a las [hora]. [X] coincidencias nuevas. Quieres que te
+prepare la aplicacion de alguna, o ajustamos criterios?"</code></pre>
+
+      <h2>Déjalo agendado</h2>
+
+      <p>En la configuración de Claude, en tareas programadas, crea una nueva y pega el prompt ya lleno. Ponla todos los días a las 6:30 de la mañana. Cuando despiertes, el reporte ya está.</p>
+
+      <p>La hora importa. Si corre a media tarde vas a competir con quien lo vio en la mañana. Y si el reporte llega a una hora en la que no lo lees, el sistema completo se vuelve decorativo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el filtro no nace bien calibrado. La primera semana te va a colar vacantes que no querías, y eso es información. Cuando veas una que no debió estar ahí, dile por qué y agrégala como <em>dealbreaker</em>. Tres o cuatro correcciones y el reporte se limpia solo. Lo que no funciona es aguantarse el ruido en silencio: en un mes dejas de abrirlo.</p>
+      </div>
+
+      <h2>Qué hacer con el reporte</h2>
+
+      <p>Una vacante identificada no es una vacante aplicada. El reporte trae dos campos que existen para que actúes el mismo día: los huecos y el encuadre. Ahí está el borrador de tu carta de presentación.</p>
+
+      <p>La rutina que rinde: abres el reporte, tomas las que digan "hoy", y en la misma conversación le pides que redacte la aplicación usando tu currículum y la descripción de la vacante. De reporte a aplicación enviada en veinte minutos, antes de irte a trabajar. Eso es lo que te pone en los primeros currículums que lee el reclutador, que es toda la ventaja que estás comprando.</p>
+
+      <p>Si el bloque de los lunes te repite una habilidad que no tienes, no la ignores: es el mercado diciéndote exactamente qué aprender. Ese es el insumo de <a href="/guias/cazador-de-huecos-de-conocimiento/">el cazador de huecos de conocimiento</a>, y con lo que salga de ahí conviene después reacomodar tu perfil con el imán de LinkedIn.</p>
+
+      <h2>La versión para quien contrata</h2>
+
+      <p>El mismo mecanismo sirve del otro lado. Si tienes una vacante abierta y quieres saber contra qué estás compitiendo, cambias el perfil por el de la posición que ofreces y le pides que barra las vacantes equivalentes de tu ciudad: qué sueldo publican, qué prestaciones, qué esquema de trabajo, cómo redactan el puesto. Un reporte semanal de eso le dice a un área de talento por qué sus vacantes llevan tres meses abiertas, que casi siempre es una razón muy poco misteriosa.</p>
+
+      <h2>El error de siempre</h2>
+
+      <p>La gente pone el sueldo mínimo demasiado bajo "para no perderse nada". Y entonces se pierde de todo, porque el reporte se llena de vacantes que jamás aceptarían y las buenas quedan sepultadas.</p>
+
+      <p>Tu piso duro es el número abajo del cual dirías que no aunque todo lo demás fuera perfecto. Ponlo ahí. Un explorador que te trae dos vacantes al día y las dos te interesan vale infinitamente más que uno que te trae treinta.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

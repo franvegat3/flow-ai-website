@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo estructurar tus agentes de IA — Guías Flow AI</title>
+  <meta name="description" content="La arquitectura de 4 partes que publicó JPMorgan, aterrizada a un stack de negocio chico que puedes construir solo. Un agente, un trabajo. Y un supervisor que los amarra." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/como-estructurar-tus-agentes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo estructurar tus agentes de IA" />
+  <meta property="og:description" content="La arquitectura de 4 partes que publicó JPMorgan, aterrizada a un stack de negocio chico que puedes construir solo. Un agente, un trabajo. Y un supervisor que los amarra." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/como-estructurar-tus-agentes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Multi-herramienta</span><span class="tag">Agentes</span><span class="tag">Negocio</span></div>
+      <h1>Cómo estructurar tus agentes de IA</h1>
+      <p class="lead">La arquitectura de 4 partes que publicó JPMorgan, aterrizada a un stack de negocio chico que puedes construir solo. Un agente, un trabajo. Y un supervisor que los amarra.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El primer agente que arma casi todo el mundo es un monstruo. Uno solo que sabe de anuncios, de correo, de atención a clientes y de reportes. Con instrucciones de cuatro mil palabras y acceso a todo.</p>
+
+      <p>Funciona un rato. Después empieza a mezclar cosas: contesta una pregunta de pauta con criterio de servicio al cliente, o mete en el reporte semanal una recomendación de correo que nadie pidió. Y cuando falla, no sabes cuál de las cuatro mil palabras lo rompió.</p>
+
+      <p>La estructura que resuelve eso está publicada y no la inventó una startup: es la arquitectura que un equipo de JPMorgan describió para su asistente interno. Cuatro capas, con una regla que lo ordena todo. Y se baja a un negocio de diez personas sin perder nada.</p>
+
+      <p>Esta guía es sobre cómo encajan varios agentes entre sí. Cómo se construye uno solo por dentro es <a href="/guias/estructura-de-4-partes-para-agentes/">la estructura de contexto, conexiones, flujos y memoria</a>. Las dos cosas son distintas y las dos hacen falta.</p>
+
+      <h2>La regla: un agente, un trabajo</h2>
+
+      <p>Cada agente hace una cosa, como un empleado con una especialidad. No dos. No "una y también me ayuda con".</p>
+
+      <p>Suena a limitación y es lo contrario. Un agente con un solo trabajo se puede evaluar: sabes qué debía hacer y puedes decir si lo hizo. Un agente que hace seis cosas no se puede evaluar, solo se puede tolerar.</p>
+
+      <p>Además se arregla distinto. Cuando el agente de anuncios da una recomendación mala, editas su archivo de reglas y nada más se mueve. En el monstruo, cada corrección tiene efectos secundarios en las otras cinco funciones y acabas con un archivo que nadie se atreve a tocar.</p>
+
+      <h2>Las cuatro capas</h2>
+
+      <h3>1. El supervisor</h3>
+
+      <p>Es la puerta de entrada, y lo único con lo que tú hablas. Entiende qué le estás pidiendo, decide qué especialista lo resuelve, le pasa el trabajo, junta las respuestas y mantiene el hilo de la conversación. Cuando algo se sale de lo que puede resolver, escala a una persona.</p>
+
+      <p>No hace el trabajo. Reparte y sintetiza. Ese es todo su oficio.</p>
+
+      <h3>2. El agente de datos estructurados</h3>
+
+      <p>Convierte lo que preguntaste en una consulta a una base de datos o una llamada a una API, la ejecuta y te devuelve el resultado resumido. Es el que sabe hablar con tu tienda, tu CRM, tu plataforma de anuncios y tu sistema de facturación.</p>
+
+      <p>Números, tablas, registros. Todo lo que vive en filas y columnas.</p>
+
+      <h3>3. El agente de datos no estructurados</h3>
+
+      <p>El que busca dentro de correos, notas de junta, PDFs, contratos y transcripciones. No calcula: recupera el fragmento que responde la pregunta y dice de dónde salió.</p>
+
+      <p>Es la capa que más se subestima y la que más contexto real de la empresa contiene. Lo que se decidió y por qué casi nunca está en una base de datos. Está en un hilo de correo de hace ocho meses.</p>
+
+      <h3>4. El agente de analítica</h3>
+
+      <p>El que hace cuentas de verdad: modelos financieros, proyecciones, simulaciones, código para calcular algo que no está precalculado en ningún lado. Es distinto del de datos estructurados, que recupera lo que existe. Este produce lo que no existía.</p>
+
+      <p>La separación importa porque la aritmética es donde los modelos se equivocan con más confianza. Si esa capa está aislada, puedes verificarla sola.</p>
+
+      <h2>Cómo se ve en un negocio de verdad</h2>
+
+      <p>Traducido a una operación chica, un equipo completo se ve así. Cinco especialistas y un supervisor.</p>
+
+      <div class="plugin-card">
+        <h3>1. Agente de pauta en Meta <code>meta</code></h3>
+        <p>Escaneo diario de la cuenta, umbrales de apagado y escalamiento, inteligencia de competencia y briefs creativos. Su versión completa está en <a href="/guias/agente-comprador-de-medios-meta/">el comprador de medios para Meta</a>.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> Meta. No opina de Google ni de correo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Agente de Google Ads <code>google</code></h3>
+        <p>Auditoría de términos de búsqueda, protección de la búsqueda de marca, canibalización de Performance Max e integridad de la medición. Está desglosado en <a href="/guias/agente-de-google-ads/">su propia guía</a>.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> Google. Comparte el archivo de márgenes con el de Meta, nada más.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Agente de correo y retención <code>email</code></h3>
+        <p>Revisa flujos automatizados, salud de la lista, segmentación, entregabilidad y calendario de campañas. Es el que encuentra el flujo de carrito abandonado que lleva dos meses apagado.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> lo que pasa dentro de tu plataforma de correo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Agente de servicio a clientes <code>soporte</code></h3>
+        <p>Clasifica lo que entra, redacta respuestas con tu base de conocimiento, escala lo que debe escalarse y convierte los casos repetidos en artículos nuevos. Esa última parte es la que nadie alcanza a hacer nunca.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> conversaciones con clientes. Nunca promete descuentos ni plazos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Agente de reporte diario <code>reporte</code></h3>
+        <p>Junta los números de todos los frentes en una sola lectura de dos minutos. No recomienda: informa. Es el que hace que el supervisor tenga con qué trabajar en la mañana.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> consolidar y comparar contra periodos anteriores.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. El socio fundador <code>supervisor</code></h3>
+        <p>La capa de arriba. Es con quien hablas. Reparte, junta, resuelve contradicciones entre especialistas y te dice cuándo la decisión te toca a ti.</p>
+        <p class="plugin-for"><strong>Solo hace:</strong> coordinar y sintetizar. Nunca ejecuta directamente.</p>
+      </div>
+
+      <h2>Las instrucciones del supervisor</h2>
+
+      <p>Este es el archivo que más veces he reescrito, porque la tentación es que el supervisor "ayude" y termine haciendo el trabajo mal. Lo que funciona es una instrucción que le prohíbe explícitamente hacerlo.</p>
+
+      <pre><code>Eres el supervisor. No ejecutas trabajo especializado: lo repartes.
+
+Especialistas disponibles:
+- meta: todo lo de la cuenta publicitaria de Meta.
+- google: todo lo de Google Ads y Shopping.
+- email: plataforma de correo, flujos, listas, entregabilidad.
+- soporte: conversaciones con clientes y base de conocimiento.
+- reporte: consolidación de números entre canales.
+
+Cómo trabajas:
+1. Entiende qué se está pidiendo de verdad. Si la petición es
+   ambigua entre dos especialistas, pregunta antes de repartir.
+2. Manda la tarea al especialista que corresponde. Si toca a más de
+   uno, mándala a cada uno por separado con la parte que le toca.
+   Nunca le pidas a uno que opine del terreno de otro.
+3. Junta las respuestas. Si dos especialistas se contradicen, no
+   elijas tú: presenta las dos posturas con su evidencia y di qué
+   dato haría falta para resolverlo.
+4. Sintetiza en una sola respuesta: conclusión primero, después el
+   soporte, después lo que hay que decidir.
+
+Cuándo escalas a una persona, sin excepción:
+- Cualquier movimiento de presupuesto o publicación al aire.
+- Cualquier compromiso con un cliente: precio, plazo, reembolso.
+- Cuando la recomendación depende de información que no tenemos.
+- Cuando el impacto en dinero supera [monto].
+
+Lo que nunca haces:
+- Contestar con tu propio criterio algo que un especialista debía
+  resolver con datos.
+- Rellenar un hueco de información con un supuesto sin marcarlo
+  como supuesto.
+- Ejecutar cambios en ninguna plataforma.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> definir el punto de escalamiento humano por escrito, con un monto. "Escala cuando sea importante" no significa nada. "Escala cualquier decisión que mueva más de veinte mil pesos" sí. Ese renglón es lo que convierte a un supervisor en algo que puedes dejar corriendo sin revisarlo cada hora.</p>
+      </div>
+
+      <h2>Lo que hay que compartir y lo que no</h2>
+
+      <p>Los especialistas comparten el perfil del negocio: productos, márgenes, ticket promedio, estacionalidad. Ese archivo es uno solo y todos lo leen, porque si cada agente tiene su propia versión del margen, vas a tomar decisiones contradictorias sin saber por qué.</p>
+
+      <p>Lo que no se comparte son las reglas de acción ni la memoria. Cada especialista tiene sus umbrales y su historial, porque lo que aprendiste de Meta no aplica a correo. Mezclar esas memorias es la forma más rápida de tener un equipo que recomienda cosas raras.</p>
+
+      <h2>El orden de construcción</h2>
+
+      <p>No montes el supervisor primero. Un supervisor sin especialistas es un chat con pasos de más.</p>
+
+      <ol>
+        <li><strong>Elige la tarea que más horas te come</strong> y arma ese agente solo.</li>
+        <li><strong>Estabilízalo una semana completa.</strong> Corriendo de verdad, no en pruebas.</li>
+        <li><strong>Arma el segundo</strong>, del área que más pelea con la primera por presupuesto o atención.</li>
+        <li><strong>Cuando ya tengas tres</strong> y estés cansado de abrirlos por separado, ahí monta el supervisor.</li>
+        <li><strong>Deja el de analítica para el final.</strong> Es el más delicado y el que menos falta hace al principio.</li>
+      </ol>
+
+      <p>La mayoría de la gente que abandona esto lo hace en la semana dos, porque intentó los seis a la vez. Uno estable vale más que seis a medias, y la diferencia entre las dos rutas es exactamente esta lista.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

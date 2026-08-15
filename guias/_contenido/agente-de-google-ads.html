@@ -1,0 +1,148 @@
+      <p>Google Ads no truena. Se fuga. Una cuenta puede verse estable durante meses mientras un porcentaje del presupuesto se va en búsquedas que jamás iban a comprar, en una campaña Performance Max que se está cobrando el tráfico de tu propia marca, y en una etiqueta de conversión que dejó de disparar en marzo y nadie notó.</p>
+
+      <p>El problema es que revisar todo eso a mano es media jornada. Términos de búsqueda de los últimos siete días, participación de impresiones en marca, salud del feed, integridad de la medición. Se hace la primera semana con entusiasmo y después ya no.</p>
+
+      <p>Este agente hace esa revisión todos los días con tus umbrales, escribe las listas de negativas para que tú las apruebes, y está construido para desconfiar de los defaults de la plataforma. Porque los defaults de Google están optimizados para que gastes, no para que ganes.</p>
+
+      <h2>Qué revisa, todos los días</h2>
+
+      <ul>
+        <li><strong>Desempeño</strong> del día anterior por campaña, contra promedios de 7 y 30 días.</li>
+        <li><strong>Términos de búsqueda</strong> de los últimos 7 días, ordenados por gasto desperdiciado, con la lista de negativas ya redactada.</li>
+        <li><strong>Búsqueda de marca</strong>: participación de impresiones, cuánto pierdes por presupuesto, y quién está pujando por tu nombre.</li>
+        <li><strong>Performance Max</strong>: cuánto de sus conversiones viene en realidad de consultas de marca.</li>
+        <li><strong>Feed de Shopping</strong> si vendes producto: rechazos, títulos débiles, identificadores faltantes, precios que no cuadran.</li>
+        <li><strong>Medición</strong>: conversiones mejoradas, vínculo con analítica, modelo de atribución, y cualquier caída rara en el volumen de conversiones.</li>
+      </ul>
+
+      <h2>El setup</h2>
+
+      <p>Mismo esqueleto que cualquier agente serio: contexto, conexiones, flujos y memoria. Si no has armado esa estructura, empieza por <a href="/guias/estructura-de-4-partes-para-agentes/">ahí</a>, porque el resto de esta guía asume esos cuatro archivos.</p>
+
+      <ol>
+        <li><strong>Conecta la cuenta</strong> con permisos de lectura. Escritura después, si acaso.</li>
+        <li><strong>Escribe el perfil del negocio</strong> con margen bruto y ticket promedio. Sin margen, el agente no puede decirte si un retorno de 3 es bueno o es pérdida.</li>
+        <li><strong>Escribe los umbrales.</strong> La plantilla va abajo.</li>
+        <li><strong>Lista tus términos de marca</strong> en un archivo aparte. Todas las variantes, incluidas las mal escritas. Este archivo lo van a usar tres de las cinco auditorías.</li>
+        <li><strong>Corre el flujo diario a mano</strong> una semana y compara contra la interfaz.</li>
+      </ol>
+
+      <pre><code># Umbrales - Google Ads [empresa]
+
+- Retorno de equilibrio: [ROAS] / Costo máximo por adquisición: [$]
+- Gasto mínimo antes de opinar de una campaña: [$ o N clics]
+- Regla de apagado: campaña que gastó [3x] el costo objetivo por
+  adquisición sin una sola conversión se marca para apagar.
+- Término de búsqueda con más de [$X] de gasto y cero conversiones en
+  7 días: entra a la lista de negativas propuestas.
+- Participación de impresiones mínima en campañas de marca: [%]
+- Canibalización de marca en Performance Max: si más del 30% de sus
+  conversiones viene de consultas con nuestros términos de marca, hay
+  que reestructurar con exclusión de marca.
+- Nunca subir presupuesto sin aprobación humana.</code></pre>
+
+      <h2>El flujo diario</h2>
+
+      <pre><code>Eres mi comprador de medios de Google. Corre el escaneo diario.
+
+1. Baja el desempeño de ayer por campaña: gasto, conversiones, valor
+   de conversión, ROAS, costo por adquisición, clics, CTR, costo por
+   clic. Compara contra el promedio de 7 y de 30 días.
+
+2. Aplica la regla de apagado de umbrales.md. Marca cada campaña que
+   la cruce, con los números que lo prueban.
+
+3. Detecta campañas limitadas por presupuesto que además estén por
+   encima del retorno objetivo. Esas son las únicas candidatas a
+   escalar, y las quiero antes del mediodía para poder decidir el
+   mismo día.
+
+4. Anomalías: gasto que se movió más de [X]% contra el promedio,
+   caída de impresiones, campañas que se detuvieron solas, anuncios
+   rechazados.
+
+5. Consulta memoria.md antes de proponer. Si una recomendación ya se
+   probó y falló, dilo en vez de repetirla.
+
+Salida: una línea de estado, después máximo 3 acciones con la campaña
+exacta y su cifra de soporte, después las anomalías. No ejecutes
+ningún cambio.</code></pre>
+
+      <h2>Las cinco auditorías</h2>
+
+      <h3>1. Términos de búsqueda</h3>
+
+      <p>Es donde está el dinero. En casi toda cuenta que abro hay un porcentaje del gasto en consultas que nunca iban a convertir: gente buscando "gratis", buscando trabajo en tu empresa, buscando el manual de un producto que ya compró, o buscando a tu competencia.</p>
+
+      <pre><code>Baja todos los términos de búsqueda que activaron anuncios en los
+últimos 7 días, con impresiones, clics, gasto y conversiones.
+
+1. Ordénalos por gasto sin conversión, de mayor a menor.
+2. Marca todo lo que rebase [$X] de gasto con cero conversiones.
+3. Agrúpalos por intención: informativa, de trabajo, de soporte, de
+   competencia, gratuita, y de compra pero de otro producto.
+4. Redacta la lista de negativas en dos partes: exactas para las
+   consultas puntuales, y de frase para los patrones que se repiten.
+5. Marca aparte cualquier término con conversiones que todavía no sea
+   palabra clave nuestra. Esos son candidatos a promover, no a negar.
+
+Entrégame la lista lista para pegar, con el gasto que recuperamos si
+la aplico completa. No la subas tú.</code></pre>
+
+      <p>Ese último renglón importa. Una lista de negativas mal hecha corta volumen bueno, y el error no se ve hasta dos semanas después. Se aprueba a mano, siempre.</p>
+
+      <h3>2. Protección de la búsqueda de marca</h3>
+
+      <p>La campaña de marca es la de mejor retorno de toda la cuenta, y por eso es la que más gente descuida: como ya funciona, nadie la mira. Ahí es donde entra un competidor pujando por tu nombre y empieza a llevarse clics que eran tuyos.</p>
+
+      <p>El agente revisa a diario la participación de impresiones en campañas de marca, cuánto se pierde por presupuesto y cuánto por ranking, y compara el informe de subastas para detectar anunciantes nuevos apareciendo sobre tus términos. Perder participación por presupuesto en marca es de los errores más caros que existen, porque el tráfico que dejas ir es el que ya te iba a comprar.</p>
+
+      <h3>3. Performance Max</h3>
+
+      <p>Performance Max se ve espectacular en el reporte y una parte de eso suele ser prestado. Si la campaña puede servir a consultas con tu nombre de marca, se está cobrando conversiones que ibas a tener de todos modos.</p>
+
+      <p>La revisión es simple: qué porcentaje de sus conversiones viene de consultas que contienen términos de marca. Por encima de treinta por ciento hay canibalización y toca reestructurar con exclusión de marca, para que la campaña te muestre su desempeño real en tráfico frío. Casi siempre la primera semana después de esa separación duele. También es la primera vez que ves el número verdadero.</p>
+
+      <h3>4. Feed de Shopping</h3>
+
+      <p>Si vendes producto, el feed es la mitad de tu cuenta y casi nadie lo audita. El agente busca productos rechazados que llevan semanas fuera sin que nadie se entere, títulos sin marca ni atributo clave, identificadores de producto faltantes, y precios del feed que no coinciden con los de tu sitio. Ese último es el que provoca suspensiones y siempre aparece un viernes.</p>
+
+      <h3>5. Integridad de la medición</h3>
+
+      <p>Ninguna decisión sirve si el dato de conversión está roto. Revisión periódica de conversiones mejoradas, del vínculo con la analítica, del modelo de atribución activo, y de cualquier caída anómala en el volumen registrado. Una caída del veinte por ciento en conversiones que en realidad fue una etiqueta que dejó de disparar te lleva a apagar campañas buenas.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> auditar la medición antes de auditar el desempeño. Si el seguimiento está mal, todo lo demás está mal y no lo vas a saber. La primera corrida del agente en una cuenta nueva debe ser la de medición, no la de gasto desperdiciado.</p>
+      </div>
+
+      <h2>La auditoría mensual</h2>
+
+      <p>Una vez al mes el agente corre la revisión completa por categorías, califica cada una y calcula el impacto en dinero de lo que encuentre. Las siete categorías:</p>
+
+      <ol>
+        <li><strong>Seguimiento de conversiones</strong> — qué se mide, cómo, y si los valores son reales.</li>
+        <li><strong>Gasto desperdiciado</strong> — términos, ubicaciones, dispositivos, horarios y audiencias sin retorno.</li>
+        <li><strong>Estructura de la cuenta</strong> — concentración de gasto, campañas duplicadas, presupuestos mal repartidos.</li>
+        <li><strong>Palabras clave</strong> — tipos de concordancia, canibalización entre grupos, cobertura de la cola larga.</li>
+        <li><strong>Anuncios</strong> — cuántas variaciones activas, fuerza de los recursos, extensiones incompletas.</li>
+        <li><strong>Configuración</strong> — red de display prendida sin querer, expansión de segmentación, ubicaciones mal definidas.</li>
+        <li><strong>Performance Max</strong> — exclusiones de marca, grupos de recursos, señales de audiencia.</li>
+      </ol>
+
+      <p>La salida no es una lista de hallazgos. Es una lista ordenada por cuánto dinero mueve cada arreglo, con lo que sí se puede hacer esta semana arriba. Un reporte de cuarenta hallazgos sin priorizar no lo ejecuta nadie.</p>
+
+      <h2>Las reglas que no se negocian</h2>
+
+      <ul>
+        <li><strong>Lectura por default.</strong> El agente propone; tú aplicas en la interfaz.</li>
+        <li><strong>Nada se publica ni se sube de presupuesto sin aprobación humana.</strong> Ni una campaña, ni un anuncio, ni un peso más de presupuesto diario.</li>
+        <li><strong>Las negativas se revisan término por término</strong> antes de subirlas. Es la acción con más potencial de daño silencioso de toda la cuenta.</li>
+        <li><strong>Un cambio estructural a la vez.</strong> Si separas marca de Performance Max y además reorganizas grupos la misma semana, la lectura del mes se pierde.</li>
+        <li><strong>Cada decisión se anota en memoria</strong> con su hipótesis, para poder calificarla después. Sin eso, en tres meses vuelves a proponer lo que ya no funcionó.</li>
+      </ul>
+
+      <h2>Por dónde empezar</h2>
+
+      <p>No montes las cinco auditorías el primer día. Corre la de medición una vez, arregla lo que salga, y después vive dos semanas solo con el flujo diario y la auditoría de términos de búsqueda. Esas dos ya pagan el esfuerzo completo en la mayoría de las cuentas.</p>
+
+      <p>Si lo que quieres es una foto del estado de la cuenta antes de comprometerte a montar un agente permanente, empieza por <a href="/guias/auditar-tus-google-ads/">la skill de auditoría</a>: conectas, corres, y sales con la calificación y la lista de arreglos. El agente es el paso siguiente, cuando ya quieres que esa revisión pase sola todos los días y acumule memoria de lo que probaste.</p>

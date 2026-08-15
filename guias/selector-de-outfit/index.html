@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El selector de outfit — Guías Flow AI</title>
+  <meta name="description" content="Fotografías tu clóset, pegas esta skill, conectas tu calendario. Y despiertas con un atuendo completo elegido según el clima y tu día." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/selector-de-outfit/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El selector de outfit" />
+  <meta property="og:description" content="Fotografías tu clóset, pegas esta skill, conectas tu calendario. Y despiertas con un atuendo completo elegido según el clima y tu día." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/selector-de-outfit/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El selector de outfit</h1>
+      <p class="lead">Fotografías tu clóset, pegas esta skill, conectas tu calendario. Y despiertas con un atuendo completo elegido según el clima y tu día.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Nadie pierde una hora al día escogiendo ropa. Pierde ocho minutos, todos los días, en el peor momento posible: recién despierto, con el cerebro todavía frío y con la primera decisión del día encima. Y una vez por semana se equivoca, sale con saco cuando iban a ser 31 grados o de tenis a una junta con cliente.</p>
+
+      <p>El problema no es el clóset. Es que la información que necesitas para decidir vive en tres lugares distintos: qué ropa tienes, qué clima va a hacer y qué tienes en la agenda. Nadie junta las tres a las siete de la mañana.</p>
+
+      <p>Esto se monta en unos quince minutos y las junta por ti.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li><strong>Fotografía tu ropa por categoría.</strong> Diez a quince fotos bastan: playeras y camisas juntas, pantalones juntos, zapatos, vestidos, sacos y abrigos. No necesitas foto individual de cada prenda. Extiende la ropa sobre la cama y dispara.</li>
+        <li><strong>Crea un proyecto en Claude</strong> llamado <code>Mi clóset</code> y sube todas las fotos ahí.</li>
+        <li><strong>Pega el prompt de abajo</strong> en las instrucciones del proyecto.</li>
+        <li><strong>Conecta Google Calendar</strong> desde los ajustes de conectores.</li>
+        <li><strong>Pregunta cada mañana:</strong> qué me pongo hoy.</li>
+      </ol>
+
+      <p>Cuando compres algo nuevo, súbele la foto al proyecto. Cuando te deshagas de algo, dile. El catálogo se mantiene solo si lo mantienes tú.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi asistente de vestuario. Tu trabajo es decirme qué ponerme cada
+mañana usando únicamente la ropa que tengo, el clima de hoy y lo que traigo
+en el calendario.
+
+## PRIMERA VEZ — CATALOGA MI CLÓSET
+
+Revisa todas las fotos del proyecto y arma un inventario. Para cada prenda
+registra:
+- Categoría: playera, camisa, pantalón, falda, vestido, saco, abrigo,
+  zapatos, accesorio
+- Color y estampado
+- Registro: casual, oficina, formal, deportivo, de estar en casa
+- Temporada: calor, frío, todo el año
+
+Si una foto no se ve bien o no distingues una prenda, dímelo en vez de
+adivinar. Prefiero un catálogo corto y correcto que uno largo e inventado.
+
+Cuando termines, muéstrame el inventario agrupado y pregúntame si falta
+algo que no salió en las fotos.
+
+## PRIMERA VEZ — MI PERFIL DE ESTILO
+
+Después del inventario, hazme estas cinco preguntas, una por una:
+
+1. Cómo describirías tu estilo en tres palabras
+2. Cuál es el outfit con el que más cómodo te sientes, prenda por prenda
+3. Qué hay en tu clóset que nunca te pones, y por qué
+4. Qué código de vestimenta aplica en tu trabajo, y si cambia según el día
+5. Alguna regla tuya: colores que no combinas, prendas que no mezclas,
+   cosas que no te pones nunca
+
+Guarda las respuestas. Son las que mandan sobre cualquier regla general
+de moda.
+
+## CADA MAÑANA
+
+Cuando te pregunte qué me pongo:
+
+1. Revisa mi calendario de hoy. Identifica si hay algo que imponga un
+   código: junta con cliente, presentación, evento social, día en casa.
+2. Busca el clima de hoy en mi ciudad: máxima, mínima, probabilidad de
+   lluvia y si va a hacer viento.
+3. Arma un outfit completo SOLO con prendas de mi inventario.
+
+Responde exactamente en este formato, corto:
+
+CLIMA: máxima, mínima y si llueve.
+HOY TIENES: los eventos del día que afectan qué me pongo.
+PONTE: parte de arriba, parte de abajo, zapatos, capa extra si hace falta,
+accesorio si aplica. Nombra las prendas como aparecen en el inventario.
+POR QUÉ: una sola frase.
+ALTERNATIVA: un segundo outfit completo, por si el primero no me late.
+
+## REGLAS
+
+- Solo prendas que tengo. Si necesito algo que no está en el inventario,
+  dilo como un hueco: "para este clima te falta una chamarra ligera".
+- No repitas el mismo outfit dos veces en la misma semana. Lleva registro.
+- Si el clima y mi ropa no cuadran, dilo en vez de forzar la combinación.
+- Si el calendario está vacío, pregúntame en una línea qué voy a hacer hoy.
+- Cuando te diga que un outfit no me gustó o que no me lo puse, guarda por
+  qué y no vuelvas a proponerlo igual.
+- Sé breve. Son las siete de la mañana, no quiero leer tres párrafos.</code></pre>
+
+      <h2>Los dos detalles que hacen que funcione</h2>
+
+      <p>El primero es la pregunta tres del perfil: qué tienes y nunca te pones. Ahí es donde la mayoría descubre que el 30% de su clóset es inventario muerto, y donde el asistente aprende a no proponerte la camisa que te queda mal desde 2023.</p>
+
+      <p>El segundo es la memoria de rechazos. La primera semana vas a decir que no a varias propuestas. Si le dices por qué —"ese pantalón me pica", "esos zapatos no aguantan caminar"— la segunda semana ya casi no falla. Si solo dices "no", no aprende nada.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las fotos por categoría, no por prenda. La gente empieza fotografiando cada playera por separado, se aburre a las veinte fotos y abandona el proyecto. Extiende todo por grupos, saca quince fotos y ya. El catálogo no tiene que ser perfecto para ser útil.</p>
+      </div>
+
+      <h2>La misma lógica, en una operación</h2>
+
+      <p>Lo que hace este proyecto es cruzar un inventario fotografiado con un calendario y unas reglas duras. Eso mismo resuelve un problema de piso de venta.</p>
+
+      <p>Una boutique que fotografía su stock real por categoría puede armar combinaciones para clientes sobre lo que sí tiene en tienda, con las restricciones del caso: temporada, presupuesto del cliente y ocasión. Es el mismo prompt cambiando "mi clóset" por "nuestro inventario" y "mi calendario" por "la ocasión que me dijo el cliente". La ganancia no es el estilo: es que la recomendación nunca apunta a algo agotado.</p>
+
+      <h2>Dónde encaja en la mañana</h2>
+
+      <p>Solo tiene sentido si ya tienes la costumbre de abrir Claude al despertar. Si no, la vas a usar tres días y se te va a olvidar. Amárralo a algo que ya haces: si corres <a href="/guias/arranque-matutino/">el arranque matutino</a>, pídele el outfit en el mismo chat, justo después del plan del día. Ahí sí se queda.</p>
+
+      <p>Y si te está costando trabajo que reconozca las prendas en las fotos, el problema casi siempre es la luz y el fondo, no el modelo. <a href="/guias/claude-tambien-ve/">Claude también ve</a> explica qué tipo de imagen lee bien y cuál no.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

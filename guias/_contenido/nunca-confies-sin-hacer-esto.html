@@ -1,0 +1,118 @@
+      <p>Claude te arma un presupuesto de doce meses en tres minutos. Se ve bien. Las columnas están alineadas, el formato es limpio, la narrativa suena razonable. Lo mandas.</p>
+
+      <p>Dos semanas después, en la junta de consejo, alguien nota que el subtotal del tercer trimestre está sumando una fila de más. Y ahí el error ya no es del modelo. Es tuyo, porque tú lo firmaste.</p>
+
+      <p>El problema no es que la IA se equivoque. Es que se equivoca con exactamente la misma seguridad con la que acierta. Una persona cansada deja rastro: tacha, duda, escribe "revisar esto" en amarillo. Un modelo entrega todo con el mismo acabado impecable. Y revisar a mano, celda por celda, lo que te tomó tres minutos generar te borra la ganancia entera.</p>
+
+      <p>La salida no es desconfiar más. Es poner a un segundo agente a buscarle errores al primero.</p>
+
+      <h2>Qué es un agente auditor</h2>
+
+      <p>Es una sesión nueva de Claude, sin memoria de cómo se construyó el archivo, con una sola instrucción: no crees nada, encuentra lo que está mal.</p>
+
+      <p>La palabra que carga todo el peso es <strong>nueva</strong>. Si le pides a la misma conversación que revise su propio trabajo, va a defenderlo. Tiene en contexto las decisiones que tomó y las razones que se inventó para tomarlas, así que va a leer el archivo con los mismos supuestos con los que lo escribió. Es el equivalente a pedirle al que redactó el contrato que te diga si el contrato tiene huecos.</p>
+
+      <p>Una sesión limpia no sabe nada. Solo ve el archivo. Y eso es justo lo que quieres: un lector frío que no tiene nada que proteger.</p>
+
+      <h2>Cómo se hace, en tres pasos</h2>
+
+      <ol>
+        <li><strong>Genera el entregable como siempre.</strong> El presupuesto, el reporte, la propuesta, el modelo, la hoja de cálculo. Que quede guardado como archivo, no como respuesta en el chat.</li>
+        <li><strong>Abre una tarea o conversación aparte</strong> y apúntala a ese archivo. En Cowork es una tarea nueva sobre el mismo espacio de trabajo; en el chat es un chat nuevo con el archivo adjunto.</li>
+        <li><strong>Pega el prompt de auditoría</strong> y no le des más contexto del que le darías a un revisor externo. Si tienes que explicarle por qué las cifras están así, ya contaminaste la auditoría.</li>
+      </ol>
+
+      <h2>El prompt de auditoría</h2>
+
+      <p>Este es el que uso genérico, sirve para cualquier entregable con números o estructura:</p>
+
+      <pre><code>Eres un auditor senior. Tu trabajo es revisar el archivo que te voy a dar
+y encontrar todos los errores, inconsistencias y problemas que tenga.
+
+No estás creando nada nuevo. Solo estás revisando lo que ya está construido.
+No propongas mejoras de estilo ni versiones alternativas.
+
+Revisa el archivo y busca específicamente:
+
+1. Números que no cuadran: totales, subtotales, porcentajes, sumas de columna.
+2. Fórmulas que apuntan a la celda equivocada o que devuelven un resultado
+   incorrecto.
+3. Supuestos que se usaron pero que nunca se dejaron explícitos.
+4. Datos que se ven mal, que faltan o que son inconsistentes entre secciones.
+5. Problemas de formato que se verían poco profesionales frente a un cliente
+   o un consejo.
+6. Cualquier cosa que se contradiga a sí misma dentro del documento.
+
+Para cada hallazgo dame: dónde está exactamente, qué está mal, qué tan grave
+es (bloqueante / importante / menor) y cuál es la corrección concreta.
+
+Si no encuentras nada en alguna de las seis categorías, dilo explícitamente.
+No inventes hallazgos para llenar la lista.</code></pre>
+
+      <p>Las dos últimas líneas no son adorno. Sin ellas el modelo siente que tiene que entregar seis hallazgos porque le pediste seis categorías, y te llena la lista con observaciones cosméticas que te hacen perder el tiempo. Dale permiso explícito de decir "esta parte está bien".</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedir la severidad. Sin ella recibes una lista plana de veinte cosas donde el error de suma que cambia la conclusión aparece al lado de una viñeta mal alineada. Con severidad, sabes en treinta segundos si el archivo se manda o se regresa.</p>
+      </div>
+
+      <h2>Cuatro variantes según lo que estés auditando</h2>
+
+      <h3>Modelo financiero</h3>
+
+      <pre><code>Actúa como auditor financiero. Revisa cada fórmula, verifica que todos los
+totales cuadren con la suma de sus partes, y marca cada supuesto que esté
+metido en una celda sin estar declarado en ningún lado.
+
+Dime también qué pasa con el resultado si el supuesto más agresivo del modelo
+resulta ser 20% más conservador. No rehagas el modelo: solo señálame de qué
+número cuelga todo.</code></pre>
+
+      <h3>Reporte largo o documento de estrategia</h3>
+
+      <pre><code>Actúa como editor de fondo, no de estilo. Revisa consistencia factual entre
+secciones, contradicciones internas, y toda afirmación que se presente como
+hecho sin evidencia ni fuente.
+
+Sepárame los hallazgos en dos listas: (1) afirmaciones que se contradicen con
+otra parte del mismo documento, y (2) afirmaciones que pueden ser ciertas pero
+que no están sostenidas por nada dentro del texto.</code></pre>
+
+      <h3>Documento que va a un cliente</h3>
+
+      <pre><code>Actúa como el cliente que va a recibir este documento y que está buscando
+razones para no firmarlo.
+
+Revisa: tono, precisión, cualquier frase que se pueda leer de dos maneras,
+cualquier compromiso que estemos adquiriendo sin darnos cuenta, y cualquier
+dato del cliente que esté mal escrito (nombre, empresa, cifras que ellos
+nos dieron).
+
+Márcame en particular lo que sonaría mal leído en voz alta en una junta.</code></pre>
+
+      <h3>Análisis de datos</h3>
+
+      <pre><code>Actúa como revisor de metodología. Antes de opinar del resultado, revisa cómo
+se llegó a él: cómo se filtró la muestra, qué se excluyó, qué periodo se tomó
+y si la comparación entre periodos es válida.
+
+Después dime si las conclusiones escritas están realmente soportadas por los
+datos mostrados, o si hay saltos donde la conclusión va más lejos que la
+evidencia.</code></pre>
+
+      <h2>Dónde esto paga de verdad</h2>
+
+      <p>En trabajo personal, un agente auditor es una buena costumbre. En operación de empresa es la diferencia entre poder delegar el proceso o no.</p>
+
+      <p>El caso más claro que veo es el cierre mensual. Un área de finanzas que arma conciliaciones y estados con IA gana velocidad, pero la velocidad no sirve si el director financiero tiene que revisar todo a mano de todos modos —ahí solo movimos el cuello de botella. Cuando metes la auditoría como paso obligatorio del proceso, lo que llega a revisión humana ya viene con una lista de hallazgos y su severidad. La persona revisa la lista, no el archivo completo.</p>
+
+      <p>Lo mismo con propuestas comerciales. Un equipo que manda ocho propuestas a la semana no puede leer cada una tres veces. Puede, en cambio, correr la variante de cliente sobre las ocho en un solo pase.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Correr la auditoría y no hacer nada con ella.</p>
+
+      <p>He visto equipos que agregan el paso, reciben la lista de hallazgos, la leen por encima y mandan el archivo igual porque "ya se veía bien". Eso es peor que no auditar: ahora tienes la evidencia documentada de que sabías del error.</p>
+
+      <p>La regla que aplico es simple. Bloqueante y importante se corrigen antes de mandar, sin excepción. Menor se corrige si hay tiempo. Y si la auditoría no encontró nada dos o tres veces seguidas, no celebres: revisa que de verdad esté leyendo el archivo y no solo el nombre del archivo.</p>
+
+      <p>Después de eso, el paso natural es dejar de correrlo a mano. Si ya sabes qué le pides al auditor para cada tipo de entregable, eso se convierte en un paso fijo de tu flujo, no en algo que recuerdas hacer los días que traes calma. Si quieres empujarlo más, revisa cómo se <a href="/guias/tareas-en-paralelo-en-cowork/">corren varias tareas en paralelo</a> para auditar un lote completo de una sentada, y cómo se arman <a href="/guias/agentes-que-se-vigilan-solos/">agentes que se vigilan solos</a> cuando el proceso ya corre sin ti.</p>

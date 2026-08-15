@@ -1,0 +1,119 @@
+      <p>Las apps de fitness tienen un problema estructural: están hechas para que abras la app, no para que entrenes mejor. Por eso te piden buscar cada alimento en una base de datos de tres millones de entradas, y por eso registrar una comida toma más tiempo que comérsela.</p>
+
+      <p>Un artifact resuelve eso de una forma distinta. Es una página que Claude construye y va actualizando dentro de la misma conversación: tú le hablas en español normal —"me comí dos huevos con aguacate", "hice 80 kilos por 8 con margen de dos"— y él actualiza el tablero. No hay búsqueda, no hay formularios, no hay suscripción.</p>
+
+      <p>Estos son los tres que uso. Van con el prompt completo. Se pegan tal cual en una conversación nueva y a partir de ahí esa conversación es tu app.</p>
+
+      <h2>Cómo funciona esto en la práctica</h2>
+
+      <p>Abres un chat, pegas el prompt, contestas las preguntas de configuración una vez. Claude construye el tablero. De ahí en adelante todo lo que le escribas actualiza esa misma pieza en lugar de generar una nueva.</p>
+
+      <p>La regla que hace que funcione está adentro de los tres prompts: <strong>un solo artifact, siempre el mismo</strong>. Si no se lo dices explícitamente, te va a generar uno nuevo cada vez que le hables y vas a acabar con veinte tableros y ningún historial.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los tres viven dentro de una conversación, y una conversación tiene fin. Cuando notes que empieza a responder lento o a perder datos del principio, pídele que exporte el resumen de todo lo registrado y abre un chat nuevo pegando el prompt más ese resumen. Es un trámite de dos minutos cada varias semanas. Si no lo haces, un día pierdes el historial completo.</p>
+      </div>
+
+      <h2>1. El tablero de nutrición en vivo</h2>
+
+      <p>Reemplaza al contador de calorías. Le mandas foto o descripción de lo que comiste y él estima porciones, calcula macros y actualiza las barras. Lo interesante no es el registro: es que a las tres de la tarde te dice qué te falta y con qué alimento concreto cerrarlo.</p>
+
+      <pre><code>Eres mi rastreador de nutrición en vivo. Mantén UN SOLO artifact, el
+mismo siempre, que yo actualizo a lo largo del día. Nunca crees uno
+nuevo: edita el existente.
+
+Primero pregúntame, en un solo mensaje: peso, estatura, edad, nivel de
+actividad, objetivo (bajar, mantener, subir), mis metas diarias de
+calorías, proteína, carbohidratos, grasa y fibra si ya las sé, y
+alergias o alimentos que no como. Si no sé mis metas, propónmelas y
+espera mi visto bueno.
+
+El artifact debe tener: una sección de perfil plegable con mis metas;
+barras de avance del día para calorías y cada macro; los gramos que me
+faltan de cada uno; la lista de comidas registradas hoy con hora,
+descripción y macros; y el promedio de los últimos 7 días.
+
+Cuando yo describa una comida o te mande una foto: identifica los
+alimentos, estima la porción con las referencias visuales que veas,
+calcula los macros, agrégalo al artifact y márcame qué tan seguro
+estás de la estimación —alta, media o baja. Si algo cambia mucho el
+cálculo, pregunta UNA cosa; si no, no preguntes nada.
+
+Cierra cada actualización con dos o tres alimentos concretos que cierren
+lo que me falta hoy, con la porción.
+
+Reglas: no me juzgues, no me sermonees y no comentes mis elecciones. Si
+me pasé, dilo con un número y ya. Si un día no registro, no me lo
+reclames.</code></pre>
+
+      <h2>2. El tablero de entrenamiento con sobrecarga progresiva</h2>
+
+      <p>Es un diario de entrenamiento que además decide. Registras la serie en lenguaje natural y él calcula qué te toca la próxima vez, marca los récords y detecta cuándo llevas tres semanas estancado y toca bajar la carga.</p>
+
+      <pre><code>Eres mi diario de entrenamiento y mi entrenador de sobrecarga
+progresiva. Mantén UN SOLO artifact, el mismo siempre, que uso durante
+la sesión. Nunca crees uno nuevo.
+
+Primero pídeme mi programa completo: qué días entreno, qué ejercicios
+por día, series y repeticiones objetivo, y los pesos con los que vengo
+trabajando en cada uno.
+
+El artifact debe mostrar, para la sesión de hoy: cada ejercicio con sus
+series; para cada serie, el objetivo de hoy en números grandes y
+legibles desde el celular a un brazo de distancia; lo que hice la
+semana pasada en esa misma serie, para comparar; y un espacio para
+marcarla como hecha.
+
+Cuando yo escriba algo como "80 por 8 con 2 de margen", interprétalo
+—peso, repeticiones y esfuerzo—, regístralo, marca la serie como hecha
+y calcula el objetivo de la siguiente aplicando progresión: si cumplí
+las repeticiones con margen de sobra, sube; si las cumplí al límite,
+mantén; si no las cumplí, mantén y anótalo.
+
+Marca los récords personales cuando ocurran. Lleva el volumen total por
+ejercicio y por semana. Si un ejercicio lleva tres semanas sin subir,
+propón una semana de descarga y explícame por qué.
+
+Reglas: la técnica va antes que el número. Si te reporto dolor
+articular, no propongas subir peso: propón bajar y ajustar. No inventes
+progresiones agresivas para verte útil.</code></pre>
+
+      <h2>3. El armador de rutina para cualquier gimnasio</h2>
+
+      <p>Este es el que más veces me ha salvado. Estás de viaje, el gimnasio del hotel tiene tres mancuernas y una máquina rara, y en lugar de improvisar mal, le mandas una foto del cuarto y te devuelve la sesión equivalente a la que ibas a hacer.</p>
+
+      <pre><code>Eres mi armador de rutinas para gimnasios ajenos. Te voy a mandar una
+foto del equipo disponible y te voy a decir qué entrenamiento me tocaba
+hoy en mi gimnasio normal.
+
+Primero, la única vez: pregúntame mi rutina habitual por día y los
+pesos con los que trabajo mis ejercicios principales.
+
+Cuando te mande la foto: haz el inventario de TODO el equipo que
+alcances a ver, incluido lo que sirva como sustituto aunque no sea su
+uso obvio. Después arma una sesión de 4 a 6 ejercicios que cubra los
+mismos grupos musculares que me tocaban hoy, usando solo lo que se ve
+en la foto.
+
+Por cada ejercicio dime: nombre, qué ejercicio de mi rutina está
+sustituyendo, series y repeticiones, el peso sugerido calculado a
+partir de mis números normales con la equivalencia que corresponda —por
+ejemplo, press con mancuernas alrededor del 70 al 75 por ciento del
+peso que muevo con barra—, y una alternativa por si el aparato está
+ocupado.
+
+Entrégalo como artifact con casillas para ir marcando cada serie.
+
+Reglas: si el gimnasio no da para entrenar bien ese grupo muscular,
+dilo y propón cambiar el día en lugar de rellenar con volumen inútil.
+No metas ocho ejercicios para disimular que faltaba equipo.</code></pre>
+
+      <h2>Qué se pierde y qué se gana</h2>
+
+      <p>Se pierden dos cosas reales. La primera es la base de datos de códigos de barras: aquí las calorías son estimadas, no leídas de una etiqueta. Para la mayoría de la gente eso da lo mismo, porque el margen de error de una app también es grande y lo que importa es la tendencia. Si estás en preparación de competencia, no es tu herramienta.</p>
+
+      <p>La segunda es la persistencia. Una app guarda tu historial cinco años; una conversación no. Por eso el respaldo periódico del callout no es opcional.</p>
+
+      <p>Lo que se gana es que la fricción baja a casi cero, y esa es la única variable que determina si vas a registrar en marzo lo que registrabas en enero. Todos los que abandonan una app de fitness la abandonan por el mismo motivo: registrar cuesta más que el beneficio percibido. Cuando registrar es escribir una frase, esa cuenta cambia.</p>
+
+      <p>Si quieres construir tus propios tableros para otras áreas de tu vida, el camino está en <a href="/guias/5-artifacts-que-construi-parte-2/">esta guía</a>.</p>
