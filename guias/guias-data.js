@@ -5009,6 +5009,49 @@ window.GUIAS = [
   "meta": "12 min · Multi-herramienta"
  },
  {
+  "slug": "15-formas-de-ganar-dinero-con-ia",
+  "titulo": "15 formas de ganar dinero con IA ahorita",
+  "desc": "Servicios reales, tarifas reales, ejemplos reales. De ingresos extra por tu cuenta a negocios de IA completos que puedes arrancar este fin de semana.",
+  "badge": "Negocio",
+  "tool": [
+   "multi",
+   "canva"
+  ],
+  "topic": [
+   "negocio"
+  ],
+  "min": 11,
+  "meta": "11 min · Multi-herramienta"
+ },
+ {
+  "slug": "tu-coach-de-entrevistas",
+  "titulo": "Tu coach de entrevistas con IA",
+  "desc": "Un solo prompt que investiga la empresa, arma un banco de preguntas a la medida, corre una entrevista simulada con calificación, y te deja una hoja de referencia para la mañana del día.",
+  "badge": "Carrera",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "3-formas-de-usar-claude-buscando-trabajo",
+  "titulo": "3 formas de usar Claude si estás buscando trabajo",
+  "desc": "Una extensión de Chrome llena las postulaciones por ti. Un proyecto te dice si calificas antes de aplicar. Y tu correo rastrea a cada reclutador y redacta tus seguimientos.",
+  "badge": "Carrera",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "5-cosas-para-adelantarte-esta-semana",
   "titulo": "5 cosas para hacer esta semana y adelantarte con IA",
   "desc": "La IA llegó al 53% del mundo en 3 años, más rápido que cualquier cosa en la historia. Proyectos, skills, tareas programadas, investigación y artifacts: los 5 movimientos que separan al 10% de arriba.",
