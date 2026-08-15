@@ -1,0 +1,188 @@
+      <p>Un agente inmobiliario no pierde ventas por no saber vender. Las pierde por el seguimiento que no dio, por la ficha que quedó igual a las otras cuarenta del portal, y por el cliente del open house al que iba a escribirle el lunes.</p>
+
+      <p>Todo eso es trabajo de escritorio, y es justo lo que se puede empaquetar. Estas cinco skills cubren la operación completa de una cartera: publicar, dar seguimiento, revisar contratos, conocer la zona y cerrar después de la visita. Se crean desde la app —botón <strong>+</strong>, crear skill, pegar el texto— y quedan activas solas.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. La ficha que sí vende <code>ficha-de-propiedad</code></h3>
+        <p>Casi todas las fichas describen la casa. La que vende describe la vida que se hace adentro. Esta skill saca tres versiones de la misma propiedad porque el portal, el correo y las redes no aguantan el mismo texto.</p>
+        <pre><code>---
+name: ficha-de-propiedad
+description: Escribe descripciones de propiedad en tres formatos
+  —portal, correo y redes— vendiendo el estilo de vida y no las
+  especificaciones. Úsala cuando el usuario pegue los datos de una
+  propiedad o pida la ficha de una nueva.
+---
+
+Antes de escribir, define a quién le sirve esta casa: primera
+compra, familia que crece, inversionista, comprador de lujo, o alguien
+que está reduciendo. Si los datos permiten dos perfiles, di cuál es el
+principal y escribe para ese.
+
+TRES VERSIONES:
+1) Portal: menos de 1,000 caracteres. Los datos duros primero, el
+   gancho de estilo de vida al final.
+2) Marketing completo: 200 a 300 palabras, para correo y folleto.
+3) Redes: dos o tres oraciones que funcionen sin la foto.
+
+Además: tres asuntos de correo distintos, y qué fotos hacen falta o
+cuáles conviene poner primero.
+
+PROHIBIDO: "cuenta con", "enclavada", "bañada de luz", "espacios
+amplios y funcionales", "no dejes pasar esta oportunidad". Si una frase
+podría describir cualquier otra casa del portal, bórrala.
+
+REGLA: describe la propiedad y la zona, nunca al tipo de gente que
+vive ahí. Nada de perfiles de vecinos ni de familias. Es un riesgo
+legal y además no vende.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que publica más de dos propiedades al mes y ya se le acabaron las formas de decir lo mismo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El sistema de seguimiento <code>seguimiento-clientes</code></h3>
+        <p>Aquí es donde se va el dinero. No en los prospectos que se pierden, en los que se enfrían. Esta skill te da la lista de hoy ordenada por urgencia y con el mensaje ya escrito.</p>
+        <pre><code>---
+name: seguimiento-clientes
+description: Lleva la cartera de clientes del usuario y genera la
+  lista diaria de seguimiento con los mensajes redactados. Úsala
+  cuando pida su lista del día, registre un contacto nuevo, o
+  actualice el estatus de un cliente.
+---
+
+Por cada persona guarda: nombre, en qué etapa va —prospecto nuevo,
+prospecto caliente, en operación, cerrado, cartera vieja—, qué busca,
+presupuesto, último contacto y qué se dijo, y siguiente paso con fecha.
+
+LISTA DIARIA ordenada así: primero lo que tiene fecha límite en la
+operación, luego los prospectos calientes sin contacto en más de tres
+días, luego los tibios cada dos semanas, y al final la cartera vieja
+que toque ese mes.
+
+MENSAJES. Uno por persona, redactado, referenciando algo específico de
+la última conversación. Nunca "solo para saludar". Si no hay una razón
+real para escribir, dilo y sáltalo.
+
+ETAPAS. Si alguien lleva 30 días en la misma etapa, márcalo y propón
+moverlo o cerrarlo. Una cartera llena de gente que no avanza es una
+cartera que miente.
+
+SEMANA. Cada viernes: contactos hechos, respuestas, citas agendadas y
+qué se cayó. Sin adornos.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el agente con más de veinte prospectos vivos. Ahí es donde el CRM deja de alcanzar y la memoria falla.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El analizador de contratos <code>contratos-inmobiliarios</code></h3>
+        <p>Un contrato de compraventa tiene diez fechas y cinco de ellas te cuestan dinero si se pasan. Esta skill las saca en línea de tiempo y marca lo que hay que negociar antes de firmar.</p>
+        <pre><code>---
+name: contratos-inmobiliarios
+description: Revisa contratos de compraventa, arrendamiento y
+  promesas, saca las fechas y marca los riesgos. Úsala cuando el
+  usuario suba o pegue un contrato de una operación.
+---
+
+Trabaja como un coordinador de operaciones que ya revisó miles de
+expedientes: directo, ordenado, sin adornos.
+
+RESUMEN en cuatro o cinco oraciones: quién compra, quién vende, qué
+propiedad, en cuánto, y bajo qué condiciones.
+
+LÍNEA DE TIEMPO con todas las fechas límite del contrato en orden, con
+lo que pasa si cada una se incumple.
+
+DINERO: precio, anticipo o arras, quién paga qué gastos, penalizaciones
+y cualquier concesión pactada.
+
+RIESGOS en tres niveles: CRÍTICO —firma sin esto y hay pérdida
+económica—, ATENCIÓN, y MENOR. Cada uno con la redacción de reemplazo
+sugerida.
+
+FALTANTES: qué documentación, permiso o declaración debería estar y no
+está.
+
+Cierra siempre con dos cosas: que esto no es asesoría legal y que un
+abogado debe revisar la operación, y la advertencia de nunca cambiar
+datos bancarios por correo sin confirmarlos por teléfono con un número
+conocido.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el agente independiente que no tiene coordinador de cierre. La línea de tiempo sola justifica montarla.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El experto instantáneo de la zona <code>experto-de-zona</code></h3>
+        <p>El cliente pregunta por una colonia donde nunca has vendido. Esta skill te arma el resumen que te haría sonar como si llevaras diez años ahí. Con una condición: verificas antes de decirlo en voz alta.</p>
+        <pre><code>---
+name: experto-de-zona
+description: Arma un resumen completo de una colonia o zona para
+  presentárselo a un cliente. Úsala cuando el usuario pregunte por una
+  zona, prepare una visita o vaya a captar en un lugar nuevo.
+---
+
+Usa búsqueda web. No respondas de memoria.
+
+RESUMEN: qué tipo de zona es, cómo se han movido los precios, cuánto
+tardan en venderse las propiedades ahí, y qué está construyéndose
+alrededor.
+
+SERVICIOS: escuelas cercanas con lo que las distinga, hospitales,
+supermercados, parques y restaurantes. Nombres propios, no categorías.
+
+TRASLADOS: tiempo a los tres centros de trabajo más relevantes de la
+ciudad, transporte público disponible y qué tan caminable es.
+
+HONESTIDAD: los tres mejores argumentos de venta y los tres problemas
+reales de la zona. Los problemas van completos. Un cliente que se
+entera después por su cuenta ya no te cree nada.
+
+CINCO FRASES listas para usar en la visita, específicas de esta zona.
+
+Marca con [VERIFICAR] todo dato numérico —precios, tiempos, calidad de
+escuelas— para que él lo confirme antes de presentarlo. Describe la
+zona por lo que tiene, nunca por quién vive en ella.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que está abriendo mercado en una zona nueva, y el que atiende clientes que se mudan de otra ciudad.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El cierre del open house <code>cierre-open-house</code></h3>
+        <p>Veinticinco personas firmaron la lista. Al día siguiente les mandas a todos el mismo correo, o no les mandas nada. Esta skill convierte la lista en veinticinco correos distintos en unos minutos.</p>
+        <pre><code>---
+name: cierre-open-house
+description: Convierte la lista de visitantes de un open house en
+  seguimientos personalizados por nivel de interés. Úsala cuando el
+  usuario pegue la lista de asistentes con sus notas.
+---
+
+Pídele la lista con lo que anotó de cada persona. Si no anotó nada de
+alguien, márcalo: sin nota no hay correo personalizado posible.
+
+CLASIFICA en cuatro:
+CALIENTE — preguntó por precio, financiamiento, o volvió a entrar a un
+cuarto. Se le escribe en menos de dos horas.
+TIBIO — recorrió con calma, hizo preguntas de la casa. En 24 horas.
+FRÍO — pasó rápido. En 48 horas, correo corto.
+COLEGA — otro agente. Correo distinto, de relación profesional.
+
+CORREOS. Uno por persona, cada uno distinto, referenciando lo que esa
+persona dijo o miró. Si dos correos se parecen, rehaz uno.
+
+CALIENTES: además del correo, un mensaje de texto de dos líneas y un
+guion de llamada de menos de treinta segundos.
+
+CALENDARIO: qué mandar el día 5 y el día 10 a quien no contestó.
+
+CIERRE: cuántos asistieron, cuántos calientes salieron, y qué tan
+buena fue la asistencia contra lo esperado.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que hace open house seguido y sabe que la mitad del valor se pierde en las siguientes 48 horas.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las skills 3 y 4 producen material que vas a poner enfrente de un cliente o de un notario. Verifica los números antes: precios de la zona, calificación de escuelas, fechas del contrato. La skill de zona ya marca lo que hay que confirmar, pero solo si tú respetas la marca. Un dato mal presentado en una visita te cuesta la relación completa, no solo esa venta.</p>
+      </div>
+
+      <h2>El orden en que las montaría</h2>
+
+      <p>La 2 primero, sin discusión. El seguimiento es donde está el dinero que ya tienes y no has cobrado, y es la única de las cinco que rinde desde el primer día sin que pase nada nuevo.</p>
+
+      <p>Después la 1, porque publicas seguido y ahí se nota rápido. La 5 antes de tu siguiente open house. La 3 y la 4 según lo que traigas: si estás abriendo zona, la 4; si cierras operaciones cada mes, la 3.</p>
+
+      <p>Lo mismo aplica en cualquier operación comercial, no solo en bienes raíces: la automatización que paga primero casi nunca es la de captar, es la de no soltar lo que ya entró. Si quieres armar las tuyas desde cero, el proceso está en <a href="/guias/3-formas-de-construir-una-skill/">3 formas de construir una skill</a>.</p>

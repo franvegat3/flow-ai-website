@@ -4299,6 +4299,22 @@ window.GUIAS = [
   "meta": "8 min · Claude"
  },
  {
+  "slug": "buscar-dentro-de-instagram-con-ia",
+  "titulo": "La primera IA que puede buscar dentro de Instagram",
+  "desc": "Acceso directo a Instagram, Facebook y Threads. 10 casos de uso para marcas, creadores y gente de marketing. Con los prompts exactos.",
+  "badge": "Novedades",
+  "tool": [
+   "meta-ads",
+   "multi"
+  ],
+  "topic": [
+   "contenido",
+   "novedades"
+  ],
+  "min": 9,
+  "meta": "9 min · Meta Ads"
+ },
+ {
   "slug": "tu-primer-agente-de-notion",
   "titulo": "Configura tu primer agente de Notion",
   "desc": "Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo.",
@@ -4531,6 +4547,21 @@ window.GUIAS = [
   "topic": [
    "contenido",
    "skills"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "5-skills-para-agentes-inmobiliarios",
+  "titulo": "5 skills de Claude para todo agente inmobiliario",
+  "desc": "Descripciones de propiedad, seguimiento a clientes, análisis de contratos, investigación de la zona, y seguimiento después de la visita.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "ventas"
   ],
   "min": 9,
   "meta": "9 min · Claude"
