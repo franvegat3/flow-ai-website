@@ -1,0 +1,100 @@
+      <p>La gente que se frustra con la IA casi nunca falla en el prompt. Falla en la elección de la tarea. Le entrega algo que nunca iba a salir bien y concluye que la herramienta no sirve.</p>
+
+      <p>He visto a un director de operaciones pedirle a un modelo que decida a qué proveedor cambiarse, con tres cotizaciones pegadas y nada más. El modelo contestó bien, con un análisis limpio, y la recomendación era mala: no sabía que con uno de esos proveedores hay una historia de doce años y un favor pendiente que no está escrito en ningún lado.</p>
+
+      <p>El problema no era el modelo. Era que esa tarea no era para soltar. Lo que sigue es el marco que uso para decidir qué sí y qué no, en dos preguntas.</p>
+
+      <h2>Las dos preguntas que deciden todo</h2>
+
+      <p><strong>Pregunta uno: ¿esta tarea es de patrón o de criterio?</strong></p>
+
+      <p>De patrón es todo lo que sigue reglas repetibles, aunque las reglas sean complicadas. Armar un reporte con la misma estructura cada mes es de patrón. Redactar un correo de seguimiento después de una llamada es de patrón. Clasificar tickets por tipo es de patrón.</p>
+
+      <p>De criterio es todo lo que requiere decidir con información incompleta, leyendo cosas que no están escritas. A quién ascender. Si esta cuenta aguanta un aumento de precio. Si el equipo está a punto de quemarse.</p>
+
+      <p><strong>Pregunta dos: ¿si esto sale mal, se daña una relación o una decisión?</strong></p>
+
+      <p>Un correo interno mal redactado se corrige. Un correo mal redactado a tu cliente más grande no. Un análisis con un error se detecta antes de la junta. Un análisis con un error que ya se convirtió en presupuesto aprobado, no.</p>
+
+      <p>Con las dos respuestas ya tienes tu clasificación. Y la que sorprende a la gente es que hay tareas de patrón que <em>no</em> conviene soltar por completo, porque las consecuencias de un error son altas.</p>
+
+      <h2>Los tres niveles</h2>
+
+      <h3>Nivel 1 — se suelta completo</h3>
+
+      <p>De patrón, y con consecuencias bajas si sale mal. Es donde debería estar la mitad de tu semana y casi nunca lo está.</p>
+
+      <p>Aquí caen: primeros borradores de todo lo escrito, resúmenes de juntas, investigación de contexto sobre una empresa o un tema, formatos y plantillas, comunicaciones repetitivas, actualizaciones de estatus, limpieza de datos, traducciones internas, y la conversión de notas sueltas en un documento ordenado.</p>
+
+      <p>La regla de este nivel: no lo revises línea por línea. Si te estás tardando más revisando que lo que tardabas haciéndolo, la tarea está en el nivel equivocado o el prompt está mal armado.</p>
+
+      <h3>Nivel 2 — híbrido, el modelo estructura y tú decides</h3>
+
+      <p>De criterio, pero donde la estructura ayuda. Este es el nivel más valioso y el peor entendido.</p>
+
+      <p>Aquí caen: la planeación de trimestre, prepararte para una conversación difícil, armar un roadmap, evaluar dos caminos posibles, diseñar un proceso nuevo, y construir el marco de una decisión.</p>
+
+      <p>La forma de trabajar en este nivel no es pedir la respuesta. Es pedir el mapa: los argumentos de los dos lados, las preguntas que no te estás haciendo, los supuestos que estás dando por buenos, las tres formas en que esto puede salir mal. Tú decides. El modelo se asegura de que no decidas con un ángulo ciego.</p>
+
+      <h3>Nivel 3 — se queda contigo</h3>
+
+      <p>De criterio, con consecuencias altas, y con información que solo existe en tu cabeza o en la relación.</p>
+
+      <p>Aquí caen: decisiones sobre personas, negociaciones con historia, el momento exacto de una conversación, y cualquier cosa donde la responsabilidad tenga que tener un nombre. No porque el modelo no pueda opinar, sino porque una opinión bien redactada sobre información incompleta es peligrosa: suena mucho más segura de lo que debería.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> mover cosas de nivel con el tiempo. La primera vez que sueltas el reporte semanal, lo revisas completo: es nivel 2. Después de seis semanas sin encontrarle nada, baja a nivel 1 y deja de revisarlo. La gente que no hace ese movimiento se queda revisando para siempre y nunca recupera el tiempo, que era el punto.</p>
+      </div>
+
+      <h2>El prompt para auditar tu semana completa</h2>
+
+      <p>Este es el que hace el trabajo. Contéstalo con detalle: el resultado es tan bueno como la descripción de tus tareas.</p>
+
+      <pre><code>Quiero auditar mi trabajo para decidir qué le puedo delegar a un modelo de IA y qué no. Necesito un diagnóstico honesto, no una lista de posibilidades teóricas.
+
+MI CONTEXTO
+- Puesto: [ ]
+- Industria y tamaño de empresa: [ ]
+- Qué hago realmente en un día, en 4 o 5 frases: [ ]
+- Herramientas que uso: [ ]
+- Con quién trabajo y de qué depende mi resultado: [ ]
+
+MI SEMANA
+Lista de todo lo que ocupa mi tiempo, con horas aproximadas:
+- [tarea] — [horas]
+- [tarea] — [horas]
+- [sigue hasta cubrir tu semana]
+
+QUÉ NECESITO
+
+1. Para cada tarea, dos calificaciones del 1 al 5:
+   - Patrón vs criterio (1 = puro patrón repetible, 5 = puro criterio con información incompleta)
+   - Consecuencia de un error (1 = se corrige sin que nadie se entere, 5 = daña una relación o una decisión importante)
+
+2. Con esas dos calificaciones, clasifícalas en tres grupos:
+   - NIVEL 1: se suelta completo
+   - NIVEL 2: híbrido, el modelo estructura y yo decido
+   - NIVEL 3: se queda conmigo
+
+3. Para cada tarea de NIVEL 1, dime cómo se lo pediría. Un prompt inicial concreto por tarea, no una descripción de lo que podría hacer.
+
+4. Para las tres tareas de NIVEL 2 con más horas, dime qué le pediría exactamente para que me ayude a decidir sin decidir por mí.
+
+5. Suma las horas semanales que recuperaría si sueltas todo el NIVEL 1. Dame el número.
+
+6. Dame las tres cosas que haría en los próximos 30 días, en orden, empezando por la de mayor impacto y menor fricción.
+
+REGLAS
+- Si una tarea que puse suena a criterio pero en realidad es patrón con nombre elegante, dímelo.
+- Si algo depende de un dato que no te di, pregúntamelo antes de asumirlo.
+- No me des recomendaciones que requieran comprar software o pedir permiso a alguien en los primeros 30 días.</code></pre>
+
+      <h2>Qué haces con las horas que recuperas</h2>
+
+      <p>Esta es la parte que decide si el ejercicio sirvió. En las implementaciones que he visto fracasar, la gente libera ocho horas a la semana y las llena con más trabajo de nivel 1 que ya estaba delegado. El tiempo se evapora y a los tres meses nadie sabe qué cambió.</p>
+
+      <p>Las horas recuperadas se reinvierten a propósito en cuatro cosas: conocimiento profundo de tu industria, relaciones que no existirían si no las persigues, decisiones con ambigüedad —que son donde se construye el criterio—, y desarrollar a la gente de tu equipo.</p>
+
+      <p>Ese es todo el argumento. La IA no te vuelve más valioso por hacer más cosas. Te vuelve más valioso si el tiempo que te devuelve se va a lo que sí requiere que seas tú.</p>
+
+      <p>Si quieres el ángulo de exposición de carrera en lugar del de delegación diaria, está el <a href="/guias/analizador-de-riesgo-de-tu-puesto/">analizador de riesgo de tu puesto</a>. Y para la parte de aprender a encargar bien, <a href="/guias/las-herramientas-mueren-las-habilidades-no/">las habilidades que se transfieren a cualquier herramienta</a>.</p>

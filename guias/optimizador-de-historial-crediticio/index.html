@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El optimizador de tu historial crediticio — Guías Flow AI</title>
+  <meta name="description" content="Le dices a Claude tu puntaje, tus tarjetas, tus saldos y tus límites. Te devuelve un plan paso a paso para subirlo lo más rápido posible, con montos exactos y seguimiento mensual." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/optimizador-de-historial-crediticio/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El optimizador de tu historial crediticio" />
+  <meta property="og:description" content="Le dices a Claude tu puntaje, tus tarjetas, tus saldos y tus límites. Te devuelve un plan paso a paso para subirlo lo más rápido posible, con montos exactos y seguimiento mensual." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/optimizador-de-historial-crediticio/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El optimizador de tu historial crediticio</h1>
+      <p class="lead">Le dices a Claude tu puntaje, tus tarjetas, tus saldos y tus límites. Te devuelve un plan paso a paso para subirlo lo más rápido posible, con montos exactos y seguimiento mensual.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de la gente descubre que tiene un problema de historial crediticio el día que se lo rechazan. Piden un crédito hipotecario, o un auto, o simplemente una tarjeta con mejor tasa, y les dicen que no. Nadie les explica por qué, y ahí empieza el mito: que el buró es una lista negra y que uno está adentro o afuera.</p>
+
+      <p>No es una lista. Es un expediente con tu comportamiento de pago, y se mueve. Lento en unas cosas y sorprendentemente rápido en otras. La diferencia entre quien lo sube en seis meses y quien sigue igual en tres años casi nunca es cuánto dinero tienen: es que uno supo qué palanca mover primero.</p>
+
+      <p>Este prompt convierte a Claude en el estratega que te ordena esas palancas. Le das tus números reales y te devuelve un plan con montos exactos, en qué orden, y qué esperar de cada movimiento.</p>
+
+      <h2>Primero: consigue tus números reales</h2>
+
+      <p>Esto no funciona con recuerdos. En México tu historial lo llevan dos sociedades de información crediticia, Buró de Crédito y Círculo de Crédito, y tienes derecho a un reporte de crédito especial gratuito cada doce meses en cada una. Sácalo antes de correr nada.</p>
+
+      <p>De ahí y de tus estados de cuenta necesitas: cada tarjeta con su límite, su saldo, su tasa anual y su fecha de corte; cada crédito con su saldo y su plazo; y cualquier registro negativo con su fecha. Es una hora de trabajo aburrido y es la única parte que no se puede automatizar.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de seguir:</strong> esto es aritmética y estrategia, no asesoría financiera. Un modelo no está acreditado para recomendarte productos de crédito ni responde por las consecuencias de una decisión. Úsalo para entender tu situación y llegar preparado; para consolidar deuda, reestructurar o pedir una hipoteca, siéntate con alguien acreditado. Y desconfía por definición de cualquiera que te ofrezca "borrarte del buró": los plazos de eliminación de un registro los fija la ley según el monto, y nadie los puede acortar cobrándote.</p>
+      </div>
+
+      <h2>El prompt</h2>
+
+      <pre><code>Eres mi estratega de historial crediticio. Conoces los factores que mueven una
+calificacion crediticia, como se ponderan y que movimientos dan resultado mas
+rapido. Trabajas en Mexico: mis registros estan en Buro de Credito y Circulo de
+Credito, no en agencias de Estados Unidos.
+
+Reglas de entrada: no eres asesor financiero acreditado. Esto es orientacion
+educativa. Sin sermones sobre mis habitos de gasto ni juicios sobre mi deuda:
+solo estrategia. Si un dato depende de la ley o de la politica de un banco en
+particular y no lo sabes con certeza, dilo y dime donde verificarlo.
+
+MI PERFIL
+Calificacion actual: [numero, de que sociedad y de que fecha]
+Objetivo: [numero al que quiero llegar y en cuanto tiempo]
+Tarjetas: para cada una -> banco, limite, saldo actual, tasa anual, fecha de
+  corte, antiguedad de la cuenta, si tengo pagos atrasados
+Otros creditos: [auto, personal, nomina, hipoteca -> saldo, tasa, plazo, al
+  corriente o no]
+Registros negativos: [atrasos, cuentas en cobranza, quitas, con su fecha]
+Consultas recientes: [cuantas solicitudes de credito he hecho en 24 meses]
+Cuanto puedo destinar al mes a arreglar esto: [monto]
+
+MODO 1 - DIAGNOSTICO (la primera vez)
+
+1. DESGLOSE
+   Explicame factor por factor donde estoy parado: historial de pagos, que tan
+   usada tengo mi linea de credito, antiguedad promedio de mis cuentas, mezcla
+   de tipos de credito, y consultas nuevas. Para cada uno: como estoy, cuanto
+   pesa, y que hay que hacer. Si no conoces la ponderacion exacta del modelo
+   mexicano, dilo y trabaja con el orden de importancia general.
+
+2. PLAN DE ACCION ORDENADO POR IMPACTO
+   Para cada movimiento: que hago exactamente, por que funciona, cuanto me
+   cuesta, que efecto esperas y con que incertidumbre, en cuanto tiempo se
+   refleja, y los pasos para ejecutarlo. Ordenados de mayor a menor impacto por
+   peso invertido.
+
+3. TABLA DE USO DE LINEA
+   Por tarjeta: limite, saldo, porcentaje usado hoy, porcentaje objetivo, cuanto
+   tengo que abonar para llegar ahi. Y el total. Trabaja con la regla practica
+   de mantener el uso bien por debajo del limite, y explicame por que el saldo
+   que se reporta es el de la fecha de corte y no el que queda despues de pagar.
+
+4. LIMITES Y CUENTAS
+   Por tarjeta, dime si conviene pedir aumento de linea, si cerrarla me haria
+   daño por antiguedad, y como se pide. Avisame cuando abrir una cuenta nueva me
+   baje la antiguedad promedio mas de lo que me ayude.
+
+5. REGISTROS NEGATIVOS
+   Para cada uno: que edad tiene, que puedo hacer hoy, y si tengo derecho a
+   aclararlo. Escribeme el texto de la aclaracion cuando aplique. Si algo se
+   arregla solo con el paso del tiempo, dimelo en vez de venderme una accion.
+   Y adviertme de cualquier oferta de "limpieza de buro".
+
+6. TACTICAS FINAS
+   Pagar antes de la fecha de corte, no despues. Como secuenciar el pago de
+   deudas cuando lo mas caro y lo que mas mueve la calificacion no coinciden.
+   Que hacer con tarjetas viejas que ya no uso.
+
+MODO 2 - REVISION MENSUAL
+Dame el avance: mes, calificacion, deuda total, uso de linea, que movimiento
+hice. Acumulado: cuantos puntos he ganado, cuanta deuda pague, cuanto interes
+anual me ahorre, y cuantos meses me faltan al ritmo actual. Si la calificacion
+bajo sin explicacion, diagnostica que pudo haberla movido.
+
+MODO 3 - DECISIONES SUELTAS
+Cuando te pregunte "me conviene cerrar esta tarjeta", "pido este credito",
+"consolido", analizalo con mis numeros: que gano, que pierdo, y en que plazo.
+
+Formato para leer en celular. Tablas y numeros, sin ensayos.</code></pre>
+
+      <h2>Cuándo correrlo</h2>
+
+      <p>La revisión mensual va unos días después de que cierren tus fechas de corte, cuando los saldos nuevos ya se reportaron. Si lo corres antes, estás analizando el mes pasado.</p>
+
+      <p>Y no pidas tu reporte cada semana: consultarlo tú mismo no daña tu historial, pero sí te va a volver loco. Una vez al mes es suficiente para ver movimiento y no lo suficiente para desesperarte.</p>
+
+      <h2>El movimiento que casi siempre gana</h2>
+
+      <p>Sin conocer tus números, si tuviera que apostar cuál es la palanca más rentable, es esta: bajar el porcentaje de tu línea que traes usada, pagando <em>antes</em> de la fecha de corte.</p>
+
+      <p>Casi nadie sabe que el saldo que se reporta es el que traías el día del corte, no el que queda después de que pagaste. Puedes estar pagando tu tarjeta completa cada mes y aun así reportarse con la línea al ochenta por ciento, mes tras mes, durante años. Mover la fecha en que pagas no te cuesta un peso y cambia el número que ve el banco.</p>
+
+      <h2>Esto también aplica en una empresa</h2>
+
+      <p>Si tienes un negocio, el historial de la persona física con actividad empresarial y el de la empresa se miran juntos cuando pides una línea. Ese ejercicio de ordenar líneas, tasas y fechas de corte antes de sentarte con el banco es exactamente el mismo, y lo he visto cambiar la tasa que ofrecen.</p>
+
+      <p>Lo que a un dueño le pasa seguido: trae la tarjeta corporativa siempre al tope porque la usa para flujo, la paga completa, y no entiende por qué le dan condiciones malas. Es el mismo problema de la fecha de corte, con más ceros.</p>
+
+      <h2>El error de siempre</h2>
+
+      <p>Abrir cuentas nuevas para "hacer historial" en el peor momento. Cada solicitud deja rastro y una cuenta nueva le baja la antigüedad promedio a tu expediente. Si estás a menos de un año de pedir una hipoteca, no abras nada.</p>
+
+      <p>El orden que funciona es aburrido: primero baja el uso de tus líneas, luego limpia lo que se pueda aclarar, luego deja pasar el tiempo, y hasta el final abre algo nuevo. Todo lo que se salte ese orden es prisa disfrazada de estrategia.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

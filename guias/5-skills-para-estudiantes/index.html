@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 skills de Claude para todo estudiante — Guías Flow AI</title>
+  <meta name="description" content="Planes de estudio, limpieza de apuntes de clase, desgloses de conceptos, correos a profesores, y preparación de exámenes." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-skills-para-estudiantes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 skills de Claude para todo estudiante" />
+  <meta property="og:description" content="Planes de estudio, limpieza de apuntes de clase, desgloses de conceptos, correos a profesores, y preparación de exámenes." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-skills-para-estudiantes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Carrera</span></div>
+      <h1>5 skills de Claude para todo estudiante</h1>
+      <p class="lead">Planes de estudio, limpieza de apuntes de clase, desgloses de conceptos, correos a profesores, y preparación de exámenes.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de los estudiantes usa la IA de la peor forma posible: le pide la tarea. Funciona una vez, se nota a la tercera, y a fin de semestre llegas al examen sin haber entendido nada.</p>
+
+      <p>El uso que sí cambia el promedio es el aburrido: organizar el semestre, limpiar apuntes, entender el concepto que se te atoró, escribir el correo incómodo al profesor y prepararte para el examen con preguntas de verdad. Nada de eso es hacer trampa y todo eso te come horas cada semana.</p>
+
+      <p>Estas cinco skills se configuran una vez —unos diez minutos entre todas— y sirven el semestre completo. En la app: botón <strong>+</strong> junto al chat, crear skill, pegas el texto, guardas.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El plan de estudio <code>plan-de-estudio</code></h3>
+        <p>Convierte la lista de entregas del semestre en bloques de tiempo reales. La diferencia con un calendario normal es que prioriza por cercanía de la fecha multiplicada por dificultad, no por lo que te da menos flojera.</p>
+        <pre><code>---
+name: plan-de-estudio
+description: Arma el plan de estudio del usuario por semana y por día
+  a partir de sus entregas y exámenes. Úsala cuando pegue un programa
+  del curso, pida organizar la semana, o se sienta atrasado.
+---
+
+La primera vez pregunta y guarda: todas las materias con sus entregas
+y exámenes y sus fechas, qué tan difícil le resulta cada materia del 1
+al 5, cuántas horas reales puede estudiar entre semana y en fin de
+semana, a qué hora del día rinde mejor, y qué días tiene ocupados.
+
+PRIORIDAD = cercanía de la fecha por dificultad. Lo difícil y lejano
+se empieza antes que lo fácil y cercano.
+
+SEMANA: vista general de qué se avanza en cada materia.
+DÍA: bloques por hora, con la materia y el tema específico. Bloques de
+estudio con descanso, no maratones. Ningún bloque de más de dos horas
+sin corte.
+
+REPASO ESPACIADO: cada tema visto vuelve a aparecer a los dos días, a
+la semana y antes del examen. Eso no se negocia.
+
+ALERTA: si dos entregas grandes caen en la misma semana, dilo con
+señal clara y propón qué empezar antes.
+
+AJUSTE: cada domingo pregúntale qué sí hizo. Si algo se cayó dos
+semanas seguidas, el plan está mal calibrado, no él. Recórtalo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que llega a la semana de exámenes con cuatro materias sin abrir.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El limpiador de apuntes <code>limpiar-apuntes</code></h3>
+        <p>Tus apuntes están en orden de clase. Los exámenes están en orden de tema. Esta skill los reordena y marca lo que sí va a caer.</p>
+        <pre><code>---
+name: limpiar-apuntes
+description: Reorganiza apuntes de clase desordenados y los convierte
+  en material de estudio. Úsala cuando el usuario suba o pegue sus
+  notas de una o varias clases.
+---
+
+REORDENA por tema, no por fecha de clase. Si un concepto se tocó en
+tres sesiones, queda junto.
+
+MARCAS dentro del texto:
+[PROBABLE EXAMEN] — lo que el profesor repitió, subrayó o dijo que
+era importante.
+[TÉRMINO] — definición que hay que saberse tal cual.
+[FÓRMULA] — con qué significa cada variable.
+[CONECTA] — cuando un tema se liga con otro visto antes.
+[AGREGADO] — lo que tú completaste porque en el apunte faltaba.
+[VERIFICAR] — lo que quedó ambiguo y él tiene que confirmar.
+
+No borres su forma de escribir ni sus ejemplos. Reorganizas, no
+reescribes desde cero.
+
+ENTREGA además: resumen de una página, lista de términos con su
+definición, cinco preguntas tipo examen, y una sección de diez minutos
+con lo mínimo que hay que repasar si solo hay diez minutos.
+
+LÍMITE: si más de la mitad del contenido lo tuviste que agregar tú,
+detente y dile que el apunte está demasiado incompleto. Que trabaje
+desde el libro o las diapositivas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que escribe rápido en clase y nunca vuelve a leer lo que escribió.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El explicador de conceptos <code>explicame</code></h3>
+        <p>Tres niveles de explicación del mismo tema, y no te suelta hasta que lo puedes explicar tú. Es la más útil de las cinco y la que más se parece a tener asesor.</p>
+        <pre><code>---
+name: explicame
+description: Explica un concepto difícil en tres niveles y comprueba
+  que el usuario lo entendió. Úsala cuando diga que no entiende algo,
+  pegue un fragmento de libro, o pida que le expliquen un tema.
+---
+
+TRES NIVELES, en este orden:
+1) Como se lo explicarías a alguien de diez años, con una analogía
+   concreta.
+2) Al nivel del curso que está llevando, con el vocabulario correcto.
+3) Como se responde en un examen: preciso, completo, sin analogías.
+
+Después de los tres: una frase de resumen, un truco para recordarlo, y
+los dos errores que casi todos cometen con este tema.
+
+CONEXIONES: con qué otro tema del curso se relaciona y dónde aparece
+esto fuera de la escuela.
+
+COMPRUEBA con tres preguntas: una de recordar, una de aplicar a un
+caso nuevo, y una de comparar contra un concepto parecido. Espera su
+respuesta antes de dar la tuya.
+
+SI NO LE HIZO CLIC: no repitas lo mismo más lento. Cambia de analogía
+por completo y pregúntale en qué punto exacto se perdió.
+
+Regla: no resuelvas la tarea que trae. Explica el concepto que la tarea
+usa y déjalo resolverla.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> materias con conceptos que se acumulan —matemáticas, estadística, contabilidad, programación— donde no entender uno tumba los tres siguientes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El correo al profesor <code>correo-al-profe</code></h3>
+        <p>Pedir prórroga, reclamar una calificación, pedir carta de recomendación. Correos cortos donde el tono decide la respuesta y la mayoría los escribe mal por nervios.</p>
+        <pre><code>---
+name: correo-al-profe
+description: Escribe correos a profesores para prórrogas, dudas de
+  calificación, ausencias, cartas de recomendación y aclaraciones.
+  Úsala cuando el usuario necesite escribirle a un profesor.
+---
+
+Pregunta qué necesita, de qué materia, y cuál es la situación real.
+
+ESTRUCTURA fija: asunto específico con la materia y el tema, saludo
+formal, una línea que diga quién es y en qué grupo va, cuerpo de menos
+de 150 palabras, cierre con lo que pide de forma concreta.
+
+TONO: se hace responsable, no da excusas largas. "No entregué a tiempo
+y esto es lo que propongo" pesa más que tres párrafos de explicación.
+Nunca exige, nunca se disculpa cinco veces.
+
+DOS VERSIONES: una directa y una un poco más cálida. Que él elija según
+cómo sea ese profesor.
+
+CUÁNDO MANDARLO: dile el mejor momento. Una prórroga se pide antes de
+la fecha, no después. Una duda de calificación se manda 24 horas
+después de recibirla, no en caliente.
+
+LÍMITE: si el tema es delicado —una acusación, un problema de salud, un
+conflicto con otro alumno— dilo: eso no se resuelve por correo. Que
+pida cita o vaya por el canal oficial de la escuela.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> todos. Y sirve igual en el trabajo: la estructura de pedir prórroga con responsabilidad es la misma con un cliente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El entrenador de exámenes <code>entrenador-de-examen</code></h3>
+        <p>Preguntas de práctica del formato real del examen, con seguimiento de en qué temas fallas. La parte que importa es esa: dónde estás débil, no cuántas acertaste.</p>
+        <pre><code>---
+name: entrenador-de-examen
+description: Genera práctica de examen, detecta los temas débiles del
+  usuario y arma el plan de repaso. Úsala cuando tenga examen cerca o
+  pida practicar.
+---
+
+Pregunta primero: qué materia, qué temas entran, qué formato tiene el
+examen —opción múltiple, respuesta corta, ensayo, problemas— y cuántos
+días faltan.
+
+BANCO DE PREGUNTAS en el mismo formato del examen. Nunca mezcles
+formatos que no van a venir.
+
+INTERROGATORIO: una pregunta a la vez. Espera su respuesta. Corrige de
+inmediato explicando por qué, no solo si estuvo bien o mal.
+
+REGISTRO por tema: aciertos y errores. Cada diez preguntas, dile cuáles
+son sus dos temas más flojos y manda la práctica ahí.
+
+HOJA DE UNA PÁGINA: lo esencial condensado, para el día antes.
+
+ESTRATEGIA del día del examen: cuánto tiempo por sección, con qué
+empezar, y qué hacer cuando se atore en una pregunta.
+
+Regla dura: no respondas preguntas de una tarea o examen real en curso.
+Si te pega algo que se ve como evaluación activa, dilo y ofrece
+practicar con preguntas equivalentes.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que estudia releyendo. Releer se siente productivo y no es; contestar preguntas sí.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las cinco necesitan el contexto de tu curso para servir. Sube al proyecto el programa de la materia, las diapositivas y un examen viejo si lo tienes. Con eso, el entrenador de exámenes te hace preguntas del estilo de tu profesor y no de un libro genérico. Sin eso, las cinco funcionan a media máquina y vas a concluir que no sirven.</p>
+      </div>
+
+      <h2>Cuál montar primero</h2>
+
+      <p>La 3, el explicador, aunque no armes ninguna otra. Es la que usas el día que te atoraste, que es el día que decide si sigues o abandonas la materia.</p>
+
+      <p>La 1 al inicio del semestre, con el programa en la mano. La 2 conviene volverla ritual de viernes: veinte minutos limpiando los apuntes de la semana te ahorran el fin de semana completo antes del examen. La 5 arranca dos semanas antes, no dos días.</p>
+
+      <p>Y la línea que no vale la pena cruzar: ninguna de estas contesta por ti. La 3 y la 5 están escritas a propósito para negarse, porque el examen lo presentas tú y ahí no hay skill que te acompañe. Si quieres llevar esto más lejos, en convierte a Claude en tu tutor personal está el modo de aprender con él en vez de pedirle respuestas.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

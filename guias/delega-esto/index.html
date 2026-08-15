@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delega esto — Guías Flow AI</title>
+  <meta name="description" content="Claude jala contexto de tu Drive, tu correo y tu Slack, y escribe un brief de delegación tan completo que la otra persona ya no te pregunta nada." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/delega-esto/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Delega esto" />
+  <meta property="og:description" content="Claude jala contexto de tu Drive, tu correo y tu Slack, y escribe un brief de delegación tan completo que la otra persona ya no te pregunta nada." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/delega-esto/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>Delega esto</h1>
+      <p class="lead">Claude jala contexto de tu Drive, tu correo y tu Slack, y escribe un brief de delegación tan completo que la otra persona ya no te pregunta nada.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Sabes perfectamente que deberías delegar esa tarea. También sabes que explicarla te va a tomar cuarenta minutos, que la persona va a volver con tres preguntas y que probablemente acabes arreglando la primera versión. Así que la haces tú. Otra vez.</p>
+
+      <p>Ese cálculo es correcto y es exactamente por lo que nunca sales del hoyo. El costo de delegar no está en la tarea: está en transferir el contexto. Todo lo que sabes del proyecto —quién ya opinó, qué se decidió en marzo, con quién no hay que meterse— vive en tu cabeza y en tres hilos de correo.</p>
+
+      <p>Este proyecto saca ese contexto de donde está y lo escribe. Le dices qué quieres delegar y a quién, y te devuelve el brief completo más el correo listo para mandar.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Conecta Gmail, Google Drive, Calendar y Slack desde los ajustes de conectores. Entre más fuentes tenga, menos tienes que explicarle tú.</li>
+        <li>Crea un proyecto llamado <code>Delega esto</code> y pega el prompt en las instrucciones.</li>
+        <li>Escribe en una línea qué quieres delegar y a quién. El resto lo pregunta él.</li>
+      </ol>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi asistente de delegación. Tu trabajo es convertir "necesito que
+alguien haga esto" en un brief tan completo que la persona no tenga que
+regresar a preguntarme nada.
+
+Cuando te diga qué quiero delegar, primero pregúntame solo esto:
+1. A quién se lo voy a delegar y qué tanto sabe del tema
+2. Para cuándo lo necesito
+3. Qué pasa si sale mal
+
+Después busca contexto por tu cuenta antes de escribir nada:
+- En mi correo: los hilos recientes relacionados con este proyecto
+- En Drive: documentos, hojas y presentaciones que tengan que ver
+- En Slack: mensajes y conversaciones donde se haya hablado de esto
+- En el calendario: juntas pasadas o próximas del proyecto y quién estuvo
+
+Dime qué encontraste y qué NO encontraste, para que yo llene los huecos.
+
+## EL BRIEF
+
+Escribe el brief con estas siete secciones, en este orden:
+
+1. LA TAREA
+Una sola frase: qué necesito que haga esta persona. Si necesitas dos
+frases, la tarea no está bien definida y hay que partirla.
+
+2. CONTEXTO
+Por qué importa esto, de dónde viene, quiénes son los involucrados, qué se
+decidió antes y por qué. Incluye las ligas a los documentos y a los hilos
+relevantes. Esta es la sección que normalmente vive en mi cabeza: sácala
+completa.
+
+3. EL ENTREGABLE
+Qué me tiene que entregar exactamente: formato, extensión, para quién es,
+y qué tan pulido tiene que estar. Distingue entre borrador para revisión y
+versión final para mandar.
+
+4. FECHAS
+La fecha y hora límite reales. Si es un trabajo largo, marca un punto
+intermedio de revisión. Deja siempre un colchón entre la entrega y la fecha
+en que yo lo necesito de verdad.
+
+5. LÍMITES
+Qué NO entra en el alcance. Qué puede decidir por su cuenta y qué me tiene
+que preguntar. Qué tono o estilo debe usar. Con qué presupuesto o recursos
+cuenta.
+
+6. DÓNDE SE ATORAN TODOS
+Los errores típicos de esta tarea, las sensibilidades con ciertas personas,
+las mañas de las herramientas involucradas. Todo lo que yo aprendí a
+golpes y que no está escrito en ningún lado. Si no tienes esta información,
+pregúntamela directamente: es la más valiosa del brief.
+
+7. CÓMO SABEMOS QUE QUEDÓ BIEN
+De 3 a 5 criterios verificables. Nada de "que quede bien". Cosas como "que
+las tres áreas hayan confirmado por escrito" o "que el archivo abra en
+Excel sin errores de fórmula".
+
+## EL CORREO
+
+Después del brief, escríbeme el correo listo para mandar:
+- Asunto claro que diga qué es y para cuándo
+- Apertura corta y humana, sin rodeos
+- El brief formateado para leerse rápido, con encabezados y negritas
+- Cierre con el siguiente paso concreto y cuándo nos volvemos a ver
+
+## EL SEGUIMIENTO
+
+Cierra con tres cosas:
+- La fecha en que debería hacer el punto de revisión intermedio
+- Un mensaje de una línea para ese día, que no suene a que estoy vigilando
+- Una descripción para el evento del calendario, lista para pegar
+
+## REGLAS
+- Escribe para alguien que no vivió el proyecto. Si usas una sigla o un
+  nombre interno, explícalo.
+- Nunca inventes contexto. Si falta algo, márcalo como "necesito que me
+  confirmes esto" y pregúntamelo antes de mandar el correo.
+- Si lo que quiero delegar en realidad son tres tareas, dímelo y proponme
+  cómo partirlo.
+- Si por lo que me dijiste esta tarea no se debería delegar, dímelo.</code></pre>
+
+      <h2>Las dos secciones que nadie escribe solo</h2>
+
+      <h3>Dónde se atoran todos</h3>
+
+      <p>Esta es la sección que separa un brief de un instructivo. Es el conocimiento tácito: que el área de finanzas tarda cuatro días en contestar y hay que pedirles con anticipación; que ese cliente odia que le manden PDF; que la plantilla vieja tiene una fórmula rota en la fila 40.</p>
+
+      <p>Nunca lo escribes porque para ti es obvio. Para quien recibe la tarea es la diferencia entre entregar en tres días y entregar en tres días más una semana de correcciones.</p>
+
+      <h3>Los criterios verificables</h3>
+
+      <p>"Que quede bien" es la instrucción que garantiza dos rondas de correcciones, porque tu definición de bien y la de la otra persona no se cruzan hasta que ves el resultado. Tres criterios que se pueden marcar con una palomita convierten la revisión en un chequeo de dos minutos.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de límites, específicamente la parte de qué puede decidir sola la otra persona. Si no la escribes, pasa una de dos cosas: te pregunta todo y no delegaste nada, o decide cosas que no le tocaban y acabas rehaciéndolo. Una línea basta: "puedes ajustar el formato y el orden; el precio y el alcance no se mueven sin preguntarme".</p>
+      </div>
+
+      <h2>Dónde se usa más</h2>
+
+      <p>El caso más claro es el jefe que se va de vacaciones. Diez días de operación que alguien tiene que sostener, y el traspaso normalmente se hace en una junta de treinta minutos donde se olvida la mitad. Corriendo este proyecto una vez por cada frente abierto, el traspaso queda escrito y con criterios de éxito.</p>
+
+      <p>El segundo caso es alguien nuevo en el equipo. Sus primeras cuatro tareas delegadas con este formato le enseñan más de cómo opera la empresa que cualquier inducción, porque cada brief trae el contexto histórico y las trampas conocidas. Si quieres llevar eso más lejos, <a href="/guias/entrena-la-ia-como-a-un-empleado-nuevo/">entrenar a la IA como a un empleado nuevo</a> aplica la misma lógica en sentido contrario.</p>
+
+      <p>Y el tercero, menos obvio: delegarle a un proveedor externo. Ahí el contexto que falta es todavía más grande, porque el proveedor no conoce ni a la gente ni las herramientas. Un brief de siete secciones evita la mitad de las juntas de aclaración que se cobran igual.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>Este proyecto arregla la parte de transferir contexto. No arregla la parte de soltar.</p>
+
+      <p>Lo que veo seguido es gente que manda un brief impecable y a los dos días entra a revisar el documento, deja comentarios en cada párrafo y termina reescribiéndolo. El brief no sirvió de nada: la tarea nunca se delegó, solo se compartió el archivo.</p>
+
+      <p>Si escribiste criterios de éxito verificables, la revisión se hace contra esos criterios y contra nada más. Si el entregable los cumple y aun así lo quieres reescribir, el problema no era el contexto: era que los criterios que escribiste no eran los que de verdad te importan. Corrígelos en el siguiente brief en vez de corregir el documento.</p>
+
+      <p>Para el resto del sistema —qué delegar, cuándo y a quién— están <a href="/guias/4-movimientos-para-delegar-de-verdad/">los 4 movimientos para delegar de verdad</a>. Y si ya delegaste bien y ahora te sobra tiempo en la mañana, <a href="/guias/arranque-matutino/">el arranque matutino</a> decide en qué se te va.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

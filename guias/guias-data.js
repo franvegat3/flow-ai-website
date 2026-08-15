@@ -4151,6 +4151,36 @@ window.GUIAS = [
   "meta": "10 min · Multi-herramienta"
  },
  {
+  "slug": "vibe-working",
+  "titulo": "Vibe working: la nueva era del trabajo",
+  "desc": "Cómo construir flujos con IA que de verdad te ahorren tiempo todos los días.",
+  "badge": "Flujos",
+  "tool": [
+   "multi",
+   "notion"
+  ],
+  "topic": [
+   "productividad",
+   "automatizacion"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "trabajar-mejor-con-claude",
+  "titulo": "Trabaja más inteligente con Claude",
+  "desc": "Estrategias prácticas para meter a Claude en tu rutina diaria de trabajo.",
+  "badge": "Flujos",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
   "slug": "nunca-confies-sin-hacer-esto",
   "titulo": "Nunca confíes en lo que sale de Claude sin hacer esto",
   "desc": "Usa un segundo agente para auditar el trabajo del primero. Copia el prompt.",
@@ -4315,6 +4345,36 @@ window.GUIAS = [
   "meta": "9 min · Meta Ads"
  },
  {
+  "slug": "slack-cambio-para-siempre",
+  "titulo": "Slack cambió para siempre",
+  "desc": "30 funciones nuevas de IA impulsadas por Claude: resúmenes de junta, un compañero de IA en el escritorio, skills reutilizables, y un CRM integrado. Cómo usar cada una que importa.",
+  "badge": "Novedades",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "productividad",
+   "novedades"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "sacarle-todo-a-cowork",
+  "titulo": "Sácale todo a Claude Cowork",
+  "desc": "Configuración, estructura de prompts, automatizaciones programadas, trucos de nivel, y el cambio de mentalidad que convierte a Claude de chatbot en empleado. La guía completa.",
+  "badge": "Flujos",
+  "tool": [
+   "cowork"
+  ],
+  "topic": [
+   "productividad",
+   "agentes"
+  ],
+  "min": 11,
+  "meta": "11 min · Cowork"
+ },
+ {
   "slug": "tu-primer-agente-de-notion",
   "titulo": "Configura tu primer agente de Notion",
   "desc": "Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo.",
@@ -4431,6 +4491,50 @@ window.GUIAS = [
   ],
   "min": 8,
   "meta": "8 min · Claude"
+ },
+ {
+  "slug": "aprende-skills-en-10-minutos",
+  "titulo": "Aprende las skills de Claude en 10 minutos",
+  "desc": "Construye, instala y usa tu primera skill en 10 minutos. El creador de skills, el formato SKILL.md, la biblioteca de plugins, y los trucos de nivel.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "construir-skills-de-claude",
+  "titulo": "Construye skills de Claude",
+  "desc": "Crea comandos personalizados que automatizan tus tareas más repetitivas.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "10-skills-para-verte-como-genio",
+  "titulo": "El truco de Claude que hace que te asciendan",
+  "desc": "10 skills listas para usar que te van a hacer ver como un genio en el trabajo.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-2",
@@ -4567,6 +4671,21 @@ window.GUIAS = [
   "meta": "9 min · Claude"
  },
  {
+  "slug": "5-skills-para-estudiantes",
+  "titulo": "5 skills de Claude para todo estudiante",
+  "desc": "Planes de estudio, limpieza de apuntes de clase, desgloses de conceptos, correos a profesores, y preparación de exámenes.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "analizador-de-riesgo-de-tu-puesto",
   "titulo": "El analizador de riesgo de tu puesto ante la IA",
   "desc": "Un prompt listo para usar que analiza qué tan expuesto está tu puesto específico a la IA.",
@@ -4636,6 +4755,49 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "5-certificaciones-gratis-para-tu-cv",
+  "titulo": "Las 5 mejores certificaciones gratis de IA para tu currículum",
+  "desc": "5 certificaciones gratuitas de Anthropic, Google, IBM, la Universidad de Helsinki y HP. Con el link de las 5 adentro.",
+  "badge": "Carrera",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
+ },
+ {
+  "slug": "de-piramide-a-diamante",
+  "titulo": "De la pirámide al diamante",
+  "desc": "Cómo la IA está reacomodando las trayectorias de carrera. Y qué significa para tu siguiente movimiento.",
+  "badge": "Carrera",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
+ },
+ {
+  "slug": "que-soltarle-a-claude",
+  "titulo": "Qué soltarle a Claude",
+  "desc": "Un marco para descubrir cuáles de tus tareas la IA sí puede manejar de verdad.",
+  "badge": "Carrera",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "el-puesto-que-mas-crece-en-2026",
@@ -4758,6 +4920,36 @@ window.GUIAS = [
   "meta": "7 min · Claude"
  },
  {
+  "slug": "redactor-de-evaluacion-de-desempeno",
+  "titulo": "El redactor de tu evaluación de desempeño",
+  "desc": "Claude revisa tu trimestre completo y escribe tu autoevaluación con logros reales, métricas y frases de impacto.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "carrera"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "delega-esto",
+  "titulo": "Delega esto",
+  "desc": "Claude jala contexto de tu Drive, tu correo y tu Slack, y escribe un brief de delegación tan completo que la otra persona ya no te pregunta nada.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
   "slug": "recordatorio-de-mantenimiento-de-casa",
   "titulo": "El recordatorio de mantenimiento de la casa",
   "desc": "Le cuentas a Claude de tu casa una sola vez: cada sistema, cada aparato, cada fecha. Arma un calendario completo de mantenimiento y te avisa cada mes antes de que algo se rompa.",
@@ -4848,5 +5040,35 @@ window.GUIAS = [
   ],
   "min": 7,
   "meta": "7 min · Claude"
+ },
+ {
+  "slug": "optimizador-de-historial-crediticio",
+  "titulo": "El optimizador de tu historial crediticio",
+  "desc": "Le dices a Claude tu puntaje, tus tarjetas, tus saldos y tus límites. Te devuelve un plan paso a paso para subirlo lo más rápido posible, con montos exactos y seguimiento mensual.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "tutor-de-idiomas",
+  "titulo": "El tutor de idiomas",
+  "desc": "Un proyecto de Claude que reemplaza a Duolingo y a los tutores caros. Conversaciones de rol, corrección de tu escritura palabra por palabra, y lecturas a tu nivel. En cualquier idioma.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "carrera"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
  }
 ];

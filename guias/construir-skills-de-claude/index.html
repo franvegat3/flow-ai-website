@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construye skills de Claude — Guías Flow AI</title>
+  <meta name="description" content="Crea comandos personalizados que automatizan tus tareas más repetitivas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/construir-skills-de-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Construye skills de Claude" />
+  <meta property="og:description" content="Crea comandos personalizados que automatizan tus tareas más repetitivas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/construir-skills-de-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span></div>
+      <h1>Construye skills de Claude</h1>
+      <p class="lead">Crea comandos personalizados que automatizan tus tareas más repetitivas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi todas las skills que veo instaladas nunca se activan. Están ahí, bien escritas, con buenas intenciones, y Claude las ignora porque la descripción no coincide con cómo la persona pide realmente la tarea.</p>
+
+      <p>La otra mitad sí se activa y produce algo genérico, porque las instrucciones son un párrafo de buenos deseos en vez de un procedimiento.</p>
+
+      <p>Escribir una skill que aguante uso diario no es difícil, pero sí es específico. Si lo que buscas es instalar tu primera en diez minutos, empieza por <a href="/guias/aprende-skills-en-10-minutos/">ahí</a>. Esta guía es sobre cómo se escribe una que no tengas que corregir cada semana.</p>
+
+      <h2>Las tres capas</h2>
+
+      <p>Toda skill opera en tres niveles distintos, y confundirlos es de donde salen casi todos los problemas.</p>
+
+      <p><strong>Capa 1: el disparador.</strong> El nombre y la descripción. Claude los revisa en cada conversación que tienes, siempre. Tienen que ser lo bastante específicos para activarse cuando corresponde y lo bastante acotados para no activarse cuando no.</p>
+
+      <p><strong>Capa 2: las instrucciones.</strong> Se cargan solo cuando la skill se dispara. Aquí van los pasos numerados, las reglas y el formato de salida. Es un procedimiento, no una explicación.</p>
+
+      <p><strong>Capa 3: los archivos de referencia.</strong> Opcionales y se leen solo cuando la tarea los pide. Guía de voz, plantillas, listas de producto, ejemplos largos. Viven en la misma carpeta y el <code>SKILL.md</code> nada más dice cuándo abrirlos.</p>
+
+      <p>La razón de esta separación es práctica: si metes tu guía de marca de dos mil palabras dentro de las instrucciones, se carga completa cada vez que la skill se activa, aunque la tarea sea de dos líneas.</p>
+
+      <h2>La descripción es el 80% del trabajo</h2>
+
+      <p>Es lo único que Claude lee para decidir si usa la skill. Tiene que responder dos cosas: qué hace y cuándo usarla.</p>
+
+      <p>Débil: <em>"Ayuda con tareas de escritura y contenido."</em> No dice cuándo. Nunca se va a disparar.</p>
+
+      <p>Fuerte: <em>"Reescribe correos para que suenen profesionales y directos. Úsala cuando el usuario pida mejorar, reescribir, arreglar, corregir o pasar en limpio un correo. NO la uses para redactar desde cero ni para resumir hilos."</em></p>
+
+      <p>Tres reglas para escribirla:</p>
+
+      <ul>
+        <li><strong>Usa tus verbos, no los elegantes.</strong> Si tú dices "acomódame esto", la palabra "acomodar" tiene que estar en la descripción. Es una lista de tus frases reales, no un resumen de la funcionalidad.</li>
+        <li><strong>Siempre incluye el "NO la uses para".</strong> Delimitar es lo que evita que se active en conversaciones que no le tocan, y eso importa más conforme instalas más skills.</li>
+        <li><strong>Nombra el objeto.</strong> "Correo", "reporte semanal", "notas de junta", "publicación de LinkedIn". Los sustantivos disparan mejor que los adjetivos.</li>
+      </ul>
+
+      <h2>Las instrucciones se escriben como procedimiento</h2>
+
+      <p>Pasos numerados, acciones concretas, cero explicaciones de por qué. Claude no necesita que lo convenzas, necesita que le digas qué hacer y en qué orden.</p>
+
+      <p>Lo que debe traer una buena sección de instrucciones:</p>
+
+      <ol>
+        <li><strong>Qué preguntar si falta información</strong>, y qué asumir si no vale la pena preguntar.</li>
+        <li><strong>Los pasos en orden.</strong> Numerados.</li>
+        <li><strong>El formato exacto de salida.</strong> Secciones, largo, si lleva viñetas o prosa.</li>
+        <li><strong>Las prohibiciones.</strong> Las palabras que no usas, las estructuras que odias, lo que nunca debe aparecer.</li>
+        <li><strong>Un ejemplo real de salida perfecta.</strong> Uno solo, tuyo, de verdad.</li>
+      </ol>
+
+      <p>Ese último punto es el que más rinde por palabra escrita. Un ejemplo concreto le enseña más que tres párrafos describiendo el estilo que quieres, porque el estilo está lleno de decisiones que no sabes que estás tomando.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir las prohibiciones. Es más fácil describir lo que quieres que lo que no soportas, pero lo segundo es lo que de verdad hace que la salida suene tuya. Abre tres cosas que Claude te haya escrito y anota qué le corregiste siempre. Esa lista es la sección de prohibiciones.</p>
+      </div>
+
+      <h2>Un ejemplo completo de operación</h2>
+
+      <p>Esta es la que más he replicado en empresas: convertir notas crudas de junta en decisiones y compromisos rastreables. El dolor que resuelve es real —que la junta pase y a la semana nadie recuerde quién se llevó qué.</p>
+
+      <pre><code>---
+name: cierre-de-junta
+description: Convierte notas crudas o transcripciones de junta en un
+  cierre con decisiones, compromisos con responsable y fecha, y temas
+  abiertos. Úsala cuando el usuario pegue notas de junta, una
+  transcripción, o pida el resumen, la minuta o el cierre de una
+  reunión. NO la uses para agendas previas ni para resumir
+  documentos que no son juntas.
+---
+
+# Cierre de junta
+
+## Instrucciones
+
+1. Si no viene el nombre de la junta ni la fecha, pregúntalos. Nada
+   más eso: no pidas más contexto.
+2. Lee todo antes de escribir. Separa mentalmente tres cosas:
+   lo que se decidió, lo que alguien se comprometió a hacer, y lo
+   que quedó sin resolver.
+3. Escribe el cierre con estas cuatro secciones, en este orden:
+
+DECISIONES
+- Numeradas. Cada una en una frase, en pasado y en voz activa.
+- Si una decisión revierte otra anterior que se menciona, dilo.
+
+COMPROMISOS
+- Uno por renglón: responsable, qué exactamente, para cuándo.
+- Si no se dijo el responsable, escribe SIN DUEÑO. No lo adivines.
+- Si no se dijo la fecha, escribe SIN FECHA. No la inventes.
+
+TEMAS ABIERTOS
+- Lo que se discutió y no se cerró, con qué falta para cerrarlo.
+
+SEGUIMIENTO
+- Qué debería estar en la agenda de la próxima junta.
+
+4. Al final, una sola línea: cuántas decisiones, cuántos
+   compromisos, cuántos sin dueño y cuántos sin fecha.
+
+## Reglas
+
+- Nunca conviertas una opinión en decisión. Si alguien dijo "creo
+  que deberíamos", eso es tema abierto, no decisión.
+- Nunca inventes responsables ni fechas. Marcarlo vacío es
+  información útil; adivinarlo es un error que alguien va a pagar.
+- Si un compromiso se mencionó dos veces con detalles distintos,
+  lista los dos y marca la contradicción.
+- Cero relleno. No escribas "se tuvo una productiva discusión".
+
+## Ejemplo
+
+[pega aquí un cierre real tuyo que haya quedado bien]</code></pre>
+
+      <p>Fíjate en las dos reglas de "no inventes". Son las que hacen que este documento se pueda usar para pedir cuentas. Una minuta con responsables inventados es peor que no tener minuta.</p>
+
+      <h2>Cuándo partirla en archivos</h2>
+
+      <p>La señal es simple: si las instrucciones no se leen en un minuto, algo debe salirse.</p>
+
+      <p>Lo que se saca a archivos de referencia: guías de voz y estilo largas, plantillas completas, catálogos de producto, listas de clientes, ejemplos extensos, cualquier cosa que se consulte pero no se ejecute. En el <code>SKILL.md</code> queda una línea que diga cuándo abrirlos, del tipo "para el tono, lee <code>voz.md</code>".</p>
+
+      <p>Lo que se queda siempre en el archivo principal: los pasos, las prohibiciones y el formato de salida.</p>
+
+      <h2>El ciclo de prueba</h2>
+
+      <ol>
+        <li><strong>Chat nuevo, sin nombrarla.</strong> Pide la tarea como la pedirías un martes cualquiera. Si no se activa, el problema es la descripción y no las instrucciones.</li>
+        <li><strong>Pruébala con un caso incompleto.</strong> Dale notas a medias, sin fechas, con contradicciones. Ahí es donde se ve si las reglas aguantan o si empieza a inventar.</li>
+        <li><strong>Pruébala donde NO debería activarse.</strong> Pide algo parecido pero distinto. Si se dispara, la descripción está demasiado abierta.</li>
+        <li><strong>Corrige una cosa a la vez</strong> y vuelve a subirla. Cambiar descripción e instrucciones juntas te deja sin saber qué arregló qué.</li>
+      </ol>
+
+      <h2>Cómo saber cuáles construir</h2>
+
+      <p>No hagas una lista de skills deseables. Nunca la vas a completar y las que salen de ahí son las que menos se usan.</p>
+
+      <p>Usa la regla de tres: cuando te descubras corrigiendo lo mismo por tercera vez, esa corrección ya es una skill. La tarea correcta no es la más impresionante, es la más repetida y la que ya sabes hacer bien —porque solo así puedes juzgar si la salida está mal.</p>
+
+      <p>Y una skill que se corrige cada semana durante un mes vale más que cinco que subiste el mismo día y nunca volviste a abrir.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
