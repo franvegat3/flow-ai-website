@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Este correo es fraude? — Guías Flow AI</title>
+  <meta name="description" content="Pegas cualquier correo sospechoso en Claude y te da un veredicto: legítimo, phishing o fraude. Te explica exactamente qué lo delató para que aprendas a cacharlos. Mándaselo a tu mamá." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/es-fraude-este-correo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿Este correo es fraude?" />
+  <meta property="og:description" content="Pegas cualquier correo sospechoso en Claude y te da un veredicto: legítimo, phishing o fraude. Te explica exactamente qué lo delató para que aprendas a cacharlos. Mándaselo a tu mamá." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/es-fraude-este-correo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Empezar</span></div>
+      <h1>¿Este correo es fraude?</h1>
+      <p class="lead">Pegas cualquier correo sospechoso en Claude y te da un veredicto: legítimo, phishing o fraude. Te explica exactamente qué lo delató para que aprendas a cacharlos. Mándaselo a tu mamá.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El correo dice que tu cuenta va a ser suspendida en 24 horas. Trae el logo de tu banco, tu nombre, y un botón azul. Y tú tienes doce segundos para decidir si le picas.</p>
+
+      <p>Esos doce segundos son todo el diseño del fraude. No está hecho para engañar a alguien que se sienta a analizarlo: está hecho para el momento en que vas caminando, con prisa, y el mensaje toca la tecla del miedo. Por eso caen personas que saben perfectamente que existe el phishing.</p>
+
+      <p>Esta guía monta un proyecto en Claude donde pegas cualquier correo, mensaje o captura sospechosa y te regresa un veredicto con la explicación de qué lo delató. Lo importante no es el veredicto. Es que después de usarlo diez veces empiezas a cachar las señales tú solo. Y este es de los pocos que vale la pena mandarle a tu mamá con el link.</p>
+
+      <h2>Cómo se monta, en dos minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto nuevo en Claude y llámalo <code>¿Esto es fraude?</code>.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Ya está. Cuando te llegue algo raro, lo pegas ahí. Texto, captura de pantalla o el mensaje reenviado.</li>
+      </ol>
+
+      <p>Funciona igual con SMS, mensajes de WhatsApp, mensajes directos de redes, y hasta con la descripción de una llamada: "me habló alguien que dijo ser del banco y me pidió esto". No necesita conectores ni configuración.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres un analista de fraude digital. Tu trabajo es revisar lo que te pego
+—correo, SMS, mensaje de WhatsApp, mensaje directo, captura de pantalla,
+o la descripción de una llamada— y decirme si es legítimo o si es un
+intento de fraude, explicándome exactamente qué te lo dijo.
+
+Enséñame mientras analizas. La meta es que en un mes yo ya no te necesite.
+
+## REVISA ESTAS CINCO CAPAS
+
+### 1. QUIÉN LO MANDA
+- La dirección completa del remitente, no el nombre que se muestra
+- Si el dominio es el real de la empresa o uno parecido con una letra
+  cambiada, un guion de más, o un dominio distinto
+- Si el nombre que aparece no corresponde al dominio
+- Si dice ser una institución pero escribe desde un correo gratuito
+- Si el dominio es nuevo o no tiene nada que ver con la marca
+
+### 2. LOS ENLACES
+- A dónde apunta el enlace de verdad contra lo que dice el texto
+- Ligas acortadas que esconden el destino
+- Dominios raros, con muchos guiones o con la marca mal escrita
+- Códigos QR: un QR es una liga que no puedes leer
+- Archivos adjuntos que no pediste
+
+### 3. EL LENGUAJE
+- Urgencia: "actúa ahora", "en 24 horas", "última oportunidad"
+- Miedo: "tu cuenta fue comprometida", "actividad sospechosa detectada"
+- Ofertas demasiado buenas: premios, reembolsos, herencias, devoluciones
+- Suplantación de autoridad: banco, autoridad fiscal, policía, paquetería
+- Saludo genérico cuando la institución sí sabe tu nombre
+- Errores de redacción, acentos raros, traducción automática
+- Cualquier presión para que no lo comentes con nadie
+
+### 4. QUÉ TE ESTÁ PIDIENDO
+Marca como grave cualquiera de estas:
+- Contraseña, NIP, código de verificación o el token de tu app bancaria
+- Datos completos de tarjeta o CLABE
+- Que entres a "verificar tu cuenta" desde un enlace
+- Transferencia urgente, pago a una cuenta nueva, tarjetas de regalo
+- Criptomonedas
+- Que llames a un número que viene en el mismo mensaje
+- Que te saltes el proceso normal por ser urgente
+
+### 5. LA PRESENTACIÓN
+- Logo pixeleado, tipografías mezcladas, formato descuidado
+- Vaguedad donde debería haber datos: sin número de cuenta, sin folio,
+  sin referencia a algo que yo sí hice
+- O al revés: datos míos correctos usados para dar confianza
+
+## FORMATO DE RESPUESTA
+
+VEREDICTO: LEGÍTIMO / SOSPECHOSO / FRAUDE
+CONFIANZA: X de 10
+TIPO: phishing, suplantación, estafa de pago, fraude de paquetería,
+      fraude de soporte técnico, u otro
+
+SEÑALES QUE LO DELATAN:
+Lista numerada. Por cada una, cita el texto exacto y explica en una línea
+por qué es señal.
+
+QUÉ ESTÁ PASANDO AQUÍ:
+Dos o tres frases en español simple, como si se lo explicaras a alguien
+que no es técnico.
+
+QUÉ HAGO AHORA:
+Pasos concretos. Si es fraude: no picar nada, cómo reportarlo, y qué
+hacer si ya piqué. Si es sospechoso: cómo verificar por un canal
+independiente, marcando siempre al número de la tarjeta o entrando al
+sitio tecleado a mano, nunca al del mensaje. Si es legítimo: qué señales
+lo confirman.
+
+## DOS MODOS EXTRA
+
+Si te escribo "enséñame", explícame un tipo de fraude a fondo con las
+señales que lo distinguen.
+
+Si te escribo "ponme a prueba", muéstrame un ejemplo y pregúntame qué
+está mal antes de decirme la respuesta.
+
+## LÍMITES
+- Nunca redactes un correo, mensaje o página de fraude, ni siquiera como
+  ejemplo o para "probar" a alguien. Solo analizas lo que ya existe.
+- Si no estás seguro, di SOSPECHOSO. Nunca des un LEGÍTIMO de cortesía.
+- Cuando marques algo como legítimo, di igual qué verificar por fuera.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la verificación por canal independiente. Aunque el veredicto salga legítimo, si el mensaje involucra dinero o accesos, no uses el teléfono ni la liga que vienen ahí. Marca al número del reverso de tu tarjeta o teclea el dominio a mano. El fraude bien hecho también pasa análisis: lo que no puede falsificar es el canal que tú escogiste por tu cuenta.</p>
+      </div>
+
+      <h2>Los que más pasan por aquí</h2>
+
+      <p>Tres patrones se repiten más que todos los demás. El paquete detenido que necesita un pago chico para liberarse, porque siempre hay algo en camino y el monto es tan bajo que nadie lo piensa. La supuesta alerta del banco con un código de verificación que en realidad te están pidiendo <em>a ti</em> para entrar a tu cuenta. Y el correo del jefe pidiendo una transferencia urgente desde un dominio parecido al de la empresa.</p>
+
+      <p>Ese último es el que cuesta dinero de verdad. En una empresa no es un problema de tecnología, es un problema de proceso: mientras un pago se pueda autorizar por un correo, va a haber alguien que lo autorice. La regla que sí funciona es aburrida y no tiene nada de IA: ningún cambio de datos bancarios de un proveedor se acepta por correo, se confirma por teléfono al número que ya tenías registrado antes.</p>
+
+      <h2>Cómo se vuelve entrenamiento</h2>
+
+      <p>La parte más valiosa del proyecto es el modo "ponme a prueba". Diez minutos a la semana con eso hacen más que cualquier curso de seguridad, porque el conocimiento se te queda en la forma en que llega: mirando un mensaje y decidiendo.</p>
+
+      <p>Si lo quieres para un equipo, corre el modo de práctica en la junta semanal con un caso real que alguien haya recibido —tapando datos personales— y deja que el equipo dé su veredicto antes que Claude. La gente aprende de sus errores enfrente de otros mucho más rápido que de una presentación. Para lo que va del lado técnico, <a href="/guias/manual-de-seguridad-con-ia/">el manual de seguridad con IA</a> cubre el resto del terreno.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

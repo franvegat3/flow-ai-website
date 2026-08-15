@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El organizador del calendario familiar — Guías Flow AI</title>
+  <meta name="description" content="Claude lee los calendarios de toda la familia cada domingo, marca cada conflicto, y asigna cada recogida. Y despiertas el lunes sin sorpresas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/organizador-del-calendario-familiar/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El organizador del calendario familiar" />
+  <meta property="og:description" content="Claude lee los calendarios de toda la familia cada domingo, marca cada conflicto, y asigna cada recogida. Y despiertas el lunes sin sorpresas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/organizador-del-calendario-familiar/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El organizador del calendario familiar</h1>
+      <p class="lead">Claude lee los calendarios de toda la familia cada domingo, marca cada conflicto, y asigna cada recogida. Y despiertas el lunes sin sorpresas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El miércoles a las 5:40 de la tarde alguien se da cuenta de que dos niños salen a la misma hora en dos lugares distintos y solo hay un coche. Eso no es mala organización. Es aritmética que nadie hizo el domingo.</p>
+
+      <p>El problema de fondo es que la información de una familia vive repartida: el calendario de la escuela, el grupo de mensajes del equipo de futbol, el calendario del trabajo de cada quien, y tres cosas que alguien dijo en la cena y nadie anotó. Ninguna persona tiene la vista completa. Por eso los choques siempre se descubren tarde.</p>
+
+      <p>Esta guía monta un organizador en Claude que junta todos esos calendarios cada domingo en la noche, encuentra los choques antes de que pasen, y te deja asignada cada entrega y cada recogida de la semana. El lunes despiertas con la semana resuelta en vez de con la semana por delante.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Primero, junta los calendarios. En Google Calendar, en "Otros calendarios", suscríbete a los de cada miembro de la familia, al de la escuela y al de las actividades. Todos tienen que estar visibles desde una sola cuenta.</li>
+        <li>Crea un proyecto en Claude llamado <code>Calendario familiar</code>.</li>
+        <li>Conecta Google Calendar desde Ajustes, en conectores.</li>
+        <li>Pega el prompt de abajo y llena el bloque de configuración con nombres reales.</li>
+        <li>Prográmalo en Dispatch como tarea recurrente, domingos a las 7 de la noche.</li>
+      </ol>
+
+      <p>El paso 1 es el que decide si esto funciona. Si el calendario de la escuela no está suscrito, el organizador va a armar una semana perfecta que se cae el martes con el festival que llevaba tres semanas anunciado.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres el organizador del calendario de mi familia. Cada domingo revisas la
+semana que viene, encuentras los choques antes de que pasen, y me dejas
+asignada la logística.
+
+## CONFIGURACIÓN
+
+- Adultos en casa y sus horarios de trabajo:
+- Hijos, edades y a qué escuela va cada uno:
+- Ciudad y colonia:
+- Cuántos coches hay y quién maneja cada uno:
+- Ayuda disponible: quién más puede recoger, en qué horarios
+- Arreglo de custodia si aplica, con los días exactos:
+- Calendarios que estás leyendo: [escuela, deportes, trabajo, familiar]
+
+## PASO 1 — JUNTA TODO
+
+Lee todos los calendarios de lunes a domingo de la semana que viene. De
+cada evento anota: qué es, quién participa, hora de inicio y fin, lugar,
+y si se repite.
+
+Marca aparte:
+- Eventos de todo el día
+- Cosas tentativas o sin confirmar
+- Eventos sin hora definida
+- Actividades recurrentes que normalmente están y esta semana no
+  aparecen. Puede ser un error de captura y hay que avisarme.
+
+## PASO 2 — LÍNEA DEL TIEMPO ÚNICA
+
+Arma la semana día por día, cada día en cinco tramos:
+- Mañana: despertar, desayuno y entregas
+- Horario de escuela y trabajo
+- Tarde, de 3 a 6: es donde se juntan las actividades y donde truena todo
+- Noche: tareas, cena, dormir
+- Fin de semana aparte
+
+Entre un evento y otro escribe el traslado con minutos reales según la
+ciudad y la hora. El tráfico de las 6 de la tarde no es el de las 11 de
+la mañana.
+
+## PASO 3 — CHOQUES
+
+Busca y marca cada uno de estos, con solución concreta:
+- Dos eventos encimados en el tiempo
+- Un adulto que tendría que estar en dos lugares a la vez
+- Una recogida sin nadie asignado
+- Más traslados simultáneos que coches disponibles
+- Un evento que requiere algo que no se preparó antes
+- Días con demasiada carga para un mismo niño
+
+Regla: si un niño tiene tres o más actividades en un solo día, márcalo
+como sobrecarga aunque no haya choque de horarios.
+
+Regla: no asumas que una hora vacía en el calendario está libre. Puede
+ser trabajo, traslado o descanso. Si vas a usarla, pregúntame.
+
+## PASO 4 — QUIÉN HACE QUÉ
+
+Dame una tabla en texto, día por día, con cada entrega y cada recogida:
+hora, lugar, niño, y adulto asignado por nombre.
+
+Donde no alcance la gente, dilo directo y propón: pedir aventón a otra
+familia, mover la hora, o de plano cancelar algo. Marca claramente en qué
+momentos de la semana necesito ayuda externa.
+
+## PASO 5 — PREPARACIÓN
+
+Una lista de lo que hay que hacer antes del lunes:
+- Qué empacar y para qué día (uniforme, tenis, disfraz, instrumento)
+- Qué comprar
+- Qué cita hay que confirmar
+- A quién hay que escribirle esta semana y para qué
+
+## PASO 6 — RESUMEN
+
+- El día más pesado de la semana y por qué
+- El día más ligero
+- Total de actividades y total de choques encontrados
+- En qué momentos exactos necesito ayuda
+- Una sola cosa: lo más importante de la semana, lo que no se puede caer
+
+## FORMATO
+Todo para leerse desde el teléfono: viñetas cortas, encabezados por día,
+negritas en nombres y horas. Nada de párrafos largos.
+
+REGLAS
+- Respeta los días de custodia. Nunca asignes a un adulto en un día que
+  no le toca.
+- Deja aire en el fin de semana. Un fin de semana lleno no es un logro.
+- Nunca inventes un evento. Si algo se ve raro, márcalo como duda.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la regla de los traslados con minutos reales. Sin ella, el organizador ve que una clase termina a las 5:00 y otra empieza a las 5:15 y no marca nada, porque en el papel no se encima. En la vida son cuarenta minutos de tráfico. Escribe tu ciudad en la configuración y pídele explícitamente que use tiempos reales por hora del día. Es la línea que convierte esto de un resumen bonito en algo que sirve.</p>
+      </div>
+
+      <h2>Lo que sale la primera vez</h2>
+
+      <p>Prepárate para dos cosas. La primera es que va a encontrar más choques de los que creías, y casi todos van a estar entre 3 y 6 de la tarde. Ese hallazgo por sí solo ya justifica la corrida: la mayoría de las familias no tiene un problema de agenda, tiene un problema de una sola franja de tres horas.</p>
+
+      <p>La segunda es que va a marcar cosas que no son choques pero pesan igual: el niño con actividad cinco días seguidos, el adulto que aparece en todas las recogidas mientras el otro no aparece en ninguna. Ese reparto desigual es la conversación real que el reporte destapa, y es más útil que cualquier optimización de rutas.</p>
+
+      <h2>La misma máquina, en una operación</h2>
+
+      <p>Cambia niños por técnicos de campo y recogidas por visitas a cliente y tienes el mismo problema con otro nombre. Un equipo de instalación con cuatro cuadrillas y tres camionetas vive exactamente esto: la agenda cuadra en el sistema y no cuadra en la calle porque nadie sumó los traslados.</p>
+
+      <p>El prompt aguanta el cambio casi sin tocarlo: adultos se vuelve cuadrillas, coches se vuelve unidades, y la regla de sobrecarga se vuelve el máximo de servicios por técnico al día. La detección de choques y el reparto de quién hace qué son idénticos. Es de las pocas cosas que se traducen limpias de la casa a la empresa.</p>
+
+      <h2>El error que hace que se abandone</h2>
+
+      <p>La gente lo corre una vez, le encanta, y no lo programa. Al mes siguiente ya nadie se acuerda de que existe.</p>
+
+      <p>Esto vive de la recurrencia. El domingo a las siete, sin excepción, y el reporte llega solo. Y compártelo con la otra persona que carga la logística de la casa: cuando los dos leen la misma lista el lunes en la mañana, se acaba la discusión de quién iba a recoger a quién. Si quieres cubrir también el fin de semana con actividades y no solo con logística, <a href="/guias/planeador-de-fin-de-semana/">el planeador de fin de semana</a> corre sobre el mismo calendario.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

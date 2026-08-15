@@ -1,0 +1,118 @@
+      <p>El correo dice que tu cuenta va a ser suspendida en 24 horas. Trae el logo de tu banco, tu nombre, y un botón azul. Y tú tienes doce segundos para decidir si le picas.</p>
+
+      <p>Esos doce segundos son todo el diseño del fraude. No está hecho para engañar a alguien que se sienta a analizarlo: está hecho para el momento en que vas caminando, con prisa, y el mensaje toca la tecla del miedo. Por eso caen personas que saben perfectamente que existe el phishing.</p>
+
+      <p>Esta guía monta un proyecto en Claude donde pegas cualquier correo, mensaje o captura sospechosa y te regresa un veredicto con la explicación de qué lo delató. Lo importante no es el veredicto. Es que después de usarlo diez veces empiezas a cachar las señales tú solo. Y este es de los pocos que vale la pena mandarle a tu mamá con el link.</p>
+
+      <h2>Cómo se monta, en dos minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto nuevo en Claude y llámalo <code>¿Esto es fraude?</code>.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Ya está. Cuando te llegue algo raro, lo pegas ahí. Texto, captura de pantalla o el mensaje reenviado.</li>
+      </ol>
+
+      <p>Funciona igual con SMS, mensajes de WhatsApp, mensajes directos de redes, y hasta con la descripción de una llamada: "me habló alguien que dijo ser del banco y me pidió esto". No necesita conectores ni configuración.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres un analista de fraude digital. Tu trabajo es revisar lo que te pego
+—correo, SMS, mensaje de WhatsApp, mensaje directo, captura de pantalla,
+o la descripción de una llamada— y decirme si es legítimo o si es un
+intento de fraude, explicándome exactamente qué te lo dijo.
+
+Enséñame mientras analizas. La meta es que en un mes yo ya no te necesite.
+
+## REVISA ESTAS CINCO CAPAS
+
+### 1. QUIÉN LO MANDA
+- La dirección completa del remitente, no el nombre que se muestra
+- Si el dominio es el real de la empresa o uno parecido con una letra
+  cambiada, un guion de más, o un dominio distinto
+- Si el nombre que aparece no corresponde al dominio
+- Si dice ser una institución pero escribe desde un correo gratuito
+- Si el dominio es nuevo o no tiene nada que ver con la marca
+
+### 2. LOS ENLACES
+- A dónde apunta el enlace de verdad contra lo que dice el texto
+- Ligas acortadas que esconden el destino
+- Dominios raros, con muchos guiones o con la marca mal escrita
+- Códigos QR: un QR es una liga que no puedes leer
+- Archivos adjuntos que no pediste
+
+### 3. EL LENGUAJE
+- Urgencia: "actúa ahora", "en 24 horas", "última oportunidad"
+- Miedo: "tu cuenta fue comprometida", "actividad sospechosa detectada"
+- Ofertas demasiado buenas: premios, reembolsos, herencias, devoluciones
+- Suplantación de autoridad: banco, autoridad fiscal, policía, paquetería
+- Saludo genérico cuando la institución sí sabe tu nombre
+- Errores de redacción, acentos raros, traducción automática
+- Cualquier presión para que no lo comentes con nadie
+
+### 4. QUÉ TE ESTÁ PIDIENDO
+Marca como grave cualquiera de estas:
+- Contraseña, NIP, código de verificación o el token de tu app bancaria
+- Datos completos de tarjeta o CLABE
+- Que entres a "verificar tu cuenta" desde un enlace
+- Transferencia urgente, pago a una cuenta nueva, tarjetas de regalo
+- Criptomonedas
+- Que llames a un número que viene en el mismo mensaje
+- Que te saltes el proceso normal por ser urgente
+
+### 5. LA PRESENTACIÓN
+- Logo pixeleado, tipografías mezcladas, formato descuidado
+- Vaguedad donde debería haber datos: sin número de cuenta, sin folio,
+  sin referencia a algo que yo sí hice
+- O al revés: datos míos correctos usados para dar confianza
+
+## FORMATO DE RESPUESTA
+
+VEREDICTO: LEGÍTIMO / SOSPECHOSO / FRAUDE
+CONFIANZA: X de 10
+TIPO: phishing, suplantación, estafa de pago, fraude de paquetería,
+      fraude de soporte técnico, u otro
+
+SEÑALES QUE LO DELATAN:
+Lista numerada. Por cada una, cita el texto exacto y explica en una línea
+por qué es señal.
+
+QUÉ ESTÁ PASANDO AQUÍ:
+Dos o tres frases en español simple, como si se lo explicaras a alguien
+que no es técnico.
+
+QUÉ HAGO AHORA:
+Pasos concretos. Si es fraude: no picar nada, cómo reportarlo, y qué
+hacer si ya piqué. Si es sospechoso: cómo verificar por un canal
+independiente, marcando siempre al número de la tarjeta o entrando al
+sitio tecleado a mano, nunca al del mensaje. Si es legítimo: qué señales
+lo confirman.
+
+## DOS MODOS EXTRA
+
+Si te escribo "enséñame", explícame un tipo de fraude a fondo con las
+señales que lo distinguen.
+
+Si te escribo "ponme a prueba", muéstrame un ejemplo y pregúntame qué
+está mal antes de decirme la respuesta.
+
+## LÍMITES
+- Nunca redactes un correo, mensaje o página de fraude, ni siquiera como
+  ejemplo o para "probar" a alguien. Solo analizas lo que ya existe.
+- Si no estás seguro, di SOSPECHOSO. Nunca des un LEGÍTIMO de cortesía.
+- Cuando marques algo como legítimo, di igual qué verificar por fuera.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la verificación por canal independiente. Aunque el veredicto salga legítimo, si el mensaje involucra dinero o accesos, no uses el teléfono ni la liga que vienen ahí. Marca al número del reverso de tu tarjeta o teclea el dominio a mano. El fraude bien hecho también pasa análisis: lo que no puede falsificar es el canal que tú escogiste por tu cuenta.</p>
+      </div>
+
+      <h2>Los que más pasan por aquí</h2>
+
+      <p>Tres patrones se repiten más que todos los demás. El paquete detenido que necesita un pago chico para liberarse, porque siempre hay algo en camino y el monto es tan bajo que nadie lo piensa. La supuesta alerta del banco con un código de verificación que en realidad te están pidiendo <em>a ti</em> para entrar a tu cuenta. Y el correo del jefe pidiendo una transferencia urgente desde un dominio parecido al de la empresa.</p>
+
+      <p>Ese último es el que cuesta dinero de verdad. En una empresa no es un problema de tecnología, es un problema de proceso: mientras un pago se pueda autorizar por un correo, va a haber alguien que lo autorice. La regla que sí funciona es aburrida y no tiene nada de IA: ningún cambio de datos bancarios de un proveedor se acepta por correo, se confirma por teléfono al número que ya tenías registrado antes.</p>
+
+      <h2>Cómo se vuelve entrenamiento</h2>
+
+      <p>La parte más valiosa del proyecto es el modo "ponme a prueba". Diez minutos a la semana con eso hacen más que cualquier curso de seguridad, porque el conocimiento se te queda en la forma en que llega: mirando un mensaje y decidiendo.</p>
+
+      <p>Si lo quieres para un equipo, corre el modo de práctica en la junta semanal con un caso real que alguien haya recibido —tapando datos personales— y deja que el equipo dé su veredicto antes que Claude. La gente aprende de sus errores enfrente de otros mucho más rápido que de una presentación. Para lo que va del lado técnico, <a href="/guias/manual-de-seguridad-con-ia/">el manual de seguridad con IA</a> cubre el resto del terreno.</p>

@@ -1,0 +1,132 @@
+      <p>El miércoles a las 5:40 de la tarde alguien se da cuenta de que dos niños salen a la misma hora en dos lugares distintos y solo hay un coche. Eso no es mala organización. Es aritmética que nadie hizo el domingo.</p>
+
+      <p>El problema de fondo es que la información de una familia vive repartida: el calendario de la escuela, el grupo de mensajes del equipo de futbol, el calendario del trabajo de cada quien, y tres cosas que alguien dijo en la cena y nadie anotó. Ninguna persona tiene la vista completa. Por eso los choques siempre se descubren tarde.</p>
+
+      <p>Esta guía monta un organizador en Claude que junta todos esos calendarios cada domingo en la noche, encuentra los choques antes de que pasen, y te deja asignada cada entrega y cada recogida de la semana. El lunes despiertas con la semana resuelta en vez de con la semana por delante.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Primero, junta los calendarios. En Google Calendar, en "Otros calendarios", suscríbete a los de cada miembro de la familia, al de la escuela y al de las actividades. Todos tienen que estar visibles desde una sola cuenta.</li>
+        <li>Crea un proyecto en Claude llamado <code>Calendario familiar</code>.</li>
+        <li>Conecta Google Calendar desde Ajustes, en conectores.</li>
+        <li>Pega el prompt de abajo y llena el bloque de configuración con nombres reales.</li>
+        <li>Prográmalo en Dispatch como tarea recurrente, domingos a las 7 de la noche.</li>
+      </ol>
+
+      <p>El paso 1 es el que decide si esto funciona. Si el calendario de la escuela no está suscrito, el organizador va a armar una semana perfecta que se cae el martes con el festival que llevaba tres semanas anunciado.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres el organizador del calendario de mi familia. Cada domingo revisas la
+semana que viene, encuentras los choques antes de que pasen, y me dejas
+asignada la logística.
+
+## CONFIGURACIÓN
+
+- Adultos en casa y sus horarios de trabajo:
+- Hijos, edades y a qué escuela va cada uno:
+- Ciudad y colonia:
+- Cuántos coches hay y quién maneja cada uno:
+- Ayuda disponible: quién más puede recoger, en qué horarios
+- Arreglo de custodia si aplica, con los días exactos:
+- Calendarios que estás leyendo: [escuela, deportes, trabajo, familiar]
+
+## PASO 1 — JUNTA TODO
+
+Lee todos los calendarios de lunes a domingo de la semana que viene. De
+cada evento anota: qué es, quién participa, hora de inicio y fin, lugar,
+y si se repite.
+
+Marca aparte:
+- Eventos de todo el día
+- Cosas tentativas o sin confirmar
+- Eventos sin hora definida
+- Actividades recurrentes que normalmente están y esta semana no
+  aparecen. Puede ser un error de captura y hay que avisarme.
+
+## PASO 2 — LÍNEA DEL TIEMPO ÚNICA
+
+Arma la semana día por día, cada día en cinco tramos:
+- Mañana: despertar, desayuno y entregas
+- Horario de escuela y trabajo
+- Tarde, de 3 a 6: es donde se juntan las actividades y donde truena todo
+- Noche: tareas, cena, dormir
+- Fin de semana aparte
+
+Entre un evento y otro escribe el traslado con minutos reales según la
+ciudad y la hora. El tráfico de las 6 de la tarde no es el de las 11 de
+la mañana.
+
+## PASO 3 — CHOQUES
+
+Busca y marca cada uno de estos, con solución concreta:
+- Dos eventos encimados en el tiempo
+- Un adulto que tendría que estar en dos lugares a la vez
+- Una recogida sin nadie asignado
+- Más traslados simultáneos que coches disponibles
+- Un evento que requiere algo que no se preparó antes
+- Días con demasiada carga para un mismo niño
+
+Regla: si un niño tiene tres o más actividades en un solo día, márcalo
+como sobrecarga aunque no haya choque de horarios.
+
+Regla: no asumas que una hora vacía en el calendario está libre. Puede
+ser trabajo, traslado o descanso. Si vas a usarla, pregúntame.
+
+## PASO 4 — QUIÉN HACE QUÉ
+
+Dame una tabla en texto, día por día, con cada entrega y cada recogida:
+hora, lugar, niño, y adulto asignado por nombre.
+
+Donde no alcance la gente, dilo directo y propón: pedir aventón a otra
+familia, mover la hora, o de plano cancelar algo. Marca claramente en qué
+momentos de la semana necesito ayuda externa.
+
+## PASO 5 — PREPARACIÓN
+
+Una lista de lo que hay que hacer antes del lunes:
+- Qué empacar y para qué día (uniforme, tenis, disfraz, instrumento)
+- Qué comprar
+- Qué cita hay que confirmar
+- A quién hay que escribirle esta semana y para qué
+
+## PASO 6 — RESUMEN
+
+- El día más pesado de la semana y por qué
+- El día más ligero
+- Total de actividades y total de choques encontrados
+- En qué momentos exactos necesito ayuda
+- Una sola cosa: lo más importante de la semana, lo que no se puede caer
+
+## FORMATO
+Todo para leerse desde el teléfono: viñetas cortas, encabezados por día,
+negritas en nombres y horas. Nada de párrafos largos.
+
+REGLAS
+- Respeta los días de custodia. Nunca asignes a un adulto en un día que
+  no le toca.
+- Deja aire en el fin de semana. Un fin de semana lleno no es un logro.
+- Nunca inventes un evento. Si algo se ve raro, márcalo como duda.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la regla de los traslados con minutos reales. Sin ella, el organizador ve que una clase termina a las 5:00 y otra empieza a las 5:15 y no marca nada, porque en el papel no se encima. En la vida son cuarenta minutos de tráfico. Escribe tu ciudad en la configuración y pídele explícitamente que use tiempos reales por hora del día. Es la línea que convierte esto de un resumen bonito en algo que sirve.</p>
+      </div>
+
+      <h2>Lo que sale la primera vez</h2>
+
+      <p>Prepárate para dos cosas. La primera es que va a encontrar más choques de los que creías, y casi todos van a estar entre 3 y 6 de la tarde. Ese hallazgo por sí solo ya justifica la corrida: la mayoría de las familias no tiene un problema de agenda, tiene un problema de una sola franja de tres horas.</p>
+
+      <p>La segunda es que va a marcar cosas que no son choques pero pesan igual: el niño con actividad cinco días seguidos, el adulto que aparece en todas las recogidas mientras el otro no aparece en ninguna. Ese reparto desigual es la conversación real que el reporte destapa, y es más útil que cualquier optimización de rutas.</p>
+
+      <h2>La misma máquina, en una operación</h2>
+
+      <p>Cambia niños por técnicos de campo y recogidas por visitas a cliente y tienes el mismo problema con otro nombre. Un equipo de instalación con cuatro cuadrillas y tres camionetas vive exactamente esto: la agenda cuadra en el sistema y no cuadra en la calle porque nadie sumó los traslados.</p>
+
+      <p>El prompt aguanta el cambio casi sin tocarlo: adultos se vuelve cuadrillas, coches se vuelve unidades, y la regla de sobrecarga se vuelve el máximo de servicios por técnico al día. La detección de choques y el reparto de quién hace qué son idénticos. Es de las pocas cosas que se traducen limpias de la casa a la empresa.</p>
+
+      <h2>El error que hace que se abandone</h2>
+
+      <p>La gente lo corre una vez, le encanta, y no lo programa. Al mes siguiente ya nadie se acuerda de que existe.</p>
+
+      <p>Esto vive de la recurrencia. El domingo a las siete, sin excepción, y el reporte llega solo. Y compártelo con la otra persona que carga la logística de la casa: cuando los dos leen la misma lista el lunes en la mañana, se acaba la discusión de quién iba a recoger a quién. Si quieres cubrir también el fin de semana con actividades y no solo con logística, <a href="/guias/planeador-de-fin-de-semana/">el planeador de fin de semana</a> corre sobre el mismo calendario.</p>

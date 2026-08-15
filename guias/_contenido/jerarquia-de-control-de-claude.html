@@ -1,0 +1,131 @@
+      <p>Le dijiste que no usara viñetas. Te contestó con viñetas. Le explicaste cómo se escribe en tu empresa y a la tercera sesión volvió a sonar a folleto. Y como no sabes por qué, vuelves a escribir la instrucción arriba del siguiente mensaje, otra vez.</p>
+
+      <p>El problema casi nunca es que la instrucción esté mal escrita. Es que está en el nivel equivocado. Claude tiene tres capas de control con alcances distintos, y casi toda la gente usa una sola —la peor de las tres para lo que está intentando.</p>
+
+      <p>Esto es cómo están ordenadas, qué va en cada una, quién gana cuando se contradicen y cómo encontrar la capa culpable cuando algo no jala.</p>
+
+      <h2>Los tres niveles</h2>
+
+      <div class="plugin-card">
+        <h3>1. Instrucciones globales</h3>
+        <p>Las reglas base que se cargan en cada sesión, cada tarea y cada proyecto, sin que las invoques. Viven en los ajustes de la aplicación, en la sección de Cowork, dentro de instrucciones globales.</p>
+        <p>Aquí va lo que es cierto siempre: quién eres, en qué idioma te contesta, qué tan largo quieres las respuestas, y las líneas que no se cruzan nunca —no inventar cifras, no mandar nada sin que lo apruebes, no tocar archivos fuera de la carpeta señalada.</p>
+        <p class="plugin-for"><strong>Para qué sirve de verdad:</strong> para no volver a escribir la misma advertencia. Si la estás repitiendo cada semana, es candidata a este nivel.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Archivos de contexto de la carpeta</h3>
+        <p>Documentos que viven dentro de la carpeta de trabajo y que Claude lee al arrancar cada sesión. Son específicos de ese proyecto, ese cliente o esa cuenta.</p>
+        <p>Este nivel es el que casi nadie monta, y es el que más rinde. Como no hay memoria entre sesiones, estos archivos <em>son</em> la memoria. Todo lo que no esté escrito ahí se pierde cuando cierras.</p>
+        <p class="plugin-for"><strong>Para qué sirve de verdad:</strong> para que un proyecto nuevo arranque sabiendo cosas, y para que otra persona del equipo herede el contexto copiando una carpeta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Skills</h3>
+        <p>Procedimientos empaquetados para una tarea concreta, que se disparan con un comando de diagonal o cuando el tema aparece. No describen quién eres: describen cómo se hace algo, paso por paso.</p>
+        <p>Se crean desde el creador de skills de la aplicación o escribiendo el archivo a mano. Una por tarea. Una skill que intenta cubrir tres oficios no se dispara bien en ninguno.</p>
+        <p class="plugin-for"><strong>Para qué sirve de verdad:</strong> para que un proceso salga igual la vez veinte que la primera, lo corra quien lo corra.</p>
+      </div>
+
+      <h2>Quién gana cuando se contradicen</h2>
+
+      <p>La regla es corta: lo más específico manda. La carpeta le gana a lo global.</p>
+
+      <p>Si tus instrucciones globales dicen "tono directo, tutéame" y el archivo de estilo de la carpeta del cliente dice "usted, formal, sin contracciones", en esa carpeta contesta formal. Fuera de ahí vuelve a tutearte.</p>
+
+      <p>Eso no es un detalle: es lo que hace usable el sistema. Lo global define tu default y las carpetas son las excepciones. Si tienes que apagar tu regla global cada vez que entras a un proyecto, la regla global estaba mal puesta.</p>
+
+      <h2>Qué regla va en qué nivel</h2>
+
+      <p>Cuando dudo dónde poner algo, me hago una sola pregunta: <strong>¿esto sería cierto en un proyecto completamente distinto?</strong></p>
+
+      <ul>
+        <li><strong>Sí, siempre</strong> — va a instrucciones globales. "Nunca me des una cifra sin decirme de dónde salió."</li>
+        <li><strong>Solo en este proyecto</strong> — va a los archivos de la carpeta. "Este cliente factura en dólares y todos los montos van en USD."</li>
+        <li><strong>Solo cuando estoy haciendo esta tarea</strong> — va a una skill. "El reporte de cierre lleva estas seis secciones, en este orden."</li>
+      </ul>
+
+      <p>El error más común es meter la tercera categoría en la primera. Alguien pone en instrucciones globales cómo se arma su reporte mensual, y luego Claude intenta darle estructura de reporte a un correo de tres líneas.</p>
+
+      <h2>Los tres archivos que van en toda carpeta</h2>
+
+      <p>Este es el nivel dos hecho concreto. Tres archivos, en la raíz de la carpeta de trabajo. Los tres se escriben una vez y se corrigen sobre la marcha.</p>
+
+      <p><code>sobre-mi.md</code> — quién eres dentro de este proyecto.</p>
+
+      <pre><code># Sobre mí
+
+Rol: [tu puesto] en [empresa], industria [cuál].
+De qué soy responsable: [3-4 líneas concretas, no el organigrama].
+A quién le entrego: [nombres y qué espera cada uno].
+Con quién trabajo: [equipo, áreas con las que cruzas].
+Qué mide mi trabajo: [los 2-3 números por los que me evalúan].
+Contexto que un externo no sabría: [siglas internas, nombres de
+sistemas, cómo le llamamos aquí a las cosas].
+Lo que NO es mi problema: [para que no me devuelva trabajo ajeno].</code></pre>
+
+      <p><code>voz-y-estilo.md</code> — cómo suena lo que sale de aquí.</p>
+
+      <pre><code># Voz y estilo
+
+Tono: [directo / formal / cercano]. Trato de [tú / usted].
+Largo de frase: [corta y punto, o párrafo desarrollado].
+Estructura que uso: [viñetas, prosa, encabezados cada X].
+
+Palabras y frases prohibidas:
+[lista literal de lo que odias leer]
+
+Palabras que sí uso:
+[el vocabulario propio de tu empresa o gremio]
+
+EJEMPLO DE ALGO BIEN ESCRITO (mío, no inventado):
+[pega aquí un párrafo real tuyo]
+
+EJEMPLO DE ALGO MAL ESCRITO:
+[pega aquí un párrafo que te hizo apretar los dientes]</code></pre>
+
+      <p><code>reglas-de-trabajo.md</code> — cómo se opera dentro de esta carpeta.</p>
+
+      <pre><code># Reglas de trabajo
+
+ANTES DE EJECUTAR
+- Si el encargo toca más de cinco archivos, muéstrame el plan primero.
+- Si falta un dato para hacerlo bien, pregunta. No lo asumas.
+
+FORMATOS DE SALIDA
+- [Cómo se nombran los archivos: convención literal.]
+- [Dónde se guarda cada tipo de entregable.]
+- [Qué encabezado o pie lleva todo lo que sale.]
+
+CALIDAD
+- Toda cifra lleva la fuente pegada al lado.
+- Nada de rellenos ni resúmenes de lo ya dicho.
+- Si algo quedó a medias, se dice al inicio, no al final.
+
+BITÁCORA
+- Al terminar, escribe en bitacora.md la fecha, qué archivos
+  tocaste y qué cambió en cada uno. Una línea por archivo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la bitácora. Sin ella no sabes qué modificó ni cuándo, y a la tercera semana ya no confías en la carpeta. Es una línea en las reglas de trabajo y te ahorra la única discusión que de verdad mata la adopción: "¿y esto quién lo cambió?".</p>
+      </div>
+
+      <h2>Cómo encontrar la capa culpable</h2>
+
+      <p>Cuando algo sale mal, la reacción normal es reescribir el mensaje. Antes de eso, tres preguntas en orden:</p>
+
+      <ol>
+        <li><strong>¿La regla está escrita en algún lado, o solo la dije una vez en un chat?</strong> Si solo la dijiste, no existe. Ese es el 70% de los casos.</li>
+        <li><strong>¿Está en la capa correcta?</strong> Una regla de proyecto puesta en instrucciones globales se aplica donde no debe. Una regla global metida en una carpeta desaparece en cuanto cambias de proyecto.</li>
+        <li><strong>¿Hay dos capas diciendo cosas distintas?</strong> Si el archivo de estilo pide formal y tus globales piden casual, está obedeciendo —a la otra. Elimina la contradicción en vez de subir el volumen.</li>
+      </ol>
+
+      <p>Un caso real de operación: un equipo de marketing tenía en globales "escribe para redes, corto y con gancho" y luego se quejaba de que las propuestas a clientes corporativos salían frívolas. La regla estaba bien; el nivel estaba mal. Se movió al archivo de la carpeta de contenido y las propuestas volvieron a su tono en un día.</p>
+
+      <h2>El orden en que conviene montarlo</h2>
+
+      <p>No lo hagas todo en una tarde. El nivel dos primero, en una sola carpeta, con los tres archivos escritos a mano y cortos. Vive con eso una semana y corrige lo que veas fallar.</p>
+
+      <p>Después sube a instrucciones globales solo lo que se repitió en todas tus carpetas. Y hasta el final, cuando ya notes que hay una tarea que haces igual cada semana, la conviertes en skill. Ese orden importa: las skills escritas antes de entender tu propio contexto acaban siendo instrucciones genéricas con nombre bonito.</p>
+
+      <p>Si quieres el siguiente paso, en <a href="/guias/sacarle-todo-a-cowork/">esta guía</a> está cómo se estructura un encargo bien hecho una vez que las tres capas ya están puestas, y en <a href="/guias/construir-skills-de-claude/">esta otra</a>, cómo se escribe la primera skill sin que se dispare cuando no debe.</p>

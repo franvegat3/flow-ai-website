@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El planeador de fin de semana — Guías Flow AI</title>
+  <meta name="description" content="Lo configuras una vez. Cada jueves Claude revisa tu calendario, el clima y los eventos locales, y arma tu fin de semana completo antes del viernes en la mañana." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/planeador-de-fin-de-semana/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El planeador de fin de semana" />
+  <meta property="og:description" content="Lo configuras una vez. Cada jueves Claude revisa tu calendario, el clima y los eventos locales, y arma tu fin de semana completo antes del viernes en la mañana." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/planeador-de-fin-de-semana/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El planeador de fin de semana</h1>
+      <p class="lead">Lo configuras una vez. Cada jueves Claude revisa tu calendario, el clima y los eventos locales, y arma tu fin de semana completo antes del viernes en la mañana.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El viernes en la noche alguien pregunta qué vamos a hacer. Nadie tiene una respuesta. Se abre el debate, se abren tres apps, y para el sábado a mediodía ya se fue la mitad del fin de semana decidiendo.</p>
+
+      <p>No es falta de opciones. Es que la decisión llega tarde y con hambre. Cuando por fin escogen restaurante ya no hay lugar, el evento que sí valía la pena se agotó el miércoles, y acaban en el mismo lugar de siempre.</p>
+
+      <p>Esta guía mueve la decisión al jueves y la saca de tu cabeza. Configuras el planeador una vez, y cada jueves en la tarde Claude revisa tu calendario, el pronóstico del clima, los eventos de tu ciudad, y te deja el fin de semana armado en la bandeja antes del viernes en la mañana.</p>
+
+      <h2>Cómo se monta, en cuatro pasos</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Planeador de fin de semana</code>.</li>
+        <li>Conecta Google Calendar desde Ajustes, en conectores. Es lo que evita que te planee encima de algo que ya tenías.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto y llena el bloque de perfil.</li>
+        <li>Prográmalo en Ajustes, en Dispatch, como tarea recurrente todos los jueves a las 6 de la tarde.</li>
+      </ol>
+
+      <p>La hora importa. Jueves a las seis te deja el viernes completo para reservar lo que haga falta y para que el resto de la casa opine. Si lo corres el sábado en la mañana, ya perdiste las reservaciones buenas.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi planeador de fin de semana. Cada jueves armas el plan del sábado
+y el domingo, y me lo dejas listo para leerlo desde el teléfono.
+
+## MI PERFIL
+
+- Ciudad y colonia donde vivo:
+- Qué me gusta hacer:
+- Qué no hago nunca (esto no se negocia):
+- Restricciones de comida y alergias:
+- Presupuesto para el fin de semana:
+- Nivel de energía típico: [tranquilo / equilibrado / lleno]
+- Tengo coche: [sí / no]
+- Voy con: [solo / pareja / familia con niños de X años / amigos]
+- Mascotas que a veces vienen:
+
+## PASO 1 — REVISA MI CALENDARIO
+
+Lee mi Google Calendar del sábado y el domingo. Anota todo lo que ya
+tengo: hora, lugar, con quién.
+
+Nunca planees encima de un evento existente. Y no asumas que las horas
+vacías están libres: deja traslado antes y después de cada compromiso.
+
+## PASO 2 — CLIMA
+
+Busca el pronóstico real para mi ciudad para sábado y domingo. Si va a
+llover en la tarde, no me pongas la actividad al aire libre en la tarde.
+El plan tiene que estar construido alrededor del clima, no a pesar de él.
+
+## PASO 3 — EVENTOS
+
+Busca qué está pasando este fin de semana en mi ciudad que empate con lo
+que me gusta: conciertos, mercados, exposiciones, ferias, obras,
+partidos, cosas de temporada.
+
+De cada uno dame: qué es, dónde, a qué hora, cuánto cuesta, si hay que
+comprar boleto antes y si todavía hay disponibilidad.
+
+## PASO 4 — DÓNDE COMER
+
+Restaurantes reales, abiertos hoy, con horarios verificados. Uno por cada
+comida que el plan incluya.
+
+De cada uno: tipo de cocina, rango de precio, calificación, si acepta o
+requiere reservación, y cuánto suele ser la espera si no reservas.
+
+Todo tiene que estar cerca del bloque de actividades de ese momento del
+día. No me mandes a cruzar la ciudad para comer.
+
+## PASO 5 — EL PLAN
+
+Sábado y domingo, cada uno en tres bloques: mañana, tarde y noche.
+
+Cada bloque lleva: qué, dónde, a qué hora, cuánto cuesta, y cuántos
+minutos de traslado desde lo anterior. Si no tengo coche, dime cómo se
+llega en transporte y cuánto cuesta.
+
+Reglas:
+- Máximo dos actividades por bloque. El fin de semana es para descansar,
+  no para cumplir una agenda.
+- Deja el domingo en la tarde libre siempre.
+- Si algo requiere reservación, ponlo hasta arriba del plan con la fecha
+  límite para reservar.
+
+## PASO 6 — PRESUPUESTO
+
+Suma corrida de todo el plan, con el total al final. Si me paso de lo que
+puse en el perfil, dime qué quitar y cuánto ahorra.
+
+## PASO 7 — PLANES B Y CIERRE
+
+- Un plan alterno para cada bloque, por si llueve o si algo se cae
+- Una rutina corta de domingo en la noche para dejar lista la semana:
+  qué comprar, qué preparar, qué revisar
+
+## FORMATO
+Todo formateado para leerse rápido en el celular. Negritas en nombres y
+horas. Al final, un solo bloque con todo lo que hay que reservar y hasta
+cuándo.
+
+REGLA
+Todo lugar, evento y restaurante tiene que ser real y estar operando hoy.
+Si no lo pudiste confirmar, no lo pongas.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el campo de "qué no hago nunca". La gente llena lo que le gusta y deja ese vacío, y el planeador acaba proponiendo brunch de dos horas cada sábado. Escribe ahí lo que de verdad te da flojera —filas, lugares ruidosos, cualquier cosa antes de las diez de la mañana— y el plan mejora más que con cualquier otra línea del perfil.</p>
+      </div>
+
+      <h2>Lo que cambia después de tres semanas</h2>
+
+      <p>La primera corrida sale genérica. Es normal: todavía no sabe nada de ti. Lo que la vuelve útil es corregirla en voz alta cuando falle. "Ese lugar ya fuimos dos veces", "ese parque está lejísimos", "los sábados temprano no". Cada corrección se queda en el proyecto.</p>
+
+      <p>Para la tercera o cuarta semana el plan del jueves ya llega con dos de tres bloques que sí quieres hacer. Y ahí el valor deja de ser el descubrimiento y pasa a ser otro: que el viernes en la noche nadie tenga que decidir nada.</p>
+
+      <h2>La versión de equipo</h2>
+
+      <p>El mismo mecanismo apuntado a un calendario compartido resuelve algo que en las empresas se hace pésimo: la salida de equipo. Cambias el perfil por el del grupo —cuántos son, presupuesto por cabeza, restricciones alimentarias de todos, si hay quien no toma— y le pides el plan del viernes en la tarde con dos opciones de lugar y el costo total ya calculado. Deja de ser una cadena de veinte mensajes en el chat del equipo.</p>
+
+      <p>Si lo que quieres coordinar es la logística de una casa completa, con varios calendarios y quién recoge a quién, eso lo cubre <a href="/guias/organizador-del-calendario-familiar/">el organizador del calendario familiar</a>. Y si quieres cerrar el domingo con el resto de la semana ya montada, <a href="/guias/reset-de-domingo-en-60-minutos/">el reset de domingo</a> es el complemento natural de este.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

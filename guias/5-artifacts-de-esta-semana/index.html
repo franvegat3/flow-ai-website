@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 artifacts que construí con Claude esta semana — Guías Flow AI</title>
+  <meta name="description" content="Tablero de presupuesto, seguimiento de acuerdos con marcas, planeador de viajes, planeador de contenido y planeador de comidas. Cinco prompts listos que construyen herramientas interactivas reales." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-artifacts-de-esta-semana/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 artifacts que construí con Claude esta semana" />
+  <meta property="og:description" content="Tablero de presupuesto, seguimiento de acuerdos con marcas, planeador de viajes, planeador de contenido y planeador de comidas. Cinco prompts listos que construyen herramientas interactivas reales." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-artifacts-de-esta-semana/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Creativo</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Creativo</span><span class="tag">Productividad</span></div>
+      <h1>5 artifacts que construí con Claude esta semana</h1>
+      <p class="lead">Tablero de presupuesto, seguimiento de acuerdos con marcas, planeador de viajes, planeador de contenido y planeador de comidas. Cinco prompts listos que construyen herramientas interactivas reales.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Esta semana no abrí ninguna app nueva. Construí cinco herramientas con una sola frase cada una y las cinco funcionan mejor que el producto de suscripción que estaban reemplazando, porque están hechas para cómo yo trabajo y no para el promedio de cien mil usuarios.</p>
+
+      <p>Eso es un artifact: no un documento ni un dibujo, sino una herramienta interactiva de verdad —con campos, cálculos, arrastrar y soltar, filtros— que se genera en la conversación y se puede publicar con una liga. Quien la abre no necesita cuenta de Claude.</p>
+
+      <p>Abajo están las cinco con el prompt completo de cada una. Se copian tal cual, se cambian los corchetes y listo.</p>
+
+      <h2>Lo único que hay que entender antes</h2>
+
+      <p>Un artifact no tiene servidor atrás. Lo que capturas vive en esa pantalla, y si cierras sin más, se va. Por eso a los cinco prompts les puse la misma línea al final: un botón de exportar e importar. Guardas un archivo, y al día siguiente lo vuelves a cargar.</p>
+
+      <p>Suena a defecto y en la práctica es lo contrario. Tus datos quedan en tu máquina, no en la base de nadie, y eso es justo lo que hace viable usar esto con números de la empresa. Si quieres la versión que sí se actualiza sola contra tus fuentes, ese es otro animal y está en <a href="/guias/artifacts-vivos/">artifacts vivos</a>.</p>
+
+      <h2>Los cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Tablero de presupuesto mensual</h3>
+        <p>El que más rápido paga. Junta ingresos, gastos fijos, suscripciones y metas de ahorro en una sola pantalla que recalcula al momento. La sección de suscripciones es la que duele: ver el costo anual junto al mensual cambia decisiones.</p>
+        <pre><code>Construye un tablero interactivo de presupuesto mensual como
+artifact. Secciones, en este orden:
+
+1) INGRESOS. Varias fuentes, cada una con monto bruto y un estimado
+   de lo que queda después de impuestos, con el porcentaje editable.
+2) GASTOS FIJOS. Por categoría, cada uno con día de corte o de pago,
+   y una alerta visual si vence en los próximos 5 días.
+3) SUSCRIPCIONES. Tabla aparte. Cada renglón muestra el costo
+   mensual Y el anual calculado. Al final, el total anual en grande.
+4) GASTOS VARIABLES. Deslizadores para despensa, comidas fuera,
+   transporte, gasolina y otros, que muevan el resultado en vivo.
+5) METAS DE AHORRO. Cada una con monto objetivo, avance y barra de
+   progreso, más cuántos meses faltan al ritmo actual.
+6) RESUMEN arriba de todo: ingreso total, gasto total, lo que
+   sobra en un número grande, verde si es positivo y rojo si no, y
+   una gráfica de pastel del reparto por categoría.
+
+Todas las cifras editables directo en la pantalla. Moneda en
+[pesos mexicanos]. Diseño limpio, tipo app financiera, sin adornos.
+Agrega un botón de exportar todo a un archivo JSON y otro de
+importarlo, para no perder la captura.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que sepa cuánto gana y no cuánto le queda. Que son casi todos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Seguimiento de acuerdos con marcas</h3>
+        <p>Un CRM de patrocinios en tablero de columnas. Es el que le falta a todo creador que ya factura y sigue administrando su dinero en notas del teléfono. La columna que importa no es "confirmado": es "pagado".</p>
+        <pre><code>Construye un tablero interactivo de acuerdos con marcas como
+artifact, estilo kanban con arrastrar y soltar.
+
+COLUMNAS, en este orden: Propuesto, En negociación, Confirmado, En
+producción, Entregado, Pagado.
+
+CADA TARJETA muestra: marca, monto acordado, plataforma, fecha de
+entrega, contacto y prioridad. Al hacer clic se abre un detalle con
+la lista de entregables (con casillas), si ya hay contrato firmado,
+condiciones de pago y notas.
+
+REGISTRO AUTOMÁTICO: guarda la fecha en que cada tarjeta cambió de
+columna, y en las de Entregado muestra cuántos días llevan sin pasar
+a Pagado.
+
+PANEL ARRIBA: valor total del pipeline, ingreso confirmado, ingreso
+ya cobrado, y cuántos acuerdos están vencidos en su fecha de pago.
+
+FILTROS por plataforma, estado, prioridad y rango de fechas.
+
+Moneda en [pesos mexicanos]. Incluye botón de exportar e importar
+todo en JSON.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> creadores con más de tres marcas al año, y equipos de alianzas en agencias chicas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Planeador de viaje compartible</h3>
+        <p>La gracia no es el itinerario: es que se lo mandas a quien viaja contigo y deja de existir el hilo de mensajes donde nadie encuentra el número de reserva.</p>
+        <pre><code>Construye un planeador de viaje interactivo como artifact.
+
+1) ITINERARIO día por día, en bloques de hora, con categoría por
+   actividad (comida, traslado, paseo, descanso) y color distinto
+   para cada una.
+2) LOGÍSTICA: vuelos con número, horario y confirmación;
+   hospedaje con dirección y horas de entrada y salida; traslados.
+3) MALETA: lista por categorías con casillas y porcentaje de avance.
+4) PRESUPUESTO: gasto por categoría, total, y división entre
+   [número] personas, mostrando cuánto le toca a cada quien.
+5) RESTAURANTES por probar y una sección de notas compartidas.
+
+Vista optimizada para teléfono, porque se consulta caminando, y una
+vista para imprimir en una hoja. Moneda en [pesos] con opción de
+mostrar el equivalente en [dólares]. Botón de exportar e importar
+en JSON.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que siempre organiza el viaje del grupo. Ese sabe quién es.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Planeador de contenido semanal</h3>
+        <p>Un tablero de producción, no un calendario. La diferencia está en los estados: una idea no es una pieza grabada, y confundirlas es por lo que los viernes se caen las publicaciones.</p>
+        <pre><code>Construye un planeador de contenido semanal como artifact.
+
+REJILLA de 7 días con arrastrar y soltar entre días.
+
+CADA PIEZA tiene estado: Idea, Guionada, Grabada, Editada,
+Programada, Publicada. Cada estado con su color. El campo principal
+visible en la tarjeta es el gancho o la primera línea, no el título.
+
+PLATAFORMA por pieza, con ícono distinto: [Instagram, TikTok,
+YouTube, LinkedIn].
+
+BANCO DE IDEAS en una barra lateral, con las piezas que todavía no
+tienen día asignado. Se arrastran a la rejilla.
+
+PLANTILLAS RECURRENTES: formatos que se repiten cada semana y se
+insertan con un clic.
+
+PANEL ARRIBA: cuántas piezas hay en cada estado, cuántos días
+seguidos llevas publicando, y cuántas piezas faltan para cerrar la
+semana.
+
+CAMPOS DE DESEMPEÑO por pieza, para llenar después: vistas,
+me gusta, comentarios y guardados.
+
+Botón de exportar e importar en JSON.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos de contenido de dos a cinco personas. Arriba de eso ya necesitas algo con permisos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Planeador de comidas con lista de súper</h3>
+        <p>El único de los cinco que ahorra dinero de forma medible. Lo que lo hace funcionar es que suma los ingredientes repetidos entre platillos: si tres comidas llevan cebolla, la lista dice cuántas, no la pone tres veces.</p>
+        <pre><code>Construye un planeador de comidas semanal como artifact.
+
+REJILLA de 7 días con espacios de desayuno, comida, cena y snack.
+
+POR PLATILLO: lista de ingredientes con cantidad, y un control de
+porciones que reescale las cantidades automáticamente.
+
+LISTA DE SÚPER que se genera sola desde el plan, con dos reglas:
+suma los ingredientes repetidos en un solo renglón, y los agrupa por
+zona del supermercado (frutas y verduras, carnes, lácteos,
+abarrotes, congelados, limpieza).
+
+SOBRAS: marcar un platillo como "rinde para otra comida" y que el
+planeador lo ofrezca al día siguiente sin volver a comprar nada.
+
+COSTO ESTIMADO del súper, editable por ingrediente, con total abajo.
+
+PREPARACIÓN: sección con el orden sugerido para adelantar el
+domingo.
+
+FAVORITOS: platillos guardados que se insertan con un clic.
+
+Vista de la lista de súper lista para imprimir o para el teléfono.
+Botón de exportar e importar en JSON.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> casas de dos o más personas. Solo, no compensa el esfuerzo de captura.</p>
+      </div>
+
+      <h2>Cómo se afina uno sin romperlo</h2>
+
+      <p>Después del primer resultado no vuelvas a pedirlo desde cero. Se pide quirúrgico: "deja todo igual y cambia solo la sección de suscripciones para que ordene por costo anual". Empezar de nuevo te da una herramienta distinta que ya no se parece a la que casi te gustaba.</p>
+
+      <p>Y el atajo que más uso: si ya tienes una hoja de cálculo que funciona pero es incómoda, mándale la captura de pantalla y pídele que la reconstruya como artifact. Sale más cerca de lo que quieres que cualquier descripción que puedas escribir.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Construir los cinco el mismo día. Cada uno pide captura inicial, y la captura es la parte aburrida: veinte suscripciones, cuarenta ingredientes, ocho acuerdos con marcas. Si abres cinco frentes de captura a la vez, no terminas ninguno y en tres días están todos a medias.</p>
+
+      <p>Uno. El que resuelva el pendiente que ya te está molestando esta semana. Cuando lleves siete días usándolo de verdad, construye el segundo. Si quieres seguir, hay <a href="/guias/5-artifacts-que-construi-parte-2/">cinco más aquí</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/robarle-el-diseno-a-un-sitio/" class="stack-link">
+            <span>Cómo robarle el diseño a cualquier sitio web con IA →</span>
+            <small>Los sitios hechos con IA se ven genéricos porque la IA no tiene gusto. El truco de un solo archivo que hace que Claude construya como marca premium, partiendo de un diseño que ya te gusta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

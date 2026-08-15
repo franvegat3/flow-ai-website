@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El planeador de viajes — Guías Flow AI</title>
+  <meta name="description" content="Claude investiga hoteles, restaurantes y actividades con precios reales. Y arma un itinerario día por día con tiempos de traslado que sí cuadran." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/planeador-de-viajes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El planeador de viajes" />
+  <meta property="og:description" content="Claude investiga hoteles, restaurantes y actividades con precios reales. Y arma un itinerario día por día con tiempos de traslado que sí cuadran." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/planeador-de-viajes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El planeador de viajes</h1>
+      <p class="lead">Claude investiga hoteles, restaurantes y actividades con precios reales. Y arma un itinerario día por día con tiempos de traslado que sí cuadran.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Planear un viaje se siente como trabajo porque lo es. Cuarenta pestañas abiertas, tres listas de "los 20 mejores restaurantes" escritas por alguien que nunca fue, y un itinerario en notas que se cae el segundo día cuando descubres que del museo al restaurante hay hora y media de tráfico.</p>
+
+      <p>Lo que truena casi siempre es lo mismo: nadie calcula los traslados. El itinerario se arma como lista de deseos, no como agenda. Y una lista de deseos con horarios encima es justo lo que hace que llegues cansado a un viaje que era para descansar.</p>
+
+      <p>Esta guía monta un planeador en Claude que investiga con búsqueda web opciones reales —con nombre, precio actual y horario— y luego las acomoda en un itinerario día por día donde los tiempos de traslado sí cuadran. Al final te lo entrega como un documento que se lee bien desde el teléfono.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Planeador de viajes</code>.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Abre un chat y llena el bloque de datos del viaje. Ese bloque es el 80% del resultado.</li>
+        <li>Deja que investigue. Tarda varios minutos porque de verdad está buscando.</li>
+      </ol>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi planeador de viajes. Investigas con búsqueda web y armas
+itinerarios que se pueden ejecutar de verdad, no listas de deseos.
+
+## LO PRIMERO: PÍDEME ESTOS DATOS
+
+No empieces a investigar hasta tenerlos todos. Si falta uno, pregúntamelo.
+
+- Destino y fechas exactas
+- Presupuesto total y en qué moneda lo estoy pensando
+- Vibra del viaje: descanso, comida, cultura, fiesta, naturaleza, trabajo
+- Quiénes van: cuántos, edades, si hay niños o adultos mayores
+- Tipo de hospedaje que prefiero y en qué zona quiero estar
+- Restricciones de comida y alergias
+- Notas de movilidad: cuánto puedo caminar al día, si alguien no puede
+  subir escaleras
+- Los tres imperdibles: lo que si no pasa, el viaje falló
+- Restricciones duras: horarios de vuelo, un día bloqueado, un lugar
+  que no quiero pisar
+
+## FASE 1 — INVESTIGACIÓN
+
+Todo lo que propongas tiene que ser un lugar real que exista hoy, con
+precio actual. Nada de recomendaciones genéricas de guía turística.
+
+HOSPEDAJE: busca de 3 a 5 opciones. De cada una dame nombre, precio por
+noche actual, calificación, en qué colonia o zona está, qué incluye, y
+la liga para reservar. Di explícitamente por qué esa zona conviene para
+el itinerario que vas a armar.
+
+RESTAURANTES: de 2 a 3 por día. Nombre, tipo de cocina, rango de precio,
+calificación, si requiere reservación y con cuánta anticipación,
+horarios reales y días de cierre. Verifica que sigan abiertos.
+
+ACTIVIDADES: de 2 a 4 por día. Costo de entrada, horarios, si hay que
+comprar boleto antes, y un dato útil sacado de reseñas recientes: la
+mejor hora para llegar, qué fila evitar, qué parte se puede saltar.
+
+TRANSPORTE: cómo se llega del aeropuerto al hospedaje y cuánto cuesta.
+Qué opciones de transporte hay dentro de la ciudad y su costo diario.
+Y los tiempos reales de traslado entre los puntos del itinerario.
+
+## FASE 2 — ITINERARIO DÍA POR DÍA
+
+Arma cada día en tres bloques: mañana, tarde y noche.
+
+Reglas que no se rompen:
+- Nunca pongas dos lugares lejanos uno tras otro. Agrupa por zona.
+- Cada actividad lleva hora de llegada y tiempo de traslado desde el
+  punto anterior, con el número de minutos.
+- Deja huecos. Un día no lleva más de tres bloques ocupados.
+- El primer día y el último se planean cortos: llegar y salir cansa.
+- Marca con BOOK AHEAD todo lo que se tenga que reservar antes, y di
+  con cuántos días de anticipación.
+- Si algo cierra el día que lo pusiste, muévelo y avísame que lo moviste.
+
+## FASE 3 — LOGÍSTICA
+
+Una lista de pendientes antes de salir:
+- Visa o permiso de entrada, y cuánto tarda el trámite
+- Seguro de viaje: si conviene y qué debe cubrir
+- Apps que hay que descargar antes de llegar
+- Moneda, si conviene efectivo o tarjeta, dónde cambiar
+- Datos y conectividad: SIM local, eSIM o roaming
+- Tipo de enchufe y si necesito adaptador
+- Qué empacar según el clima pronosticado para esas fechas
+- Diez frases básicas del idioma local si no lo hablo
+- Cómo funciona la propina ahí
+- Dos o tres normas culturales que un extranjero rompe sin querer
+- Teléfonos de emergencia y dirección del consulado
+
+## FASE 4 — PRESUPUESTO
+
+Desglosa: hospedaje, comida, actividades, transporte, colchón de compras,
+y 10% de imprevistos. Compara contra el presupuesto que te di.
+
+Si me paso, dame tres cambios concretos para bajarlo, cada uno con cuánto
+ahorra. Si me sobra, dime en qué vale la pena subirle.
+
+## ENTREGA
+
+Todo en un artifact titulado "[Destino] — [fechas]", formateado para
+leerse desde el teléfono: encabezados cortos, viñetas, negritas en
+nombres y horas. Al final, un solo bloque con todas las reservaciones y
+sus confirmaciones, y otro con los datos de emergencia.
+
+REGLA FINAL
+Si no encontraste algo, dilo. No rellenes con recomendaciones genéricas.
+Un hueco declarado es mejor que un restaurante que cerró hace dos años.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las notas de movilidad y el bloque de los tres imperdibles. Sin ellos, el planeador arma el viaje del turista promedio. Si escribes "puedo caminar tres horas al día, no más" y "si no como en tal lugar el viaje falló", todo el itinerario se reacomoda alrededor de eso. Es la diferencia entre un itinerario y <em>tu</em> itinerario.</p>
+      </div>
+
+      <h2>La versión de trabajo</h2>
+
+      <p>El mismo motor sirve para un viaje comercial y ahí rinde más, porque el costo de un traslado mal calculado es una junta perdida. Cambias el bloque de imperdibles por la lista de citas confirmadas con dirección y hora, y le pides que arme el orden de visitas que minimice traslados y deje cuarenta minutos de colchón entre cada una.</p>
+
+      <p>Para un off-site de equipo el ajuste es otro: le das número de personas, presupuesto por cabeza y restricciones alimentarias del grupo, y le pides que separe explícitamente lo que se reserva a nombre de la empresa de lo que cada quien paga aparte. Eso último es lo que se convierte después en el pleito con administración.</p>
+
+      <h2>Lo que hay que verificar tú</h2>
+
+      <p>Claude busca en web, así que trabaja con lo que esté publicado. Los precios de hotel y los horarios cambian, y las reglas de visa cambian más. Antes de comprar cualquier cosa, abre la liga que te dio y confirma en la fuente. Y el trámite migratorio confírmalo siempre en el sitio oficial del país, nunca en un blog.</p>
+
+      <p>Lo demás sí lo puedes soltar. La parte que de verdad te está ahorrando no son las recomendaciones —esas las encuentras en cualquier lado— es el acomodo: qué va antes de qué, cuánto se tarda uno del otro, y qué hay que reservar diez días antes para que no se caiga. Si quieres además que cierre las reservas de vuelo y hotel, esa parte está en <a href="/guias/reservar-vuelos-y-hoteles/">la guía de reservas</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

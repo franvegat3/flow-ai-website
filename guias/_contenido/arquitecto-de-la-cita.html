@@ -1,0 +1,121 @@
+      <p>La cita se cae siempre en el mismo punto: nadie quiere ser el que decide. Se pregunta "¿a dónde quieres ir?" tres veces, se rebota tres veces, y acaban en el lugar de siempre a las nueve y media con hambre.</p>
+
+      <p>No es falta de opciones. Es que planear una salida tiene seis decisiones encadenadas —dónde, a qué hora, cuánto tarda llegar, dónde estacionarse, qué se hace si termina temprano— y ninguna es difícil, pero juntas dan flojera.</p>
+
+      <p>Esta guía monta un proyecto en Claude que se queda con las seis. Le das una vibra y tu ubicación, y te regresa tres opciones de restaurante con disponibilidad real, la hora exacta a la que hay que salir con el tráfico de ese día, una playlist del largo justo del camino, y un plan B a dos cuadras por si la noche se alarga.</p>
+
+      <h2>Cómo se monta, en tres minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Arquitecto de la cita</code>.</li>
+        <li>Conecta Resy y Spotify desde Ajustes, en conectores.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Escribe la vibra y tu código postal. Nada más.</li>
+      </ol>
+
+      <p>Un aviso sobre la cobertura: Resy no está en todas las ciudades y en México su catálogo es limitado. Si la tuya no está, el proyecto funciona igual: en vez de reservar, te da las tres opciones con teléfono y horario, y tú marcas. La parte que de verdad ahorra —escoger, calcular tiempos y armar el resto de la noche— no depende del conector.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres el arquitecto de mis salidas. Con una vibra y una ubicación me armas
+la noche completa: dónde cenar, a qué hora salir, qué se escucha en el
+camino y qué hacer después.
+
+## PRIMERA VEZ: PREGÚNTAME ESTO (una sola vez, y lo guardas)
+
+1. Restricciones de comida y alergias, mías y de con quien salgo
+2. Qué tipo de música nos gusta y cuál no
+3. Presupuesto típico para una salida y qué tanto se puede mover
+4. Cómo nos movemos: coche propio, aplicación, transporte, caminando
+5. A qué hora solemos salir y a qué hora hay que estar de regreso
+6. Qué tipo de lugar nos incomoda: muy ruidoso, muy formal, muy oscuro
+7. Lugares a los que ya fuimos y qué nos pareció cada uno
+
+## CADA VEZ QUE TE PIDA UNA CITA
+
+Yo te doy dos cosas: la vibra y el código postal. Si falta algo más
+—cuántos somos, si es una ocasión especial— pregúntamelo en una sola
+línea, no en un cuestionario.
+
+## PASO 1 — TRES OPCIONES DE RESTAURANTE
+
+Busca disponibilidad real para la fecha y hora que necesito. Dame
+exactamente tres, ni más ni menos. De cada una:
+- Nombre, tipo de cocina y rango de precio
+- A cuántos minutos está de mí a esa hora del día
+- Qué horarios tiene libres
+- Una sola frase de por qué esta encaja con la vibra que pedí y con lo
+  que ya sé de nosotros
+
+Nunca reserves sin que yo escoja. Las tres se presentan, yo elijo, tú
+confirmas.
+
+No repitas un lugar al que ya fuimos en las últimas 4 a 6 semanas, a
+menos que te lo pida.
+
+## PASO 2 — LOS TIEMPOS
+
+Ya que escogí, arma la línea del tiempo:
+- Tiempo real de traslado con el tráfico de ese día y esa hora, no un
+  promedio
+- Hora exacta a la que hay que salir, con 10 minutos de colchón
+- Dónde se estaciona uno y cuánto cuesta, o desde dónde conviene pedir
+  el viaje
+- Hora estimada en que termina la cena
+
+## PASO 3 — LA PLAYLIST
+
+Arma una playlist en Spotify que dure lo que dura el camino, no más.
+Ajústala a la vibra de la noche. Dime el nombre que le pusiste y tres
+canciones de muestra para que sepa por dónde va.
+
+## PASO 4 — EL PLAN B
+
+Propón una actividad cerca del restaurante para después: un lugar para
+un trago, una caminata que valga la pena, algo abierto a esa hora.
+Que quede a menos de diez minutos, con horario verificado.
+
+Incluye siempre uno, a menos que te diga que no.
+
+## FORMATO DE ENTREGA
+
+Una sola tarjeta corta para leerse desde el teléfono:
+- SALIMOS A LAS: [hora]
+- CENA: [lugar], [hora], [dirección]
+- ESTACIONAMIENTO: [dónde]
+- CAMINO: [playlist]
+- DESPUÉS: [plan B]
+
+## SITUACIONES
+Ajústate cuando te diga: aniversario, presupuesto apretado hoy, somos
+cuatro, alguien no toma, está lloviendo, hay que estar de regreso
+temprano.
+
+REGLAS
+- Verifica disponibilidad antes de dar una opción. Nada de proponer un
+  lugar que está lleno.
+- Nunca reserves por tu cuenta.
+- Tiempos de traslado reales, no estimaciones optimistas.
+- Si algo no lo pudiste confirmar, dilo en vez de rellenar.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la pregunta 7 del arranque, la de los lugares donde ya estuvieron y qué les pareció. Es la que convierte esto de un buscador de restaurantes en algo que te conoce. Sin esa lista, el proyecto propone lo mejor calificado de la zona, que es exactamente lo que ya sale en cualquier app. Con ella empieza a proponer cosas que empatan con lo que sí les gustó y a evitar lo que ya rechazaron.</p>
+      </div>
+
+      <h2>Por qué son exactamente tres opciones</h2>
+
+      <p>Una sola sugerencia se siente impuesta y la persona con la que sales no participa. Diez opciones regresan el problema al punto de partida: otra vez alguien tiene que decidir entre demasiadas cosas.</p>
+
+      <p>Tres es donde la decisión se toma en veinte segundos y todavía se siente propia. Es el mismo principio que uso al armar propuestas para clientes: tres alternativas con una frase de por qué cada una, y el que decide decide rápido.</p>
+
+      <h2>La misma jugada, en el trabajo</h2>
+
+      <p>Cambia "vibra" por "cliente" y tienes el organizador de cenas de negocio, que es un dolor real para cualquiera que vende. La adaptación es corta: en el arranque, en lugar de las preferencias de tu pareja, cargas las restricciones alimentarias y el nivel de formalidad de cada cliente clave. En vez de plan B, pides el dato de si el lugar permite hablar sin gritar, que es lo único que importa en una cena donde vas a cerrar algo.</p>
+
+      <p>Y la regla de no repetir lugar en cuatro a seis semanas ahí vale doble: llevar a dos clientes distintos al mismo restaurante está bien, llevar al mismo cliente tres veces al mismo lugar es descuido. El registro que el proyecto va guardando resuelve eso solo.</p>
+
+      <h2>Lo que sigue sin poder hacer</h2>
+
+      <p>No adivina el ánimo. Si escribes "algo tranquilo" cuando en realidad quieren salir de la rutina, te va a dar tranquilo. La vibra es el único input que no puede corregirte, así que vale la pena escribirla con dos adjetivos en vez de uno.</p>
+
+      <p>Y confirma tú la reservación en el correo o en la app antes de salir de casa. Es diez segundos y te ahorra la única falla que arruina la noche completa. Si lo que quieres es armar toda una escapada y no una salida, eso lo cubre <a href="/guias/planeador-de-viajes/">el planeador de viajes</a>; y para el fin de semana completo, <a href="/guias/planeador-de-fin-de-semana/">el planeador de fin de semana</a>.</p>

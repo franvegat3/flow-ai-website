@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude se mejora solo cada semana si haces esto — Guías Flow AI</title>
+  <meta name="description" content="Una tarea programada semanal que pone a Claude a revisar y mejorar su propia configuración." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-mejora-solo-cada-semana/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Claude se mejora solo cada semana si haces esto" />
+  <meta property="og:description" content="Una tarea programada semanal que pone a Claude a revisar y mejorar su propia configuración." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-mejora-solo-cada-semana/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Automatización</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Automatización</span><span class="tag">Agentes</span></div>
+      <h1>Claude se mejora solo cada semana si haces esto</h1>
+      <p class="lead">Una tarea programada semanal que pone a Claude a revisar y mejorar su propia configuración.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi todo el que monta bien su configuración de Claude la monta una vez. Escribe sus archivos de contexto un domingo con ganas, crea dos o tres skills, y nunca vuelve a abrirlos.</p>
+
+      <p>Seis semanas después esa configuración describe un trabajo que ya no haces. Cambiaste de proyecto, el equipo creció, dejaste de hacer el reporte que sí estaba documentado y empezaste a hacer tres cosas nuevas que no están en ningún lado. Claude sigue obedeciendo instrucciones de otra época y tú crees que "ya no está funcionando igual".</p>
+
+      <p>La solución no es disciplina. Es una tarea programada que corre sola cada domingo, revisa lo que de verdad hiciste esa semana y te deja escrito qué le falta a tu configuración. Toma diez minutos montarla y después no la tocas.</p>
+
+      <h2>La idea, en una frase</h2>
+
+      <p>Le pides a Claude que audite tu propia semana de trabajo —los archivos que se crearon, los encargos que corriste, lo que se repitió— y que proponga los ajustes concretos a tu configuración, en un archivo que te espera el lunes.</p>
+
+      <p>No se mejora solo en el sentido mágico. Se mejora porque el material para mejorarlo ya está en tu carpeta: los patrones de tu semana están en los archivos que quedaron. Lo único que faltaba era alguien que se sentara a leerlos, y esa es exactamente la tarea que nadie hace.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Abre la aplicación de escritorio de Claude y entra a Cowork.</li>
+        <li>Escribe <code>/schedule</code> en el campo del chat.</li>
+        <li>Elige cadencia <strong>semanal</strong>. Yo la pongo el domingo por la tarde, alrededor de las 4. Suficientemente tarde para que la semana ya haya cerrado y suficientemente temprano para que el reporte exista antes del lunes.</li>
+        <li>Pega el prompt de abajo y apunta a tu carpeta de trabajo.</li>
+        <li>El lunes abres <code>mejoras-semanales.md</code>.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las tareas programadas solo corren si la computadora está despierta y la aplicación abierta. Si tu máquina estaba dormida el domingo a las 4, la tarea no se pierde —se ejecuta en cuanto vuelves a abrir Claude— pero el reporte llega el lunes a media mañana y no a primera hora. Si eso te importa, programa la tarea a una hora en la que sabes que la máquina está prendida.</p>
+      </div>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Revisa todos los archivos y salidas de mi carpeta de trabajo de los
+últimos 7 días. Fíjate en qué tipo de encargos corrí, qué produje, qué
+se repitió y dónde se atoró algo. Con eso, escribe un archivo llamado
+mejoras-semanales.md con estas cinco secciones y nada más:
+
+1. ARCHIVOS DE CONTEXTO
+   Compara lo que hice esta semana contra lo que dicen mis archivos
+   sobre-mi.md, voz-y-estilo.md y reglas-de-trabajo.md. ¿Qué trabajo
+   real no está reflejado ahí? Dame las líneas exactas que hay que
+   agregar o cambiar, escritas para pegar tal cual. No me digas
+   "podrías mejorar la sección de tono": dame el texto.
+
+2. SKILLS NUEVAS
+   Encuentra las tareas que hice más de una vez esta semana. Propón
+   entre 2 y 3 skills. De cada una: nombre del comando, qué haría,
+   qué información necesitaría de mí, y en qué momento se dispararía.
+   Ordénalas por cuántas veces repetí esa tarea, de más a menos.
+
+3. HUECOS DE FLUJO
+   Qué hice a mano esta semana que se pudo haber automatizado, hecho
+   en paralelo o programado. Para cada uno, dime cuánto tiempo
+   aproximado me habría ahorrado y qué haría falta para montarlo.
+
+4. LIMPIEZA
+   Borradores, duplicados, versiones viejas y archivos huérfanos que
+   convenga archivar o eliminar. Lista de rutas, con una línea de por
+   qué. No borres nada: solo propón.
+
+5. LO QUE SÍ ESTÁ FUNCIONANDO
+   Qué partes de mi configuración están rindiendo y no hay que tocar.
+   Sé específico: qué regla, qué skill, qué archivo, y con qué
+   evidencia de esta semana lo dices.
+
+REGLAS DEL REPORTE
+- Máximo dos páginas. Si no cabe, corta lo menos importante.
+- Nada de elogios ni de motivación. Solo hallazgos y acciones.
+- Si una semana no hay suficiente material para una sección, escribe
+  "sin material esta semana" y sigue. No la rellenes.
+- Al final, una sola línea: el cambio que harías si solo pudieras
+  hacer uno.</code></pre>
+
+      <h2>Qué te devuelve, sección por sección</h2>
+
+      <h3>1. Los archivos de contexto</h3>
+
+      <p>Es la sección que más rinde y la que más incomoda. Te va a decir que tu archivo de estilo describe cómo escribías hace dos meses, o que llevas tres semanas trabajando con un cliente que no aparece en ningún lado. Como pide el texto exacto para pegar, la corrección toma treinta segundos.</p>
+
+      <h3>2. Las skills nuevas</h3>
+
+      <p>Aquí está el valor escondido. Tú no notas lo que repites, porque cada vez se siente distinto. Un reporte visto desde afuera sí lo nota: "hiciste tres veces el mismo resumen de llamadas con estructura casi idéntica". Esa es una skill, y no se te habría ocurrido.</p>
+
+      <h3>3. Los huecos de flujo</h3>
+
+      <p>La parte que hay que leer con escepticismo. Va a proponer automatizar cosas que no valen la pena. Mi filtro: si la tarea no ocurre al menos una vez por semana, no se automatiza todavía. Anótala y espera a que aparezca tres domingos seguidos.</p>
+
+      <h3>4. La limpieza</h3>
+
+      <p>Aburrida y necesaria. Una carpeta con doce versiones del mismo documento no solo te confunde a ti: confunde al modelo, que no sabe cuál es la buena. La instrucción dice explícitamente que proponga y no borre, y así debe quedarse.</p>
+
+      <h3>5. Lo que sí funciona</h3>
+
+      <p>Parece de relleno y no lo es. Sin esta sección, cada domingo terminas desarmando cosas que estaban bien. Es lo que te frena de rehacer tu configuración entera cada mes.</p>
+
+      <h2>La versión para un equipo</h2>
+
+      <p>El mismo mecanismo escala a una operación, y ahí se pone interesante. En un área de contenido o en un equipo comercial, cambias "mi carpeta de trabajo" por la carpeta compartida del área y agregas una sexta pregunta: <em>qué hizo esta semana una persona que le serviría a las otras cuatro</em>.</p>
+
+      <p>Eso convierte el reporte en algo que casi ninguna empresa tiene: un registro semanal de qué está aprendiendo el equipo, escrito solo. La primera vez que un gerente lee que tres personas resolvieron el mismo problema por separado, la conversación del lunes cambia.</p>
+
+      <h2>La regla que hace que esto dure</h2>
+
+      <p>Aplica máximo dos cambios por semana. Dos.</p>
+
+      <p>El reporte te va a dar entre ocho y quince sugerencias. Si intentas aplicarlas todas, el lunes se te va en configurar en vez de trabajar, y al tercer domingo dejas de abrir el archivo. Con dos cambios semanales, en dos meses tu configuración se movió dieciséis veces, cada movimiento salió de trabajo real, y nunca te costó más de veinte minutos.</p>
+
+      <p>Y una advertencia: no le des permiso de modificar los archivos de contexto por su cuenta. Que proponga. Tú apruebas. Un sistema que se reescribe solo sin supervisión deriva rápido, y para cuando te das cuenta ya no reconoces tus propias reglas.</p>
+
+      <p>Si todavía no tienes montados los archivos que este reporte audita, empieza por <a href="/guias/jerarquia-de-control-de-claude/">la jerarquía de control</a>. Y cuando el reporte te proponga la primera skill, <a href="/guias/construir-skills-de-claude/">aquí está cómo escribirla</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

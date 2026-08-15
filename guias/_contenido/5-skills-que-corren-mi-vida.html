@@ -1,0 +1,197 @@
+      <p>La parte cara de la vida adulta no son las decisiones difíciles. Son las cincuenta chiquitas: qué se come el martes, cuándo le tocan las vacunas al perro, qué le regalas a tu cuñada, en qué orden se reservan los vuelos, si la rodilla aguanta correr otra vez esta semana.</p>
+
+      <p>Ninguna requiere talento. Todas requieren acordarse, y acordarse es lo primero que se rompe cuando la semana se pone pesada. Estas cinco skills se llevan ese turno: diez minutos de configuración cada una y después viven solas.</p>
+
+      <p>Primera entrega de la serie. Las otras cinco están en <a href="/guias/5-skills-que-corren-mi-vida-parte-2/">la parte 2</a>, <a href="/guias/5-skills-que-corren-mi-vida-parte-3/">la 3</a>, <a href="/guias/5-skills-que-corren-mi-vida-parte-4/">la 4</a> y <a href="/guias/5-skills-que-corren-mi-vida-parte-5/">la 5</a>. No se repiten.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>Pega el texto en una conversación, cambia los corchetes por tus datos, y pídele a Claude que te lo devuelva como carpeta de skill. Luego vas a ajustes, personalización, skills, la subes y la activas.</p>
+
+      <p>En Claude Code es un archivo <code>SKILL.md</code> dentro de <code>.claude/skills/nombre/</code>. Lo que decide si sirve es qué tan completa dejes la primera pasada: una skill de mascotas sin fechas de vacunas te pregunta en vez de decirte.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El plan de comidas de la semana <code>plan-de-comidas</code></h3>
+        <p>No es "qué ceno hoy" —eso lo resuelve <a href="/guias/5-skills-que-corren-mi-vida-parte-2/">la de la parte 2</a>—. Esta es la semana completa: quién está en casa, qué hay que gastar antes de que se eche a perder, y qué se adelanta el domingo.</p>
+        <pre><code>---
+name: plan-de-comidas
+description: Arma el plan de comidas de la semana, la lista de
+  mandado agrupada por zona del súper y el bloque de preparación del
+  domingo. Úsala cuando el usuario pida su plan semanal, hable del
+  mandado o pregunte qué se cocina esta semana.
+---
+
+La primera vez pregunta y guarda: cuántos comen y sus edades,
+alergias y restricciones, qué proteínas rotan, cuánto tiempo tiene
+para cocinar entre semana y qué días come fuera.
+
+ANTES DE ARMAR NADA pregunta dos cosas y espera respuesta: "¿Quién
+está en casa esta semana?" y "¿Qué hay que gastar del refri?". Sin
+eso el plan sale mal.
+
+EL PLAN. Desayuno, comida y cena de lunes a domingo, ajustado a
+cuántos comen cada día. Reglas: no repetir proteína dos días
+seguidos, máximo dos recetas nuevas por semana, y al menos dos
+comidas que rindan para el día siguiente. Lo que había que gastar
+del refrigerador entra en los primeros dos días.
+
+LA LISTA. Agrupada por zona del súper: frutas y verduras, carnes,
+lácteos, abarrotes, congelados y otros. Suma las cantidades
+repetidas en un solo renglón y marca lo que ya hay en casa.
+
+PREPARACIÓN DEL DOMINGO. Qué conviene dejar hecho y en qué orden,
+empezando por lo que tarda más. Máximo 90 minutos.
+
+REGLAS. Nada que pase del tiempo que dijo tener entre semana, y
+advierte los ingredientes de uso único.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> casas de tres o más, y cualquiera que haga un solo mandado grande por semana.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El entrenador <code>entrenador</code></h3>
+        <p>Un plan que se ajusta cada semana, en vez de uno que se imprime en enero y se abandona en febrero. Lo que lo separa de una rutina de internet es que sabe qué te duele y qué equipo tienes.</p>
+        <pre><code>---
+name: entrenador
+description: Arma y ajusta el plan de entrenamiento semanal del
+  usuario según su objetivo, sus lesiones, su equipo y el tiempo que
+  tenga. Úsala cuando pida su rutina, reporte cómo le fue o
+  mencione una molestia física.
+---
+
+La primera vez pregunta y guarda: objetivo, nivel actual, cuántos
+días y minutos por sesión, dónde entrena y con qué equipo exacto,
+lesiones históricas, y qué ejercicio odia.
+
+CADA SESIÓN lleva calentamiento específico, trabajo principal con
+series, repeticiones, carga y descanso, y enfriamiento.
+
+REVISIÓN SEMANAL. Antes de dar la semana nueva pregunta: "¿Cómo te
+fue la semana pasada? ¿Algo te dolió?". Con eso ajustas.
+
+SI FALTÓ SESIONES: no las acumules. Redistribuye lo esencial en los
+días que quedan y quita el volumen accesorio.
+
+PROGRESIÓN. Sube carga, repeticiones o dificultad cada semana en al
+menos un ejercicio. Si tres semanas seguidas no hay progreso en algo,
+cámbialo por otro movimiento del mismo patrón.
+
+SI REPORTA DOLOR: modificas de inmediato y bajas la carga. Dolor de
+más de una semana o que aparece en reposo, a revisión médica.
+
+FORMATO. Para leerse en el teléfono a media serie.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que entrena solo y lleva años haciendo la misma rutina sin subir de nivel.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El administrador de regalos <code>regalos</code></h3>
+        <p>Le quita el género literario a la compra de pánico. Avisa diez días antes, no el mismo día, que es cuando ya solo queda la tarjeta de regalo.</p>
+        <pre><code>---
+name: regalos
+description: Lleva las fechas importantes de la gente cercana al
+  usuario, avisa con anticipación y propone regalos dentro de
+  presupuesto. Úsala cuando pregunte por cumpleaños próximos, pida
+  ideas de regalo o registre uno que ya compró.
+---
+
+La primera vez pregunta y guarda, por persona: nombre, relación,
+fecha exacta, presupuesto, intereses reales, qué le regalaste los
+últimos años y tallas si aplica.
+
+AVISO. Diez días antes de cada fecha, no el día, y con las
+propuestas ya adentro.
+
+TRES IDEAS por persona, siempre en este reparto:
+- La segura: algo que sabes que le va a gustar.
+- La que no se compraría: algo que quiere pero le parece un lujo.
+- La personal: algo que solo tiene sentido viniendo de ti.
+Cada una con rango de precio y dónde se consigue.
+
+REGISTRO. Cuando diga qué compró, lo guardas con fecha. Nunca
+propongas algo parecido a lo de los dos años anteriores para esa
+misma persona.
+
+ÚLTIMO MOMENTO. Con menos de 48 horas, solo entrega inmediata,
+compra en persona o una experiencia.
+
+REGLAS. Nunca arriba del presupuesto. Tres opciones, decididas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> familias grandes, y equipos donde alguien tiene que acordarse de los cumpleaños de la oficina.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El agente de viajes <code>viajes</code></h3>
+        <p>Del "quiero ir a Oaxaca en noviembre" a un itinerario con presupuesto diario y una lista de qué reservar en qué orden. La parte que casi nadie hace bien es dejar huecos en el día.</p>
+        <pre><code>---
+name: viajes
+description: Planea viajes completos: opciones de vuelo y hospedaje,
+  itinerario día por día, restaurantes, presupuesto y lista de lo que
+  hay que reservar. Úsala cuando el usuario mencione un viaje, una
+  fecha o un destino.
+---
+
+La primera vez pregunta y guarda: desde qué ciudad sale, con quién
+viaja, aerolíneas y programas de lealtad, tipo de hospedaje, qué
+come y qué no, y su ritmo de viaje.
+
+PARA CADA VIAJE entrega, en este orden:
+
+1) VUELOS. Dos o tres opciones con horarios y rango de precio. Di
+   cuál recomiendas y qué se pierde con la barata.
+2) HOSPEDAJE. Tres opciones en tres niveles de precio, cada una con
+   el contexto de la zona: qué hay alrededor, qué tan seguro es de
+   noche, cuánto se tarda a lo que va a visitar.
+3) ITINERARIO por bloques. Máximo dos actividades grandes al día.
+   Deja huecos a propósito y dilos como huecos.
+4) COMIDA. Dos o tres opciones por tiempo, con precio y si necesita
+   reservación.
+5) PRESUPUESTO diario desglosado y total del viaje.
+6) RESERVAR. Checklist en orden de urgencia.
+7) NOTAS locales: propinas, transporte, documentos.
+
+REGLAS. Los precios son estimados y lo dices. Nunca inventes
+horarios de vuelo: da rangos y manda a verificar.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que viaja tres o más veces al año y siempre arma todo la semana anterior.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El administrador de mascotas <code>mascotas</code></h3>
+        <p>El expediente médico que el veterinario te pide y nunca tienes. Vacunas, desparasitaciones, medicamentos y síntomas, con corte mensual.</p>
+        <pre><code>---
+name: mascotas
+description: Lleva el expediente de salud de las mascotas del
+  usuario: citas, vacunas, desparasitaciones, medicamentos y
+  síntomas. Úsala cuando pregunte por sus mascotas, reporte un
+  síntoma o mencione una visita al veterinario.
+---
+
+La primera vez pregunta y guarda, por mascota: nombre, especie,
+raza, edad, peso, alergias, padecimientos, qué come, fecha de la
+última vacuna y desparasitación, y datos del veterinario.
+
+REVISIÓN MENSUAL. Tres listas: lo que viene en 30 días, lo vencido,
+y las notas de temporada que apliquen.
+
+MEDICAMENTOS. Avisa 5 días antes de que se acabe cada uno, con la
+dosis y la presentación exacta para no comprar mal.
+
+BITÁCORA DE SÍNTOMAS. Cada vez que reporte algo, lo registras con
+fecha. Si un síntoma aparece 3 veces o más, lo marcas como patrón.
+
+PREPARACIÓN DE LA CITA. Una hoja con motivo, medicamentos y dosis,
+síntomas recientes con fechas, cambios de peso, y qué preguntar.
+
+ALERTA INMEDIATA. Si reporta letargo marcado, dificultad para
+respirar, convulsiones, no comer más de 24 horas, vómito repetido o
+pérdida de peso sin explicación, interrumpes todo y le dices que
+vaya al veterinario hoy. No diagnostiques.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> casas con más de una mascota, y cualquiera con un animal viejo o medicado.</p>
+      </div>
+
+      <h2>En qué orden montarlas</h2>
+
+      <p>No las cinco el mismo día. Cada una pide captura inicial, y la captura es lo que se abandona.</p>
+
+      <p>Empieza por lo que ya se te está cayendo esta semana. Si es la comida, esa. Si se te pasó un cumpleaños el mes pasado, la de regalos. Vive con ella siete días, corrige el texto de la skill, y hasta entonces monta la segunda.</p>
+
+      <p>Y una regla para las cinco: si una skill te hace más preguntas de las que responde, la configuración inicial quedó a medias. Vuelve al texto y llénalo bien.</p>

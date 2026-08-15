@@ -4211,6 +4211,36 @@ window.GUIAS = [
   "meta": "11 min · Cowork"
  },
  {
+  "slug": "jerarquia-de-control-de-claude",
+  "titulo": "La jerarquía de control de Claude",
+  "desc": "Los 3 niveles que controlan cómo se comporta Claude. Casi todos usan uno solo.",
+  "badge": "Configuración",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "empezar"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "claude-mejora-solo-cada-semana",
+  "titulo": "Claude se mejora solo cada semana si haces esto",
+  "desc": "Una tarea programada semanal que pone a Claude a revisar y mejorar su propia configuración.",
+  "badge": "Flujos",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "automatizacion",
+   "agentes"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
   "slug": "nunca-confies-sin-hacer-esto",
   "titulo": "Nunca confíes en lo que sale de Claude sin hacer esto",
   "desc": "Usa un segundo agente para auditar el trabajo del primero. Copia el prompt.",
@@ -4405,6 +4435,21 @@ window.GUIAS = [
   "meta": "11 min · Cowork"
  },
  {
+  "slug": "5-artifacts-de-esta-semana",
+  "titulo": "5 artifacts que construí con Claude esta semana",
+  "desc": "Tablero de presupuesto, seguimiento de acuerdos con marcas, planeador de viajes, planeador de contenido y planeador de comidas. Cinco prompts listos que construyen herramientas interactivas reales.",
+  "badge": "Creativo",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "creativo",
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "tu-primer-agente-de-notion",
   "titulo": "Configura tu primer agente de Notion",
   "desc": "Notion sacó agentes personalizados: compañeros de IA que trabajan todo el día dentro de tu espacio. Guía de configuración paso a paso más 5 agentes que puedes copiar ahora mismo.",
@@ -4597,6 +4642,21 @@ window.GUIAS = [
   "meta": "8 min · Claude"
  },
  {
+  "slug": "5-skills-que-corren-mi-vida",
+  "titulo": "5 skills de Claude que me corren la vida entera",
+  "desc": "Planeador de comidas, entrenador, administrador de regalos, agente de viajes y administrador de mascotas. Listos para copiar y pegar.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 10,
+  "meta": "10 min · Claude"
+ },
+ {
   "slug": "5-skills-que-corren-mi-vida-parte-2",
   "titulo": "5 skills de Claude que me corren la vida (parte 2)",
   "desc": "Resumen matutino, mantenimiento de la casa, estilista de guardarropa, planeador de cenas y pulso financiero. Se configuran una vez y sirven todo el año.",
@@ -4775,6 +4835,36 @@ window.GUIAS = [
   "meta": "7 min · Claude"
  },
  {
+  "slug": "dale-el-trabajo-tedioso",
+  "titulo": "Dale a Claude el trabajo tedioso y quédate con la parte creativa",
+  "desc": "5 formas de soltar el trabajo repetitivo para que te puedas concentrar en lo que sí importa.",
+  "badge": "Prompts",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "claude-como-tutor-personal",
+  "titulo": "Convierte a Claude en tu tutor personal",
+  "desc": "5 prompts que lo transforman en un maestro paciente y personalizado.",
+  "badge": "Prompts",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "analizador-de-riesgo-de-tu-puesto",
   "titulo": "El analizador de riesgo de tu puesto ante la IA",
   "desc": "Un prompt listo para usar que analiza qué tan expuesto está tu puesto específico a la IA.",
@@ -4887,6 +4977,36 @@ window.GUIAS = [
   ],
   "min": 8,
   "meta": "8 min · Claude"
+ },
+ {
+  "slug": "las-herramientas-mueren-las-habilidades-no",
+  "titulo": "Las herramientas mueren. Las habilidades no.",
+  "desc": "Las 5 habilidades de comunicación con IA que se transfieren a cualquier herramienta. A las de ahora y a las que vengan.",
+  "badge": "Carrera",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "carrera",
+   "prompts"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
+ },
+ {
+  "slug": "negocio-de-un-millon-con-10-herramientas",
+  "titulo": "Cómo arrancar un negocio de un millón con 10 herramientas de IA",
+  "desc": "Aunque no seas técnico. Encuentra un problema, arma una marca, lanza un producto, y automatiza todo con la IA cargando lo pesado. Todos los prompts adentro.",
+  "badge": "Negocio",
+  "tool": [
+   "multi",
+   "canva"
+  ],
+  "topic": [
+   "negocio"
+  ],
+  "min": 12,
+  "meta": "12 min · Multi-herramienta"
  },
  {
   "slug": "5-cosas-para-adelantarte-esta-semana",
@@ -5055,6 +5175,66 @@ window.GUIAS = [
   "meta": "9 min · Claude"
  },
  {
+  "slug": "auditor-de-suscripciones",
+  "titulo": "El auditor de suscripciones",
+  "desc": "Claude revisa tu bandeja buscando cada cargo recurrente, suma tu gasto total, y te dice exactamente qué cancelar.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "planeador-de-viajes",
+  "titulo": "El planeador de viajes",
+  "desc": "Claude investiga hoteles, restaurantes y actividades con precios reales. Y arma un itinerario día por día con tiempos de traslado que sí cuadran.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "planeador-de-fin-de-semana",
+  "titulo": "El planeador de fin de semana",
+  "desc": "Lo configuras una vez. Cada jueves Claude revisa tu calendario, el clima y los eventos locales, y arma tu fin de semana completo antes del viernes en la mañana.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 7,
+  "meta": "7 min · Claude"
+ },
+ {
+  "slug": "organizador-del-calendario-familiar",
+  "titulo": "El organizador del calendario familiar",
+  "desc": "Claude lee los calendarios de toda la familia cada domingo, marca cada conflicto, y asigna cada recogida. Y despiertas el lunes sin sorpresas.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "recordatorio-de-mantenimiento-de-casa",
   "titulo": "El recordatorio de mantenimiento de la casa",
   "desc": "Le cuentas a Claude de tu casa una sola vez: cada sistema, cada aparato, cada fecha. Arma un calendario completo de mantenimiento y te avisa cada mes antes de que algo se rompa.",
@@ -5175,5 +5355,95 @@ window.GUIAS = [
   ],
   "min": 8,
   "meta": "8 min · Claude"
+ },
+ {
+  "slug": "es-fraude-este-correo",
+  "titulo": "¿Este correo es fraude?",
+  "desc": "Pegas cualquier correo sospechoso en Claude y te da un veredicto: legítimo, phishing o fraude. Te explica exactamente qué lo delató para que aprendas a cacharlos. Mándaselo a tu mamá.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "entrenador-sin-pretextos",
+  "titulo": "El entrenador sin pretextos",
+  "desc": "Claude lee tus datos reales de salud, arma tu plan de entrenamiento, y lo ajusta cada día según cómo dormiste, te moviste y te recuperaste. Y mete los entrenamientos a tu calendario.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "cerebro-de-las-comidas",
+  "titulo": "El cerebro de las comidas",
+  "desc": "Le dices a Claude qué se te antoja esta semana. Arma cada receta, crea la lista del súper para el número exacto de personas, y la manda a tu servicio de entrega. Solo pagas.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "cazador-de-codigo-malicioso",
+  "titulo": "El cazador de código malicioso",
+  "desc": "Le avientas cualquier SKILL.md a Claude. Este auditor revisa cada línea en 10 segundos, marca lo turbio, reescribe las partes riesgosas, y personaliza la skill para cómo trabajas de verdad.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "agentes"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "arquitecto-de-la-cita",
+  "titulo": "El arquitecto de la cita",
+  "desc": "Le das a Claude una vibra y tu código postal. Reserva la cena, arma la playlist para el camino, saca las indicaciones, y deja lista una actividad de respaldo cerca.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "skills",
+   "productividad"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "iman-de-linkedin",
+  "titulo": "El imán de LinkedIn",
+  "desc": "La IA de LinkedIn deja que los reclutadores busquen con frases completas. Esta skill jala vacantes en vivo, extrae el ADN temático que buscan, y reescribe cada sección de tu perfil para que empate.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera",
+   "skills"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
  }
 ];

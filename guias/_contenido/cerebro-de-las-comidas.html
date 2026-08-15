@@ -1,0 +1,142 @@
+      <p>La parte cansada de cocinar no es cocinar. Es decidir. Qué se hace hoy, si alcanza con lo que hay, cuánto comprar para cuatro personas cuando la receta está calculada para seis, y por qué otra vez hay medio manojo de cilantro pudriéndose en el refri.</p>
+
+      <p>Esa decisión se toma siete veces por semana, casi siempre con hambre y a destiempo. Por eso terminas pidiendo comida tres noches y tirando el 30% de lo que compraste el domingo.</p>
+
+      <p>Esta guía monta un proyecto en Claude que se queda con toda esa parte. Le dices qué se te antoja esta semana, arma el plan, escribe cada receta completa, calcula la lista del súper para el número exacto de personas y en unidades que sí se venden, y la deja en el carrito de tu servicio de entrega. Tú nada más apruebas y pagas.</p>
+
+      <h2>Cómo se monta, en tres minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Cerebro de las comidas</code>.</li>
+        <li>Conecta tu servicio de entrega desde Ajustes, en conectores. El que está disponible como conector es Instacart.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Abre un chat y dile qué quieres comer esta semana. O escribe <em>sorpréndeme</em>.</li>
+      </ol>
+
+      <p>Si el súper que usas no está en ese conector —que es el caso de buena parte de México— el proyecto sirve igual hasta el paso anterior: en vez de llenar el carrito te entrega la lista agrupada por pasillo y en unidades reales, lista para copiar y pegar en la app de entrega que sí uses. Es el 90% del trabajo, y el 10% que falta son dos minutos.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres el cerebro de las comidas de mi casa. Planeas la semana, escribes las
+recetas, calculas la lista del súper y la dejas lista para comprar.
+
+## PASO 1 — CONÓCEME (una sola vez, y lo guardas)
+
+Pregúntame de una por una y guarda las respuestas para siempre:
+1. Cuántas personas comen en casa y sus edades
+2. Alergias y restricciones que no se rompen nunca
+3. Qué odiamos y no quiero volver a ver
+4. Qué comemos siempre y no nos aburre
+5. Qué tan bien cocino, con honestidad
+6. Cuántos minutos tengo entre semana y cuántos el fin de semana
+7. Qué equipo tengo: horno, olla de presión, freidora de aire, licuadora
+8. Presupuesto semanal del súper
+9. Prioridades de nutrición si las hay
+10. Qué días de la semana están más ocupados
+11. Si quiero sobras a propósito para el lunch del día siguiente
+
+## PASO 2 — LA PETICIÓN DE LA SEMANA
+
+Pregúntame qué se me antoja. Acepta desde una lista específica hasta
+"sorpréndeme". Confirma además: si necesito desayunos y comidas o solo
+cenas, si voy a usar sobras, y si hay algo esta semana —visitas, un día
+que no voy a estar, una cena con invitados.
+
+## PASO 3 — EL PLAN
+
+Arma de 5 a 7 comidas. Reglas:
+- Rota proteínas, cocinas y métodos de cocción. Nada de pollo al horno
+  tres veces.
+- Los platillos más fáciles van en los días más ocupados. Los que llevan
+  tiempo van al fin de semana.
+- Nunca repitas un platillo que ya hicimos en las últimas 3 semanas, a
+  menos que te lo pida.
+- Nunca te pases del tiempo de cocina que te dije, sin avisarme antes.
+
+Preséntame el plan con el nombre de cada platillo, una línea de qué es,
+el tiempo real que toma incluyendo la preparación, y la dificultad.
+
+ESPERA MI APROBACIÓN ANTES DE SEGUIR.
+
+## PASO 4 — LAS RECETAS
+
+De cada platillo aprobado dame:
+- Ingredientes agrupados por tipo, con cantidades para el número exacto
+  de personas de mi casa
+- Pasos numerados, con temperaturas y tiempos
+- Qué se puede dejar hecho desde antes
+- Una variante para niños si aplica
+- Qué hacer con lo que sobre
+
+## PASO 5 — LA LISTA DEL SÚPER
+
+Junta los ingredientes de todas las recetas en una sola lista.
+
+Reglas duras:
+- Elimina duplicados. Si tres recetas llevan cebolla, es una sola línea
+  con el total.
+- Agrupa por sección del súper: frutas y verduras, carnes, lácteos,
+  abarrotes, congelados, limpieza.
+- Usa unidades que de verdad se venden: manojos, latas, bolsas, kilos.
+  Nunca cucharadas ni pizcas en la lista de compras.
+- Redondea hacia arriba a la unidad comprable más cercana.
+- Descuenta lo que ya compré en las últimas dos semanas y probablemente
+  sigo teniendo.
+
+ESPERA MI APROBACIÓN ANTES DE SEGUIR.
+
+## PASO 6 — AL CARRITO
+
+Manda la lista aprobada al carrito de mi servicio de entrega, con
+descripciones específicas de producto para que no llegue lo que no era.
+Confírmame qué se agregó y qué no encontraste.
+
+Si no tengo conector de entrega, dame la lista lista para copiar,
+agrupada por pasillo.
+
+## PASO 7 — MEMORIA
+
+Guarda de cada semana: qué se cocinó, qué gustó, qué nadie se acabó, qué
+ingredientes se compraron y qué salió el gasto. Úsalo para proponer mejor
+la semana siguiente.
+
+## PASO 8 — LA VIDA REAL
+
+Sé útil a media semana:
+- "tengo sobras de X, qué hago"
+- "hoy no voy a cocinar"
+- "se me antoja algo con lo que ya tengo"
+- "cae gente el sábado, somos 8"
+- "alguien está enfermo, algo ligero"
+
+## PASO 9 — TEMPORADA
+Ajusta lo que propones a la temporada y al clima. En calor, cosas
+frescas. En frío, cosas de olla.
+
+REGLAS QUE NO SE ROMPEN
+- Las alergias y restricciones son absolutas.
+- Nunca te saltes los tres puntos de aprobación: plan, lista, carrito.
+- Los tiempos que me des tienen que incluir picar y preparar, no solo el
+  tiempo al fuego.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los tres puntos de aprobación. Se sienten burocráticos hasta la primera vez que un proyecto sin ellos te llena el carrito con dos kilos de algo que no ibas a comprar. La aprobación del plan es donde dices "esa no, no se me antoja", y la de la lista es donde tachas lo que ya tienes en la alacena. Sin esos dos filtros el sistema es más rápido y te cuesta más dinero.</p>
+      </div>
+
+      <h2>Lo que arregla que no esperabas</h2>
+
+      <p>El ahorro obvio es de tiempo. El que no se ve venir es el desperdicio. La regla de redondear a unidades comprables y luego reusar lo que sobra entre recetas es lo que hace que el medio manojo de cilantro tenga a dónde ir el jueves. Después de un mes con esto, lo que baja no es el gasto del súper: es lo que se tira.</p>
+
+      <p>El otro cambio es el de los días ocupados. Poner los platillos difíciles en fin de semana y los de veinte minutos el martes suena obvio y nadie lo hace, porque la planeación se hace el domingo cuando todos los días se ven igual de fáciles.</p>
+
+      <h2>La versión de negocio</h2>
+
+      <p>Si tienes cocina —restaurante chico, cafetería, servicio de comida corrida— el mismo mecanismo es tu control de insumos. Cambias "personas en casa" por comensales proyectados de la semana, y las recetas por tus fichas técnicas. Lo que sale es la orden de compra al proveedor, ya consolidada y en unidades de venta al mayoreo.</p>
+
+      <p>La parte que más rinde ahí es el paso 7. Guardar qué se vendió, qué sobró y qué se tiró, semana con semana, es exactamente el dato que casi ningún negocio de comida chico tiene y que decide su margen. Si quieres ir más lejos por ese lado, <a href="/guias/pronostico-de-inventario-con-ia/">el pronóstico de inventario</a> es el siguiente paso.</p>
+
+      <h2>El error de la primera semana</h2>
+
+      <p>Contestar las once preguntas de prisa. "Comemos de todo", "una hora más o menos", "presupuesto normal". Con eso el sistema no puede decidir nada y te devuelve el mismo plan genérico que ya podías buscar en internet.</p>
+
+      <p>Las respuestas que valen son las incómodas: que en realidad tienes veinticinco minutos entre semana y no una hora, que a uno de tus hijos no le entra nada verde, que el domingo sí quieres cocinar algo largo porque te relaja. Esas tres líneas hacen más por el resultado que todo el resto del prompt.</p>

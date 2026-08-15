@@ -1,0 +1,106 @@
+      <p>Casi todo el que monta bien su configuración de Claude la monta una vez. Escribe sus archivos de contexto un domingo con ganas, crea dos o tres skills, y nunca vuelve a abrirlos.</p>
+
+      <p>Seis semanas después esa configuración describe un trabajo que ya no haces. Cambiaste de proyecto, el equipo creció, dejaste de hacer el reporte que sí estaba documentado y empezaste a hacer tres cosas nuevas que no están en ningún lado. Claude sigue obedeciendo instrucciones de otra época y tú crees que "ya no está funcionando igual".</p>
+
+      <p>La solución no es disciplina. Es una tarea programada que corre sola cada domingo, revisa lo que de verdad hiciste esa semana y te deja escrito qué le falta a tu configuración. Toma diez minutos montarla y después no la tocas.</p>
+
+      <h2>La idea, en una frase</h2>
+
+      <p>Le pides a Claude que audite tu propia semana de trabajo —los archivos que se crearon, los encargos que corriste, lo que se repitió— y que proponga los ajustes concretos a tu configuración, en un archivo que te espera el lunes.</p>
+
+      <p>No se mejora solo en el sentido mágico. Se mejora porque el material para mejorarlo ya está en tu carpeta: los patrones de tu semana están en los archivos que quedaron. Lo único que faltaba era alguien que se sentara a leerlos, y esa es exactamente la tarea que nadie hace.</p>
+
+      <h2>Cómo se monta</h2>
+
+      <ol>
+        <li>Abre la aplicación de escritorio de Claude y entra a Cowork.</li>
+        <li>Escribe <code>/schedule</code> en el campo del chat.</li>
+        <li>Elige cadencia <strong>semanal</strong>. Yo la pongo el domingo por la tarde, alrededor de las 4. Suficientemente tarde para que la semana ya haya cerrado y suficientemente temprano para que el reporte exista antes del lunes.</li>
+        <li>Pega el prompt de abajo y apunta a tu carpeta de trabajo.</li>
+        <li>El lunes abres <code>mejoras-semanales.md</code>.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las tareas programadas solo corren si la computadora está despierta y la aplicación abierta. Si tu máquina estaba dormida el domingo a las 4, la tarea no se pierde —se ejecuta en cuanto vuelves a abrir Claude— pero el reporte llega el lunes a media mañana y no a primera hora. Si eso te importa, programa la tarea a una hora en la que sabes que la máquina está prendida.</p>
+      </div>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Revisa todos los archivos y salidas de mi carpeta de trabajo de los
+últimos 7 días. Fíjate en qué tipo de encargos corrí, qué produje, qué
+se repitió y dónde se atoró algo. Con eso, escribe un archivo llamado
+mejoras-semanales.md con estas cinco secciones y nada más:
+
+1. ARCHIVOS DE CONTEXTO
+   Compara lo que hice esta semana contra lo que dicen mis archivos
+   sobre-mi.md, voz-y-estilo.md y reglas-de-trabajo.md. ¿Qué trabajo
+   real no está reflejado ahí? Dame las líneas exactas que hay que
+   agregar o cambiar, escritas para pegar tal cual. No me digas
+   "podrías mejorar la sección de tono": dame el texto.
+
+2. SKILLS NUEVAS
+   Encuentra las tareas que hice más de una vez esta semana. Propón
+   entre 2 y 3 skills. De cada una: nombre del comando, qué haría,
+   qué información necesitaría de mí, y en qué momento se dispararía.
+   Ordénalas por cuántas veces repetí esa tarea, de más a menos.
+
+3. HUECOS DE FLUJO
+   Qué hice a mano esta semana que se pudo haber automatizado, hecho
+   en paralelo o programado. Para cada uno, dime cuánto tiempo
+   aproximado me habría ahorrado y qué haría falta para montarlo.
+
+4. LIMPIEZA
+   Borradores, duplicados, versiones viejas y archivos huérfanos que
+   convenga archivar o eliminar. Lista de rutas, con una línea de por
+   qué. No borres nada: solo propón.
+
+5. LO QUE SÍ ESTÁ FUNCIONANDO
+   Qué partes de mi configuración están rindiendo y no hay que tocar.
+   Sé específico: qué regla, qué skill, qué archivo, y con qué
+   evidencia de esta semana lo dices.
+
+REGLAS DEL REPORTE
+- Máximo dos páginas. Si no cabe, corta lo menos importante.
+- Nada de elogios ni de motivación. Solo hallazgos y acciones.
+- Si una semana no hay suficiente material para una sección, escribe
+  "sin material esta semana" y sigue. No la rellenes.
+- Al final, una sola línea: el cambio que harías si solo pudieras
+  hacer uno.</code></pre>
+
+      <h2>Qué te devuelve, sección por sección</h2>
+
+      <h3>1. Los archivos de contexto</h3>
+
+      <p>Es la sección que más rinde y la que más incomoda. Te va a decir que tu archivo de estilo describe cómo escribías hace dos meses, o que llevas tres semanas trabajando con un cliente que no aparece en ningún lado. Como pide el texto exacto para pegar, la corrección toma treinta segundos.</p>
+
+      <h3>2. Las skills nuevas</h3>
+
+      <p>Aquí está el valor escondido. Tú no notas lo que repites, porque cada vez se siente distinto. Un reporte visto desde afuera sí lo nota: "hiciste tres veces el mismo resumen de llamadas con estructura casi idéntica". Esa es una skill, y no se te habría ocurrido.</p>
+
+      <h3>3. Los huecos de flujo</h3>
+
+      <p>La parte que hay que leer con escepticismo. Va a proponer automatizar cosas que no valen la pena. Mi filtro: si la tarea no ocurre al menos una vez por semana, no se automatiza todavía. Anótala y espera a que aparezca tres domingos seguidos.</p>
+
+      <h3>4. La limpieza</h3>
+
+      <p>Aburrida y necesaria. Una carpeta con doce versiones del mismo documento no solo te confunde a ti: confunde al modelo, que no sabe cuál es la buena. La instrucción dice explícitamente que proponga y no borre, y así debe quedarse.</p>
+
+      <h3>5. Lo que sí funciona</h3>
+
+      <p>Parece de relleno y no lo es. Sin esta sección, cada domingo terminas desarmando cosas que estaban bien. Es lo que te frena de rehacer tu configuración entera cada mes.</p>
+
+      <h2>La versión para un equipo</h2>
+
+      <p>El mismo mecanismo escala a una operación, y ahí se pone interesante. En un área de contenido o en un equipo comercial, cambias "mi carpeta de trabajo" por la carpeta compartida del área y agregas una sexta pregunta: <em>qué hizo esta semana una persona que le serviría a las otras cuatro</em>.</p>
+
+      <p>Eso convierte el reporte en algo que casi ninguna empresa tiene: un registro semanal de qué está aprendiendo el equipo, escrito solo. La primera vez que un gerente lee que tres personas resolvieron el mismo problema por separado, la conversación del lunes cambia.</p>
+
+      <h2>La regla que hace que esto dure</h2>
+
+      <p>Aplica máximo dos cambios por semana. Dos.</p>
+
+      <p>El reporte te va a dar entre ocho y quince sugerencias. Si intentas aplicarlas todas, el lunes se te va en configurar en vez de trabajar, y al tercer domingo dejas de abrir el archivo. Con dos cambios semanales, en dos meses tu configuración se movió dieciséis veces, cada movimiento salió de trabajo real, y nunca te costó más de veinte minutos.</p>
+
+      <p>Y una advertencia: no le des permiso de modificar los archivos de contexto por su cuenta. Que proponga. Tú apruebas. Un sistema que se reescribe solo sin supervisión deriva rápido, y para cuando te das cuenta ya no reconoces tus propias reglas.</p>
+
+      <p>Si todavía no tienes montados los archivos que este reporte audita, empieza por <a href="/guias/jerarquia-de-control-de-claude/">la jerarquía de control</a>. Y cuando el reporte te proponga la primera skill, <a href="/guias/construir-skills-de-claude/">aquí está cómo escribirla</a>.</p>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El arquitecto de la cita — Guías Flow AI</title>
+  <meta name="description" content="Le das a Claude una vibra y tu código postal. Reserva la cena, arma la playlist para el camino, saca las indicaciones, y deja lista una actividad de respaldo cerca." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/arquitecto-de-la-cita/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El arquitecto de la cita" />
+  <meta property="og:description" content="Le das a Claude una vibra y tu código postal. Reserva la cena, arma la playlist para el camino, saca las indicaciones, y deja lista una actividad de respaldo cerca." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/arquitecto-de-la-cita/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>El arquitecto de la cita</h1>
+      <p class="lead">Le das a Claude una vibra y tu código postal. Reserva la cena, arma la playlist para el camino, saca las indicaciones, y deja lista una actividad de respaldo cerca.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La cita se cae siempre en el mismo punto: nadie quiere ser el que decide. Se pregunta "¿a dónde quieres ir?" tres veces, se rebota tres veces, y acaban en el lugar de siempre a las nueve y media con hambre.</p>
+
+      <p>No es falta de opciones. Es que planear una salida tiene seis decisiones encadenadas —dónde, a qué hora, cuánto tarda llegar, dónde estacionarse, qué se hace si termina temprano— y ninguna es difícil, pero juntas dan flojera.</p>
+
+      <p>Esta guía monta un proyecto en Claude que se queda con las seis. Le das una vibra y tu ubicación, y te regresa tres opciones de restaurante con disponibilidad real, la hora exacta a la que hay que salir con el tráfico de ese día, una playlist del largo justo del camino, y un plan B a dos cuadras por si la noche se alarga.</p>
+
+      <h2>Cómo se monta, en tres minutos</h2>
+
+      <ol>
+        <li>Crea un proyecto en Claude llamado <code>Arquitecto de la cita</code>.</li>
+        <li>Conecta Resy y Spotify desde Ajustes, en conectores.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Escribe la vibra y tu código postal. Nada más.</li>
+      </ol>
+
+      <p>Un aviso sobre la cobertura: Resy no está en todas las ciudades y en México su catálogo es limitado. Si la tuya no está, el proyecto funciona igual: en vez de reservar, te da las tres opciones con teléfono y horario, y tú marcas. La parte que de verdad ahorra —escoger, calcular tiempos y armar el resto de la noche— no depende del conector.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres el arquitecto de mis salidas. Con una vibra y una ubicación me armas
+la noche completa: dónde cenar, a qué hora salir, qué se escucha en el
+camino y qué hacer después.
+
+## PRIMERA VEZ: PREGÚNTAME ESTO (una sola vez, y lo guardas)
+
+1. Restricciones de comida y alergias, mías y de con quien salgo
+2. Qué tipo de música nos gusta y cuál no
+3. Presupuesto típico para una salida y qué tanto se puede mover
+4. Cómo nos movemos: coche propio, aplicación, transporte, caminando
+5. A qué hora solemos salir y a qué hora hay que estar de regreso
+6. Qué tipo de lugar nos incomoda: muy ruidoso, muy formal, muy oscuro
+7. Lugares a los que ya fuimos y qué nos pareció cada uno
+
+## CADA VEZ QUE TE PIDA UNA CITA
+
+Yo te doy dos cosas: la vibra y el código postal. Si falta algo más
+—cuántos somos, si es una ocasión especial— pregúntamelo en una sola
+línea, no en un cuestionario.
+
+## PASO 1 — TRES OPCIONES DE RESTAURANTE
+
+Busca disponibilidad real para la fecha y hora que necesito. Dame
+exactamente tres, ni más ni menos. De cada una:
+- Nombre, tipo de cocina y rango de precio
+- A cuántos minutos está de mí a esa hora del día
+- Qué horarios tiene libres
+- Una sola frase de por qué esta encaja con la vibra que pedí y con lo
+  que ya sé de nosotros
+
+Nunca reserves sin que yo escoja. Las tres se presentan, yo elijo, tú
+confirmas.
+
+No repitas un lugar al que ya fuimos en las últimas 4 a 6 semanas, a
+menos que te lo pida.
+
+## PASO 2 — LOS TIEMPOS
+
+Ya que escogí, arma la línea del tiempo:
+- Tiempo real de traslado con el tráfico de ese día y esa hora, no un
+  promedio
+- Hora exacta a la que hay que salir, con 10 minutos de colchón
+- Dónde se estaciona uno y cuánto cuesta, o desde dónde conviene pedir
+  el viaje
+- Hora estimada en que termina la cena
+
+## PASO 3 — LA PLAYLIST
+
+Arma una playlist en Spotify que dure lo que dura el camino, no más.
+Ajústala a la vibra de la noche. Dime el nombre que le pusiste y tres
+canciones de muestra para que sepa por dónde va.
+
+## PASO 4 — EL PLAN B
+
+Propón una actividad cerca del restaurante para después: un lugar para
+un trago, una caminata que valga la pena, algo abierto a esa hora.
+Que quede a menos de diez minutos, con horario verificado.
+
+Incluye siempre uno, a menos que te diga que no.
+
+## FORMATO DE ENTREGA
+
+Una sola tarjeta corta para leerse desde el teléfono:
+- SALIMOS A LAS: [hora]
+- CENA: [lugar], [hora], [dirección]
+- ESTACIONAMIENTO: [dónde]
+- CAMINO: [playlist]
+- DESPUÉS: [plan B]
+
+## SITUACIONES
+Ajústate cuando te diga: aniversario, presupuesto apretado hoy, somos
+cuatro, alguien no toma, está lloviendo, hay que estar de regreso
+temprano.
+
+REGLAS
+- Verifica disponibilidad antes de dar una opción. Nada de proponer un
+  lugar que está lleno.
+- Nunca reserves por tu cuenta.
+- Tiempos de traslado reales, no estimaciones optimistas.
+- Si algo no lo pudiste confirmar, dilo en vez de rellenar.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la pregunta 7 del arranque, la de los lugares donde ya estuvieron y qué les pareció. Es la que convierte esto de un buscador de restaurantes en algo que te conoce. Sin esa lista, el proyecto propone lo mejor calificado de la zona, que es exactamente lo que ya sale en cualquier app. Con ella empieza a proponer cosas que empatan con lo que sí les gustó y a evitar lo que ya rechazaron.</p>
+      </div>
+
+      <h2>Por qué son exactamente tres opciones</h2>
+
+      <p>Una sola sugerencia se siente impuesta y la persona con la que sales no participa. Diez opciones regresan el problema al punto de partida: otra vez alguien tiene que decidir entre demasiadas cosas.</p>
+
+      <p>Tres es donde la decisión se toma en veinte segundos y todavía se siente propia. Es el mismo principio que uso al armar propuestas para clientes: tres alternativas con una frase de por qué cada una, y el que decide decide rápido.</p>
+
+      <h2>La misma jugada, en el trabajo</h2>
+
+      <p>Cambia "vibra" por "cliente" y tienes el organizador de cenas de negocio, que es un dolor real para cualquiera que vende. La adaptación es corta: en el arranque, en lugar de las preferencias de tu pareja, cargas las restricciones alimentarias y el nivel de formalidad de cada cliente clave. En vez de plan B, pides el dato de si el lugar permite hablar sin gritar, que es lo único que importa en una cena donde vas a cerrar algo.</p>
+
+      <p>Y la regla de no repetir lugar en cuatro a seis semanas ahí vale doble: llevar a dos clientes distintos al mismo restaurante está bien, llevar al mismo cliente tres veces al mismo lugar es descuido. El registro que el proyecto va guardando resuelve eso solo.</p>
+
+      <h2>Lo que sigue sin poder hacer</h2>
+
+      <p>No adivina el ánimo. Si escribes "algo tranquilo" cuando en realidad quieren salir de la rutina, te va a dar tranquilo. La vibra es el único input que no puede corregirte, así que vale la pena escribirla con dos adjetivos en vez de uno.</p>
+
+      <p>Y confirma tú la reservación en el correo o en la app antes de salir de casa. Es diez segundos y te ahorra la única falla que arruina la noche completa. Si lo que quieres es armar toda una escapada y no una salida, eso lo cubre <a href="/guias/planeador-de-viajes/">el planeador de viajes</a>; y para el fin de semana completo, <a href="/guias/planeador-de-fin-de-semana/">el planeador de fin de semana</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
