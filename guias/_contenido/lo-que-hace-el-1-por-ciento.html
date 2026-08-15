@@ -1,0 +1,189 @@
+      <p>La diferencia entre alguien que le saca todo a Claude y alguien que dice "está bien pero no es para tanto" casi nunca está en los prompts. Está en lo que hicieron antes de escribir el primero.</p>
+
+      <p>Y no es mucho. Son cinco cosas, se hacen una sola vez, y toman como veinte minutos en total. El problema es que ninguna es obvia, ninguna te la sugiere la aplicación, y todas se sienten como preparación en lugar de trabajo, así que todo el mundo las pospone.</p>
+
+      <p>Aquí van las cinco, en orden, con los archivos completos listos para copiar.</p>
+
+      <h2>1. Sal del navegador</h2>
+
+      <p>Dos minutos. Descarga la app de escritorio en <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>, instálala, y muévete a la pestaña de Cowork.</p>
+
+      <p>Esto no es una preferencia estética. En el navegador, Claude conversa sobre tus archivos. En Cowork, los abre, los lee y los edita. Las otras cuatro cosas de esta lista dependen de que estés aquí.</p>
+
+      <p>Requiere plan de paga. El detalle completo de qué hay en la app y qué no está en <a href="/guias/guia-de-la-app-de-escritorio/">la guía de la app de escritorio</a>.</p>
+
+      <h2>2. Arregla la configuración del modelo</h2>
+
+      <p>Treinta segundos. Abre el selector de modelo arriba de cualquier chat y cambia al nivel insignia. Prende razonamiento extendido.</p>
+
+      <p>Con un matiz que importa y que casi todas las guías se saltan: eso es para el trabajo importante. El 95% de lo que haces en el día —redactar, resumir, buscar, preguntas rápidas— corre igual de bien en el nivel rápido y consume una fracción de tu cuota.</p>
+
+      <p>O sea que la configuración correcta no es "déjalo en el más grande". Es saber que existen los dos y moverte a conciencia. Está desarrollado en <a href="/guias/que-modelo-de-claude-usar/">qué modelo de Claude usar</a>.</p>
+
+      <h2>3. Ordena el espacio de trabajo</h2>
+
+      <p>Tres minutos. Crea esta estructura de carpetas en tu computadora y conéctala en Cowork:</p>
+
+      <pre><code>Mi espacio Claude/
+  quien-soy/
+  trabajo-activo/
+  referencia/
+  entregables/</code></pre>
+
+      <p>Cuatro carpetas, y cada una tiene una función distinta:</p>
+
+      <ul>
+        <li><strong><code>quien-soy/</code></strong> — tu contexto permanente. Cambia poco.</li>
+        <li><strong><code>trabajo-activo/</code></strong> — lo que traes en curso esta semana.</li>
+        <li><strong><code>referencia/</code></strong> — material que consultas pero no editas: lineamientos de marca, contratos modelo, reportes viejos.</li>
+        <li><strong><code>entregables/</code></strong> — lo que sale terminado.</li>
+      </ul>
+
+      <p>La razón de separarlas no es el orden. Es que le puedes decir "esto va a entregables" o "lee todo lo de referencia antes de contestar" y sabe exactamente a qué te refieres. Una sola carpeta con todo adentro te obliga a especificar archivo por archivo cada vez.</p>
+
+      <h2>4. Enséñale quién eres</h2>
+
+      <p>Diez minutos, y es el paso donde está el 80% del resultado. Tres archivos dentro de <code>quien-soy/</code>.</p>
+
+      <p><strong><code>mi-rol.md</code></strong> — quién eres dentro de tu organización:</p>
+
+      <pre><code># Mi rol
+
+Nombre: [NOMBRE]
+Puesto: [PUESTO] en [EMPRESA]
+Industria: [INDUSTRIA]
+
+## De qué soy responsable
+- [RESPONSABILIDAD 1]
+- [RESPONSABILIDAD 2]
+- [RESPONSABILIDAD 3]
+
+## Cómo se mide mi trabajo
+[LOS 2 O 3 NÚMEROS POR LOS QUE TE EVALÚAN]
+
+## A quién le reporto y quién me reporta
+Reporto a: [NOMBRE Y PUESTO]
+Me reportan: [NOMBRES Y PUESTOS]
+
+## Mis prioridades este trimestre
+1. [PRIORIDAD 1]
+2. [PRIORIDAD 2]
+3. [PRIORIDAD 3]
+
+## Con quién interactúo seguido y qué espera cada uno
+- [PERSONA/ÁREA]: [QUÉ ESPERAN DE MÍ]
+- [PERSONA/ÁREA]: [QUÉ ESPERAN DE MÍ]</code></pre>
+
+      <p><strong><code>mi-voz.md</code></strong> — cómo escribes. Este es el que más gente hace mal, porque describe adjetivos en lugar de dar ejemplos:</p>
+
+      <pre><code># Mi voz
+
+## Cómo escribo
+- Frases cortas. Español de México, de tú.
+- Voy al grano en la primera línea.
+- [OTRA CARACTERÍSTICA TUYA]
+
+## Palabras y frases que nunca uso
+- [FRASE QUE ODIAS]
+- [FRASE QUE ODIAS]
+- [FRASE QUE ODIAS]
+
+## Cómo abro un correo
+[PEGA AQUÍ CÓMO ABRES TÚ, LITERAL]
+
+## Cómo cierro un correo
+[PEGA AQUÍ CÓMO CIERRAS TÚ, LITERAL]
+
+## Ejemplos reales
+Pega aquí 3 textos tuyos completos: un correo a un cliente, un
+mensaje interno al equipo, y un documento. Sin editar. Tal cual
+los mandaste.
+
+### Ejemplo 1 — correo a cliente
+[PEGAR]
+
+### Ejemplo 2 — mensaje al equipo
+[PEGAR]
+
+### Ejemplo 3 — documento
+[PEGAR]</code></pre>
+
+      <p>Los tres ejemplos reales valen más que toda la descripción de arriba. Un modelo aprende tu voz de tus textos, no de tus adjetivos sobre tus textos.</p>
+
+      <p><strong><code>mis-reglas.md</code></strong> — cómo quieres que ejecute:</p>
+
+      <pre><code># Mis reglas de trabajo
+
+## Formato de salida
+- Nada de introducciones ni cierres de cortesía. Empieza en el
+  contenido.
+- Sin viñetas anidadas de más de un nivel.
+- Sin emojis.
+- Si un párrafo se puede borrar sin perder información, bórralo.
+
+## Cuándo preguntarme y cuándo decidir
+- Toma los defaults obvios y sigue.
+- Pregunta solo si la acción es irreversible, o si hay dos
+  lecturas razonables que llevan a trabajos muy distintos.
+
+## Qué nunca hagas
+- No inventes cifras, fechas ni fuentes. Si no lo sabes, dilo.
+- No mandes nada ni publiques nada sin que yo lo apruebe.
+- No cambies archivos fuera de la carpeta que te indiqué.
+
+## Cómo entregas
+- Los entregables van a la carpeta entregables/, como archivo.
+- Los análisis largos van como documento, no como respuesta
+  en el chat.
+- Al terminar, dime en tres líneas qué hiciste y qué quedó
+  pendiente.</code></pre>
+
+      <h2>5. Pon las instrucciones permanentes</h2>
+
+      <p>Cinco minutos. Ajustes, Perfil, Personalización. Ahí hay un campo de preferencias personales que se aplica solo a todas tus conversaciones, estés donde estés.</p>
+
+      <p>Esto es distinto de los archivos del paso 4: los archivos viven en Cowork y aplican cuando trabaja con tus carpetas. Las instrucciones permanentes aplican siempre, incluido el chat normal del celular.</p>
+
+      <pre><code>Soy [PUESTO] en [EMPRESA], industria [INDUSTRIA]. Escríbeme en
+español de México, de tú.
+
+Ve al grano. Sin introducciones, sin resúmenes de lo que ya
+dijiste, sin ofrecerte a profundizar al final. Si algo se puede
+decir en una frase, no uses tres.
+
+Cuando te pida una recomendación, dame una y defiéndela. No me
+des cinco opciones equivalentes para que yo decida: para eso no
+te pregunto.
+
+Si algo no lo sabes o no lo puedes verificar, dilo. Prefiero un
+"no sé" a un dato inventado.
+
+Cuando te pase un texto mío para revisar, corrige lo que está
+mal y explícame por qué en una línea. No lo reescribas entero
+salvo que te lo pida.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el archivo de voz con ejemplos reales pegados. Es el más aburrido de los tres y es el único que cambia de verdad lo que sale. Sin él, Claude escribe correcto y genérico, y tú acabas reescribiendo todo —que es exactamente el trabajo que querías ahorrarte. Diez minutos pegando tres textos tuyos te devuelven eso cada semana.</p>
+      </div>
+
+      <h2>Los veinte minutos, desglosados</h2>
+
+      <ol>
+        <li>Descargar e instalar la app: 2 minutos.</li>
+        <li>Configuración de modelo: 30 segundos.</li>
+        <li>Crear las carpetas y conectarlas: 3 minutos.</li>
+        <li>Los tres archivos de contexto: 10 minutos.</li>
+        <li>Instrucciones permanentes: 5 minutos.</li>
+      </ol>
+
+      <p>Menos de lo que dura una junta a la que probablemente no tenías que ir.</p>
+
+      <h2>Por qué casi nadie lo hace</h2>
+
+      <p>Porque no se siente como trabajo. Se siente como configurar, y configurar es lo que uno pospone.</p>
+
+      <p>Pero el cálculo es sencillo. Si escribes tu contexto una vez, te ahorras escribirlo en cada conversación. Si lo escribes en cada conversación, lo vas a escribir peor cada vez, porque con la prisa recortas y con lo recortado el resultado empeora. Ahí nace la sensación de que "a veces sale bien y a veces no".</p>
+
+      <p>Y esto escala. En las empresas donde he montado esto, la versión de equipo es la misma idea con una capa más: los archivos de <code>quien-soy/</code> se vuelven archivos de la organización —cómo hablamos, qué vendemos, qué nunca prometemos— y viven en un lugar compartido. Ahí la ganancia deja de ser tu productividad y pasa a ser que doce personas entreguen con el mismo criterio.</p>
+
+      <p>Empieza por ti. Los veinte minutos son hoy.</p>

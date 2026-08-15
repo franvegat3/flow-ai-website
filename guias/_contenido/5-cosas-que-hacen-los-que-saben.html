@@ -1,0 +1,115 @@
+      <p>En cada empresa donde entro hay dos grupos usando exactamente la misma suscripción. Uno dice que la IA le ahorra unas horas a la semana. El otro rehizo cómo trabaja.</p>
+
+      <p>La diferencia no está en los prompts. La he buscado y no está ahí. El primer grupo escribe peticiones perfectamente decentes y sigue haciendo el mismo trabajo, un poco más rápido. El segundo hizo cinco cosas de configuración —ninguna difícil, ninguna de más de una hora— y a partir de ahí la herramienta empezó a trabajar cuando ellos no están.</p>
+
+      <p>Estas son las cinco, en el orden en que se hacen. Cada una depende de la anterior.</p>
+
+      <h2>1. Montaron un espacio que ya sabe quiénes son</h2>
+
+      <p>La primera y la que más rinde. En vez de abrir un chat en blanco cada vez, tienen un proyecto por cada frente de trabajo, y adentro está escrito quién son, para quién trabajan y con qué criterio se decide.</p>
+
+      <p><strong>Cómo se hace:</strong> en claude.ai vas a Proyectos y creas uno. En el campo de instrucciones personalizadas escribes tu rol, tu equipo, tus objetivos del trimestre y la voz de tu empresa. Subes los archivos que son la fuente de verdad: el manual de marca, el catálogo de precios, la estructura del reporte, lo que aplique.</p>
+
+      <p><strong>Cuánto toma:</strong> diez minutos el primero.</p>
+
+      <p>Lo que cambia no es la calidad de una respuesta suelta. Es que dejas de escribir el párrafo de contexto. Tu petición pasa de doscientas palabras a diez, y esas diez producen algo mejor que las doscientas de antes, porque el contexto que hay adentro del proyecto es más completo que el que ibas a escribir de memoria.</p>
+
+      <p>El error de todos aquí es hacer un solo proyecto para todo. Uno por frente: ventas, contenido, finanzas. Mezclados, el contexto de uno contamina al otro.</p>
+
+      <h2>2. Lo conectaron a donde vive el trabajo</h2>
+
+      <p>El segundo movimiento y el que más gente pospone por meses. Correo, calendario, Drive, Slack, el CRM.</p>
+
+      <p><strong>Cómo se hace:</strong> <em>Configuración → Personalizar → Conectores</em>. Uno por uno, autorizando con la cuenta de trabajo.</p>
+
+      <p><strong>Cuánto toma:</strong> dos minutos por conector.</p>
+
+      <p>La prueba de si funcionó es inmediata. Pregúntale qué traes mañana en el calendario o resume lo que llegó al correo esta mañana. Si contesta con datos reales, ya cruzaste la línea que separa a los dos grupos.</p>
+
+      <p>Y aquí está el salto que la gente no anticipa: conectados, deja de ser una herramienta que consultas y empieza a ser una que <em>observa</em>. Puede notar que el cliente del que hablas en la junta del jueves te escribió el martes algo que contradice lo que vas a proponer. Eso no se lo puedes pedir a algo que no ve tu correo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir qué NO se conecta. La reacción normal al descubrir los conectores es prenderlos todos. Piénsalo al revés: cada conector es una llave que estás dejando puesta. Conecta lo que vas a usar esta semana, y para el resto espera a tener el caso concreto. Si manejas información de clientes o datos financieros, esa decisión no es tuya solo: revísala con quien lleva seguridad antes de autorizar nada. Cómo funcionan esos permisos está en <a href="/guias/permisos-de-conectores/">la guía de permisos de conectores</a>.</p>
+      </div>
+
+      <h2>3. Automatizaron el reporte que nadie quiere hacer</h2>
+
+      <p>Aquí es donde se nota la diferencia entre acelerar el trabajo y eliminarlo.</p>
+
+      <p>Todo el mundo tiene un reporte recurrente: el estatus del viernes, el resumen semanal para el jefe, el avance de la campaña, el corte de la operación. Se arma a mano, toma entre treinta minutos y dos horas, y nadie lo disfruta.</p>
+
+      <p>Con los conectores ya puestos, ese reporte se vuelve una skill. Y una vez que es skill, se puede programar para que corra sola.</p>
+
+      <p><strong>Cómo se hace:</strong> vas a <em>Configuración → Personalizar → Skills</em> y usas el creador. Este es el encargo:</p>
+
+      <pre><code>Quiero una skill que arme mi reporte semanal. Entrevístame antes
+de escribirla: pregúntame una por una las cosas que te falten y no
+avances con respuestas vagas.
+
+Lo que ya sé:
+- Quién lo lee: [tu jefe, tu equipo, el consejo]
+- Qué decisión toma esa persona con este reporte:
+- De dónde salen los datos: [correo, calendario, CRM, hoja de
+  cálculo, canal de Slack — nombra las fuentes reales]
+- Cada cuándo se manda:
+- Cuánto debe medir:
+
+Estructura fija del reporte, en este orden:
+1. Titular — una frase con lo más importante de la semana.
+2. Números — solo los que ya seguimos, cada uno contra la semana
+   pasada. Si un número no lo puedes obtener, escribe "sin dato"
+   en vez de estimarlo.
+3. Avances — qué se movió, con el nombre de quién lo movió.
+4. Bloqueos — qué está detenido, desde cuándo, y quién lo destraba.
+5. Decisiones que necesito — solo lo que requiere respuesta de
+   quien lo lee. Si no hay ninguna, escribe "ninguna".
+
+Reglas duras:
+- Cero adjetivos de avance. "Vamos bien" no es información.
+- Nada de inventar un dato que no esté en las fuentes.
+- Si una fuente no respondió o vino vacía, dilo explícitamente al
+  final en vez de omitirlo en silencio.
+- Mismo orden y mismas secciones siempre, aunque una vaya vacía.
+
+Cuando termines la entrevista, dame la skill lista para instalar y
+un ejemplo de cómo se vería el reporte de esta semana.</code></pre>
+
+      <p>Después la programas desde Cowork para que corra el viernes por la mañana. Lo que antes era una hora se vuelve una revisión de treinta segundos: leer lo que armó, corregir dos cosas, mandar.</p>
+
+      <h2>4. Le dieron con qué aprender de ellos</h2>
+
+      <p>El cuarto movimiento es el que hace que lo que sale deje de sonar a IA.</p>
+
+      <p>El truco no es pedirle que escriba como tú. Es darle material. Subes al proyecto tres o cuatro cosas que hayas escrito y que representen bien tu forma: un correo largo a un cliente, una propuesta, una publicación tuya. Y en las instrucciones le dices explícitamente que esos archivos son la referencia de voz.</p>
+
+      <p>El complemento es la memoria. Cada vez que le corriges algo —"esa palabra no la uso", "los números siempre van antes de la conclusión"— pídele que lo guarde. A los dos meses ese archivo de correcciones vale más que cualquier instrucción que hayas escrito a mano, porque está hecho de errores reales y no de lo que tú creías que querías.</p>
+
+      <p>El sistema completo para eso, en tres niveles de profundidad, está en <a href="/guias/memoria-perfecta-en-3-capas/">cómo darle memoria perfecta a Claude</a>.</p>
+
+      <h2>5. Dejaron de hacer preguntas y empezaron a tener procesos</h2>
+
+      <p>El quinto no es una configuración. Es el cambio de cabeza que hace que los otros cuatro sirvan.</p>
+
+      <p>La pregunta suelta es transaccional: preguntas, contesta, se acabó. Mañana empiezas otra vez. El proceso es acumulativo: la misma tarea corre cada semana, cada corrida la mejora, y a los tres meses hace cosas que no hacía al principio.</p>
+
+      <p>La diferencia práctica se ve en cómo formulan las peticiones. El primer grupo pregunta "cómo hago un análisis de este cliente". El segundo tiene un análisis de cliente que corre solo cada vez que entra un prospecto nuevo al CRM.</p>
+
+      <p><strong>Cómo se hace:</strong> agarra una sola tarea recurrente —la que más repitas— y conviértela en proyecto. Cuando esté fina, en skill. Cuando la skill sea confiable, prográmala. Y hasta que esa esté corriendo sola, elige la siguiente.</p>
+
+      <p>Una a la vez. La gente que intenta convertir cinco procesos en el mismo mes no termina ninguno.</p>
+
+      <h2>El orden importa más que la lista</h2>
+
+      <p>Los cinco se hacen en ese orden y no en otro, porque cada uno depende del anterior.</p>
+
+      <ol>
+        <li><strong>Proyecto</strong>, porque sin contexto todo lo demás sale genérico.</li>
+        <li><strong>Conectores</strong>, porque sin datos reales no hay nada que automatizar.</li>
+        <li><strong>Un reporte automatizado</strong>, porque es la primera vez que sientes que trabaja sin ti.</li>
+        <li><strong>Voz y memoria</strong>, porque es lo que hace que puedas mandar lo que salió sin reescribirlo.</li>
+        <li><strong>El cambio a procesos</strong>, que es la consecuencia natural de los cuatro anteriores.</li>
+      </ol>
+
+      <p>Si quieres el diagnóstico antes de empezar —para saber en cuál de los cinco estás atorado— la lista de <a href="/guias/5-senales-de-que-usas-la-ia-como-en-2024/">las 5 señales de que sigues usando la IA como en 2024</a> es la contraparte de esta.</p>
+
+      <p>Y la advertencia final, porque es donde veo fracasar más intentos: automatizar un proceso roto te da un proceso roto más rápido y más difícil de arreglar. Antes de convertir tu reporte semanal en skill, revisa si ese reporte le sirve a alguien. En más de la mitad de los casos que he visto, la respuesta correcta no era automatizarlo. Era dejar de hacerlo.</p>

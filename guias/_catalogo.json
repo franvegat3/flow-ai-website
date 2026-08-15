@@ -3691,7 +3691,7 @@
  {
   "slug": "claude-como-asistente-personal",
   "titulo": "Claude ya es tu asistente personal",
-  "desc": "15 conectores nuevos que se hacen cargo de tu vida real: rutas, música, súper, transporte, reservas y más. Qué hace cada uno y cómo se prenden.",
+  "desc": "La tanda de conectores que se hace cargo de tu vida real: rutas, música, súper, transporte y reservas. Qué hace cada uno y cómo se prenden.",
   "badge": "Novedades",
   "tool": [
    "claude"

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Ya conectaste Claude a Meta? Ahora haz esto — Guías Flow AI</title>
+  <meta name="description" content="El conector de Meta ya está vivo. Los 5 prompts que estoy corriendo en mis propias cuentas de anuncios, el setup de seguridad, y la función que casi todos se están perdiendo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/conector-de-meta-en-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿Ya conectaste Claude a Meta? Ahora haz esto" />
+  <meta property="og:description" content="El conector de Meta ya está vivo. Los 5 prompts que estoy corriendo en mis propias cuentas de anuncios, el setup de seguridad, y la función que casi todos se están perdiendo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/conector-de-meta-en-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Pauta</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Meta Ads</span><span class="tag">Pauta</span><span class="tag">Automatización</span></div>
+      <h1>¿Ya conectaste Claude a Meta? Ahora haz esto</h1>
+      <p class="lead">El conector de Meta ya está vivo. Los 5 prompts que estoy corriendo en mis propias cuentas de anuncios, el setup de seguridad, y la función que casi todos se están perdiendo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Conectar Claude a tu cuenta de anuncios de Meta toma dos minutos. Lo que casi nadie hace bien es lo que sigue, y ahí está la diferencia entre una herramienta que te ahorra la mañana del lunes y una que te vacía el presupuesto.</p>
+
+      <p>Llevo tiempo operando pauta y lo que más me sorprendió del conector no fue que armara campañas. Fue la función que casi nadie está usando: detección de anomalías. Meta le construyó a Claude una herramienta dedicada a eso, y es la que de verdad cambia cómo se opera una cuenta.</p>
+
+      <p>Va lo que hace, el setup de seguridad que yo pondría antes de cualquier cosa, y los cinco prompts que corro. Con una regla que no se negocia y la digo desde ahora: <strong>nada sale al aire sin que un humano le dé al switch.</strong></p>
+
+      <h2>Qué hace el conector, en tres cosas</h2>
+
+      <h3>Reporteo en vivo</h3>
+
+      <p>Le preguntas en español y te contesta con los datos de la cuenta. Gasto, retorno sobre inversión publicitaria, costo por adquisición, conversiones, por campaña o por anuncio. Puedes pedirle un tablero armado en la respuesta en vez de ir a construirlo en el administrador.</p>
+
+      <h3>Detección de anomalías</h3>
+
+      <p>Esta es la buena. Encuentra picos de CPM, frecuencia que se está trepando, caídas de conversión y señales de saturación de audiencia, sin que alguien tenga que estar revisando la cuenta todos los días.</p>
+
+      <p>El valor no es la velocidad. Es que un operador humano revisando de lunes a viernes detecta el problema al tercer día, con tres días de gasto encima. Y las señales suaves —la frecuencia que sube de 2.1 a 3.4 en once días— no las ve nadie, porque no se ven raras en ninguna vista individual.</p>
+
+      <h3>Creación de campañas en pausa</h3>
+
+      <p>Arma campañas, conjuntos de anuncios y anuncios. Y todo nace <strong>pausado</strong>, por diseño. Tú lo prendes en el administrador cuando estés listo. No es una configuración que puedas apagar por comodidad: es cómo funciona.</p>
+
+      <h2>El setup de seguridad, antes de conectar</h2>
+
+      <p>Dos cosas, y las dos van antes de la primera consulta.</p>
+
+      <ol>
+        <li><strong>Solo lectura de tres a cinco días.</strong> Conecta con permiso de lectura nada más. Durante esos días corres los prompts de reporteo y de anomalías, y verificas contra el administrador que los números cuadren. Si no cuadran, ahí te enteras sin haber tocado nada. Recién cuando confíes en la salida le das escritura.</li>
+        <li><strong>Tope de gasto a nivel cuenta.</strong> Un límite duro diario o mensual, puesto en la cuenta antes de habilitar escritura. Sí, todo nace en pausa. El tope es el piso de última defensa: es lo que te protege del escenario que no anticipaste, incluyendo tu propio dedo.</li>
+      </ol>
+
+      <p>El resto de la lógica de permisos —qué ve, qué no, qué se puede desconectar— está en <a href="/guias/es-seguro-conectar-tus-herramientas/">la guía de seguridad de conectores</a>.</p>
+
+      <div class="callout-box">
+        <p><strong>La regla que no se negocia:</strong> ningún anuncio se publica, ninguna campaña se activa y ningún presupuesto se reasigna sin aprobación humana explícita. Todos los prompts de abajo terminan pidiendo que no ejecute cambios, y eso no es paranoia: es que un error de lectura en una cuenta con escritura habilitada cuesta dinero real el mismo día. La IA lee, propone y arma en pausa. La mano en el switch es tuya.</p>
+      </div>
+
+      <h2>Los cinco prompts</h2>
+
+      <h3>1. Radiografía diaria de la cuenta</h3>
+
+      <pre><code>Dame el desempeño de los últimos 7 días por campaña: gasto,
+ingreso, ROAS, costo por compra, frecuencia y conversiones.
+
+Después:
+- Marca los anuncios con frecuencia mayor a 3.5 o con CPA arriba
+  del doble de mi objetivo, que es [MONTO].
+- Dame los 3 anuncios escalables: ROAS arriba de 3.0 y frecuencia
+  abajo de 2.5 sostenido al menos 3 días.
+- Señálame UN problema estructural de la cuenta. Uno solo, el más
+  caro. No me des una lista.
+
+No hagas ningún cambio. Solo reporte.</code></pre>
+
+      <h3>2. Barrido de anomalías</h3>
+
+      <pre><code>Revisa los últimos 14 días de la cuenta y detecta:
+- Picos de CPM por arriba del 25% contra el promedio de 30 días.
+- Frecuencia arriba de 4.0.
+- Caídas de conversión mayores al 30% semana contra semana.
+- Señales de saturación: CTR bajando mientras el CPM sube.
+- Campañas donde el gasto subió y las compras bajaron.
+
+Para cada hallazgo, dime la causa más probable y desde qué día
+empezó. Si no puedes distinguir entre dos causas posibles, dime
+las dos y qué dato me diría cuál es.
+
+No hagas ningún cambio.</code></pre>
+
+      <h3>3. Auditoría de fatiga creativa</h3>
+
+      <pre><code>Analiza todos los anuncios con 21 días o más al aire.
+
+Para cada uno: tendencia de CTR, curva de frecuencia comparando
+7, 14 y 21 días, y tendencia del costo por compra.
+
+Clasifícalos en tres cubetas:
+- RENOVAR YA: CTR cayendo, frecuencia arriba de 3.5 y CPA arriba
+  del objetivo.
+- VIGILAR: una sola señal mala, pero todavía rentable.
+- DEJAR CORRER: sano en las tres métricas.
+
+Ordena la primera cubeta por gasto de los últimos 7 días, de mayor
+a menor: quiero saber cuál me está costando más caro seguir
+dejándolo prendido.
+
+No pauses nada. Solo la clasificación.</code></pre>
+
+      <h3>4. Armar una campaña de prueba en pausa</h3>
+
+      <pre><code>Arma una campaña PAUSADA con esta configuración:
+
+Objetivo: ventas
+Presupuesto diario: [MONTO]
+Audiencia: Advantage+ Shopping con las siguientes exclusiones:
+  [LISTA DE EXCLUSIONES]
+Un solo conjunto de anuncios.
+[NÚMERO] anuncios.
+Convención de nombres: [AAAA-MM]_[NombrePrueba]_[Creativo]
+
+Cuando termines, confírmame explícitamente que quedó en estado
+pausado y dame el ID de la campaña para verificarlo yo en el
+administrador.
+
+No la actives bajo ninguna circunstancia.</code></pre>
+
+      <h3>5. Lectura de reasignación de presupuesto</h3>
+
+      <pre><code>Analiza el gasto de los últimos 14 días entre las campañas activas.
+
+Dime cuáles están sobrefinanciadas y cuáles subfinanciadas, con el
+criterio que estés usando explícito.
+
+Recomiéndame una reasignación en dinero: de dónde quitar y a dónde
+poner, con el monto exacto.
+
+Después, pon a prueba tu propia recomendación: ¿qué supuesto tuyo
+tendría que estar mal para que esta reasignación salga peor que no
+hacer nada?
+
+Dámelo en tabla. No ejecutes ningún cambio de presupuesto.</code></pre>
+
+      <p>Ese último bloque del prompt 5 —poner a prueba su propio supuesto— es el que más veces me ha detenido de hacer un movimiento que se veía obvio. Una campaña con retorno bajo puede ser la que alimenta el remarketing que sí convierte, y si el modelo no está obligado a cuestionarse, no te lo va a decir.</p>
+
+      <h2>El error caro en pauta</h2>
+
+      <p>Confundir un diagnóstico correcto con una decisión correcta.</p>
+
+      <p>El conector te va a decir con precisión que un anuncio tiene frecuencia de 4.2 y CTR cayendo. Eso es un hecho. Que haya que apagarlo es una decisión, y depende de cosas que no están en la API: si estás en temporada, si el creativo nuevo todavía no está listo, si esa audiencia es la única que te compra a margen decente.</p>
+
+      <p>Lo que hace este setup es quitarte el trabajo de encontrar la señal, que es el 80% del tiempo y el 20% del valor. El juicio de qué hacer con ella sigue siendo tuyo, y va a seguir siéndolo por un buen rato.</p>
+
+      <h2>Cómo lo metería en una operación de agencia</h2>
+
+      <p>El barrido de anomalías corriendo todas las mañanas sobre todas las cuentas, con la salida a un canal donde el equipo la vea. La auditoría de fatiga creativa los lunes. La radiografía diaria como reemplazo del reporte que alguien arma a mano.</p>
+
+      <p>Y escritura habilitada en una sola cuenta al principio: la más chica, no la del cliente más grande. Un mes ahí antes de extenderlo. Si el equipo se acostumbra a revisar las propuestas en la cuenta donde el error cuesta poco, el hábito ya está formado cuando toque la cuenta donde cuesta mucho.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/angulos-de-anuncio-desde-reddit/" class="stack-link">
+            <span>La skill que saca ángulos de anuncio de Reddit →</span>
+            <small>Convierte Reddit en dolores de cliente rankeados, un archivo con las frases textuales que usa la gente, y 8 a 10 ángulos de anuncio listos para probar.</small>
+          </a>
+          <a href="/guias/stack-de-ia-que-reemplaza-tu-saas/" class="stack-link">
+            <span>El stack de IA que reemplaza tu software de suscripción →</span>
+            <small>Las herramientas exactas para reconstruir tú mismo el software caro, la regla honesta de construir contra comprar, y un prompt para dimensionar tu propio reemplazo.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

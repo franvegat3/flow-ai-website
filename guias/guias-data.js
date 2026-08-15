@@ -2045,6 +2045,36 @@ window.GUIAS = [
   "meta": "10 min · Claude Code"
  },
  {
+  "slug": "foso-de-datos-propios",
+  "titulo": "Construye el foso de datos que la IA no tiene (3 formas)",
+  "desc": "Toda IA está entrenada con el mismo internet, así que la única ventaja que queda son los datos que nadie más tiene. Tres formas concretas: saca datos que los modelos no ven, guarda los que estás tirando, y elige el modelo entrenado con los tuyos.",
+  "badge": "Estrategia",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "negocio",
+   "automatizacion"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "aparecer-en-busquedas-locales-de-ia",
+  "titulo": "Cómo aparecer cuando la IA responde búsquedas locales",
+  "desc": "Los directorios locales se citan varias veces más que cualquier otra plataforma cuando la IA contesta preguntas de negocios cerca de ti. El manual para de verdad salir en esas respuestas.",
+  "badge": "SEO local",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "negocio",
+   "contenido"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
   "slug": "comandos-de-claude-code-que-uso-diario",
   "titulo": "Los comandos de Claude Code que uso todos los días",
   "desc": "Los 13 comandos favoritos, agrupados por el momento en que echas mano de cada uno, con la sintaxis exacta y un ejemplo real de cada uno.",
@@ -2075,6 +2105,20 @@ window.GUIAS = [
   "meta": "9 min · Claude Code"
  },
  {
+  "slug": "no-te-reemplace-la-ia-dirigela",
+  "titulo": "Que la IA no te reemplace: vuélvete quien la dirige",
+  "desc": "La IA necesita un experto dirigiéndola. Cómo pasar de hacer el trabajo a dirigir a la IA que lo hace —un rol más senior que debería pagar más— aplicado a tu puesto específico.",
+  "badge": "Carrera",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "10-codigos-de-claude-que-si-funcionan",
   "titulo": "10 códigos de Claude que sí funcionan",
   "desc": "Entrevístame, socrático, ultrathink, segundo orden, inversión, más los 5 originales. Los 10 marcos de prompt que cambian por completo la salida, probados contra las listas virales que no sirven.",
@@ -2087,6 +2131,21 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Claude"
+ },
+ {
+  "slug": "agentes-que-operan-en-la-bolsa",
+  "titulo": "La IA ya puede operar tus acciones",
+  "desc": "Las plataformas de inversión abrieron el trading agéntico. Cómo funciona de verdad, los ajustes de seguridad que se prenden primero, y las 3 formas en que sí lo usaría sin entregarle tu dinero y desaparecer.",
+  "badge": "Novedades",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "novedades",
+   "negocio"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "lista-de-lanzamiento-de-30-dias",
@@ -2637,6 +2696,21 @@ window.GUIAS = [
   "meta": "10 min · Claude"
  },
  {
+  "slug": "6-papers-de-ia",
+  "titulo": "6 estudios de IA para leer en vez de scrollear",
+  "desc": "Seis estudios que juntos prueban qué está pasando de verdad con la IA en 2026, no lo que dice tu feed. Hallazgos verificados, citas textuales y links directos.",
+  "badge": "Novedades",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "novedades",
+   "negocio"
+  ],
+  "min": 10,
+  "meta": "10 min · Multi-herramienta"
+ },
+ {
   "slug": "kit-para-arrancar-en-consultoria-de-ia",
   "titulo": "Kit para arrancar en consultoría de IA",
   "desc": "Las 3 lecturas de cómo cobrar de esto —vendas consultoría, la compres, o te vuelvas el líder de IA de tu equipo— más los prompts de cada una.",
@@ -2650,6 +2724,49 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "3-certificaciones-gratis-microsoft-linkedin",
+  "titulo": "3 certificaciones gratis de Microsoft y LinkedIn",
+  "desc": "Parte 2 de la serie de certificaciones gratuitas. 3 rutas gratis de Microsoft y LinkedIn, las URLs reales, y el flujo de agregarlas al perfil que los reclutadores sí abren.",
+  "badge": "Carrera",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "carrera"
+  ],
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
+ },
+ {
+  "slug": "planear-una-boda-con-claude",
+  "titulo": "Planea una boda completa con Claude",
+  "desc": "Un solo proyecto de Claude con 5 flujos adentro: línea de tiempo, presupuesto, contacto con proveedores, seguimiento de la bandeja de entrada, y toda tu identidad visual.",
+  "badge": "Skill",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "productividad",
+   "creativo"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "copiloto-de-embarazo",
+  "titulo": "El copiloto de embarazo hecho en Claude",
+  "desc": "Un tablero vivo de 40 semanas, seguimiento desde el reloj, hojas de una página antes de cada consulta, resúmenes de domingo, y un estimador de cobertura del seguro. Todo en un proyecto.",
+  "badge": "Skill",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "productividad"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "skill-cazadora-de-huecos",
@@ -2966,6 +3083,37 @@ window.GUIAS = [
   "meta": "9 min · Claude"
  },
  {
+  "slug": "conector-de-meta-en-claude",
+  "titulo": "¿Ya conectaste Claude a Meta? Ahora haz esto",
+  "desc": "El conector de Meta ya está vivo. Los 5 prompts que estoy corriendo en mis propias cuentas de anuncios, el setup de seguridad, y la función que casi todos se están perdiendo.",
+  "badge": "Novedades",
+  "tool": [
+   "claude",
+   "meta-ads"
+  ],
+  "topic": [
+   "pauta",
+   "automatizacion"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "la-ia-esta-matando-el-scroll",
+  "titulo": "La IA está matando el scroll infinito",
+  "desc": "El uso de redes sociales tocó techo en 2022. La IA está haciendo el trabajo que las redes hacían antes. El desglose de trabajos por hacer, más 5 cosas que construir con Claude este fin de semana.",
+  "badge": "Carrera",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "carrera",
+   "contenido"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
+ },
+ {
   "slug": "semana-de-la-ia-financiera",
   "titulo": "Semana de IA financiera: qué acaba de salir",
   "desc": "Anthropic y Perplexity reconstruyeron finanzas la misma semana. La comparación lado a lado, plan y precio de cada uno, y 3 cosas que sí puedes probar esta semana.",
@@ -3133,6 +3281,82 @@ window.GUIAS = [
   "meta": "9 min · Perplexity"
  },
  {
+  "slug": "sastre-de-curriculum",
+  "titulo": "El sastre de currículums",
+  "desc": "Guardas tu currículum maestro una vez. Pegas cualquier vacante. Claude escupe una versión a la medida en 2 segundos, reflejando el lenguaje de la vacante, sin inventar nada que no hayas hecho.",
+  "badge": "Skills",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera",
+   "skills"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "claude-corriendo-tus-meta-ads",
+  "titulo": "Claude ya puede correr tus Meta Ads: el recorrido completo",
+  "desc": "Meta le abrió su plataforma de anuncios a Claude. Conectas una vez y creas campañas, manejas presupuestos y jalas datos de desempeño desde el chat. El setup completo más los 5 prompts para arrancar.",
+  "badge": "Novedades",
+  "tool": [
+   "claude",
+   "meta-ads"
+  ],
+  "topic": [
+   "pauta",
+   "automatizacion"
+  ],
+  "min": 10,
+  "meta": "10 min · Claude"
+ },
+ {
+  "slug": "modo-tutor-escondido",
+  "titulo": "El modo tutor escondido de Claude (y 10 prompts para usarlo)",
+  "desc": "Un ajuste que casi nadie conoce convierte a Claude en tutor socrático. Te hace preguntas, se ajusta a tu ritmo, y enseña desde cualquier documento que le subas. 10 prompts que lo aprovechan para trabajo real.",
+  "badge": "Novedades",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "carrera"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "10-tareas-de-finanzas-personales",
+  "titulo": "10 tareas de finanzas personales que Claude debería estarte corriendo",
+  "desc": "Auditor de suscripciones, buscador de deducciones, guiones para negociar recibos, tablero de patrimonio, optimizador de historial crediticio y 5 más. Los que tienen dinero no usan apps de presupuesto.",
+  "badge": "Flujos",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "productividad",
+   "negocio"
+  ],
+  "min": 10,
+  "meta": "10 min · Claude"
+ },
+ {
+  "slug": "10-servicios-de-ia-que-te-pagan-5k",
+  "titulo": "10 servicios de IA por los que un negocio te paga $5K o más",
+  "desc": "Diez servicios de IA empaquetados con su precio exacto, su comprador objetivo, el guion del pitch, la lista de entregables, y la ruta de 30/60/90 días a tu primer cliente. Más una estrategia para apilarlos.",
+  "badge": "Negocio",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "negocio",
+   "ventas"
+  ],
+  "min": 12,
+  "meta": "12 min · Multi-herramienta"
+ },
+ {
   "slug": "5-skills-que-corren-mi-vida-parte-4",
   "titulo": "5 skills de Claude que me corren la vida (parte 4)",
   "desc": "Generador de reportes de estatus, coach de sueño, rastreador de compromisos, recibos de carrera, y piloto automático de preparación de juntas. Cinco skills que suben tu nivel, con el setup completo.",
@@ -3160,6 +3384,52 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Claude"
+ },
+ {
+  "slug": "10-cosas-para-automatizar-este-fin-de-semana",
+  "titulo": "10 cosas para automatizar con Claude este fin de semana",
+  "desc": "Un sprint de 48 horas, de sábado en la mañana a domingo en la noche. Los prompts exactos de /schedule y el orden en que se configuran. Para el lunes a las 7 tu semana corre sola.",
+  "badge": "Flujos",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "automatizacion",
+   "productividad"
+  ],
+  "min": 10,
+  "meta": "10 min · Claude"
+ },
+ {
+  "slug": "10-prompts-para-que-te-asciendan",
+  "titulo": "10 prompts de Claude para que te asciendan en 6 meses",
+  "desc": "Preparación de 1:1, autopsias anticipadas, armarle el mejor argumento a tu jefe, crítica de presentaciones para dirección, reescritura de correos con nivel senior, y 5 más.",
+  "badge": "Carrera",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "carrera",
+   "prompts"
+  ],
+  "min": 10,
+  "meta": "10 min · Claude"
+ },
+ {
+  "slug": "10-flujos-que-me-ahorran-15-horas",
+  "titulo": "10 flujos de IA que me ahorran 15 horas a la semana",
+  "desc": "Triaje de bandeja de entrada, resúmenes de junta, síntesis de hilos de Slack, reciclaje de contenido, limpieza semanal de archivos, y 5 más. Los prompts completos de cada flujo que corre debajo de mi semana.",
+  "badge": "Flujos",
+  "tool": [
+   "cowork",
+   "claude"
+  ],
+  "topic": [
+   "automatizacion",
+   "productividad"
+  ],
+  "min": 11,
+  "meta": "11 min · Cowork"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-3",
@@ -3253,7 +3523,7 @@ window.GUIAS = [
  {
   "slug": "claude-como-asistente-personal",
   "titulo": "Claude ya es tu asistente personal",
-  "desc": "15 conectores nuevos que se hacen cargo de tu vida real: rutas, música, súper, transporte, reservas y más. Qué hace cada uno y cómo se prenden.",
+  "desc": "La tanda de conectores que se hace cargo de tu vida real: rutas, música, súper, transporte y reservas. Qué hace cada uno y cómo se prenden.",
   "badge": "Novedades",
   "tool": [
    "claude"
@@ -3333,6 +3603,54 @@ window.GUIAS = [
   "topic": [
    "carrera",
    "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
+ },
+ {
+  "slug": "5-funciones-de-ia-escondidas-en-tus-apps",
+  "titulo": "5 funciones de IA escondidas en apps que ya usas",
+  "desc": "Zoom, Slack, Notion, Google Docs y Sheets traen IA que probablemente no has prendido. Qué hace cada una y cómo se configura.",
+  "badge": "Carrera",
+  "tool": [
+   "multi",
+   "notion"
+  ],
+  "topic": [
+   "productividad",
+   "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
+ },
+ {
+  "slug": "5-cosas-que-hacen-los-que-saben",
+  "titulo": "5 cosas que la gente lista hace con IA y tú no",
+  "desc": "Montaron una IA que conoce su trabajo, la conectaron a sus herramientas, y automatizaron sus reportes. Cómo hacer las 5, paso a paso.",
+  "badge": "Carrera",
+  "tool": [
+   "multi",
+   "notion"
+  ],
+  "topic": [
+   "carrera",
+   "automatizacion"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "mejores-herramientas-de-ia-ahora",
+  "titulo": "Las mejores herramientas de IA ahora mismo: guía gratis",
+  "desc": "Claude, generación de imágenes, Perplexity, notas de junta y fotos con IA. Qué hace cada una y cuándo usarla.",
+  "badge": "Novedades",
+  "tool": [
+   "multi",
+   "perplexity"
+  ],
+  "topic": [
+   "empezar",
+   "novedades"
   ],
   "min": 8,
   "meta": "8 min · Multi-herramienta"
@@ -3514,5 +3832,35 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Claude Code"
+ },
+ {
+  "slug": "6-funciones-que-casi-nadie-ve",
+  "titulo": "6 funciones de Claude que casi nadie ve",
+  "desc": "Modo incógnito, conversaciones por voz, archivos descargables, atajos de teclado y más. Escondidas a plena vista.",
+  "badge": "Configuración",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "empezar",
+   "productividad"
+  ],
+  "min": 7,
+  "meta": "7 min · Claude"
+ },
+ {
+  "slug": "lo-que-hace-el-1-por-ciento",
+  "titulo": "Lo que hace el 1% de los usuarios de Claude",
+  "desc": "5 cosas que se hacen antes de mandar un solo prompt: el espacio de trabajo, los archivos de contexto, la configuración del modelo, y las instrucciones permanentes. 20 minutos de setup.",
+  "badge": "Configuración",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "empezar",
+   "prompts"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
  }
 ];

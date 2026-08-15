@@ -96,6 +96,21 @@ def carga_catalogo():
     return catalogo
 
 
+def desactiva_links_pendientes(cuerpo, publicados):
+    """Convierte en texto plano los enlaces a guías que todavía no existen.
+
+    Las guías se escriben en desorden, así que una puede enlazar a otra que
+    aún no tiene cuerpo. Dejar el <a> vivo sería un 404 en producción. Esto
+    solo toca el HTML generado: el fuente en _contenido/ conserva el enlace,
+    y en cuanto la guía destino se publica, el build lo restaura solo.
+    """
+    def resuelve(m):
+        slug, texto = m.group(1), m.group(2)
+        return texto if slug not in publicados else m.group(0)
+
+    return re.sub(r'<a href="/guias/([^/"]+)/"[^>]*>(.*?)</a>', resuelve, cuerpo, flags=re.S)
+
+
 def relacionadas(guia, publicadas):
     """Dos guías publicadas que compartan tema, más el link a la biblioteca."""
     temas = set(guia["topic"])
@@ -127,9 +142,14 @@ def main():
     dir_contenido = AQUI / "_contenido"
 
     publicadas = [g for g in catalogo if (dir_contenido / f"{g['slug']}.html").exists()]
+    publicados = {g["slug"] for g in publicadas}
+    apagados = 0
 
     for guia in publicadas:
         cuerpo = (dir_contenido / f"{guia['slug']}.html").read_text(encoding="utf-8").strip()
+        vivos = len(re.findall(r'<a href="/guias/', cuerpo))
+        cuerpo = desactiva_links_pendientes(cuerpo, publicados)
+        apagados += vivos - len(re.findall(r'<a href="/guias/', cuerpo))
         desc = guia["desc"]
 
         tags = "".join(
@@ -197,6 +217,8 @@ def main():
     (RAIZ / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
     print(f"Publicadas {len(publicadas)} de {len(catalogo)} guías del catálogo.")
+    if apagados:
+        print(f"Enlaces a guías aún no escritas, dejados como texto: {apagados}.")
     faltan = [g["slug"] for g in catalogo if g not in publicadas]
     if faltan:
         print(f"Sin cuerpo todavía: {len(faltan)}. Siguientes: {', '.join(faltan[:5])}")

@@ -1,0 +1,147 @@
+      <p>Planear una boda es un proyecto de gestión con veinte proveedores, un presupuesto que se mueve solo, plazos que no se negocian y una sola persona coordinando todo mientras tiene otro trabajo de tiempo completo.</p>
+
+      <p>Dicho así queda claro por qué pesa tanto: es un proyecto de operación que nadie te entrenó para llevar y que además trae carga emocional encima. Se resuelve con un solo proyecto de Claude con cinco flujos adentro, que quitan el trabajo administrativo que hoy te está comiendo las noches.</p>
+
+      <h2>El proyecto base</h2>
+
+      <p>Crea un proyecto y llámalo <strong>Wedding HQ</strong>. En las instrucciones del proyecto van tres datos y ninguno más por ahora: fecha de la boda, número aproximado de invitados y presupuesto total. Todo lo demás sale de ahí.</p>
+
+      <p>Conecta tres cosas:</p>
+
+      <ul>
+        <li><strong>Google Calendar</strong> — para que los hitos vivan donde ya ves tu semana.</li>
+        <li><strong>Gmail</strong> — de ahí salen los correos de proveedores y las facturas.</li>
+        <li><strong>Google Drive</strong> — contratos, PDFs de proveedores, imágenes de inspiración.</li>
+      </ul>
+
+      <p>Esos tres conectores son lo que convierte esto de un chat bonito a un sistema que se actualiza solo.</p>
+
+      <h2>Flujo 1: la línea de tiempo de 12 meses</h2>
+
+      <p>El primero y el que más ansiedad quita, porque contesta la pregunta que da vueltas todas las noches: ¿voy tarde en algo?</p>
+
+      <pre><code>Eres mi planeador de bodas. Construye la línea de tiempo completa de 12 meses y manda cada hito a mi Google Calendar.
+
+Mis datos:
+- Fecha de la boda: [FECHA]
+- Invitados: [NÚMERO APROXIMADO]
+- Ciudad o región: [DÓNDE]
+- Presupuesto total: [MONTO]
+- Estilo en 3 palabras: [EJ. "romántica, al aire libre, íntima"]
+- Algo fuera de lo común (destino, varios días, requisitos religiosos): [DESCRIBE O ESCRIBE "NINGUNO"]
+
+Haz cinco cosas:
+1. Construye la línea de tiempo desde 12 meses antes hasta el día del evento, con la secuencia estándar de un planeador profesional: sede y fotógrafo 12 meses antes, save the dates 6 meses antes, invitaciones y menú final 8 semanas antes, pruebas de vestido a 6, 3 y 1 semana, trámites legales 1 o 2 semanas antes, cena de ensayo la noche previa, e itinerario del día. Para cada hito dime la anticipación estándar y una frase de por qué importa ahí.
+2. Personalízala: según mi estilo y presupuesto, marca los 3 hitos que debo adelantar y explícame por qué.
+3. Para cada hito escribe un evento de calendario con título de una línea, descripción de dos frases con la acción y la decisión que debo tener tomada antes, recordatorio 7 días antes, y un segundo recordatorio 1 día antes para las últimas 8 semanas.
+4. Manda todo a un calendario NUEVO llamado "Wedding HQ", separado del mío para poder compartirlo.
+5. Cierra con los 3 hitos que más voy a subestimar, con una advertencia de una frase cada uno.
+
+Formato: lista numerada, hacia atrás desde la fecha de la boda. Voz cálida y práctica.</code></pre>
+
+      <h2>Flujo 2: el presupuesto vivo</h2>
+
+      <p>El presupuesto de boda no se rompe de golpe. Se rompe en incrementos de tres mil pesos que nadie anotó. Este flujo lee tu correo cada domingo y actualiza el tablero solo.</p>
+
+      <pre><code>Eres mi administrador financiero de la boda. Mantén mi presupuesto honesto y actualizado jalando los números de proveedores directo de mi bandeja de entrada.
+
+Mis datos:
+- Presupuesto total: [MONTO]
+- Invitados: [NÚMERO]
+- Ciudad o región: [DÓNDE]
+- Proveedores ya contratados: [LISTA CON MONTOS, O "NINGUNO"]
+- Mis innegociables, donde prefiero gastar de más antes que recortar: [EJ. "fotógrafo, sede"]
+- Lo que recortaría primero: [EJ. "papelería, recuerdos"]
+
+Haz seis cosas:
+1. Construye la asignación inicial partiendo de los promedios de la industria: sede y recepción 40%, banquete 22%, foto y video 12%, flores 8%, vestuario 5%, música 5%, papelería 3%, imprevistos 5%. Ajusta según mis innegociables y explica los ajustes.
+2. Crea un artefacto "Presupuesto de boda" con columnas: Categoría, Planeado, Gastado, Restante, % usado, Notas. Prellena lo planeado y marca en rojo la línea de imprevistos.
+3. Cada domingo a las 9am busca en mi Gmail correos de los últimos 7 días con factura, confirmación de anticipo, recibo o comprobante de pago. De cada uno extrae proveedor, categoría, monto, fecha, y si fue anticipo o pago final.
+4. Actualiza el tablero y dime en lenguaje simple qué cambió.
+5. Cierra con tres líneas: cómo voy contra el presupuesto total, la categoría a vigilar esta semana, y el próximo anticipo o saldo que vence en 30 días.
+6. Si una categoría rebasa lo planeado por más de 10%, márcalo hasta arriba con una recomendación de qué recortar para absorberlo.
+
+Voz: cálida pero directa. Sin porras.</code></pre>
+
+      <h2>Flujo 3: buscar proveedores y escribirles</h2>
+
+      <p>Aquí es donde se van tres semanas de investigación que pueden ser una tarde.</p>
+
+      <pre><code>Eres mi buscador de proveedores de boda. Encuentra las 5 mejores opciones de [TIPO DE PROVEEDOR] en mi zona, evalúalas, y redacta los correos de contacto.
+
+Mis datos:
+- Proveedor que busco: [fotógrafo / florista / banquete / DJ / video / planeador / maquillaje]
+- Fecha: [FECHA]. Ciudad y sede: [DÓNDE]. Invitados: [NÚMERO]
+- Estilo en 3 a 5 palabras: [EJ. "cálido, editorial, espontáneo"]
+- Presupuesto para este proveedor: [RANGO]
+- Cosas que me descartan a un proveedor: [EJ. "edición con filtros pesados", "mínimo de horas alto"]
+
+Haz cinco cosas:
+1. Investiga el mercado: saca 10 opciones que cubran mi zona y mi fecha. Usa búsqueda web, Instagram, portales de bodas y reseñas de Google Maps. Descarta a quien no tenga al menos 25 reseñas publicadas, presencia real con trabajo reciente, o transparencia de precios.
+2. Redúcelo a 5. Califica cada uno del 1 al 10 en tres factores: coincidencia de estilo con mis palabras clave, ajuste a mi presupuesto, y fuerza de reseñas por volumen y qué tan recientes son. Ordena por puntaje combinado.
+3. Para cada uno dame una ficha con: nombre y razón social, sitio web, Instagram, una línea de por qué encaja con mi estilo citando un trabajo reciente específico, rango de precio típico para mi tamaño de evento, una reseña real con fecha, y cualquier bandera roja.
+4. Redacta un correo cálido y específico para la opción 1, listo para enviar hoy, mencionando un detalle concreto de su portafolio y no un "me encanta tu trabajo" genérico. Incluye fecha, sede, invitados y rango de presupuesto, y cierra con dos preguntas y la petición de una llamada de 20 minutos.
+5. Después redacta una versión adaptable para los otros 4, misma estructura.
+
+Cierra diciéndome cuál es la mejor semana para mandar estos correos según mi fecha de boda.</code></pre>
+
+      <h2>Flujo 4: el tablero de la bandeja de entrada</h2>
+
+      <p>El anterior te consigue proveedores. Este evita que se te pierdan.</p>
+
+      <pre><code>Eres mi administrador de bandeja de entrada de la boda. Que nunca se me pierda un correo de proveedor, una fecha de contrato ni un anticipo.
+
+Mis datos:
+- Fecha de la boda: [FECHA]
+- Mis proveedores hasta ahora, con nombre y categoría: [LISTA]
+- Etiquetas de Gmail que uso para la boda: [NOMBRES O "no uso etiquetas"]
+- El proveedor que más me preocupa ahorita: [NOMBRE Y POR QUÉ, O "NINGUNO"]
+
+Haz seis cosas:
+1. Jala de mi Gmail todo hilo de los últimos 12 meses que coincida con el nombre de un proveedor, o que combine palabras de boda (contrato, anticipo, factura, saldo, recepción, ceremonia) con mi fecha o mi nombre.
+2. Construye un artefacto "Proveedores HQ" con una fila por proveedor y estas columnas: nombre y categoría, estado del contrato (firmado / pendiente / no enviado), anticipo y monto, saldo y vencimiento, fecha del último mensaje, quién debe la siguiente respuesta, acción de esta semana, y banderas rojas.
+3. Colorea las filas: verde si todo está al día, amarillo si yo debo una respuesta esta semana, rojo si debo un pago o un documento firmado en 7 días o si el proveedor lleva más de 14 días sin contestarme.
+4. Debajo de la tabla, la lista de acciones de la semana con cada pendiente rojo y amarillo y el correo sugerido para resolverlo.
+5. Actualiza cada lunes a las 8am con un resumen de cuatro líneas: proveedores cerrados, anticipos pagados, saldos que vencen en 30 días, y lo más importante de la semana.
+6. En la primera corrida marca las 3 relaciones más en riesgo, con una frase cada una.
+
+Voz: práctica y tranquila.</code></pre>
+
+      <h2>Flujo 5: la identidad visual completa</h2>
+
+      <p>El último es el más divertido y el que reemplaza una cotización de diseño que no es barata.</p>
+
+      <pre><code>Eres mi director creativo de boda. Convierte mi inspiración en una identidad visual coherente y diseña todas las piezas que voy a necesitar.
+
+Mis datos:
+- Tablero de Pinterest: [URL] — o te arrastro entre 8 y 15 imágenes al chat.
+- Fecha, ciudad y sede: [DATOS]. Invitados: [NÚMERO]
+- 3 palabras del ambiente que busco: [EJ. "moderno, jardín, suave"]
+- Una marca o diseñador cuyo mundo visual me encanta, aunque no sea de bodas: [EJ. "Aesop"]
+- Colores que quiero sí o sí, o que no quiero ver: [LISTA O "SIN REGLAS"]
+
+Haz seis cosas:
+1. Lee la inspiración y extrae: la paleta dominante con 5 códigos hex y el papel de cada color (primario, secundario, acento, neutro claro, neutro oscuro); el sistema tipográfico con nombres de fuentes reales, una principal y una de texto; las 3 palabras que capturan el mundo visual; y los 2 o 3 motivos que se repiten.
+2. Arma primero la hoja de marca: una página con paleta, tipografía, motivos y dos frases de voz de marca. Todo lo demás se construye desde ahí.
+3. Diseña estas 7 piezas, cada una como maqueta que yo pueda ver: save the date (frente y reverso); suite de invitación (invitación, tarjeta de confirmación y tarjeta de detalles); menú; números de mesa; letrero de bienvenida; programa; y la página principal del sitio de la boda con portada, nuestra historia, itinerario, viaje, confirmación y mesa de regalos.
+4. De cada pieza dame 2 opciones lado a lado, una segura y una arriesgada, y dime cuál encaja mejor con mi inspiración y por qué.
+5. Cuando yo elija, exporta PDFs listos para imprenta con sangrado y marcas de corte a una carpeta nueva de Drive llamada "Identidad boda", con los tamaños estándar de cada pieza.
+6. Cierra recomendando 3 imprentas que den ese nivel de acabado, ordenadas por calidad contra precio.
+
+Voz: director creativo de verdad, no generador de blog de bodas. Si dos imágenes de mi inspiración se contradicen, elige la dirección más fuerte y dime por qué.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el calendario aparte. En el flujo 1 se pide explícitamente un calendario nuevo llamado "Wedding HQ" en vez de meter cuarenta eventos a tu calendario normal. Parece un detalle de orden y no lo es: separado se puede compartir con tu pareja y con quien te ayude, y se puede apagar la semana que necesites no verlo. Mezclado con tus juntas de trabajo, la boda se te aparece en cada hueco del día durante un año.</p>
+      </div>
+
+      <h2>En qué orden montarlos</h2>
+
+      <p>No los eches a andar los cinco el mismo día. El orden que funciona: <strong>línea de tiempo, presupuesto, proveedores, bandeja, diseño</strong>.</p>
+
+      <p>Los dos primeros bajan la ansiedad en una tarde porque contestan "¿voy tarde?" y "¿voy a alcanzar?". El tercero y el cuarto se activan cuando ya estás contratando de verdad, no antes. Y el quinto es el que más te va a entretener, por eso está al final: si lo haces primero, vas a pasar dos semanas viendo paletas de color con la sede todavía sin apartar.</p>
+
+      <h2>Lo que no le pidas</h2>
+
+      <p>Que escriba tus votos. Ni tu discurso.</p>
+
+      <p>Esto sirve para lo logístico, que es la parte que roba el tiempo y no significa nada. Las partes que sí significan algo se escriben mal, a mano, y con la gente que te conoce. Si necesitas ayuda con la inspiración de eso, habla con tu gente, no con una IA.</p>

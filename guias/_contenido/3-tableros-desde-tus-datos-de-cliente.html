@@ -46,27 +46,23 @@ REVISIÓN FINAL: título en una línea, mapa 2D, Alaska y Hawái a la izquierda,
 
 PRIVACIDAD: usa order_count solo internamente. No muestres conteos crudos, totales de venta, ingresos, porcentajes ni tasas de conversión en ninguna parte. Quien lo vea debe ver el patrón, no los números.
 
-VISIBLE: mejor hora de compra, top 3 en podio, etiquetas de hora en formato de 12 horas, números de rango, etiquetas de señal, etiquetas de franja del día, intensidad de color y leyenda.
-
-LÓGICA, en orden: parsea el CSV, valida cada renglón, omite en silencio los inválidos, crea una entrada por cada hora de 0 a 23, ordena por order_count de mayor a menor, asigna rango, identifica el top 3, usa el conteo interno solo para calcular intensidad de color.
+LÓGICA, en orden: parsea el CSV, valida cada renglón, omite en silencio los inválidos, crea una entrada por cada hora de 0 a 23, ordena por order_count de mayor a menor, asigna rango, identifica el top 3 y usa el conteo interno solo para calcular intensidad de color.
 
 TITULAR: "Mis clientes compran más a las [hora]", con la hora en formato de 12 horas.
 
 PODIO: las tres mejores horas como tarjetas de oro, plata y bronce. Cada una muestra únicamente el lugar y la hora.
 
-MAPA DE CALOR: las 24 horas en cuadrícula. Cada celda muestra hora y número de rango, por ejemplo "10 AM / #1". Colorea por intensidad relativa con tres niveles: Tranquila, Media, Pico. Agrega leyenda.
+MAPA DE CALOR: las 24 horas en cuadrícula. Cada celda muestra hora y rango, por ejemplo "10 AM / #1". Colorea por intensidad relativa con tres niveles —Tranquila, Media, Pico— y agrega leyenda.
 
-TOOLTIP al pasar el cursor: hora, rango, señal y franja del día. Nada de conteos.
+TOOLTIP al pasar el cursor: hora, rango, señal y franja del día. PANEL LATERAL al hacer clic: hora, rango, señal, posición, franja del día y las horas adyacentes con su rango. Sin conteos en ninguno de los dos.
 
-PANEL LATERAL al hacer clic: hora, rango, señal, posición en el mapa, franja del día y las horas adyacentes (una antes y una después) con su rango.
-
-ETIQUETAS DE SEÑAL: #1 señal pico; #2 y #3 señal de primer nivel; #4 a #6 señal muy alta; #7 a #12 señal alta; #13 a #18 señal moderada; #19 a #24 señal tranquila.
+ETIQUETAS DE SEÑAL: #1 señal pico; #2 y #3 primer nivel; #4 a #6 muy alta; #7 a #12 alta; #13 a #18 moderada; #19 a #24 tranquila.
 
 FRANJAS: 12 AM a 4 AM madrugada; 5 AM a 11 AM mañana; 12 PM a 4 PM tarde; 5 PM a 8 PM noche; 9 PM a 11 PM noche tardía.
 
-DISEÑO: fondo oscuro, paneles de vidrio esmerilado, texto claro, alto contraste, espaciado elegante, poco texto. Fondo animado tipo humo en un canvas WebGL detrás del contenido, sutil, que respete prefers-reduced-motion. Evita fondos blancos brillantes, tablas crudas y paletas de arcoíris.
+DISEÑO: fondo oscuro, paneles de vidrio esmerilado, texto claro, alto contraste, espaciado elegante, poco texto, con fondo animado tipo humo en canvas WebGL que respete prefers-reduced-motion. Evita fondos blancos, tablas crudas y paletas de arcoíris.
 
-SALIDA: HTML, CSS y JavaScript en un solo archivo. Sin dependencias externas ni CDN.
+SALIDA: HTML, CSS y JavaScript en un solo archivo, sin dependencias externas ni CDN.
 
 REVISIÓN FINAL: abre en el navegador, el titular muestra la hora más fuerte, el podio está completo, el mapa de calor muestra rangos y no conteos, tooltip y panel funcionan, la leyenda es visible, el texto se lee sobre el fondo oscuro, funciona en escritorio y en móvil, sin errores de consola.</code></pre>
 

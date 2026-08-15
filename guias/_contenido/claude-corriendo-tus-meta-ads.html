@@ -1,0 +1,221 @@
+      <p>Meta le abrió su plataforma de anuncios a los agentes de IA. En la práctica: conectas tu cuenta publicitaria una vez y a partir de ahí puedes auditar campañas, mover presupuestos, crear estructuras completas y jalar datos de desempeño desde una conversación, sin abrir el Administrador de anuncios.</p>
+
+      <p>Lo interesante no es el ahorro de clics. Es que la parte que casi nadie hace —revisar la cuenta con disciplina todas las semanas y encontrar dónde se está fugando el dinero— pasa de ser una tarde de trabajo a ser tres minutos de lectura.</p>
+
+      <p>Esto es el setup completo y los cinco prompts con los que arranco cualquier cuenta.</p>
+
+      <h2>Qué es y qué no es</h2>
+
+      <p>Es un conector oficial de Meta. Le da a Claude acceso lector y escritor a las cuentas publicitarias que tú autorices: puede leer desempeño en vivo, crear campañas descritas en lenguaje normal, ajustar presupuestos, pausar y auditar la salud técnica de píxeles, catálogos y señales.</p>
+
+      <p>Lo que no es: un piloto automático. Todo lo que crea nace en pausa por diseño, y la aprobación de lanzar sigue siendo tuya. Eso no es una limitación molesta, es la razón por la que se puede usar en una cuenta que sí gasta dinero.</p>
+
+      <h2>El setup, cinco minutos</h2>
+
+      <p>Necesitas una cuenta de Meta Business con permisos de administrador sobre al menos una cuenta publicitaria.</p>
+
+      <ol>
+        <li><strong>Consigue la URL del servidor.</strong> Meta la publica en su Centro de ayuda para empresas, en el artículo sobre administrar anuncios desde un agente de IA. Cópiala de ahí; no la escribas de memoria.</li>
+        <li><strong>Abre los conectores en Claude.</strong> Tu nombre abajo a la izquierda, Configuración, pestaña de conectores, agregar conector personalizado.</li>
+        <li><strong>Pega la URL</strong>, ponle un nombre reconocible y conecta.</li>
+        <li><strong>Autoriza con Facebook.</strong> Entra con el perfil que tiene permisos de administrador y aprueba los permisos que pide: <code>ads_read</code>, <code>ads_management</code>, <code>read_insights</code> y <code>business_management</code>.</li>
+        <li><strong>Elige cuentas.</strong> Solo las que quieres que Claude vea. Si manejas cuentas de clientes, no las incluyas sin autorización expresa de ellos.</li>
+        <li><strong>Prueba.</strong> Chat nuevo: "¿qué cuentas publicitarias tengo conectadas y cuánto gasté los últimos 7 días?". Si salen números reales, quedó.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> poner un límite de gasto diario a nivel cuenta en el Administrador de anuncios <em>antes</em> de conectar nada. No es desconfianza hacia el modelo: es la misma higiene que aplicas cuando le das acceso a un becario nuevo. Y quédate una semana entera en prompts de solo lectura antes de dejar que toque un presupuesto. Esa semana es la que te enseña si sus diagnósticos coinciden con lo que tú ya sabías de la cuenta.</p>
+      </div>
+
+      <h2>Los 5 prompts para arrancar</h2>
+
+      <h3>1. Auditoría de la cuenta en 30 segundos</h3>
+
+      <p>Solo lectura. Es el primero que se corre siempre.</p>
+
+      <pre><code>Jala los ultimos 30 dias de mi cuenta de Meta Ads y audita cada campaña
+activa contra los estandares de [ECOMMERCE / GENERACION DE LEADS / APP /
+SERVICIO LOCAL].
+
+1. LA TABLA. Por cada campaña activa: objetivo, gasto, resultados, costo
+   por resultado, ROAS, frecuencia y estado.
+
+2. LA CALIFICACION. Etiqueta cada una:
+   ESCALAR — ROAS arriba de 2.5x y con espacio de presupuesto
+   OPTIMIZAR — rentable pero floja en creativo o audiencia
+   ARREGLAR — pixel roto, frecuencia alta, aprendizaje atorado,
+     traslape de audiencias
+   MATAR — ROAS abajo de 1.5x por 14 dias o mas sin ruta clara
+   Una frase de razonamiento por campaña.
+
+3. LOS 3 PROBLEMAS MAS GRANDES. Donde estoy tirando mas dinero, donde
+   tengo mas potencial sin usar, y que esta tecnicamente roto.
+
+4. LOS 3 MOVIMIENTOS, en orden de prioridad: la campaña que pauso hoy,
+   la que escalo y en que porcentaje escalonado, y la prueba de
+   creativo o audiencia que lanzo esta semana.
+
+REGLAS
+- Usa datos reales de mi cuenta. No inventes numeros.
+- No apliques nada. Solo diagnostica y recomienda; yo apruebo.
+- Si una campaña esta en fase de aprendizaje o tiene menos de 7 dias
+  de datos, dilo y no la mates antes de tiempo.</code></pre>
+
+      <h3>2. Cazador de presupuesto desperdiciado</h3>
+
+      <p>Semanal, solo lectura. Este es el que paga la suscripción.</p>
+
+      <pre><code>Audita mi cuenta de Meta Ads de los ultimos 30 dias buscando gasto
+desperdiciado. Encuentrame el dinero que no esta yendo a ningun lado.
+
+BUSCA
+1. Conjuntos de anuncios que gastaron mas de [MONTO] con cero
+   conversiones.
+2. Audiencias convirtiendo a mas del doble de mi costo objetivo.
+3. Ubicaciones que se comen presupuesto sin convertir.
+4. Creativos con frecuencia arriba de 3.5 que ya no rinden: fatiga.
+5. Audiencias traslapadas que se estan subiendo el CPM entre si.
+6. Campañas atoradas en aprendizaje mas de 14 dias.
+
+ENTREGA
+Una tabla ordenada por gasto desperdiciado, de mayor a menor: que,
+donde (con nombre real, no "conjunto 7"), cuanto se desperdicia, que
+hacer, y ahorro estimado.
+
+Luego totalizalo: "estas perdiendo aproximadamente X al mes en fugas
+arreglables; las 3 acciones principales recuperan Y".
+
+REGLAS
+- Nombres reales, no referencias vagas.
+- No sugieras pausar campañas que sigan en aprendizaje.
+- En traslapes, dime hacia cual conjunto consolidar, no solo que hay
+  traslape.
+- Muestra en que dato te basaste para cada conclusion.</code></pre>
+
+      <h3>3. Escalador de ganadoras</h3>
+
+      <p>Después del primero. Escalar mal es la forma más rápida de arruinar una campaña que funcionaba.</p>
+
+      <pre><code>Identifica mis campañas ganadoras de los ultimos 30 dias y armame un
+plan de escalamiento que no me dispare el costo por adquisicion.
+
+1. LAS GANADORAS. Las 3 mejores por ROAS arriba de mi objetivo, volumen
+   suficiente de conversiones para confiar, y desempeño estable los
+   ultimos 14 dias (no un pico de un dia).
+
+2. POR QUE FUNCIONAN. Por cada una: la audiencia que la esta cargando,
+   el formato y mensaje del creativo, la ubicacion mas eficiente, y
+   cualquier patron de dia u hora en los datos.
+
+3. EL PLAN. Por cada ganadora:
+   - Escalamiento vertical: incremento de presupuesto, maximo 20% cada
+     3 dias, con el calendario dia por dia de las proximas 2 semanas.
+   - Escalamiento horizontal: 2 o 3 conjuntos nuevos donde duplicarla,
+     con audiencias distintas.
+   - Escalamiento creativo: 2 o 3 angulos nuevos partiendo del mensaje
+     ganador.
+   - Expansion geografica o de ubicaciones donde no se diluya.
+
+4. EL CALENDARIO DE 14 DIAS. Dia 1-3 primer aumento mas duplicados;
+   dia 4-7 evaluar y segundo aumento si el costo aguanta; dia 8-14
+   pruebas de creativo y tercer aumento.
+
+REGLAS
+- Nunca mas de 20% de aumento en un solo movimiento: arriba de eso se
+  reinicia el aprendizaje.
+- Muestrame cada cambio antes de aplicarlo. Yo apruebo uno por uno.
+- Si una ganadora solo tiene 7 dias de datos, dime que espere una
+  semana mas.</code></pre>
+
+      <h3>4. Constructor de la primera campaña</h3>
+
+      <p>Para quien nunca ha lanzado. La instrucción clave es que pregunte antes de proponer.</p>
+
+      <pre><code>Quiero lanzar mi primera campaña en Meta Ads. Armamela desde cero. No
+apliques nada todavia: enseñame que construirias, explicame cada
+decision, y crea solo cuando yo apruebe.
+
+PASO 1 — PREGUNTAME, DE UNA EN UNA
+1. ¿Que vendo? ¿Producto, servicio, suscripcion, formulario?
+2. ¿Cuanto cuesta o cual es mi ticket promedio?
+3. ¿Quien es el cliente? Descrimeme una persona, no "mujeres 25-45".
+4. ¿Cual es mi presupuesto mensual?
+5. ¿Cual es mi costo objetivo por resultado?
+6. ¿Que creativo tengo listo?
+7. ¿A donde manda el clic?
+8. ¿El pixel esta instalado y disparando el evento clave?
+
+PASO 2 — PROPON LA CAMPAÑA
+Objetivo (y por que ese), presupuesto diario con razonamiento atado a
+mi costo objetivo, estrategia de puja, 2 o 3 conjuntos de anuncios
+(uno amplio, uno por intereses, y uno de audiencia similar si tengo
+lista de clientes), ubicaciones, y un brief de creativo por conjunto:
+gancho, formato, duracion, tono y llamada a la accion.
+
+PASO 3 — EXPLICAME CADA DECISION en una frase. Quiero aprender, no
+copiar.
+
+PASO 4 — LISTA PREVIA AL LANZAMIENTO. ¿Pixel disparando el evento
+correcto? ¿Limite de gasto diario puesto? ¿Dominio verificado?
+¿Dimensiones del creativo correctas? ¿Parametros de seguimiento en la
+liga?
+
+PASO 5 — PIDEME APROBACION. Enseñame la campaña completa otra vez y
+espera a que yo diga que la lances.
+
+REGLAS
+- Nunca he corrido un anuncio. Lenguaje simple y explica cada sigla la
+  primera vez.
+- No sobreconstruyas: una campaña, maximo 3 conjuntos, maximo 3
+  anuncios por conjunto.
+- Si mi presupuesto es demasiado bajo para aprender algo, dimelo y dame
+  el piso real.</code></pre>
+
+      <h3>5. Briefing diario</h3>
+
+      <p>Programado. Tres minutos al día y ya no se te escapa nada.</p>
+
+      <pre><code>Corre mi briefing diario de Meta Ads. Jala datos de las ultimas 24
+horas y de los ultimos 7 dias.
+
+AYER EN UN VISTAZO: gasto total, resultados, ROAS o costo por
+resultado promedio, y como se compara contra el promedio de 7 dias.
+
+QUE ESTA FUNCIONANDO: las 1 o 2 campañas que estan cargando los
+resultados. Una frase cada una.
+
+QUE SE ROMPIO O SE ESTA DESVIANDO:
+- Cualquier cosa donde el costo por resultado subio mas de 25% contra
+  el promedio de 7 dias.
+- Lo que gasto ayer y dio cero resultados.
+- Lo que salio de fase de aprendizaje, para bien o para mal.
+- Cualquier frecuencia arriba de 4.0.
+
+QUE HAGO HOY: de 1 a 3 acciones concretas, cada una con su impacto
+esperado y si necesita mi aprobacion (por defecto, si).
+
+LOS LUNES ademas: comparativo de 7 dias contra los 7 anteriores.
+
+REGLAS
+- Menos de 200 palabras en un dia normal. Un minuto de lectura.
+- Si todo esta estable, dilo. No inventes tareas.
+- Marca cualquier cosa rara aunque no sepas que significa.</code></pre>
+
+      <h2>El orden de los primeros cuatro días</h2>
+
+      <ol>
+        <li><strong>Día 1:</strong> conectas y corres el prompt 1. Solo audita, no cambies nada.</li>
+        <li><strong>Día 2:</strong> prompt 2 y pausas lo evidente.</li>
+        <li><strong>Día 3:</strong> prompt 3 y escalonas los aumentos a lo largo de dos semanas.</li>
+        <li><strong>Día 4:</strong> dejas el prompt 5 programado y ya no vuelves a abrir el Administrador salvo para aprobar.</li>
+      </ol>
+
+      <h2>Lo que sigue siendo tuyo</h2>
+
+      <p>El conector es muy bueno diagnosticando y bastante malo decidiendo si vale la pena estar en ese mercado. Va a encontrar la fuga de presupuesto, no te va a decir que el problema es que tu oferta no convierte.</p>
+
+      <p>Lo que veo en las cuentas que reviso: la mayor parte del desperdicio no está en la configuración, está en que se está pautando sobre una landing que no cierra. Automatizar la operación de una campaña mala te da una campaña mala con mejor reporteo.</p>
+
+      <p>Empieza por el prompt 2. Es el más rápido, el más barato de correr y el único que casi siempre devuelve dinero el mismo día.</p>
+
+      <p>Para el resto del ecosistema de pauta, revisa <a href="/guias/agente-comprador-de-medios-meta/">el agente comprador de medios de Meta</a> y <a href="/guias/anuncios-con-ia-que-si-rinden/">anuncios con IA que sí rinden</a>.</p>

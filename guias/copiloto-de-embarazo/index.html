@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El copiloto de embarazo hecho en Claude — Guías Flow AI</title>
+  <meta name="description" content="Un tablero vivo de 40 semanas, seguimiento desde el reloj, hojas de una página antes de cada consulta, resúmenes de domingo, y un estimador de cobertura del seguro. Todo en un proyecto." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/copiloto-de-embarazo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El copiloto de embarazo hecho en Claude" />
+  <meta property="og:description" content="Un tablero vivo de 40 semanas, seguimiento desde el reloj, hojas de una página antes de cada consulta, resúmenes de domingo, y un estimador de cobertura del seguro. Todo en un proyecto." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/copiloto-de-embarazo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span></div>
+      <h1>El copiloto de embarazo hecho en Claude</h1>
+      <p class="lead">Un tablero vivo de 40 semanas, seguimiento desde el reloj, hojas de una página antes de cada consulta, resúmenes de domingo, y un estimador de cobertura del seguro. Todo en un proyecto.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Un embarazo genera una cantidad absurda de información dispersa: resultados de laboratorio en PDF, notas de consulta, datos del reloj, correos del seguro, citas que se mueven, y una lista mental de preguntas que se te olvidan justo cuando entras al consultorio.</p>
+
+      <p>Nada de eso es médico. Es administrativo. Y es exactamente el tipo de trabajo que se puede ordenar en un solo proyecto para que llegues a cada consulta con todo junto y en una hoja.</p>
+
+      <p><strong>Esto no diagnostica ni sustituye a un profesional de la salud.</strong> Organiza lo que ya tienes y te ayuda a preguntar mejor. Cualquier cosa que te preocupe va con tu médico, no con un chat. Con eso claro, aquí está el sistema.</p>
+
+      <h2>El proyecto base</h2>
+
+      <p>Crea un proyecto llamado <strong>Pregnancy HQ</strong>. En las instrucciones del proyecto van tus datos: fecha probable de parto, semana actual, tipo de embarazo, condiciones preexistentes y medicamentos, nombre de tu médico y hospital, y qué dispositivo usas si traes reloj o anillo.</p>
+
+      <p>Conecta tres cosas: <strong>Gmail</strong> para los correos del seguro y avisos de laboratorio, <strong>Google Calendar</strong> para las citas, y <strong>Google Drive</strong> con una carpeta donde guardes PDFs de laboratorios, ultrasonidos y documentos del seguro.</p>
+
+      <p>Y agrega esta regla al proyecto, palabra por palabra, antes de cualquier otra cosa:</p>
+
+      <pre><code>Reglas permanentes de este proyecto, sin excepción:
+- Nunca diagnostiques. No nombres condiciones ni sugieras qué podría tener.
+- Nunca recomiendes iniciar, suspender ni cambiar un medicamento o suplemento.
+- Nunca me digas que algo "está bien" o "es normal" como tranquilizante. No tienes forma de saberlo.
+- Nunca interpretes el significado clínico de un resultado de laboratorio. Puedes decirme qué mide y si el valor cae fuera del rango de referencia impreso en el documento, y ahí paras.
+- Tu trabajo es organizar información y ayudarme a formular preguntas para mi médico. Nada más.
+- Si algo de lo que te comparto cae en la lista de señales de alarma, tu única respuesta es decirme que contacte a mi médico o al área de urgencias obstétricas ahora.</code></pre>
+
+      <h2>Los cinco flujos</h2>
+
+      <h3>1. El tablero de 40 semanas</h3>
+
+      <p>Un panel que se actualiza a diario con seis secciones: dónde vas —semana, trimestre, qué está pasando en el desarrollo, qué cambios corporales son propios de esta etapa—; el registro de síntomas de los últimos siete días agrupados por frecuencia, con los nuevos marcados; el resumen de tu dispositivo; tus próximas tres citas sacadas del calendario; las metas del día en hidratación, movimiento y alimentación; y la lista corrida de preguntas para la siguiente consulta.</p>
+
+      <p>Esa última sección es la más valiosa del tablero entero. Es donde anotas la duda de las tres de la mañana para que exista todavía a las diez del día de la cita.</p>
+
+      <h3>2. Los datos del reloj</h3>
+
+      <p>Cada dos semanas pegas el resumen de tu Oura, Apple Watch o Fitbit.</p>
+
+      <pre><code>Te voy a pegar mi resumen de 14 días del dispositivo. Haz cinco cosas y nada más:
+1. Calcula promedios y tendencia de 14 días de cada métrica presente.
+2. Compáralas contra los rangos de referencia de embarazo publicados por fuentes clínicas reconocidas, citando la fuente y la semana en la que estoy. Si no tienes un rango confiable para una métrica, dilo en vez de suponerlo.
+3. Clasifica cada métrica en una de tres categorías: EN RANGO, VALE LA PENA MENCIONARLO, o PREGÚNTALO. No uses ninguna otra etiqueta y no expliques qué significaría clínicamente.
+4. Convierte lo de las categorías 2 y 3 en tres preguntas conversacionales para mi médico, redactadas como yo las diría en voz alta.
+5. Cierra recordándome la lista de señales que requieren atención inmediata.
+
+Mis datos de los últimos 14 días:
+[PEGA AQUÍ]</code></pre>
+
+      <p>Fíjate en el punto 3. La instrucción de no explicar el significado clínico es intencional y es la que mantiene esto del lado seguro de la línea.</p>
+
+      <h3>3. La hoja de una página antes de cada consulta</h3>
+
+      <p>Se genera 24 horas antes y otra vez la mañana de la cita. Máximo 400 palabras, para que quepa en una hoja y la puedas imprimir o leer del teléfono en la sala de espera.</p>
+
+      <pre><code>Arma mi hoja de una página para la consulta de [FECHA]. Máximo 400 palabras, seis secciones:
+1. Dónde voy: semana, trimestre, motivo de la cita, cómo me he sentido en general, y cualquier cambio notable.
+2. Síntomas desde la última consulta, agrupados por frecuencia, con los nuevos en negritas.
+3. Tendencias del dispositivo desde la última consulta, marcando lo que quedó fuera de rango sin interpretarlo.
+4. Resultados de laboratorio o estudios a discutir, tomados de los PDFs de mi carpeta de Drive: nombre del estudio, fecha, qué mide en lenguaje simple, y qué valores quedaron fuera del rango impreso en el documento.
+5. Preguntas para mi médico, priorizadas en tres bloques: las que sí o sí voy a hacer, las que quiero hacer, y las que haría si sobra tiempo. Redactadas como preguntas habladas, no como viñetas.
+6. Logística: cambios del seguro que hayan llegado por correo, dudas de facturación, y qué tengo que llevar.</code></pre>
+
+      <h3>4. El resumen del domingo</h3>
+
+      <p>Un correo semanal de menos de 500 palabras que se guarda en una carpeta de Drive. Cinco secciones: qué pasa esta semana en el desarrollo con una comparación de tamaño; la tendencia de tus datos corporales de los últimos siete días contra los siete anteriores; los síntomas de la semana con lo nuevo o intensificado marcado; las citas y pendientes que vienen, con tres acciones concretas; y tres cosas en las que enfocarte —una de alimentación, una de movimiento, una emocional—.</p>
+
+      <p>Lo bueno del formato semanal es que te deja ver la tendencia, que es lo que un día suelto no te da. Y lo guardado en Drive termina siendo el registro más completo del embarazo, sin que nadie lo haya escrito a propósito.</p>
+
+      <h3>5. El estimador de cobertura y gasto</h3>
+
+      <p>Este es el que menos gente arma y el que más sorpresas evita. Corre los domingos y hace seis cosas: busca en tu correo comprobantes, facturas, avisos de reembolso y estados de cuenta de tu aseguradora; extrae de cada uno el proveedor, la fecha del servicio, la descripción, el monto facturado, lo que cubrió el seguro y lo que te tocó pagar; arma un tablero con el gasto acumulado, lo que llevas de deducible y lo que queda de tope de gastos; proyecta el gasto esperado al momento del parto; te marca de una a tres acciones de ahorro por semana; y cierra con un resumen de cuatro líneas.</p>
+
+      <p>Para la proyección, dale tus propios números: deducible, coeficiente de participación, tope de gastos anual y los rangos que te haya dado tu hospital. No dejes que estime con promedios genéricos de internet, porque no aplican a tu póliza ni a tu país. Y pídele explícitamente que agregue un colchón para lo no previsto: casi ningún parto sale exactamente por lo cotizado.</p>
+
+      <div class="callout-box">
+        <p><strong>Cuándo dejas de escribirle a Claude y le llamas a tu médico:</strong> sangrado, dolor de cabeza intenso, cambios en la visión, hinchazón repentina, disminución de los movimientos del bebé, fiebre, o contracciones antes de la semana 37. Cualquiera de estas, ahora, sin escribir el síntoma en un chat primero. Este sistema sirve para saber qué preguntar, no para saber qué tienes.</p>
+      </div>
+
+      <h2>Por dónde empezar</h2>
+
+      <p>No montes los cinco. Empieza por el tercero, la hoja de una página antes de la consulta.</p>
+
+      <p>Es el que rinde desde la primera vez y el que menos depende de haber acumulado datos. Además es la prueba de si esto te sirve: si llegas a la consulta y sacas todas tus preguntas en vez de acordarte de dos en el estacionamiento, ya valió la pena y puedes agregar los demás.</p>
+
+      <p>Después el tablero semanal, luego el del seguro, y al final el del dispositivo. Ese último lo dejo hasta el final a propósito: es el más entretenido, el que más gente quiere primero, y el que más fácil se convierte en ansiedad si lo miras todos los días.</p>
+
+      <h2>La línea que no hay que cruzar</h2>
+
+      <p>Todo este sistema está construido alrededor de una sola idea: <strong>marca qué preguntar, no qué tienes</strong>.</p>
+
+      <p>Es una distinción incómoda de sostener, porque a las tres de la mañana con un síntoma raro lo que quieres es una respuesta, y la herramienta te va a dar una si se la pides. Va a sonar razonable y puede estar completamente equivocada.</p>
+
+      <p>Por eso las reglas del proyecto van escritas desde el primer día y no se quitan. No están ahí por trámite legal. Están ahí para el momento en que tú, cansada y preocupada, quieras que se quiten.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
