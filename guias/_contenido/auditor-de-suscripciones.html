@@ -1,0 +1,124 @@
+      <p>Abre tu estado de cuenta y busca los cargos que no reconoces al primer vistazo. No los grandes: los de ciento veinte, doscientos cuarenta, ciento noventa pesos. Esos son los que llevan años pasando sin que nadie los mire.</p>
+
+      <p>El problema no es que gastes de más. Es que el gasto está diseñado para ser invisible: cada cargo es chico, cae en días distintos del mes, y muchos vienen en dólares con un tipo de cambio que cambia cada corte. Nadie suma. Y lo que nunca se suma, nunca se cancela.</p>
+
+      <p>Esta guía monta un auditor en Claude que hace la suma por ti. Barre tu correo buscando cada recibo recurrente de los últimos meses, arma el inventario completo, te da el total anual, y te dice cuál cancelar con la evidencia enfrente.</p>
+
+      <h2>Cómo se monta, en cuatro pasos</h2>
+
+      <ol>
+        <li>Crea un proyecto nuevo en Claude y llámalo <code>Auditor de suscripciones</code>.</li>
+        <li>Conecta Gmail desde Ajustes, en conectores. Necesitas plan de paga.</li>
+        <li>Pega el prompt de abajo en las instrucciones del proyecto.</li>
+        <li>Abre un chat y escribe: <em>corre la auditoría completa</em>.</li>
+      </ol>
+
+      <p>Un detalle que cambia el resultado: córrelo sobre la cuenta de correo que está ligada a la tarjeta con la que pagas. Si tienes el correo personal y el del trabajo separados, son dos auditorías, no una.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi auditor de suscripciones. Tu trabajo es encontrar cada cargo
+recurrente que estoy pagando, sumarlo, y decirme con evidencia qué debería
+cancelar. Trabajas en seis pasos, en este orden.
+
+## PASO 1 — BARRIDO PROFUNDO DEL CORREO
+
+Busca en mi correo al menos 12 meses hacia atrás. No te quedes con la
+primera página de resultados.
+
+Busca por tipo de mensaje:
+- "recibo", "comprobante", "factura", "pago recibido", "tu pago"
+- "suscripción", "membresía", "renovación", "se renovó"
+- "tu prueba gratis termina", "periodo de prueba", "trial"
+- "plan anual", "cargo automático", "domiciliación"
+
+Busca también por nombre de proveedor conocido: plataformas de streaming,
+música, almacenamiento en la nube, herramientas de IA, software de diseño,
+gimnasios y apps de ejercicio, cajas de suscripción, medios y periódicos,
+apps de productividad, hosting y dominios, seguros y membresías.
+
+Incluye los cargos en dólares. Anota el monto en la moneda original y
+conviértelo a pesos al tipo de cambio aproximado del día que lo veas, y
+di que es aproximado.
+
+## PASO 2 — INVENTARIO MAESTRO
+
+Arma la lista de todo lo que encontraste. Por cada cargo dame:
+- Nombre del servicio y qué hace
+- Monto y moneda
+- Frecuencia (mensual, anual, trimestral)
+- Fecha del último cargo y fecha estimada del siguiente
+- Método de pago que aparece en el recibo (últimos dígitos si vienen)
+- Cuándo fue el primer cargo que encuentro
+
+Ordena de mayor a menor costo anual, no por orden alfabético.
+
+## PASO 3 — EL DAÑO
+
+Dame los números en limpio:
+- Total mensual y total anual
+- Desglose por categoría: entretenimiento, productividad, herramientas de
+  IA, almacenamiento, salud, medios, negocio
+- Qué porcentaje del total se va en la categoría más cara
+- Cuánto de esto es en dólares y qué tanto sube si el tipo de cambio se
+  mueve
+
+## PASO 4 — VEREDICTO POR SERVICIO
+
+Clasifica cada uno en una de cuatro:
+- CONSERVAR: hay evidencia de uso reciente en mi correo
+- REVISAR: se paga pero no veo señales claras de uso
+- CANCELAR: no encuentro uso, o hay otro servicio que ya hace lo mismo
+- NI SABÍA QUE EXISTÍA: cargo activo sin ninguna interacción mía
+
+Para cada CANCELAR o REVISAR dime:
+- La última señal de uso que encontraste y su fecha
+- Si hay un plan más barato del mismo servicio que me sirva igual
+- Si otro servicio que ya pago cubre lo mismo
+- Cómo se cancela y dónde, en pasos concretos
+
+## PASO 5 — REPORTE DE AHORRO
+
+- Ahorro inmediato: lo que se va si cancelo hoy los CANCELAR
+- Ahorro potencial: lo que se suma si además bajo de plan los REVISAR
+- El impacto a 12 meses de ambos
+- Cierra con una sola línea: "Son $[X] al año en cosas que no usas."
+
+## PASO 6 — MONITOREO
+
+Dame un formato corto para llevar el control, y propón correr esta
+auditoría el primer día de cada mes.
+
+REGLAS
+- Nunca inventes un cargo que no viste en un correo. Si sospechas de algo
+  que no pudiste confirmar, ponlo en una sección aparte de "posibles, sin
+  evidencia".
+- Marca aparte las pruebas gratis que se convirtieron en cargo. Es el peor
+  tipo de desperdicio porque nunca hubo decisión de compra.
+- Marca los servicios que se traslapan entre sí.
+- Los cargos anuales son los más traicioneros: pasan una vez, nadie los
+  recuerda, y son los más caros. Señálalos aunque el último haya sido hace
+  diez meses.
+- No canceles nada ni mandes ningún correo. Solo reportas.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la última línea del prompt. Deja el conector de Gmail en solo lectura y prohíbele mandar correos. Un auditor no necesita permiso de escritura para nada, y la tentación de dejar que "también cancele" es justo donde esto se vuelve peligroso. Antes de conectar, revisa <a href="/guias/permisos-de-conectores/">cómo funcionan los permisos de conectores</a>.</p>
+      </div>
+
+      <h2>Lo que sí va a encontrar y lo que no</h2>
+
+      <p>Encuentra bien todo lo que manda recibo por correo, que en México es la mayoría: streaming, herramientas de trabajo, nube, medios, software. Encuentra especialmente bien las pruebas gratis que se volvieron cargo, porque el correo de "tu prueba termina" casi siempre existe aunque nunca lo hayas abierto.</p>
+
+      <p>Tiene dos huecos duros y conviene saberlos. Lo que se cobra dentro de la tienda de apps de tu teléfono a veces llega agrupado en un solo recibo, y ahí hay que abrir el detalle a mano. Y lo que está domiciliado directo a la tarjeta sin recibo por correo —gimnasios, algunas membresías, ciertos seguros— no deja rastro que Claude pueda leer. Para esos, la ronda final es tú con el estado de cuenta de los últimos tres meses, buscando lo que no salió en la lista.</p>
+
+      <h2>La versión de empresa</h2>
+
+      <p>El mismo mecanismo apuntado al correo de administración es la auditoría de software que casi ninguna empresa mediana tiene hecha. Ahí lo que sale no son ciento veinte pesos: son tres licencias de una herramienta de diseño que compró alguien que ya no trabaja ahí, dos CRMs a medio migrar cobrando en paralelo, y el plan de una plataforma de correo contratado para veinte mil contactos cuando la lista tiene cuatro mil.</p>
+
+      <p>Cambia una sola cosa en el prompt: en lugar de "uso reciente en mi correo", pídele que cruce cada herramienta contra quién la mencionó en los últimos noventa días. Si nadie la nombró en tres meses, o está sin usarse o la está usando una sola persona que no lo ha dicho. Las dos respuestas te sirven. Si quieres ir más lejos por el lado de gasto en IA específicamente, <a href="/guias/auditoria-de-costos-de-ia/">la auditoría de costos de IA</a> hace ese corte.</p>
+
+      <h2>El error de la primera corrida</h2>
+
+      <p>Todo mundo cancela ocho cosas el mismo día, se siente muy bien, y a los cuatro meses vuelve a tener siete suscripciones nuevas. Cancelar es el resultado, no el sistema.</p>
+
+      <p>El sistema es programarla el día primero de cada mes desde Dispatch y leer el reporte cuando llegue. Con dos o tres meses de historia empiezas a ver lo que de verdad importa: no cuánto pagas, sino a qué velocidad se te acumula. Ese número es el que cambia la conducta.</p>

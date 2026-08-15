@@ -111,6 +111,18 @@ def desactiva_links_pendientes(cuerpo, publicados):
     return re.sub(r'<a href="/guias/([^/"]+)/"[^>]*>(.*?)</a>', resuelve, cuerpo, flags=re.S)
 
 
+def minutos_de_lectura(cuerpo):
+    """Minutos calculados del texto real, no del plan.
+
+    El `min` del catálogo es una estimación hecha antes de escribir, y varias
+    guías terminaron bastante más largas. Anunciar los minutos planeados sería
+    decirle al lector algo que no se cumple, así que se cuentan las palabras.
+    150 por minuto: ritmo conservador para texto con prompts y bloques de código.
+    """
+    palabras = len(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", cuerpo)).split())
+    return max(1, round(palabras / 150))
+
+
 def relacionadas(guia, publicadas):
     """Dos guías publicadas que compartan tema, más el link a la biblioteca."""
     temas = set(guia["topic"])
@@ -151,6 +163,7 @@ def main():
         cuerpo = desactiva_links_pendientes(cuerpo, publicados)
         apagados += vivos - len(re.findall(r'<a href="/guias/', cuerpo))
         desc = guia["desc"]
+        minutos = minutos_de_lectura(cuerpo)
 
         tags = "".join(
             f'<span class="tag">{HERRAMIENTAS[t]}</span>' for t in guia["tool"]
@@ -165,7 +178,7 @@ def main():
             ("{{DESC}}", escapa(desc)),
             ("{{SEO}}", escapa(guia.get("seo", desc))),
             ("{{LEAD}}", guia.get("lead", desc)),
-            ("{{MIN}}", str(guia.get("min", 8))),
+            ("{{MIN}}", str(minutos)),
             ("{{CRUMB}}", TEMAS[guia["topic"][0]]),
             ("{{TAGS}}", tags),
             ("{{RELACIONADAS}}", relacionadas(guia, publicadas)),
@@ -182,6 +195,12 @@ def main():
         (destino / "index.html").write_text(pagina, encoding="utf-8")
 
     # Datos para el índice
+    minutos = {
+        g["slug"]: minutos_de_lectura(
+            (dir_contenido / f"{g['slug']}.html").read_text(encoding="utf-8")
+        )
+        for g in publicadas
+    }
     datos = [
         {
             "slug": g["slug"],
@@ -190,8 +209,8 @@ def main():
             "badge": g.get("badge", ""),
             "tool": g["tool"],
             "topic": g["topic"],
-            "min": g.get("min", 8),
-            "meta": f'{g.get("min", 8)} min · {HERRAMIENTAS[g["tool"][0]]}',
+            "min": minutos[g["slug"]],
+            "meta": f'{minutos[g["slug"]]} min · {HERRAMIENTAS[g["tool"][0]]}',
         }
         for g in publicadas
     ]

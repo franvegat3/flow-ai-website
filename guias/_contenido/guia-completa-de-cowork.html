@@ -1,0 +1,95 @@
+      <p>Casi todo el que abre Cowork por primera vez hace lo mismo: le escribe una pregunta, como si fuera el chat de siempre. Recibe una respuesta correcta, se encoge de hombros y no vuelve. Concluye que es lo mismo con otra pestaña.</p>
+
+      <p>No es lo mismo. Es una herramienta distinta que se abre desde el mismo lugar, y esa cercanía es justo lo que confunde. El chat te da texto que tú aplicas. Cowork abre tus archivos, los modifica y te avisa cuando terminó.</p>
+
+      <p>Esta guía es el mapa completo: qué es, qué no es, qué necesitas para prenderlo, dónde están los límites duros —que sí los hay— y cómo se mete en un equipo que ya está operando sin que se vuelva un juguete de una sola persona.</p>
+
+      <h2>Qué es Cowork, en una frase</h2>
+
+      <p>Cowork es un agente que corre en la aplicación de escritorio de Claude, trabaja sobre una carpeta real de tu computadora y ejecuta el encargo completo en lugar de decirte cómo hacerlo.</p>
+
+      <p>La diferencia práctica se ve en el verbo que usas. En el chat pides "explícame", "escríbeme", "dame". En Cowork pides "ordena", "renombra", "genera los doce archivos", "revisa la carpeta y dime qué falta". El resultado no llega a la pantalla: llega a tu disco.</p>
+
+      <h2>Las tres cosas que lo separan del chat</h2>
+
+      <p><strong>Uno: archivos de verdad.</strong> Le señalas una carpeta y a partir de ahí lee, escribe, crea, mueve y borra dentro de ella. No es un adjunto que sube y desaparece. Es acceso continuo mientras dure la sesión.</p>
+
+      <p><strong>Dos: trabajo en paralelo.</strong> Puedes lanzar varios encargos independientes y correr al mismo tiempo, en vez de esperar a que termine uno para pedir el siguiente. Eso cambia por completo cómo repartes tu mañana; lo desarrollo en <a href="/guias/tareas-en-paralelo-en-cowork/">esta otra guía</a>.</p>
+
+      <p><strong>Tres: tareas programadas.</strong> Un encargo se puede dejar corriendo en calendario —diario, semanal, mensual— y encontrarte el resultado hecho. Ahí es donde deja de ser una herramienta que usas y se vuelve infraestructura que ya está puesta.</p>
+
+      <h2>Cowork no es Claude Code, y la diferencia importa</h2>
+
+      <p>Se confunden porque comparten motor. La distinción que uso al explicárselo a un equipo: Claude Code vive en la terminal y está hecho para gente que escribe código o construye sistemas. Cowork vive en una ventana con botones y está hecho para el trabajo de conocimiento —documentos, reportes, correos, hojas, presentaciones.</p>
+
+      <p>Si en tu empresa el área comercial pregunta cuál instalar, la respuesta casi siempre es Cowork. Si el que pregunta es el que mantiene los scripts, es Claude Code. No compiten: resuelven trabajos distintos con la misma cabeza.</p>
+
+      <h2>Lo que necesitas antes de abrirlo</h2>
+
+      <ol>
+        <li><strong>Un plan de pago.</strong> Cowork está disponible para Pro, Max, Team y Enterprise. En plan gratuito no aparece la pestaña.</li>
+        <li><strong>La aplicación de escritorio.</strong> Se descarga en <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a>. Funciona en Mac y en Windows de 64 bits; si tu máquina Windows es de arquitectura ARM, revisa antes de perder la tarde.</li>
+        <li><strong>Una carpeta dedicada.</strong> Esto es lo que más gente se salta. No le apuntes a Documentos ni al Escritorio completo: crea una carpeta por proyecto y trabaja ahí. Reduce el radio de daño y mejora los resultados, porque todo lo que ve es relevante.</li>
+        <li><strong>Los conectores que sí usas.</strong> En ajustes conectas Gmail, Google Drive, Slack, Notion y compañía. Toma menos de un minuto por cuenta. Conecta tres, no doce.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedirle el plan antes de que ejecute. Una línea al final del encargo —"muéstrame tu plan antes de empezar"— y revisas cinco renglones en vez de deshacer media hora de trabajo mal encaminado. En la primera semana con una carpeta nueva, esa línea no es opcional.</p>
+      </div>
+
+      <h2>Los cuatro límites duros</h2>
+
+      <p>Ninguno es un defecto de diseño. Son la consecuencia de que esto corre en tu máquina, y conviene saberlos antes de prometerle algo a alguien.</p>
+
+      <p><strong>La aplicación tiene que estar abierta.</strong> Si cierras Claude o la computadora se duerme, el encargo se detiene. Para trabajos largos, desactiva el suspender automático. Una tarea programada que caía mientras la máquina dormía no se pierde: corre en cuanto vuelves a abrir la aplicación, pero llega tarde.</p>
+
+      <p><strong>No hay memoria entre sesiones.</strong> Cada encargo empieza en blanco. Lo que Claude sabe de tu proyecto es lo que esté escrito en archivos dentro de la carpeta. Por eso la práctica que más rinde es dejar un <code>contexto-del-proyecto.md</code> en la raíz con quién eres, qué se está construyendo y cómo se entregan las cosas. Ese archivo es tu memoria, y hay toda una estructura de tres niveles atrás de esa idea: está en <a href="/guias/jerarquia-de-control-de-claude/">la jerarquía de control</a>.</p>
+
+      <p><strong>Consume más cuota que el chat.</strong> Un agente que lee veinte archivos, decide y escribe otros diez gasta bastante más que una pregunta suelta. Conviene juntar el trabajo relacionado en un solo encargo en vez de lanzar quince pequeños, y revisar el consumo en ajustes las primeras semanas.</p>
+
+      <p><strong>Los cambios son reales.</strong> Puede borrar. Puede sobrescribir. Trabajar sobre una carpeta que ya está en un repositorio o en un servicio con versiones te da red de seguridad gratis. Si la carpeta no tiene respaldo, ponlo antes del primer encargo grande, no después del primer susto.</p>
+
+      <h2>El emparejamiento con Chrome</h2>
+
+      <p>Cowork se mueve bien en archivos y mal en navegador. La extensión de Claude para Chrome cubre el otro lado: llenar formularios, moverse en un portal, sacar información de una herramienta que no tiene conector.</p>
+
+      <p>El patrón que funciona es repartirlo. El navegador saca los datos de la plataforma que no expone nada; Cowork toma esos datos, los cruza con lo que ya está en la carpeta y produce el entregable. Intentar que Cowork navegue por ti es pelearte con la herramienta equivocada.</p>
+
+      <h2>Los conectores, y por qué menos es más</h2>
+
+      <p>Un conector es el acceso a una de tus herramientas: el correo, el Drive, el Slack, el Notion. Se autorizan uno por uno desde ajustes y cada uno tarda menos de un minuto.</p>
+
+      <p>La tentación es conectar todo el primer día para "que tenga todo". Es mala idea por dos razones. La primera es de seguridad: cada conector es una llave que estás entregando, y hay cuentas de trabajo donde eso no lo decides tú solo. La segunda es práctica: con demasiadas fuentes abiertas, un encargo ambiguo se va a buscar contexto a lugares que no tienen nada que ver y la respuesta sale diluida.</p>
+
+      <p>La regla que aplico: conecta el correo y el almacenamiento de archivos primero, porque son los que más veces aparecen en un encargo real. Todo lo demás, solo cuando ya tengas un encargo específico que lo necesite. Si a la semana no lo usaste, quítalo.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de conectar el correo de la empresa:</strong> pregunta. En organizaciones con área de sistemas, autorizar un conector sobre la cuenta corporativa no es una decisión personal, y descubrirlo después de haberlo hecho es una conversación incómoda. Conecta primero una cuenta tuya, prueba el flujo, y lleva el caso ya funcionando.</p>
+      </div>
+
+      <h2>Cómo se implanta en un equipo, sin que muera al mes</h2>
+
+      <p>He visto el mismo arco tres veces: entusiasmo, dos semanas de encargos espectaculares y luego silencio. Casi siempre falla por lo mismo, así que este es el orden que ahora recomiendo.</p>
+
+      <ol>
+        <li><strong>Semana 1, una persona y un proceso.</strong> No el equipo completo. Alguien con un proceso semanal aburrido y verificable: el reporte de cierre, la conciliación, el resumen de tickets. Que lo corra a mano una vez y con Cowork la siguiente.</li>
+        <li><strong>Semana 2, los archivos de contexto.</strong> Esa persona escribe qué es la empresa, cómo se escriben las cosas y cómo se entrega. Sin eso, cada sesión empieza explicando lo mismo y nadie aguanta.</li>
+        <li><strong>Semana 3, la primera tarea programada.</strong> Una. La que a nadie le gusta hacer los lunes. Cuando el equipo ve un entregable que apareció solo, la conversación cambia de tono.</li>
+        <li><strong>Semana 4, se replica.</strong> Ahora sí entra la segunda persona, y entra copiando la carpeta y los archivos de contexto de la primera, no empezando de cero.</li>
+      </ol>
+
+      <p>Un ejemplo concreto de operación real: en un equipo comercial, la carpeta trae las notas de llamada exportadas, la lista de cuentas y el documento con la propuesta de valor. El encargo programado de los lunes lee las llamadas de la semana anterior, actualiza un archivo por cuenta con lo que se prometió y qué falta, y deja un solo documento con las cinco cuentas que llevan más días sin movimiento. Nadie lo pidió esa mañana. Ya estaba ahí.</p>
+
+      <h2>Qué le encargo y qué no</h2>
+
+      <p>Le encargo lo que tiene entrada clara, salida clara y criterio repetible: ordenar y renombrar, convertir de un formato a otro, extraer datos de un montón de documentos, redactar contra una plantilla, comparar dos versiones, preparar el material de una junta.</p>
+
+      <p>No le encargo lo que depende de una decisión que solo tú puedes tomar, ni lo que toca sistemas de producción, ni lo que no puedes verificar en menos tiempo del que te ahorró. Esa última regla es la más útil: si revisar la salida te cuesta más que hacerlo tú, ese encargo no era para Cowork.</p>
+
+      <p>Cuando ya te sientas cómodo, el siguiente paso es dejar de dar instrucciones sueltas y empezar a empaquetarlas. Los comandos que uso a diario están en <a href="/guias/30-comandos-de-cowork/">esta lista</a>, y los plugins que instalan un área completa de golpe, en <a href="/guias/plugins-cowork/">esta otra</a>.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Pedir demasiado en el primer encargo. La tentación es abrir Cowork, apuntarle a la carpeta donde vive todo y decirle "ordena esto". Sale mal, y el veredicto queda: no sirve.</p>
+
+      <p>Lo que sí funciona es al revés. Una carpeta pequeña, un encargo aburrido, una salida que puedas revisar en dos minutos. Cuando eso corre limpio tres veces, subes el tamaño. La confianza en un agente no se declara, se acumula.</p>

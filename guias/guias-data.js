@@ -44,8 +44,8 @@ window.GUIAS = [
    "skills",
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "mentor-ia-que-no-te-da-la-razon",
@@ -60,8 +60,8 @@ window.GUIAS = [
    "skills",
    "negocio"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-sistemas-de-ia-para-tu-vida",
@@ -76,8 +76,8 @@ window.GUIAS = [
    "productividad",
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "arquitecto-de-tu-setup-de-ia",
@@ -108,8 +108,8 @@ window.GUIAS = [
    "agentes",
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "un-link-instala-todo-tu-setup",
@@ -185,8 +185,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · ChatGPT"
+  "min": 9,
+  "meta": "9 min · ChatGPT"
  },
  {
   "slug": "setup-de-chatgpt-en-5-pasos",
@@ -214,8 +214,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "limpieza-de-contexto",
@@ -230,8 +230,8 @@ window.GUIAS = [
    "prompts",
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "medio-tiempo-de-la-ia-2026",
@@ -246,8 +246,8 @@ window.GUIAS = [
    "novedades",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-negocios-de-ia-para-hoy",
@@ -261,8 +261,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "todos-los-recursos-de-ia",
@@ -277,8 +277,8 @@ window.GUIAS = [
    "empezar",
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "plantilla-de-guardrails-para-agentes",
@@ -292,8 +292,8 @@ window.GUIAS = [
   "topic": [
    "agentes"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "metodo-sandwich-15-tareas",
@@ -323,8 +323,8 @@ window.GUIAS = [
    "skills",
    "novedades"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "salud-en-chatgpt",
@@ -337,8 +337,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · ChatGPT"
+  "min": 8,
+  "meta": "8 min · ChatGPT"
  },
  {
   "slug": "opus-5-vs-fable-5",
@@ -351,8 +351,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "stack-de-ia-que-reemplaza-tu-saas",
@@ -367,8 +367,8 @@ window.GUIAS = [
    "negocio",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "18-prompts-de-una-linea",
@@ -413,8 +413,8 @@ window.GUIAS = [
    "agentes",
    "automatizacion"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "nuevo-en-claude-parte-2",
@@ -427,8 +427,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "tres-modos-de-chatgpt",
@@ -472,8 +472,8 @@ window.GUIAS = [
    "creativo",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "construir-criterio-con-ia",
@@ -504,8 +504,8 @@ window.GUIAS = [
    "productividad",
    "empezar"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "5-actualizaciones-que-te-perdiste",
@@ -579,8 +579,8 @@ window.GUIAS = [
    "novedades",
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "tiempo-de-pantalla-de-tu-ia",
@@ -609,8 +609,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-sitios-para-mejor-diseno",
@@ -668,8 +668,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "configurar-claude-en-un-dia",
@@ -682,8 +682,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "10-terminos-de-ia",
@@ -696,8 +696,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-formas-de-ahorrar-dinero",
@@ -711,8 +711,8 @@ window.GUIAS = [
    "productividad",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "10-certificaciones-gratis-de-ia",
@@ -725,8 +725,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-habilidades-que-valen-mas-que-un-titulo",
@@ -754,8 +754,8 @@ window.GUIAS = [
    "productividad",
    "creativo"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-5",
@@ -769,8 +769,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "skill-de-criterio",
@@ -812,8 +812,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "skill-workflow-o-agente",
@@ -842,8 +842,8 @@ window.GUIAS = [
    "ventas",
    "skills"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "equipo-de-agentes-que-trabaja-de-noche",
@@ -871,8 +871,8 @@ window.GUIAS = [
   "topic": [
    "ventas"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "auditar-tus-google-ads",
@@ -914,8 +914,8 @@ window.GUIAS = [
   "topic": [
    "skills"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "tres-movimientos-con-tu-mejor-modelo",
@@ -929,8 +929,8 @@ window.GUIAS = [
    "prompts",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "prompting-para-fable-5",
@@ -944,8 +944,8 @@ window.GUIAS = [
    "prompts",
    "novedades"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "manual-de-seguridad-con-ia",
@@ -959,8 +959,8 @@ window.GUIAS = [
    "empezar",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "no-quemar-tu-limite-de-uso",
@@ -974,8 +974,8 @@ window.GUIAS = [
    "productividad",
    "agentes"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "salvar-el-contexto-de-tu-chat",
@@ -989,8 +989,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 6,
-  "meta": "6 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "claude-design-esta-subestimado",
@@ -1003,8 +1003,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "claude-sonnet-5-a-fondo",
@@ -1017,8 +1017,8 @@ window.GUIAS = [
   "topic": [
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "3-movimientos-para-que-te-contraten",
@@ -1031,8 +1031,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-roles-que-reemplazan-los-puestos",
@@ -1046,8 +1046,8 @@ window.GUIAS = [
    "carrera",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "herramienta-de-impuestos-en-claude",
@@ -1061,8 +1061,8 @@ window.GUIAS = [
    "productividad",
    "negocio"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "app-de-dinero-inteligente",
@@ -1105,8 +1105,8 @@ window.GUIAS = [
    "prompts",
    "agentes"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "empresa-de-un-millon-con-ia",
@@ -1120,8 +1120,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "manual-de-agentes-de-anthropic",
@@ -1134,8 +1134,8 @@ window.GUIAS = [
   "topic": [
    "agentes"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "como-usa-claude-code-el-equipo-de-anthropic",
@@ -1149,8 +1149,8 @@ window.GUIAS = [
    "agentes",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Claude Code"
+  "min": 12,
+  "meta": "12 min · Claude Code"
  },
  {
   "slug": "8-prompts-para-tu-plan-de-riqueza",
@@ -1165,8 +1165,8 @@ window.GUIAS = [
    "prompts",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 17,
+  "meta": "17 min · Claude"
  },
  {
   "slug": "claude-tag-en-slack",
@@ -1180,8 +1180,8 @@ window.GUIAS = [
    "productividad",
    "automatizacion"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "el-archivo-mas-importante-de-claude-code",
@@ -1195,8 +1195,8 @@ window.GUIAS = [
    "prompts",
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Claude Code"
+  "min": 11,
+  "meta": "11 min · Claude Code"
  },
  {
   "slug": "7-formas-de-controlar-claude-code",
@@ -1210,8 +1210,8 @@ window.GUIAS = [
    "prompts",
    "agentes"
   ],
-  "min": 10,
-  "meta": "10 min · Claude Code"
+  "min": 12,
+  "meta": "12 min · Claude Code"
  },
  {
   "slug": "3-loops-de-ia-que-vale-la-pena-robar",
@@ -1256,8 +1256,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "agente-o-workflow",
@@ -1287,8 +1287,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "tu-loop-de-aprendizaje-con-ia",
@@ -1301,8 +1301,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "plan-odisea-tres-futuros",
@@ -1315,8 +1315,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "ejercicio-de-vision-vivida",
@@ -1329,8 +1329,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "convierte-cualquier-guia-en-skill",
@@ -1344,8 +1344,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "estas-usando-claude-en-el-lugar-equivocado",
@@ -1374,8 +1374,8 @@ window.GUIAS = [
    "novedades",
    "negocio"
   ],
-  "min": 7,
-  "meta": "7 min · Gemini"
+  "min": 8,
+  "meta": "8 min · Gemini"
  },
  {
   "slug": "3-prompts-contra-las-alucinaciones",
@@ -1388,8 +1388,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "skill-de-investigacion-ultimos-30-dias",
@@ -1432,8 +1432,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-skills-para-la-vida-en-pareja",
@@ -1478,8 +1478,8 @@ window.GUIAS = [
    "skills",
    "empezar"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "anatomia-del-prompt-perfecto",
@@ -1521,8 +1521,8 @@ window.GUIAS = [
    "empezar",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-skills-que-corren-mi-contenido",
@@ -1536,8 +1536,8 @@ window.GUIAS = [
    "contenido",
    "skills"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "mi-equipo-de-ia",
@@ -1567,8 +1567,8 @@ window.GUIAS = [
    "productividad",
    "empezar"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "ingenieria-de-loops",
@@ -1671,8 +1671,8 @@ window.GUIAS = [
    "productividad",
    "prompts"
   ],
-  "min": 12,
-  "meta": "12 min · Claude"
+  "min": 14,
+  "meta": "14 min · Claude"
  },
  {
   "slug": "como-usar-fable-5",
@@ -1686,8 +1686,8 @@ window.GUIAS = [
    "novedades",
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "15-libros-que-me-cambiaron-la-cabeza",
@@ -1701,8 +1701,8 @@ window.GUIAS = [
    "negocio",
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "6-ajustes-de-claude-code",
@@ -1776,8 +1776,8 @@ window.GUIAS = [
    "agentes",
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Claude Code"
+  "min": 7,
+  "meta": "7 min · Claude Code"
  },
  {
   "slug": "agente-de-negocio-de-meta",
@@ -1836,8 +1836,8 @@ window.GUIAS = [
    "negocio",
    "contenido"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "asistente-familiar-en-claude",
@@ -1893,8 +1893,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "ingeniero-de-contexto",
@@ -1923,8 +1923,8 @@ window.GUIAS = [
    "novedades",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · ChatGPT"
+  "min": 9,
+  "meta": "9 min · ChatGPT"
  },
  {
   "slug": "kit-de-fundador-en-claude",
@@ -1952,8 +1952,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "tutor-que-no-da-la-respuesta",
@@ -1997,8 +1997,8 @@ window.GUIAS = [
    "agentes",
    "empezar"
   ],
-  "min": 7,
-  "meta": "7 min · Claude Code"
+  "min": 8,
+  "meta": "8 min · Claude Code"
  },
  {
   "slug": "pronostico-de-inventario-con-ia",
@@ -2012,8 +2012,8 @@ window.GUIAS = [
    "negocio",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 13,
+  "meta": "13 min · Claude"
  },
  {
   "slug": "hoja-de-referencia-opus-4-8",
@@ -2026,8 +2026,8 @@ window.GUIAS = [
   "topic": [
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "workflows-dinamicos-de-claude-code",
@@ -2086,8 +2086,8 @@ window.GUIAS = [
    "productividad",
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Claude Code"
+  "min": 8,
+  "meta": "8 min · Claude Code"
  },
  {
   "slug": "plantilla-de-claude-md",
@@ -2115,8 +2115,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "10-codigos-de-claude-que-si-funcionan",
@@ -2129,8 +2129,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "agentes-que-operan-en-la-bolsa",
@@ -2188,8 +2188,8 @@ window.GUIAS = [
    "contenido",
    "negocio"
   ],
-  "min": 11,
-  "meta": "11 min · Multi-herramienta"
+  "min": 12,
+  "meta": "12 min · Multi-herramienta"
  },
  {
   "slug": "claude-para-temas-legales",
@@ -2203,8 +2203,8 @@ window.GUIAS = [
    "negocio",
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "5-tableros-escondidos-en-tu-correo",
@@ -2233,8 +2233,8 @@ window.GUIAS = [
    "prompts",
    "negocio"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "no-volver-a-topar-tu-limite-semanal",
@@ -2322,8 +2322,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
  },
  {
   "slug": "diccionario-de-terminos-de-ia",
@@ -2396,8 +2396,8 @@ window.GUIAS = [
    "ventas",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "anuncios-con-ia-que-si-rinden",
@@ -2442,8 +2442,8 @@ window.GUIAS = [
    "automatizacion",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "manual-de-fundador-de-anthropic",
@@ -2456,8 +2456,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "revision-antes-de-conectar-datos-sensibles",
@@ -2500,8 +2500,8 @@ window.GUIAS = [
    "prompts",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "que-claude-se-audite-sobre-ti",
@@ -2561,8 +2561,8 @@ window.GUIAS = [
    "negocio",
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Cowork"
+  "min": 8,
+  "meta": "8 min · Cowork"
  },
  {
   "slug": "10-proyectos-de-github",
@@ -2576,8 +2576,8 @@ window.GUIAS = [
    "automatizacion",
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "claude-en-5-pasos-para-principiantes",
@@ -2590,8 +2590,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "ingeniero-desplegado-al-frente",
@@ -2604,8 +2604,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "empezar-con-un-agente-de-codex",
@@ -2619,8 +2619,8 @@ window.GUIAS = [
    "empezar",
    "agentes"
   ],
-  "min": 9,
-  "meta": "9 min · ChatGPT"
+  "min": 8,
+  "meta": "8 min · ChatGPT"
  },
  {
   "slug": "3-tableros-desde-tus-datos-de-cliente",
@@ -2634,8 +2634,8 @@ window.GUIAS = [
    "negocio",
    "creativo"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 13,
+  "meta": "13 min · Multi-herramienta"
  },
  {
   "slug": "5-skills-para-cerebros-con-tdah",
@@ -2649,8 +2649,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "reset-de-domingo-en-60-minutos",
@@ -2663,8 +2663,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "archivo-sobre-mi",
@@ -2692,8 +2692,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "6-papers-de-ia",
@@ -2707,8 +2707,8 @@ window.GUIAS = [
    "novedades",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "kit-para-arrancar-en-consultoria-de-ia",
@@ -2736,8 +2736,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 7,
-  "meta": "7 min · Multi-herramienta"
+  "min": 6,
+  "meta": "6 min · Multi-herramienta"
  },
  {
   "slug": "planear-una-boda-con-claude",
@@ -2751,8 +2751,8 @@ window.GUIAS = [
    "productividad",
    "creativo"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 13,
+  "meta": "13 min · Claude"
  },
  {
   "slug": "copiloto-de-embarazo",
@@ -2765,8 +2765,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "reservar-vuelos-y-hoteles",
@@ -2811,8 +2811,8 @@ window.GUIAS = [
    "empezar",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "10-plugins-que-reemplazan-departamentos",
@@ -2827,8 +2827,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Cowork"
+  "min": 9,
+  "meta": "9 min · Cowork"
  },
  {
   "slug": "10-puestos-de-ia-para-este-ano",
@@ -2841,8 +2841,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 11,
-  "meta": "11 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "fluidez-con-ia-en-7-dias",
@@ -2856,8 +2856,8 @@ window.GUIAS = [
    "empezar",
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "glosario-de-ia",
@@ -2886,8 +2886,8 @@ window.GUIAS = [
    "negocio",
    "automatizacion"
   ],
-  "min": 9,
-  "meta": "9 min · Cowork"
+  "min": 8,
+  "meta": "8 min · Cowork"
  },
  {
   "slug": "es-seguro-conectar-tus-herramientas",
@@ -2901,8 +2901,8 @@ window.GUIAS = [
    "empezar",
    "negocio"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "la-skill-que-construye-tus-skills",
@@ -2975,8 +2975,8 @@ window.GUIAS = [
    "pauta",
    "creativo"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "5-cambios-de-claude-4-7",
@@ -2990,8 +2990,8 @@ window.GUIAS = [
    "prompts",
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "niebla-de-ia",
@@ -3004,8 +3004,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "agente-para-tu-email-marketing",
@@ -3019,8 +3019,8 @@ window.GUIAS = [
    "ventas",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "socio-fundador-de-ia",
@@ -3050,8 +3050,8 @@ window.GUIAS = [
    "skills",
    "contenido"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "publicar-mejor-no-mas",
@@ -3065,8 +3065,8 @@ window.GUIAS = [
   "topic": [
    "contenido"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "marco-60-30-10",
@@ -3080,8 +3080,8 @@ window.GUIAS = [
    "productividad",
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
  },
  {
   "slug": "agentes-que-se-vigilan-solos",
@@ -3095,8 +3095,8 @@ window.GUIAS = [
    "agentes",
    "novedades"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "conector-de-meta-en-claude",
@@ -3111,8 +3111,8 @@ window.GUIAS = [
    "pauta",
    "automatizacion"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "la-ia-esta-matando-el-scroll",
@@ -3126,8 +3126,8 @@ window.GUIAS = [
    "carrera",
    "contenido"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
  },
  {
   "slug": "semana-de-la-ia-financiera",
@@ -3142,8 +3142,8 @@ window.GUIAS = [
    "novedades",
    "negocio"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "seguros-para-ia",
@@ -3156,8 +3156,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 10,
+  "meta": "10 min · Multi-herramienta"
  },
  {
   "slug": "prompt-viral-de-honestidad",
@@ -3171,8 +3171,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 7,
-  "meta": "7 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "3-mil-al-mes-con-las-otras-plataformas",
@@ -3186,8 +3186,8 @@ window.GUIAS = [
    "negocio",
    "contenido"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 10,
+  "meta": "10 min · Multi-herramienta"
  },
  {
   "slug": "youtube-sin-cara-bien-hecho",
@@ -3202,8 +3202,8 @@ window.GUIAS = [
    "contenido",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "manual-del-creador-de-contenido-de-ia",
@@ -3218,8 +3218,8 @@ window.GUIAS = [
    "contenido",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "hay-cuatro-claudes-distintos",
@@ -3233,8 +3233,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 6,
+  "meta": "6 min · Claude"
  },
  {
   "slug": "mil-dolares-configurando-claude-a-negocios-locales",
@@ -3247,8 +3247,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "prueba-de-presion-de-4-preguntas",
@@ -3261,8 +3261,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "generador-de-agenda-de-1a1",
@@ -3277,8 +3277,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "validador-de-negocio",
@@ -3293,8 +3293,8 @@ window.GUIAS = [
    "negocio",
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Perplexity"
+  "min": 8,
+  "meta": "8 min · Perplexity"
  },
  {
   "slug": "sastre-de-curriculum",
@@ -3324,8 +3324,8 @@ window.GUIAS = [
    "pauta",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "modo-tutor-escondido",
@@ -3339,8 +3339,8 @@ window.GUIAS = [
    "prompts",
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 13,
+  "meta": "13 min · Claude"
  },
  {
   "slug": "10-tareas-de-finanzas-personales",
@@ -3354,8 +3354,8 @@ window.GUIAS = [
    "productividad",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "10-servicios-de-ia-que-te-pagan-5k",
@@ -3384,8 +3384,8 @@ window.GUIAS = [
    "carrera",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "10-artifacts-para-este-fin-de-semana",
@@ -3399,8 +3399,8 @@ window.GUIAS = [
    "creativo",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-4",
@@ -3414,8 +3414,8 @@ window.GUIAS = [
    "skills",
    "carrera"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "10-prompts-que-deberias-tener-guardados",
@@ -3428,8 +3428,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "10-cosas-para-automatizar-este-fin-de-semana",
@@ -3458,8 +3458,8 @@ window.GUIAS = [
    "carrera",
    "prompts"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "10-ingresos-extra-con-ia",
@@ -3473,8 +3473,8 @@ window.GUIAS = [
   "topic": [
    "negocio"
   ],
-  "min": 12,
-  "meta": "12 min · Multi-herramienta"
+  "min": 11,
+  "meta": "11 min · Multi-herramienta"
  },
  {
   "slug": "10-flujos-que-me-ahorran-15-horas",
@@ -3489,8 +3489,8 @@ window.GUIAS = [
    "automatizacion",
    "productividad"
   ],
-  "min": 11,
-  "meta": "11 min · Cowork"
+  "min": 13,
+  "meta": "13 min · Cowork"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-3",
@@ -3504,8 +3504,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "como-me-mantengo-al-dia",
@@ -3519,8 +3519,8 @@ window.GUIAS = [
    "carrera",
    "empezar"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "elegir-el-claude-correcto",
@@ -3534,8 +3534,8 @@ window.GUIAS = [
    "empezar",
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 6,
+  "meta": "6 min · Claude"
  },
  {
   "slug": "30-comandos-de-cowork",
@@ -3549,8 +3549,8 @@ window.GUIAS = [
    "productividad",
    "automatizacion"
   ],
-  "min": 11,
-  "meta": "11 min · Cowork"
+  "min": 10,
+  "meta": "10 min · Cowork"
  },
  {
   "slug": "gemini-genera-archivos",
@@ -3564,8 +3564,8 @@ window.GUIAS = [
    "novedades",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Gemini"
+  "min": 7,
+  "meta": "7 min · Gemini"
  },
  {
   "slug": "3-artifacts-que-reemplazaron-mis-apps-de-fitness",
@@ -3579,8 +3579,8 @@ window.GUIAS = [
    "creativo",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "tu-primera-app-sin-programar",
@@ -3594,8 +3594,8 @@ window.GUIAS = [
    "creativo",
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "conectores-para-creativos",
@@ -3610,8 +3610,8 @@ window.GUIAS = [
    "creativo",
    "automatizacion"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "skill-que-recorta-tokens-75-por-ciento",
@@ -3640,8 +3640,8 @@ window.GUIAS = [
    "creativo",
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 11,
+  "meta": "11 min · Multi-herramienta"
  },
  {
   "slug": "mercado-secreto-de-skills",
@@ -3669,8 +3669,8 @@ window.GUIAS = [
    "productividad",
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 11,
+  "meta": "11 min · Claude"
  },
  {
   "slug": "reemplazar-un-disenador-de-5000",
@@ -3684,8 +3684,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 11,
-  "meta": "11 min · Multi-herramienta"
+  "min": 12,
+  "meta": "12 min · Multi-herramienta"
  },
  {
   "slug": "claude-como-asistente-personal",
@@ -3714,8 +3714,8 @@ window.GUIAS = [
   "topic": [
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
  },
  {
   "slug": "10-palabras-secretas",
@@ -3742,8 +3742,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "dejar-de-topar-limites-de-uso",
@@ -3756,8 +3756,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "5-senales-de-que-usas-la-ia-como-en-2024",
@@ -3803,8 +3803,8 @@ window.GUIAS = [
    "carrera",
    "automatizacion"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 10,
+  "meta": "10 min · Multi-herramienta"
  },
  {
   "slug": "mejores-herramientas-de-ia-ahora",
@@ -3863,8 +3863,8 @@ window.GUIAS = [
    "automatizacion",
    "creativo"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "6-cosas-con-generacion-de-imagenes",
@@ -3878,8 +3878,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 8,
-  "meta": "8 min · ChatGPT"
+  "min": 9,
+  "meta": "9 min · ChatGPT"
  },
  {
   "slug": "5-agentes-con-chatgpt",
@@ -3893,8 +3893,8 @@ window.GUIAS = [
    "agentes",
    "automatizacion"
   ],
-  "min": 10,
-  "meta": "10 min · ChatGPT"
+  "min": 11,
+  "meta": "11 min · ChatGPT"
  },
  {
   "slug": "agentes-de-workspace-en-chatgpt",
@@ -3953,8 +3953,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "que-modelo-de-claude-usar",
@@ -4027,8 +4027,8 @@ window.GUIAS = [
    "empezar",
    "prompts"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "configurar-claude-en-un-dia-6-herramientas",
@@ -4042,8 +4042,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "10-formas-de-usar-claude-en-el-trabajo",
@@ -4057,8 +4057,8 @@ window.GUIAS = [
    "carrera",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "15-instrucciones-globales",
@@ -4103,8 +4103,8 @@ window.GUIAS = [
    "empezar",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "7-herramientas-gratis-que-si-valen",
@@ -4118,8 +4118,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 7,
+  "meta": "7 min · Multi-herramienta"
  },
  {
   "slug": "tus-primeros-7-dias-con-claude",
@@ -4132,8 +4132,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "empezar-con-ia-bien",
@@ -4147,8 +4147,8 @@ window.GUIAS = [
   "topic": [
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "vibe-working",
@@ -4192,8 +4192,23 @@ window.GUIAS = [
    "automatizacion",
    "agentes"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
+ },
+ {
+  "slug": "guia-completa-de-cowork",
+  "titulo": "La guía completa de Cowork",
+  "desc": "Domina Cowork, el agente de fondo de Claude que trabaja sobre tus archivos mientras tú te concentras en otra cosa.",
+  "badge": "Flujos",
+  "tool": [
+   "cowork"
+  ],
+  "topic": [
+   "productividad",
+   "agentes"
+  ],
+  "min": 11,
+  "meta": "11 min · Cowork"
  },
  {
   "slug": "nunca-confies-sin-hacer-esto",
@@ -4207,8 +4222,8 @@ window.GUIAS = [
    "agentes",
    "prompts"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "tareas-en-paralelo-en-cowork",
@@ -4236,8 +4251,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 10,
+  "meta": "10 min · Multi-herramienta"
  },
  {
   "slug": "dictado-por-voz",
@@ -4250,8 +4265,8 @@ window.GUIAS = [
   "topic": [
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "presentaciones-con-ia-en-minutos",
@@ -4294,8 +4309,8 @@ window.GUIAS = [
    "contenido",
    "automatizacion"
   ],
-  "min": 11,
-  "meta": "11 min · Multi-herramienta"
+  "min": 12,
+  "meta": "12 min · Multi-herramienta"
  },
  {
   "slug": "tu-primer-agente-de-ia",
@@ -4310,8 +4325,8 @@ window.GUIAS = [
    "agentes",
    "empezar"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "claude-design-recorrido-completo",
@@ -4325,8 +4340,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 10,
-  "meta": "10 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "agentes-administrados",
@@ -4340,8 +4355,8 @@ window.GUIAS = [
    "agentes",
    "novedades"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "buscar-dentro-de-instagram-con-ia",
@@ -4356,8 +4371,8 @@ window.GUIAS = [
    "contenido",
    "novedades"
   ],
-  "min": 9,
-  "meta": "9 min · Meta Ads"
+  "min": 8,
+  "meta": "8 min · Meta Ads"
  },
  {
   "slug": "slack-cambio-para-siempre",
@@ -4401,8 +4416,8 @@ window.GUIAS = [
    "agentes",
    "automatizacion"
   ],
-  "min": 9,
-  "meta": "9 min · Notion"
+  "min": 11,
+  "meta": "11 min · Notion"
  },
  {
   "slug": "estructura-de-4-partes-para-agentes",
@@ -4431,8 +4446,8 @@ window.GUIAS = [
    "pauta",
    "agentes"
   ],
-  "min": 11,
-  "meta": "11 min · Claude"
+  "min": 12,
+  "meta": "12 min · Claude"
  },
  {
   "slug": "agente-de-google-ads",
@@ -4476,8 +4491,8 @@ window.GUIAS = [
    "agentes",
    "negocio"
   ],
-  "min": 10,
-  "meta": "10 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "biblioteca-de-componentes-gratis",
@@ -4490,8 +4505,8 @@ window.GUIAS = [
   "topic": [
    "creativo"
   ],
-  "min": 8,
-  "meta": "8 min · Claude Code"
+  "min": 7,
+  "meta": "7 min · Claude Code"
  },
  {
   "slug": "5-landing-pages-mientras-hacia-cafe",
@@ -4533,8 +4548,8 @@ window.GUIAS = [
   "topic": [
    "skills"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "10-skills-para-verte-como-genio",
@@ -4548,8 +4563,8 @@ window.GUIAS = [
    "skills",
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "claude-te-construye-herramientas",
@@ -4563,8 +4578,8 @@ window.GUIAS = [
    "prompts",
    "creativo"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "que-claude-suene-como-tu",
@@ -4578,8 +4593,8 @@ window.GUIAS = [
    "contenido",
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "5-skills-que-corren-mi-vida-parte-2",
@@ -4593,8 +4608,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 13,
+  "meta": "13 min · Claude"
  },
  {
   "slug": "skills-contra-plugins",
@@ -4636,8 +4651,8 @@ window.GUIAS = [
   "topic": [
    "skills"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "11-plugins-gratis-para-tu-puesto",
@@ -4652,8 +4667,8 @@ window.GUIAS = [
    "skills",
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "personalizar-plugins",
@@ -4682,8 +4697,8 @@ window.GUIAS = [
    "carrera",
    "skills"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-skills-para-creadores-de-contenido",
@@ -4697,8 +4712,8 @@ window.GUIAS = [
    "contenido",
    "skills"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-skills-para-agentes-inmobiliarios",
@@ -4712,8 +4727,8 @@ window.GUIAS = [
    "skills",
    "ventas"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "5-skills-para-estudiantes",
@@ -4727,8 +4742,8 @@ window.GUIAS = [
    "skills",
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Claude"
+  "min": 10,
+  "meta": "10 min · Claude"
  },
  {
   "slug": "10-prompts-que-hacen-util-a-la-ia",
@@ -4741,8 +4756,8 @@ window.GUIAS = [
   "topic": [
    "prompts"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "2-prompts-que-me-hacen-10x",
@@ -4770,8 +4785,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "3-certificaciones-gratis-de-anthropic",
@@ -4827,8 +4842,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 9,
-  "meta": "9 min · Multi-herramienta"
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "5-certificaciones-gratis-para-tu-cv",
@@ -4855,8 +4870,8 @@ window.GUIAS = [
   "topic": [
    "carrera"
   ],
-  "min": 8,
-  "meta": "8 min · Multi-herramienta"
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
  },
  {
   "slug": "que-soltarle-a-claude",
@@ -4872,6 +4887,22 @@ window.GUIAS = [
   ],
   "min": 8,
   "meta": "8 min · Claude"
+ },
+ {
+  "slug": "5-cosas-para-adelantarte-esta-semana",
+  "titulo": "5 cosas para hacer esta semana y adelantarte con IA",
+  "desc": "La IA llegó al 53% del mundo en 3 años, más rápido que cualquier cosa en la historia. Proyectos, skills, tareas programadas, investigación y artifacts: los 5 movimientos que separan al 10% de arriba.",
+  "badge": "Carrera",
+  "tool": [
+   "multi",
+   "perplexity"
+  ],
+  "topic": [
+   "carrera",
+   "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · Multi-herramienta"
  },
  {
   "slug": "el-puesto-que-mas-crece-en-2026",
@@ -4930,8 +4961,8 @@ window.GUIAS = [
    "carrera",
    "skills"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "selector-de-outfit",
@@ -4990,8 +5021,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "redactor-de-evaluacion-de-desempeno",
@@ -5020,8 +5051,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "recordatorio-de-mantenimiento-de-casa",
@@ -5035,8 +5066,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 7,
-  "meta": "7 min · Claude"
+  "min": 8,
+  "meta": "8 min · Claude"
  },
  {
   "slug": "negociador-de-aumento",
@@ -5097,8 +5128,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Perplexity"
+  "min": 9,
+  "meta": "9 min · Perplexity"
  },
  {
   "slug": "nunca-mas-olvidar-un-cumpleanos",
@@ -5127,8 +5158,8 @@ window.GUIAS = [
    "skills",
    "productividad"
   ],
-  "min": 8,
-  "meta": "8 min · Claude"
+  "min": 9,
+  "meta": "9 min · Claude"
  },
  {
   "slug": "tutor-de-idiomas",
