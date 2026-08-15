@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo cambia el prompting con Fable 5 — Guías Flow AI</title>
+  <meta name="description" content="La guía de Anthropic para Fable 5, destilada en tres cambios que modifican cómo usas su modelo más nuevo, cada uno con su prompt para copiar y pegar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/prompting-para-fable-5/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo cambia el prompting con Fable 5" />
+  <meta property="og:description" content="La guía de Anthropic para Fable 5, destilada en tres cambios que modifican cómo usas su modelo más nuevo, cada uno con su prompt para copiar y pegar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/prompting-para-fable-5/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Novedades</span></div>
+      <h1>Cómo cambia el prompting con Fable 5</h1>
+      <p class="lead">La guía de Anthropic para Fable 5, destilada en tres cambios que modifican cómo usas su modelo más nuevo, cada uno con su prompt para copiar y pegar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay un patrón raro con Claude Fable 5: la gente que trae prompts muy trabajados de modelos anteriores obtiene resultados peores que la gente que llega sin nada. No es un error de la herramienta. Es que buena parte de lo que aprendimos a escribir en un prompt eran muletas, y este modelo ya no las necesita.</p>
+
+      <p>Anthropic publicó su guía de prompting para Fable 5 y el mensaje de fondo es incómodo: la mayor parte del trabajo es <em>quitar</em>. Aquí van los tres cambios que de verdad mueven la aguja, cada uno con el prompt que uso.</p>
+
+      <h2>Antes de nada: qué cambió en la máquina</h2>
+
+      <p>Dos cosas que conviene tener claras porque explican todo lo demás.</p>
+
+      <p><strong>El razonamiento siempre está encendido.</strong> No hay un interruptor de "piensa más". El control que sí existe es el nivel de esfuerzo, y ahí la recomendación de Anthropic es empezar en alto para casi todo, subir solo en lo más difícil, y bajar a medio o bajo en trabajo rutinario. Los niveles bajos de Fable 5 rinden mejor que los niveles altos de modelos anteriores, así que subirle a todo por default es tirar dinero.</p>
+
+      <p><strong>Las corridas son largas.</strong> Una sola petición difícil puede tardar minutos, y una corrida autónoma puede irse horas. Eso cambia el diseño de tu trabajo: dejas de sentarte a esperar y empiezas a revisar de forma asíncrona. Si tienes un sistema que se cae por timeout, ese es el primer arreglo, antes de tocar un solo prompt.</p>
+
+      <h2>Cambio 1: escribe menos instrucciones, no más</h2>
+
+      <p>Un prompt escrito para un modelo de hace dos generaciones suele ser una lista de veinte reglas, la mitad de ellas puestas para corregir un defecto que ese modelo tenía. Fable 5 sigue esas reglas al pie de la letra, incluidas las que ya no aplican, y el resultado es un modelo trabado.</p>
+
+      <p>El cambio de mentalidad es pasar del guion al objetivo. En vez de decirle los diez pasos, le dices qué tiene que ser cierto al final y qué no debe hacer. La única parte donde sí conviene el guion exacto es donde una sola secuencia es segura: comandos destructivos, flujos de autorización, pasos de cumplimiento.</p>
+
+      <p>El otro lado de escribir menos es que hay que ser explícito con los límites, porque un modelo muy capaz interpreta el encargo con generosidad y termina haciendo cosas que nadie pidió. Este bloque lo pongo en las instrucciones del proyecto y resuelve casi todo:</p>
+
+      <pre><code>Alcance del trabajo:
+
+- Entrega lo que te pedí, al tamaño que te lo pedí. No agregues
+  funciones, refactores ni abstracciones que la tarea no requiere.
+- Cuando yo esté describiendo un problema, haciendo una pregunta o
+  pensando en voz alta, el entregable es tu diagnóstico. Repórtalo
+  y detente. No apliques el arreglo hasta que te lo pida.
+- No construyas para requisitos hipotéticos del futuro. Haz lo más
+  simple que funcione bien.
+- No agregues validaciones ni manejo de errores para escenarios que
+  no pueden ocurrir. Valida solo en las fronteras: entrada del
+  usuario y servicios externos.
+- Antes de ejecutar algo que cambia el estado del sistema (borrar,
+  reiniciar, editar configuración), verifica que la evidencia
+  sostiene esa acción específica. Una señal que se parece a una
+  falla conocida puede tener otra causa.
+- Si crees que lo que te pedí está mal o que hay un camino mejor,
+  dilo en una frase y sigue con lo que te pedí. No lo cambies
+  por tu cuenta.
+- Termina la tarea completa. Solo reporta que está lista cuando
+  de verdad lo esté; si algo no pudiste, haz el resto y di con
+  claridad qué falta y por qué.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>Revisa tus skills viejas antes de migrar:</strong> las skills y los system prompts escritos para modelos anteriores son la fuente más común de resultados peores. Ábrelos, borra las reglas que existían para corregir defectos que ya no están, y compara. Hay un caso especial que sí truena: cualquier instrucción del tipo "muéstrame tu razonamiento" o "explica tu proceso paso a paso en la respuesta" puede activar los filtros de seguridad del modelo y hacer que rechace la petición. Si necesitas ver el razonamiento, se lee del bloque de pensamiento, no se le pide en el texto.</p>
+      </div>
+
+      <h2>Cambio 2: obliga al modelo a auditar su propio avance</h2>
+
+      <p>Este es el cambio que más importa si lo dejas trabajar solo, y es el que casi nadie implementa.</p>
+
+      <p>Cuando una corrida dura horas, tú no ves lo que pasó. Ves el reporte final. Y un reporte que dice "listo, los tests pasan" es indistinguible de un reporte correcto hasta que abres el proyecto y descubres que no. Anthropic reporta que instruir al modelo para que audite cada afirmación contra un resultado de herramienta real casi elimina los reportes de avance inventados, incluso en pruebas diseñadas para provocarlos.</p>
+
+      <p>Este es el bloque que le pego a cualquier agente que va a correr sin supervisión:</p>
+
+      <pre><code>Reporte de avance:
+
+Antes de decirme que algo está hecho, audita esa afirmación contra
+un resultado concreto de una herramienta en esta misma sesión.
+
+- Solo reporta trabajo del que puedas señalar la evidencia: la
+  salida del comando, el archivo escrito, la respuesta del API.
+- Si algo no está verificado, dilo explícitamente. "Escribí el
+  código pero no lo he corrido" es una respuesta válida; "listo"
+  no lo es.
+- Si una prueba falló, dímelo con la salida. Si te saltaste un
+  paso, dímelo. Si algo quedó a medias, dímelo.
+- Cuando algo sí está hecho y verificado, afírmalo sin rodeos y
+  sin matizarlo.
+
+Establece además un método para revisar tu propio trabajo mientras
+avanzas, y córrelo cada [intervalo: cada hora / cada bloque de
+tareas], contrastando contra la especificación original.</code></pre>
+
+      <p>Ese último párrafo es el que convierte una corrida larga en algo confiable. Y funciona mejor si la revisión la hace un subagente con contexto limpio en vez de el mismo hilo que hizo el trabajo, porque el que escribió el código es mal juez de su propio código.</p>
+
+      <h2>Cambio 3: dale un lugar donde guardar lo que aprende</h2>
+
+      <p>Fable 5 rinde notablemente mejor cuando puede escribir lecciones y volver a leerlas después. No hace falta nada sofisticado: un archivo de texto sirve. Lo que hace falta es la instrucción de mantenerlo, porque si no le dices cómo, acumula notas duplicadas y contradictorias hasta que el archivo estorba más de lo que ayuda.</p>
+
+      <pre><code>Memoria de trabajo:
+
+Mantén un archivo llamado LECCIONES.md en la raíz del proyecto.
+
+Cómo escribir en él:
+- Una lección por bloque, con un resumen de una línea al inicio.
+- Registra tanto las correcciones que te hice como los enfoques
+  que sí funcionaron, y por qué importaron.
+- No guardes lo que el proyecto ya documenta ni lo que se puede
+  leer del código. Solo lo que se perdería si cerramos el chat.
+- Si ya existe una nota sobre el tema, actualízala en vez de
+  crear otra.
+- Si una nota resultó equivocada, bórrala. No la dejes marcada
+  como obsoleta.
+
+Cómo usarlo:
+- Léelo al inicio de cada sesión, antes de tocar nada.
+- Cuando yo te corrija algo que ya estaba escrito ahí, avísame:
+  significa que la nota está mal redactada.</code></pre>
+
+      <p>Si ya llevas meses trabajando con el modelo, se puede arrancar la memoria desde el historial. Le pides que revise las sesiones anteriores, saque los temas y las lecciones recurrentes, y las escriba en ese archivo. En una hora tienes destilado lo que te tomó tres meses aprender a golpes.</p>
+
+      <h2>Lo que no hay que tocar</h2>
+
+      <p>Dos advertencias para cerrar.</p>
+
+      <p>La primera: no le muestres al modelo cuánto contexto le queda. Cuando el sistema le enseña una cuenta regresiva de tokens, tiende a preocuparse, a proponer abrir una sesión nueva o a recortar su propio trabajo antes de tiempo. Si tu herramienta lo muestra y no lo puedes apagar, una línea de "tienes contexto de sobra, continúa" lo estabiliza.</p>
+
+      <p>La segunda: no lo estrenes con una tarea fácil. Los equipos que sacan más de este modelo son los que le dieron su problema más difícil sin resolver, le pidieron que lo acotara, hiciera preguntas y lo ejecutara de punta a punta. Probarlo solo con lo que ya te resolvía el modelo anterior te va a dar la impresión de que no cambió nada.</p>
+
+      <p>Si estás decidiendo entre este modelo y el de siempre, el criterio está en <a href="/guias/opus-5-vs-fable-5/">cuándo usar Claude Opus 5 y cuándo Fable 5</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

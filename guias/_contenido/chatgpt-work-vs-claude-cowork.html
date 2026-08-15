@@ -1,0 +1,77 @@
+      <p>Durante meses la comparación entre ChatGPT y Claude fue una discusión de chat: cuál escribe mejor, cuál razona mejor, cuál te cae mejor. Eso se acabó. Los dos dejaron de ser cajas de texto y se volvieron agentes que trabajan solos por horas.</p>
+
+      <p>OpenAI lanzó <strong>ChatGPT Work</strong> en julio de 2026, con GPT-5.6 adentro. Anthropic había lanzado <strong>Claude Cowork</strong> en enero del mismo año. Los dos prometen lo mismo en el anuncio: le describes un resultado, te vas, y regresas al trabajo terminado.</p>
+
+      <p>En la práctica no son el mismo producto. Y la diferencia no está en el modelo: está en dónde vive cada uno y a qué le puede meter las manos.</p>
+
+      <h2>Qué es cada uno, en una frase</h2>
+
+      <p><strong>Claude Cowork</strong> es la arquitectura de agente de Claude Code metida dentro de la app de escritorio de Claude, sin terminal. Trabaja sobre las carpetas de tu computadora: lee, edita y crea archivos ahí mismo, sin que tú subas ni bajes nada.</p>
+
+      <p><strong>ChatGPT Work</strong> es un agente que vive dentro de ChatGPT y opera sobre las apps de tu empresa. Toma un objetivo, busca información en los sistemas que conectaste, parte el trabajo en pasos y lo sostiene durante horas.</p>
+
+      <p>Léelo otra vez. Uno trabaja sobre <em>tus archivos</em>. El otro trabaja sobre <em>tus sistemas</em>. Ahí está el 80% de la decisión.</p>
+
+      <h2>Dónde vive cada uno</h2>
+
+      <p>Cowork corre en tu máquina. Le apuntas a una carpeta y esa carpeta es su espacio de trabajo. Si tu operación vive en archivos —hojas de cálculo de cierre mensual, carpetas de propuestas por cliente, exports de tu CRM que alguien baja cada lunes— eso es enorme. El modelo ve el archivo real, no una copia que subiste.</p>
+
+      <p>ChatGPT Work corre del lado de OpenAI y se conecta a herramientas de trabajo: Slack, Microsoft Teams, Google Drive, Salesforce, Jira. Trae además <em>Sites</em>, en beta pública, que convierte un documento o un conjunto de datos en un sitio o una app interactiva compartible por URL.</p>
+
+      <p>Los dos te dejan controlar qué puede consultar la IA, cuándo tiene que pedirte aprobación y qué acciones puede ejecutar sola. Ese control existe en ambos y en ambos hay que configurarlo a mano —ver <a href="/guias/permisos-de-conectores/">la configuración de permisos que casi nadie revisa</a>.</p>
+
+      <h2>Los cinco puntos donde de verdad se separan</h2>
+
+      <div class="plugin-card">
+        <h3>1. Acceso a archivos locales</h3>
+        <p>Cowork lee y escribe en tu disco. ChatGPT Work opera sobre lo que conectaste en la nube. Si tu equipo de finanzas trabaja en un Excel que vive en la laptop del contador, Cowork puede tocarlo y ChatGPT Work no —hasta que ese archivo esté en Drive o en SharePoint.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> operaciones con archivos pesados, material que no sube a la nube por política, o cualquier cosa que hoy vive en carpetas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Profundidad de conectores empresariales</h3>
+        <p>ChatGPT Work nació apuntado a la empresa: la lista de integraciones cubre chat, documentos, CRM y gestión de proyectos desde el día uno. Claude también tiene conectores, pero la mejor parte de Cowork sigue siendo el sistema de archivos.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos cuyo trabajo ya vive dentro de Salesforce, Jira y Slack, y donde el problema es que la información está partida en cuatro sistemas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Subagentes en paralelo</h3>
+        <p>Cowork divide el trabajo complejo en tareas más chicas y las corre en paralelo. En un análisis de veinte archivos eso se siente: no espera a terminar el primero para empezar el segundo. Es la misma mecánica que hace útil a Claude Code, envuelta en una interfaz de chat.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> trabajo que se abanica —revisar muchos documentos, procesar muchos registros, comparar muchas fuentes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Entregables de oficina</h3>
+        <p>Los dos generan Excel, PowerPoint y documentos. Cowork produce hojas con fórmulas que de verdad calculan, no capturas de números. Es la diferencia entre un anexo que se ve bien y uno que tu director financiero puede auditar.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien entrega modelos, presupuestos o reportes que alguien más va a abrir y modificar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El navegador</h3>
+        <p>Cowork se combina con Claude en Chrome para automatizar tareas en cualquier sitio web. Eso cubre el hueco que ningún conector cubre: el portal del proveedor que no tiene API, el sistema interno de 2011, el panel de la aseguradora.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier operación real, porque toda operación real tiene por lo menos un sistema sin API.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ninguno de los dos rinde el primer día. Los dos necesitan que les conectes tus herramientas <em>y</em> que les des el contexto de tu negocio. Un agente con acceso a Salesforce pero sin saber cómo califica leads tu empresa va a hacer un trabajo genérico muy rápido. Ver <a href="/guias/archivo-de-conocimiento-experto/">cómo armarle un archivo de conocimiento experto</a>.</p>
+      </div>
+
+      <h2>Cuál le queda a cuál trabajo</h2>
+
+      <p>Después de usar los dos en operaciones que facturan, así lo reparto:</p>
+
+      <ul>
+        <li><strong>Cowork</strong> — análisis sobre archivos, cierres contables, generación de entregables, cualquier flujo donde el material de entrada esté en tu disco, y automatización en navegador de sistemas sin API.</li>
+        <li><strong>ChatGPT Work</strong> — trabajo distribuido entre varias apps corporativas, seguimiento de pipeline, síntesis de lo que está pasando en Slack y Jira al mismo tiempo, y prototipos compartibles vía Sites.</li>
+        <li><strong>Los dos</strong> — si tu empresa tiene el presupuesto, no es una decisión excluyente. Cuestan menos que la persona que estás pensando contratar para hacer ese trabajo a mano.</li>
+      </ul>
+
+      <p>Sobre el modelo: GPT-5.6 y la familia de Claude están lo suficientemente cerca en capacidad como para que la elección no se decida ahí. Se decide por dónde vive tu trabajo. Si eliges por benchmarks vas a elegir mal.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Instalar los dos, conectar todo, y darles una tarea grande el primer día. Eso termina en un agente que hace algo que no sirve, y en un equipo que concluye que "la IA todavía no está lista".</p>
+
+      <p>Lo que funciona es al revés. Elige <strong>una</strong> tarea que hoy le quita cuatro horas a la semana a alguien de tu equipo, y que ya esté documentada. Conecta solo lo que esa tarea necesita. Córrela con supervisión dos semanas. Cuando salga bien tres veces seguidas sin que nadie la revise, sueltas la supervisión y pasas a la siguiente.</p>
+
+      <p>La ventaja no la da la herramienta. La da haber mapeado dónde se está yendo el tiempo de verdad, y eso ninguno de los dos lo va a hacer por ti.</p>

@@ -1,0 +1,180 @@
+      <p>La gente usa la IA para escribir correos y para resumir documentos. Casi nadie la usa para lo que mejor hace: revisar líneas aburridas, una por una, sin cansarse y sin distraerse.</p>
+
+      <p>Ahí es exactamente donde se te está yendo el dinero. No en las decisiones grandes —esas las piensas—, sino en las chiquitas que nadie revisa: la suscripción que se renovó, el recibo que subió 12% sin aviso, el medicamento que compras de marca por costumbre, la factura del hospital con un cargo duplicado.</p>
+
+      <p>Cinco revisiones, con el prompt completo de cada una. Ninguna necesita que le conectes nada: funcionan pegando el estado de cuenta o la foto de un recibo.</p>
+
+      <h2>Por qué esto funciona</h2>
+
+      <p>Un cobro chico no se revisa porque revisarlo cuesta más atención de la que vale. Ese cálculo es correcto para un humano y falso para un modelo: revisar doscientas líneas le toma lo mismo que revisar cinco.</p>
+
+      <p>Así que el ahorro no viene de negociar mejor. Viene de que por fin alguien mire.</p>
+
+      <h2>Las 5 revisiones</h2>
+
+      <h3>1. Cachar las renovaciones automáticas</h3>
+
+      <p>La forma más limpia de dinero recuperable que existe. Servicios que probaste una vez, planes que subieron de precio en silencio, duplicados que se acumularon cuando alguien más del equipo contrató lo mismo.</p>
+
+      <p>Descarga el estado de cuenta de tu tarjeta —tres meses, en CSV o en PDF— y pégalo con esto:</p>
+
+      <pre><code>Adjunto los movimientos de mi tarjeta de los últimos 3 meses.
+
+Encuéntrame todos los cargos recurrentes: cualquier concepto que
+aparezca más de una vez con importe idéntico o muy parecido.
+
+Devuélveme una tabla con:
+- Concepto tal como aparece en el estado de cuenta
+- Importe y periodicidad (mensual, anual)
+- Costo anualizado
+- Si el importe cambió entre periodos, cuánto y cuándo
+
+Después, clasifícalos en tres grupos:
+A) Los que claramente uso (te digo cuáles si no es obvio)
+B) Los que son duplicados o se traslapan entre sí
+C) Los que no puedo identificar por el nombre del cargo
+
+Para el grupo C, dime qué empresa es probablemente cada uno y
+cómo lo verifico.
+
+Cierra con el total anualizado de B más C. Ese es el número que
+me interesa.
+
+No asumas que un cargo chico no importa: dame todo.</code></pre>
+
+      <p>En una empresa esto se corre sobre la tarjeta corporativa y el resultado es siempre el mismo: dos o tres herramientas que nadie usa desde que se fue quien las contrató, y una licencia contratada dos veces por áreas distintas. Es la auditoría de treinta minutos con mejor retorno que conozco.</p>
+
+      <h3>2. Comprar en el momento correcto</h3>
+
+      <p>Casi todo lo que compras tiene un ciclo de precio: electrónicos, viajes, muebles, electrodomésticos, colchones. La mayoría de la gente compra cuando se le antoja y paga la diferencia.</p>
+
+      <pre><code>Voy a comprar [PRODUCTO O CATEGORÍA] y no tengo prisa: puedo
+esperar hasta [FECHA LÍMITE].
+
+Investiga y dime:
+
+1. El ciclo de precio típico de esta categoría a lo largo del año.
+   ¿Cuándo baja y por qué —fin de generación, temporada, evento
+   comercial?
+2. Si este producto tiene ciclo de lanzamiento, cuándo suele salir
+   el modelo nuevo y qué le pasa al precio del anterior.
+3. Cuánto se mueve el precio entre el peor y el mejor momento, en
+   porcentaje aproximado.
+4. Si esperar tiene un costo para mí que no estoy viendo.
+
+Termina con una recomendación clara: comprar ahora o esperar
+hasta una fecha concreta. Si no hay diferencia significativa,
+dímelo en lugar de inventarme una razón para esperar.
+
+Usa búsqueda web y cítame de dónde sale cada dato. Si un dato no
+lo puedes verificar, márcalo como estimación.</code></pre>
+
+      <p>La última línea es la importante. Sin ella vas a recibir un análisis muy convincente construido con cifras inventadas.</p>
+
+      <h3>3. Bajar el costo de tus medicamentos</h3>
+
+      <p>Esta es la que más sorprende a la gente, porque el gasto en medicamento crónico se asume como fijo y casi nunca lo es.</p>
+
+      <pre><code>Te voy a pasar la lista de medicamentos que compro cada mes, con
+su nombre comercial, presentación y lo que pago.
+
+Para cada uno dime:
+
+1. Cuál es el principio activo y qué genéricos equivalentes
+   existen con ese mismo principio activo y concentración.
+2. Si hay presentaciones distintas (más tabletas por caja, otra
+   concentración divisible) que bajen el costo por dosis. Dame el
+   costo por unidad, no por caja.
+3. Qué preguntas concretas debo hacerle a mi médico o a mi
+   farmacéutico para evaluar el cambio.
+
+Reglas:
+- No me des consejo médico ni me digas que cambie nada por tu
+  cuenta. Tu trabajo es prepararme la conversación con quien sí
+  puede decidirlo.
+- Si un medicamento no tiene equivalente genérico o el cambio de
+  presentación no es seguro, dilo claramente.
+- No inventes precios. Dame el método para compararlos.
+
+Al final, ordena la lista por ahorro potencial mensual.</code></pre>
+
+      <p>El valor no está en que la IA decida por ti. Está en que llegues con el nombre del principio activo y tres preguntas concretas en vez de llegar a preguntar "¿hay algo más barato?".</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ningún cambio de medicamento se hace sin tu médico. Dos productos con el mismo principio activo pueden no ser intercambiables en tu caso particular, y ese juicio no lo tiene un modelo de lenguaje. Lo que sí puede hacer es que llegues informado en lugar de llegar a que te digan que no.</p>
+      </div>
+
+      <h3>4. Negociar tus recibos</h3>
+
+      <p>Internet, telefonía, seguros, servicios recurrentes. La mayoría de estos negocios cobra más caro al cliente antiguo que al nuevo, precisamente porque el antiguo no llama.</p>
+
+      <pre><code>Soy cliente de [PROVEEDOR] desde hace [TIEMPO]. Pago [IMPORTE]
+al mes por [SERVICIO Y CARACTERÍSTICAS: velocidad, líneas, GB,
+cobertura].
+
+Ayúdame a preparar la llamada de renegociación:
+
+1. Busca qué está ofreciendo hoy este proveedor a clientes nuevos
+   con un servicio equivalente, y qué ofrece la competencia
+   directa en mi zona. Cítame las fuentes.
+2. Dime en qué punto exacto mi plan está por encima del mercado.
+3. Escríbeme el guion de la llamada: la frase de apertura, qué
+   pedir primero, qué pedir si me dicen que no, y cuál es mi
+   punto de salida real.
+4. Prepárame las tres respuestas a las objeciones más probables.
+
+El guion tiene que ser corto y hablado, no un ensayo. Voy a
+leerlo por teléfono.
+
+Que quede claro qué es lo mínimo que acepto antes de colgar y
+cambiarme.</code></pre>
+
+      <p>Lo mismo se corre sobre los proveedores de una empresa: mensajería, nube, telefonía, servicios profesionales. La versión corporativa cambia una línea —agregas el volumen anual que representas— y el guion se vuelve considerablemente más fuerte.</p>
+
+      <h3>5. Auditar tus cargos médicos</h3>
+
+      <p>La factura de un hospital es un documento largo, técnico y hecho para que no lo revises. Es exactamente el tipo de documento donde un modelo brilla.</p>
+
+      <pre><code>Adjunto la factura desglosada de un servicio médico y, si lo
+tengo, el resumen de lo que cubrió mi seguro.
+
+Revísala línea por línea y devuélveme:
+
+1. Conceptos duplicados o que parezcan cobrarse dos veces bajo
+   nombres distintos.
+2. Cargos por servicios, insumos o días que no correspondan a lo
+   que te voy a describir que pasó realmente.
+3. Diferencias entre lo que dice la póliza que cubre y lo que
+   efectivamente se aplicó: deducible, coaseguro, tope, exclusiones.
+4. Cualquier concepto ambiguo o genérico que valga la pena pedir
+   que desglosen.
+
+Para cada hallazgo dame:
+- La línea exacta de la factura
+- Por qué es dudoso
+- La pregunta textual que debo hacer, y a quién: al hospital, a
+  la aseguradora o a ambos
+
+No afirmes que algo es un error si solo es raro. Distingue entre
+"esto está mal" y "esto hay que preguntarlo".
+
+Empieza pidiéndome el desglose completo si lo que te di viene
+resumido: sin desglose esta revisión no sirve.</code></pre>
+
+      <h2>Cómo se vuelve un hábito</h2>
+
+      <p>Corridas una vez, estas cinco revisiones te dan un ahorro y se olvidan. El valor real está en volverlas rutina, y para eso basta con una hora al mes:</p>
+
+      <ol>
+        <li><strong>El primer lunes del mes</strong> corres la revisión 1 sobre el estado de cuenta del mes anterior. Es la única que conviene hacer siempre.</li>
+        <li><strong>Cada seis meses</strong> corres la revisión 4 sobre tus dos recibos más caros. Los proveedores cuentan con que no lo hagas.</li>
+        <li><strong>Las revisiones 2, 3 y 5</strong> son por evento: cuando vas a comprar algo caro, cuando cambia una receta, cuando llega una factura médica.</li>
+      </ol>
+
+      <p>Guarda los cinco prompts en un proyecto dedicado a finanzas personales, con tus datos de contexto ya cargados. Así la revisión mensual toma cinco minutos y no treinta.</p>
+
+      <h2>El límite honesto</h2>
+
+      <p>Nada de esto sustituye a tu contador, a tu médico ni a tu abogado. Lo que hace es que llegues con ellos con el trabajo de revisión ya hecho, que es precisamente la parte por la que no vale la pena pagarle a un profesional y que por eso nadie hacía.</p>
+
+      <p>Y una advertencia sobre las cifras: en las revisiones que requieren buscar precios de mercado, exige siempre la fuente. Un ahorro calculado sobre un precio inventado no es un ahorro, es una historia.</p>

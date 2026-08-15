@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El truco de seguridad de Claude Code — Guías Flow AI</title>
+  <meta name="description" content="¿Te da miedo dejarlo correr solo? Arma una lista de permitidos y una de prohibidos. Tienes la velocidad del piloto automático con límites que no puede cruzar, porque las reglas de prohibición le ganan a todo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/listas-de-permisos-de-claude-code/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El truco de seguridad de Claude Code" />
+  <meta property="og:description" content="¿Te da miedo dejarlo correr solo? Arma una lista de permitidos y una de prohibidos. Tienes la velocidad del piloto automático con límites que no puede cruzar, porque las reglas de prohibición le ganan a todo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/listas-de-permisos-de-claude-code/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Agentes</span><span class="tag">Empezar</span></div>
+      <h1>El truco de seguridad de Claude Code</h1>
+      <p class="lead">¿Te da miedo dejarlo correr solo? Arma una lista de permitidos y una de prohibidos. Tienes la velocidad del piloto automático con límites que no puede cruzar, porque las reglas de prohibición le ganan a todo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El miedo es razonable. Le das a un agente acceso a tu terminal y a tus archivos, y en algún momento vas a estar en otra pestaña mientras corre algo que no leíste. La reacción normal es una de dos: aprobar cada paso a mano —y perder toda la velocidad— o apagar los avisos y rezar.</p>
+
+      <p>Hay un tercer camino y es el que usa la gente que de verdad deja a Claude Code trabajando: escribir una lista de lo que puede hacer sin preguntar y otra de lo que no puede hacer nunca. La velocidad del piloto automático, con paredes.</p>
+
+      <p>Lo que hace que esto funcione y no sea un placebo es una regla del sistema: <strong>las prohibiciones le ganan a todo</strong>. No es una recomendación al modelo, es el programa el que bloquea.</p>
+
+      <h2>Cómo se decide cada acción</h2>
+
+      <p>Hay tres listas y se evalúan siempre en el mismo orden: primero <code>deny</code>, luego <code>ask</code>, luego <code>allow</code>. Gana la primera que coincida, y qué tan específica sea la regla no cambia el orden.</p>
+
+      <p>La consecuencia práctica importa mucho: una prohibición amplia como <code>Bash(aws *)</code> bloquea todo lo que coincida, <em>incluso</em> si tienes un permiso más fino como <code>Bash(aws s3 ls)</code>. Una regla de prohibición no admite excepciones adentro. Si quieres permitir un pedazo, no lo prohíbas entero.</p>
+
+      <p>Y algo que conviene tener claro antes de empezar: estas reglas las impone Claude Code, no el modelo. Lo que escribas en tu <code>CLAUDE.md</code> orienta lo que Claude <em>intenta</em> hacer, pero no es un límite. El límite son estas listas.</p>
+
+      <h2>Dónde se escriben</h2>
+
+      <p>En un archivo de configuración, bajo la llave <code>permissions</code>. El del proyecto vive en <code>.claude/settings.json</code> y se puede subir al repositorio para que todo el equipo lo herede; el tuyo personal, en <code>~/.claude/settings.json</code>.</p>
+
+      <p>Para verlas y editarlas sin abrir el archivo está el comando <code>/permissions</code>, que además te dice de qué archivo viene cada regla. Y cuando apruebas algo con "sí, no vuelvas a preguntar", la regla se guarda sola en <code>.claude/settings.local.json</code>.</p>
+
+      <h2>La sintaxis, en cinco reglas</h2>
+
+      <ul>
+        <li><strong>Sin paréntesis, aplica a toda la herramienta.</strong> <code>Bash</code> son todos los comandos, <code>WebFetch</code> todas las descargas. En la lista de prohibidos, un nombre pelado así hace que Claude ni siquiera vea la herramienta.</li>
+        <li><strong>Con paréntesis, aplica a un caso.</strong> <code>Bash(npm run build)</code> es ese comando exacto. Los comodines van con <code>*</code> y pueden ir al principio, en medio o al final: <code>Bash(npm *)</code>, <code>Bash(git * main)</code>, <code>Bash(* --version)</code>.</li>
+        <li><strong>El espacio antes del asterisco importa.</strong> <code>Bash(ls *)</code> exige una frontera de palabra: coincide con <code>ls -la</code> pero no con <code>lsof</code>. <code>Bash(ls*)</code>, sin espacio, coincide con los dos. El sufijo <code>:*</code> es equivalente al espacio más asterisco.</li>
+        <li><strong>Los archivos usan patrones tipo gitignore.</strong> <code>Read(.env)</code> equivale a <code>Read(**/.env)</code> y agarra cualquier <code>.env</code> a cualquier profundidad. Un <code>~/</code> al principio ancla en tu carpeta de usuario y un <code>//</code> doble ancla en la raíz del sistema. Ojo: una sola diagonal, como <code>Edit(/src/**)</code>, no es ruta absoluta —ancla en la carpeta del archivo de configuración que la define.</li>
+        <li><strong>Solo <code>Read</code> y <code>Edit</code> aceptan rutas.</strong> Si escribes una regla con ruta para <code>Write</code> o <code>Glob</code>, se acepta pero nunca se consulta, y te avisa al arrancar. Usa <code>Edit(docs/**)</code> en lugar de <code>Write(docs/**)</code>. Un <code>Read</code> prohibido bloquea también editar y crear en esa ruta.</li>
+      </ul>
+
+      <h2>La lista de prohibidos que le pongo a cualquier proyecto</h2>
+
+      <p>Esta es la base. No depende del lenguaje ni del tipo de trabajo.</p>
+
+      <pre><code>{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(**/.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(**/credentials/**)",
+      "Edit(**/.git/**)",
+      "Bash(git push *)",
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(npm publish *)"
+    ],
+    "allow": [
+      "Bash(npm run test *)",
+      "Bash(npm run build)",
+      "Bash(git diff *)",
+      "Edit(src/**)",
+      "WebFetch(domain:claude.com)"
+    ]
+  }
+}</code></pre>
+
+      <p>Dos decisiones de ahí valen explicación.</p>
+
+      <p><strong>Por qué prohibir <code>curl</code> y <code>wget</code>.</strong> Tratar de restringir una URL desde una regla de Bash no funciona: se rompe con las opciones antes de la dirección, con https en vez de http, con un redireccionamiento, con la URL guardada en una variable. La forma que sí sostiene es cerrar las herramientas de red de la terminal y dejar que las descargas pasen por <code>WebFetch</code>, que sí filtra por dominio: <code>WebFetch(domain:claude.com)</code> permite ese sitio, <code>WebFetch(domain:*.tuempresa.com)</code> permite subdominios.</p>
+
+      <p><strong>Por qué <code>ask</code> y no <code>deny</code> en los commits.</strong> Prohibir un commit es molesto y termina en que lo desactivas. Ponerlo en <code>ask</code> te da un momento de revisión sin bloquear el flujo. La lista de en medio es la que la mayoría no usa y es la más útil.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> entender hasta dónde llegan estas reglas. Las prohibiciones de lectura y edición cubren las herramientas de archivo de Claude y los comandos de terminal que sabe reconocer, como <code>cat</code>, <code>head</code> o <code>sed</code>. No cubren un subproceso que abre archivos por su cuenta: si Claude escribe un script de Python que lee tu <code>.env</code> y lo corre, la regla de <code>Read</code> no lo detiene. Para un límite que aplique a todos los procesos, lo que necesitas es el modo de aislamiento del sistema, no la lista de permisos.</p>
+      </div>
+
+      <h2>El detalle que salva</h2>
+
+      <p>Claude Code entiende los operadores del shell. Una regla como <code>Bash(comando-seguro *)</code> no autoriza <code>comando-seguro &amp;&amp; otro-comando</code>: cada parte de un comando compuesto tiene que coincidir por su cuenta con alguna regla, y los separadores que reconoce incluyen <code>&amp;&amp;</code>, <code>||</code>, <code>;</code> y las tuberías.</p>
+
+      <p>Donde sí hay que tener cuidado es con los ejecutores de entorno. <code>docker exec</code>, <code>npx</code> y compañía corren lo que venga después, así que un permiso de la forma <code>Bash(loquesea run *)</code> autoriza cualquier cosa que siga. Si quieres permitir trabajo dentro de uno de esos, escribe la regla con el comando interno incluido, uno por cada cosa que quieras permitir.</p>
+
+      <h2>Cómo lo armo en la práctica</h2>
+
+      <p>No te sientes a escribir cuarenta reglas hoy. El camino que funciona es al revés: pega la lista de prohibidos de arriba en tu <code>.claude/settings.json</code> y trabaja normal durante una semana aprobando a mano. Cada vez que apruebes el mismo comando por tercera vez, muévelo a <code>allow</code>. En dos semanas tienes una lista hecha con tus datos reales, no con los que imaginaste.</p>
+
+      <p>El error que veo seguido es el opuesto: alguien se emociona, permite <code>Bash</code> completo para dejar de ver avisos, y se queda sin ninguna pared. Si vas a permitir todo, al menos deja la lista de prohibidos puesta —es lo único que sigue aplicando aunque el resto esté abierto. Para el siguiente paso, dejarlo trabajando solo con esas paredes ya puestas, sigue con <a href="/guias/deja-de-ser-ninera-de-claude/">deja de ser niñera de Claude</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

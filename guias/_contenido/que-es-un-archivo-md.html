@@ -1,0 +1,120 @@
+      <p>Llevas semanas viendo la palabra. Que si el <code>CLAUDE.md</code>, que si el README, que si "ponlo en un archivo markdown". Suena a cosa de programador y por eso lo has estado saltando.</p>
+
+      <p>No lo es. Un archivo <code>.md</code> es texto. El mismo texto que escribirías en cualquier lado, con cinco símbolos que le indican qué es un título y qué es una lista. Se aprende en diez minutos y es la base de casi todo lo que hace un agente de IA bien montado.</p>
+
+      <p>Al final de esta guía hay una plantilla completa de "cómo trabajo" para que la llenes y se la des a tu IA. Ese solo archivo cambia la calidad de todo lo que te responde.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Markdown es una forma de darle formato a texto plano usando símbolos del teclado, y <code>.md</code> es la extensión de los archivos escritos así.</p>
+
+      <p>Piensa en la diferencia con Word. Un documento de Word guarda el texto <em>y</em> un montón de información sobre tipografías, márgenes, versiones y comentarios, todo comprimido en un formato que solo Word entiende bien. Un <code>.md</code> guarda el texto y ya. Lo abre cualquier programa, pesa nada, y dentro de veinte años se va a poder leer igual.</p>
+
+      <h2>Por qué la IA trabaja mejor con ellos</h2>
+
+      <p>Un modelo lee texto. Cuando le das un PDF o un Word, alguien tiene que convertirlo primero a texto, y en esa conversión se pierden cosas: el orden de las columnas, qué era encabezado y qué era nota al pie, dónde empezaba la tabla.</p>
+
+      <p>Con markdown no hay conversión. Los símbolos que le pones son los mismos que el modelo usa para entender la jerarquía: esto es un título, esto cuelga de aquel, esto es una lista de tres cosas del mismo tipo. Le estás dando el contenido y la estructura al mismo tiempo, sin ambigüedad.</p>
+
+      <p>Por eso las instrucciones de los agentes, las skills y los archivos de memoria se escriben en markdown. No es moda de programadores: es el formato con menos ruido entre lo que escribes y lo que el modelo entiende.</p>
+
+      <h2>Los seis símbolos que necesitas</h2>
+
+      <p>Son estos. No hay más que aprender para empezar:</p>
+
+      <pre><code># Título principal
+## Título de sección
+### Subtítulo
+
+Un párrafo normal se escribe tal cual, sin ningún símbolo.
+Para separar párrafos, deja una línea en blanco.
+
+- Una lista
+- Otro punto de la lista
+- Y otro
+
+1. Una lista numerada
+2. Segundo paso
+3. Tercer paso
+
+**Esto queda en negrita** y *esto en cursiva*.
+
+`Esto es un dato literal`, como un nombre de archivo.
+
+[Texto del enlace](https://claude.com/)</code></pre>
+
+      <p>Eso es todo. El número de <code>#</code> indica el nivel: uno para el título del documento, dos para cada sección, tres para las subdivisiones. El guion hace listas. Los asteriscos dobles hacen negritas.</p>
+
+      <p>Si escribes el archivo y lo abres en un editor que entiende markdown, vas a ver los títulos grandes y las negritas puestas. Si lo abres en un editor que no lo entiende, vas a ver los símbolos crudos. Las dos cosas están bien: el archivo es el mismo.</p>
+
+      <h2>Cómo creas uno, paso a paso</h2>
+
+      <ol>
+        <li><strong>En Mac:</strong> abre TextEdit, y en el menú <em>Formato</em> elige "Convertir en texto simple". Escribe. Guarda con el nombre que quieras, terminado en <code>.md</code>. Si te pregunta si quieres usar esa extensión, di que sí.</li>
+        <li><strong>En Windows:</strong> abre el Bloc de notas, escribe, y al guardar cambia el tipo de archivo a "Todos los archivos" y escribe el nombre completo con <code>.md</code> al final. Si guardas sin eso, Windows le pone <code>.txt</code>.</li>
+        <li><strong>Más cómodo:</strong> instala un editor que lo entienda. Obsidian y Visual Studio Code son gratis y muestran el formato mientras escribes. Si vas a hacer esto seguido, vale los cinco minutos de instalación.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El error de principiante:</strong> creer que guardaste un <code>.md</code> cuando en realidad tienes un <code>mi-archivo.md.txt</code>. Pasa en Windows todo el tiempo porque el sistema esconde las extensiones. Actívalas en las opciones del explorador de archivos y revisa el nombre completo. Y nunca escribas estos archivos en Word: aunque le pongas la extensión, adentro no va texto plano.</p>
+      </div>
+
+      <h2>La plantilla de "cómo trabajo"</h2>
+
+      <p>Este es el archivo que le sirve a cualquiera, sin importar a qué te dediques. Es la descripción de tu contexto para que la IA deje de darte respuestas de manual.</p>
+
+      <p>Cópialo, guárdalo como <code>como-trabajo.md</code> y llena lo que está entre corchetes. Después súbelo a tu proyecto de Claude o pégalo en las instrucciones personalizadas.</p>
+
+      <pre><code># Cómo trabajo
+
+## Quién soy
+- Nombre: [tu nombre]
+- Puesto: [tu puesto real, no el del organigrama]
+- Empresa e industria: [qué hace la empresa y de qué tamaño es]
+- Ciudad y zona horaria: [dónde]
+- Idioma: [español de México / el que uses]
+
+## De qué soy responsable
+- [Resultado 1 por el que te evalúan]
+- [Resultado 2]
+- [Resultado 3]
+
+## Con quién trabajo
+- [Nombre o rol] — [qué le entrego o qué me entrega]
+- [Nombre o rol] — [qué le entrego o qué me entrega]
+
+## Herramientas que uso todos los días
+- [Ej. Excel, HubSpot, Slack, Shopify]
+
+## Cómo quiero que me respondas
+- Tono: [directo / con matices / formal]
+- Largo: [respuestas cortas / desarrolladas]
+- Formato: [prosa / bullets / tablas]
+- Si te falta un dato para responder bien, pregúntamelo.
+  No lo inventes.
+- Si algo que te pido es mala idea, dímelo antes de hacerlo.
+
+## Cosas que ya intenté y no funcionaron
+- [Lo que no quieres que te vuelvan a proponer]
+
+## Vocabulario de mi empresa
+- [Término interno] = [qué significa]
+- [Término interno] = [qué significa]
+
+## Lo que nunca debes hacer
+- [Ej. no escribir a clientes sin que yo lo revise]
+- [Ej. no inventar cifras; si no las tienes, dilo]</code></pre>
+
+      <p>Llénalo con lo específico. "Trabajo en ventas" no sirve; "llevo 40 cuentas de distribuidores en el bajío y me evalúan por recompra, no por cuentas nuevas" cambia todas las respuestas que vas a recibir.</p>
+
+      <h2>Dónde acaban usándose estos archivos</h2>
+
+      <p>Una vez que sabes hacer uno, se te abren tres cosas. La primera son las instrucciones de proyecto: subes tu <code>como-trabajo.md</code> y ya no repites tu contexto en cada chat. La segunda es el <code>CLAUDE.md</code>, el archivo que define cómo se comporta la IA dentro de una carpeta o un proyecto de trabajo; está explicado a fondo en <a href="/guias/el-archivo-mas-importante-de-claude-code/">esta guía</a> y hay una <a href="/guias/plantilla-de-claude-md/">plantilla lista para copiar</a>.</p>
+
+      <p>La tercera son las skills, que no son otra cosa que una carpeta con un archivo markdown adentro explicando cómo se hace un trabajo. Cuando alguien te diga "instálate esta skill", ahora ya sabes exactamente qué le estás dando de comer al modelo.</p>
+
+      <h2>Qué hacer hoy</h2>
+
+      <p>No te pongas a estudiar markdown. Se aprende usándolo y con los seis símbolos de arriba ya tienes el 95%.</p>
+
+      <p>Haz una sola cosa: llena la plantilla, guárdala, y úsala esta semana. La primera vez que te responda algo que ya toma en cuenta tu industria, tus herramientas y a quién le reportas, sin que se lo hayas explicado, vas a entender por qué todo el mundo insiste con los archivos <code>.md</code>.</p>

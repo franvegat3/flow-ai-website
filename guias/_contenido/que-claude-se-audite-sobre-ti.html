@@ -1,0 +1,92 @@
+      <p>Si llevas meses trabajando con Claude, ya tiene un perfil tuyo. Sabe a qué te dedicas, cómo escribes, qué proyectos traes, qué te choca. Nunca te enseñó ese perfil y tú nunca lo aprobaste.</p>
+
+      <p>El problema no es que exista. El problema es que buena parte está caduca. Ahí sigue el cliente que ya se fue, el puesto que ya cambiaste, el proyecto que cancelaste en marzo, la preferencia que dijiste una vez de mal humor y quedó grabada como ley. Y como esa capa se aplica callada, tú solo ves el síntoma: respuestas que suenan a alguien que fuiste hace medio año.</p>
+
+      <p>La auditoría son tres prompts y diez minutos. Es de las cosas con mejor relación esfuerzo-resultado que puedes hacerle a tu setup.</p>
+
+      <h2>Qué es la memoria, en una frase</h2>
+
+      <p>Es lo que Claude retiene entre conversaciones para no empezar de cero cada vez: hechos sobre ti, tu trabajo y tus preferencias, que se van acumulando solos mientras platicas.</p>
+
+      <p>Se acumulan solos. Ahí está todo el asunto. Nadie escribió ese archivo con cuidado: se fue llenando de migajas de conversaciones que tenían otro propósito, y una migaja de una junta mala pesa igual que una instrucción que sí pensaste.</p>
+
+      <p>Antes de empezar, entra a la configuración de tu cuenta y busca la sección de memoria. Ahí puedes ver lo que guardó, borrar entradas sueltas y decidir si quieres que siga guardando. Vale la pena mirarla aunque no borres nada, para dimensionar cuánto hay.</p>
+
+      <h2>Paso 1: el volcado</h2>
+
+      <p>Primero se saca todo a la luz. No le pidas un resumen: los resúmenes esconden justo lo que quieres cazar.</p>
+
+      <pre><code>Quiero auditar lo que sabes de mí. No me des un resumen amable: quiero el inventario completo.
+
+Escribe todo lo que crees saber sobre mí, agrupado en estas categorías:
+1. Identidad y trabajo (puesto, empresa, industria, a quién le reporto)
+2. Proyectos y clientes activos
+3. Herramientas y sistemas que uso
+4. Preferencias de formato y de estilo de respuesta
+5. Preferencias de tono y de trato
+6. Opiniones o posturas que me has atribuido
+7. Datos personales fuera del trabajo
+8. Cualquier otra cosa que no entre arriba
+
+Para cada punto:
+- Escríbelo como una afirmación de una línea.
+- Marca de dónde viene: "me lo dijiste directo" o "lo deduje".
+- Marca qué tan seguro estás: alto, medio o bajo.
+- Si puedes ubicarlo en el tiempo, di de cuándo es.
+
+No omitas nada por parecer trivial o incómodo. Si un punto lo dedujiste de un solo comentario, dilo explícitamente.</code></pre>
+
+      <p>La primera vez que corres esto, lo normal es encontrar entre tres y ocho cosas equivocadas. Las que más daño hacen son las de la categoría 6: posturas que nunca dijiste, deducidas de un comentario suelto, y que están sesgando cada respuesta desde entonces.</p>
+
+      <h2>Paso 2: la corrección</h2>
+
+      <p>Ahora lo pasas por el filtro. Contesta con la lista marcada, sin escribir párrafos.</p>
+
+      <pre><code>Te voy a clasificar cada punto con una de estas cuatro etiquetas:
+
+VIGENTE — sigue siendo cierto, consérvalo.
+CADUCO — fue cierto y ya no lo es. Te doy el dato nuevo.
+FALSO — nunca fue cierto. Bórralo y no lo vuelvas a inferir.
+DE MÁS — lo generalizaste de un caso puntual. Te doy el límite real.
+
+[pega aquí tu lista marcada]
+
+Con eso:
+1. Dime qué respuestas pasadas se te pudieron haber sesgado por lo que marqué como FALSO o DE MÁS.
+2. Dime qué otras cosas de tu inventario dependían de un dato que acabo de corregir y también hay que revisar.
+3. No me agradezcas ni me digas que ahora entiendes mejor. Solo la lista.</code></pre>
+
+      <p>El punto 2 es el que casi nadie pide y el que más limpia. Los datos viejos vienen en racimo: si cambiaste de puesto, no solo cambió el puesto, cambió a quién le reportas, qué herramientas usas y qué te urge. Corregir uno sin los demás deja el perfil peor que antes, porque queda incoherente.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir qué <em>no</em> quieres que recuerde. Hay cosas útiles de mencionar en una conversación y pésimas de guardar para siempre: cifras de nómina de personas con nombre, temas de salud, la negociación que traes con un socio. Termina la auditoría diciéndole explícitamente qué categorías no debe retener, y para esos temas usa una conversación que no alimente la memoria.</p>
+      </div>
+
+      <h2>Paso 3: el perfil reescrito</h2>
+
+      <p>El último paso convierte la limpieza en algo que puedes reusar en cualquier lado.</p>
+
+      <pre><code>Escribe ahora mi perfil corregido, en un bloque de texto que yo pueda copiar y pegar como instrucciones permanentes.
+
+Requisitos:
+- Máximo 300 palabras.
+- Afirmaciones en presente, en segunda persona hacia ti ("Trabaja en...", "Prefiere que...").
+- Solo hechos vigentes. Nada de historia ni de cómo llegamos aquí.
+- Ordénalo así: quién soy y qué hago / cómo trabajo / qué estoy haciendo ahora / cómo quiero que me respondas / qué evitar.
+- Al final agrega una línea con la fecha de hoy que diga hasta cuándo es válido este perfil.
+
+No incluyas nada de lo que te pedí no retener.</code></pre>
+
+      <p>Ese bloque es lo valioso. Guárdalo en un archivo tuyo y pégalo en las instrucciones de tus proyectos. Así el contexto deja de depender de la acumulación silenciosa y pasa a ser un documento que tú controlas, que puedes versionar y que puedes llevarte a otra herramienta el día que quieras.</p>
+
+      <h2>Esto también aplica a una empresa</h2>
+
+      <p>En operaciones el mismo problema cuesta dinero. Un equipo comercial que usa Claude para preparar llamadas acumula un perfil de la empresa que arrastra la lista de precios del semestre pasado, el proceso de descuentos anterior y dos personas que ya renunciaron. Nadie nota nada hasta que un vendedor manda una propuesta con la condición vieja.</p>
+
+      <p>La regla que dejo instalada donde monto estos sistemas: la auditoría se corre cada trimestre, y siempre después de un cambio de precios, de estructura o de proceso. Diez minutos por persona. Es más barato que un mes de propuestas mal armadas.</p>
+
+      <h2>Si después de esto sigue saliendo mal</h2>
+
+      <p>La memoria es solo una de las tres capas que empujan una respuesta. Las otras dos son las instrucciones del proyecto y el desorden de la conversación en la que estás.</p>
+
+      <p>Si ya auditaste la memoria y las respuestas siguen sonando raras, el problema está en la conversación: llevas cuarenta mensajes, hay tres temas mezclados y dos archivos que ya no aplican. Eso se arregla con <a href="/guias/limpieza-de-contexto/">una limpieza de contexto</a>, no con más memoria. Y si nunca has armado la capa de instrucciones desde cero, empieza por ahí con <a href="/guias/claude-en-5-pasos-para-principiantes/">el setup en 5 pasos</a>.</p>

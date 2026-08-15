@@ -1,0 +1,164 @@
+      <p>Haz el ejercicio: entra a tu estado de cuenta y suma todas las suscripciones de software del último mes. Casi siempre pasan dos cosas. La primera, que la suma es más alta de lo que recordabas. La segunda, que hay tres herramientas de las que usas una sola función.</p>
+
+      <p>Esa segunda parte es la interesante. Pagar mensualidad completa por una plataforma de la que usas el 5% es donde está el desperdicio, y hoy sí se puede reconstruir ese 5% en una tarde.</p>
+
+      <p>Pero antes del stack va la regla, porque el error caro no es no saber construir. Es construir lo que no debías.</p>
+
+      <h2>La regla honesta de construir contra comprar</h2>
+
+      <p>Escribí esta lista después de ver a clientes reconstruir cosas que no debían y quedarse con un problema peor del que tenían.</p>
+
+      <h3>No lo reconstruyas si…</h3>
+
+      <ul>
+        <li><strong>Toca dinero de terceros o cumplimiento fiscal.</strong> Facturación, nómina, cobros con tarjeta, contabilidad. El valor de esas plataformas no es el software: es que se mantienen al día con reglas que cambian y que alguien responde cuando algo truena. Ahorrarte una mensualidad ahí es la peor operación posible.</li>
+        <li><strong>Otras personas dependen de que esté arriba.</strong> Si tu cliente o tu equipo entra a diario y un domingo a las 11 de la noche deja de funcionar, ahora tú eres el soporte técnico. Pregúntate si quieres ese trabajo.</li>
+        <li><strong>Su valor real son las integraciones.</strong> Hay herramientas cuyo mérito no es lo que hacen, sino que están conectadas con otras veinte cosas y alguien mantiene esas conexiones vivas. Eso no se replica en una tarde.</li>
+        <li><strong>El valor es la red.</strong> Correo, videollamadas, firma electrónica, el CRM que usa todo tu equipo. Sirven porque los demás también los usan.</li>
+        <li><strong>Usas la mitad o más de sus funciones.</strong> Si de verdad la exprimes, la estás pagando bien.</li>
+      </ul>
+
+      <h3>Sí reconstrúyelo si…</h3>
+
+      <ul>
+        <li><strong>Es un tablero de solo lectura.</strong> Ver números, no capturarlos. Es la categoría con mejor relación entre esfuerzo y ahorro, sin discusión.</li>
+        <li><strong>Es interno y lo usan menos de diez personas.</strong> Nadie externo depende de que esté impecable.</li>
+        <li><strong>Es una herramienta de una sola tabla.</strong> Muchas suscripciones son, en el fondo, una lista con formulario y filtros.</li>
+        <li><strong>Usas menos del 20% de sus funciones.</strong> Y sabes exactamente cuál 20%.</li>
+        <li><strong>Lo que necesitas no existe.</strong> Este es el mejor caso de todos y el que la gente menos considera: no es reemplazar, es construir lo que tu operación necesita y que ningún producto genérico hace.</li>
+      </ul>
+
+      <p>Regla corta, si te llevas una sola cosa: <strong>reconstruye lo que lee, compra lo que escribe en sistemas de los que no eres dueño.</strong></p>
+
+      <h2>El stack, capa por capa</h2>
+
+      <p>Son cinco capas y ninguna requiere que sepas programar. Sí requiere que sepas explicar lo que quieres.</p>
+
+      <h3>Capa 1 — donde se construye</h3>
+      <p>Claude o ChatGPT para cosas de una sola pieza. Claude Code cuando sean varios archivos o quieras que trabaje contra tu carpeta directamente. La diferencia práctica: el chat te da una pieza que copias; Claude Code te deja un proyecto que puedes seguir modificando en el tiempo.</p>
+      <p>Si nunca has construido nada, empieza en el chat con un artifact. Es la ruta más corta de idea a algo que se ve y funciona.</p>
+
+      <h3>Capa 2 — donde viven los datos</h3>
+      <p>Tres opciones, en orden de menor a mayor esfuerzo:</p>
+      <ul>
+        <li><strong>Una hoja de cálculo</strong> (Google Sheets). Subestimada. Si tu herramienta es "una tabla con filtros y una vista bonita", la tabla puede seguir siendo una hoja y tú solo construyes la vista. Además tu equipo ya sabe usarla.</li>
+        <li><strong>Airtable</strong> si necesitas relaciones entre tablas y formularios sin montar nada.</li>
+        <li><strong>Supabase</strong> cuando de verdad necesites una base de datos con usuarios. Es el escalón donde empieza el mantenimiento en serio.</li>
+      </ul>
+      <p>Consejo que ahorra dolores: deja los datos donde ya están. La mayoría de los reemplazos que valen la pena son una interfaz nueva sobre datos viejos, no una migración.</p>
+
+      <h3>Capa 3 — dónde se publica</h3>
+      <p>Para algo interno y de una sola pieza, un artifact publicado alcanza y no hay nada que administrar. Para algo con más piezas: Cloudflare Pages, Vercel o Netlify tienen niveles gratuitos suficientes para herramientas internas, y publicar es conectar un repositorio de GitHub.</p>
+
+      <h3>Capa 4 — el pegamento</h3>
+      <p>Lo que hace que las cosas pasen solas: mover datos de un lado a otro, disparar a cierta hora, avisar cuando algo cambia. n8n si quieres control y alojarlo tú, Make o Zapier si prefieres pagar por no pensar. Para lo verdaderamente simple, una tarea programada en tu computadora o en el servidor basta.</p>
+      <p>Esta capa es donde más gente se sobre-diseña. Si tu proceso corre una vez a la semana, no necesitas una plataforma de automatización: necesitas un recordatorio.</p>
+
+      <h3>Capa 5 — la parte aburrida que decide si sobrevive</h3>
+      <p>Respaldo de los datos, un lugar donde apuntar quién es dueño de esto, y una nota de cómo se arregla si truena. Suena a burocracia y es la diferencia entre una herramienta que dura dos años y una que muere cuando la persona que la hizo se va de vacaciones.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir cómo se apaga. Antes de reemplazar una suscripción, escribe en tres líneas qué haces si tu versión falla y hay que volver a la herramienta de antes. Si la respuesta es "no se puede porque ya cancelé y exporté todo mal", no estás listo para cancelar. Corre las dos en paralelo un mes. Es más barato que el desastre.</p>
+      </div>
+
+      <h2>Cinco reemplazos que sí valen la pena</h2>
+
+      <div class="plugin-card">
+        <h3>1. El tablero de números de la semana</h3>
+        <p>Sustituye a las plataformas de reportes que cuestan por usuario y que en tu caso solo muestran seis cifras. Lees de tus fuentes, calculas, y muestras. Solo lectura, sin captura, sin usuarios.</p>
+        <p class="plugin-for"><strong>Por qué funciona:</strong> nadie escribe nada, así que no hay nada que corromper. Si falla un martes, lo arreglas el miércoles y no pasó nada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. La calculadora de cotización de tu negocio</h3>
+        <p>Toda empresa tiene una lógica de precio propia que ninguna herramienta genérica modela bien: escalones por volumen, recargos por urgencia, descuentos por cliente, márgenes distintos por línea. Termina viviendo en una hoja que solo una persona entiende.</p>
+        <p class="plugin-for"><strong>Por qué funciona:</strong> es lógica pura, no hay datos que administrar, y el resultado se verifica al instante contra tres cotizaciones viejas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El formulario interno con reglas</h3>
+        <p>Solicitudes de vacaciones, altas de proveedor, tickets internos, pedidos entre áreas. Se paga una suscripción de formularios y lo que se necesitaba era captura con tres reglas y una notificación.</p>
+        <p class="plugin-for"><strong>Por qué funciona:</strong> el volumen es bajo, los usuarios son internos, y las reglas son tuyas y raras —justo lo que las herramientas genéricas hacen mal.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El buscador sobre tus propios documentos</h3>
+        <p>Manuales, políticas, fichas técnicas, contratos, catálogos. En vez de pagar una plataforma de gestión documental, dejas los documentos en una carpeta conectada y preguntas en lenguaje normal.</p>
+        <p class="plugin-for"><strong>Por qué funciona:</strong> el valor está en el acceso, no en la interfaz. Y aquí la IA aporta algo que la herramienta cara tampoco hacía: entender la pregunta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El reporte recurrente que alguien arma a mano</h3>
+        <p>No es reemplazo de software, es reemplazo de horas. El reporte mensual al cliente, el corte semanal, el resumen para dirección. Lo produce alguien copiando y pegando cada mes.</p>
+        <p class="plugin-for"><strong>Por qué funciona:</strong> el formato ya existe y es estable. Respetas la plantilla exacta y solo automatizas el llenado.</p>
+      </div>
+
+      <h2>El prompt para dimensionar tu reemplazo</h2>
+
+      <p>Antes de construir nada, corre esto. Está diseñado para que te digan que no cuando la respuesta es no:</p>
+
+      <pre><code>Estoy considerando reemplazar [herramienta] por algo que
+construya yo. Ayúdame a decidir antes de escribir una línea.
+
+Contexto:
+- Lo que hace hoy: [descríbelo]
+- Lo que YO uso de ella: [solo lo que de verdad usas]
+- Cuánta gente la usa: [número y quiénes]
+- Qué pasa si deja de funcionar un martes: [consecuencia real]
+- Dónde viven los datos hoy: [sistema]
+- Costo mensual actual: [monto]
+
+Analiza y responde en este orden:
+
+1. ALCANCE REAL
+   Lista solo las funciones que dije que uso. Para cada una,
+   di si es "leer" o "escribir".
+
+2. SEMAFORO
+   Verde / amarillo / rojo, con esta regla:
+   - Rojo si toca dinero de terceros, cumplimiento fiscal,
+     o si su valor son integraciones que alguien mantiene.
+   - Amarillo si otras personas dependen de que esté arriba.
+   - Verde si es interno, de bajo volumen y mayormente
+     de lectura.
+   Si sale rojo, dilo claro y termina ahí. No me des un plan.
+
+3. LA VERSION MINIMA
+   Si salió verde o amarillo: qué es lo más chico que
+   resuelve el 80% del valor. Sé agresivo cortando.
+
+4. ESFUERZO HONESTO
+   Cuántas horas de construcción inicial y cuántas horas al
+   mes de mantenimiento. Incluye el mantenimiento, no lo
+   escondas.
+
+5. QUE SE ROMPE
+   Las 3 cosas más probables que fallen en los primeros
+   6 meses, y qué tendría que saber hacer yo para arreglarlas.
+
+6. VEREDICTO
+   Una frase: construir o seguir pagando. Toma en cuenta el
+   costo mensual contra las horas de mantenimiento. Si mi
+   tiempo vale más que la suscripción, dímelo aunque yo
+   claramente quiera construirlo.</code></pre>
+
+      <p>El punto 6 es el que hace este prompt distinto de pedirle a la IA que te construya algo. Sin esa instrucción explícita, el modelo entra en modo cómplice y te ayuda a construir cualquier cosa que le pidas.</p>
+
+      <h2>El costo que nadie calcula</h2>
+
+      <p>La construcción es la parte barata. El mantenimiento es la cara.</p>
+
+      <p>Una herramienta interna necesita atención cada vez que cambia una fuente de datos, cada vez que alguien nuevo la necesita, cada vez que el negocio cambia una regla. Si eso te toma dos horas al mes, compara esas dos horas contra la mensualidad antes de celebrar el ahorro. Muchas veces el ahorro es real y muchas veces no.</p>
+
+      <p>Y hay un costo que no aparece en ninguna cuenta: cuando tú eres el único que sabe cómo funciona, te convertiste en el proveedor de tu propia empresa. Deja escrito cómo funciona y quién más puede tocarlo, desde el primer día.</p>
+
+      <h2>En qué orden hacerlo</h2>
+
+      <ol>
+        <li><strong>Audita primero.</strong> Lista todas las suscripciones, cuánto cuestan y qué función usas de cada una. La mitad del ahorro aparece aquí, cancelando lo que nadie abre.</li>
+        <li><strong>Elige un tablero de solo lectura</strong> como primer proyecto. Bajo riesgo, resultado visible, y te enseña el stack completo.</li>
+        <li><strong>Corre las dos en paralelo un mes</strong> antes de cancelar nada.</li>
+        <li><strong>Documenta y pásale el control a alguien más.</strong> Si no sobrevive a que tú te vayas dos semanas, no está terminada.</li>
+      </ol>
+
+      <p>Si quieres empezar por la auditoría, <a href="/guias/9-cosas-que-sigues-pagando/">las 9 cosas que sigues pagando y que Claude hace gratis</a> es el inventario, y <a href="/guias/tu-primera-app-sin-programar/">construye tu primera app sin programar</a> es el camino corto para la capa 1.</p>

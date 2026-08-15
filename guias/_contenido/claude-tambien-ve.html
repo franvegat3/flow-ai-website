@@ -1,0 +1,102 @@
+      <p>Llevas meses describiéndole cosas con palabras. "Que se vea más limpio", "que el botón resalte más", "el reporte se ve raro". Y del otro lado hay un modelo que puede mirar una imagen y decirte exactamente qué tiene mal.</p>
+
+      <p>Casi nadie usa esa parte. La gente escribe párrafos tratando de explicar una pantalla, cuando podría pegar la pantalla.</p>
+
+      <p>Hay dos formas de usarlo que valen por todas las demás: enseñarle algo que te gusta para que se le parezca, y hacer que se tome captura de su propio trabajo para que vea lo que hizo mal. La segunda es la que casi nadie conoce y la que cambia los resultados de verdad.</p>
+
+      <h2>Cómo se le pasa una imagen</h2>
+
+      <p>En el chat es obvio: la arrastras. En la terminal, con Claude Code, hay tres caminos y conviene conocer los tres:</p>
+
+      <ul>
+        <li><strong>Arrastrar</strong> la imagen a la ventana de Claude Code.</li>
+        <li><strong>Pegar</strong> con <code>Ctrl+V</code>. En Mac, <code>Cmd+V</code> también funciona en iTerm2.</li>
+        <li><strong>Darle la ruta</strong>: "analiza esta imagen: <code>/ruta/a/tu/captura.png</code>". Es el que uso más, porque funciona igual en cualquier terminal y deja rastro escrito de qué imagen se usó.</li>
+      </ul>
+
+      <p>Puedes meter varias imágenes en la misma conversación y compararlas entre sí. Ahí está la mitad del valor: no "mira esto", sino "mira estas dos y dime en qué se diferencian".</p>
+
+      <h2>Forma 1: el diseño que te encanta</h2>
+
+      <p>El error clásico es pegar una captura y escribir "hazme algo así". Lo que sale es una imitación general y borrosa, porque el modelo tuvo que adivinar qué parte te gustó.</p>
+
+      <p>El arreglo es partirlo en dos pasos: primero que <em>describa</em>, luego que <em>construya</em>. Cuando lo obligas a poner en palabras lo que ve, tú puedes corregir la lectura antes de que escriba una línea de código.</p>
+
+      <pre><code>Te paso una captura de una interfaz que me gusta.
+
+PASO 1 — DESCRÍBELA, NO LA CONSTRUYAS TODAVÍA
+Escribe qué ves, en este orden:
+- Estructura: cuántas zonas hay, cómo están repartidas, qué manda
+  la jerarquía visual y por qué.
+- Espaciado: qué tan generoso es, dónde hay aire y dónde no.
+- Tipografía: cuántos tamaños distintos hay, qué pesos, cómo se
+  distingue un título de un dato.
+- Color: cuántos colores reales hay, cuál es el de acento y en qué
+  se usa exactamente.
+- Detalles: bordes, sombras, esquinas, íconos.
+- Las 3 decisiones que hacen que esto se vea bien y que la mayoría
+  de la gente no haría.
+
+PASO 2 — ESPERA
+Te voy a corregir la descripción antes de que construyas nada.
+
+PASO 3 — CONSTRUYE
+Cuando te dé el visto bueno, aplica ESAS decisiones a lo mío:
+[describe tu pantalla, tu reporte o tu página]
+No copies el contenido de la referencia ni su marca. Copia las
+decisiones de diseño.
+
+Restricciones mías:
+- Mis colores de marca son: [ponlos]
+- Tiene que funcionar en móvil
+- [lo que no se puede tocar]</code></pre>
+
+      <p>La sección de las tres decisiones es la que más rinde. Casi siempre lo que te gustó de un diseño no es el color: es que alguien decidió usar dos tamaños de letra en lugar de seis.</p>
+
+      <h2>Forma 2: que vea su propio trabajo</h2>
+
+      <p>Esta es la buena. Cuando Claude construye algo visual —una página, un dashboard, un reporte, una gráfica— no tiene ni idea de cómo quedó. Escribió código y asumió que se ve como lo imaginó. Por eso te entrega cosas con texto encimado, un botón fuera de la pantalla y una tabla que se desborda.</p>
+
+      <p>La solución es cerrar el ciclo: que lo abra, se tome captura y se mire.</p>
+
+      <p>En Mac hay un comando del sistema para capturar la pantalla sin ruido, y Claude Code lo puede correr él mismo desde la terminal:</p>
+
+      <pre><code>screencapture -x /tmp/revision.png</code></pre>
+
+      <p>Y para algo que vive en el navegador, la vía limpia es conectarle un servidor MCP de navegador —Playwright o Puppeteer— para que abra la página, la capture a distintos anchos y lea el resultado. Si no quieres instalar nada, la versión de a pie funciona igual de bien: haces tú la captura, se la pegas, y le das la instrucción de revisión.</p>
+
+      <p>La instrucción, en cualquiera de los tres casos, es esta:</p>
+
+      <pre><code>Abre lo que acabas de construir, tómale captura y míralo.
+
+Revísalo contra esta lista, una por una, y para cada punto responde
+BIEN o MAL con la evidencia visual:
+1. ¿Hay texto cortado, encimado o que se sale de su contenedor?
+2. ¿Algo se desborda horizontalmente?
+3. ¿Los espacios entre bloques son consistentes o hay uno raro?
+4. ¿La alineación es real o hay elementos con 2 o 3 píxeles de
+   diferencia?
+5. ¿Se lee el texto sobre su fondo, incluso el secundario?
+6. ¿Lo primero que ve el ojo es lo más importante de la pantalla?
+
+Luego repite la captura a 390 píxeles de ancho y contesta lo mismo.
+
+Después arregla SOLO lo que marcaste MAL, vuelve a capturar y
+enséñame el antes y el después. No me cuentes lo que arreglaste:
+enséñame las dos imágenes.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedir la segunda captura. Si no lo obligas a volver a mirar después de arreglar, te va a decir que quedó perfecto sin haber visto nada. La frase "vuelve a capturar y enséñame el antes y el después" es literalmente la que convierte esto en un ciclo cerrado. Sin ella son dos pasos sueltos.</p>
+      </div>
+
+      <h2>Dónde rinde más en una operación</h2>
+
+      <p>Fuera de diseño, donde más lo uso es en revisión. Un equipo de contenido que produce piezas para redes puede pasarle la captura del anuncio junto con la guía de marca en texto y pedir el veredicto punto por punto: si el logo tiene el aire mínimo, si el texto ocupa menos del porcentaje que la plataforma tolera, si el color de fondo es el de marca o uno parecido.</p>
+
+      <p>El otro caso es el reporte semanal. Le pasas la captura del panel de la plataforma —de anuncios, de ventas, del CRM— y le pides que lea los números y los compare contra la semana anterior. No es que no puedas exportar los datos; es que muchas veces la exportación tarda más que la captura, y para una revisión rápida da igual.</p>
+
+      <h2>La trampa</h2>
+
+      <p>Una captura no reemplaza al dato. Si le pides que lea cifras de una imagen y luego construyas una decisión sobre ellas, verifica los números contra la fuente. Para revisar cómo se ve algo, la imagen es la fuente correcta. Para calcular sobre números, no lo es.</p>
+
+      <p>Con esa sola regla en la cabeza, el ojo de Claude pasa de curiosidad a herramienta diaria. Si lo que quieres es replicar un sitio completo y no una pantalla, sigue con <a href="/guias/robarle-el-diseno-a-un-sitio/">robarle el diseño a un sitio</a>.</p>

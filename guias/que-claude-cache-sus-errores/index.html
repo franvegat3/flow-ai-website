@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo hacer que Claude cache sus propios errores — Guías Flow AI</title>
+  <meta name="description" content="Que la IA revise su trabajo en el mismo chat no funciona. Los prompts de subagente para tener ojos frescos, incluido el panel de 3 personajes que te da tres opiniones honestas de golpe." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/que-claude-cache-sus-errores/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo hacer que Claude cache sus propios errores" />
+  <meta property="og:description" content="Que la IA revise su trabajo en el mismo chat no funciona. Los prompts de subagente para tener ojos frescos, incluido el panel de 3 personajes que te da tres opiniones honestas de golpe." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/que-claude-cache-sus-errores/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Agentes</span></div>
+      <h1>Cómo hacer que Claude cache sus propios errores</h1>
+      <p class="lead">Que la IA revise su trabajo en el mismo chat no funciona. Los prompts de subagente para tener ojos frescos, incluido el panel de 3 personajes que te da tres opiniones honestas de golpe.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le pides a Claude que revise el trabajo que acaba de hacer y te contesta que se ve bien. Casi siempre. Aunque no lo esté.</p>
+
+      <p>No es que mienta. Es que le estás pidiendo una opinión a alguien que tiene todo el razonamiento que produjo el error todavía enfrente. El modelo ya se convenció una vez. Volver a preguntarle en el mismo hilo es pedirle que se contradiga contra su propio contexto, y eso es exactamente lo que un modelo de lenguaje hace peor.</p>
+
+      <p>La solución no es un mejor prompt de revisión. Es cambiar quién revisa.</p>
+
+      <h2>Por qué la autocrítica en el mismo chat no funciona</h2>
+
+      <p>Cuando Claude escribe algo, todo el camino que lo llevó ahí queda en el contexto: los archivos que leyó, las decisiones que tomó, las suposiciones que hizo sin decirlas. Si le pides que revise, revisa <em>con</em> ese camino a la vista. Lee su propia justificación y la encuentra razonable, porque la escribió él.</p>
+
+      <p>Hay un detalle práctico encima: si le preguntas "¿está bien?", el patrón más probable en cualquier conversación humana es responder que sí. El modelo está entrenado sobre conversaciones humanas.</p>
+
+      <p>La documentación de Claude Code lo dice sin adornos: un revisor que corre en un subagente ve solo el resultado y los criterios que le das, no el razonamiento que lo produjo. Por eso lo evalúa por sus propios méritos. Esa es toda la magia. Contexto fresco.</p>
+
+      <h2>La regla: contexto fresco más criterio explícito</h2>
+
+      <p>Dos cosas tienen que ser ciertas para que una revisión sirva:</p>
+
+      <ul>
+        <li><strong>El revisor no vio cómo se hizo.</strong> Solo el entregable. En Claude Code eso es un subagente; en la app de Claude, una conversación nueva donde pegas el resultado y nada más.</li>
+        <li><strong>El criterio está escrito.</strong> "Revísalo" no es un criterio. "Verifica que cada requisito de este documento esté implementado y que nada fuera del alcance haya cambiado" sí lo es.</li>
+      </ul>
+
+      <p>Sin lo segundo pasa algo peor que no revisar: el revisor inventa problemas. Si le pides que encuentre fallas, va a encontrar fallas, porque eso le pediste. Terminas persiguiendo comentarios de estilo mientras el error de fondo sigue ahí.</p>
+
+      <h2>Los cinco prompts</h2>
+
+      <p>Estos los uso en operación real: revisión de propuestas comerciales, de configuraciones de campaña, de reportes de cierre. No son solo para código.</p>
+
+      <div class="plugin-card">
+        <h3>1. El revisor ciego</h3>
+        <p>El más simple y el que más rinde. Abre una conversación nueva, pega solo el entregable y nada del proceso.</p>
+        <pre><code>Eres un revisor externo. No participaste en este trabajo y no vas a ver
+cómo se hizo.
+
+Abajo está un entregable. Tu única tarea es decirme si cumple con lo que
+promete, evaluándolo por sí mismo.
+
+Reglas:
+- Señala únicamente lo que afecta correctitud o el requisito declarado.
+- Ignora preferencias de estilo.
+- Si algo está afirmado sin evidencia, márcalo como "no verificable" en vez
+  de asumir que es cierto.
+- Si no encuentras nada, dilo. No inventes hallazgos para llenar la lista.
+
+Devuelve máximo 5 hallazgos, cada uno con: qué encontraste, por qué importa,
+y qué cambiarías exactamente.
+
+ENTREGABLE:
+[pega aquí]</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera. Es el mínimo indispensable antes de mandar algo a un cliente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El verificador contra la especificación</h3>
+        <p>Cuando sí escribiste lo que querías antes de empezar, esta es la revisión que atrapa el 80% de los problemas: no busca errores, busca huecos entre lo pedido y lo entregado.</p>
+        <pre><code>Te voy a dar dos cosas: una especificación y un entregable.
+
+Tu trabajo NO es opinar sobre la calidad. Es hacer un cotejo línea por línea.
+
+Para cada requisito de la especificación, clasifícalo:
+- CUMPLE: y cita la parte del entregable que lo cumple.
+- PARCIAL: y di exactamente qué falta.
+- NO CUMPLE: y di dónde debería estar.
+- FUERA DE ALCANCE: algo que está en el entregable pero nadie pidió.
+
+Al final, una sola línea: ¿esto se puede entregar o no?
+
+ESPECIFICACIÓN:
+[pega aquí]
+
+ENTREGABLE:
+[pega aquí]</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos donde alguien pide y alguien entrega. Convierte discusiones de "no era lo que quería" en una tabla.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El panel de tres personajes</h3>
+        <p>El que más me sorprendió. En vez de una opinión promedio, pides tres opiniones con incentivos distintos. Los desacuerdos entre ellos son la parte útil.</p>
+        <pre><code>Vas a evaluar el entregable de abajo desde tres personajes distintos. Cada
+uno responde por separado, con su propio sesgo, sin suavizar.
+
+PERSONAJE 1 — El escéptico técnico.
+Le paga que esto no truene. Busca supuestos no declarados, casos límite,
+dependencias frágiles y cifras que nadie verificó. Pregunta "¿cómo lo sabes?"
+a cada afirmación.
+
+PERSONAJE 2 — El cliente que va a pagar.
+No le importa cómo se hizo. Le importa si esto resuelve su problema, si lo
+entiende sin explicación, y si le parece caro. Es impaciente y dice lo que
+piensa.
+
+PERSONAJE 3 — El operador que se queda con esto.
+Es quien lo va a mantener el próximo año. Busca lo que se rompe cuando la
+persona que lo hizo ya no está: pasos manuales escondidos, cosas que solo
+funcionan en una máquina, conocimiento que no quedó escrito.
+
+Cada personaje: 3 observaciones, ninguna genérica.
+
+Al final, tú como moderador: ¿en qué coinciden los tres? Ese es el problema
+real. ¿En qué se contradicen? Ahí hay una decisión que alguien tiene que
+tomar y todavía no tomó.
+
+ENTREGABLE:
+[pega aquí]</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> propuestas, precios, decisiones de arquitectura y cualquier cosa donde el riesgo no es un error sino un punto ciego.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El refutador</h3>
+        <p>En vez de pedir revisión, pides demolición. Cambia la meta del modelo de "confirmar" a "derribar", y eso cambia lo que encuentra.</p>
+        <pre><code>Tu objetivo es demostrar que esta conclusión está equivocada.
+
+No busques equilibrio. Asume que hay un error y encuéntralo. Ataca en este
+orden:
+
+1. Los datos: ¿de dónde salió cada número? Marca los que no tienen fuente.
+2. El salto lógico: ¿en qué punto la conclusión asume algo que no se probó?
+3. La alternativa: dame la explicación rival más fuerte de los mismos hechos.
+4. La prueba: ¿qué evidencia específica cambiaría la conclusión? Si no
+   existe ninguna, la conclusión no es falsable y eso también es un problema.
+
+Solo si después de todo eso no logras derribarla, dilo explícitamente y
+explica por qué aguantó.
+
+CONCLUSIÓN A REFUTAR:
+[pega aquí]</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> análisis, pronósticos, casos de negocio. Todo lo que va a sostener una decisión cara.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El de lo que falta</h3>
+        <p>Los cuatro anteriores buscan lo que está mal. Este busca lo que no está. Es distinto y suele ser más caro de descubrir tarde.</p>
+        <pre><code>No revises lo que está escrito. Dime qué NO está.
+
+Contexto: este entregable es [describe qué es y para quién].
+
+Responde tres preguntas:
+1. ¿Qué pregunta obvia se va a hacer quien lo reciba y no está contestada aquí?
+2. ¿Qué tuvo que quedar fuera para que esto se viera limpio? Nombra las
+   omisiones convenientes.
+3. Si esto sale mal en tres meses, ¿cuál es la causa más probable, y está
+   mencionada en algún lado?
+
+Sé concreto. Nada de "podría faltar más detalle".
+
+ENTREGABLE:
+[pega aquí]</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> quien manda documentos hacia arriba. Los directores no preguntan por lo que escribiste, preguntan por lo que no.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decirle al revisor que puede no encontrar nada. Sin esa instrucción explícita, siempre reporta hallazgos, incluso cuando el trabajo está bien, y acabas metiéndole capas de defensa a algo que ya funcionaba. Un revisor que dice "no encontré nada relevante" es más valioso que uno que siempre encuentra tres cosas.</p>
+      </div>
+
+      <h2>Cómo se corre esto sin copiar y pegar</h2>
+
+      <p>En la app de Claude, la versión honesta es abrir un chat nuevo. Nada más. Si pegas el resultado en la misma conversación, no cambiaste nada.</p>
+
+      <p>En Claude Code no hace falta: los subagentes existen justo para esto. Corren en su propia ventana de contexto y regresan solo el resumen. Le pides algo como "usa un subagente para revisar este cambio contra el plan y reporta huecos, no preferencias de estilo" y el revisor arranca en frío. Hay además una revisión empaquetada, <code>/code-review</code>, que hace el cotejo del diff actual en un subagente aparte.</p>
+
+      <p>Si quieres que sea permanente, la ruta es guardar el prompt como una skill o un subagente en tu proyecto, para que deje de ser algo que te acuerdas de hacer. Eso es lo que separa la revisión que ocurre siempre de la que ocurre cuando no traes prisa. En <a href="/guias/7-formas-de-controlar-claude-code/">las 7 formas de controlar Claude Code</a> está dónde vive cada una.</p>
+
+      <h2>El orden en que conviene usarlos</h2>
+
+      <p>No corras los cinco. Se contradicen entre sí y acabas paralizado.</p>
+
+      <ol>
+        <li><strong>Siempre:</strong> el revisor ciego. Es barato y atrapa lo evidente.</li>
+        <li><strong>Si escribiste una especificación:</strong> el verificador. Sustituye al revisor ciego, no lo acompaña.</li>
+        <li><strong>Antes de mandarlo a alguien con poder de decisión:</strong> el panel de tres.</li>
+        <li><strong>Cuando hay dinero o reputación de por medio:</strong> el refutador, y solo sobre la conclusión, no sobre el documento entero.</li>
+        <li><strong>Antes de la versión final:</strong> el de lo que falta.</li>
+      </ol>
+
+      <p>Y una regla que aprendí perdiendo tiempo: si el revisor te tira quince hallazgos, no arregles quince. Ordénalos por si afectan el resultado o no. Los que no lo afectan son ruido con buena redacción.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

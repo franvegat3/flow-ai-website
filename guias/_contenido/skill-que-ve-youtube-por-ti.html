@@ -1,0 +1,109 @@
+      <p>Ves un video con dos millones de vistas, te gusta, y sacas la conclusión equivocada: que el tema funcionó. Entonces haces un video del mismo tema y no pasa nada.</p>
+
+      <p>Lo que hizo que ese video funcionara casi nunca es el tema. Es qué aparece en pantalla en el segundo dos, cada cuánto corta, cuándo entra el texto, en qué momento cambia el tono de voz, qué promete antes de los diez segundos y cuándo la cumple. Nada de eso está en el título ni en el transcript.</p>
+
+      <p>Esta skill hace que la IA se vea el video completo —lo que se oye y lo que se ve— y te devuelva el desglose por segundos. No para copiarlo, sino para entender la mecánica y aplicarla a lo tuyo.</p>
+
+      <h2>Por qué el transcript no alcanza</h2>
+
+      <p>Casi todo el mundo que "analiza videos con IA" en realidad analiza texto: baja los subtítulos y se los pega al modelo. Sirve para entender el argumento y para nada más.</p>
+
+      <p>La retención no la sostiene el argumento. La sostiene el ritmo. Un mismo guion, leído a cámara fija sin cortes, se muere a los quince segundos; con un corte cada dos y medio y una palabra en pantalla en el momento correcto, aguanta el minuto. Si tu análisis solo ve el texto, los dos videos te parecen idénticos.</p>
+
+      <p>Lo mismo con el gancho. En el transcript el gancho son ocho palabras. En el video, el gancho es esas ocho palabras <em>más</em> lo que se ve mientras se dicen. Ahí es donde está la decisión que quieres robarte.</p>
+
+      <h2>Las dos formas de que la IA sí vea el video</h2>
+
+      <p><strong>La directa:</strong> Gemini acepta un enlace de YouTube y procesa el video con su audio. No hay que descargar nada. Es la vía más rápida y la que uso para el primer barrido.</p>
+
+      <p><strong>La de cuadros:</strong> para lo demás, bajas el video, le sacas un cuadro cada pocos segundos y le pasas al modelo los cuadros junto con el transcript con marcas de tiempo. Es más trabajo, pero funciona con cualquier modelo que vea imágenes y te deja controlar la resolución del muestreo. Con <code>yt-dlp</code> para bajar y <code>ffmpeg</code> para extraer, un cuadro cada dos segundos es suficiente para leer el ritmo:</p>
+
+      <pre><code>ffmpeg -i video.mp4 -vf fps=1/2 cuadros/%04d.jpg</code></pre>
+
+      <p>Si vas a hacer esto seguido, vale la pena que la skill haga las dos: barrido con el enlace directo, y cuadros solo del primer minuto, que es donde se decide todo.</p>
+
+      <h2>La skill</h2>
+
+      <p>Guárdala como <code>SKILL.md</code>. Si es tu primera, el procedimiento completo está en <a href="/guias/construir-skills-de-claude/">construye skills de Claude</a>.</p>
+
+      <pre><code>Nombre: desglose-de-video
+Cuándo usarla: cuando el usuario pase un enlace de YouTube y pida
+analizarlo, desglosarlo, entender por qué funcionó, o sacar el
+paso a paso para replicar la estructura.
+
+ANTES DE EMPEZAR pregunta una sola cosa: para qué formato va a
+servir el desglose (video largo, corto vertical, anuncio). El
+desglose cambia según eso.
+
+PASO 1 — VER EL VIDEO
+Procesa el video completo con audio. Si no es posible, pide el
+archivo o los cuadros. Nunca analices solo el transcript: si eso
+es todo lo que tienes, dilo antes de entregar y márcalo como
+análisis parcial.
+
+PASO 2 — LOS PRIMEROS 15 SEGUNDOS, SEGUNDO A SEGUNDO
+Para cada segundo: qué se dice, qué se ve, qué texto aparece en
+pantalla, si hubo corte. Después contesta:
+- Cuál es la promesa y en qué segundo queda hecha.
+- Qué tensión abre y en qué segundo la cierra.
+- Qué pasa en el segundo 3, exactamente.
+
+PASO 3 — MECÁNICA DEL RESTO
+- Duración total y número de cortes. Corte promedio en segundos.
+- Dónde están los tres cortes más largos y qué pasa ahí.
+- Cada aparición de texto en pantalla: segundo, qué dice, cuánto
+  dura, si repite lo que se está diciendo o agrega algo.
+- Cambios de encuadre, de locación, de energía en la voz.
+- Uso de música: entra, sube, se corta. En qué segundos.
+- Qué material de apoyo se usa y cuánto dura cada inserto.
+
+PASO 4 — ESTRUCTURA
+El video en bloques, con su marca de tiempo, y qué hace cada
+bloque: promete, prueba, tensiona, resuelve, pide algo.
+Marca el momento exacto de la llamada a la acción y qué la
+precede.
+
+PASO 5 — QUÉ SE PUEDE ROBAR
+De 5 a 8 decisiones concretas y transferibles. Una decisión es
+"el texto en pantalla nunca repite lo que dice la voz", no "buena
+edición". Cada una con el segundo donde se ve.
+
+PASO 6 — QUÉ NO
+Qué de este video depende de cosas que el usuario no tiene: la
+cara del creador, su audiencia previa, presupuesto de producción,
+acceso a algo. Sé directo. Es la parte más útil del desglose.
+
+REGLAS
+- Marcas de tiempo siempre. Una afirmación sin segundo no va.
+- No opines sobre si el video es bueno. Describe qué hace.
+- No propongas guion nuevo salvo que te lo pidan aparte.
+- Si el video dura más de 20 minutos, haz el paso 2 y 3 completos
+  solo de los primeros 3 minutos y del último minuto, y el resto
+  por bloques.</code></pre>
+
+      <h2>Qué haces con el desglose</h2>
+
+      <p>El desglose por sí solo no produce nada. Lo que lo convierte en contenido es correrlo sobre varios videos del mismo creador y buscar lo que se repite.</p>
+
+      <ol>
+        <li><strong>Cinco videos, no uno.</strong> Los tres más vistos y dos de los que no funcionaron. La comparación es donde aparece el patrón; un solo video te da anécdota.</li>
+        <li><strong>Arma la ficha del creador.</strong> Corte promedio, estructura de gancho recurrente, cuándo mete la llamada a la acción, qué hace con el texto en pantalla. Eso es su fórmula.</li>
+        <li><strong>Quédate con lo transferible.</strong> El paso 6 de la skill es el que evita que copies lo que solo funciona porque ese señor tiene esa cara y ese estudio.</li>
+        <li><strong>Escribe el tuyo con tu tema.</strong> Estructura prestada, contenido propio. Al revés —mismo tema, estructura tuya— es exactamente lo que ya no está funcionando.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> desglosar también los videos que <em>no</em> funcionaron del mismo creador. Analizar solo los éxitos te deja creyendo que todo lo que hace es la razón del éxito. Cuando metes dos fracasos suyos a la comparación, la mitad de las "claves" se caen solas, porque también estaban ahí. Lo que queda después de ese filtro sí es señal.</p>
+      </div>
+
+      <h2>Esto también sirve fuera de contenido</h2>
+
+      <p>El uso que menos gente le da es en operación. Un equipo comercial puede desglosar así las grabaciones de sus propias llamadas: en qué minuto se pierde el cliente, qué pregunta antecede a la objeción, cuánto habla cada quien. Un área de capacitación puede sacar el paso a paso de un video de producto en vez de escribir el manual desde cero.</p>
+
+      <p>Es el mismo mecanismo. La diferencia es que ahí el material es tuyo y el hallazgo se aplica el lunes.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>La ingeniería inversa se vuelve inútil en el momento en que la usas para copiar. Un video con la estructura de alguien más y su tema es un video peor que el original, y encima se nota.</p>
+
+      <p>Lo que sí compone la operación es hacerlo veinte veces sobre creadores distintos hasta que dejas de necesitar la skill, porque ya ves los cortes y el texto en pantalla sin que nadie te los marque. Ese es el verdadero entregable: dejar de consumir video como espectador. La herramienta es el andamio mientras aprendes a mirar.</p>

@@ -1,0 +1,124 @@
+      <p>Le pregunté a un director comercial qué automatizaría primero con IA. Me dijo "los correos de seguimiento". Tres semanas después descubrimos que su equipo perdía más tiempo capturando la misma información en el CRM y en un Excel paralelo que escribiendo correos. La automatización correcta no era la que él sentía pesada. Era la que ni siquiera contaba como trabajo.</p>
+
+      <p>Eso pasa siempre. La gente elige qué automatizar por memoria, y la memoria guarda lo que molesta, no lo que consume. Son cosas distintas.</p>
+
+      <p>Esta auditoría arregla ese sesgo. Es un prompt largo que te entrevista sobre tu semana real —no la ideal—, clasifica cada tarea que sale, y te devuelve un plan ordenado por retorno con el setup de las tres primeras listo para ejecutar.</p>
+
+      <h2>Por qué una lista de "qué automatizar" casi nunca sirve</h2>
+
+      <p>Las listas genéricas de automatización fallan por tres razones concretas.</p>
+
+      <ul>
+        <li><strong>No conocen tu volumen.</strong> Automatizar algo que haces dos veces al mes es un pasatiempo. La misma tarea doce veces al día es dinero.</li>
+        <li><strong>No distinguen tarea de decisión.</strong> "Revisar propuestas" suena automatizable. Adentro hay tres pasos mecánicos y uno de criterio. Se automatizan los tres, no los cuatro.</li>
+        <li><strong>No preguntan qué pasa si sale mal.</strong> Una tarea de alto volumen y bajo costo de error es el primer candidato. Una de alto volumen y alto costo de error necesita revisión humana, y eso cambia el diseño por completo.</li>
+      </ul>
+
+      <p>La auditoría existe para levantar esas tres dimensiones antes de que decidas nada.</p>
+
+      <h2>Cómo se corre, en la práctica</h2>
+
+      <ol>
+        <li><strong>Abre un chat nuevo</strong>, sin contexto viejo que contamine las respuestas.</li>
+        <li><strong>Pega el prompt completo</strong> de abajo y contesta con honestidad incómoda. Si no sabes cuánto tiempo te toma algo, di que no sabes. El modelo va a preguntar de otra forma.</li>
+        <li><strong>Ten a la mano tu calendario de las últimas dos semanas.</strong> Es el único documento que no miente sobre en qué se te va la semana.</li>
+        <li><strong>Deja que termine la entrevista antes de pedir el plan.</strong> Si lo apuras, te va a dar una lista genérica igual a la que ya tenías.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> hacer la auditoría solo sobre tu propio trabajo. Si tienes equipo, córrela también con la persona que hace el trabajo operativo del día. Su lista y la tuya casi nunca coinciden, y la de ella suele tener los mejores candidatos. La tuya trae decisiones; la de ella trae repeticiones.</p>
+      </div>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Vas a hacerme una auditoría de tareas para decidir qué automatizar con IA.
+No me des recomendaciones todavía. Primero entrevístame.
+
+FASE 1 — ENTREVISTA
+Hazme una pregunta a la vez y espera mi respuesta antes de la siguiente.
+Cubre estos bloques, adaptando las preguntas a lo que yo vaya contestando:
+
+1. Contexto: a qué me dedico, tamaño del equipo, con qué herramientas trabajo
+   todos los días, y qué mide mi jefe o mi negocio para decir que tuve un buen mes.
+2. La semana real: recorre mi última semana laboral día por día. Para cada
+   bloque de trabajo pregúntame qué hice, cuánto duró y con qué herramienta.
+   Si te doy una respuesta vaga ("revisé cosas"), pídeme que la desgloses.
+3. Lo invisible: pregúntame específicamente por copiar y pegar entre sistemas,
+   dar formato, buscar información que ya existe, capturar lo mismo dos veces,
+   escribir mensajes de estatus, y esperar aprobaciones.
+4. Por cada tarea que salga, levanta: frecuencia, minutos por vez, si el
+   resultado es siempre el mismo formato, cuánta decisión propia requiere,
+   y qué pasa si sale mal (nadie se entera / cuesta dinero / cuesta un cliente).
+5. Cierra preguntando qué parte de mi trabajo me gusta y no quiero soltar.
+
+Cuando tengas suficiente, dime "listo" y pasa a la fase 2.
+
+FASE 2 — CLASIFICACIÓN
+Clasifica cada tarea en una de estas cuatro categorías y justifica en una línea:
+- AUTOMATIZAR YA: alta frecuencia, salida predecible, poca decisión, error barato.
+- AUTOMATIZAR CON REVISIÓN: alta frecuencia, salida predecible, error caro.
+  El sistema propone, un humano aprueba.
+- ASISTIR, NO AUTOMATIZAR: requiere mi criterio. La IA prepara el material y
+  yo decido.
+- NO TOCAR: baja frecuencia, o es la parte del trabajo por la que me pagan.
+
+FASE 3 — PLAN
+Ordena las tareas de AUTOMATIZAR YA y AUTOMATIZAR CON REVISIÓN por
+(minutos al mes recuperados) ÷ (dificultad de montarlo, 1 a 5).
+Muéstrame la tabla ordenada como lista, no como tabla.
+
+FASE 4 — SETUP DE LAS TRES PRIMERAS
+Para cada una de las tres primeras, entrégame:
+- Qué hace exactamente el sistema, en una frase.
+- Con qué se construye: chat, proyecto, skill, conector o automatización externa.
+- El prompt o las instrucciones completas, listas para copiar.
+- Qué dato o acceso necesito conseguir antes de empezar.
+- Cómo sé a las dos semanas si está funcionando, con un número.
+- Qué error va a cometer primero y cómo lo cacho.
+
+Reglas: no inventes cifras sobre mi negocio. Si te falta un dato para
+priorizar, pregúntamelo en vez de suponerlo.</code></pre>
+
+      <h2>Las cuatro categorías, y por qué importan</h2>
+
+      <p>La clasificación es la mitad del valor. Es lo que evita que montes un agente para algo que debía seguir siendo tuyo.</p>
+
+      <div class="plugin-card">
+        <h3>1. Automatizar ya <code>alto volumen, error barato</code></h3>
+        <p>Transcribir juntas y sacar los pendientes. Convertir notas de voz en tickets. Clasificar correos entrantes. Sacar el reporte semanal desde una hoja. Si el resultado sale mal, alguien lo nota y lo corrige en dos minutos.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el primer sistema que debería montar cualquiera. Empieza aquí aunque no sea lo que más te pesa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Automatizar con revisión <code>propone, tú apruebas</code></h3>
+        <p>Respuestas a clientes, cotizaciones, publicaciones, cambios de precio. La IA deja el borrador listo y un humano da el sí. Recuperas el 80% del tiempo sin asumir el riesgo del 20% restante.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier proceso que toca a un cliente o al dinero. La revisión no es desconfianza, es el diseño correcto.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Asistir, no automatizar <code>tú decides</code></h3>
+        <p>Negociar, contratar, priorizar el trimestre, decidir a qué cliente soltar. Aquí la IA arma el material: el resumen del historial, los tres escenarios, la lista de riesgos. La decisión sigue siendo tuya y debe seguir siéndolo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el trabajo por el que te contrataron. Automatizarlo no te libera, te vuelve prescindible.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. No tocar <code>déjalo en paz</code></h3>
+        <p>Lo que haces una vez al trimestre. Lo que disfrutas. Lo que ya está resuelto con una plantilla que funciona. Esta categoría es la que casi nadie escribe, y es la que evita que pases seis semanas construyendo algo que se usa cuatro veces al año.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> para ti, dentro de dos meses, cuando estés tentado a automatizar por deporte.</p>
+      </div>
+
+      <h2>Qué hacer con el resultado</h2>
+
+      <p>La auditoría te va a devolver más candidatos de los que puedes atacar. Toma solo el primero.</p>
+
+      <p>El error más caro que veo en empresas que arrancan con IA es montar cinco cosas a medias en lugar de una completa. Cinco flujos a medias generan cinco fuentes de desconfianza, y la desconfianza mata la adopción mucho más rápido que la falta de herramientas. Un flujo que funciona y que la gente usa sin pensarlo compra permiso para el siguiente.</p>
+
+      <p>Dale dos semanas al primero. Si a los quince días el número que definiste en la fase 4 no se movió, no montes el segundo: arregla el primero o mátalo. Si sí se movió, ya tienes el caso interno para pedir tiempo, presupuesto o acceso a los datos que necesitas para el que sigue.</p>
+
+      <h2>Lo que la auditoría no te va a decir</h2>
+
+      <p>No te va a decir si tu proceso está bien diseñado. Una auditoría de tareas asume que las tareas que haces son las que hay que hacer, y a veces la respuesta correcta es borrar el paso completo, no automatizarlo.</p>
+
+      <p>Cuando la lista te salga larguísima y todo parezca urgente, ese es el síntoma. No tienes un problema de automatización: tienes un proceso que creció por acumulación. Antes de meterle IA, pregúntale al mismo chat: "de todas estas tareas, ¿cuáles existen solo porque otra tarea de la lista existe?". Ahí es donde suelen aparecer las tres o cuatro que se pueden borrar sin reemplazo.</p>
+
+      <p>Automatizar un proceso roto te deja el proceso roto corriendo más rápido, y con menos gente mirando. Vale la pena hacer la pregunta antes de escribir la primera línea del sistema. Si quieres seguir por ahí, la lista de <a href="/guias/metodo-sandwich-15-tareas/">qué soltarle a la IA primero</a> y la de <a href="/guias/agente-o-workflow/">agente contra workflow</a> son los dos pasos naturales después de esta auditoría.</p>

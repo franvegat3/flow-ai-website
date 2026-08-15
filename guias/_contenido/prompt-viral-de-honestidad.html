@@ -1,0 +1,102 @@
+      <p>Le enseñas tu plan de negocio a la IA y te dice que es sólido. Le enseñas el plan contrario y te dice que también. Le pides que critique tu texto y te devuelve tres elogios y una sugerencia de puntuación.</p>
+
+      <p>No es que la IA sea tonta. Es que está entrenada para que la conversación te deje contento, y quedarte contento y tener razón no son lo mismo. En cosas chicas da igual. En una decisión de contratar, invertir o lanzar, te cuesta dinero de verdad.</p>
+
+      <p>De ahí salió el género de prompts anti-adulación que se hizo viral. Aquí te dejo el mío, completo, más la versión corta que uso todos los días y las tres situaciones en las que apagarlo es lo correcto.</p>
+
+      <h2>Antes que nada: sobre "el prompt de Andreessen"</h2>
+
+      <p>El que circula atribuido a Marc Andreessen es el más famoso de esta familia. No lo voy a reproducir aquí como cita textual, y quiero ser claro del porqué: anda en internet en cinco o seis versiones distintas, cada quien lo reescribe un poco al republicarlo, y no puedo verificar cuál fue la original. Pegarte una versión con comillas y su nombre encima sería inventar una cita, y esa es exactamente la clase de cosa contra la que sirve esta guía.</p>
+
+      <p>Lo que sí importa es el principio, y ese sí se puede describir con precisión. Todas las versiones que funcionan hacen lo mismo:</p>
+
+      <ul>
+        <li><strong>Le prohíben la validación social.</strong> Nada de "buena pregunta", "excelente idea", "vas por buen camino".</li>
+        <li><strong>Le cambian el objetivo.</strong> El éxito de la respuesta deja de ser que te sientas bien y pasa a ser que tomes una mejor decisión, aunque duela.</li>
+        <li><strong>Le piden el argumento contrario, siempre.</strong> No como opción, como sección obligatoria.</li>
+        <li><strong>Le exigen separar hecho de opinión.</strong> Y marcar qué tan seguro está de cada cosa.</li>
+        <li><strong>Le dan permiso explícito de decir que estás mal.</strong> Esta es la que más pesa. Sin ese permiso, el modelo asume que quieres apoyo.</li>
+      </ul>
+
+      <p>Ese es el motor. El texto exacto es lo de menos.</p>
+
+      <h2>Mi versión, completa</h2>
+
+      <p>Esta es la que tengo pegada en mis instrucciones personalizadas. Está en español llano a propósito: es más corta que las que circulan en inglés y no pierde nada.</p>
+
+      <pre><code>Cómo quiero que me respondas, siempre:
+
+1. Cero adulación. No abras con elogios, no me digas que mi
+   pregunta es buena, no valides mi idea antes de analizarla.
+   Entra directo al fondo.
+
+2. Tu trabajo no es que yo quede contento. Es que yo tome una
+   mejor decisión. Si esas dos cosas chocan, gana la segunda.
+
+3. Si estoy equivocado, dímelo en la primera línea. No lo
+   escondas en el tercer párrafo ni lo suavices con un "aunque
+   entiendo tu punto".
+
+4. Separa siempre lo que es dato de lo que es tu opinión. Marca
+   cada afirmación importante como: dato verificable, inferencia
+   tuya, o especulación. Si no sabes algo, escribe "no lo sé" y
+   sigue. Nunca rellenes con algo que suene bien.
+
+5. En toda respuesta con una recomendación, incluye:
+   - El caso más fuerte a favor.
+   - El caso más fuerte en contra, argumentado en serio, no como
+     trámite.
+   - Qué tendría que ser cierto para que la recomendación falle.
+   - Qué información me falta y quién la tiene.
+
+6. Ataca el supuesto, no solo el plan. Si mi pregunta parte de
+   una premisa mala, corrige la premisa aunque no te lo haya
+   pedido.
+
+7. Nada de listas de "consideraciones a tomar en cuenta" ni de
+   respuestas que sirvan para cualquier caso. Comprométete con
+   una postura y defiéndela.
+
+8. Sé breve. Frases cortas. Si algo se puede borrar sin perder
+   información, bórralo.</code></pre>
+
+      <h2>La versión de bolsillo</h2>
+
+      <p>La de arriba es para dejarla instalada. Esta es para pegarla al final de una pregunta suelta, cuando ya vas a medio chat y sientes que te están dando por tu lado:</p>
+
+      <pre><code>Responde sin adularme. Dime primero en qué estoy mal. Después
+dame el argumento más fuerte en contra de lo que propongo, y qué
+tendría que ser cierto para que yo esté equivocado. Marca qué es
+dato y qué es opinión tuya. Si no sabes, dilo.</code></pre>
+
+      <p>Cabe en una línea de dictado. La uso más que la larga.</p>
+
+      <h2>Dónde se pega para que aplique siempre</h2>
+
+      <ol>
+        <li><strong>En las instrucciones personalizadas de tu cuenta.</strong> Tanto Claude como ChatGPT tienen un campo de preferencias que se inyecta en cada conversación. Ese es el lugar correcto para la versión larga: la pegas una vez y se te olvida.</li>
+        <li><strong>En un proyecto específico.</strong> Si tienes un espacio de trabajo dedicado a decisiones —planeación, presupuesto, estrategia— ponla ahí y déjala fuera del resto. No quieres este tono cuando le pides un borrador de correo.</li>
+        <li><strong>En el archivo de instrucciones de tu repositorio</strong>, si trabajas en la terminal. Ahí aplica a todo lo que corra en ese proyecto.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> instalar el prompt y no cambiar cómo preguntas. Si escribes "creo que deberíamos subir el precio 20%, ¿qué opinas?", ya le dijiste qué respuesta quieres, y ningún prompt de honestidad le gana a una pregunta cargada. Pregunta neutro: "estoy evaluando subir el precio 20%. Arma el caso a favor y el caso en contra". Es la mitad del resultado.</p>
+      </div>
+
+      <h2>Qué cambia de verdad en la operación</h2>
+
+      <p>Donde más lo he visto pegar es en juntas de decisión. Un equipo comercial que le pide a la IA que revise su pronóstico del trimestre recibe, sin este prompt, una versión ordenada de lo que ellos ya creían. Con él, recibe la pregunta que nadie quería hacer: cuántas de esas oportunidades avanzaron de etapa en las últimas dos semanas y cuántas llevan tres meses paradas con la misma probabilidad asignada a mano.</p>
+
+      <p>Lo mismo en contenido. "Revisa este guion" te devuelve halagos. Con el prompt instalado te devuelve que los primeros tres segundos no dicen nada y que la promesa del título no se cumple hasta el final.</p>
+
+      <h2>Cuándo no usarlo</h2>
+
+      <p>Este prompt tiene costo y conviene saber cuál es.</p>
+
+      <ul>
+        <li><strong>Cuando estás generando, no evaluando.</strong> En la fase de ideas necesitas volumen, no filtro. Un crítico sentado desde la primera idea mata la sesión. Genera primero, prende el crítico después.</li>
+        <li><strong>Cuando el tema es personal y delicado.</strong> Salud, duelo, un problema familiar. Ahí "dime en qué estoy mal en la primera línea" no es honestidad, es crueldad automatizada. Apágalo.</li>
+        <li><strong>Cuando la tarea es mecánica.</strong> Formatear, traducir, resumir. No hay nada que criticar y solo agregas ruido.</li>
+      </ul>
+
+      <p>Y una advertencia que casi nunca se dice: un modelo con este prompt suena más seguro, y sonar seguro no es estar en lo correcto. Le quitaste la adulación, no la posibilidad de equivocarse. Sigue verificando lo que importa —para eso está la <a href="/guias/prueba-de-presion-de-4-preguntas/">prueba de presión de 4 preguntas</a>— y si lo que quieres es todavía más contraste, arma el <a href="/guias/consejo-contra-la-adulacion/">consejo de asesores</a> en vez de una sola voz.</p>

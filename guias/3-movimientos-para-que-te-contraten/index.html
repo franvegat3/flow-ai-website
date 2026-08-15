@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 movimientos con Claude para que te contraten — Guías Flow AI</title>
+  <meta name="description" content="Deja de disparar currículums hechos con IA a todos lados. Tres formas creativas de usar Claude para de verdad destacar, con el prompt exacto de cada una." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/3-movimientos-para-que-te-contraten/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="3 movimientos con Claude para que te contraten" />
+  <meta property="og:description" content="Deja de disparar currículums hechos con IA a todos lados. Tres formas creativas de usar Claude para de verdad destacar, con el prompt exacto de cada una." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/3-movimientos-para-que-te-contraten/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Carrera</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Carrera</span></div>
+      <h1>3 movimientos con Claude para que te contraten</h1>
+      <p class="lead">Deja de disparar currículums hechos con IA a todos lados. Tres formas creativas de usar Claude para de verdad destacar, con el prompt exacto de cada una.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El movimiento por defecto hoy es abrir Claude, pedirle que adapte tu currículum a la vacante, y mandarlo. Multiplicado por cuarenta vacantes.</p>
+
+      <p>El problema es que del otro lado hay alguien recibiendo trescientas solicitudes que se escribieron exactamente así. Todas correctas. Todas con los mismos verbos. Todas indistinguibles. Usar IA para producir más de lo mismo, más rápido, es la peor manera posible de usarla.</p>
+
+      <p>Estos son los tres movimientos que sí mueven la aguja. Ninguno produce un currículum. Los tres producen evidencia de que entendiste el problema de la empresa antes que los otros doscientos noventa y nueve.</p>
+
+      <h2>Por qué el currículum ya no es la palanca</h2>
+
+      <p>Quien contrata no está tratando de encontrar al mejor candidato en abstracto. Está tratando de resolver un problema concreto que le está costando dinero o sueño: las ventas no cierran, el contenido no sale a tiempo, la pauta no rinde, el cierre contable se atora tres días cada mes.</p>
+
+      <p>El puesto es la forma que le dio Recursos Humanos a ese problema. Y en esa traducción se pierde casi todo lo interesante.</p>
+
+      <p>Los tres movimientos apuntan al problema, no al puesto. Ese es el truco entero.</p>
+
+      <h2>Movimiento 1: el dossier antes de aplicar</h2>
+
+      <p>Antes de escribir una sola línea de tu candidatura, junta material público de la empresa: su sitio, sus vacantes abiertas (todas, no solo la tuya), sus publicaciones recientes, notas de prensa, reseñas de clientes, lo que se dice de ellos.</p>
+
+      <p>Después le pides al modelo que trabaje como analista, no como redactor. La pregunta no es "qué pongo en mi carta". La pregunta es "qué le duele a esta gente".</p>
+
+      <pre><code>Vas a trabajar como analista de negocio, no como redactor. No
+escribas nada de mi candidatura todavía.
+
+LA EMPRESA: [nombre y una línea de qué hace]
+
+MATERIAL: [pega el sitio, las descripciones de TODAS sus vacantes
+abiertas, publicaciones recientes, notas de prensa, reseñas de
+clientes, cualquier cosa pública]
+
+LA VACANTE A LA QUE VOY: [pega la descripción completa]
+
+Analiza y entrégame:
+
+1. En qué etapa está la empresa y qué evidencia lo sostiene
+   (crecen, se estabilizan, están corrigiendo algo).
+2. Qué revelan las OTRAS vacantes abiertas. Si están contratando
+   tres personas de un área, ahí hay un problema o una apuesta.
+   Dime cuál.
+3. Los tres problemas que probablemente tienen hoy, ordenados por
+   qué tan caros son para ellos. Para cada uno, cita la evidencia
+   concreta que te llevó a esa conclusión.
+4. Qué problema de esos tres está tratando de resolver la vacante
+   a la que voy. Lee entre líneas: qué palabras se repiten, qué
+   requisito es el que de verdad importa, qué frase suena a que
+   ya les falló alguien antes.
+5. Las tres preguntas que yo debería poder contestar mejor que
+   cualquier otro candidato si de verdad entendí ese problema.
+6. Lo que NO sabes y necesitarías averiguar para estar seguro.
+
+Marca cada afirmación con [EVIDENCIA] si sale del material o
+[INFERENCIA] si es deducción tuya. No mezcles.</code></pre>
+
+      <p>El punto 2 es el que casi nadie mira. Las vacantes abiertas de una empresa son el mapa más honesto de sus problemas, porque ahí está gastando dinero de verdad.</p>
+
+      <p>Con ese dossier en la mano, tu mensaje deja de ser "tengo cinco años de experiencia en" y se vuelve "vi que están contratando tres personas de logística al mismo tiempo que abrieron dos ciudades; supongo que el cuello está en X; esto es lo que yo haría".</p>
+
+      <h2>Movimiento 2: el entregable que nadie te pidió</h2>
+
+      <p>Este es el que funciona y el que casi nadie hace, porque da trabajo. Es exactamente por eso que funciona.</p>
+
+      <p>En vez de mandar un currículum, construye una pieza chica y real que ataque el problema que identificaste, y mándala. No un portafolio genérico: una pieza hecha para ellos, con su nombre encima.</p>
+
+      <p>Las que he visto funcionar mejor:</p>
+
+      <ul>
+        <li><strong>Auditoría de lo público.</strong> Su cuenta de anuncios no la puedes ver, pero sus anuncios activos sí. Su embudo de correo lo puedes recorrer suscribiéndote. Su proceso de ventas lo puedes probar pidiendo una demo.</li>
+        <li><strong>Un prototipo de dos pantallas</strong> de la funcionalidad que están describiendo en la vacante.</li>
+        <li><strong>El análisis de sus competidores</strong> que ellos no tienen tiempo de hacer.</li>
+        <li><strong>El proceso documentado</strong> del área a la que aplicas, tal como lo montarías tú la primera semana.</li>
+      </ul>
+
+      <pre><code>Vamos a construir una pieza para mandarle a una empresa a la que
+quiero entrar. No es un portafolio genérico: es un entregable
+hecho para ellos.
+
+EL PROBLEMA QUE IDENTIFIQUÉ: [del dossier del movimiento 1]
+EL PUESTO: [nombre]
+LO QUE SÍ PUEDO OBSERVAR DESDE AFUERA: [sus anuncios activos, su
+sitio, su embudo de correo, su proceso de venta si pediste demo,
+sus reseñas]
+MATERIAL: [pega o adjunta lo que juntaste]
+
+Paso 1: propón tres piezas posibles, en una línea cada una.
+Criterios: que se pueda hacer con lo que se ve desde afuera, que
+demuestre criterio y no solo esfuerzo, y que a ellos les sirva
+aunque no me contraten. Espera a que yo elija.
+
+Paso 2, cuando elija: constrúyela con estas reglas.
+- Máximo dos páginas o una pantalla. Si no cabe, el recorte es
+  parte del trabajo.
+- Empieza por el hallazgo, no por la metodología. La primera
+  frase dice qué encontraste.
+- Cada observación va acompañada de la evidencia concreta que la
+  sostiene. Sin evidencia, se corta.
+- Incluye lo que está bien hecho, no solo los problemas. Un
+  documento que solo critica se lee como arrogancia.
+- Cierra con la primera acción concreta, no con una lista de
+  diez recomendaciones.
+- Marca explícitamente qué NO pudiste ver desde afuera y qué
+  cambiaría tu análisis si tuvieras acceso a los datos internos.
+
+Tono: colega que revisó el trabajo, no consultor vendiendo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el bloque de "lo que no pude ver". Sin él, tu análisis se lee como alguien que juzga desde afuera sin saber. Con él, se lee como alguien que entiende los límites de su información — que es exactamente la señal que busca quien contrata. Es el párrafo más corto del documento y el que más peso tiene.</p>
+      </div>
+
+      <p>Y mándalo a la persona que tiene el problema, no al buzón de reclutamiento. Si el problema es de pauta, al que dirige marketing. Si es de cobranza, al de finanzas. El buzón de reclutamiento filtra por palabras clave; la persona que tiene el problema lee cualquier cosa que parezca resolverlo.</p>
+
+      <h2>Movimiento 3: el inventario de tu propia evidencia</h2>
+
+      <p>Este no es para una vacante específica. Es la base de la que salen todas las demás, y por eso conviene hacerlo primero aunque parezca el menos urgente.</p>
+
+      <p>Casi nadie recuerda bien lo que hizo. Recuerdas los títulos de tus puestos y una versión pulida de las responsabilidades. Lo que se te olvidó son los casos concretos: el mes que salvaste, el proceso que rediseñaste, el cliente que ibas a perder y no perdiste. Eso es lo único que convence a alguien.</p>
+
+      <pre><code>Vas a entrevistarme para sacar el inventario de evidencia de mi
+trayectoria. No estás escribiendo mi currículum: estás
+reconstruyendo lo que de verdad hice, con números.
+
+MI TRAYECTORIA: [puestos, empresas, fechas, en bruto]
+
+Reglas de la entrevista:
+1. Una pregunta a la vez.
+2. Ve por episodios, no por responsabilidades. Pregúntame por
+   momentos específicos: la vez que algo se rompió, la vez que
+   alguien se fue, la vez que un número cambió.
+3. Cuando yo diga algo genérico ("mejoré el proceso"), no lo
+   aceptes. Pregúntame cómo estaba antes, cómo quedó, en cuánto
+   tiempo y cómo lo supimos.
+4. Persigue los números aunque yo diga que no los tengo. Casi
+   siempre hay uno: cuántas personas, cuántos días, cuántos
+   clientes, cuánto se dejó de gastar.
+5. Pregúntame también por lo que salió mal y qué aprendí. Eso
+   vale en entrevista y yo solo no lo voy a ofrecer.
+
+Después de 15 preguntas, entrégame:
+
+- 8 a 12 episodios, cada uno en cuatro líneas: la situación, lo
+  que yo hice específicamente, el resultado con su número, y qué
+  habilidad demuestra.
+- Marca con "SIN VERIFICAR" cualquier número que yo haya dado de
+  memoria, para que lo confirme antes de usarlo.
+- Los tres patrones que se repiten en mis episodios. Ese es el
+  argumento de fondo de mi perfil y probablemente yo no lo veo.
+- Los dos huecos evidentes en mi trayectoria y cómo se explican
+  o se compensan.</code></pre>
+
+      <p>Ese inventario alimenta todo: el currículum, el perfil de LinkedIn, la carta, y sobre todo la entrevista, donde la diferencia entre "sí, tengo experiencia en eso" y contar el caso concreto con su número es la diferencia entre pasar y no pasar.</p>
+
+      <h2>El orden, y el error</h2>
+
+      <p>El orden es 3, 1, 2. Primero el inventario, porque sin él no sabes qué ofrecer. Después el dossier de cada empresa. Y al final el entregable, que solo vale la pena para las tres o cuatro empresas que de verdad te importan.</p>
+
+      <p>Ese es el otro cambio: esto no escala a cuarenta solicitudes y no debe. Cuatro candidaturas trabajadas así rinden más que cuarenta disparadas. La IA no está para que mandes más solicitudes; está para que cada una llegue con trabajo real adentro.</p>
+
+      <p>Cuando ya tengas respuesta, la preparación de la conversación es otro tema completo y está en <a href="/guias/preparar-entrevista-con-ia/">preparar una entrevista con IA</a>. Y si estás decidiendo hacia dónde mover tu perfil, vale la pena leer antes <a href="/guias/5-roles-que-reemplazan-los-puestos/">los 5 roles que están reemplazando a los puestos de trabajo</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/todos-los-recursos-de-ia/" class="stack-link">
+            <span>Todos los recursos de IA que me hubiera gustado tener →</span>
+            <small>La ruta completa de herramientas, documentación y recursos gratuitos de IA, en el orden exacto en que conviene usarlos para de verdad ponerte al día rápido.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

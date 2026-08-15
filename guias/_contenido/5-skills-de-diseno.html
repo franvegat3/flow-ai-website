@@ -1,0 +1,83 @@
+      <p>Claude escribe bien sin ayuda. Diseña mal sin ayuda. No porque le falte capacidad, sino porque cuando no le das criterio visual cae en su promedio: fondo blanco, tipografía de sistema, tres tarjetas iguales y un degradado. Todo el mundo reconoce esa cara.</p>
+
+      <p>Las skills de diseño arreglan exactamente eso. Son paquetes de criterio —cómo se elige una paleta, cómo se arma una escala tipográfica, cuándo una gráfica de barras es la equivocada— que Claude carga solo cuando la tarea lo amerita.</p>
+
+      <p>Cinco que vale la pena tener guardadas, qué hace cada una, y cómo se instalan.</p>
+
+      <h2>Qué es una skill de diseño, en una frase</h2>
+
+      <p>Una carpeta con un archivo <code>SKILL.md</code> que le enseña a Claude el oficio de un área, y que él consulta solo cuando lo necesita.</p>
+
+      <p>La diferencia con pegarle instrucciones en el chat es que la skill vive fuera de la conversación: no la tienes que repetir, no se pierde al abrir una sesión nueva, y no gasta contexto mientras no aplica. Si esa distinción todavía no te queda clara, está desarrollada en <a href="/guias/skill-workflow-o-agente/">skill, workflow o agente: cuál es cuál</a>.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>Hay dos caminos, según dónde trabajes:</p>
+
+      <p><strong>En la app de Claude o en Cowork:</strong> entra a Configuración y busca la sección de capacidades o skills. Ahí activas las que publica Anthropic y subes las tuyas como carpeta comprimida. No hay que tocar nada más.</p>
+
+      <p><strong>En Claude Code:</strong> cada skill es una carpeta con su <code>SKILL.md</code> adentro. Si la pones en <code>~/.claude/skills/</code> aplica a todo tu trabajo; si la pones en <code>.claude/skills/</code> dentro de un repositorio, aplica solo a ese proyecto y viaja con el equipo cuando alguien lo clona.</p>
+
+      <p>Las skills oficiales de Anthropic están publicadas en su GitHub, en el repositorio <code>anthropics/skills</code>. Ese es el lugar del que salen cuatro de las cinco de esta lista.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> instalar la skill no le dice a Claude cuál es <em>tu</em> marca. Una skill de diseño trae el oficio; los colores, la tipografía y el tono de tu empresa los tienes que dar tú. Sin eso vas a producir cosas bien diseñadas que no se parecen a nada tuyo, que es un problema distinto pero igual de caro.</p>
+      </div>
+
+      <h2>Las 5 skills</h2>
+
+      <div class="plugin-card">
+        <h3>1. Guías de marca <code>brand-guidelines</code></h3>
+        <p>Le carga a Claude una identidad visual —paleta, tipografías, tono, reglas de uso— y hace que la aplique de forma consistente en todo lo que produce: presentaciones, documentos, páginas, gráficas. Es la que convierte "se ve bien" en "se ve nuestro".</p>
+        <p>Es la primera que instalaría cualquier empresa, porque resuelve el problema que las otras cuatro no pueden resolver solas. Y es la que más rinde cuando varias personas del equipo producen material: deja de depender de que cada quien recuerde el hex correcto.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier operación con marca. Márketing, ventas y quien arme propuestas de cliente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Diseño de piezas visuales <code>canvas-design</code></h3>
+        <p>Criterio de composición para piezas gráficas: jerarquía, espaciado, contraste, cómo se distribuye el peso visual en un lienzo. Es la que evita que un póster, una portada o una infografía salgan centrados y planos.</p>
+        <p>Lo que más se nota al usarla es el espacio en blanco. Sin criterio, la IA llena; con criterio, deja respirar. Esa sola diferencia es la mitad de lo que separa un diseño amateur de uno profesional.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> creadores de contenido, y cualquiera que arme piezas gráficas sin tener diseñador.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Visualización de datos <code>dataviz</code></h3>
+        <p>La más subestimada de la lista. Le da criterio de forma —cuándo una barra, cuándo una línea, cuándo simplemente un número grande— y un sistema de color accesible que funciona en modo claro y oscuro. Cubre también tableros: cómo se ordenan las métricas y qué va arriba.</p>
+        <p>Aquí la ganancia no es estética, es de decisión. Una gráfica mal elegida esconde el hallazgo. En un reporte mensual que alguien va a usar para asignar presupuesto, eso cuesta dinero real.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> finanzas, operaciones, márketing, y todo el que entregue reportes con números.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Presentaciones <code>pptx</code></h3>
+        <p>Genera y edita archivos de PowerPoint de verdad, no capturas ni HTML disfrazado. Trae criterio de diseño de diapositiva: cuánto texto cabe, cómo se jerarquiza un título, cuándo una diapositiva debería ser dos.</p>
+        <p>Lo importante es que el entregable es editable. Tu cliente o tu director abre el archivo, cambia una cifra y sigue. Un PDF bonito que nadie puede modificar es la mitad de un entregable.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> ventas, consultoría, cualquiera que viva de decks.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Constructor de artifacts <code>artifacts-builder</code></h3>
+        <p>Para lo interactivo: calculadoras, tableros en vivo, prototipos, herramientas internas que se abren en el navegador. Le da estructura y criterio visual a lo que Claude construye, en vez de dejarlo improvisar cada vez.</p>
+        <p>Es la que más cambia lo que puedes prometer. Un prototipo funcional en una tarde reemplaza tres juntas de "cómo te imaginas que se vería".</p>
+        <p class="plugin-for"><strong>Para quién:</strong> producto, operaciones internas, y quien venda ideas que se explican mejor tocándolas.</p>
+      </div>
+
+      <h2>El orden en que las usas en un entregable real</h2>
+
+      <p>Aterrizado: una propuesta comercial para un cliente, con datos de desempeño adentro.</p>
+
+      <ol>
+        <li><strong>Primero la marca.</strong> Cargas <code>brand-guidelines</code> con tu identidad. Todo lo que salga después ya nace correcto.</li>
+        <li><strong>Luego los números.</strong> <code>dataviz</code> decide qué gráfica cuenta el hallazgo y con qué color. Esto va antes del diseño de la diapositiva, no después: la forma de la gráfica determina cuánto espacio necesita.</li>
+        <li><strong>Después el documento.</strong> <code>pptx</code> arma el deck con las gráficas ya resueltas.</li>
+        <li><strong>Al final, si aplica, lo interactivo.</strong> <code>artifacts-builder</code> para el anexo que el cliente puede tocar —una calculadora de retorno con sus propios números, por ejemplo. Eso cierra ventas.</li>
+      </ol>
+
+      <p><code>canvas-design</code> entra cuando la pieza es gráfica y no documental: la portada, el resumen de una página, el material para redes que sale de la misma propuesta.</p>
+
+      <h2>El error de instalar las cinco hoy</h2>
+
+      <p>Cada skill que instalas agrega criterio que compite por la atención del modelo. Con cinco skills de diseño activas y ninguna guía de marca, lo que consigues es un Claude que sabe mucho de diseño y no sabe nada de ti.</p>
+
+      <p>Empieza por <code>brand-guidelines</code> y cárgala bien: hex exactos, tipografías reales, tres ejemplos de material tuyo que sí te gustó. Vive con eso una semana. Agrega la segunda cuando tengas un entregable concreto que la necesite, no antes.</p>
+
+      <p>El criterio visual que le falta a tu trabajo casi nunca es el del diseño en abstracto. Es el tuyo, escrito en un archivo por primera vez.</p>

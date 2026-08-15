@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo correr agentes de Claude en paralelo — Guías Flow AI</title>
+  <meta name="description" content="La app rediseñada de Claude Code corre agentes al mismo tiempo. Los atajos que sí sirven, y la regla de cuántos conviene tener corriendo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/agentes-de-claude-en-paralelo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo correr agentes de Claude en paralelo" />
+  <meta property="og:description" content="La app rediseñada de Claude Code corre agentes al mismo tiempo. Los atajos que sí sirven, y la regla de cuántos conviene tener corriendo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/agentes-de-claude-en-paralelo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Agentes</span></div>
+      <h1>Cómo correr agentes de Claude en paralelo</h1>
+      <p class="lead">La app rediseñada de Claude Code corre agentes al mismo tiempo. Los atajos que sí sirven, y la regla de cuántos conviene tener corriendo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le pides algo grande al agente y arranca. Y tú te quedas viendo cómo trabaja, leyendo cada paso, esperando el momento de aprobar algo. Cuarenta minutos de tu día viendo texto pasar.</p>
+
+      <p>El cuello de botella dejó de ser el modelo hace rato. Eres tú, sentado frente a una sola sesión. La aplicación rediseñada de Claude Code está construida alrededor de resolver exactamente eso: varias sesiones corriendo al mismo tiempo, cada una en su propio espacio, sin que se pisen.</p>
+
+      <p>Lo que sigue es qué cambió, qué hace posible que no se estorben, los atajos que de verdad uso, y la regla de cuántos agentes conviene tener corriendo —que es más baja de lo que te imaginas y por una razón que no es técnica.</p>
+
+      <h2>Qué cambió en la aplicación</h2>
+
+      <p>El rediseño reorganizó la ventana alrededor de trabajar con varias sesiones a la vez. Las piezas que más se notan en el día:</p>
+
+      <ul>
+        <li><strong>Barra lateral de sesiones.</strong> Todas tus sesiones activas listadas, con su estado. Es el panel de control: de un vistazo ves cuál está trabajando, cuál terminó y cuál te está esperando.</li>
+        <li><strong>Paneles acomodables.</strong> Arrastras las sesiones para armar el acomodo que quieras. Dos lado a lado para comparar dos enfoques del mismo problema es el uso que más rinde.</li>
+        <li><strong>Terminal integrada y editor de archivos adentro.</strong> Deja de haber el salto constante a otra aplicación para ver qué quedó.</li>
+        <li><strong>Vista de diferencias reconstruida y vista previa.</strong> Puedes revisar lo que cambió, y ver el resultado de páginas y documentos sin salir.</li>
+        <li><strong>Tres niveles de detalle.</strong> Verbose, Normal y Summary. Es la función que más subestima la gente: en Summary ves resultados en vez de cada llamada a herramienta, y es lo único que hace tolerable vigilar tres sesiones sin marearte.</li>
+        <li><strong>Botón de uso.</strong> Te muestra la ventana de contexto y el consumo de la sesión de un vistazo. Con varias sesiones corriendo, esto pasa de curiosidad a necesidad.</li>
+      </ul>
+
+      <h2>La pieza que lo hace posible</h2>
+
+      <p>Correr dos agentes sobre el mismo proyecto suena a receta para el desastre: los dos editan, se pisan, y acabas con un revoltijo que nadie puede desenredar.</p>
+
+      <p>Lo que lo evita es que cada sesión trabaja en una copia aislada del proyecto. Los cambios de una sesión no existen para las demás hasta que se confirman. En términos prácticos: el agente A puede reescribir el mismo archivo que está tocando el agente B, y ninguno de los dos ve el trabajo del otro hasta que tú decidas integrarlo.</p>
+
+      <p>Eso convierte el paralelismo en algo utilizable y traslada el problema a otro lado: el conflicto ya no ocurre mientras trabajan, ocurre cuando integras. Es un intercambio muy bueno, porque el conflicto al integrar es visible y revisable, mientras que dos agentes pisándose en vivo es invisible hasta que ya rompió algo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> integrar en el orden equivocado. Cuando tres sesiones terminan, la tentación es aceptar todo de corrido. Integra primero la que toca menos archivos y verifica que sigue funcionando; después la siguiente. Si integras primero la grande, cualquier problema que salga después te obliga a adivinar cuál de las tres lo causó.</p>
+      </div>
+
+      <h2>Los atajos que sí sirven</h2>
+
+      <p>Antes de memorizar nada: <code>⌘ /</code> en Mac o <code>Ctrl /</code> en Windows abre la lista completa de atajos dentro de la aplicación. Esa es la fuente que no envejece, porque la lista crece con cada versión.</p>
+
+      <p>De ahí, los que de verdad cambian el ritmo son tres categorías:</p>
+
+      <ol>
+        <li><strong>Crear una sesión nueva sin soltar el teclado.</strong> Es el que más importa. Si abrir un agente cuesta tres clics, no vas a abrir el tercero aunque convenga.</li>
+        <li><strong>Saltar entre sesiones.</strong> El ciclo real de trabajo es revisar A, aprobar, saltar a B, revisar, saltar a C. Con ratón se vuelve pesado a la tercera vuelta.</li>
+        <li><strong>Abrir la terminal integrada</strong> con <code>Ctrl `</code>, para verificar tú mismo algo sin interrumpir a la sesión que está trabajando.</li>
+      </ol>
+
+      <p>Y uno que no es atajo pero rinde igual: pon las sesiones largas en Summary y la que estás vigilando de cerca en Verbose. La mezcla de niveles de detalle es lo que te deja atender tres cosas sin leer tres veces más texto.</p>
+
+      <h2>La regla de cuántos</h2>
+
+      <p>Tres. Ocasionalmente cuatro. Nunca ocho, aunque la máquina aguante.</p>
+
+      <p>El límite no es de cómputo, es de atención. Cada sesión que corre te va a pedir una decisión en algún momento: aprobar un cambio, elegir entre dos caminos, aclarar una ambigüedad. Con tres sesiones, las decisiones llegan espaciadas y las tomas con la cabeza puesta. Con seis, llegan encimadas y empiezas a aprobar sin leer —y aprobar sin leer es exactamente el modo de trabajo que hace que la gente desconfíe de los agentes.</p>
+
+      <p>Hay un segundo costo, más sutil: reconstruir el contexto. Cuando saltas a una sesión que lleva veinte minutos sin que la veas, tienes que volver a cargar en tu cabeza qué le pediste y por dónde iba. Ese costo es real y crece rápido. Tres sesiones se sostienen en la memoria de trabajo de una persona. Seis, no.</p>
+
+      <h2>Qué se paraleliza bien y qué no</h2>
+
+      <p>El criterio es la dependencia. Dos tareas se pueden correr al mismo tiempo si el resultado de una no cambia lo que la otra tiene que hacer.</p>
+
+      <p><strong>Se paralelizan bien:</strong> trabajos sobre áreas separadas del proyecto; explorar dos soluciones distintas al mismo problema para después comparar; una sesión escribiendo mientras otra revisa algo ya terminado; tareas de investigación que solo leen.</p>
+
+      <p><strong>No se paralelizan:</strong> cualquier cadena donde el paso dos necesita la decisión del paso uno. Ahí correr en paralelo no ahorra tiempo, produce dos versiones incompatibles y el trabajo de reconciliarlas cuesta más que haberlo hecho en orden.</p>
+
+      <p>El caso donde más rinde, en trabajo real, es la exploración deliberada: mandas dos sesiones a resolver lo mismo con enfoques distintos —uno conservador, uno agresivo— y a los veinte minutos comparas. No estás produciendo el doble; estás comprando información sobre cuál camino era el bueno, que es mucho más valioso.</p>
+
+      <h2>El error más caro</h2>
+
+      <p>Abrir tres sesiones para lo mismo por ansiedad, no por diseño.</p>
+
+      <p>Pasa seguido: la primera va lenta, te impacientas, abres otra con la misma petición redactada distinto. Ahora tienes dos agentes resolviendo el mismo problema, gastando el doble, y en veinte minutos vas a tener que decidir cuál de dos resultados parecidos te quedas.</p>
+
+      <p>Antes de abrir la segunda sesión, contesta una pregunta: ¿esta tarea depende del resultado de la que ya está corriendo? Si la respuesta es sí, no abras nada. Si es no, ábrela y escribe en una línea qué esperas de cada una. Esa línea es la que te permite volver a la sesión en veinte minutos y saber qué estabas haciendo.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

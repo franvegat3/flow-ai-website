@@ -36,42 +36,75 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---------- Filtros del índice ---------- */
-  var grid = document.getElementById('guideGrid');
-  if (grid) {
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.guide-card'));
-    var empty = document.getElementById('guideEmpty');
-    var count = document.getElementById('guideCount');
-    var state = { tool: 'all', topic: 'all' };
+  /* ----------------------------------------------------------
+     Índice de guías.
 
-    var setCount = function (n) {
-      if (!count) return;
-      count.textContent = String(n);
-      var label = count.parentNode;
-      if (label) {
-        label.innerHTML = n === 1
-          ? '<span id="guideCount">1</span> guía · nuevas cada semana'
-          : '<span id="guideCount">' + n + '</span> guías · nuevas cada semana';
-        count = document.getElementById('guideCount');
-      }
+     Las tarjetas se pintan desde window.GUIAS (lo escribe
+     guias/_build.py en guias-data.js). No se editan a mano:
+     con cientos de guías el HTML escrito a mano no se sostiene.
+     ---------------------------------------------------------- */
+  var grid = document.getElementById('guideGrid');
+  if (grid && Array.isArray(window.GUIAS)) {
+    var guias = window.GUIAS;
+    var empty = document.getElementById('guideEmpty');
+    var countLine = document.querySelector('.lib-count');
+    var search = document.getElementById('guideSearch');
+    var state = { tool: 'all', topic: 'all', q: '' };
+
+    /* Texto sobre el que busca el usuario: título, resumen y taxonomía,
+       sin acentos, para que "automatizacion" encuentre "automatización". */
+    var plano = function (s) {
+      return String(s)
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
     };
 
-    setCount(cards.length);
+    guias.forEach(function (g) {
+      g._buscable = plano([g.titulo, g.desc, g.tool.join(' '), g.topic.join(' ')].join(' '));
+    });
 
-    var values = function (card, group) {
-      return (card.getAttribute('data-' + group) || '').split(/\s+/).filter(Boolean);
+    var esc = function (s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    };
+
+    var tarjeta = function (g) {
+      return '<a class="guide-card" href="/guias/' + esc(g.slug) + '/"' +
+        ' data-tool="' + esc(g.tool.join(' ')) + '"' +
+        ' data-topic="' + esc(g.topic.join(' ')) + '">' +
+        (g.badge ? '<span class="guide-badge">' + esc(g.badge) + '</span>' : '') +
+        '<h3>' + esc(g.titulo) + '</h3>' +
+        '<p>' + esc(g.desc) + '</p>' +
+        '<span class="guide-meta">' + esc(g.meta) + '</span>' +
+        '<span class="guide-go">Leer la guía →</span>' +
+        '</a>';
+    };
+
+    var setCount = function (n) {
+      if (!countLine) return;
+      countLine.innerHTML = '<span id="guideCount">' + n + '</span> ' +
+        (n === 1 ? 'guía' : 'guías') + ' · nuevas cada semana';
     };
 
     var apply = function () {
-      var shown = 0;
-      cards.forEach(function (card) {
-        var ok = (state.tool === 'all' || values(card, 'tool').indexOf(state.tool) > -1) &&
-                 (state.topic === 'all' || values(card, 'topic').indexOf(state.topic) > -1);
-        card.hidden = !ok;
-        if (ok) shown++;
+      var visibles = guias.filter(function (g) {
+        return (state.tool === 'all' || g.tool.indexOf(state.tool) > -1) &&
+               (state.topic === 'all' || g.topic.indexOf(state.topic) > -1) &&
+               (!state.q || g._buscable.indexOf(state.q) > -1);
       });
-      if (empty) empty.hidden = shown > 0;
-      setCount(shown);
+
+      /* Se reemplaza la rejilla completa y se vuelve a colgar el mensaje de
+         vacío, que vive dentro del contenedor. */
+      grid.innerHTML = visibles.map(tarjeta).join('');
+      if (empty) {
+        empty.hidden = visibles.length > 0;
+        grid.appendChild(empty);
+      }
+      setCount(visibles.length);
     };
 
     Array.prototype.forEach.call(document.querySelectorAll('.chips'), function (chips) {
@@ -86,6 +119,15 @@
         apply();
       });
     });
+
+    if (search) {
+      search.addEventListener('input', function () {
+        state.q = plano(search.value.trim());
+        apply();
+      });
+    }
+
+    apply();
   }
 
   /* ---------- Captura de correo ---------- */

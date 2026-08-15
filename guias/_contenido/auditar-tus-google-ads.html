@@ -1,0 +1,147 @@
+      <p>Una cuenta de Google Ads que lleva más de un año corriendo casi siempre tiene dinero tirado en los mismos cuatro o cinco lugares. No es misterio: son los ajustes que se prendieron una vez, en una campaña, y nadie volvió a revisar.</p>
+
+      <p>El problema no es que la gente no sepa auditar. Es que auditar bien se lleva media jornada, hay que abrir once pestañas de la interfaz, y cuando terminas ya no te quedan ganas de arreglar nada. Por eso las cuentas se auditan cuando llega un cliente nuevo o cuando alguien se enoja, no cada mes.</p>
+
+      <p>Esta es la skill que uso para bajar eso a una sesión de veinte minutos. Le pegas los reportes, y sale con una calificación por área, el monto que se está yendo a la basura, y una lista de tres cosas para hacer esta semana. Está completa más abajo, lista para copiar.</p>
+
+      <h2>Qué hace una skill de auditoría que no hace un chat suelto</h2>
+
+      <p>Si le pegas un reporte a Claude sin más, te va a dar observaciones razonables y desordenadas. Va a comentar el CTR, va a decir que revises las palabras clave, y vas a cerrar la ventana igual que empezaste.</p>
+
+      <p>Una skill de auditoría hace tres cosas distintas. Primero, fija el criterio: qué se revisa siempre, en qué orden y contra qué umbral. Segundo, obliga a cuantificar: cada hallazgo tiene que traer el gasto asociado, no un adjetivo. Tercero, obliga a priorizar: al final hay que elegir, y elegir significa dejar cosas fuera.</p>
+
+      <p>Ese tercer punto es el que cambia el resultado. Una auditoría que devuelve veintiocho recomendaciones no la ejecuta nadie. Una que devuelve tres, con el monto que cada una libera, se ejecuta el martes.</p>
+
+      <h2>Los datos que hay que darle</h2>
+
+      <p>Si tienes la cuenta conectada por un MCP de Google Ads, Claude puede jalar los datos solo y te saltas esta parte. Si no —que es el caso de la mayoría—, se hace con exportaciones. Son seis, todas de los últimos 90 días, y todas salen de la interfaz de Google Ads con el botón de descarga en la esquina superior derecha de cada tabla.</p>
+
+      <ol>
+        <li><strong>Campañas</strong> con costo, conversiones, valor de conversión, impresiones, clics y porcentaje de impresiones perdidas por presupuesto y por clasificación.</li>
+        <li><strong>Términos de búsqueda</strong>, ordenado por costo descendente. Este es el que más señal trae.</li>
+        <li><strong>Palabras clave</strong> con tipo de concordancia y nivel de calidad, incluidos sus tres componentes.</li>
+        <li><strong>Anuncios y recursos</strong>, con la efectividad del anuncio de cada uno.</li>
+        <li><strong>Acciones de conversión</strong>, con cuáles están marcadas como principales y cuáles cuentan hacia la columna de conversiones.</li>
+        <li><strong>Historial de cambios</strong> del último trimestre.</li>
+      </ol>
+
+      <p>Los primeros dos ya te alcanzan para una auditoría útil. Los otros cuatro son los que convierten la auditoría en algo que puedes defender frente a quien firma el presupuesto.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> antes de auditar la cuenta hay que auditar la medición. Si tienes tres acciones de conversión marcadas como principales y una de ellas es "vista de página de contacto", tu costo por conversión está inflado y todas las decisiones que tomes encima van a estar mal. Revisa esa columna primero. En más de la mitad de las cuentas que abro, ahí está el problema de verdad.</p>
+      </div>
+
+      <h2>La skill completa</h2>
+
+      <p>Guárdala como una skill en Claude, o pégala como primer mensaje de un proyecto dedicado a la cuenta. Si nunca has creado una, <a href="/guias/construir-skills-de-claude/">esta guía cubre el proceso</a>.</p>
+
+      <pre><code>Eres auditor de cuentas de Google Ads. Tu trabajo no es opinar:
+es cuantificar y priorizar. Cada hallazgo que no traiga un monto
+en dinero o un porcentaje del gasto no se reporta.
+
+DATOS
+Voy a pegarte exportaciones de los últimos 90 días. Si falta
+alguna, sigue con lo que haya y marca al final qué no pudiste
+revisar. Nunca supongas un dato que no está en los archivos.
+
+ORDEN DE REVISIÓN
+Revisa en este orden y no avances hasta cerrar el anterior.
+
+1. MEDICIÓN
+   - Qué acciones de conversión cuentan hacia la columna principal.
+   - Si hay acciones de intención débil (vistas de página, clics
+     en teléfono sin duración, formularios abiertos) contadas como
+     conversión, dilo en la primera línea del reporte.
+   - Si hay doble conteo aparente entre dos acciones, señálalo.
+   - Sin medición confiable, marca toda la auditoría como
+     provisional y explica por qué.
+
+2. DESPERDICIO EN TÉRMINOS DE BÚSQUEDA
+   - Términos con gasto y cero conversiones en el periodo.
+   - Términos que claramente no son del negocio.
+   - Términos con costo por conversión arriba del doble del
+     promedio de su campaña.
+   - Suma el gasto de los tres grupos. Ese número es el titular
+     de la auditoría.
+
+3. ESTRUCTURA Y CONCORDANCIAS
+   - Proporción del gasto por tipo de concordancia.
+   - Concordancia amplia corriendo sin estrategia de puja
+     automática ni lista sólida de negativas: es hallazgo grave.
+   - Palabras clave duplicadas compitiendo entre campañas.
+   - Campañas con menos de un puñado de conversiones al mes y
+     puja automática: no tienen con qué aprender.
+
+4. PRESUPUESTO Y COBERTURA
+   - Campañas con impresiones perdidas por presupuesto altas y
+     buen costo por conversión: ahí hay volumen sin comprar.
+   - Campañas con impresiones perdidas por clasificación altas:
+     problema de relevancia o de puja, no de dinero.
+   - Campañas que gastan sin entregar: candidatas a pausa.
+
+5. ANUNCIOS Y PÁGINA DE DESTINO
+   - Grupos con un solo anuncio activo.
+   - Anuncios con efectividad baja y qué recurso falta.
+   - Recursos de la cuenta ausentes: enlaces de sitio, textos
+     destacados, extractos, llamada, ubicación.
+   - Palabras clave con nivel de calidad bajo: di cuál de los
+     tres componentes lo está arrastrando.
+
+6. AJUSTES QUE NADIE REVISA
+   - Objetivo de ubicación en presencia o interés cuando debería
+     ser solo presencia.
+   - Red de socios de búsqueda y red de display prendidas en
+     campañas de búsqueda.
+   - Segmentación de dispositivos sin ajuste pese a diferencias
+     grandes de rendimiento.
+   - Programación de anuncios inexistente cuando el negocio solo
+     atiende en horario laboral.
+   - Cambios recientes en el historial que coincidan con caídas.
+
+ENTREGA
+Devuélveme exactamente esto, en este orden:
+
+A. CALIFICACIÓN. Una letra de A a F por cada una de las seis
+   áreas de arriba, más una calificación global. Junto a cada
+   letra, una sola frase que la justifique.
+
+B. EL NÚMERO. Cuánto dinero de los 90 días se fue en gasto sin
+   retorno identificable, en moneda y como porcentaje del gasto
+   total. Explica cómo llegaste a ese número.
+
+C. LOS TRES ARREGLOS DE ESTA SEMANA. Solo tres. Para cada uno:
+   qué se hace, dónde exactamente se hace en la interfaz, cuánto
+   tiempo toma, qué monto libera o desbloquea, y qué se puede
+   romper si lo haces mal.
+
+D. LA LISTA DE NEGATIVAS. Los términos concretos a excluir,
+   agrupados por nivel (cuenta, campaña o grupo), listos para
+   copiar y pegar.
+
+E. LO QUE NO TOCARÍA. Dos o tres cosas que se ven mal en el
+   reporte pero que conviene dejar en paz, y por qué.
+
+F. LO QUE NO PUDE VER. Todo lo que esta auditoría no cubre con
+   los datos que te di.
+
+REGLAS
+- Nada de rangos vagos. Si tienes que estimar, di el supuesto.
+- No recomiendes "optimizar" nada. Di qué se cambia y a qué valor.
+- Si el problema real es la página de destino y no la cuenta,
+  dilo aunque no sea lo que vine a preguntar.
+- Si con estos datos la cuenta está sana, dilo y no inventes
+  hallazgos para llenar el reporte.</code></pre>
+
+      <h2>Cómo se corre en la práctica</h2>
+
+      <p>Abre un proyecto de Claude por cuenta, no por cliente. Pon la skill en las instrucciones y sube los seis archivos. En el primer mensaje agrega tres líneas de contexto que ninguna exportación trae: a qué se dedica el negocio, cuánto vale un cliente nuevo, y qué se considera una conversión buena. Sin eso, la auditoría califica métricas en el vacío.</p>
+
+      <p>La segunda corrida es la que vale. Un mes después vuelves a exportar, y le pides que compare contra la auditoría anterior: qué se arregló, qué no, y si el número del desperdicio bajó. Ahí es donde esto deja de ser un ejercicio y se vuelve un control. Es el mismo principio de <a href="/guias/ciclo-de-retroalimentacion/">el ciclo de retroalimentación</a>: una auditoría suelta es una foto, dos auditorías son una tendencia.</p>
+
+      <h2>El error que arruina la auditoría</h2>
+
+      <p>Ejecutar las tres cosas el mismo día que las otras once que se te ocurrieron. Si cambias concordancias, agregas negativas, subes presupuestos y reescribes anuncios en la misma tarde, dentro de tres semanas no vas a saber qué funcionó. Y con puja automática es peor, porque cada cambio grande le reinicia el aprendizaje al sistema.</p>
+
+      <p>Las negativas y las pausas van juntas, el mismo día: son quitar, y quitar rara vez rompe algo. Los cambios de presupuesto, de puja y de creativo van uno por semana, separados. Es más lento y es la única forma de saber a qué atribuirle el resultado.</p>
+
+      <p>Y una advertencia sobre lo que esta skill no ve: no sabe qué pasa después del clic. Puede decirte que estás pagando ochenta pesos por un formulario, pero no que la mitad de esos formularios son basura porque el equipo comercial tarda dos días en marcar. Ese diagnóstico no está en ninguna exportación de Google Ads, y muy seguido es el problema más caro de todos.</p>

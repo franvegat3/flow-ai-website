@@ -1,0 +1,147 @@
+      <p>En pauta pagada, la palanca que de verdad mueve el resultado es el creativo. La segmentación ya la hace la plataforma sola. El presupuesto lo mueves en dos clics. Lo que decide si una cuenta rinde o no es qué se ve y qué se dice en los primeros segundos.</p>
+
+      <p>Y ahí es donde casi todos los equipos se atoran. No por falta de ideas: por falta de briefs. Alguien manda un mensaje que dice "hagamos un video tipo testimonio" y el editor entrega algo que no se parece a nada de lo que funcionó el mes pasado. Se graba, se sube, no rinde, y nadie sabe si falló la idea o la ejecución.</p>
+
+      <p>Monté un director creativo de IA para cerrar ese hueco. No genera anuncios: genera briefs. Toma el desempeño real de la cuenta, el lenguaje literal de los clientes y lo que está corriendo la competencia, y devuelve documentos desde los que un editor puede trabajar sin preguntarme nada. Aquí está cómo está armado, pieza por pieza.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un agente con memoria que convierte evidencia —números, palabras de clientes, anuncios ajenos— en briefs ejecutables con lista de rodaje.</p>
+
+      <p>La distinción importa. Un generador de copy te da veinte variantes de un texto que nadie pidió. Un director creativo te dice qué ángulo hay que probar esta quincena, por qué, en qué formato, y qué tiene que aparecer en pantalla. El primero produce material. El segundo produce decisiones.</p>
+
+      <h2>Las cuatro fuentes de contexto</h2>
+
+      <p>Un director creativo sin datos es un generador de ideas bonitas. Estas son las cuatro entradas que le doy, en orden de peso.</p>
+
+      <h3>1. Desempeño de la cuenta</h3>
+
+      <p>El histórico de anuncios: qué corrió, con qué gancho, en qué formato, y cómo se comportó. No solo el ganador: también los que murieron. Un agente que solo ve ganadores repite el mismo anuncio con distinto color.</p>
+
+      <p>Lo bajo con el conector de Meta y lo dejo en un archivo. Nunca dejo que el modelo consulte y opine en el mismo paso; es la regla que más errores me ha evitado. El detalle de cómo se audita una cuenta está en <a href="/guias/auditar-tus-google-ads/">la guía de auditoría de campañas</a>.</p>
+
+      <h3>2. El lenguaje literal del cliente</h3>
+
+      <p>Esta es la fuente que más rinde y la que casi nadie carga. Reseñas, transcripciones de llamadas de venta, tickets de soporte, mensajes de WhatsApp, respuestas de encuestas. Texto crudo, sin resumir.</p>
+
+      <p>La razón es simple: el mejor gancho de un anuncio casi siempre ya lo dijo un cliente, con sus palabras, en una llamada. El equipo de marketing lo traduce a lenguaje de marca y ahí es donde se muere. Si el agente tiene el texto original, te devuelve la frase tal cual salió de la boca de alguien que pagó.</p>
+
+      <h3>3. Señales de la competencia</h3>
+
+      <p>Meta tiene una biblioteca pública de anuncios. Ahí ves qué está corriendo cualquier anunciante, desde cuándo, y en cuántas variantes. Eso último es la señal buena: un anuncio que lleva meses vivo y con muchas variantes le está funcionando a alguien que paga por él. Le doy esas piezas descritas —estructura, gancho, formato, promesa—, no para copiarlas, sino para saber qué ángulos ya están saturados.</p>
+
+      <h3>4. Las restricciones de producción</h3>
+
+      <p>Con quién puedo grabar, qué locación tengo, cuánta edición hay disponible, qué no puedo prometer por cumplimiento. Sin esto, el agente entrega briefs preciosos e imposibles. Este bloque es el que convierte una idea en algo que sí se va a rodar.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> separar la extracción del juicio. Un script baja los datos de la cuenta y los deja en un archivo; el agente lee ese archivo. Cuando junto las dos cosas en un solo paso, el modelo rellena los huecos de datos con cifras que suenan razonables y no existen. En una cuenta de anuncios eso no es un error cosmético: es una decisión de presupuesto tomada sobre un número inventado.</p>
+      </div>
+
+      <h2>Cómo lo conecté</h2>
+
+      <p>Vive como un proyecto dedicado con su base de conocimiento, y para la parte que toca archivos y corre scripts uso el mismo montaje que describo en <a href="/guias/mi-equipo-de-ia/">mi organigrama de IA</a>. Tres conexiones y nada más:</p>
+
+      <ol>
+        <li><strong>La cuenta de anuncios</strong>, en modo lectura. Trae desempeño por anuncio y por conjunto. Nada de permisos de escritura: este agente no publica.</li>
+        <li><strong>La carpeta de voz de cliente</strong>, un directorio de archivos de texto donde caen las transcripciones y las reseñas. Sin base de datos, sin servicio que se pueda caer.</li>
+        <li><strong>La biblioteca de anuncios</strong>, que consulto por búsqueda y de la que dejo fichas escritas de lo que encontré.</li>
+      </ol>
+
+      <p>La memoria es una carpeta versionada. Cada brief se guarda con fecha, y cuando el anuncio corre le agrego abajo qué pasó: si se grabó, si salió, si rindió. Esa segunda mitad es lo que lo convierte en director creativo y no en un generador con buen prompt.</p>
+
+      <h2>Los cuatro formatos de brief</h2>
+
+      <div class="plugin-card">
+        <h3>1. UGC con vocero</h3>
+        <p>El formato que más se usa y peor se instruye. El brief trae: el gancho literal en las primeras dos líneas, el orden de las ideas, qué tiene que verse en pantalla en cada bloque, y qué no se puede decir. Nunca un guion palabra por palabra completo —eso lo actúa mal cualquiera. Guion en los primeros cinco segundos, viñetas para el resto.</p>
+        <p class="plugin-for"><strong>Sirve para:</strong> productos con objeción clara, donde alguien tiene que decir en voz alta lo que el cliente está pensando.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Gráfico estático</h3>
+        <p>Es el formato con mejor relación de esfuerzo contra aprendizaje: se produce en una tarde y aísla el mensaje, sin ruido de producción. El brief define una sola frase, la jerarquía visual, y el elemento de prueba. Lo uso para probar ángulos antes de gastar un día de rodaje.</p>
+        <p class="plugin-for"><strong>Sirve para:</strong> descubrir qué promesa engancha, antes de invertir en video.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Imagen generada con IA</h3>
+        <p>El brief describe la escena, el encuadre, la luz y el estado de ánimo, y por separado el texto que va encima. La regla que aprendí a golpes: la IA hace bien el ambiente y mal el producto. Si tu producto tiene etiqueta, logo o forma reconocible, va foto real compuesta encima. Un producto deformado te quema la marca más rápido de lo que el anuncio te trae ventas.</p>
+        <p class="plugin-for"><strong>Sirve para:</strong> contextos y ambientes caros de producir —una casa, un viaje, una oficina— sin sesión de fotos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Video generado con IA</h3>
+        <p>Aquí el brief es distinto: se escribe por tomas, con duración por toma y movimiento de cámara explícito. Y se asume que la mitad de las generaciones van a rebotar. Los rebotes se reintentan con la misma descripción, no se rediseñan: si cambias el brief cada vez que falla, nunca sabes si el problema era la idea.</p>
+        <p class="plugin-for"><strong>Sirve para:</strong> aperturas de tres segundos y transiciones, no para el anuncio entero.</p>
+      </div>
+
+      <h2>El prompt del agente</h2>
+
+      <p>Este es el que corre en el proyecto, con la base de conocimiento cargada.</p>
+
+      <pre><code>Eres mi director creativo de pauta. Tu trabajo no es escribir
+anuncios: es decidir qué vale la pena grabar esta quincena y
+dejarlo tan claro que mi editor no tenga que preguntarme nada.
+
+QUÉ TIENES
+1. desempeno.md — todos los anuncios que hemos corrido, con
+   gancho, formato y resultado. Incluye los que fracasaron.
+2. voz-cliente/ — transcripciones de llamadas, reseñas y
+   tickets. Texto crudo, sin editar.
+3. competencia.md — fichas de anuncios ajenos que llevan
+   tiempo corriendo en nuestra categoría.
+4. restricciones.md — con quién puedo grabar, qué locación
+   tengo, cuánta edición hay, y qué no podemos prometer.
+5. briefs/ — todo lo que ya produjiste, con la nota de qué
+   pasó cuando salió al aire.
+
+CÓMO TRABAJAS
+1. Antes de proponer nada, dime qué patrón ves en desempeno.md:
+   qué tipo de gancho está rindiendo y cuál ya se agotó.
+2. Saca los ángulos de voz-cliente/, no de tu cabeza. Cada
+   ángulo que propongas tiene que venir con la cita literal
+   que lo originó y de qué archivo salió.
+3. Cruza contra competencia.md y márcame cuáles ángulos ya
+   están saturados en la categoría.
+4. Propón exactamente tres conceptos. No diez. Tres, con el
+   formato recomendado para cada uno y por qué ese formato.
+5. Para el que yo apruebe, escribe el brief completo.
+
+FORMATO DEL BRIEF
+- Ángulo, en una frase, y la cita de cliente que lo sostiene.
+- Formato y por qué ese y no otro.
+- Gancho: las primeras dos líneas, palabra por palabra.
+- Cuerpo: en viñetas, no en guion cerrado.
+- Qué se ve en pantalla, bloque por bloque.
+- Lista de rodaje: tomas necesarias, locación, utilería,
+  vestuario y duración estimada de grabación.
+- Qué NO se puede decir, según restricciones.md.
+- Qué mediríamos para saber si el ángulo sirvió.
+
+REGLAS
+- No inventes números de desempeño. Si te falta el dato,
+  escribe "falta dato" y sigue. Nunca lo estimes.
+- No propongas nada que no se pueda producir con lo que dice
+  restricciones.md.
+- Si un ángulo ya se probó y falló, no lo repropongas sin
+  decirme qué cambiaste y por qué esta vez sí.
+- Nada de lenguaje de marca genérico. Las palabras del
+  cliente, tal cual.
+
+Empieza leyendo desempeno.md y dime el patrón antes de
+proponer nada.</code></pre>
+
+      <h2>La lista de rodaje es la mitad del trabajo</h2>
+
+      <p>Un brief sin lista de rodaje es una opinión. La lista evita que el día de grabación se convierta en una improvisación cara: cuántas tomas, en qué orden, qué se necesita en cámara, cuánto tiempo por bloque.</p>
+
+      <p>La instrucción concreta que le pongo es que la lista se escriba asumiendo que se graban tres conceptos el mismo día. Eso obliga a agrupar por locación y vestuario, no por concepto, que es como se graba de verdad cuando el tiempo cuesta.</p>
+
+      <h2>El error que veo en todas las cuentas</h2>
+
+      <p>Pedirle al agente que genere el anuncio final en lugar del brief.</p>
+
+      <p>Cuando le pides la pieza terminada, obtienes algo publicable y mediocre, y el equipo pierde el músculo de decidir. Cuando le pides el brief, obtienes una hipótesis clara que alguien con criterio va a ejecutar mejor de lo que el modelo la imaginó.</p>
+
+      <p>Y los briefs se acumulan. Al tercer mes tienes un archivo de hipótesis probadas con su resultado escrito abajo, que es lo que ninguna cuenta de anuncios tiene y todas necesitan. Ese archivo, no el agente, es el activo.</p>

@@ -1,0 +1,155 @@
+      <p>Alguien va a preguntarle a una IA quién hace lo que tú haces. Va a recibir tres nombres con una línea de explicación cada uno. Si el tuyo no está ahí, no perdiste una posición en Google: no existes en esa conversación.</p>
+
+      <p>Y el problema casi nunca es que tu sitio esté mal hecho. Es que está hecho para que lo lea un humano con un navegador moderno, y quien lo está leyendo ahora es un programa que no ejecuta JavaScript, no espera a que carguen tus animaciones y se va si tu servidor tarda.</p>
+
+      <p>Esto es la lista de lo que sí mueve la aguja, en el orden en que lo haría yo. Nada de esto requiere rehacer tu sitio.</p>
+
+      <h2>Qué cambió, en una frase</h2>
+
+      <p>Antes el buscador te mandaba tráfico y tú convencías en tu sitio. Ahora el modelo lee tu sitio, se queda con lo que entendió y convence en tu lugar. Tu página dejó de ser el lugar donde vendes y se volvió la fuente que alguien más va a citar.</p>
+
+      <p>Eso cambia el trabajo. Ya no optimizas para que alguien haga clic. Optimizas para que un sistema pueda extraer de tu sitio una frase correcta sobre ti y repetirla sin equivocarse.</p>
+
+      <h2>1. Deja entrar a los bots que sí te convienen</h2>
+
+      <p>El primer bloqueo suele estar en <code>robots.txt</code>, y casi siempre lo puso alguien con buena intención. Una plantilla de WordPress, un plugin de "protégete de la IA", un desarrollador que leyó que había que bloquear a los scrapers.</p>
+
+      <p>Aquí hay que separar dos cosas que la gente mezcla. Hay bots que recolectan contenido para <strong>entrenar</strong> modelos, y hay bots que entran <strong>en el momento</strong> en que un usuario hace una pregunta, para traer tu página como fuente de la respuesta. Bloquear los segundos es autoexcluirte de las recomendaciones.</p>
+
+      <p>Este es un <code>robots.txt</code> que deja pasar a los agentes de búsqueda de las plataformas principales, protege lo que no debe indexarse y declara tu sitemap:</p>
+
+      <pre><code># robots.txt — abierto a buscadores y a agentes de IA
+
+# Buscadores tradicionales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (rastreo para productos de IA)
+User-agent: Google-Extended
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Todos los demás
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /carrito/
+Disallow: /checkout/
+Disallow: /cuenta/
+Disallow: /gracias/
+Disallow: /*?utm_
+
+Sitemap: https://tudominio.com/sitemap.xml</code></pre>
+
+      <p>Cambia <code>tudominio.com</code> por el tuyo y ajusta las rutas de <code>Disallow</code> a las que existan en tu sitio. Lo que va ahí es lo que no aporta nada a nadie leyéndolo desde fuera: el panel de administración, el carrito, las páginas de agradecimiento y las URLs con parámetros de campaña.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar que el archivo publicado sea el que crees. Abre <code>tudominio.com/robots.txt</code> en una pestaña de incógnito. Es muy común que el CMS genere uno virtual que ignora el que subiste, o que Cloudflare tenga activada una regla de bloqueo de bots de IA que pesa más que tu <code>robots.txt</code>. Revisa también ahí antes de darlo por hecho.</p>
+      </div>
+
+      <h2>2. Que el contenido esté en el HTML, no en el JavaScript</h2>
+
+      <p>Este es el que más sitios rompe y el que menos se revisa. Muchos frameworks modernos mandan un HTML casi vacío y pintan el contenido en el navegador. Un humano no lo nota. Un rastreador que no ejecuta JavaScript recibe una página en blanco.</p>
+
+      <p>La prueba es de treinta segundos: abre tu sitio, ve al menú de tu navegador y elige "ver código fuente de la página" —no el inspector, el código fuente crudo—. Busca ahí una frase que aparezca en pantalla. Si no está, tu contenido no existe para buena parte de los agentes.</p>
+
+      <p>El arreglo es renderizado del lado del servidor o generación estática. Si tu sitio está en un framework moderno, es una configuración, no una reescritura. Si está en un constructor visual, revisa si tiene la opción de exportar estático.</p>
+
+      <h2>3. Escribe la respuesta antes del párrafo</h2>
+
+      <p>Un modelo extrae mejor cuando la afirmación está completa en una sola oración, sin depender del párrafo anterior.</p>
+
+      <p>Compara. "Trabajamos con distintos esquemas de colaboración adaptados a cada cliente" no le dice nada a nadie. "Trabajamos por proyecto cerrado o por retainer mensual, con equipos de entre dos y cinco personas, para empresas de manufactura en México" es una frase que un modelo puede citar íntegra y que efectivamente te describe.</p>
+
+      <ul>
+        <li>Un <code>h2</code> por pregunta real que te hacen los clientes, redactado como la haría un cliente.</li>
+        <li>La respuesta directa en la primera oración debajo del encabezado. El matiz después.</li>
+        <li>Nombres propios: ciudades, industrias, herramientas, integraciones. Los modelos distinguen por especificidad, no por adjetivos.</li>
+        <li>Fechas visibles de última actualización. Un contenido sin fecha compite en desventaja contra uno fechado.</li>
+      </ul>
+
+      <h2>4. Datos estructurados donde sí importan</h2>
+
+      <p>El marcado de schema.org le da al rastreador los hechos ya separados de la prosa. No es magia, pero es la diferencia entre que adivine tu razón social y que la lea.</p>
+
+      <p>Con tres tipos cubres el 90% de los casos: <code>Organization</code> en la home, <code>Product</code> o <code>Service</code> en las páginas de oferta, y <code>FAQPage</code> donde tengas preguntas frecuentes. Se pega como un bloque en el HTML:</p>
+
+      <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nombre legal de tu empresa",
+  "url": "https://tudominio.com",
+  "description": "Qué hacen, para quién, en una frase.",
+  "areaServed": "MX",
+  "sameAs": [
+    "https://www.linkedin.com/company/tu-empresa"
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+      <p>Solo pon ahí datos que sean ciertos y que también aparezcan en la página visible. El marcado que contradice al contenido se ignora, y en el peor caso te penaliza.</p>
+
+      <h2>5. La página de hechos que casi nadie tiene</h2>
+
+      <p>Cuando un modelo tiene que decidir si te recomienda, busca hechos verificables: desde cuándo existes, dónde operas, a quién le vendes, qué no haces. Casi ningún sitio corporativo tiene eso junto. Lo tiene repartido entre un "nosotros" con foto de equipo y un footer.</p>
+
+      <p>Arma una sola página con esos hechos en lista: año de fundación, ciudad, tamaño del equipo, industrias que atiendes, integraciones que soportas, rangos de precio si los publicas, y una sección explícita de para quién <em>no</em> eres. Esa última parte es la que más se cita, porque casi nadie la escribe.</p>
+
+      <p>Es también la página que le pasas a un vendedor nuevo el primer día. Si sirve para eso, sirve para esto.</p>
+
+      <h2>6. El archivo llms.txt, con expectativas realistas</h2>
+
+      <p>Existe una propuesta de la comunidad para publicar un archivo <code>llms.txt</code> en la raíz del sitio: un índice en markdown con las páginas que quieres que un modelo lea primero, cada una con una línea de descripción. Es una convención emergente, no un estándar que todas las plataformas respeten.</p>
+
+      <p>Lo pondría porque cuesta veinte minutos y no rompe nada, pero después de los cinco puntos anteriores. Es un acelerador, no un sustituto de tener el contenido legible.</p>
+
+      <h2>7. Mide con los registros del servidor, no con una herramienta</h2>
+
+      <p>Casi ninguna plataforma de analítica te va a decir si un agente de IA está leyendo tu sitio, porque esos bots no ejecutan el script de medición. La respuesta está en los registros de acceso del servidor o del CDN.</p>
+
+      <p>Filtra por los nombres de agente de la lista de arriba y contesta dos preguntas: ¿están entrando?, ¿y qué código de respuesta reciben? Un montón de 403 o 429 significa que tu firewall los está echando aunque tu <code>robots.txt</code> los invite. Esa revisión, una vez al mes, es todo el seguimiento que necesitas al principio.</p>
+
+      <h2>El error de orden</h2>
+
+      <p>Lo que veo en las empresas con las que trabajo es que se van directo a producir contenido nuevo "optimizado para IA" mientras su sitio actual sigue devolviendo HTML vacío o bloqueando rastreadores. Es escribir más fuerte con el micrófono apagado.</p>
+
+      <p>El orden correcto es aburrido: primero acceso, luego renderizado, luego estructura, y hasta el final volumen. Los tres primeros son una tarde de trabajo técnico y se hacen una sola vez. Si quieres ir más a fondo en la parte de contenido, revisa <a href="/guias/el-nuevo-seo-visibilidad-ante-la-ia/">el manual completo de visibilidad ante la IA</a>; y si tu negocio depende de clientes de tu ciudad, <a href="/guias/aparecer-en-busquedas-locales-de-ia/">cómo aparecer en búsquedas locales</a> es la pieza que falta.</p>
+
+      <p>Y una advertencia sobre la decisión de fondo: bloquear todo también es una postura legítima si tu contenido es tu producto. Solo tómala a propósito, sabiendo lo que cuesta, y no porque venía activada por default en un plugin.</p>

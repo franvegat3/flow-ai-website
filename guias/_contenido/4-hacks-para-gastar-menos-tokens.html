@@ -1,0 +1,73 @@
+      <p>Los trucos de Claude que se hacen virales casi siempre son la misma cosa: una frase que le pegas al prompt y que supuestamente lo vuelve diez veces mejor. Amenazarlo, ofrecerle propina, decirle que es un experto de clase mundial, pedirle que respire hondo.</p>
+
+      <p>Nada de eso mueve la aguja hoy. Lo que sí la mueve es aburrido y no se comparte bien: entender que cada mensaje que mandas paga por todo lo que ya está en la conversación, y administrar eso.</p>
+
+      <p>Estos son los cuatro que sí uso todos los días. Los cuatro suben la calidad de la respuesta y bajan el consumo al mismo tiempo, que es la única señal de que un truco es real.</p>
+
+      <h2>Por qué el contexto es lo que cuesta</h2>
+
+      <p>Aquí está el mecanismo, porque sin él los cuatro hacks parecen arbitrarios.</p>
+
+      <p>Cada vez que mandas un mensaje, el modelo no lee solo ese mensaje: lee toda la conversación otra vez. El archivo que subiste hace veinte turnos, la salida gigante de aquel comando, las tres rutas que ya descartaron. Todo eso se vuelve a procesar en cada turno.</p>
+
+      <p>Eso tiene dos consecuencias. La obvia es el costo: una conversación larga cuesta más por mensaje que una corta, aunque escribas lo mismo. La menos obvia importa más: <strong>entre más basura hay en el contexto, peor responde</strong>. La información relevante compite con la irrelevante, y a veces pierde.</p>
+
+      <p>Por eso los cuatro hacks son el mismo movimiento visto desde distintos ángulos: mantén el contexto limpio.</p>
+
+      <h2>Los 4</h2>
+
+      <div class="plugin-card">
+        <h3>1. Ver el sobrepeso antes de tocar nada <code>/context</code></h3>
+        <p>Es el comando que casi nadie corre y el que debería ser el primero. Te dibuja el uso actual del contexto como una cuadrícula de colores y te dice qué lo está llenando: qué herramientas están pesando de más, si hay archivos de memoria inflados, y qué tan cerca estás del límite.</p>
+        <p>La razón para correrlo antes de optimizar es simple: casi siempre el culpable no es lo que crees. La gente asume que el problema es "hablé mucho" y resulta ser un archivo enorme que pegó al principio, o un servidor conectado que mete su catálogo completo de herramientas en cada turno. Optimizar a ciegas es cómo se pierde una tarde.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> apenas sientas que va lento o que empieza a olvidar cosas. Antes de compactar, no después.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Reiniciar con la herramienta correcta <code>/compact</code> y <code>/clear</code></h3>
+        <p>No son sinónimos y usar el equivocado es caro en las dos direcciones.</p>
+        <p><code>/compact</code> resume la conversación hasta ahí y sigue en el mismo hilo. Sirve cuando el trabajo continúa pero el historial ya pesa. El detalle que casi nadie usa: acepta instrucciones de enfoque. En vez de dejar que resuma lo que él crea importante, le dices qué conservar.</p>
+        <p><code>/clear</code> arranca de cero, con el contexto vacío. Es lo correcto cuando cambias de tarea, y es donde la gente se equivoca más: seguir con la misma conversación después de terminar algo hace que la tarea nueva cargue con todo el ruido de la anterior.</p>
+        <p class="plugin-for"><strong>La regla:</strong> misma tarea, <code>/compact</code>. Tarea distinta, <code>/clear</code>. Si dudas, es <code>/clear</code>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Un modelo para pensar y otro para el trabajo pesado <code>/model</code> y <code>/effort</code></h3>
+        <p>El error más caro no es usar el modelo equivocado: es usar el mismo para todo. Pensar el plan de un cambio grande y ejecutar veinte ediciones mecánicas son tareas con perfiles de dificultad opuestos.</p>
+        <p>La forma manual: planea con el modelo bueno, y cuando el plan esté claro cambia con <code>/model</code> al rápido para la ejecución. La forma automática: existe el modo <code>opusplan</code>, que usa el modelo de razonamiento mientras planeas y cambia solo al de ejecución cuando empieza a trabajar.</p>
+        <p>Y hay una segunda palanca que la gente olvida: <code>/effort</code>. Bajar un escalón el esfuerzo en trabajo rutinario reduce el consumo sin que se note en el resultado. Súbelo solo cuando la tarea lo pida.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> en cuanto una sesión tenga una fase de decidir y una de ejecutar. O sea, casi siempre.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Redirigir en el segundo cinco, no en el minuto tres <code>Esc</code></h3>
+        <p>Este es el que más dinero ahorra y el que menos gente usa, por un motivo psicológico: cuando ves que va por el camino equivocado, la tentación es dejarlo terminar para no "desperdiciar" lo que lleva.</p>
+        <p>Es exactamente al revés. Esa salida equivocada se queda en el contexto y la vas a pagar en cada turno siguiente, además de confundir al modelo sobre qué querías. Interrumpir con <code>Esc</code> detiene la respuesta o la llamada de herramienta a media jugada y conserva lo que ya hizo bien, para que corrijas el rumbo ahí mismo.</p>
+        <p>Un patrón que funciona: interrumpe y no repitas el encargo completo. Di solo qué cambió. "Para. No toques la base de datos, solo el archivo de configuración."</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> en el instante en que la primera línea de su plan te suene mal. No después.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> compactar de forma dirigida. <code>/compact</code> a secas conserva lo que el modelo cree importante, y lo que él cree importante rara vez es lo que tú necesitas cinco turnos después. Escribe qué conservar: "compacta, pero deja completos los nombres de archivo que ya modificamos y las dos decisiones de arquitectura que tomamos". El resumen queda la mitad de largo y el doble de útil.</p>
+      </div>
+
+      <h2>El orden en el que se usan</h2>
+
+      <p>Los cuatro juntos forman un ciclo, y en ese orden es donde rinden.</p>
+
+      <ol>
+        <li><strong>Arranca limpio.</strong> Tarea nueva, <code>/clear</code>. No arrastres la anterior.</li>
+        <li><strong>Elige con qué vas a pensar.</strong> Modelo y esfuerzo según el tipo de trabajo, no por inercia.</li>
+        <li><strong>Corrige temprano.</strong> Cada vez que veas desvío, <code>Esc</code> y una frase de corrección.</li>
+        <li><strong>Mide antes de resumir.</strong> Cuando pese, <code>/context</code> primero y <code>/compact</code> con instrucciones después.</li>
+      </ol>
+
+      <p>Hay un quinto movimiento que vale la pena conocer aunque no lo usé como hack principal: cuando te salga una duda lateral a media tarea, <code>/btw</code> la responde sin ensuciar el hilo principal. Es la versión chica del mismo principio.</p>
+
+      <h2>Cómo saber si te está funcionando</h2>
+
+      <p>No lo midas por sensación. <code>/usage</code> te da el costo de la sesión y el desglose de qué lo está consumiendo, incluyendo qué skills, subagentes y servidores conectados están pesando.</p>
+
+      <p>La señal de que lo estás haciendo bien es contraintuitiva: <strong>tus sesiones deberían volverse más cortas y más numerosas</strong>, no más largas. Una conversación de sesenta turnos que sobrevivió tres tareas distintas es cara y confusa. Cuatro conversaciones de quince turnos, cada una con una tarea, cuestan menos y salen mejor.</p>
+
+      <p>Si después de una semana tus sesiones siguen siendo maratones, el hack que te falta es el más simple de los cuatro: <code>/clear</code> cuando terminas algo. Para ir más a fondo por ese lado, la <a href="/guias/limpieza-de-contexto/">lista para limpiar el contexto</a> y la guía de <a href="/guias/no-quemar-tu-limite-de-uso/">cómo dejar de quemar tu límite de uso</a> atacan el mismo problema desde el otro extremo.</p>

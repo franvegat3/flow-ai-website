@@ -1,0 +1,93 @@
+      <p>Claude Sonnet 5 salió y el titular es que cuesta menos que el Sonnet anterior. Eso es cierto en el precio por token y engañoso en la factura, por una razón que casi nadie está explicando.</p>
+
+      <p>Aquí van los números reales, dónde queda contra Opus 4.8, y los tres cambios de comportamiento que van a romper código que hoy funciona.</p>
+
+      <h2>Los precios, tal como están publicados</h2>
+
+      <p>Sonnet 5 cuesta <strong>$2 dólares por millón de tokens de entrada y $10 por millón de salida</strong>. Sonnet 4.6 costaba $3 y $15.</p>
+
+      <p>Ese precio nació como promocional con fecha de caducidad y Anthropic lo dejó fijo: el aumento programado a $3/$15 no va a ocurrir. Es el precio estándar.</p>
+
+      <p>Para ubicarlo en la escalera completa, por millón de tokens de entrada y de salida:</p>
+
+      <ul>
+        <li><strong>Claude Haiku 4.5</strong> — $1 / $5</li>
+        <li><strong>Claude Sonnet 5</strong> — $2 / $10</li>
+        <li><strong>Claude Sonnet 4.6</strong> — $3 / $15</li>
+        <li><strong>Claude Opus 5 y Opus 4.8</strong> — $5 / $25</li>
+        <li><strong>Claude Fable 5</strong> — $10 / $50</li>
+      </ul>
+
+      <p>Con la API por lotes se paga la mitad: Sonnet 5 queda en $1 y $5. Y una lectura de caché cuesta la décima parte de la entrada, o sea $0.20 por millón. Esos dos descuentos se acumulan y son la diferencia entre una factura razonable y una absurda en cualquier flujo con volumen.</p>
+
+      <h2>La trampa: el tokenizador nuevo</h2>
+
+      <p>Aquí está lo que hay que entender antes de presupuestar nada.</p>
+
+      <p>Sonnet 5 usa un tokenizador distinto al de Sonnet 4.6. El mismo texto produce <strong>aproximadamente 30% más tokens</strong>. El porcentaje exacto depende del contenido.</p>
+
+      <p>Haz la cuenta. La entrada bajó de $3 a $2 por token, un 33% menos, pero el mismo documento ahora son 30% más tokens. Eso deja el costo de una petición equivalente en algo muy parecido a lo que pagabas antes, no en un tercio menos. En la salida el descuento sí se nota más, porque el número de tokens de salida lo controlas tú con lo que pides.</p>
+
+      <p>Y hay tres consecuencias más allá de la factura:</p>
+
+      <ul>
+        <li><strong>Tu ventana de contexto rinde menos texto.</strong> Sigue siendo de 1 millón de tokens, pero cada token cubre menos texto, así que el mismo millón te alcanza para menos documento.</li>
+        <li><strong>Tus límites de salida se quedan cortos.</strong> Si tenías un tope de tokens ajustado a lo que producía Sonnet 4.6, la misma respuesta se te va a truncar. El techo de salida es de 128 mil tokens.</li>
+        <li><strong>Tus conteos viejos ya no sirven.</strong> Cualquier estimación calibrada contra el modelo anterior hay que volverla a medir.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> volver a medir antes de migrar, no después. Toma tus diez prompts más usados, cuéntalos contra Sonnet 5 y compara con lo que gastabas. Es media hora de trabajo y es la diferencia entre saber qué va a costar tu operación y enterarte a fin de mes.</p>
+      </div>
+
+      <h2>Cómo se para contra Opus 4.8</h2>
+
+      <p>La afirmación de Anthropic es que el desempeño de Sonnet 5 queda cerca del de Opus 4.8 a un precio bastante menor, y que es una mejora sustancial sobre Sonnet 4.6 en razonamiento, uso de herramientas, código y trabajo de conocimiento.</p>
+
+      <p>Las dos evaluaciones que citan por nombre son BrowseComp, que mide búsqueda agéntica, y OSWorld-Verified, que mide uso de computadora. En las dos, Sonnet 5 mejora sobre Sonnet 4.6. Contra Opus 4.8, el argumento no es que empate: es que cubre un rango de costo-desempeño mucho más amplio, con una eficiencia notablemente mejor en el nivel de esfuerzo medio.</p>
+
+      <p>No voy a poner cifras de esos benchmarks porque el anuncio no publica una tabla de puntajes; los resultados detallados viven en el hub de transparencia de Anthropic. Un número inventado aquí no le sirve a nadie.</p>
+
+      <p>Dos cosas más del anuncio que sí son concretas y sí cambian decisiones: Sonnet 5 alucina y adula menos que Sonnet 4.6, y su desempeño en tareas de ciberseguridad ofensiva es sustancialmente menor al de Opus 4.8 —lo cual es una decisión de diseño, no una carencia.</p>
+
+      <h3>El criterio práctico</h3>
+
+      <p>Sonnet 5 es el default sensato para casi toda la producción: volumen alto, tareas de negocio, agentes que corren seguido. Opus 4.8 y Opus 5 se justifican en lo más difícil y largo, donde la diferencia de capacidad se paga sola. Fable 5, a cinco veces el precio de Sonnet 5, es para los problemas que antes no se podían atacar.</p>
+
+      <p>Si tu duda es entre los de arriba, eso está desarrollado en <a href="/guias/opus-5-vs-fable-5/">cuándo usar Claude Opus 5 y cuándo Fable 5</a>, y la tabla completa de todos los modelos está en <a href="/guias/hoja-de-referencia-de-modelos/">la hoja de referencia de modelos</a>.</p>
+
+      <h2>Tres cambios que rompen código</h2>
+
+      <p>Sonnet 5 es reemplazo directo de Sonnet 4.6 —cambias el identificador del modelo y ya— pero hay tres cosas que devuelven error o cambian de comportamiento sin avisar.</p>
+
+      <h3>1. El razonamiento viene encendido</h3>
+
+      <p>En Sonnet 4.6, una petición sin configurar el pensamiento corría sin pensar. En Sonnet 5, esa misma petición corre con razonamiento adaptativo. Para apagarlo hay que pedirlo explícitamente.</p>
+
+      <p>Esto importa por dinero y por truncamiento: el tope de salida cuenta el razonamiento y la respuesta juntos. Si tenías un tope ajustado a un flujo sin pensamiento, ahora se te corta a media respuesta.</p>
+
+      <h3>2. Los presupuestos manuales de pensamiento ya no existen</h3>
+
+      <p>Pedir razonamiento con un número fijo de tokens devuelve error. Estaba marcado como obsoleto en Sonnet 4.6 y en Sonnet 5 se eliminó. El reemplazo es el razonamiento adaptativo más el parámetro de esfuerzo, que va de bajo a máximo.</p>
+
+      <h3>3. Los parámetros de muestreo devuelven error</h3>
+
+      <p>Poner <code>temperature</code>, <code>top_p</code> o <code>top_k</code> en un valor distinto al de fábrica devuelve error. Es la primera vez que pasa en la familia Sonnet. Si usabas temperatura para darle variedad creativa, esa palanca ya no está: la variación se pide en el prompt.</p>
+
+      <p>Y una cuarta que no es nueva pero sigue vigente: no se puede prellenar el mensaje del asistente. Eso ya no funcionaba en Sonnet 4.6.</p>
+
+      <h2>Lo demás que conviene saber</h2>
+
+      <p>La ventana de contexto de 1 millón de tokens es el default y también el máximo; no hay una versión más chica, y se cobra a precio estándar en toda la ventana.</p>
+
+      <p>Es el primer modelo de la familia Sonnet con salvaguardas de ciberseguridad en tiempo real. Una petición sobre temas prohibidos o de alto riesgo puede ser rechazada, y el rechazo llega como respuesta exitosa con una razón de parada, no como error. Si tienes código que asume que toda respuesta trae contenido, esa es la línea que hay que revisar.</p>
+
+      <p>Está disponible en la API de Claude, en AWS, en Google Cloud y en Microsoft Foundry, y soporta retención cero de datos para las organizaciones que lo tengan contratado. Lo único que no tiene es el nivel de servicio prioritario. En los planes de consumidor es el modelo por defecto de Free y Pro, y está disponible en Max, Team y Enterprise.</p>
+
+      <h2>Lo que importa más que el modelo que elijas</h2>
+
+      <p>Después de meter estos modelos en operaciones reales, el patrón es aburridamente consistente: la diferencia entre un resultado bueno y uno mediocre casi nunca es el modelo. Es el contexto.</p>
+
+      <p>Un Sonnet 5 con el contexto correcto —quién es el cliente, qué se decidió antes, cuál es el formato, qué está prohibido— gana sin discusión contra un modelo más caro al que le tiras una pregunta suelta. Lo he visto suficientes veces como para no dudarlo.</p>
+
+      <p>Subir de modelo cuesta dinero cada mes. Armar bien el contexto cuesta una tarde, una sola vez. La gente que se obsesiona con la primera decisión y no toca la segunda paga más para obtener menos.</p>

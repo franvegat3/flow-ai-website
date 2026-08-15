@@ -1,0 +1,81 @@
+      <p>Cuando alguien instala su primer plugin de Claude, casi siempre instala el mismo: ventas, marketing o productividad. Son los que salen primero en la lista y los que todo el mundo recomienda.</p>
+
+      <p>El problema es que esos son los plugins de las áreas que ya tienen herramientas. Ventas ya tiene CRM. Marketing ya tiene calendario editorial. Las áreas que de verdad están operando con hojas de cálculo y memoria de alguien son otras: operaciones, recursos humanos, el dueño de un negocio chico que hace todo.</p>
+
+      <p>Estos cinco están en el mismo marketplace oficial que los famosos. Casi nadie los abre.</p>
+
+      <h2>Qué te da un plugin que no te da un chat</h2>
+
+      <p>Un plugin le instala a Claude tres cosas de golpe: el conocimiento del oficio (skills), los accesos a tus herramientas (conectores) y unos atajos que invocas cuando quieres (comandos). En vez de explicarle cada vez cómo se hace una evaluación de desempeño o cómo se documenta un proceso, el plugin ya trae ese criterio adentro.</p>
+
+      <p>Si nunca has instalado uno, arranca por <a href="/guias/plugins-cowork/">la guía de los plugins de Cowork</a> y regresa aquí. Si ya tienes uno corriendo, sigue.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p><strong>En Cowork o en la web:</strong> abre el <em>Marketplace</em> en la barra lateral, busca el plugin por nombre y dale instalar. El marketplace oficial ya viene conectado.</p>
+
+      <p><strong>En Claude Code:</strong> agregas el marketplace una vez y de ahí instalas los que quieras.</p>
+
+      <pre><code>claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install operations@knowledge-work-plugins</code></pre>
+
+      <p><strong>Desde la extensión de VS Code:</strong> escribe <code>/plugins</code> en la caja de texto y se abre una ventana para instalar y administrar. Ahí también eliges el alcance: solo para ti, para el proyecto, o local.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> instalar el plugin no conecta tus cuentas. Cada conector se autoriza aparte, después de instalar. Si instalas el de operaciones y no le das acceso a donde de verdad vive tu documentación, va a saber cómo se escribe un procedimiento pero no va a saber cuáles son los tuyos.</p>
+      </div>
+
+      <h2>Los cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Voz de marca <code>brand-voice</code></h3>
+        <p>Este es el que resuelve el problema más caro de cualquier equipo que produce contenido: que cada persona escribe distinto y nadie sabe cuál es la versión buena. El plugin descubre tu voz a partir de documentos y conversaciones que ya existen, genera una guía a partir de eso, y después valida contra esa guía todo lo que la IA genere.</p>
+        <p>La parte que importa no es la primera —una guía de tono la puede escribir cualquiera—. Es la tercera: la validación. Tener un documento de tono que nadie lee no cambia nada. Tener un paso automático que te dice "esta frase no suena a ustedes" antes de publicar, sí.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> agencias, equipos de contenido con más de dos redactores, y cualquier empresa donde ya se nota que los correos de un área no suenan igual que los de otra.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Operaciones <code>operations</code></h3>
+        <p>Gestión de proveedores, documentación de procesos, gestión del cambio, planeación de capacidad y seguimiento de cumplimiento. Es el plugin menos vistoso de todo el catálogo y probablemente el que más horas recupera.</p>
+        <p>La razón: en la mayoría de las empresas medianas, el proceso real no está escrito en ningún lado. Vive en la cabeza de la persona que lleva ocho años ahí. El día que esa persona se va de vacaciones, el área se detiene. Este plugin sirve para sentarte con esa persona una tarde, que te cuente cómo lo hace, y salir con un procedimiento documentado que otro puede seguir.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el COO, el gerente de planta, la persona que en tu empresa es "la que sabe cómo se hace todo". Especialmente si estás por contratar y no tienes con qué entrenarlos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Recursos humanos <code>human-resources</code></h3>
+        <p>Reclutamiento, onboarding, evaluaciones de desempeño, análisis de compensación y consulta de políticas internas. Aquí hay dos usos que valen por todo el plugin.</p>
+        <p>El primero es la evaluación de desempeño. Todo mundo la odia porque llega la fecha y hay que escribir diez textos de tres párrafos sobre gente que no recuerdas qué hizo en marzo. Con las notas y los pendientes cerrados a la mano, escribir el borrador deja de ser el cuello de botella y el tiempo se va donde debe: en pensar qué le vas a decir a la persona.</p>
+        <p>El segundo es el onboarding. Si contratas seguido, cada nueva persona te cuesta la misma semana de explicaciones. Un paquete de onboarding armado por puesto, con las políticas y los accesos que le tocan, corta esa semana a la mitad.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> empresas de 20 a 300 personas, donde ya hay volumen de contrataciones pero todavía no hay un área de gente completa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Diseño <code>design</code></h3>
+        <p>Crítica de diseño, mantenimiento del sistema de diseño, redacción de UX, auditorías de accesibilidad, síntesis de investigación y entrega a desarrollo. No es un generador de imágenes: es un plugin de criterio de diseño.</p>
+        <p>Lo interesante es para quién sirve de verdad. No es para el diseñador senior, que ya tiene ese criterio. Es para el equipo que no tiene diseñador —el fundador que arma su propia landing, el de producto que dibuja la pantalla antes de pedirla—. Le da un primer filtro decente antes de quemarle tiempo a alguien más. La auditoría de accesibilidad, además, es de esas cosas que nadie hace hasta que un cliente grande la pide en el contrato.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos de producto sin diseñador de planta, y diseñadores solos que necesitan alguien que les discuta el trabajo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Negocio pequeño <code>small-business</code></h3>
+        <p>Este viene con flujos ya armados: planeación de nómina, cierre de mes, resumen semanal del negocio y campañas de crecimiento, conectados a herramientas como QuickBooks, PayPal, HubSpot, Docusign, Google Workspace, Microsoft 365 y Canva.</p>
+        <p>Lo que lo distingue de los demás es una decisión de diseño: tú apruebas cada paso que toca dinero o toca clientes. No hay nada que se ejecute solo y te enteres después. Para el dueño de un negocio chico eso es la diferencia entre usarlo y no atreverse.</p>
+        <p>El uso que más rinde es el resumen semanal. Un negocio de menos de treinta personas casi nunca tiene reporte; tiene la sensación del dueño sobre cómo va la semana. Cambiar esa sensación por un resumen real con los números de la semana es un salto grande y barato.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el dueño operador. El que factura, cobra, contrata y hace la campaña, todo la misma semana.</p>
+      </div>
+
+      <h2>Cuál probar primero</h2>
+
+      <p>No los instales los cinco. Cada plugin agrega skills que compiten por la atención del modelo, y acabas con un Claude que sabe de todo y no destaca en nada.</p>
+
+      <p>La regla que uso: instala el que corresponda al proceso que hoy depende de una sola persona. Si tu documentación vive en la cabeza de tu jefa de operaciones, es <code>operations</code>. Si tus correos suenan a cinco empresas distintas, es <code>brand-voice</code>. Si eres el dueño y haces todo, es <code>small-business</code> y no hay que pensarle más.</p>
+
+      <p>Después dale dos semanas antes de instalar el siguiente. La señal de que está funcionando es que puedas pedirle algo en una frase, sin contexto, y salga bien. Si sigues escribiendo tres párrafos de explicación antes de cada petición, el plugin está puesto pero los conectores no le están dando materia prima. Eso se arregla conectando, no instalando más.</p>
+
+      <h2>Lo que ningún plugin arregla</h2>
+
+      <p>Un plugin te da el andamiaje del oficio. No te da el contexto de tu empresa ni la decisión de qué vale la pena ordenar primero.</p>
+
+      <p>En las empresas donde he metido esto, el patrón es siempre el mismo: el cuello de botella no era la herramienta, era que nadie había escrito cómo se hace el trabajo. El plugin de operaciones no documenta tus procesos solo. Te obliga a sentarte a decirlos en voz alta, y esa es la parte que la gente lleva años posponiendo.</p>
+
+      <p>Empieza por uno. El de la parte de tu operación que hoy se cae si alguien se enferma.</p>

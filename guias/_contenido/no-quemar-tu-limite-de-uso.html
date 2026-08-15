@@ -1,0 +1,139 @@
+      <p>Llegas al jueves y la herramienta te avisa que ya casi no te queda cuota del modelo bueno. Miras hacia atrás y no encuentras la sesión que se lo comió, porque no hubo una: fueron cuarenta tareas chicas que ninguna necesitaba el modelo caro.</p>
+
+      <p>Ese es el patrón. La gente no quema su límite en el trabajo difícil. Lo quema en el trabajo de peón que le dio flojera mandar a otro lado.</p>
+
+      <p>La solución no es racionarte. Es armar un loop de tres papeles donde el modelo bueno hace lo que solo él puede hacer —planear y juzgar— y un modelo más barato y rápido hace el volumen.</p>
+
+      <h2>Dónde se va el presupuesto de verdad</h2>
+
+      <p>Antes del loop, tres fugas que valen más que cualquier optimización fina.</p>
+
+      <p><strong>El chat eterno.</strong> Cada mensaje que mandas en una conversación reenvía toda la conversación anterior. En el mensaje 60 estás pagando por releer 59 mensajes para preguntar algo que no tiene nada que ver con los primeros 40. Un chat largo no es más inteligente, es más caro.</p>
+
+      <p><strong>El contexto pegado a mano, una y otra vez.</strong> Si en cada sesión vuelves a pegar el mismo documento de contexto, estás pagando ese documento cada vez. Ese material va en las instrucciones del proyecto o en un archivo que la herramienta lea sola.</p>
+
+      <p><strong>El trabajo mecánico con el modelo de gala.</strong> Reformatear, traducir, extraer campos de un PDF, clasificar cien filas, resumir una transcripción. Nada de eso mejora con el modelo caro. Lo notas cero y lo pagas todo.</p>
+
+      <h2>El loop de tres papeles</h2>
+
+      <p>La idea es vieja y funciona en cualquier equipo humano: el que diseña no es el que ejecuta, y el que ejecuta no es el que aprueba.</p>
+
+      <ul>
+        <li><strong>El planeador</strong> (modelo caro, sesión corta) — recibe el problema con contexto y produce un plan tan explícito que alguien sin criterio lo pueda ejecutar sin preguntar nada.</li>
+        <li><strong>El ejecutor</strong> (modelo barato, muchas sesiones) — toma un paso del plan a la vez y lo hace. No decide, no interpreta, no mejora el plan.</li>
+        <li><strong>El revisor</strong> (modelo caro, sesión cortísima) — recibe el plan y el resultado, y dictamina si cumple. No arregla: señala.</li>
+      </ul>
+
+      <p>La clave de todo el sistema está en el planeador. Si el plan queda ambiguo, el ejecutor barato inventa, y entonces tienes que rehacer el trabajo con el modelo caro y saliste perdiendo. El plan tiene que ser aburrido, específico y verificable.</p>
+
+      <h2>Prompt 1: el planeador</h2>
+
+      <pre><code>Eres el planeador. Tu única entrega es un plan que va a ejecutar
+un modelo más chico y más literal que tú. Ese modelo no tiene
+contexto, no va a preguntar y no va a usar criterio propio.
+
+LA TAREA: [describe qué quieres lograr]
+
+CONTEXTO: [lo que el ejecutor necesita saber y no puede deducir:
+formatos, nombres de archivo, restricciones, ejemplos del
+resultado esperado]
+
+Reglas del plan:
+
+1. Divide la tarea en pasos que cada uno se pueda hacer sin haber
+   visto los otros. Si un paso depende de una decisión que se toma
+   en otro paso, tómala tú ahora y escríbela como dato, no como
+   decisión.
+2. Cada paso debe caber en una sola instrucción para el ejecutor.
+   Si un paso necesita dos párrafos de explicación, son dos pasos.
+3. Cada paso lleva un criterio de terminado: cómo se sabe, mirando
+   el resultado, que quedó bien. Nada de "que quede claro". Algo
+   como "el archivo tiene 4 columnas y ninguna celda vacía".
+4. Escribe cada paso en imperativo y en segunda persona, listo para
+   copiar y pegar tal cual.
+5. Marca los pasos donde de verdad hace falta criterio. Esos me los
+   quedo yo o vuelven a ti; no los mandes al ejecutor.
+6. Al final, lista lo que puede salir mal y qué debe hacer el
+   ejecutor si se topa con eso (normalmente: parar y reportar, no
+   improvisar).
+
+Formato de salida:
+
+PLAN
+Paso 1: [instrucción]
+  Terminado cuando: [criterio verificable]
+Paso 2: ...
+
+PASOS QUE REQUIEREN CRITERIO (no mandar al ejecutor)
+- ...
+
+SI ALGO SALE MAL
+- ...</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el criterio de terminado. Sin él, el revisor no tiene contra qué comparar y acabas revisando tú, que es exactamente el trabajo que querías quitarte. Escribir el criterio toma treinta segundos por paso y es lo que hace que el loop se sostenga solo.</p>
+      </div>
+
+      <h2>Prompt 2: el ejecutor</h2>
+
+      <p>Este va en el modelo barato, una sesión limpia por paso o por bloque de pasos. Sesión limpia importa: si acumulas todo el trabajo en un solo hilo, vuelves a caer en el chat eterno, nada más que con el modelo barato.</p>
+
+      <pre><code>Ejecuta exactamente el siguiente paso. Nada más.
+
+PASO: [pega el paso del plan]
+TERMINADO CUANDO: [pega el criterio]
+MATERIAL: [pega o adjunta lo que necesita]
+
+Reglas:
+- No mejores el paso. No agregues nada que no se te pidió.
+- No interpretes. Si el paso es ambiguo o te falta información,
+  para y dime exactamente qué falta. No supongas.
+- Cuando termines, revisa tu resultado contra el criterio de
+  terminado y dime si lo cumple o no, antes de entregarlo.
+- Entrega el resultado y una línea de estado: CUMPLE o NO CUMPLE
+  (y por qué).</code></pre>
+
+      <p>La instrucción de "no mejores el paso" parece innecesaria hasta que la quitas. Los modelos son colaborativos por defecto y agregan cosas. Cada cosa agregada es una decisión que nadie revisó.</p>
+
+      <h2>Prompt 3: el revisor</h2>
+
+      <p>Esta sesión sí vuelve al modelo caro, pero dura poco y no carga historial. Le das el plan, el resultado y nada más.</p>
+
+      <pre><code>Eres el revisor. No arregles nada: dictamina.
+
+PLAN ORIGINAL: [pega el plan completo]
+RESULTADO ENTREGADO: [pega o adjunta lo que produjo el ejecutor]
+
+Revisa en este orden:
+
+1. ¿Cada paso cumple su criterio de terminado? Ve uno por uno y
+   marca CUMPLE / NO CUMPLE / NO SE PUEDE VERIFICAR.
+2. ¿El ejecutor agregó algo que el plan no pedía? Lístalo. Eso
+   casi siempre es un problema aunque se vea bien.
+3. ¿Hay algo que el plan pedía y no aparece en el resultado?
+4. Mirando el conjunto: ¿esto resuelve el problema original o
+   cumple la letra del plan sin cumplir la intención?
+
+Cierra con un veredicto:
+- APROBADO, o
+- DEVOLVER AL EJECUTOR: [los pasos exactos a rehacer, escritos
+  ya listos para pegar], o
+- REPLANEAR: [qué parte del plan estaba mal desde el inicio]
+
+No propongas mejoras opcionales. Solo lo que impide aprobar.</code></pre>
+
+      <p>El tercer veredicto, REPLANEAR, es el que salva el sistema. Si el revisor solo puede aprobar o devolver, un plan malo te manda a un ciclo infinito de correcciones baratas que nunca convergen.</p>
+
+      <h2>Cómo se ve esto en la práctica</h2>
+
+      <p>Si trabajas en el chat, es literalmente dos ventanas. En una tienes al planeador y al revisor con el modelo bueno; en la otra vas ejecutando pasos con el modelo rápido. El plan es el documento que viaja entre las dos.</p>
+
+      <p>Si trabajas con agentes, el mismo reparto se hace con subagentes: el agente principal planea y verifica, y despacha el trabajo pesado —leer muchos archivos, buscar en varias fuentes, procesar lote por lote— a subagentes con el modelo barato. Esa parte está desarrollada en <a href="/guias/agentes-de-claude-en-paralelo/">cómo correr agentes en paralelo</a>.</p>
+
+      <p>Y si usas el nivel de esfuerzo del modelo, esa es la palanca fina: esfuerzo alto para el planeador y el revisor, esfuerzo bajo para el ejecutor. No hace falta cambiar de modelo para bajar el consumo, aunque combinar las dos cosas es lo que más rinde.</p>
+
+      <h2>La prueba de que te está funcionando</h2>
+
+      <p>A las dos semanas deberías notar tres cosas. Que llegas al viernes con cuota. Que tus sesiones con el modelo caro son cortas y tienen un entregable claro. Y que cuando algo sale mal, sabes exactamente en qué paso, porque el plan tenía criterios.</p>
+
+      <p>Si en cambio sigues abriendo un chat largo con el modelo bueno y trabajando ahí todo el día, ningún truco de consumo te va a salvar. El límite no se rompe por hacer cosas difíciles, se rompe por no separar lo difícil de lo mecánico. Y la otra mitad de esta ecuación —qué sí merece el modelo caro— está en <a href="/guias/tres-movimientos-con-tu-mejor-modelo/">los 3 movimientos que hacer con tu modelo más caro</a>.</p>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haz que cada prompt de Claude se vuelva más listo con el tiempo — Guías Flow AI</title>
+  <meta name="description" content="El truco de autorrevisión que convierte cualquier prompt o skill en algo que mejora cada vez que lo corres. El bloque exacto de 3 preguntas para pegar al final de cada prompt." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/prompts-que-mejoran-cada-vez/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Haz que cada prompt de Claude se vuelva más listo con el tiempo" />
+  <meta property="og:description" content="El truco de autorrevisión que convierte cualquier prompt o skill en algo que mejora cada vez que lo corres. El bloque exacto de 3 preguntas para pegar al final de cada prompt." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/prompts-que-mejoran-cada-vez/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Skills</span></div>
+      <h1>Haz que cada prompt de Claude se vuelva más listo con el tiempo</h1>
+      <p class="lead">El truco de autorrevisión que convierte cualquier prompt o skill en algo que mejora cada vez que lo corres. El bloque exacto de 3 preguntas para pegar al final de cada prompt.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Tienes un prompt que usas cada semana. Lo escribiste hace meses, funciona más o menos, y cada vez que lo corres arreglas lo mismo a mano: le quitas dos párrafos de relleno, le cambias el tono, le recuerdas que no uses viñetas.</p>
+
+      <p>Llevas cuarenta correcciones idénticas y el prompt sigue exactamente igual que el día uno. Toda esa información sobre cómo lo quieres se fue a la basura al cerrar el chat.</p>
+
+      <p>Esto se arregla con un bloque de tres preguntas al final del prompt. No es un truco de prompting: es cerrar el ciclo entre lo que pediste y lo que acabaste usando.</p>
+
+      <h2>Por qué un prompt no mejora solo</h2>
+
+      <p>Un modelo no sabe qué hiciste con su respuesta. Te entregó el texto, tú lo pegaste en un documento, le cortaste la mitad y publicaste lo que quedó. Desde su lado, esa respuesta fue perfecta: nadie le dijo lo contrario.</p>
+
+      <p>El único que tiene la información valiosa eres tú, y está en la diferencia entre lo que te dio y lo que usaste. Esa diferencia es la instrucción que le faltaba al prompt. El bloque de abajo la hace explícita antes de que se te olvide.</p>
+
+      <h2>El bloque de tres preguntas</h2>
+
+      <p>Va al final del prompt, después de todo lo demás. Se pega tal cual:</p>
+
+      <pre><code>---
+REVISIÓN DEL PROMPT
+
+Después de entregarme el resultado, deja una línea en blanco y contesta estas tres preguntas sobre las instrucciones que te di, no sobre tu respuesta:
+
+1. QUÉ ME FALTÓ DECIRTE. ¿Qué información tuviste que suponer para poder responder? Enumera cada suposición que hiciste y qué habrías hecho distinto si te la hubiera dado. Si tuviste que adivinar el tono, el público o el formato, dilo aquí.
+
+2. QUÉ INSTRUCCIÓN ME SOBRA O ME ESTORBA. ¿Qué parte de este prompt es ambigua, se contradice con otra, o no te cambió nada de lo que hiciste? Sé específico: cita la frase exacta y di si conviene precisarla o borrarla.
+
+3. LA LÍNEA QUE AGREGARÍAS. Escríbeme una sola línea, lista para copiar, que si estuviera en este prompt habría mejorado más el resultado. Una sola. La que más peso tenga.
+
+Reglas de esta sección: no me felicites, no repitas lo que ya dijiste arriba, y no me des las tres respuestas si no tienes nada real que decir en alguna. Si una está vacía, escribe "sin observación" y explica por qué.
+---</code></pre>
+
+      <p>Las tres preguntas están en ese orden a propósito. La primera saca lo que faltaba, la segunda saca lo que estorbaba, y la tercera te obliga a que el hallazgo quepa en una línea que puedas pegar. Sin la tercera, recibes un diagnóstico interesante que nunca aplicas.</p>
+
+      <p>La última regla es la que evita el teatro. Sin ella, siempre encuentra tres cosas que decir aunque el prompt esté bien, y en dos semanas dejas de leer la sección.</p>
+
+      <h2>El paso manual de dos minutos</h2>
+
+      <p>El bloque no actualiza nada solo. Ese es el trabajo que te toca a ti, y es corto:</p>
+
+      <ol>
+        <li>Lee la respuesta a la pregunta 3. Solo esa.</li>
+        <li>Si te convence, pega esa línea en tu prompt guardado. Si no, sigue.</li>
+        <li>Y una vez al mes: relee tu prompt completo y borra lo que se haya vuelto redundante.</li>
+      </ol>
+
+      <p>El paso 3 no es opcional. Un prompt que solo crece termina en tres pantallas de instrucciones contradictorias, y ahí la calidad se cae en vez de subir. La poda es parte del mismo trabajo: el criterio para hacerla está en <a href="/guias/limpieza-de-contexto/">la lista para limpiar el contexto</a>.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decirle qué hiciste con la respuesta anterior. Antes de correr el prompt otra vez, pégale las dos o tres correcciones que le hiciste a mano la última vez, así de crudo: "la vez pasada le quité el párrafo de contexto, le cambié 'estimado' por 'hola' y corté el cierre". Eso vale más que cualquier instrucción abstracta sobre tono, porque son ejemplos de tu criterio en acción y no adjetivos.</p>
+      </div>
+
+      <h2>La versión para skills</h2>
+
+      <p>Cuando el prompt ya no vive en un chat sino en un archivo de skill que usa todo tu equipo, el mismo bloque funciona pero cambia dónde acaba el aprendizaje. En vez de que la línea te llegue a ti, se escribe en el archivo.</p>
+
+      <p>El patrón que uso: la skill termina agregando una entrada corta a una bitácora, con la fecha, qué se pidió y la línea de la pregunta 3. Cuando esa bitácora junta cinco o seis entradas que dicen lo mismo, eso ya no es una observación, es una regla que le falta a la skill.</p>
+
+      <p>Ahí está la diferencia entre una skill que se escribió una vez y una que se afila. El montaje completo, con el archivo y el disparador, está en <a href="/guias/ciclo-de-retroalimentacion/">el ciclo de retroalimentación que nadie construye</a>.</p>
+
+      <p>Aterrizado: en una operación de contenido con la que trabajo, la skill que escribe los pies de foto acumuló once entradas de bitácora en un mes. Nueve decían variantes de lo mismo —que el equipo siempre borraba la pregunta del final. Esa era la regla faltante, y nadie la había podido nombrar en la junta donde se escribió la skill original. Nadie la escribe porque nadie la sabe hasta que la ve repetida.</p>
+
+      <h2>Cuándo no vale la pena</h2>
+
+      <p>Este bloque tiene un costo: alarga la respuesta y te hace leer un anexo cada vez. Solo lo pongo en prompts que voy a correr muchas veces.</p>
+
+      <p>Para una pregunta suelta, no. Para el prompt del reporte semanal, el de las propuestas, el de los correos de seguimiento, el de los guiones: sí, siempre. La regla simple es que si el prompt está guardado en algún lado, merece el bloque; si lo escribiste al vuelo, no.</p>
+
+      <p>Y una advertencia sobre lo que sí sabe hacer. El modelo es muy bueno viendo qué le faltó a tus instrucciones. Es malo juzgando si su propia respuesta estuvo buena, porque casi siempre va a decir que sí. Por eso las tres preguntas son sobre el prompt y no sobre el resultado. Para evaluar la respuesta necesitas ojos frescos, que es otro problema y se resuelve de otra forma: está en <a href="/guias/que-claude-cache-sus-errores/">cómo hacer que Claude cache sus propios errores</a>.</p>
+
+      <p>Un prompt bien escrito te sirve hoy. Uno que registra lo que le falta te sirve cada vez más, y en tres meses la diferencia ya no la alcanzas escribiendo mejor.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

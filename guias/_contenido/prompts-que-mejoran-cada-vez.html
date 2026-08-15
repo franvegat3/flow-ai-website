@@ -1,0 +1,69 @@
+      <p>Tienes un prompt que usas cada semana. Lo escribiste hace meses, funciona más o menos, y cada vez que lo corres arreglas lo mismo a mano: le quitas dos párrafos de relleno, le cambias el tono, le recuerdas que no uses viñetas.</p>
+
+      <p>Llevas cuarenta correcciones idénticas y el prompt sigue exactamente igual que el día uno. Toda esa información sobre cómo lo quieres se fue a la basura al cerrar el chat.</p>
+
+      <p>Esto se arregla con un bloque de tres preguntas al final del prompt. No es un truco de prompting: es cerrar el ciclo entre lo que pediste y lo que acabaste usando.</p>
+
+      <h2>Por qué un prompt no mejora solo</h2>
+
+      <p>Un modelo no sabe qué hiciste con su respuesta. Te entregó el texto, tú lo pegaste en un documento, le cortaste la mitad y publicaste lo que quedó. Desde su lado, esa respuesta fue perfecta: nadie le dijo lo contrario.</p>
+
+      <p>El único que tiene la información valiosa eres tú, y está en la diferencia entre lo que te dio y lo que usaste. Esa diferencia es la instrucción que le faltaba al prompt. El bloque de abajo la hace explícita antes de que se te olvide.</p>
+
+      <h2>El bloque de tres preguntas</h2>
+
+      <p>Va al final del prompt, después de todo lo demás. Se pega tal cual:</p>
+
+      <pre><code>---
+REVISIÓN DEL PROMPT
+
+Después de entregarme el resultado, deja una línea en blanco y contesta estas tres preguntas sobre las instrucciones que te di, no sobre tu respuesta:
+
+1. QUÉ ME FALTÓ DECIRTE. ¿Qué información tuviste que suponer para poder responder? Enumera cada suposición que hiciste y qué habrías hecho distinto si te la hubiera dado. Si tuviste que adivinar el tono, el público o el formato, dilo aquí.
+
+2. QUÉ INSTRUCCIÓN ME SOBRA O ME ESTORBA. ¿Qué parte de este prompt es ambigua, se contradice con otra, o no te cambió nada de lo que hiciste? Sé específico: cita la frase exacta y di si conviene precisarla o borrarla.
+
+3. LA LÍNEA QUE AGREGARÍAS. Escríbeme una sola línea, lista para copiar, que si estuviera en este prompt habría mejorado más el resultado. Una sola. La que más peso tenga.
+
+Reglas de esta sección: no me felicites, no repitas lo que ya dijiste arriba, y no me des las tres respuestas si no tienes nada real que decir en alguna. Si una está vacía, escribe "sin observación" y explica por qué.
+---</code></pre>
+
+      <p>Las tres preguntas están en ese orden a propósito. La primera saca lo que faltaba, la segunda saca lo que estorbaba, y la tercera te obliga a que el hallazgo quepa en una línea que puedas pegar. Sin la tercera, recibes un diagnóstico interesante que nunca aplicas.</p>
+
+      <p>La última regla es la que evita el teatro. Sin ella, siempre encuentra tres cosas que decir aunque el prompt esté bien, y en dos semanas dejas de leer la sección.</p>
+
+      <h2>El paso manual de dos minutos</h2>
+
+      <p>El bloque no actualiza nada solo. Ese es el trabajo que te toca a ti, y es corto:</p>
+
+      <ol>
+        <li>Lee la respuesta a la pregunta 3. Solo esa.</li>
+        <li>Si te convence, pega esa línea en tu prompt guardado. Si no, sigue.</li>
+        <li>Y una vez al mes: relee tu prompt completo y borra lo que se haya vuelto redundante.</li>
+      </ol>
+
+      <p>El paso 3 no es opcional. Un prompt que solo crece termina en tres pantallas de instrucciones contradictorias, y ahí la calidad se cae en vez de subir. La poda es parte del mismo trabajo: el criterio para hacerla está en <a href="/guias/limpieza-de-contexto/">la lista para limpiar el contexto</a>.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decirle qué hiciste con la respuesta anterior. Antes de correr el prompt otra vez, pégale las dos o tres correcciones que le hiciste a mano la última vez, así de crudo: "la vez pasada le quité el párrafo de contexto, le cambié 'estimado' por 'hola' y corté el cierre". Eso vale más que cualquier instrucción abstracta sobre tono, porque son ejemplos de tu criterio en acción y no adjetivos.</p>
+      </div>
+
+      <h2>La versión para skills</h2>
+
+      <p>Cuando el prompt ya no vive en un chat sino en un archivo de skill que usa todo tu equipo, el mismo bloque funciona pero cambia dónde acaba el aprendizaje. En vez de que la línea te llegue a ti, se escribe en el archivo.</p>
+
+      <p>El patrón que uso: la skill termina agregando una entrada corta a una bitácora, con la fecha, qué se pidió y la línea de la pregunta 3. Cuando esa bitácora junta cinco o seis entradas que dicen lo mismo, eso ya no es una observación, es una regla que le falta a la skill.</p>
+
+      <p>Ahí está la diferencia entre una skill que se escribió una vez y una que se afila. El montaje completo, con el archivo y el disparador, está en <a href="/guias/ciclo-de-retroalimentacion/">el ciclo de retroalimentación que nadie construye</a>.</p>
+
+      <p>Aterrizado: en una operación de contenido con la que trabajo, la skill que escribe los pies de foto acumuló once entradas de bitácora en un mes. Nueve decían variantes de lo mismo —que el equipo siempre borraba la pregunta del final. Esa era la regla faltante, y nadie la había podido nombrar en la junta donde se escribió la skill original. Nadie la escribe porque nadie la sabe hasta que la ve repetida.</p>
+
+      <h2>Cuándo no vale la pena</h2>
+
+      <p>Este bloque tiene un costo: alarga la respuesta y te hace leer un anexo cada vez. Solo lo pongo en prompts que voy a correr muchas veces.</p>
+
+      <p>Para una pregunta suelta, no. Para el prompt del reporte semanal, el de las propuestas, el de los correos de seguimiento, el de los guiones: sí, siempre. La regla simple es que si el prompt está guardado en algún lado, merece el bloque; si lo escribiste al vuelo, no.</p>
+
+      <p>Y una advertencia sobre lo que sí sabe hacer. El modelo es muy bueno viendo qué le faltó a tus instrucciones. Es malo juzgando si su propia respuesta estuvo buena, porque casi siempre va a decir que sí. Por eso las tres preguntas son sobre el prompt y no sobre el resultado. Para evaluar la respuesta necesitas ojos frescos, que es otro problema y se resuelve de otra forma: está en <a href="/guias/que-claude-cache-sus-errores/">cómo hacer que Claude cache sus propios errores</a>.</p>
+
+      <p>Un prompt bien escrito te sirve hoy. Uno que registra lo que le falta te sirve cada vez más, y en tres meses la diferencia ya no la alcanzas escribiendo mejor.</p>

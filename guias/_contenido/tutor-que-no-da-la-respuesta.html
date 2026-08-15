@@ -1,0 +1,113 @@
+      <p>Le pegas el problema, te devuelve la solución explicada paso a paso, la lees y todo tiene sentido. Cierras la ventana con la sensación de haber entendido. Tres días después te topas con el mismo problema y no sabes por dónde empezar.</p>
+
+      <p>Esa sensación tiene nombre: reconocer no es lo mismo que saber. Leer una explicación clara se siente idéntico a haberla resuelto, y el cerebro no distingue una cosa de la otra hasta que le toca producirla sin ayuda.</p>
+
+      <p>El tutor socrático existe para evitar exactamente eso. No te da la respuesta: te hace las preguntas que te llevan a ella. Aquí está cómo funciona, el prompt completo y cómo dejarlo montado como proyecto para no rearmarlo cada vez.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un tutor socrático es el que responde con preguntas hasta que tú produces la respuesta, y solo interviene cuando te atoras de verdad.</p>
+
+      <p>El nombre viene de Sócrates, que enseñaba así hace dos mil cuatrocientos años. La razón por la que sigue funcionando no es filosófica: el esfuerzo de intentar recuperar algo de tu propia cabeza es lo que lo fija. Si alguien te lo entrega, ese esfuerzo no ocurre.</p>
+
+      <h2>Por qué la IA hace lo contrario por default</h2>
+
+      <p>Un asistente está entrenado para ser útil, y "útil" casi siempre significa resolver rápido. Si le preguntas algo, te contesta. Es lo correcto en el 95% de los usos —cuando quieres el dato, quieres el dato— y es exactamente lo contrario de lo que necesitas cuando el objetivo es aprender.</p>
+
+      <p>Por eso no basta con decirle "sé mi tutor". Con esa instrucción vaga vuelve al modo de resolver a los dos o tres mensajes, casi siempre en el momento en que titubeas, porque interpreta tu duda como una petición de ayuda. Hay que quitarle explícitamente el permiso de contestar.</p>
+
+      <h2>El prompt</h2>
+
+      <pre><code>Vas a ser mi tutor. Tu regla número uno es que NO me das la
+respuesta. Tampoco me das el siguiente paso resuelto.
+
+Tema: [qué estoy estudiando]
+Mi nivel: [desde cero / sé lo básico / me atoré en algo
+específico]
+Para qué lo necesito: [examen, trabajo, entender un
+concepto]
+Tiempo que tengo hoy: [minutos]
+
+CÓMO TRABAJAS
+
+1. Empieza diagnosticando. Hazme dos o tres preguntas para
+   saber qué sé ya. No asumas mi nivel por lo que te dije:
+   compruébalo.
+
+2. Después, una pregunta a la vez. Espera mi respuesta antes
+   de seguir. Nunca me mandes tres preguntas juntas.
+
+3. Cuando me equivoque, no me corrijas de frente. Hazme una
+   pregunta que exponga la contradicción y déjame verla.
+
+4. Cuando me atore, sube la ayuda en este orden, un escalón
+   por intento:
+   - Escalón 1: una pregunta más chica sobre la misma idea.
+   - Escalón 2: un ejemplo análogo de otro terreno.
+   - Escalón 3: la mitad del razonamiento, y yo cierro.
+   Solo después de tres intentos míos fallidos me das la
+   respuesta completa, y me explicas dónde se rompió mi
+   razonamiento.
+
+5. Cuando conteste bien, no felicites. Pregúntame por qué
+   funciona, o dame un caso donde eso ya no aplique.
+
+6. Prohibido: darme código completo, resolver el ejercicio,
+   escribir el ensayo, o adelantarte a lo que iba a decir.
+
+7. Si te pido la respuesta directa, recuérdame esta regla y
+   ofréceme un escalón de ayuda. Solo si escribo la palabra
+   RENDIRME en mayúsculas me das la solución completa.
+
+CADA 20 MINUTOS O AL FINAL
+Hazme un corte: qué logré resolver solo, qué necesité ayuda
+para ver, y cuál es el único concepto que debería repasar
+antes de la próxima sesión. Escríbelo para que yo lo guarde.
+
+Empieza ahora con el diagnóstico.</code></pre>
+
+      <p>Las dos piezas que hacen que esto no se degrade son la escalera de ayuda del punto cuatro y la palabra de rendición del punto siete. Sin la escalera, o te deja solo o te resuelve todo. Sin la palabra de rendición, tú vas a insistir hasta romperlo, porque frustrarse es incómodo y ceder es lo natural.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> guardar el corte final. Ese resumen de "qué resolviste solo y qué no" es el material más valioso de la sesión y casi nadie lo conserva. Pégalo en el conocimiento de tu proyecto. A la quinta sesión tienes un mapa de tus huecos reales, no de los que crees tener, y el tutor puede empezar por ahí en vez de diagnosticarte desde cero cada vez.</p>
+      </div>
+
+      <h2>Cómo se vuelve proyecto</h2>
+
+      <p>Pegar el prompt cada vez funciona, pero se abandona. La versión que sí se sostiene es un proyecto de Claude dedicado a lo que estás aprendiendo, con tres cosas adentro.</p>
+
+      <ul>
+        <li><strong>Las instrucciones:</strong> el prompt de arriba, sin la sección de tema. Esa cambia en cada sesión.</li>
+        <li><strong>El material:</strong> el temario, los apuntes, el capítulo del libro, la documentación. Lo que sea que estés estudiando, para que las preguntas salgan de ahí y no de conocimiento general.</li>
+        <li><strong>Tu bitácora:</strong> un documento donde acumulas los cortes de cada sesión. Es lo que convierte una serie de chats sueltos en un curso con memoria.</li>
+      </ul>
+
+      <p>Con eso, cada sesión empieza con "sigamos" y el tutor ya sabe dónde te quedaste y qué se te dificulta. Es la diferencia entre un tutor y alguien que te conoce desde hace un mes.</p>
+
+      <h2>Tres modos que uso distinto</h2>
+
+      <h3>Concepto nuevo</h3>
+
+      <p>Aquí el diagnóstico es lo importante. Dile explícitamente "no sé nada de esto" y deja que empiece por lo que ya sabes de otro terreno. Los buenos tutores construyen sobre analogías que tú ya dominas.</p>
+
+      <h3>Atorado en un problema específico</h3>
+
+      <p>El uso más frecuente y donde más se gana. Pega el problema y tu intento fallido, no solo el problema. La pregunta clave que quieres que te haga es "¿qué te hizo pensar que ese era el camino?", y para eso necesita ver tu razonamiento.</p>
+
+      <h3>Repaso antes de un examen o una presentación</h3>
+
+      <p>Invierte los papeles: pídele que te examine él a ti sobre el material del proyecto, con preguntas de dificultad creciente y sin decirte si vas bien hasta el final. Es incómodo y es la forma más rápida de encontrar lo que no sabes.</p>
+
+      <h2>Lo mismo, para capacitar gente en una empresa</h2>
+
+      <p>Este molde no es solo para estudiantes. Donde más rinde en operación es en la incorporación de gente nueva.</p>
+
+      <p>Un vendedor que entra puede leerse el manual de producto en dos días y no retener nada. El mismo manual cargado en un proyecto con este tutor encima, y con la instrucción de examinarlo sobre objeciones reales de clientes, produce otra cosa: alguien que ya se equivocó veinte veces en privado antes de equivocarse una vez frente a un cliente. La diferencia de costo entre esos dos errores es todo el argumento.</p>
+
+      <p>Lo mismo aplica a políticas internas, procedimientos de operación y sistemas propios. Si tienes un manual que nadie lee, no necesitas un manual mejor: necesitas que alguien lo pregunte.</p>
+
+      <h2>Cuándo no usar esto</h2>
+
+      <p>Cuando no estás aprendiendo. Si necesitas el dato para entregar algo en veinte minutos, pide el dato. Usar el tutor para todo es la forma más rápida de dejar de usarlo.</p>
+
+      <p>Y cuando el tema no es tuyo. Aprender socráticamente cuesta energía y tiempo, así que reserva ese esfuerzo para lo que sí quieres tener en la cabeza dentro de un año. Para el resto, la respuesta directa está bien. Si quieres ver otras variantes del mismo enfoque, están <a href="/guias/modo-tutor-escondido/">el modo tutor escondido</a> y <a href="/guias/cualquier-video-de-youtube-como-tutor/">convertir un video de YouTube en tutor</a>.</p>

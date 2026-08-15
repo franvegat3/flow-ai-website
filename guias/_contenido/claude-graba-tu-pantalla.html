@@ -1,0 +1,112 @@
+      <p>Hay procesos que se explican fatal por escrito y se entienden en treinta segundos viéndolos. "Entras al sistema, filtras por vencidos, exportas, y de ahí sacas el correo de cada cliente, pero si el cliente es de crédito lo mandas al de cobranza, no al contacto." Escribirlo bien toma media hora. Enseñarlo toma dos minutos.</p>
+
+      <p>Eso es lo que resuelve la función de grabar una skill: en vez de escribirle a Claude cómo se hace algo, se lo muestras. Grabas tu pantalla haciendo la tarea, la narras mientras trabajas, y queda convertida en un procedimiento que puede volver a correr.</p>
+
+      <p>Es la primera vez que enseñarle un proceso a una IA se parece más a entrenar a un asistente nuevo que a programar.</p>
+
+      <h2>Qué está capturando en realidad</h2>
+
+      <p>No es un video que Claude "ve" después. Durante la grabación captura la actividad de la pantalla, los clics, lo que escribes y lo que dices en voz alta, y de ahí destila un procedimiento estructurado: los pasos, las condiciones y las excepciones.</p>
+
+      <p>La distinción importa para grabar bien. Lo que queda no es "en el minuto 2:14 hiciste clic en el botón azul". Lo que queda es la lógica: qué buscabas, por qué elegiste esa opción, qué hubiera pasado si el dato fuera otro. Y esa lógica sale casi toda de lo que narras, no de lo que clicas.</p>
+
+      <p>Por eso una grabación en silencio produce una skill pobre y una grabación narrada produce una que sirve.</p>
+
+      <h2>Dónde está y qué necesitas</h2>
+
+      <p>Está en la aplicación de escritorio de Claude, dentro del menú <code>+</code>, como la opción de grabar una skill. Requiere plan Pro, Max o Team.</p>
+
+      <p>El flujo completo son cuatro pasos: inicias la grabación, haces la tarea narrando en voz alta, la detienes, y Claude te devuelve un borrador de la skill que puedes revisar y corregir antes de guardarla. Ese último paso no es opcional —de eso hablamos abajo.</p>
+
+      <h2>Cómo grabar para que salga bien</h2>
+
+      <p>Aquí está la diferencia entre una skill que usas y una que abandonas a la semana. Cinco reglas que salieron de hacerlo mal varias veces:</p>
+
+      <h3>1. Narra el porqué, no el qué</h3>
+      <p>Mal: "ahora le doy clic aquí, y ahora escribo el nombre". Eso ya lo está viendo. Bien: "filtro por vencidos a más de 30 días porque los de menos los maneja el vendedor directamente".</p>
+
+      <h3>2. Di las excepciones en voz alta, aunque no ocurran en la grabación</h3>
+      <p>Esta es la más valiosa y la que nadie hace. Mientras trabajas: "si el cliente tuviera nota de crédito abierta, este paso se salta"; "cuando el monto pasa de cierto tope, esto no se manda, se escala". Estás grabando el caso normal y describiendo los anormales. Sin eso, la skill funciona el lunes y truena el martes.</p>
+
+      <h3>3. Graba el caso típico, no el más difícil</h3>
+      <p>El impulso es demostrar el caso complicado para que "aprenda bien". Sale al revés: la skill queda calibrada sobre una excepción. Graba el caso de todos los días y menciona los raros de viva voz.</p>
+
+      <h3>4. Di qué es un buen resultado antes de terminar</h3>
+      <p>Antes de detener la grabación, cierra diciéndolo: "esto está bien hecho cuando cada cliente de la lista tiene su correo en borradores, con el monto correcto y la fecha de vencimiento". Es lo que después le permite verificar su propio trabajo en vez de entregarte lo primero que le parezca razonable.</p>
+
+      <h3>5. Corta la grabación en tareas de un solo objetivo</h3>
+      <p>Una grabación de veinte minutos que cubre tres procesos distintos da una skill confusa. Tres grabaciones de cinco minutos dan tres skills que puedes encadenar. La segunda forma también es más fácil de arreglar cuando algo cambia.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> editar el borrador. Claude te entrega la skill escrita en texto plano, y ahí es donde tú agregas lo que la grabación no pudo capturar: los datos que no aparecieron en pantalla, los criterios que se te olvidó decir, y sobre todo qué hacer cuando algo falla. La grabación te da el 70% en dos minutos. El 30% restante lo pones tú y es el que decide si la skill sobrevive.</p>
+      </div>
+
+      <h2>Una skill completa, para que veas hacia dónde vas</h2>
+
+      <p>Esto es lo que debería quedar después de grabar y editar. Es texto plano —puedes escribirla a mano, y de hecho conviene leerla para entender qué está produciendo la grabación:</p>
+
+      <pre><code>---
+name: reporte-cobranza-semanal
+description: Arma el reporte semanal de cuentas por cobrar y deja
+  un correo en borradores por cada cliente vencido. Úsala cuando
+  pidan "el reporte de cobranza", "los vencidos de la semana" o
+  el corte del viernes.
+---
+
+# Reporte de cobranza semanal
+
+## Qué produce
+1. Una tabla resumen: cliente, monto vencido, días de atraso,
+   último contacto.
+2. Un borrador de correo por cada cliente que califique.
+3. Una lista aparte de casos que necesitan decisión humana.
+
+## Fuente de datos
+El reporte de antigüedad de saldos, exportado del sistema.
+Si el archivo tiene más de 3 días, dilo y detente.
+
+## Reglas de negocio
+- Solo entran clientes con más de 30 días de vencido.
+  Los de menos los sigue el vendedor, no cobranza.
+- Si el cliente tiene una nota de crédito abierta, NO se le
+  manda correo. Va a la lista de decisión humana.
+- Si el monto pasa del tope de escalamiento, tampoco se manda:
+  va a la lista de decisión humana marcado como escalamiento.
+- El correo va al contacto de pagos. Si no hay contacto de
+  pagos registrado, va al contacto principal y lo anotas.
+
+## Tono del correo
+Directo y cordial. Es un recordatorio, no un reclamo. Sin
+amenazas, sin mayúsculas, sin signos de admiración. Siempre
+incluye: número de factura, monto, fecha de vencimiento y una
+línea ofreciendo ayuda si hay algún problema con la factura.
+
+## Está bien hecho cuando
+- Cada cliente de la tabla tiene su borrador, salvo los que
+  cayeron en la lista de decisión humana.
+- Los montos de la tabla suman lo mismo que el total de
+  vencidos del archivo fuente.
+- Ningún correo se envió: todos quedaron en borradores.
+
+## Nunca
+- Enviar. Solo dejar en borradores.
+- Inventar un contacto que no esté en el archivo.
+- Cambiar el monto por redondeo.</code></pre>
+
+      <p>Fíjate en la última sección. La grabación casi nunca la produce sola, porque durante la grabación tú no hiciste ninguna de esas cosas —y lo que no ocurre, no se graba. Esa lista la escribes tú pensando en qué es lo peor que podría hacer.</p>
+
+      <h2>Qué no conviene grabar</h2>
+
+      <p>Dos cosas, por razones distintas.</p>
+
+      <p><strong>Pantallas con datos sensibles.</strong> Estás capturando lo que se ve. Antes de grabar, cierra lo que no deba quedar registrado y usa datos de prueba si el proceso lo permite. Es sentido común y se olvida seguido.</p>
+
+      <p><strong>Procesos que están mal.</strong> Si el proceso que vas a grabar tiene cuatro pasos que existen solo porque siempre se han hecho así, grabarlo los deja congelados y ahora corriendo más rápido. Conviene aprovechar la grabación para preguntarte cuáles de esos pasos siguen teniendo sentido. Automatizar un proceso roto te da un proceso roto más rápido.</p>
+
+      <h2>Por qué esto cambia quién puede construir</h2>
+
+      <p>Hasta ahora, empaquetar un proceso en algo que la IA repita requería sentarse a escribir un documento estructurado. La persona que mejor conoce el proceso —la que lleva ocho años haciéndolo— casi nunca es la que se sienta a escribir ese documento.</p>
+
+      <p>Con la grabación, esa persona puede producir la primera versión haciendo su trabajo y hablando. Alguien más edita y afina. Ese cambio de reparto es lo importante: el conocimiento operativo deja de depender de que el experto se vuelva documentador.</p>
+
+      <p>Si quieres ver la ruta larga —escribir skills a mano, con más control— la guía de <a href="/guias/construir-skills-de-claude/">construir skills de Claude</a> tiene el formato completo, y <a href="/guias/la-skill-que-construye-tus-skills/">la skill que construye tus otras skills</a> es la alternativa cuando el proceso vive en documentos y no en pantalla.</p>

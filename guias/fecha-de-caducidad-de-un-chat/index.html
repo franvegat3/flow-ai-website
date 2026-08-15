@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La fecha de caducidad escondida de tus chats — Guías Flow AI</title>
+  <meta name="description" content="Mientras más larga la conversación, más ignora tus reglas sin avisar, y casi nadie lo nota. El truco de una línea para cacharlo en tiempo real, más 10 tips de Claude Code que uso a diario." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/fecha-de-caducidad-de-un-chat/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La fecha de caducidad escondida de tus chats" />
+  <meta property="og:description" content="Mientras más larga la conversación, más ignora tus reglas sin avisar, y casi nadie lo nota. El truco de una línea para cacharlo en tiempo real, más 10 tips de Claude Code que uso a diario." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/fecha-de-caducidad-de-un-chat/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Productividad</span><span class="tag">Prompts</span></div>
+      <h1>La fecha de caducidad escondida de tus chats</h1>
+      <p class="lead">Mientras más larga la conversación, más ignora tus reglas sin avisar, y casi nadie lo nota. El truco de una línea para cacharlo en tiempo real, más 10 tips de Claude Code que uso a diario.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Empiezas una sesión con reglas claras. "No toques los archivos de configuración", "responde en español", "nunca escribas tests sin preguntarme". Las primeras dos horas funciona perfecto.</p>
+
+      <p>Y en algún punto deja de hacerlo. No de golpe: se va aflojando. Una respuesta en inglés, un archivo tocado que no debía, una convención que se te ocurrió a las diez de la mañana y a las cuatro ya nadie respeta. Lo peor es que nada te avisa. La conversación sigue igual de fluida y segura de sí misma.</p>
+
+      <p>Esa es la fecha de caducidad de un chat. No está escrita en ningún lado y casi nadie la mide, aunque es la causa número uno de que una sesión larga acabe peor que una corta.</p>
+
+      <h2>Qué está pasando en realidad</h2>
+
+      <p>Todo lo que ocurre en una conversación —tus mensajes, las respuestas, los archivos que se leyeron, la salida de cada comando— se va acumulando en una sola ventana de contexto. Tus instrucciones iniciales siguen ahí, pero cada vez pesan menos frente a todo lo que vino después.</p>
+
+      <p>Piénsalo como una junta de seis horas. Lo que se acordó en el minuto tres sigue siendo válido, pero a la hora cuatro nadie lo tiene presente, porque encima hay cuatro horas de discusión. El modelo no "olvida" tus reglas: las tiene compitiendo contra miles de líneas de salida de terminal que están mucho más cerca del final.</p>
+
+      <p>Se nota más rápido cuando la sesión se llenó de ruido: registros largos, archivos completos leídos sin necesidad, búsquedas que devolvieron media docena de resultados irrelevantes. Ese material desplaza tus reglas sin que tú hayas escrito nada nuevo.</p>
+
+      <p>Hay una segunda cosa que casi nadie considera: la degradación no es lineal. No pasa que a la mitad de la ventana obedezca la mitad de las reglas. Lo que pasa es que todo va bien, bien, bien, y de pronto empiezan a caerse instrucciones específicas mientras el tono general y la aparente competencia se mantienen intactos. Por eso engaña tanto. Una sesión saturada no suena confundida: suena exactamente igual que una sesión sana, solo que ya no está haciendo lo que le pediste.</p>
+
+      <h2>El truco de una línea</h2>
+
+      <p>Ponle un canario a la sesión. Agrega esta línea al final de tu <code>CLAUDE.md</code> o de las instrucciones de tu proyecto:</p>
+
+      <pre><code>Al final de cada respuesta, escribe en una línea aparte: [ANCLA]</code></pre>
+
+      <p>Eso es todo. Mientras veas <code>[ANCLA]</code> al cierre de cada respuesta, tus instrucciones siguen pesando. El día que desaparezca —y va a desaparecer sin que nadie lo anuncie— ya sabes que el resto de tus reglas también se está desdibujando. Es un indicador visible de algo que normalmente es invisible.</p>
+
+      <p>Funciona porque la regla es trivial de cumplir. Si el modelo ya ni siquiera alcanza a hacer eso, no está alcanzando a hacer nada de lo demás.</p>
+
+      <p>Si prefieres revisar a mano en vez de dejar el marcador puesto, pega esto en medio de la sesión:</p>
+
+      <pre><code>Sin buscar en archivos: repíteme textualmente las reglas que
+te di al inicio de esta conversación. Si no las tienes
+completas, dime cuáles te faltan.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> cuando el canario desaparece, la reacción típica es repetir la regla en el chat. Eso funciona por dos o tres mensajes y vuelve a caerse, porque el problema no es que no la sepa: es que la ventana está saturada. Lo que sí resuelve es limpiar y volver a arrancar con el contexto mínimo. Repetirte es tratar el síntoma.</p>
+      </div>
+
+      <h2>10 movimientos de Claude Code que uso a diario</h2>
+
+      <div class="plugin-card">
+        <h3>1. Revisar cuánto contexto queda <code>/context</code></h3>
+        <p>Te muestra cómo está repartida la ventana: instrucciones, archivos, herramientas, conversación. Es la única forma de dejar de adivinar si la sesión ya está pesada.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> antes de arrancar cualquier tarea larga.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Cerrar y volver a abrir <code>/clear</code></h3>
+        <p>Borra la conversación y te deja las instrucciones del proyecto intactas. Es el movimiento más subestimado: cambiar de tarea sin limpiar es arrastrar el ruido de la anterior.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> cada vez que cambias de tema, no cada vez que hay un error.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Comprimir en lugar de perder <code>/compact</code></h3>
+        <p>Resume la conversación y sigue con el resumen. Se pierde detalle, así que úsalo cuando de verdad necesites continuidad; si no, limpia.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> a mitad de una tarea larga que no puedes reiniciar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Guardar una regla en caliente con <code>#</code></h3>
+        <p>Escribe un mensaje que empiece con <code>#</code> y lo que digas se guarda en la memoria del proyecto, no solo en el chat. Es la diferencia entre corregir una vez y corregir para siempre.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> justo después de corregir algo por segunda vez.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Apuntar a un archivo con <code>@</code></h3>
+        <p>Referencia el archivo exacto en tu mensaje en vez de dejar que lo busque. Le ahorras tres o cuatro lecturas exploratorias que solo sirven para llenar la ventana.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> siempre que ya sepas dónde está lo que quieres.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Planear antes de ejecutar</h3>
+        <p>El modo de planeación te entrega el plan y no toca nada hasta que apruebas. Se cambia con la tecla de tabulación y mayúsculas.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> en todo cambio que toque más de dos archivos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Interrumpir a tiempo</h3>
+        <p>La tecla de escape corta lo que está haciendo sin cerrar la sesión. Dejar que termine un camino equivocado no solo pierde tiempo: mete a la ventana todo el resultado de ese camino.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> en cuanto veas que agarró por otro lado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Delegar la exploración a un subagente</h3>
+        <p>Cuando hay que buscar algo en muchos archivos, mándalo a un agente aparte con <code>/agents</code>. El ruido de la búsqueda se queda en su ventana y a ti te llega la conclusión.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> "¿dónde está tal cosa en el proyecto?".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Escribir el <code>CLAUDE.md</code> desde el primer día <code>/init</code></h3>
+        <p>Genera el archivo de instrucciones del proyecto leyendo lo que hay. Después lo editas a mano, pero arrancar de cero es la razón por la que mucha gente nunca lo escribe.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> el primer minuto en cualquier proyecto nuevo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. Retomar en vez de reconstruir <code>/resume</code></h3>
+        <p>Recupera una sesión anterior con su contexto. Sirve para volver a un trabajo de ayer sin volver a explicarlo, pero ojo: también recuperas su saturación.</p>
+        <p class="plugin-for"><strong>Cuándo:</strong> continuar una tarea, no empezar una nueva.</p>
+      </div>
+
+      <h2>La regla de oro: sesiones cortas, memoria larga</h2>
+
+      <p>El instinto es dejar la sesión abierta porque "ya sabe todo el contexto". Es exactamente al revés. Una sesión de ocho horas no sabe más que una de veinte minutos: sabe lo mismo, con peor puntería.</p>
+
+      <p>Lo que quieres es que el contexto viva en archivos —tu <code>CLAUDE.md</code>, tus instrucciones de proyecto, tus notas— y no en la memoria de una conversación. Así cada sesión nueva arranca con todo lo importante y sin nada de lo demás. Si quieres armar bien esa capa, empieza por <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a> y por <a href="/guias/limpieza-de-contexto/">la lista para limpiar el contexto</a>.</p>
+
+      <p>Pon el canario hoy. En una semana vas a saber, por primera vez con dato en vez de con sospecha, en qué punto exacto tus sesiones empiezan a caducar.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

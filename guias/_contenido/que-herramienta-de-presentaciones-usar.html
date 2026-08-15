@@ -1,0 +1,91 @@
+      <p>La pregunta llega siempre igual: "¿cuál es la mejor IA para hacer presentaciones?". Y casi siempre la persona que pregunta no tiene un problema de presentaciones. Tiene un problema de argumento.</p>
+
+      <p>Las herramientas de esta guía hacen dos cosas distintas que se confunden todo el tiempo: unas te ayudan a decidir qué vas a decir, y otras te ahorran las tres horas de mover cajitas. Elegir mal significa pedirle diseño a la que piensa, o pedirle criterio a la que maqueta.</p>
+
+      <p>Aquí va la comparación honesta de las cinco que vale la pena conocer, con la parte que casi nadie dice: dónde truena cada una.</p>
+
+      <h2>La pregunta que decide por ti</h2>
+
+      <p>Antes de abrir nada, contesta cuál de estos tres es tu cuello de botella real:</p>
+
+      <ul>
+        <li><strong>No sé qué quiero decir.</strong> Tienes datos, contexto y una junta el jueves, pero no tienes la historia. Aquí ninguna herramienta de diseño te va a salvar.</li>
+        <li><strong>Sé qué decir y se ve horrible.</strong> Tienes el contenido en un documento y necesitas que se vea presentable rápido.</li>
+        <li><strong>Tengo que usar la plantilla de la empresa.</strong> Hay una plantilla corporativa obligatoria y todo lo demás se va a rechazar.</li>
+      </ul>
+
+      <p>Cada caso tiene una respuesta distinta, y son excluyentes. Empieza por ahí.</p>
+
+      <h2>Las cinco, lado a lado</h2>
+
+      <div class="plugin-card">
+        <h3>1. Claude</h3>
+        <p>Es la mejor para la parte que importa: la estructura del argumento, el orden de las láminas y qué se queda fuera. Le das el material crudo y te discute la narrativa antes de escribir una sola lámina. Además puede construir la presentación como artifact —una pieza interactiva que abres en el navegador y compartes por link— lo cual funciona muy bien para algo que la gente va a revisar sola, y menos bien para algo que tienes que proyectar en una sala.</p>
+        <p class="plugin-for"><strong>Úsala cuando:</strong> el problema es qué decir, o cuando la presentación va a vivir en un link y no en un proyector.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. ChatGPT</h3>
+        <p>Muy sólida para redactar el contenido lámina por lámina y para reescribir tus bloques de texto en algo que se pueda leer en tres segundos. También puede generar un archivo de presentación descargable cuando usa su herramienta de análisis, pero el resultado sale con diseño básico: sirve como esqueleto para llenar, no como entregable.</p>
+        <p class="plugin-for"><strong>Úsala cuando:</strong> quieres el borrador completo del texto en el formato de un deck, y el diseño lo vas a resolver aparte.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Gamma</h3>
+        <p>Es la que está hecha específicamente para esto. Le pegas un tema o un documento entero y te devuelve una presentación completa y maquetada en un par de minutos. Trabaja por tarjetas en vez de lienzo libre, lo cual es su mayor ventaja y su mayor límite: te cuesta mucho hacer un desastre visual, y también te cuesta mucho hacer algo exactamente como lo tenías en la cabeza. Exporta a PowerPoint y a PDF, y ahí es donde se le ven las costuras: la exportación no siempre respeta el ajuste fino.</p>
+        <p class="plugin-for"><strong>Úsala cuando:</strong> necesitas algo presentable hoy y nadie va a auditar el kerning.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Copilot en PowerPoint</h3>
+        <p>La única que trabaja dentro del archivo real de la empresa. Genera desde un prompt o desde un documento de Word y usa las plantillas de tu organización, así que el resultado sale con tu marca sin que nadie la reconstruya. Necesita licencia de Microsoft 365 y depende mucho de qué tan ordenados estén tus archivos: si el documento fuente es un desastre, la presentación también.</p>
+        <p class="plugin-for"><strong>Úsala cuando:</strong> la plantilla corporativa es obligatoria y el archivo tiene que ser editable por otras diez personas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Canva</h3>
+        <p>La mejor por mucho cuando lo visual es el argumento: un pitch de marca, una presentación de producto, algo que se va a ver antes de leerse. Su ventaja real no es la generación con IA, es la biblioteca de plantillas y el kit de marca. La IA te arranca el borrador y luego editas en un lienzo de verdad, sin las restricciones de tarjeta de Gamma.</p>
+        <p class="plugin-for"><strong>Úsala cuando:</strong> el deck es un objeto de marca y alguien lo va a juzgar por cómo se ve.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir el guion antes de generar el deck. Si le pides directo las láminas, cualquiera de las cinco te va a dar quince láminas correctas y sin jerarquía, porque no sabe cuál es la que decide. Escribe primero la frase que quieres que la gente repita al salir de la sala. Todo lo que no la sostenga es anexo.</p>
+      </div>
+
+      <h2>El flujo que uso</h2>
+
+      <p>Nunca uso una sola. Son dos pasos y toma menos tiempo que pelearse con una sola herramienta.</p>
+
+      <p><strong>Paso 1: la estructura.</strong> En Claude o en ChatGPT, con este prompt. Le pego el material crudo antes de mandarlo.</p>
+
+      <pre><code>Vas a diseñar la estructura de una presentación. Todavía no escribas láminas.
+
+CONTEXTO
+- Audiencia: [quién está en la sala y qué le importa]
+- Duración: [minutos]
+- Decisión que quiero que tomen al salir: [una sola frase]
+- Qué saben ya del tema: [poco / medio / son expertos]
+- Material crudo: [pega aquí datos, notas, el documento]
+
+LO QUE QUIERO
+1. La frase única que quiero que repitan al salir de la sala, en máximo 12 palabras.
+2. El arco de la presentación en 5 a 7 movimientos, cada uno con: qué pasa en la cabeza de la audiencia en ese momento y por qué ese movimiento va ahí y no en otro lado.
+3. La lámina que decide todo, señalada explícitamente. Solo puede ser una.
+4. Qué material de los que te di NO debe entrar y por qué. Sé estricto: si algo no sostiene la frase única, va al anexo.
+5. Las tres preguntas incómodas que me van a hacer y en qué lámina conviene adelantarme a cada una.
+
+Dime también si el material que te di no alcanza para sostener la frase única, y qué falta.</code></pre>
+
+      <p><strong>Paso 2: el maquetado.</strong> Con esa estructura ya definida, la meto en Gamma si es interna y urgente, en Canva si es de marca, o en PowerPoint con Copilot si tiene que ser el archivo de la empresa. La herramienta ya no tiene que decidir nada: solo tiene que verse bien.</p>
+
+      <p>Separar los dos pasos cambia el resultado más que cambiar de herramienta. Cuando le pides todo junto, la herramienta resuelve primero lo que sabe hacer —el diseño— y rellena el argumento con lo genérico.</p>
+
+      <h2>Cuándo ninguna de las cinco sirve</h2>
+
+      <p>Hay tres casos donde generar con IA te va a costar más tiempo del que te ahorra.</p>
+
+      <p>El primero: presentaciones con datos propios que cambian. Un reporte mensual de resultados no se genera, se conecta. Vas a acabar rehaciendo el deck cada mes a mano.</p>
+
+      <p>El segundo: cualquier documento con peso legal o financiero. Una lámina con una cifra mal transcrita en un consejo cuesta más que las tres horas que te ahorraste.</p>
+
+      <p>El tercero, y el más común: cuando en realidad no necesitabas una presentación. Buena parte de los decks que veo en empresas son un correo de dos párrafos disfrazado de veinte láminas porque nadie se atrevió a mandar el correo. Ninguna IA te va a arreglar eso.</p>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convierte a Claude en un arma de investigación — Guías Flow AI</title>
+  <meta name="description" content="Una skill gratis que le da a Claude solo el último mes de resultados de internet antes de responder, con los comandos de instalación y cuatro usos reales." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/skill-de-investigacion-ultimos-30-dias/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Convierte a Claude en un arma de investigación" />
+  <meta property="og:description" content="Una skill gratis que le da a Claude solo el último mes de resultados de internet antes de responder, con los comandos de instalación y cuatro usos reales." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/skill-de-investigacion-ultimos-30-dias/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Negocio</span></div>
+      <h1>Convierte a Claude en un arma de investigación</h1>
+      <p class="lead">Una skill gratis que le da a Claude solo el último mes de resultados de internet antes de responder, con los comandos de instalación y cuatro usos reales.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le preguntas a Claude qué está pasando con una herramienta, una empresa o una persona, y te contesta con lo que aprendió cuando lo entrenaron. En temas que se mueven despacio eso está bien. En cualquier cosa que se mueva rápido, te está dando el mundo de hace meses con una seguridad que no le corresponde.</p>
+
+      <p>La búsqueda web ayuda, pero arrastra otro problema: te trae lo que el SEO puso arriba. Y arriba casi siempre hay una comparativa escrita por alguien que quiere venderte una de las dos opciones.</p>
+
+      <p>Existe una skill gratis y de código abierto que ataca justo eso: <code>last30days</code>. Le da a Claude solo lo que se publicó en el último mes, y no de blogs, sino de donde la gente de verdad opina —Reddit, X, YouTube, Hacker News, GitHub, mercados de predicción— ordenado por qué tanto interactuaron con eso.</p>
+
+      <h2>Qué hace, en una frase</h2>
+
+      <p>Busca en paralelo en una docena de plataformas dentro de una ventana de tiempo reciente, pesa cada resultado por su interacción real —votos, likes, comentarios— y sintetiza todo en un solo informe con las fuentes.</p>
+
+      <p>La diferencia de fondo con un buscador normal: un buscador te ordena por autoridad editorial. Esta skill te ordena por atención de personas. Un hilo de Reddit con mil quinientos votos te dice más sobre si una herramienta aguanta en producción que la nota de prensa del fabricante.</p>
+
+      <h2>Cómo se instala</h2>
+
+      <p>La skill es del proyecto <code>mvanhorn/last30days-skill</code>, con licencia MIT. Es gratis y el código está a la vista.</p>
+
+      <p><strong>En Claude Code</strong> —la vía recomendada, porque se actualiza sola desde el marketplace:</p>
+
+      <pre><code>/plugin marketplace add mvanhorn/last30days-skill
+/plugin install last30days</code></pre>
+
+      <p><strong>En Codex, Cursor, Copilot, Gemini CLI y el resto de hosts de Agent Skills:</strong></p>
+
+      <pre><code>npx skills add mvanhorn/last30days-skill -g</code></pre>
+
+      <p>La bandera <code>-g</code> la instala para tu usuario, disponible en todos tus proyectos. Sin ella, queda solo en el proyecto donde estés parado.</p>
+
+      <p><strong>En Claude de escritorio y en la web</strong> hay paquetes listos en la sección de releases del repositorio: un bundle que arrastras a la sección de extensiones en el escritorio, y un archivo de skill que subes desde la sección de skills en la web.</p>
+
+      <p>Necesitas Python 3.12 o más nuevo instalado. Reddit, Hacker News, GitHub y los mercados de predicción funcionan de inmediato sin configurar nada; la primera corrida abre un asistente que habilita las demás fuentes.</p>
+
+      <h2>Cómo se usa</h2>
+
+      <p>Se invoca con una diagonal y el tema. Sin ceremonia:</p>
+
+      <pre><code>/last30days [tema, persona o empresa]
+/last30days ¿qué está explotando en [tu categoría]?</code></pre>
+
+      <p>La segunda forma cambia el comportamiento: en vez de investigar algo que ya nombraste, barre las categorías y te devuelve temas ordenados por velocidad, con la búsqueda de seguimiento ya escrita para cada uno.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> esto no es de Anthropic. Es una skill de la comunidad, y para leer fuentes como X o TikTok usa las sesiones de tu navegador. Antes de instalarla revisa el repositorio como revisarías una extensión de navegador: quién la mantiene, qué accesos pide, qué se lleva. Yo la corro con las fuentes gratuitas primero y solo habilito las que necesitan mi sesión cuando el caso lo justifica.</p>
+      </div>
+
+      <h2>Cuatro usos que sí mueven dinero</h2>
+
+      <h3>1. Preparar una llamada con alguien que importa</h3>
+
+      <p>Vas a una junta con un director, un inversionista o un socio potencial. Lo que hace todo el mundo es abrir su LinkedIn, que está actualizado hace dos años, y llegar con eso.</p>
+
+      <p>Corre la skill con su nombre y vas a tener otra cosa: qué publicó este mes, en qué discusión se metió, qué anunció, en qué podcast salió y qué dijo ahí. Eso te da la única cosa que de verdad abre una conversación de ventas: una referencia específica y reciente a algo que a esa persona le importa hoy.</p>
+
+      <p>Es el uso con mejor relación entre esfuerzo y resultado de toda la lista. Tres minutos antes de una llamada de treinta.</p>
+
+      <h3>2. Inteligencia de competencia antes de una propuesta</h3>
+
+      <p>Antes de mandar una propuesta donde sabes contra quién compites, la pregunta que quieres responder no es qué vende el competidor —eso está en su sitio— sino qué se está quejando su gente.</p>
+
+      <p>Los hilos de los últimos treinta días te dan lo que ninguna comparativa te va a dar: el problema de soporte que se repite, el cambio de precio que molestó, la función que prometieron y no salió. Eso se convierte en las tres preguntas que le haces al cliente en la junta, sin mencionar nunca al competidor.</p>
+
+      <h3>3. Decidir si una herramienta aguanta antes de comprarla</h3>
+
+      <p>Vas a meter una herramienta nueva al stack de la empresa. La documentación siempre dice que funciona. Lo que quieres saber es qué se rompe en el mes tres.</p>
+
+      <p>Aquí el ordenamiento por interacción hace todo el trabajo: los problemas reales generan hilos largos y muchos votos, mientras que las notas de lanzamiento generan silencio. Si buscas una herramienta y lo que sube son quejas de facturación o de migración, ya tienes tu respuesta antes de firmar.</p>
+
+      <h3>4. Encontrar el tema antes de que se sature</h3>
+
+      <p>Si produces contenido, el costo más alto no es grabar: es grabar sobre un tema que ya se cansó. La modalidad de descubrimiento te devuelve temas ordenados por qué tan rápido están creciendo, no por cuántos hablan ya de ellos.</p>
+
+      <p>Para una operación de contenido eso cambia el calendario editorial de reactivo a anticipado. En vez de cubrir lo que ya vio todo el mundo la semana pasada, publicas cuando el tema todavía está subiendo.</p>
+
+      <h2>Los dos límites que hay que tener claros</h2>
+
+      <p><strong>Popularidad no es verdad.</strong> La skill te dice qué está diciendo la gente con más atención, y eso es una señal muy buena para decidir dónde mirar. No es una verificación. Un hilo con dos mil votos puede estar completamente equivocado, y en temas polarizados suele estarlo. Trata el informe como una lista de pistas, no como una conclusión.</p>
+
+      <p><strong>La ventana corta también recorta.</strong> Treinta días es exactamente lo que quieres para una herramienta o una noticia, y es exactamente lo que no quieres para entender un negocio o una industria. Para eso necesitas el fondo, no la superficie. Usa la skill para la capa reciente y otra fuente para el contexto largo.</p>
+
+      <p>Y como todo lo que produce datos con formato —cifras, fechas, nombres—, lo que salga de ahí y vaya a un documento formal se verifica. Ahí aplica lo mismo que en <a href="/guias/3-prompts-contra-las-alucinaciones/">los tres prompts contra las alucinaciones</a>.</p>
+
+      <h2>El movimiento de esta semana</h2>
+
+      <p>Instálala y córrela una sola vez, sobre el nombre de tu competidor más directo. No sobre un tema general: sobre el nombre exacto.</p>
+
+      <p>Si lo que sale te enseña algo que no sabías, ya justificó su lugar en tu setup. Si no sale nada, también aprendiste algo: que en tu categoría la conversación no está en internet, y que tu ventaja informativa sigue estando en llamar a tus clientes.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

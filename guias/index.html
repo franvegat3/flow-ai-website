@@ -50,7 +50,7 @@
       <p class="eyebrow">Biblioteca gratuita</p>
       <h1>Guías <span class="grad">gratuitas</span> de IA.</h1>
       <p class="lead">Sistemas de inteligencia artificial que ya están corriendo en operaciones reales, explicados paso a paso: el prompt completo, las herramientas, el costo y el tiempo que toma. Sin relleno y sin teoría.</p>
-      <p class="lib-count"><span id="guideCount">1</span> guía · nuevas cada semana</p>
+      <p class="lib-count"><span id="guideCount">0</span> guías · nuevas cada semana</p>
     </div>
   </section>
 
@@ -64,6 +64,11 @@
           <button class="chip" data-value="claude" aria-pressed="false">Claude</button>
           <button class="chip" data-value="cowork" aria-pressed="false">Cowork</button>
           <button class="chip" data-value="claude-code" aria-pressed="false">Claude Code</button>
+          <button class="chip" data-value="chatgpt" aria-pressed="false">ChatGPT</button>
+          <button class="chip" data-value="gemini" aria-pressed="false">Gemini</button>
+          <button class="chip" data-value="perplexity" aria-pressed="false">Perplexity</button>
+          <button class="chip" data-value="notion" aria-pressed="false">Notion</button>
+          <button class="chip" data-value="canva" aria-pressed="false">Canva</button>
           <button class="chip" data-value="n8n" aria-pressed="false">n8n</button>
           <button class="chip" data-value="meta-ads" aria-pressed="false">Meta Ads</button>
           <button class="chip" data-value="video" aria-pressed="false">Video e imagen</button>
@@ -76,13 +81,22 @@
           <button class="chip" data-value="all" aria-pressed="true">Todos</button>
           <button class="chip" data-value="empezar" aria-pressed="false">Empezar</button>
           <button class="chip" data-value="prompts" aria-pressed="false">Prompts</button>
+          <button class="chip" data-value="skills" aria-pressed="false">Skills</button>
           <button class="chip" data-value="agentes" aria-pressed="false">Agentes</button>
           <button class="chip" data-value="automatizacion" aria-pressed="false">Automatización</button>
+          <button class="chip" data-value="productividad" aria-pressed="false">Productividad</button>
           <button class="chip" data-value="contenido" aria-pressed="false">Contenido</button>
+          <button class="chip" data-value="creativo" aria-pressed="false">Creativo</button>
           <button class="chip" data-value="pauta" aria-pressed="false">Pauta</button>
           <button class="chip" data-value="ventas" aria-pressed="false">Ventas</button>
           <button class="chip" data-value="negocio" aria-pressed="false">Negocio</button>
+          <button class="chip" data-value="carrera" aria-pressed="false">Carrera</button>
+          <button class="chip" data-value="novedades" aria-pressed="false">Novedades</button>
         </div>
+      </div>
+      <div class="filter-row">
+        <label class="filter-label" for="guideSearch">Buscar</label>
+        <input type="search" id="guideSearch" class="filter-search" placeholder="Una herramienta o una palabra. Ej: n8n, prospección, subtítulos…" autocomplete="off" />
       </div>
     </div>
   </section>
@@ -90,16 +104,6 @@
   <!-- REJILLA -->
   <main class="container">
     <div class="guide-grid" id="guideGrid">
-
-      <!-- Cada guía: data-tool y data-topic pueden traer varios valores separados por espacio -->
-      <a class="guide-card" href="/guias/plugins-cowork/" data-tool="cowork claude" data-topic="empezar agentes">
-        <span class="guide-badge">Empieza aquí</span>
-        <h3>Los 10 plugins de Claude Cowork que sí cambian tu día</h3>
-        <p>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</p>
-        <span class="guide-meta">9 min · Cowork</span>
-        <span class="guide-go">Leer la guía →</span>
-      </a>
-
       <p class="guide-empty" id="guideEmpty" hidden>No hay guías con esa combinación todavía. Prueba con otro filtro.</p>
     </div>
 
@@ -124,6 +128,7 @@
     </div>
   </footer>
 
+  <script src="guias-data.js"></script>
   <script src="guias.js"></script>
 </body>
 </html>

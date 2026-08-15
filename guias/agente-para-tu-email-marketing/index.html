@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construí un agente para mi email marketing — Guías Flow AI</title>
+  <meta name="description" content="Corre cada semana dentro de la plataforma de correo. Desempeño de flujos, auditoría de asuntos, mejores horarios de envío, y campañas en borrador listas para aprobar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/agente-para-tu-email-marketing/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Construí un agente para mi email marketing" />
+  <meta property="og:description" content="Corre cada semana dentro de la plataforma de correo. Desempeño de flujos, auditoría de asuntos, mejores horarios de envío, y campañas en borrador listas para aprobar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/agente-para-tu-email-marketing/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Ventas</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Ventas</span><span class="tag">Automatización</span></div>
+      <h1>Construí un agente para mi email marketing</h1>
+      <p class="lead">Corre cada semana dentro de la plataforma de correo. Desempeño de flujos, auditoría de asuntos, mejores horarios de envío, y campañas en borrador listas para aprobar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El correo es el único canal que de verdad es tuyo. No depende de un algoritmo, no te lo pueden quitar, y en casi todas las operaciones con las que trabajo es el que más vende por peso. También es el más descuidado: se arman los flujos una vez, se dejan corriendo, y nadie los vuelve a abrir en un año.</p>
+
+      <p>Eso pasa por una razón muy poco misteriosa. Auditar correo es trabajo aburrido y repetitivo: entrar a la plataforma, abrir flujo por flujo, comparar contra el mes pasado, anotar qué se cayó. Nadie tiene ganas un martes en la tarde. Así que no se hace, y la secuencia de bienvenida —la que le pega al cien por ciento de los suscriptores nuevos— sigue con el asunto que alguien escribió el año pasado.</p>
+
+      <p>Construí un agente que hace exactamente eso cada semana. No manda nada: revisa, diagnostica y deja borradores. Aquí está cómo está armado —contexto, conexiones, flujos y memoria— y el prompt con el que corre.</p>
+
+      <h2>Qué hace, en una frase</h2>
+
+      <p>Cada lunes revisa el desempeño de los flujos, audita los asuntos, revisa horarios de envío y deja las campañas de la semana en borrador para que yo las apruebe.</p>
+
+      <p>Lo importante está en la última parte. El agente tiene permiso de leer todo y de escribir borradores. No tiene permiso de enviar. Esa frontera no es negociable y la explico más abajo.</p>
+
+      <h2>El contexto que carga</h2>
+
+      <p>Sin esto es un opinador de asuntos. Son cuatro archivos y se escriben una vez.</p>
+
+      <ul>
+        <li><strong>Quién es el suscriptor.</strong> De dónde entra, qué compró o qué esperaba comprar, y las objeciones reales que aparecen en las llamadas de venta. Texto crudo de clientes, no un perfil de comprador inventado en una junta.</li>
+        <li><strong>La oferta y sus reglas.</strong> Qué se vende, a qué precio, qué se puede prometer y qué no. Sin esto vas a tener que corregir cada borrador por cosas que legalmente no puedes decir.</li>
+        <li><strong>El mapa de flujos.</strong> Qué automatizaciones existen, qué las dispara, cuántos correos tiene cada una y qué se supone que logra. La mitad de las empresas no tiene este documento y por eso tiene tres flujos que le pegan al mismo suscriptor la misma semana.</li>
+        <li><strong>La voz.</strong> Tres o cuatro correos que sí sonaron a la marca, con una nota de por qué. Un archivo de voz con ejemplos vale más que una lista de adjetivos sobre el tono.</li>
+      </ul>
+
+      <h2>Las conexiones</h2>
+
+      <p>Tres, y con alcances distintos a propósito.</p>
+
+      <ol>
+        <li><strong>La plataforma de correo.</strong> Lectura de campañas, flujos, segmentos y métricas; escritura solo de borradores. Casi todas las plataformas serias permiten separar esos permisos al crear la llave de acceso. Si la tuya no lo permite, revisa <a href="/guias/permisos-de-conectores/">la guía de permisos de conectores</a> antes de conectarla.</li>
+        <li><strong>La tienda o el CRM.</strong> Lectura de pedidos u oportunidades. Es lo que le permite juzgar un flujo por ingreso atribuido y no por clics, que es la diferencia entre un reporte útil y uno decorativo.</li>
+        <li><strong>El calendario de contenido.</strong> Para que la campaña de la semana no contradiga lo que ya se va a publicar en otro lado. Lectura.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> quitarle el permiso de envío. Una plataforma de correo es de los pocos lugares donde un error de un agente es instantáneo, público e irreversible: no puedes desenviar treinta mil correos. La llave de acceso se genera sin permiso de envío desde el principio, no se "tiene cuidado". Y si tu plataforma solo ofrece llaves con todos los permisos, entonces el agente trabaja sobre una lista de prueba y tú copias a mano.</p>
+      </div>
+
+      <h2>Los cuatro trabajos de la corrida semanal</h2>
+
+      <div class="plugin-card">
+        <h3>1. Desempeño de flujos</h3>
+        <p>Compara cada automatización contra su propio historial, no contra un promedio de industria. La pregunta no es "¿está bien este número?" sino "¿este flujo se movió y por qué?".</p>
+        <p>Los que reviso siempre: bienvenida, carrito abandonado o cotización sin respuesta, post-compra, y reactivación. En la mayoría de las operaciones esos cuatro concentran casi todo el ingreso automatizado, y casi siempre hay uno roto que nadie había notado —normalmente un correo que dejó de dispararse por un cambio de etiqueta.</p>
+        <p class="plugin-for"><strong>Lo que entrega:</strong> qué se movió, la causa más probable, y un solo cambio propuesto por flujo. Uno, no cinco.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Auditoría de asuntos</h3>
+        <p>Junta todos los asuntos enviados en el periodo y busca patrones: cuáles estructuras se repiten, cuáles se agotaron, cuáles nunca se han probado. Es el trabajo donde un modelo es genuinamente mejor que una persona, porque nadie se acuerda de doscientos asuntos.</p>
+        <p>Aquí hay un detalle técnico que cambia todo el análisis: la tasa de apertura dejó de ser una medida confiable desde que los clientes de correo precargan las imágenes por privacidad. Si tu agente optimiza asuntos por aperturas, está optimizando ruido. Se lo digo explícitamente en el prompt.</p>
+        <p class="plugin-for"><strong>Lo que entrega:</strong> los patrones agotados, y diez asuntos nuevos con la hipótesis de cada uno.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Horarios de envío</h3>
+        <p>Cruza los envíos con lo que pasó después, por día y por hora, y busca si hay señal. La instrucción más importante de este bloque es que tiene permiso de decirme que no hay conclusión. La mayoría de las listas no tiene suficiente volumen para que el horario sea una variable significativa, y un agente complaciente te va a inventar que los martes a las 10 son mágicos.</p>
+        <p class="plugin-for"><strong>Lo que entrega:</strong> una recomendación de ventana o la frase "no hay señal suficiente esta vez".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Campañas en borrador</h3>
+        <p>Deja escritas las campañas de la semana, con el segmento propuesto y la razón por la que ese segmento y no toda la lista. Escritas completas: asunto, previsualización, cuerpo y llamada a la acción.</p>
+        <p>El valor no es que escriba bien —lo que escribe siempre lo edito—. El valor es que el lunes ya hay algo enfrente. Una campaña mediocre que se edita sale; una campaña perfecta que nunca se empezó no.</p>
+        <p class="plugin-for"><strong>Lo que entrega:</strong> dos borradores completos, con segmento y justificación, listos para aprobar.</p>
+      </div>
+
+      <h2>El prompt de la corrida semanal</h2>
+
+      <pre><code>Eres el responsable de mi correo. Corres todos los lunes.
+No mandas nada: revisas, diagnosticas y dejas borradores.
+
+QUÉ TIENES
+- suscriptor.md, oferta.md, flujos.md y voz.md.
+- Acceso de lectura a la plataforma de correo, a los pedidos
+  y al calendario de contenido.
+- Permiso de escribir borradores. Ninguno de enviar.
+- bitacora/ — tus corridas anteriores, con lo que
+  recomendaste y lo que pasó después.
+
+ANTES DE EMPEZAR
+Lee la última corrida en bitacora/. Si recomendaste algo la
+semana pasada, dime primero si se aplicó y qué efecto tuvo.
+Empieza siempre por ahí.
+
+LOS CUATRO BLOQUES
+1. FLUJOS. Para cada automatización de flujos.md, compárala
+   contra sus propias semanas anteriores. Repórtame solo lo
+   que se movió de forma notable, con la causa más probable
+   y UN cambio propuesto. Si un flujo dejó de dispararse,
+   eso va hasta arriba y en negritas.
+
+2. ASUNTOS. Junta todos los asuntos del último mes.
+   Dime qué estructuras se están repitiendo y cuáles ya se
+   agotaron. Después dame diez asuntos nuevos, cada uno con
+   una línea de qué hipótesis prueba.
+   No optimices por tasa de apertura: la precarga de imágenes
+   de los clientes de correo la vuelve poco confiable. Juzga
+   por clic y por lo que pasó después del clic.
+
+3. HORARIOS. Cruza envíos contra resultado por día y hora.
+   Si no hay volumen suficiente para una conclusión honesta,
+   escribe "no hay señal suficiente" y pasa al siguiente
+   bloque. No inventes una ventana óptima para tener algo
+   que decir.
+
+4. BORRADORES. Escribe dos campañas completas para esta
+   semana: asunto, previsualización, cuerpo y llamada a la
+   acción. Para cada una, el segmento propuesto y por qué
+   ese y no toda la lista. Respeta oferta.md al pie de la
+   letra: nada de promesas que no estén ahí.
+   El tono sale de voz.md, no de tu idea de qué es un buen
+   correo de marketing.
+
+REGLAS
+- Ningún número que no venga de los datos que consultaste.
+  Si te falta uno, escribe "falta dato".
+- Nada de comparaciones con promedios de industria.
+- Máximo un cambio propuesto por flujo. Si veo diez, no
+  aplico ninguno.
+- Si crees que el problema no es el correo sino la oferta,
+  dilo. Es la conclusión más útil y la que menos te va a
+  gustar dar.
+
+Al final, escribe la corrida en bitacora/ con la fecha.</code></pre>
+
+      <h2>La memoria es la mitad del sistema</h2>
+
+      <p>La bitácora es lo que separa a este agente de un reporte bonito. Cada corrida queda escrita con fecha y con lo que recomendó; la siguiente empieza revisando si eso se aplicó y qué pasó.</p>
+
+      <p>A los dos meses eso te da algo que muy pocas operaciones tienen: un registro de qué cambios en el correo movieron el resultado y cuáles no. Sin ese registro estás reoptimizando las mismas cosas cada trimestre y llamándole estrategia.</p>
+
+      <h2>El error más caro que vi</h2>
+
+      <p>Dejar que el agente decidiera el segmento y mandara a toda la lista "por si acaso".</p>
+
+      <p>Mandarle a toda la base cada campaña sube el número de quejas y bajas, y eso sí te pega donde duele: en si tus correos llegan a la bandeja principal. El daño no se ve en la campaña que mandaste de más, se ve tres semanas después en la que sí importaba y no llegó.</p>
+
+      <p>Por eso la instrucción de justificar el segmento está en el prompt y por eso el envío se queda conmigo. Si vas a construir esto, esa es la parte que copiaría primero: la puerta manual, antes que el análisis.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/stack-de-ia-que-reemplaza-tu-saas/" class="stack-link">
+            <span>El stack de IA que reemplaza tu software de suscripción →</span>
+            <small>Las herramientas exactas para reconstruir tú mismo el software caro, la regla honesta de construir contra comprar, y un prompt para dimensionar tu propio reemplazo.</small>
+          </a>
+          <a href="/guias/ciclo-de-retroalimentacion/" class="stack-link">
+            <span>El ciclo de retroalimentación que nadie construye →</span>
+            <small>Tu agente redacta, tú editas, tú publicas, y la lección se pierde. El setup exacto que escribe lo que cambiaste de regreso en el archivo de la skill.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

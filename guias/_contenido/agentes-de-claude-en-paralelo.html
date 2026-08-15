@@ -1,0 +1,70 @@
+      <p>Le pides algo grande al agente y arranca. Y tú te quedas viendo cómo trabaja, leyendo cada paso, esperando el momento de aprobar algo. Cuarenta minutos de tu día viendo texto pasar.</p>
+
+      <p>El cuello de botella dejó de ser el modelo hace rato. Eres tú, sentado frente a una sola sesión. La aplicación rediseñada de Claude Code está construida alrededor de resolver exactamente eso: varias sesiones corriendo al mismo tiempo, cada una en su propio espacio, sin que se pisen.</p>
+
+      <p>Lo que sigue es qué cambió, qué hace posible que no se estorben, los atajos que de verdad uso, y la regla de cuántos agentes conviene tener corriendo —que es más baja de lo que te imaginas y por una razón que no es técnica.</p>
+
+      <h2>Qué cambió en la aplicación</h2>
+
+      <p>El rediseño reorganizó la ventana alrededor de trabajar con varias sesiones a la vez. Las piezas que más se notan en el día:</p>
+
+      <ul>
+        <li><strong>Barra lateral de sesiones.</strong> Todas tus sesiones activas listadas, con su estado. Es el panel de control: de un vistazo ves cuál está trabajando, cuál terminó y cuál te está esperando.</li>
+        <li><strong>Paneles acomodables.</strong> Arrastras las sesiones para armar el acomodo que quieras. Dos lado a lado para comparar dos enfoques del mismo problema es el uso que más rinde.</li>
+        <li><strong>Terminal integrada y editor de archivos adentro.</strong> Deja de haber el salto constante a otra aplicación para ver qué quedó.</li>
+        <li><strong>Vista de diferencias reconstruida y vista previa.</strong> Puedes revisar lo que cambió, y ver el resultado de páginas y documentos sin salir.</li>
+        <li><strong>Tres niveles de detalle.</strong> Verbose, Normal y Summary. Es la función que más subestima la gente: en Summary ves resultados en vez de cada llamada a herramienta, y es lo único que hace tolerable vigilar tres sesiones sin marearte.</li>
+        <li><strong>Botón de uso.</strong> Te muestra la ventana de contexto y el consumo de la sesión de un vistazo. Con varias sesiones corriendo, esto pasa de curiosidad a necesidad.</li>
+      </ul>
+
+      <h2>La pieza que lo hace posible</h2>
+
+      <p>Correr dos agentes sobre el mismo proyecto suena a receta para el desastre: los dos editan, se pisan, y acabas con un revoltijo que nadie puede desenredar.</p>
+
+      <p>Lo que lo evita es que cada sesión trabaja en una copia aislada del proyecto. Los cambios de una sesión no existen para las demás hasta que se confirman. En términos prácticos: el agente A puede reescribir el mismo archivo que está tocando el agente B, y ninguno de los dos ve el trabajo del otro hasta que tú decidas integrarlo.</p>
+
+      <p>Eso convierte el paralelismo en algo utilizable y traslada el problema a otro lado: el conflicto ya no ocurre mientras trabajan, ocurre cuando integras. Es un intercambio muy bueno, porque el conflicto al integrar es visible y revisable, mientras que dos agentes pisándose en vivo es invisible hasta que ya rompió algo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> integrar en el orden equivocado. Cuando tres sesiones terminan, la tentación es aceptar todo de corrido. Integra primero la que toca menos archivos y verifica que sigue funcionando; después la siguiente. Si integras primero la grande, cualquier problema que salga después te obliga a adivinar cuál de las tres lo causó.</p>
+      </div>
+
+      <h2>Los atajos que sí sirven</h2>
+
+      <p>Antes de memorizar nada: <code>⌘ /</code> en Mac o <code>Ctrl /</code> en Windows abre la lista completa de atajos dentro de la aplicación. Esa es la fuente que no envejece, porque la lista crece con cada versión.</p>
+
+      <p>De ahí, los que de verdad cambian el ritmo son tres categorías:</p>
+
+      <ol>
+        <li><strong>Crear una sesión nueva sin soltar el teclado.</strong> Es el que más importa. Si abrir un agente cuesta tres clics, no vas a abrir el tercero aunque convenga.</li>
+        <li><strong>Saltar entre sesiones.</strong> El ciclo real de trabajo es revisar A, aprobar, saltar a B, revisar, saltar a C. Con ratón se vuelve pesado a la tercera vuelta.</li>
+        <li><strong>Abrir la terminal integrada</strong> con <code>Ctrl `</code>, para verificar tú mismo algo sin interrumpir a la sesión que está trabajando.</li>
+      </ol>
+
+      <p>Y uno que no es atajo pero rinde igual: pon las sesiones largas en Summary y la que estás vigilando de cerca en Verbose. La mezcla de niveles de detalle es lo que te deja atender tres cosas sin leer tres veces más texto.</p>
+
+      <h2>La regla de cuántos</h2>
+
+      <p>Tres. Ocasionalmente cuatro. Nunca ocho, aunque la máquina aguante.</p>
+
+      <p>El límite no es de cómputo, es de atención. Cada sesión que corre te va a pedir una decisión en algún momento: aprobar un cambio, elegir entre dos caminos, aclarar una ambigüedad. Con tres sesiones, las decisiones llegan espaciadas y las tomas con la cabeza puesta. Con seis, llegan encimadas y empiezas a aprobar sin leer —y aprobar sin leer es exactamente el modo de trabajo que hace que la gente desconfíe de los agentes.</p>
+
+      <p>Hay un segundo costo, más sutil: reconstruir el contexto. Cuando saltas a una sesión que lleva veinte minutos sin que la veas, tienes que volver a cargar en tu cabeza qué le pediste y por dónde iba. Ese costo es real y crece rápido. Tres sesiones se sostienen en la memoria de trabajo de una persona. Seis, no.</p>
+
+      <h2>Qué se paraleliza bien y qué no</h2>
+
+      <p>El criterio es la dependencia. Dos tareas se pueden correr al mismo tiempo si el resultado de una no cambia lo que la otra tiene que hacer.</p>
+
+      <p><strong>Se paralelizan bien:</strong> trabajos sobre áreas separadas del proyecto; explorar dos soluciones distintas al mismo problema para después comparar; una sesión escribiendo mientras otra revisa algo ya terminado; tareas de investigación que solo leen.</p>
+
+      <p><strong>No se paralelizan:</strong> cualquier cadena donde el paso dos necesita la decisión del paso uno. Ahí correr en paralelo no ahorra tiempo, produce dos versiones incompatibles y el trabajo de reconciliarlas cuesta más que haberlo hecho en orden.</p>
+
+      <p>El caso donde más rinde, en trabajo real, es la exploración deliberada: mandas dos sesiones a resolver lo mismo con enfoques distintos —uno conservador, uno agresivo— y a los veinte minutos comparas. No estás produciendo el doble; estás comprando información sobre cuál camino era el bueno, que es mucho más valioso.</p>
+
+      <h2>El error más caro</h2>
+
+      <p>Abrir tres sesiones para lo mismo por ansiedad, no por diseño.</p>
+
+      <p>Pasa seguido: la primera va lenta, te impacientas, abres otra con la misma petición redactada distinto. Ahora tienes dos agentes resolviendo el mismo problema, gastando el doble, y en veinte minutos vas a tener que decidir cuál de dos resultados parecidos te quedas.</p>
+
+      <p>Antes de abrir la segunda sesión, contesta una pregunta: ¿esta tarea depende del resultado de la que ya está corriendo? Si la respuesta es sí, no abras nada. Si es no, ábrela y escribe en una línea qué esperas de cada una. Esa línea es la que te permite volver a la sesión en veinte minutos y saber qué estabas haciendo.</p>

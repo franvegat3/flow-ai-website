@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El setup de ChatGPT en 5 pasos — Guías Flow AI</title>
+  <meta name="description" content="Pasa ChatGPT de chatbot básico a sistema real en un día: la app de escritorio, los Proyectos, los conectores, una skill y una tarea recurrente. Con el cómo de cada uno." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/setup-de-chatgpt-en-5-pasos/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El setup de ChatGPT en 5 pasos" />
+  <meta property="og:description" content="Pasa ChatGPT de chatbot básico a sistema real en un día: la app de escritorio, los Proyectos, los conectores, una skill y una tarea recurrente. Con el cómo de cada uno." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/setup-de-chatgpt-en-5-pasos/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">ChatGPT</span><span class="tag">Empezar</span></div>
+      <h1>El setup de ChatGPT en 5 pasos</h1>
+      <p class="lead">Pasa ChatGPT de chatbot básico a sistema real en un día: la app de escritorio, los Proyectos, los conectores, una skill y una tarea recurrente. Con el cómo de cada uno.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de la gente lleva dos años usando ChatGPT en una sola pestaña del navegador. Abre, pregunta, copia, cierra. Y después dice que ya lo domina.</p>
+
+      <p>Ese uso está bien para redactar un correo. No sirve para nada que se repita, porque cada conversación arranca desde cero y todo lo que le enseñaste se murió cuando cerraste la ventana.</p>
+
+      <p>Estos son cinco pasos que convierten eso en un sistema. Se hacen en un día, en este orden, y cada uno depende del anterior. Al final tienes algo que sabe quién eres, tiene acceso a tus cosas, sabe cómo haces tu trabajo y corre solo cuando tú no estás.</p>
+
+      <div class="plugin-card">
+        <h3>1. La aplicación de escritorio</h3>
+        <p>Suena a detalle cosmético y es el paso que cambia la frecuencia de uso. En el navegador, ChatGPT es una pestaña más entre veinte. En el escritorio es una ventana que abres con un atajo de teclado, encima de lo que estás haciendo.</p>
+        <p><strong>Qué haces:</strong> descárgala del sitio oficial de OpenAI para Mac o Windows, inicia sesión, y lo único que de verdad importa: configura el atajo de teclado que la levanta. Ese atajo es la diferencia entre usarla tres veces al día y usarla treinta.</p>
+        <p>El uso que la justifica es el que no puedes hacer en el navegador: tener el documento abierto de un lado y preguntar del otro sin cambiar de ventana ni copiar y pegar. Es la misma razón por la que el dictado por voz cambia tanto la relación con la herramienta —hablas mientras trabajas en vez de detenerte a teclear.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> cinco minutos, y dos son elegir el atajo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Tus proyectos</h3>
+        <p>Un proyecto agrupa conversaciones bajo un contexto compartido: instrucciones fijas, archivos subidos y una memoria propia que persiste entre los chats de ese proyecto. Es lo que hace que dejes de explicar lo mismo cada vez.</p>
+        <p><strong>Qué haces:</strong> se crean desde la barra lateral. No abras diez. Abre tres, que es el número que la gente termina usando de verdad: uno para el trabajo por el que te pagan, uno para tu área de negocio o tu marca, y uno personal.</p>
+        <p>Las instrucciones del proyecto son lo que hace el trabajo. No las escribas de personalidad, escríbelas de contexto y de forma:</p>
+        <pre><code>CONTEXTO FIJO DE ESTE PROYECTO
+
+Qué hacemos: [qué vende la empresa y a quién]
+Mi papel: [tu puesto y qué decides tú]
+Con quién trabajo: [nombres y qué decide cada uno]
+Cómo le decimos internamente a las cosas: [glosario propio]
+Qué prometemos y qué no: [lo que legalmente no se puede decir]
+
+CÓMO QUIERO LAS RESPUESTAS
+- Directo, sin preámbulo ni resumen final.
+- Si te falta un dato para hacerlo bien, pídemelo. No lo inventes.
+- Cuando no puedas verificar algo, dilo con esas palabras.
+- Nada de cifras ni fechas que no vengan de los archivos que subí.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> media hora por proyecto la primera vez. Los archivos los vas subiendo sobre la marcha.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Los conectores</h3>
+        <p>Aquí se cruza la línea entre "me redacta cosas" y "sabe qué traigo esta semana". Los conectores le dan acceso a tu correo, tu calendario, tu almacenamiento de documentos y otras herramientas.</p>
+        <p><strong>Qué haces:</strong> se activan desde la configuración de tu cuenta. Conecta dos, no todos: el calendario y donde vivan tus documentos de trabajo. Vive con eso una semana antes de agregar el correo.</p>
+        <p>El correo lo dejo al final a propósito. Es el conector con más valor y también el que más expone: ahí están tus contratos, tus números y las conversaciones que no querrías que aparecieran resumidas en ningún lado. En una empresa esto no es decisión individual —antes de conectar el correo corporativo o el almacenamiento del equipo, revísalo con quien lleve seguridad. La lista de qué preguntar está en <a href="/guias/es-seguro-conectar-tus-herramientas/">es seguro conectarle tus herramientas a Claude</a>, y aplica igual aquí.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> cinco minutos por conector. La conversación con seguridad, más.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Una skill</h3>
+        <p>Una skill es un procedimiento guardado: le enseñas cómo se hace un trabajo específico y lo repite igual todas las veces, sin que tengas que reexplicarlo. Es la diferencia entre pedirle un reporte y pedirle <em>tu</em> reporte.</p>
+        <p><strong>Qué haces:</strong> están en la sección de plugins de la barra lateral, en la pestaña de skills. Si trabajas en una cuenta de empresa, puede que las tenga que habilitar quien administre el espacio.</p>
+        <p>La primera no la inventes. Elige la tarea que ya hiciste cinco veces este mes y que siempre te queda distinta. Y escríbela con esta estructura, que es la que aguanta:</p>
+        <pre><code>CUÁNDO SE USA: [la señal exacta que dispara este trabajo]
+
+QUÉ NECESITO ANTES DE EMPEZAR: [los datos sin los cuales no se
+puede hacer. Si falta alguno, pregúntalo y detente.]
+
+PASOS: [numerados, en orden, sin saltarse el aburrido]
+
+CÓMO SE VE BIEN HECHO: [dos ejemplos reales]
+CÓMO SE VE MAL: [un ejemplo real de algo que salió mal y por qué]
+
+QUÉ HACER SI ALGO FALTA: [qué hacer cuando el dato no está,
+cuando el archivo viene en otro formato, cuando el número no
+cuadra]</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> media hora. Las siguientes, diez minutos, porque ya tienes el molde.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Una tarea recurrente</h3>
+        <p>Es el paso que convierte todo lo anterior en algo que pasa sin ti. ChatGPT puede correr un trabajo en un horario, y desde la reconstrucción de esta función las tareas pueden usar tus conectores, que es lo que las volvió útiles de verdad.</p>
+        <p><strong>Qué haces:</strong> se programan desde la sección de tareas y se pueden repetir tan seguido como cada hora, aunque casi ninguna lo necesita. Diaria o semanal cubre el noventa por ciento.</p>
+        <p>El error de principiante es programar un resumen de noticias. Se ve increíble la primera semana y a la tercera lo estás ignorando. Programa algo que produzca una decisión:</p>
+        <pre><code>Todos los lunes a las 7:00.
+
+Revisa mi calendario de esta semana y los correos sin responder
+de los últimos 5 días. Entrégame:
+
+1. Las juntas que necesitan preparación mía y qué exactamente
+   tengo que llevar a cada una.
+2. Los correos que llevan más de 3 días sin respuesta y en los
+   que la pelota es mía.
+3. Los compromisos que asumí por escrito la semana pasada y que
+   no aparecen en mi calendario de esta.
+
+Máximo una pantalla. Sin introducción. Si no hay nada en alguna
+de las tres categorías, escribe "nada" y sigue.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> quince minutos, y la mitad se te va en definir bien qué quieres recibir.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el 4 antes del 5. La gente programa la tarea recurrente primero porque es la que se siente futurista, y le llega todos los lunes un reporte genérico que nadie lee. Una tarea programada solo sirve si atrás hay un procedimiento definido y datos conectados de dónde jalar. Sin eso estás automatizando el vacío, puntualmente.</p>
+      </div>
+
+      <h2>Cómo se ve esto en un equipo</h2>
+
+      <p>Cuando lo instalo en un área comercial, el orden es el mismo con una diferencia grande: el proyecto no lo arma cada quien.</p>
+
+      <p>Se arma uno solo, con el contexto de la empresa —qué se vende, a quién, cuál es la objeción de siempre, cómo se llama cada cosa internamente, qué no se puede prometer— y ahí trabajan todos. El resultado que se nota en la primera semana no es velocidad. Es que las propuestas dejan de contradecirse entre vendedores, porque dejaron de improvisar cada quien su versión del producto.</p>
+
+      <h2>Cómo saber si funcionó</h2>
+
+      <p>No lo mides por cuántos pasos completaste. Lo mides así: ¿puedes pedir algo en una frase, sin contexto, y que salga bien?</p>
+
+      <p>Si al mes sigues escribiendo dos párrafos de explicación antes de cada petición, el sistema está armado pero vacío. Ese contexto que estás tecleando cada vez es exactamente el que debería vivir en las instrucciones del proyecto. Pásalo ahí y vuelve a medir. Si lo que quieres es comparar esto contra el otro lado, el análisis está en <a href="/guias/chatgpt-work-vs-claude-cowork/">ChatGPT Work contra Claude Cowork</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

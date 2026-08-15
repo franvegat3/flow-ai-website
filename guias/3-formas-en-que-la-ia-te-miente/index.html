@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las 3 formas en que la IA te miente (y el arreglo de cada una) — Guías Flow AI</title>
+  <meta name="description" content="Alucinación, adulación y sesgo. Tres formas distintas de equivocarse que se ven completamente correctas. Tres prompts de una línea que puedes pegar hoy en cualquier chat para arreglar las tres." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/3-formas-en-que-la-ia-te-miente/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Las 3 formas en que la IA te miente (y el arreglo de cada una)" />
+  <meta property="og:description" content="Alucinación, adulación y sesgo. Tres formas distintas de equivocarse que se ven completamente correctas. Tres prompts de una línea que puedes pegar hoy en cualquier chat para arreglar las tres." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/3-formas-en-que-la-ia-te-miente/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Multi-herramienta</span><span class="tag">Prompts</span></div>
+      <h1>Las 3 formas en que la IA te miente (y el arreglo de cada una)</h1>
+      <p class="lead">Alucinación, adulación y sesgo. Tres formas distintas de equivocarse que se ven completamente correctas. Tres prompts de una línea que puedes pegar hoy en cualquier chat para arreglar las tres.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La IA casi nunca se equivoca de la forma en que esperas. No te dice "no sé". Te entrega un párrafo bien escrito, seguro, con la estructura correcta, y adentro viene el error.</p>
+
+      <p>Eso es lo que la hace peligrosa en una operación real. Un error que se ve como error lo cachas. Un error que se ve como trabajo terminado se va al correo del cliente.</p>
+
+      <p>Hay tres formas distintas en que te miente, y son tres problemas separados con tres arreglos separados. Confundirlas es la razón por la que la gente pone "no inventes nada" en sus instrucciones y sigue teniendo el mismo problema: ese prompt solo tapa la primera.</p>
+
+      <h2>Por qué las tres se ven idénticas por fuera</h2>
+
+      <p>El modelo no escribe lo que sabe. Escribe lo que suena a la continuación más probable de tu texto. La seguridad con la que lo dice no viene de la evidencia: viene del estilo. Por eso una cita inventada suena igual de firme que una cita real, y por eso el tono nunca te va a servir de señal.</p>
+
+      <p>Si estás esperando a que suene dudoso para desconfiar, vas a esperar sentado. La duda hay que pedirla.</p>
+
+      <h2>Mentira 1: la alucinación</h2>
+
+      <p>Inventa un hecho que no existe: una cifra, un artículo de una ley, una función de un producto, una fuente. No es que se equivoque de dato, es que rellena el hueco donde debería ir el dato.</p>
+
+      <p>Dónde muerde en una empresa: cifras de mercado en una propuesta, cláusulas en un contrato, características de tu propio producto en una respuesta a soporte. Todas cosas que nadie verifica porque vienen bien redactadas.</p>
+
+      <p><strong>El arreglo, en una línea:</strong></p>
+
+      <pre><code>Marca cada afirmación con [VERIFICADO] si la puedes sostener con una fuente concreta que cites, [INFERIDO] si es una deducción tuya, y [NO SÉ] si no tienes base; no reescribas nada para evitar poner [NO SÉ].</code></pre>
+
+      <p>El truco no es pedirle que no invente —eso no lo puede cumplir— sino obligarlo a etiquetar el estatus de cada frase. Cuando tiene que poner la etiqueta, el hueco se hace visible. La segunda mitad de la instrucción importa tanto como la primera: sin ella, reescribe el párrafo para que todo quepa en [INFERIDO].</p>
+
+      <p>Si quieres el tratamiento completo de esta primera, está en <a href="/guias/3-prompts-contra-las-alucinaciones/">3 prompts para que la IA deje de inventar</a>.</p>
+
+      <h2>Mentira 2: la adulación</h2>
+
+      <p>Esta es la más cara y casi nadie la nombra. La IA está ajustada para que la conversación te resulte satisfactoria. Traducido: tiende a estar de acuerdo contigo, sobre todo cuando ya dejaste ver qué respuesta querías.</p>
+
+      <p>Se ve así. Le presentas tu plan de precios y te contesta que es sólido y te da tres formas de fortalecerlo. Nunca te dice que el plan no debería existir. Le dices "creo que deberíamos contratar a dos vendedores más" y te arma el caso de negocio para contratar a dos vendedores más.</p>
+
+      <p>El daño no es que te dé una respuesta mala. Es que te da una respuesta buena a la pregunta equivocada, y sales de ahí más convencido de lo que entraste. Es una máquina de confirmarte.</p>
+
+      <p><strong>El arreglo, en una línea:</strong></p>
+
+      <pre><code>Antes de responder, asume que mi propuesta está mal y dime las tres razones más fuertes por las que fracasaría; solo después de eso dime si la sostienes, y no suavices ninguna de las tres.</code></pre>
+
+      <p>El orden es lo que hace que funcione. Si pides la crítica al final, la escribe como cortesía después de haberse comprometido con el sí. Si la pides primero, tiene que construir el caso en contra sin saber todavía cuál va a ser su conclusión.</p>
+
+      <p>Hay una versión más agresiva que uso cuando la decisión es grande: no le digo cuál es mi postura. Le presento las dos opciones como si fueran de otra persona y le pido que elija. La adulación necesita saber qué quieres para dártelo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar tu propio prompt antes de culpar a la respuesta. Frases como "confirma que esto está bien", "ayúdame a defender", "explícame por qué esta es la mejor opción" ya traen la conclusión adentro. La mitad de las respuestas aduladoras que veo las pidió el usuario sin darse cuenta.</p>
+      </div>
+
+      <h2>Mentira 3: el sesgo hacia el promedio</h2>
+
+      <p>La tercera es la más difícil de ver porque no hay ningún error señalable. Todo lo que dice es correcto. El problema es que es la versión más común de lo correcto.</p>
+
+      <p>Le pides una estrategia de contenido y te da publicar tres veces por semana, reutilizar formatos y medir el engagement. Le pides posicionamiento y te da "el más confiable del mercado". Nada de eso está mal. Todo eso está en el material promedio del que aprendió, y por eso tu competencia va a recibir exactamente lo mismo.</p>
+
+      <p>En una operación real esto se paga en un tipo de daño lento: campañas que no ofenden a nadie y no mueven nada, propuestas intercambiables, correos que suenan a los de todos.</p>
+
+      <p><strong>El arreglo, en una línea:</strong></p>
+
+      <pre><code>Descarta las tres primeras ideas que se te ocurran por obvias, dame las que quedan cuando ya usaste lo evidente, y explícame por qué cada una es incómoda o difícil de ejecutar.</code></pre>
+
+      <p>La última parte es la que separa una idea rara de una idea buena. Sin ella, huye del promedio hacia lo extravagante, que es igual de inútil. Pedirle que justifique la incomodidad lo obliga a que la diferencia tenga una razón, no solo un adjetivo.</p>
+
+      <h2>Los tres juntos</h2>
+
+      <p>Cuando el trabajo importa —una propuesta, un análisis del que va a salir una decisión, cualquier cosa con tu nombre— pego este bloque al final del pedido:</p>
+
+      <pre><code>Antes de darme tu respuesta final, corre estos tres filtros sobre tu propio borrador:
+
+1. HECHOS. Marca cada afirmación con [VERIFICADO], [INFERIDO] o [NO SÉ]. No reescribas nada para evitar poner [NO SÉ].
+
+2. DESACUERDO. Dime las tres razones más fuertes por las que mi planteamiento podría estar mal. No las suavices y no las pongas al final como cortesía.
+
+3. ORIGINALIDAD. Señala qué partes de tu respuesta le habrías dado a cualquiera que preguntara lo mismo, y reemplázalas por algo que solo aplique a mi caso.
+
+Después de los tres filtros, entrégame la versión corregida y una línea diciendo qué cambió.</code></pre>
+
+      <p>Ese último renglón es el que uso para saber si el filtro corrió de verdad. Si me dice que no cambió nada, casi siempre es que ni lo intentó.</p>
+
+      <h2>Lo que ningún prompt arregla</h2>
+
+      <p>Estos tres filtros bajan la frecuencia. No la llevan a cero, y no hay prompt que lo haga.</p>
+
+      <p>Por eso la regla que aplico con los equipos con los que trabajo no es de prompting sino de proceso: cualquier número que salga de una IA y vaya a un documento externo lo verifica un humano contra la fuente. No el párrafo completo. El número, la fecha y el nombre propio. Toma dos minutos y es la diferencia entre una herramienta y una bomba de tiempo.</p>
+
+      <p>La IA no miente por mala. Miente porque completar es su trabajo, y tu hueco de información se ve igual que cualquier otro hueco.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

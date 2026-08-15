@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los 6 ajustes de Claude Code que cambias el primer día — Guías Flow AI</title>
+  <meta name="description" content="Viene potente de fábrica, pero los ajustes que te ahorran tiempo y dinero vienen apagados. Los 6 que prendo primero, con un settings.json listo para pegar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/6-ajustes-de-claude-code/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Los 6 ajustes de Claude Code que cambias el primer día" />
+  <meta property="og:description" content="Viene potente de fábrica, pero los ajustes que te ahorran tiempo y dinero vienen apagados. Los 6 que prendo primero, con un settings.json listo para pegar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/6-ajustes-de-claude-code/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Empezar</span><span class="tag">Productividad</span></div>
+      <h1>Los 6 ajustes de Claude Code que cambias el primer día</h1>
+      <p class="lead">Viene potente de fábrica, pero los ajustes que te ahorran tiempo y dinero vienen apagados. Los 6 que prendo primero, con un settings.json listo para pegar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Claude Code viene bien de fábrica. El problema es que los defaults están calibrados para que funcione en la máquina de cualquiera, y tú no eres cualquiera: tienes un proyecto, un stack y una forma de trabajar.</p>
+
+      <p>El resultado son fricciones chicas que pagas cien veces al día. Aprobar el mismo comando de pruebas por décima vez. Un build que se muere a los dos minutos porque el timeout es genérico. Un modelo caro corriendo tareas que no lo necesitan.</p>
+
+      <p>Estos son los seis ajustes que cambio el primer día en cualquier máquina, con el archivo completo al final listo para pegar.</p>
+
+      <h2>Dónde vive el archivo</h2>
+
+      <p>Antes de tocar nada, hay que saber en cuál de los tres archivos escribir. Es la decisión que más gente se equivoca.</p>
+
+      <ul>
+        <li><code>~/.claude/settings.json</code> — <strong>tuyo, en todos tus proyectos.</strong> Aquí van tus preferencias personales: modelo, esfuerzo, atribución de commits.</li>
+        <li><code>.claude/settings.json</code> — <strong>del proyecto, se sube a git.</strong> Aquí van los permisos del repositorio y todo lo que quieres que aplique igual para tu equipo.</li>
+        <li><code>.claude/settings.local.json</code> — <strong>tuyo, en este repositorio, no se sube.</strong> Aquí van tus experimentos y lo que solo aplica a tu máquina. Es donde Claude Code guarda solo las aprobaciones de "sí, no vuelvas a preguntar".</li>
+      </ul>
+
+      <p>Cuando la misma llave aparece en varios, gana el más específico: local le gana a proyecto, y proyecto le gana a usuario. Las reglas de permisos son la excepción: esas se suman en lugar de reemplazarse.</p>
+
+      <h2>Los 6 ajustes</h2>
+
+      <div class="plugin-card">
+        <h3>1. El modelo con el que arranca <code>model</code></h3>
+        <p>Si no lo defines, cada sesión empieza en el default de tu plan, y ese default rara vez es el que quieres para todo. Fijarlo en tu archivo de usuario evita la decisión diaria; si un proyecto específico pide otro, lo pones en el archivo del proyecto.</p>
+        <p>Acepta los alias <code>opus</code>, <code>sonnet</code>, <code>haiku</code> y <code>fable</code>, o un identificador completo si quieres anclar la versión exacta. Ojo: esta llave se lee una sola vez al arrancar la sesión, así que a media sesión se cambia con <code>/model</code>.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> dinero, si estabas corriendo el modelo más caro para tareas que no lo necesitan.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Cuánto piensa antes de responder <code>effortLevel</code></h3>
+        <p>El nivel de esfuerzo es la palanca de costo más directa que existe y casi nadie la toca. Acepta <code>low</code>, <code>medium</code>, <code>high</code> y <code>xhigh</code> en el archivo de settings. El default es <code>high</code> en casi todos los modelos.</p>
+        <p>Si tu trabajo diario son ediciones acotadas, <code>medium</code> baja el consumo de forma notoria sin que se sienta. Para las tareas grandes lo subes en el momento con <code>/effort</code>, que también acepta <code>max</code> para la sesión actual.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> tokens en cada mensaje del día, no solo en los pesados.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Los comandos que ya no te va a preguntar <code>permissions.allow</code></h3>
+        <p>Esta es la que más tiempo devuelve. Cada comando que apruebas manualmente cinco veces al día es una interrupción que puedes borrar de una vez, escribiéndola como regla en el archivo del proyecto para que aplique también a tu equipo.</p>
+        <p>La sintaxis es <code>Herramienta(especificador)</code>. Un asterisco al final con espacio antes exige límite de palabra: <code>Bash(ls *)</code> cubre <code>ls -la</code> pero no <code>lsof</code>. Y ojo con los comandos compuestos: una regla para <code>Bash(npm test *)</code> no autoriza <code>npm test &amp;&amp; rm -rf dist</code>, porque cada parte se evalúa por separado.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> las veinte interrupciones diarias que rompen tu concentración y la de Claude.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Las carpetas fuera del proyecto <code>permissions.additionalDirectories</code></h3>
+        <p>Claude Code trabaja dentro de la carpeta desde donde lo abriste. Si tu documentación, tus assets o el repositorio hermano viven un nivel arriba, cada acceso es una negociación.</p>
+        <p>Declarar esos directorios de una vez resuelve el 90% de los "no puedo leer ese archivo". El matiz que hay que conocer: dar acceso a una carpeta adicional no hace que Claude Code lea la configuración que viva ahí dentro. Da acceso a archivos, no a configuración.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> el ida y vuelta cada vez que el contexto que necesita está afuera del repositorio.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El timeout de los comandos largos <code>env</code></h3>
+        <p>Por default, un comando de terminal se corta a los dos minutos. Si tu suite de pruebas, tu build o tu migración tardan más, Claude Code lo ve como una falla y empieza a "arreglar" algo que no estaba roto.</p>
+        <p>El bloque <code>env</code> aplica variables de entorno a cada sesión y a los procesos que lanza. <code>BASH_DEFAULT_TIMEOUT_MS</code> sube ese piso; hay un techo separado, <code>BASH_MAX_TIMEOUT_MS</code>, que limita lo que el modelo puede pedir por su cuenta.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> ciclos completos de diagnóstico falso en proyectos con builds pesados.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. La firma en tus commits <code>attribution</code></h3>
+        <p>Por default, los commits llevan un trailer de coautoría y las descripciones de pull request llevan una línea de atribución. En muchos equipos eso está bien. En otros ensucia el historial o rompe una convención de commits.</p>
+        <p>El objeto <code>attribution</code> tiene tres campos: <code>commit</code>, <code>pr</code> y <code>sessionUrl</code>. Una cadena vacía en los dos primeros oculta la atribución; también puedes reemplazarla por tu propio texto. Reemplaza a la llave vieja <code>includeCoAuthoredBy</code>.</p>
+        <p class="plugin-for"><strong>Qué te ahorra:</strong> la conversación con el equipo que revisa tus pull requests.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar que el archivo cargó. Un settings.json con una coma de más no da error: simplemente no aparece, y tú te quedas creyendo que tus ajustes están activos. Después de editarlo, corre <code>/status</code> dentro de Claude Code y busca la línea de fuentes de settings: un archivo con JSON roto no se lista aunque exista. Si algo no cuadra, <code>/doctor</code> te dice qué entrada se descartó y por qué.</p>
+      </div>
+
+      <h2>El archivo completo, listo para pegar</h2>
+
+      <p>Este va en <code>~/.claude/settings.json</code>. Cambia los valores a los tuyos y borra lo que no uses.</p>
+
+      <pre><code>{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "sonnet",
+  "effortLevel": "medium",
+  "permissions": {
+    "allow": [
+      "Bash(npm run test *)",
+      "Bash(npm run lint *)",
+      "Bash(npm run build)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git status)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Bash(curl *)"
+    ],
+    "additionalDirectories": [
+      "../docs/"
+    ]
+  },
+  "env": {
+    "BASH_DEFAULT_TIMEOUT_MS": "300000",
+    "BASH_MAX_TIMEOUT_MS": "900000"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "cleanupPeriodDays": 30,
+  "spinnerTipsEnabled": false
+}</code></pre>
+
+      <p>La línea de <code>$schema</code> no cambia el comportamiento: le da autocompletado y validación a tu editor, que es la forma más barata de no escribir una llave que no existe.</p>
+
+      <p>Las dos últimas son de cortesía. <code>cleanupPeriodDays</code> es cuántos días guarda los archivos de sesión antes de limpiarlos —bájalo si te preocupa el espacio o el historial en disco—, y <code>spinnerTipsEnabled</code> apaga los tips del spinner cuando ya te los sabes todos.</p>
+
+      <h2>El orden en el que los pondría</h2>
+
+      <p>No pongas los seis de golpe. Cada ajuste cambia cómo se siente la herramienta y si cambias todo a la vez no sabes qué mejoró.</p>
+
+      <ol>
+        <li><strong>Primero los permisos de tu proyecto.</strong> Es el que más se nota y el más fácil de calibrar: trabaja una mañana normal y agrega a la lista cada comando que te haya interrumpido dos veces.</li>
+        <li><strong>Luego el modelo y el esfuerzo.</strong> Baja el esfuerzo un escalón y trabaja dos días así. Si no notaste la diferencia en calidad, quédate ahí.</li>
+        <li><strong>Al final los de fricción</strong> —timeouts, directorios, atribución—. Son los que arreglas cuando te topas con ellos, no antes.</li>
+      </ol>
+
+      <p>La mayoría de las llaves se recargan solas al guardar el archivo, sin reiniciar la sesión. Las dos excepciones que vas a notar son <code>model</code>, que se lee al arrancar y se cambia en caliente con <code>/model</code>, y el estilo de salida, que forma parte del prompt del sistema y se reconstruye al reiniciar o al limpiar la conversación.</p>
+
+      <p>Si el bloque de permisos te dejó con ganas de más, ahí es donde está el resto del valor: la <a href="/guias/listas-de-permisos-de-claude-code/">lista de permitidos y de prohibidos</a> es el ajuste que convierte a Claude Code en algo que puedes dejar corriendo solo. Y si quieres que además arranque sabiendo de tu proyecto, sigue con <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo CLAUDE.md</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

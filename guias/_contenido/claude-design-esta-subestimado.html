@@ -1,0 +1,115 @@
+      <p>Claude Design salió en beta y la mayoría de la gente lo abrió una vez, le pidió una landing, dijo "está bonito" y no volvió. Yo hice lo mismo la primera semana.</p>
+
+      <p>El error es tratarlo como un generador de imágenes con mejor gusto. No lo es. Lo que produce es código funcionando en un lienzo, y eso cambia por completo qué se puede hacer con él. Tres cosas en particular, que casi nadie está usando.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Claude Design es el espacio donde le describes lo que quieres y te lo construye como prototipo interactivo, presentación, dashboard, formulario, landing o flujo de app móvil, sobre un lienzo donde puedes seguir iterando.</p>
+
+      <p>Está en beta para los planes Pro, Max, Team y Enterprise —en Enterprise viene apagado por defecto y lo tiene que activar quien administre— y se entra desde <a href="https://claude.com/product/design" target="_blank" rel="noopener">claude.com/product/design</a> o desde la barra lateral de la aplicación de escritorio.</p>
+
+      <p>Un dato que conviene saber antes de emocionarse: consume del mismo bote de uso que el resto de Claude. No hay cuota aparte. Los proyectos grandes, con repositorios enteros conectados, gastan más.</p>
+
+      <h2>1. Gráficos en movimiento sin abrir un editor de video</h2>
+
+      <p>Esta es la que menos gente ve porque no está anunciada como función de animación. Está implícita en cómo funciona la herramienta: lo que genera es código, no un render. Y el código de una animación se puede editar palabra por palabra.</p>
+
+      <p>Eso quiere decir que puedes pedir un contador que sube, una barra que se llena, una transición entre estados, un gráfico que se dibuja solo, y después decir "que tarde el doble", "que arranque cuando aparezca en pantalla", "que el color cambie en el último tercio". No estás re-generando el video: estás cambiando un parámetro.</p>
+
+      <p>Para trabajo de contenido esto es enorme. Un dato animado para un post, una explicación visual de un proceso, la portada de una presentación que se mueve. Todo eso normalmente implica un editor de video, una suscripción de plantillas, o un diseñador con cola de tres días.</p>
+
+      <p>La forma de pedirlo que me funciona:</p>
+
+      <pre><code>Necesito un gráfico en movimiento para [dónde se va a usar:
+una presentación / un post / una landing].
+
+QUÉ TIENE QUE COMUNICAR: [la idea en una frase]
+DATO O CONTENIDO: [los números o el texto exacto]
+DURACIÓN: [segundos]
+FORMATO: [16:9 / 9:16 / cuadrado]
+
+Reglas:
+- La animación tiene que servir a la idea. Si un elemento se mueve
+  y no aporta a entenderla, quítalo.
+- Nada de que todo aparezca al mismo tiempo. Que entre en el orden
+  en que se lee.
+- Deja los tiempos, colores y textos como valores nombrados arriba
+  del código, para que yo pueda cambiarlos sin tocar la lógica.
+
+Antes de construir, propón 3 direcciones distintas en una línea
+cada una. Espero a que elija.</code></pre>
+
+      <p>Ese último párrafo es el truco. Sin él te da su primera idea y las siguientes veinte iteraciones son variaciones de esa. Con él, eliges la dirección antes de que se comprometa.</p>
+
+      <h2>2. Construir con tu marca de verdad, no con una aproximación</h2>
+
+      <p>La mayoría de la gente le pega los colores hexadecimales en el prompt y espera lo mejor. Funciona más o menos: acierta los colores y falla en todo lo demás —espaciados, tipografía, cómo se ven los botones, qué tan redondeadas van las esquinas.</p>
+
+      <p>La forma correcta es cargarle el sistema de diseño una vez y que todos los proyectos lo hereden. Acepta varias entradas para eso:</p>
+
+      <ul>
+        <li><strong>Un repositorio de GitHub</strong> — lee los componentes que ya existen y los usa tal cual. Es la mejor fuente si tienes producto.</li>
+        <li><strong>Tus archivos de diseño</strong> — para equipos donde la fuente de verdad vive en la herramienta de diseño y no en el código.</li>
+        <li><strong>Un código local</strong>, con el comando <code>/design-sync</code>.</li>
+        <li><strong>Subida directa</strong> de los assets, para cuando no hay ni repo ni archivo de diseño.</li>
+        <li><strong>Documentos y presentaciones</strong> cuyo estilo quieras replicar.</li>
+      </ul>
+
+      <p>Esa última entrada es la salida de emergencia para negocios chicos. Si tu identidad no vive en ningún sistema formal pero sí tienes una presentación que quedó bien y un par de piezas que te gustan, súbelas y de ahí se saca el sistema.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar el sistema de diseño que armó, antes de construir nada encima. Ábrelo y verifica que los colores, tipografías y componentes sean los correctos. Si algo quedó mal ahí, ese error se replica en cada pieza que hagas y lo vas a corregir a mano cien veces. Cinco minutos de revisión al principio valen más que cualquier prompt.</p>
+      </div>
+
+      <p>Cuando el sistema está bien cargado, el prompt de cada pieza se vuelve trivial: describes lo que quieres y sale en tu marca sin que menciones un solo color. Ese es el punto entero.</p>
+
+      <h2>3. Reconstruir un sitio desde su URL</h2>
+
+      <p>La tercera es la más práctica y la que más gente pide sin saber que se puede.</p>
+
+      <p>Claude Design acepta material de referencia: capturas, imágenes, productos de la competencia, wireframes. Así que el flujo es pasarle la referencia —la dirección del sitio y, si hace falta, capturas de las secciones que te importan— y pedirle primero el desglose y después la reconstrucción adaptada a tu marca.</p>
+
+      <p>El orden importa. Si pides "hazme algo como esto", copia lo superficial: los colores y la tipografía. Lo que quieres copiar es lo otro: la estructura, el orden de los argumentos, dónde va cada llamada a la acción, cuánto texto lleva cada bloque. Eso es lo que hace que una página convierta, y no se ve mirando.</p>
+
+      <pre><code>Vamos en dos pasos. Primero desglose, después construcción. No
+construyas nada todavía.
+
+REFERENCIA: [URL, y adjunta capturas de la página completa]
+
+PASO 1 — Desglósame la página:
+- Las secciones en orden, y qué hace cada una.
+- El argumento que sostiene cada sección: qué objeción del lector
+  está resolviendo ahí.
+- Dónde están las llamadas a la acción y qué dicen.
+- Cuánto texto lleva cada bloque, aproximadamente.
+- Qué decisiones de jerarquía tomaron: qué es lo primero que lee
+  el ojo en cada pantalla.
+- Qué NO hicieron y que uno esperaría ver. Las ausencias suelen
+  ser decisiones.
+
+Cuando tengas eso, para y muéstramelo.
+
+PASO 2 — Cuando yo te lo indique, reconstruye esa ESTRUCTURA con
+mi contenido y mi sistema de diseño. Nada de copiar textos,
+imágenes ni estilo visual: se copia el esqueleto argumental, no
+la piel.
+
+MI NEGOCIO: [qué vendes y a quién]
+MI OFERTA: [qué se lleva el cliente]
+MIS PRUEBAS: [testimonios, números, casos reales que sí tengas]</code></pre>
+
+      <p>El paso 1 por separado es lo que convierte esto en un ejercicio de estrategia y no de plagio. Y de paso te queda un documento de desglose que sirve para el resto de tus páginas.</p>
+
+      <p>Sobre lo obvio: reconstruir la estructura de una página para tu propio contenido es una cosa; clonar textos, imágenes o identidad visual de alguien más es otra, y esa sí trae problemas. El desglose está para separar una cosa de la otra. Si quieres la versión más completa de este método, está en <a href="/guias/robarle-el-diseno-a-un-sitio/">cómo robarle el diseño a cualquier sitio web con IA</a>.</p>
+
+      <h2>Por dónde sale lo que haces</h2>
+
+      <p>Un punto que decide si esto entra a tu operación o se queda en juguete: puedes bajar el resultado como ZIP, PDF, PowerPoint o HTML autónomo, mandarlo a herramientas como Canva, Miro, Adobe, Vercel, Wix, Replit, Gamma o Lovable, o pasárselo a Claude Code para seguir el trabajo en el proyecto real.</p>
+
+      <p>Esa última ruta es la que más uso. Diseñas rápido en el lienzo, y cuando la pieza ya está aprobada la mandas al código de verdad en vez de que un desarrollador la reconstruya desde una captura.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>La gente usa Claude Design para hacer piezas sueltas más rápido. Ahí el ahorro es real pero chico: te ahorras una tarde por pieza.</p>
+
+      <p>Donde sí cambia la operación es cuando dejas cargado el sistema de diseño una vez y desde ahí todo el equipo produce en la misma marca sin pasar por diseño. Eso no es hacer piezas más rápido: es que la gente que antes no podía producir, ahora produce. Y ese cambio no lo da ningún prompt bonito, lo da la media hora que le dediques al principio a cargar bien la marca.</p>

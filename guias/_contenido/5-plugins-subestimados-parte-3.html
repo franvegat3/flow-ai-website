@@ -1,0 +1,73 @@
+      <p>Los plugins que la gente instala son los que llevan el nombre de un puesto: ventas, marketing, productividad. Se entiende, porque uno busca el que se parece a su título en LinkedIn.</p>
+
+      <p>El resultado es que las piezas que más rinden en una empresa mediana se quedan sin abrir, porque nadie tiene el puesto que llevan escrito. Estas cinco son de esas. Y una aclaración antes de empezar, porque cambia cómo se instalan.</p>
+
+      <h2>Dos de estas cinco no son plugins sueltos</h2>
+
+      <p>Slack y Figma no existen como plugin propio en el marketplace oficial. Son <strong>conectores</strong>, y vienen adentro de varios plugins: Slack está en casi todos, y Figma viene dentro de los de producto y marketing.</p>
+
+      <p>La distinción importa por una razón práctica: no los vas a encontrar buscando su nombre en el marketplace. Los activas después de instalar el plugin que los trae, autorizando el conector desde la configuración. Quien no sabe esto se pasa media hora buscando "el plugin de Slack" y concluye que no existe.</p>
+
+      <p>Los otros tres —datos, búsqueda empresarial y gestión de producto— sí son plugins oficiales del repositorio <code>knowledge-work-plugins</code>.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p><strong>En Cowork o en la web:</strong> abre el <em>Marketplace</em> en la barra lateral, busca el plugin y dale instalar. El marketplace oficial ya viene conectado.</p>
+
+      <p><strong>En Claude Code:</strong> agregas el marketplace una vez y de ahí instalas.</p>
+
+      <pre><code>claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install data@knowledge-work-plugins</code></pre>
+
+      <p>Y después —esta es la parte que cuenta— entras a la configuración de conectores y autorizas uno por uno los que sí vas a usar. Instalar no conecta nada.</p>
+
+      <h2>Los cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Datos <code>data</code></h3>
+        <p>Escribe consultas, corre el análisis, arma visualizaciones y valida su propio resultado. Trae conectores a Snowflake, Databricks, BigQuery, Definite, Hex, Amplitude y Jira.</p>
+        <p>Está subestimado porque todo mundo asume que es para analistas, y los analistas ya saben hacer esto. Para quien de verdad es, es para el gerente comercial que lleva año y medio pidiéndole al área de datos el mismo corte y esperando cuatro días.</p>
+        <p class="plugin-for"><strong>Para correr hoy:</strong> pídele el corte que más pides. No "analiza las ventas": "dame ingreso por vendedor y por mes de los últimos seis meses, señala quién cayó dos meses seguidos, y dime qué otra tabla necesitarías para saber por qué".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Búsqueda empresarial <code>enterprise-search</code></h3>
+        <p>Una pregunta que busca al mismo tiempo en Slack, Notion, Guru, Jira, Asana y Microsoft 365. Suena poco atractivo hasta que cuentas cuántas veces al mes alguien de tu equipo pregunta algo que ya estaba contestado.</p>
+        <p>El uso que nadie ve es el de la decisión: no buscar un archivo, sino reconstruir por qué se decidió algo. Ese rastro está partido entre un hilo de Slack de marzo, un comentario en un documento y un ticket cerrado. Ningún humano lo junta; esto sí.</p>
+        <p class="plugin-for"><strong>Para correr hoy:</strong> "Reconstruye cómo llegamos a la decisión de [tema]: quién la propuso, qué alternativas se descartaron, con qué argumento, y qué quedó pendiente de revisar."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Gestión de producto <code>product-management</code></h3>
+        <p>Especificaciones, roadmap, síntesis de investigación de usuarios, actualizaciones a interesados y monitoreo de competencia. Es el plugin con más conectores del catálogo: Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies y Slack.</p>
+        <p>La razón para instalarlo aunque no seas de producto: esa lista de conectores es prácticamente todo lo que usa un equipo que construye algo. Si tu empresa no tiene área de producto pero sí tiene un roadmap improvisado en una hoja, este es el plugin que lo ordena.</p>
+        <p class="plugin-for"><strong>Para correr hoy:</strong> "Toma los tickets cerrados del último trimestre y las conversaciones de soporte, y dime qué tres problemas siguen apareciendo aunque ya los hayamos marcado como resueltos."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Slack (conector, dentro de casi todos)</h3>
+        <p>Es el conector más común y el peor aprovechado. La mayoría lo usa para buscar mensajes, que es la décima parte de lo que da.</p>
+        <p>Donde cambia el día es en la síntesis por canal: qué se decidió esta semana, qué quedó bloqueado, quién pidió algo que nadie contestó. En una empresa con veinte canales activos, esa es la información que se pierde todos los viernes. Y el mejor momento para usarlo es el lunes, no para leer todo, sino para no leer nada.</p>
+        <p class="plugin-for"><strong>Para correr hoy:</strong> "De los canales de operación de la última semana: decisiones tomadas, bloqueos abiertos, y peticiones que llevan más de dos días sin respuesta, con el enlace al mensaje."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Figma (conector, dentro de producto y marketing)</h3>
+        <p>Lee tus archivos de diseño. La reacción normal es "¿y para qué, si yo no diseño?". Para dos cosas que sí te tocan.</p>
+        <p>La primera: sacar los textos de una interfaz o de una campaña sin abrir Figma ni pedirle capturas a nadie, para revisarlos, corregirlos o traducirlos. La segunda: comparar lo que dice el diseño contra lo que dice la especificación, que es donde se cuelan las diferencias que después alguien descubre en producción.</p>
+        <p class="plugin-for"><strong>Para correr hoy:</strong> "Extrae todos los textos de este archivo de Figma y revísalos contra nuestra guía de tono. Señala los que no cumplen y propón el cambio, respetando el largo original."</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar el alcance del conector antes de autorizarlo. Al conectar Slack, lo normal es aprobar el acceso completo al espacio de trabajo sin mirar. Si en tus canales hay información de compensaciones, contratos o clientes, ese es el momento de acotar. Conecta primero los canales de operación y deja fuera los sensibles hasta que sepas cómo lo estás usando.</p>
+      </div>
+
+      <h2>Cuál instalar y en qué orden</h2>
+
+      <p>Uno a la vez, con dos semanas entre uno y otro. Cada plugin agrega skills que compiten por la atención del modelo, y una instalación masiva te deja con un Claude que sabe de todo y no es bueno en nada.</p>
+
+      <p>La regla para elegir: instala el que corresponda a la información que hoy está regada. Si tu problema es que nadie encuentra nada, empieza por búsqueda empresarial. Si tu problema es que las decisiones dependen de que alguien tenga tiempo de sacar un corte, empieza por datos. Si tu problema es que el equipo trabaja bien pero nadie sabe por qué se priorizó lo que se priorizó, es gestión de producto.</p>
+
+      <p>Y la señal de que está funcionando no es que lo uses mucho. Es que puedas pedirle algo en una frase, sin explicar el contexto, y salga bien. Si sigues escribiendo tres párrafos de preámbulo, el plugin está puesto pero los conectores no están dando materia prima. Eso se arregla conectando, no instalando otro.</p>
+
+      <p>Si vienes llegando, <a href="/guias/plugins-cowork/">los diez plugins de Cowork</a> es el punto de partida, y <a href="/guias/5-plugins-subestimados/">la primera tanda de subestimados</a> cubre operaciones, recursos humanos, diseño, voz de marca y negocio pequeño.</p>

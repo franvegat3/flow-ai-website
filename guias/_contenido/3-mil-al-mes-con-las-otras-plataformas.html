@@ -1,0 +1,119 @@
+      <p>Hay un creador con cuatrocientos mil seguidores en TikTok y ochocientos en LinkedIn. Otro que llena un podcast cada semana y no ha subido un clip a YouTube en año y medio. Otra que vive de Instagram y tiene el usuario de X apartado desde 2021, sin una sola publicación.</p>
+
+      <p>Todos saben que están dejando dinero en la mesa. Ninguno lo va a arreglar, porque el problema no es que no sepan: es que ya tienen un canal que les funciona y reformatear para los demás es trabajo aburrido que no les paga esta semana.</p>
+
+      <p>Ese hueco es un servicio. Tú corres sus otras plataformas por una iguala mensual, con IA haciendo el trabajo pesado y tú poniendo el criterio. Aquí va cómo se encuentra al cliente, qué se le dice, cómo se arma el sistema por dentro y cómo se pone el precio sin engañar a nadie.</p>
+
+      <h2>Primero, la aritmética honesta</h2>
+
+      <p>El número del título es un gancho y quiero desarmarlo antes de seguir. Nadie te va a pagar tres mil dólares al mes por correrle una cuenta. Tres mil dólares es la suma de tres o cuatro clientes chicos, y llegar ahí toma meses de prospección, no un fin de semana.</p>
+
+      <p>Lo que sí es real es la estructura: es un servicio recurrente, el costo marginal de sumar un cliente baja mucho una vez que armaste el sistema, y el trabajo se puede hacer desde México para clientes que cobran en dólares. Esa combinación es la que hace que el negocio valga la pena, no la cifra.</p>
+
+      <h2>A quién buscar: los cuatro filtros</h2>
+
+      <p>El error de principiante es escribirle al creador más grande que encuentras. Ese ya tiene equipo. Busca el perfil específico:</p>
+
+      <ul>
+        <li><strong>Fuerte en una plataforma, callado en las demás.</strong> Audiencia sólida en su canal principal y cuentas abandonadas o inexistentes en el resto. La diferencia tiene que ser obvia.</li>
+        <li><strong>Que ya monetice.</strong> Vende un curso, una asesoría, una comunidad, un producto. Si no tiene de dónde pagarte, no importa cuántos seguidores traiga.</li>
+        <li><strong>Que produzca material largo.</strong> Podcast, entrevistas, transmisiones, videos de diez minutos. Ese es tu insumo. Un creador que solo hace clips de quince segundos no te da materia prima para reformatear.</li>
+        <li><strong>Que publique seguido.</strong> Si sube algo cada semana, tienes flujo. Si sube cada mes, tu servicio no tiene qué procesar.</li>
+      </ul>
+
+      <p>La búsqueda es manual y es la parte que nadie quiere hacer. Escoge un nicho —finanzas personales, fitness, bienes raíces, negocios B2B— y arma una lista de treinta nombres con su conteo de seguidores por plataforma y su fecha de última publicación en cada una. Esa hoja es tu activo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> antes de escribirle a nadie, hazle el trabajo a uno. Escoge al mejor prospecto de tu lista, toma su contenido más reciente y produce cinco piezas terminadas para la plataforma que tiene abandonada. Sin pedirle permiso y sin publicar nada. Ese paquete es tu mensaje de contacto. La tasa de respuesta entre "te ofrezco un servicio" y "aquí están cinco piezas listas, dime si las quieres" no se parece en nada.</p>
+      </div>
+
+      <h2>El pitch</h2>
+
+      <p>Corto, específico y sin adjetivos. Este es el mensaje que mando:</p>
+
+      <pre><code>Hola [NOMBRE]:
+
+Tienes [NÚMERO] seguidores en [PLATAFORMA FUERTE] y [NÚMERO] en
+[PLATAFORMA DÉBIL]. Tu último post ahí es de [FECHA].
+
+Tomé tu [episodio / video] de [TEMA] y saqué cinco piezas para
+[PLATAFORMA DÉBIL]. Van adjuntas. Úsalas aunque no trabajemos
+juntos.
+
+Si te sirven, hago eso mismo cada semana por una iguala mensual:
+yo produzco, tú apruebas en un solo lugar, yo publico y te mando
+el reporte. Tú no cambias nada de cómo grabas.
+
+¿Te mando la propuesta o te dejo con las cinco piezas y ya?</code></pre>
+
+      <p>La última línea es la que más me ha funcionado. Le das salida y por eso contesta.</p>
+
+      <p>En la llamada, una sola regla: no vendas IA. Al cliente le da exactamente igual con qué lo haces. Véndele que su cuenta de LinkedIn deje de estar muerta sin que él tenga que pensar en LinkedIn.</p>
+
+      <h2>El sistema por dentro</h2>
+
+      <p>Son cinco pasos y cuatro los hace la máquina.</p>
+
+      <ol>
+        <li><strong>Ingesta.</strong> Cada vez que el cliente publica algo largo, baja el audio y transcríbelo. Esto se automatiza y de ahí en adelante ya no vuelves a tocarlo.</li>
+        <li><strong>Extracción de ideas.</strong> De la transcripción salen las unidades reutilizables: la afirmación fuerte, la historia, el dato, el error común que corrige, la analogía. Aquí es donde la IA gana tiempo de verdad.</li>
+        <li><strong>Adaptación por plataforma.</strong> No es copiar y pegar el mismo texto en cuatro lados. Cada plataforma tiene su forma y su público, y publicar lo mismo en todas es la razón número uno por la que este servicio se cancela al segundo mes.</li>
+        <li><strong>Aprobación.</strong> Un solo lugar donde el cliente ve todo lo de la semana y aprueba o tacha. Si le mandas cosas por mensaje suelto, te vas a pasar la vida persiguiéndolo.</li>
+        <li><strong>Publicación y reporte.</strong> Programado, y un reporte mensual de una página. El reporte no es cortesía: es lo que hace que te renueven cuando el mes estuvo flojo.</li>
+      </ol>
+
+      <p>El prompt de extracción es el corazón del sistema. Este es el mío:</p>
+
+      <pre><code>Eres editor de contenido para [NOMBRE DEL CREADOR].
+
+Su tema es [NICHO]. Su público es [DESCRIPCIÓN]. Su forma de
+hablar: [3 rasgos: por ejemplo, directo, con ejemplos de cliente,
+sin tecnicismos].
+
+Abajo va la transcripción de su último [episodio / video].
+
+PASO 1. Sácame 12 ideas reutilizables. Para cada una:
+  - La idea en una frase.
+  - La cita textual de la transcripción que la sostiene.
+  - Qué tan fuerte es sola, sin el contexto del episodio (1 a 5).
+
+PASO 2. De las 5 mejores, arma para cada una:
+  - Un post de LinkedIn: gancho en la primera línea, desarrollo
+    en párrafos cortos, cierre con una pregunta concreta.
+  - Un hilo corto para X: 4 a 6 publicaciones, la primera
+    autosuficiente.
+  - Un guion de video vertical de 40 segundos: primeros
+    3 segundos con la afirmación más fuerte, sin presentación.
+
+REGLAS
+- Usa solo lo que él dijo. No agregues datos, cifras ni ejemplos
+  que no estén en la transcripción.
+- Nada de emojis ni de lenguaje de anuncio.
+- Si una idea no aguanta sola, no la fuerces: descártala.
+
+TRANSCRIPCIÓN:
+[PEGAR]</code></pre>
+
+      <h2>Cómo pongo el precio</h2>
+
+      <p>No te puedo dar una tarifa de mercado, porque no existe una y el que te la presente se la está inventando. Lo que sí te puedo dar es cómo armo yo la escalera, para que la ajustes a tu costo y a tu cliente.</p>
+
+      <ul>
+        <li><strong>Nivel de entrada — una plataforma.</strong> Ocho a doce piezas al mes en un solo canal, más el reporte. Es un servicio chico y hay que cobrarlo como tal: en México lo he visto funcionar en el rango de lo que una empresa paga por un freelance de medio tiempo, entre quince y treinta mil pesos mensuales según el volumen.</li>
+        <li><strong>Nivel medio — dos o tres plataformas.</strong> Aquí es donde vive el negocio. El trabajo no se duplica porque la extracción ya está hecha, pero el valor para el cliente sí sube mucho. Cobra por plataforma adicional, no por pieza.</li>
+        <li><strong>Nivel alto — todo el ecosistema más estrategia.</strong> Incluye decidir qué se produce, no solo reformatear lo que ya existe. Este ya se cotiza en dólares y solo se lo vendes a alguien que monetiza fuerte.</li>
+      </ul>
+
+      <p>Dos reglas de cobro que no negocio: <strong>por mes, nunca por pieza</strong> —cobrar por pieza te convierte en maquila y te castiga por ser eficiente— y <strong>tres meses mínimo</strong>, porque una cuenta abandonada no muestra resultados en treinta días y vas a quedar mal por algo que no depende de ti.</p>
+
+      <h2>Por qué se cae este servicio</h2>
+
+      <p>Se cae por tres cosas y las tres son evitables.</p>
+
+      <p>La primera es publicar lo mismo en todos lados. El público se cruza más de lo que crees y el creador lo detecta al instante. Si tu entregable se siente automático, contrató una máquina y las máquinas se cancelan sin culpa.</p>
+
+      <p>La segunda es no sonar como él. Los primeros treinta días son de calibración: le mandas, te corrige, tú anotas la corrección en las instrucciones y no vuelves a cometerla. Ese archivo de correcciones es tu producto real, y es lo que hace que a los seis meses ya no te puedan cambiar por otro proveedor.</p>
+
+      <p>La tercera es prometer números. Tú controlas que se publique bien y seguido; no controlas el algoritmo. Vende consistencia y presencia, mide alcance y crecimiento, y no firmes nada que hable de ventas atribuidas. El que promete resultados de algoritmo dura un trimestre.</p>
+
+      <p>Si vas a construir la parte automática, empieza por la <a href="/guias/publicar-mejor-no-mas/">diferencia entre publicar más y publicar mejor</a> y por el <a href="/guias/agente-que-hace-crecer-mis-redes/">agente que corre mis redes</a>, que es la versión que uso para mis propias cuentas antes de venderla.</p>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Se te olvida que Claude también ve — Guías Flow AI</title>
+  <meta name="description" content="Claude tiene ojos y casi nadie los usa. Dos formas de usar capturas de pantalla: pegarle un diseño que te encanta y decirle que se parezca, y que se tome captura de su propio trabajo y arregle lo que salió mal." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-tambien-ve/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Se te olvida que Claude también ve" />
+  <meta property="og:description" content="Claude tiene ojos y casi nadie los usa. Dos formas de usar capturas de pantalla: pegarle un diseño que te encanta y decirle que se parezca, y que se tome captura de su propio trabajo y arregle lo que salió mal." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-tambien-ve/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Creativo</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Creativo</span><span class="tag">Prompts</span></div>
+      <h1>Se te olvida que Claude también ve</h1>
+      <p class="lead">Claude tiene ojos y casi nadie los usa. Dos formas de usar capturas de pantalla: pegarle un diseño que te encanta y decirle que se parezca, y que se tome captura de su propio trabajo y arregle lo que salió mal.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Llevas meses describiéndole cosas con palabras. "Que se vea más limpio", "que el botón resalte más", "el reporte se ve raro". Y del otro lado hay un modelo que puede mirar una imagen y decirte exactamente qué tiene mal.</p>
+
+      <p>Casi nadie usa esa parte. La gente escribe párrafos tratando de explicar una pantalla, cuando podría pegar la pantalla.</p>
+
+      <p>Hay dos formas de usarlo que valen por todas las demás: enseñarle algo que te gusta para que se le parezca, y hacer que se tome captura de su propio trabajo para que vea lo que hizo mal. La segunda es la que casi nadie conoce y la que cambia los resultados de verdad.</p>
+
+      <h2>Cómo se le pasa una imagen</h2>
+
+      <p>En el chat es obvio: la arrastras. En la terminal, con Claude Code, hay tres caminos y conviene conocer los tres:</p>
+
+      <ul>
+        <li><strong>Arrastrar</strong> la imagen a la ventana de Claude Code.</li>
+        <li><strong>Pegar</strong> con <code>Ctrl+V</code>. En Mac, <code>Cmd+V</code> también funciona en iTerm2.</li>
+        <li><strong>Darle la ruta</strong>: "analiza esta imagen: <code>/ruta/a/tu/captura.png</code>". Es el que uso más, porque funciona igual en cualquier terminal y deja rastro escrito de qué imagen se usó.</li>
+      </ul>
+
+      <p>Puedes meter varias imágenes en la misma conversación y compararlas entre sí. Ahí está la mitad del valor: no "mira esto", sino "mira estas dos y dime en qué se diferencian".</p>
+
+      <h2>Forma 1: el diseño que te encanta</h2>
+
+      <p>El error clásico es pegar una captura y escribir "hazme algo así". Lo que sale es una imitación general y borrosa, porque el modelo tuvo que adivinar qué parte te gustó.</p>
+
+      <p>El arreglo es partirlo en dos pasos: primero que <em>describa</em>, luego que <em>construya</em>. Cuando lo obligas a poner en palabras lo que ve, tú puedes corregir la lectura antes de que escriba una línea de código.</p>
+
+      <pre><code>Te paso una captura de una interfaz que me gusta.
+
+PASO 1 — DESCRÍBELA, NO LA CONSTRUYAS TODAVÍA
+Escribe qué ves, en este orden:
+- Estructura: cuántas zonas hay, cómo están repartidas, qué manda
+  la jerarquía visual y por qué.
+- Espaciado: qué tan generoso es, dónde hay aire y dónde no.
+- Tipografía: cuántos tamaños distintos hay, qué pesos, cómo se
+  distingue un título de un dato.
+- Color: cuántos colores reales hay, cuál es el de acento y en qué
+  se usa exactamente.
+- Detalles: bordes, sombras, esquinas, íconos.
+- Las 3 decisiones que hacen que esto se vea bien y que la mayoría
+  de la gente no haría.
+
+PASO 2 — ESPERA
+Te voy a corregir la descripción antes de que construyas nada.
+
+PASO 3 — CONSTRUYE
+Cuando te dé el visto bueno, aplica ESAS decisiones a lo mío:
+[describe tu pantalla, tu reporte o tu página]
+No copies el contenido de la referencia ni su marca. Copia las
+decisiones de diseño.
+
+Restricciones mías:
+- Mis colores de marca son: [ponlos]
+- Tiene que funcionar en móvil
+- [lo que no se puede tocar]</code></pre>
+
+      <p>La sección de las tres decisiones es la que más rinde. Casi siempre lo que te gustó de un diseño no es el color: es que alguien decidió usar dos tamaños de letra en lugar de seis.</p>
+
+      <h2>Forma 2: que vea su propio trabajo</h2>
+
+      <p>Esta es la buena. Cuando Claude construye algo visual —una página, un dashboard, un reporte, una gráfica— no tiene ni idea de cómo quedó. Escribió código y asumió que se ve como lo imaginó. Por eso te entrega cosas con texto encimado, un botón fuera de la pantalla y una tabla que se desborda.</p>
+
+      <p>La solución es cerrar el ciclo: que lo abra, se tome captura y se mire.</p>
+
+      <p>En Mac hay un comando del sistema para capturar la pantalla sin ruido, y Claude Code lo puede correr él mismo desde la terminal:</p>
+
+      <pre><code>screencapture -x /tmp/revision.png</code></pre>
+
+      <p>Y para algo que vive en el navegador, la vía limpia es conectarle un servidor MCP de navegador —Playwright o Puppeteer— para que abra la página, la capture a distintos anchos y lea el resultado. Si no quieres instalar nada, la versión de a pie funciona igual de bien: haces tú la captura, se la pegas, y le das la instrucción de revisión.</p>
+
+      <p>La instrucción, en cualquiera de los tres casos, es esta:</p>
+
+      <pre><code>Abre lo que acabas de construir, tómale captura y míralo.
+
+Revísalo contra esta lista, una por una, y para cada punto responde
+BIEN o MAL con la evidencia visual:
+1. ¿Hay texto cortado, encimado o que se sale de su contenedor?
+2. ¿Algo se desborda horizontalmente?
+3. ¿Los espacios entre bloques son consistentes o hay uno raro?
+4. ¿La alineación es real o hay elementos con 2 o 3 píxeles de
+   diferencia?
+5. ¿Se lee el texto sobre su fondo, incluso el secundario?
+6. ¿Lo primero que ve el ojo es lo más importante de la pantalla?
+
+Luego repite la captura a 390 píxeles de ancho y contesta lo mismo.
+
+Después arregla SOLO lo que marcaste MAL, vuelve a capturar y
+enséñame el antes y el después. No me cuentes lo que arreglaste:
+enséñame las dos imágenes.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedir la segunda captura. Si no lo obligas a volver a mirar después de arreglar, te va a decir que quedó perfecto sin haber visto nada. La frase "vuelve a capturar y enséñame el antes y el después" es literalmente la que convierte esto en un ciclo cerrado. Sin ella son dos pasos sueltos.</p>
+      </div>
+
+      <h2>Dónde rinde más en una operación</h2>
+
+      <p>Fuera de diseño, donde más lo uso es en revisión. Un equipo de contenido que produce piezas para redes puede pasarle la captura del anuncio junto con la guía de marca en texto y pedir el veredicto punto por punto: si el logo tiene el aire mínimo, si el texto ocupa menos del porcentaje que la plataforma tolera, si el color de fondo es el de marca o uno parecido.</p>
+
+      <p>El otro caso es el reporte semanal. Le pasas la captura del panel de la plataforma —de anuncios, de ventas, del CRM— y le pides que lea los números y los compare contra la semana anterior. No es que no puedas exportar los datos; es que muchas veces la exportación tarda más que la captura, y para una revisión rápida da igual.</p>
+
+      <h2>La trampa</h2>
+
+      <p>Una captura no reemplaza al dato. Si le pides que lea cifras de una imagen y luego construyas una decisión sobre ellas, verifica los números contra la fuente. Para revisar cómo se ve algo, la imagen es la fuente correcta. Para calcular sobre números, no lo es.</p>
+
+      <p>Con esa sola regla en la cabeza, el ojo de Claude pasa de curiosidad a herramienta diaria. Si lo que quieres es replicar un sitio completo y no una pantalla, sigue con <a href="/guias/robarle-el-diseno-a-un-sitio/">robarle el diseño a un sitio</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+      <p>En una junta de la semana pasada alguien dijo "le montamos un MCP a la skill dentro del proyecto para que el agente lea del conector". Todos asintieron. Después, en privado, dos me preguntaron qué había querido decir.</p>
+
+      <p>El vocabulario de la IA creció más rápido que la gente que lo usa. Y hay un costo real: cuando no distingues una skill de un conector, contratas mal, compras mal y pides mal. He visto empresas pagar por un desarrollo de tres meses para algo que era prender una casilla.</p>
+
+      <p>Esto es el diccionario que le paso a los equipos con los que trabajo, en el orden en que las piezas se apilan. No es un glosario alfabético: es el mapa de cómo encaja cada cosa con la de al lado. Si buscas los términos más de fondo —qué es un token, qué es RAG, por qué alucina— eso está en <a href="/guias/10-terminos-de-ia/">los 10 términos explicados como si tuvieras 10 años</a>. Esta guía es la capa de arriba: las palabras que aparecen en los botones y en las juntas.</p>
+
+      <h2>La regla que ordena todo</h2>
+
+      <p>Cinco capas, siempre en el mismo orden. Cada término del diccionario cae en una:</p>
+
+      <ol>
+        <li><strong>El motor</strong> — qué tan capaz es lo que responde.</li>
+        <li><strong>Lo que sabe de ti</strong> — el contexto que le llega.</li>
+        <li><strong>Lo que puede tocar</strong> — sus accesos al mundo real.</li>
+        <li><strong>Cómo trabaja</strong> — el oficio empaquetado.</li>
+        <li><strong>Qué tan solo lo hace</strong> — la autonomía.</li>
+      </ol>
+
+      <p>Cuando alguien te venda algo de IA, ubica en cuál de las cinco cae. Casi todo lo que se vende como "IA para tu empresa" es capa 3 o 4 con nombre nuevo.</p>
+
+      <h2>El diccionario</h2>
+
+      <div class="plugin-card">
+        <h3>1. Modelo</h3>
+        <p>El motor. Cuando eliges entre Opus, Sonnet, Haiku, GPT o Gemini estás eligiendo modelo: qué tan bien razona, qué tan rápido responde y cuánto cuesta cada respuesta. Los modelos grandes piensan mejor y cuestan más; los chicos son rápidos y baratos. La mayoría de la gente usa el más caro para todo, que es como mandar al director general a sacar copias.</p>
+        <p class="plugin-for"><strong>Dónde lo ves:</strong> el menú desplegable arriba del chat.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Ventana de contexto</h3>
+        <p>Todo lo que el modelo puede tener presente en una sola conversación: tus mensajes, sus respuestas, los archivos que subiste. Es finita. Cuando se llena, empieza a perder lo del principio y por eso una conversación larga se vuelve tonta de golpe. No es que se le olvide: es que ya no le cabe.</p>
+        <p class="plugin-for"><strong>La señal:</strong> te repite algo que ya habías descartado hace veinte mensajes. Abre chat nuevo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Memoria</h3>
+        <p>Lo que sí sobrevive entre conversaciones. Es un archivo aparte con hechos sobre ti —a qué te dedicas, cómo escribes, qué ya decidiste— que se le entrega al arrancar cada chat. Sin memoria, cada mañana empiezas explicando quién eres. Con memoria, arrancas donde te quedaste.</p>
+        <p class="plugin-for"><strong>Ojo:</strong> también recuerda cosas que ya no son ciertas. Revísala cada tanto.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Proyecto</h3>
+        <p>Un espacio con instrucciones y archivos propios. Todas las conversaciones que abras adentro heredan ese contexto. Un proyecto de "propuestas comerciales" con tus tres mejores propuestas adentro te da un resultado distinto al de pegar lo mismo en un chat suelto, porque el material vive ahí y no lo tienes que volver a subir.</p>
+        <p class="plugin-for"><strong>Cuándo usarlo:</strong> cuando repites un tipo de tarea, no cuando repites una tarea.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Artifact</h3>
+        <p>El resultado sale como una pieza aparte, viva, en un panel al lado del chat: un documento, una tabla, una calculadora, una mini aplicación. La diferencia con una respuesta normal es que lo puedes iterar sin regenerar todo y, en muchos casos, publicarlo y compartirlo por link.</p>
+        <p class="plugin-for"><strong>Para qué sirve de verdad:</strong> convertir un análisis en una herramienta que tu equipo usa después.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Conector</h3>
+        <p>Un acceso a una de tus herramientas: tu correo, tu Drive, tu calendario, tu CRM. Es lo que convierte "escríbeme un correo" en "contesta el correo de este cliente con lo que dice su expediente". Sin conectores, la IA opina sobre un mundo que no ve.</p>
+        <p class="plugin-for"><strong>Regla dura:</strong> conecta solo lo que vas a usar, y define los permisos antes, no después.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. MCP</h3>
+        <p>Las siglas de Model Context Protocol. Es el estándar que hace que cualquier herramienta se pueda conectar a cualquier IA sin que alguien programe una integración a la medida. Un conector es la puerta; MCP es el tipo de cerradura que todos acordaron usar. Anthropic lo publicó como estándar abierto y lo adoptaron otros, que es la parte relevante: lo que conectas hoy no queda amarrado a una sola marca.</p>
+        <p class="plugin-for"><strong>Traducción para el jefe:</strong> menos desarrollo a la medida para integrar herramientas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Skill</h3>
+        <p>Conocimiento de oficio empaquetado en un archivo. No es un prompt guardado: es la forma en que se hace algo en tu casa —cómo se arma un reporte, qué revisa un buen editor, qué no se dice nunca en una propuesta— y la IA la usa sola cuando la tarea la amerita. Es la pieza que convierte tu criterio en algo reutilizable.</p>
+        <p class="plugin-for"><strong>La prueba:</strong> si tuviste que explicar lo mismo tres veces, eso era una skill.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Comando</h3>
+        <p>Un atajo que tú invocas a propósito, escrito con diagonal, tipo <code>/resumen</code>. La diferencia con una skill es quién decide: la skill se activa sola cuando aplica, el comando lo disparas tú. Los dos pueden hacer lo mismo por dentro.</p>
+        <p class="plugin-for"><strong>Cuándo prefieres comando:</strong> cuando el proceso tiene que correr igual siempre.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. Plugin</h3>
+        <p>Un paquete que trae skills, conectores y comandos de un área completa, listos para instalar en un solo paso. En vez de armar tú el kit de ventas pieza por pieza, instalas el de ventas. Es la forma más rápida de saltar del chat genérico a algo que ya sabe cómo se trabaja en tu función.</p>
+        <p class="plugin-for"><strong>Más a fondo:</strong> <a href="/guias/plugins-cowork/">los 10 plugins que sí cambian tu día</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>11. Agente</h3>
+        <p>Una IA que decide sus propios pasos para llegar a un objetivo, en vez de contestar una pregunta. Le dices el resultado que quieres; ella elige qué herramienta usar, en qué orden, y cuándo terminó. Un subagente es lo mismo, pero lanzado por otro agente para una parte del trabajo, con su propio contexto limpio.</p>
+        <p class="plugin-for"><strong>La distinción cara:</strong> si los pasos siempre son los mismos, no necesitas un agente, necesitas un flujo. Está en <a href="/guias/skill-workflow-o-agente/">skill, workflow o agente</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>12. Cowork</h3>
+        <p>El entorno donde la IA trabaja con tus archivos y herramientas en tareas largas, en vez de contestarte mensaje por mensaje. Es la diferencia entre pedirle un texto y encargarle un pendiente. Ahí es donde viven los plugins y donde tiene sentido hablar de agentes.</p>
+        <p class="plugin-for"><strong>El cambio mental:</strong> dejas de escribir preguntas y empiezas a repartir trabajo.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El error que más caro sale:</strong> confundir skill con conector al momento de contratar. Un proveedor que te cobra por "entrenar la IA con tu información" muchas veces está escribiendo skills, que es trabajo de redacción y criterio, no de programación. Pregunta siempre en cuál de las cinco capas cae lo que te están vendiendo. Si no lo saben contestar, ya sabes.</p>
+      </div>
+
+      <h2>Cómo encaja todo junto</h2>
+
+      <p>Una frase que lo amarra: <em>el modelo piensa, el contexto le dice de qué, el conector le da con qué, la skill le dice cómo, y el agente decide cuándo.</em></p>
+
+      <p>Aterrizado en una operación real. Un área comercial quiere que la preparación de llamadas deje de depender de que cada vendedor sea aplicado. El modelo es el motor; el proyecto guarda las tres mejores llamadas de la empresa; el conector trae el expediente del prospecto desde el CRM; la skill contiene cómo se prepara una llamada en esa empresa y qué preguntas nunca se hacen; el comando <code>/preparar</code> lo dispara antes de cada cita; y si lo quieres corriendo cada mañana sobre la agenda del día sin que nadie lo pida, eso ya es un agente.</p>
+
+      <p>Cinco piezas, cinco decisiones distintas. La mayoría de los proyectos de IA que fracasan compraron la quinta sin haber hecho la tercera.</p>
+
+      <h2>Los términos que puedes ignorar</h2>
+
+      <p>Hay vocabulario que suena importante y no te cambia ninguna decisión: cuántos parámetros tiene un modelo, qué arquitectura usa, si es "de razonamiento". Son datos de ficha técnica. Ninguno te dice si te va a servir el martes.</p>
+
+      <p>Lo único que sí decide: qué tan bien hace tu tarea, qué puede tocar de tus herramientas, y cuánto cuesta correrlo mil veces. Todo lo demás es conversación de pasillo.</p>

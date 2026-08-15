@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La plantilla de guardrails para tus agentes — Guías Flow AI</title>
+  <meta name="description" content="Karpathy dejó a su IA correr 700 experimentos sola. Los 4 guardrails que hicieron que fuera seguro, como plantilla para copiar y pegar en tus propios agentes." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/plantilla-de-guardrails-para-agentes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La plantilla de guardrails para tus agentes" />
+  <meta property="og:description" content="Karpathy dejó a su IA correr 700 experimentos sola. Los 4 guardrails que hicieron que fuera seguro, como plantilla para copiar y pegar en tus propios agentes." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/plantilla-de-guardrails-para-agentes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">Agentes</span></div>
+      <h1>La plantilla de guardrails para tus agentes</h1>
+      <p class="lead">Karpathy dejó a su IA correr 700 experimentos sola. Los 4 guardrails que hicieron que fuera seguro, como plantilla para copiar y pegar en tus propios agentes.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>En marzo, Andrej Karpathy dejó a un agente correr alrededor de 700 experimentos de entrenamiento en su GPU durante dos días. El agente modificaba el código, medía el resultado, se quedaba con lo que mejoraba y tiraba lo que no. Sin que nadie lo supervisara turno por turno.</p>
+
+      <p>El número llamó la atención de todo mundo. Lo que casi nadie miró es por qué eso pudo correr solo sin convertirse en un desastre, y esa parte sí es copiable a cualquier agente de negocio.</p>
+
+      <p>No fue que el modelo fuera mejor. Fueron cuatro restricciones de diseño. Abajo están las cuatro, traducidas a trabajo de empresa, y la plantilla completa para pegar en tu propio agente.</p>
+
+      <h2>Guardrail 1 — el agente puede calificar su propio trabajo</h2>
+
+      <p>Cada cambio se medía contra el mejor resultado que llevaba hasta ese momento. Mejor, se queda. Peor, se descarta. No había opinión de por medio.</p>
+
+      <p>Esta es la condición que decide si un trabajo se puede delegar o no. <strong>Si una IA no puede distinguir un buen resultado de uno malo, no puede correr sola.</strong> Punto. Todo lo demás —mejor modelo, mejor prompt, más herramientas— no arregla eso.</p>
+
+      <p>En una operación real el criterio casi nunca es un número tan limpio, pero casi siempre existe alguno: la cotización cuadra con la lista de precios vigente, el correo tiene los cuatro datos que el cliente pidió, el registro del CRM tiene teléfono válido y etapa asignada, el reporte suma lo mismo que la fuente. Si al escribirlo no te sale nada verificable, esa tarea todavía es tuya.</p>
+
+      <h2>Guardrail 2 — todo cambio es reversible</h2>
+
+      <p>Una mala idea nunca rompió nada porque siempre había cómo deshacerla. Eso es lo que permite equivocarse 680 veces y quedarse con las 20 buenas.</p>
+
+      <p>La traducción práctica: el agente trabaja sobre copias, en borrador, o sobre un estado versionado. Nada de escribir directo sobre el registro bueno. En la práctica esto se ve como escribir en una columna nueva y no encima de la vieja, dejar el correo en borradores en vez de enviarlo, crear una rama en vez de tocar la principal, o guardar el archivo nuevo junto al original en vez de reemplazarlo.</p>
+
+      <p>Es la restricción más barata de implementar y la que más gente se salta por prisa.</p>
+
+      <h2>Guardrail 3 — no cambia sus metas ni su criterio de evaluación</h2>
+
+      <p>El agente optimizaba dentro de un objetivo que le pusieron. No podía reescribir qué era ganar ni cómo se medía.</p>
+
+      <p>En negocio esto falla de una forma muy concreta y muy común: le pides al agente que mejore un indicador y encuentra el atajo. Le pides que suba la tasa de respuesta y empieza a mandar asuntos sensacionalistas. Le pides que cierre tickets y los cierra sin resolver. No está haciendo trampa —está haciendo exactamente lo que le pediste, y eso es peor.</p>
+
+      <p>El criterio de éxito y la definición de la tarea son tuyos y no se tocan. Si el agente cree que el criterio está mal, que lo diga y se detenga, no que lo ajuste.</p>
+
+      <h2>Guardrail 4 — no consigue recursos nuevos por su cuenta</h2>
+
+      <p>El agente no salía a pedir más cómputo, ni a instalar lo que se le antojara, ni a expandir su propio alcance.</p>
+
+      <p>Traducido: lista cerrada de herramientas, lista cerrada de sistemas que puede tocar, tope de gasto, tope de tiempo. Un agente sin techo de consumo puede quemar en una tarde lo que un chat consume en un mes, y ese es el escenario que más seguido veo cuando alguien pasa de chat a agente sin cambiar nada más.</p>
+
+      <h2>La plantilla</h2>
+
+      <p>Pega esto arriba de las instrucciones de tu agente y llena los corchetes. Sirve igual en un prompt de sistema, en un archivo de instrucciones o en la configuración de la herramienta que uses.</p>
+
+      <pre><code># GUARDRAILS — no negociables
+
+## 1. Criterio de éxito
+Este trabajo está bien hecho si y solo si:
+- [criterio verificable 1]
+- [criterio verificable 2]
+- [criterio verificable 3]
+
+Antes de dar algo por terminado, verifica cada criterio contra
+una fuente y dime cuál usaste. Si no puedes verificar uno,
+dilo explícitamente en vez de asumirlo.
+
+No inventes criterios adicionales ni relajes estos. Si crees
+que el criterio está mal planteado, detente y dímelo — no lo
+ajustes por tu cuenta.
+
+## 2. Reversibilidad
+- Nunca escribas encima de un dato original. Escribe en
+  [columna / carpeta / rama / borrador nuevo].
+- Antes de cualquier acción que borre o reemplace algo, para
+  y pídeme confirmación.
+- Deja registro de qué cambiaste y dónde estaba antes.
+
+## 3. Alcance
+Puedes usar exactamente estas herramientas:
+- [herramienta 1] — para [qué]
+- [herramienta 2] — para [qué]
+
+Puedes leer de: [sistemas]
+Puedes escribir en: [sistemas, con la restricción del punto 2]
+
+Todo lo demás está fuera de alcance. Si necesitas algo que no
+está en esta lista, detente y pídemelo. No busques un camino
+alternativo para lograrlo.
+
+## 4. Límites de consumo
+- Máximo [N] pasos por tarea.
+- Máximo [N] minutos de trabajo continuo.
+- Si llegas al límite, para y reporta dónde te quedaste. No
+  entregues algo a medias como si estuviera terminado.
+
+## 5. Cuándo detenerte y preguntar
+Detente y pregunta si:
+- Hay que gastar dinero o mandar algo a un tercero.
+- La acción afecta a un cliente real.
+- Dos interpretaciones razonables de la tarea llevan a
+  trabajos muy distintos.
+- Los datos que necesitas no están o se contradicen.
+
+En cualquier otra decisión chica, elige lo razonable, sigue
+adelante y anótalo. No me preguntes por nombres de archivo ni
+por formatos.
+
+## 6. Reporte
+Al terminar, en este orden:
+1. Qué quedó hecho.
+2. Cada criterio del punto 1 y con qué lo verificaste.
+3. Qué cambiaste y dónde está el original.
+4. Qué no pudiste hacer y por qué.
+
+No reportes como terminado nada que no hayas verificado.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el punto 5. Un agente sin instrucciones de cuándo detenerse hace una de dos cosas, ambas malas: pregunta por todo y deja de servir, o no pregunta por nada y manda un correo al cliente equivocado. La lista de "detente y pregunta" tiene que nombrar acciones concretas de tu operación, no categorías vagas. "Acciones importantes" no es una instrucción; "antes de enviar cualquier correo a un dominio que no sea el nuestro" sí lo es.</p>
+      </div>
+
+      <h2>Cómo se ve aterrizado</h2>
+
+      <p>Caso real de estructura: un agente que limpia y enriquece registros del CRM cada noche.</p>
+
+      <ul>
+        <li><strong>Criterio:</strong> cada registro tocado tiene teléfono en formato válido, empresa que coincide con el dominio del correo, y etapa asignada de la lista permitida. Los tres se pueden verificar sin opinión.</li>
+        <li><strong>Reversibilidad:</strong> escribe en campos nuevos con prefijo, nunca encima de los originales. Un humano promueve los buenos después.</li>
+        <li><strong>Alcance:</strong> lectura del CRM y de la fuente de enriquecimiento. Escritura solo en los campos con prefijo. Sin acceso al correo ni a nada que mande mensajes.</li>
+        <li><strong>Consumo:</strong> tope de registros por corrida y tope de tiempo.</li>
+      </ul>
+
+      <p>Con eso puede correr toda la noche sin supervisión. Sin el criterio verificable, no. Y fíjate que la parte difícil no fue configurar el agente: fue escribir las tres reglas de qué es un registro bien hecho, que nadie en la empresa había puesto por escrito nunca.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Empezar por las herramientas. La conversación típica es "¿qué accesos le doy?", cuando la pregunta que decide todo es "¿cómo sé que lo hizo bien?".</p>
+
+      <p>Si empiezas por los accesos, terminas con un agente muy capaz corriendo hacia un objetivo mal definido, que es exactamente el escenario que la gente teme cuando dice que no confía en los agentes. La desconfianza no es al modelo. Es a soltarlo sin criterio.</p>
+
+      <p>Escribe primero el punto 1 de la plantilla. Si te cuesta trabajo, esa dificultad es la señal: todavía no es momento de automatizar esa tarea.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

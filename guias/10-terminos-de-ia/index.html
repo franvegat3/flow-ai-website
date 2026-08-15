@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 términos de IA explicados como si tuvieras 10 años — Guías Flow AI</title>
+  <meta name="description" content="LLM, tokens, ventana de contexto, alucinación, RAG. Las palabras que todo mundo avienta, en español simple que sí se te va a quedar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/10-terminos-de-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="10 términos de IA explicados como si tuvieras 10 años" />
+  <meta property="og:description" content="LLM, tokens, ventana de contexto, alucinación, RAG. Las palabras que todo mundo avienta, en español simple que sí se te va a quedar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/10-terminos-de-ia/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>10 términos de IA explicados como si tuvieras 10 años</h1>
+      <p class="lead">LLM, tokens, ventana de contexto, alucinación, RAG. Las palabras que todo mundo avienta, en español simple que sí se te va a quedar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>En una junta alguien dice "el problema es que la ventana de contexto no aguanta, hay que meterle RAG". Todos asienten. La mitad no entendió y nadie va a preguntar, porque preguntar en esa junta se siente como admitir que te quedaste atrás.</p>
+
+      <p>Son diez palabras. Diez. Y una vez que las tienes, el 90% de las conversaciones sobre IA dejan de sonar a idioma extranjero.</p>
+
+      <p>Van explicadas como si tuvieras diez años, con la analogía primero y el porqué importa después. Sin rodeos y sin matemáticas.</p>
+
+      <h2>Los 10 términos</h2>
+
+      <div class="plugin-card">
+        <h3>1. LLM (modelo de lenguaje grande)</h3>
+        <p>Es el motor. Un programa que leyó una cantidad enorme de texto y aprendió a predecir qué palabra sigue. Eso es literalmente todo lo que hace: adivinar la siguiente palabra, una y otra vez, muy bien.</p>
+        <p>Suena poco impresionante hasta que ves que para adivinar bien qué sigue en "el paciente presentó fiebre y por lo tanto el médico decidió..." hay que entender bastante de medicina. La inteligencia salió de hacer esa predicción a una escala absurda.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "¿qué LLM estás usando?" = ¿qué motor, de qué empresa, en qué versión.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Token</h3>
+        <p>Los pedacitos en los que el modelo parte el texto. No son palabras exactas: son fragmentos. "Extraordinario" puede ser tres tokens; "casa" es uno. Como regla, en español un token es más o menos tres cuartos de una palabra.</p>
+        <p>Importa porque <strong>los tokens son la unidad de cobro</strong>. Cuando alguien dice que un modelo cuesta cinco dólares por millón de tokens, está diciendo cuánto cuesta procesar unas 750 mil palabras.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> en cualquier discusión de costo. Si el tema es dinero, el tema son tokens.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Ventana de contexto</h3>
+        <p>Cuánto puede tener presente el modelo al mismo tiempo. Es su escritorio: cabe lo que cabe. Si le pusiste un libro entero y le sigues poniendo hojas, algo se cae por el borde.</p>
+        <p>Los modelos actuales tienen escritorios enormes —hasta un millón de tokens, cientos de páginas—, así que este ya no es el problema que era. Pero sigue siendo por qué una conversación larguísima empieza a "olvidar" lo que dijiste al principio.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "no le cabe el documento", "se le está olvidando lo de arriba".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Prompt</h3>
+        <p>Lo que le escribes. Nada más. La palabra suena técnica y no lo es.</p>
+        <p>Lo que sí vale la pena distinguir es el <em>system prompt</em>: las instrucciones fijas que van por debajo, que tú no ves en el chat pero el modelo sí lee siempre. Cuando configuras "responde siempre en español y sé breve" en los ajustes, eso vive ahí.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "el prompt está mal escrito" casi siempre significa "no le dijiste para qué era esto".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Alucinación</h3>
+        <p>Cuando el modelo inventa algo con total seguridad. Una cita que no existe, una cifra que suena razonable, un artículo de ley con número y todo.</p>
+        <p>No es una falla ocasional: es consecuencia directa de cómo funciona. Si su trabajo es predecir qué palabra sigue, y no sabe la respuesta, va a predecir la palabra que <em>sonaría</em> bien ahí. Un nombre plausible. Un número plausible.</p>
+        <p>Por eso la regla más importante de todas: si el dato importa y no viene de una fuente que puedas abrir, verifícalo.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "se lo alucinó" = se lo inventó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. RAG (generación aumentada por recuperación)</h3>
+        <p>El nombre asusta y la idea es de kínder: <strong>antes de contestar, busca en tus documentos</strong>.</p>
+        <p>En vez de que el modelo conteste de memoria, primero se le busca en tu manual, tu base de conocimiento o tus archivos el fragmento relevante, y ese fragmento se le pega en el prompt. Entonces contesta con eso a la vista.</p>
+        <p>Es la técnica que convierte a un modelo general en uno que sabe de tu empresa, y es la principal defensa práctica contra las alucinaciones: es mucho más difícil inventar cuando tienes el documento correcto enfrente.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "hay que meterle RAG" = hay que conectarlo a nuestros documentos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Embedding</h3>
+        <p>La forma de convertir texto en números para poder compararlo por significado y no por letras.</p>
+        <p>Piénsalo como un mapa: cada frase se coloca en un punto, y las frases que quieren decir cosas parecidas quedan cerca. "¿Cómo cancelo mi suscripción?" y "quiero darme de baja" caen en el mismo barrio, aunque no comparten ni una palabra.</p>
+        <p>Es la maquinaria que hace posible el paso de "busca en tus documentos" del punto anterior.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> junto a RAG y a "base de datos vectorial", que es simplemente donde se guarda ese mapa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Fine-tuning (afinar)</h3>
+        <p>Reentrenar un modelo con tus propios ejemplos para que se comporte distinto de forma permanente.</p>
+        <p>La analogía: RAG es darle a un empleado el manual para que lo consulte. Fine-tuning es mandarlo a un curso de seis meses. El segundo es mucho más caro, tarda más y hay que repetirlo cuando cambian las cosas.</p>
+        <p>Se menciona muchísimo más de lo que se usa. En la enorme mayoría de los casos de empresa, lo que la gente creía que necesitaba era RAG y mejores instrucciones.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "¿y si lo entrenamos con nuestros datos?" Casi siempre la respuesta correcta es "no todavía".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Agente</h3>
+        <p>Un modelo que, además de contestar, <em>hace</em>. Puede usar herramientas: buscar en internet, leer un archivo, mandar un correo, escribir en tu CRM.</p>
+        <p>La diferencia con un chat normal es que el agente decide solo qué pasos dar. Le das un objetivo —"averigua por qué bajaron las ventas de este producto"— y él elige qué consultar, en qué orden, y cuándo ya tiene suficiente.</p>
+        <p>Y ahí está el riesgo obvio: un agente que puede actuar puede equivocarse actuando. Por eso lo que borra, manda o publica se aprueba a mano.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> es la palabra de moda de 2026. Que algo se llame agente no garantiza que lo sea.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. MCP (Protocolo de Contexto de Modelo)</h3>
+        <p>El enchufe estándar. Antes, conectar un modelo a cada herramienta requería plomería a la medida para cada una. MCP definió una forma común de hacerlo, y lo adoptaron todos.</p>
+        <p>La analogía es el USB. Antes cada aparato traía su cable; ahora hay un puerto y funciona con todo. Un servidor MCP es un aparato con ese enchufe: tu CRM, tu base de datos, tu sistema de tickets.</p>
+        <p class="plugin-for"><strong>Dónde lo vas a oír:</strong> "hay un MCP de X" = ya existe la conexión hecha, no la tienes que construir.</p>
+      </div>
+
+      <h2>Cómo se conectan los diez</h2>
+
+      <p>La historia completa, en un párrafo: un <strong>LLM</strong> lee tu <strong>prompt</strong>, partido en <strong>tokens</strong>, dentro de una <strong>ventana de contexto</strong> que tiene un límite. Si no sabe algo puede <strong>alucinarlo</strong>, así que le buscamos el fragmento correcto en tus documentos con <strong>RAG</strong>, que funciona gracias a los <strong>embeddings</strong>. Si necesitáramos cambiar su comportamiento de raíz haríamos <strong>fine-tuning</strong>, pero casi nunca hace falta. Cuando le damos herramientas para actuar y no solo responder, se vuelve un <strong>agente</strong>, y esas herramientas se conectan por <strong>MCP</strong>.</p>
+
+      <h2>El término que sobra en casi todas las juntas</h2>
+
+      <p>"Entrenar el modelo con nuestros datos." Nueve de cada diez veces que alguien lo dice, lo que quiere decir es "que conozca nuestra información", y eso es RAG o simplemente un buen archivo de contexto —barato, rápido, y actualizable el mismo día.</p>
+
+      <p>Si en tu próxima junta alguien lo propone, la pregunta útil no es técnica: es qué está fallando exactamente hoy. Casi siempre la respuesta apunta a un documento que nadie le dio al modelo, no a un curso de seis meses.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

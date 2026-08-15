@@ -1,0 +1,116 @@
+      <p>La mayoría de los sistemas de productividad asumen que todas las semanas son iguales. Mismo entrenamiento el lunes, misma agenda cargada, misma expectativa de rendimiento. Para quien menstrúa, esa suposición es falsa cuatro veces al mes, y el costo no es solo físico: es planear en contra de tu propio cuerpo y luego sentir que fallaste.</p>
+
+      <p>Existen apps de seguimiento del ciclo, pero casi todas terminan en lo mismo: te dicen en qué fase estás y ahí se acaban. El dato sin decisión no sirve de nada. Lo que falta es la parte que traduce "estás en fase lútea" a "entonces hoy conviene mover esta junta y hacer esta rutina".</p>
+
+      <p>Eso sí se puede armar en Claude, con tus datos, en una tarde. Aquí está cómo.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de nada:</strong> esto es una herramienta de organización, no de salud. No diagnostica, no receta y no sustituye a un médico, a un ginecólogo ni a un nutriólogo. Si tu ciclo cambió, si hay dolor que interfiere con tu vida o si estás considerando cualquier suplemento o cambio de medicación, eso se habla con un profesional de la salud. Lo que hace este sistema es ordenar y anticipar lo que tú ya sabes de ti, y ayudarte a llegar mejor preparada a esa consulta.</p>
+      </div>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un proyecto de Claude que conoce tu ciclo, tu agenda y tu registro personal, y cada mañana te entrega un plan de entrenamiento, comidas, rutina y agenda que corresponde al día en el que estás.</p>
+
+      <h2>Las cuatro fases, y una advertencia honesta</h2>
+
+      <p>El ciclo se suele dividir en cuatro tramos: menstrual, folicular, ovulatorio y lúteo. La versión popular en redes asigna a cada uno un tipo de entrenamiento y una lista de alimentos, con mucha seguridad y poca evidencia.</p>
+
+      <p>Voy a ser directo: la investigación sobre entrenar por fases no es concluyente, y la variación entre personas es enorme. Hay quien rinde igual toda la semana y quien no puede sostener una sesión intensa dos días específicos. Construir el sistema sobre la tabla genérica de internet es construirlo sobre algo que puede no describirte.</p>
+
+      <p>Por eso este proyecto arranca distinto: las primeras semanas no planean nada, registran. El plan sale de tu patrón, no del de un artículo.</p>
+
+      <h2>Paso 1: el proyecto y sus instrucciones</h2>
+
+      <p>Crea un proyecto de Claude aparte de todo lo demás. Va a manejar información personal y no quieres que se mezcle con tus chats de trabajo. Pega esto como instrucciones del proyecto:</p>
+
+      <pre><code>Eres mi asistente de planeación por ciclo. Tu trabajo es
+organizar mi semana alrededor de dónde estoy en mi ciclo.
+
+LÍMITES DUROS
+- No das diagnósticos ni interpretas síntomas como
+  enfermedad.
+- No recomiendas suplementos, dosis ni medicamentos nuevos.
+  Solo organizas los que yo te diga que ya tomo por
+  indicación de un profesional.
+- Si detectas algo fuera de mi patrón habitual, no lo
+  interpretas: me lo señalas y me sugieres anotarlo para mi
+  siguiente consulta.
+- Nunca asumes un dato que no te di. Lo preguntas.
+
+MIS DATOS
+- Duración típica de mi ciclo: [días]
+- Primer día del último ciclo: [fecha]
+- Método anticonceptivo, si aplica: [cuál o ninguno]
+- Cómo entreno hoy: [tipo, días, a qué hora]
+- Restricciones de comida: [alergias, dietas, lo que no como]
+- Lo que ya tomo por indicación profesional: [lista]
+- Mi trabajo tiene picos fijos en: [días, cierres, juntas]
+
+CÓMO TRABAJAS
+- Cada mañana me entregas el plan del día, no de la semana.
+- El plan se apoya en MI REGISTRO, no en tablas generales.
+  Si todavía no hay suficiente registro, dilo y propón la
+  versión conservadora.
+- Formato fijo: FASE Y DÍA / ENTRENAMIENTO / COMIDAS /
+  RUTINA Y DESCANSO / AGENDA (qué mover y qué proteger) /
+  UNA PREGUNTA PARA MI REGISTRO DE HOY.
+- Nada de lenguaje de coach motivacional. Directo y corto.
+- Si mi agenda choca con lo que propones, gana mi agenda:
+  ajusta el plan a lo que sí es posible hoy.</code></pre>
+
+      <p>Rellena los corchetes con lo tuyo. Lo que quede vacío es exactamente donde el sistema va a inventar, así que mejor poner "no sé" que dejarlo en blanco.</p>
+
+      <h2>Paso 2: los conectores</h2>
+
+      <p>Con las instrucciones ya tienes algo funcional. Los conectores son los que le quitan la captura diaria.</p>
+
+      <ul>
+        <li><strong>Calendario</strong> — es el más importante y el que menos gente conecta. Sin él, el plan es una sugerencia genérica; con él, sabe que hoy tienes tres juntas seguidas y una presentación, y ajusta en consecuencia.</li>
+        <li><strong>Datos de salud o actividad</strong> — sueño, pasos, frecuencia cardiaca en reposo, entrenamientos registrados. Depende de qué exporte tu reloj o tu app; muchas permiten sacar un archivo que puedes subir al proyecto cada semana aunque no haya conector directo.</li>
+        <li><strong>Tu registro</strong> — un documento en el proyecto donde se acumulan tus notas diarias. Esta es la fuente que hace que el sistema sea tuyo y no de internet.</li>
+      </ul>
+
+      <p>Si un conector de salud no está disponible o no confías en darle acceso, la versión manual funciona: una vez por semana pegas los datos y ya. Pierdes automatización, no calidad.</p>
+
+      <h2>Paso 3: la corrida de la mañana</h2>
+
+      <p>El pedido diario cabe en una línea, porque las instrucciones ya cargan todo lo demás:</p>
+
+      <pre><code>Plan de hoy. Estoy en el día [n] de mi ciclo. Ayer: sueño
+[horas], energía [1-10], entrenamiento [qué hice o nada],
+lo que noté: [texto libre].</code></pre>
+
+      <p>Toma treinta segundos escribirlo y es lo que alimenta el registro. Si tienes los conectores puestos, el sueño y el entrenamiento ya los lee solo y solo escribes energía y notas.</p>
+
+      <p>Para que corra sin que te acuerdes, hay dos caminos. El sencillo: un recordatorio a la misma hora todos los días, y contestarlo como quien manda un mensaje. El automático: si usas Claude Code, dejar la corrida programada en tu computadora para que el plan te espere ya escrito. La versión con recordatorio es la que la gente sostiene; la automática se ve mejor y se abandona igual si no la revisas.</p>
+
+      <h2>Los cuatro entregables, con criterio</h2>
+
+      <h3>Entrenamiento</h3>
+
+      <p>Lo útil no es "hoy toca fuerza" sino "hoy toca la sesión de fuerza que tenías planeada, pero con el volumen que sí sostuviste las últimas tres veces que estuviste en este punto del ciclo". Eso solo lo puede decir con tu registro.</p>
+
+      <h3>Comidas</h3>
+
+      <p>Sin dietas de fase. Lo que sí funciona es continuidad: el menú de la semana ajustado a lo que sabes que se te antoja y a lo que se te dificulta comer en ciertos días, con la lista del súper que lo hace posible.</p>
+
+      <h3>Suplementos y rutina</h3>
+
+      <p>Aquí el sistema es un organizador, no un asesor. Ordena y recuerda lo que un profesional ya te indicó, y lleva la bitácora de cómo te fue. Si sale una duda —si algo te cayó distinto, si quieres cambiar algo— lo que hace es redactarte la pregunta para llevarla a consulta, no responderla.</p>
+
+      <h3>Agenda</h3>
+
+      <p>La parte más valiosa y la que nadie usa. Si sabes por tu propio registro que hay dos días del mes en los que sostienes mal una conversación difícil, esos días no se agenda la negociación del contrato ni la evaluación de desempeño. Se agenda el trabajo que sí rinde ahí.</p>
+
+      <p>En eso he visto el mayor efecto con mujeres que dirigen equipos o llevan su propio negocio: no es que trabajen menos, es que dejan de poner lo más caro de su mes en el peor día posible. Mover una junta de venta tres días es gratis; llegar a ella sin energía cuesta el trato.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir dónde viven estos datos. Un registro de ciclo es información sensible. Mantenlo en un proyecto separado, no lo subas a espacios de trabajo compartidos de tu empresa, revisa la configuración de privacidad de tu cuenta y no pongas ahí resultados de laboratorio ni identificaciones. Y si el sistema te acaba sirviendo, exporta tu registro cada tanto: el valor está en el histórico, y ese no lo quieres atado a una sola herramienta.</p>
+      </div>
+
+      <h2>Las primeras ocho semanas</h2>
+
+      <p>El error es esperar un plan perfecto la primera semana. No lo va a haber, porque no hay registro todavía. Los primeros dos ciclos son de observación: contestas la línea de la mañana, el sistema acumula y no promete mucho.</p>
+
+      <p>Del tercero en adelante empieza a servir de verdad, porque ya puede decirte "esto te pasó las últimas dos veces en este punto". Ahí es cuando deja de ser una app más y se vuelve algo que sabe de ti lo que nadie más registró. Si te sirve el patrón, <a href="/guias/asistente-hormonal/">el asistente hormonal</a> y <a href="/guias/entrenador-sin-pretextos/">el entrenador sin pretextos</a> son variantes del mismo molde con otro enfoque.</p>

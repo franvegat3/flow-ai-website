@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haz que Claude se audite a sí mismo sobre ti — Guías Flow AI</title>
+  <meta name="description" content="Claude ya tiene memoria y lleva meses armando un perfil tuyo. Buena parte está caduca. El prompt de auditoría en 3 pasos que lo limpia en 10 minutos y mejora tus salidas de inmediato." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/que-claude-se-audite-sobre-ti/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Haz que Claude se audite a sí mismo sobre ti" />
+  <meta property="og:description" content="Claude ya tiene memoria y lleva meses armando un perfil tuyo. Buena parte está caduca. El prompt de auditoría en 3 pasos que lo limpia en 10 minutos y mejora tus salidas de inmediato." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/que-claude-se-audite-sobre-ti/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Prompts</span></div>
+      <h1>Haz que Claude se audite a sí mismo sobre ti</h1>
+      <p class="lead">Claude ya tiene memoria y lleva meses armando un perfil tuyo. Buena parte está caduca. El prompt de auditoría en 3 pasos que lo limpia en 10 minutos y mejora tus salidas de inmediato.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Si llevas meses trabajando con Claude, ya tiene un perfil tuyo. Sabe a qué te dedicas, cómo escribes, qué proyectos traes, qué te choca. Nunca te enseñó ese perfil y tú nunca lo aprobaste.</p>
+
+      <p>El problema no es que exista. El problema es que buena parte está caduca. Ahí sigue el cliente que ya se fue, el puesto que ya cambiaste, el proyecto que cancelaste en marzo, la preferencia que dijiste una vez de mal humor y quedó grabada como ley. Y como esa capa se aplica callada, tú solo ves el síntoma: respuestas que suenan a alguien que fuiste hace medio año.</p>
+
+      <p>La auditoría son tres prompts y diez minutos. Es de las cosas con mejor relación esfuerzo-resultado que puedes hacerle a tu setup.</p>
+
+      <h2>Qué es la memoria, en una frase</h2>
+
+      <p>Es lo que Claude retiene entre conversaciones para no empezar de cero cada vez: hechos sobre ti, tu trabajo y tus preferencias, que se van acumulando solos mientras platicas.</p>
+
+      <p>Se acumulan solos. Ahí está todo el asunto. Nadie escribió ese archivo con cuidado: se fue llenando de migajas de conversaciones que tenían otro propósito, y una migaja de una junta mala pesa igual que una instrucción que sí pensaste.</p>
+
+      <p>Antes de empezar, entra a la configuración de tu cuenta y busca la sección de memoria. Ahí puedes ver lo que guardó, borrar entradas sueltas y decidir si quieres que siga guardando. Vale la pena mirarla aunque no borres nada, para dimensionar cuánto hay.</p>
+
+      <h2>Paso 1: el volcado</h2>
+
+      <p>Primero se saca todo a la luz. No le pidas un resumen: los resúmenes esconden justo lo que quieres cazar.</p>
+
+      <pre><code>Quiero auditar lo que sabes de mí. No me des un resumen amable: quiero el inventario completo.
+
+Escribe todo lo que crees saber sobre mí, agrupado en estas categorías:
+1. Identidad y trabajo (puesto, empresa, industria, a quién le reporto)
+2. Proyectos y clientes activos
+3. Herramientas y sistemas que uso
+4. Preferencias de formato y de estilo de respuesta
+5. Preferencias de tono y de trato
+6. Opiniones o posturas que me has atribuido
+7. Datos personales fuera del trabajo
+8. Cualquier otra cosa que no entre arriba
+
+Para cada punto:
+- Escríbelo como una afirmación de una línea.
+- Marca de dónde viene: "me lo dijiste directo" o "lo deduje".
+- Marca qué tan seguro estás: alto, medio o bajo.
+- Si puedes ubicarlo en el tiempo, di de cuándo es.
+
+No omitas nada por parecer trivial o incómodo. Si un punto lo dedujiste de un solo comentario, dilo explícitamente.</code></pre>
+
+      <p>La primera vez que corres esto, lo normal es encontrar entre tres y ocho cosas equivocadas. Las que más daño hacen son las de la categoría 6: posturas que nunca dijiste, deducidas de un comentario suelto, y que están sesgando cada respuesta desde entonces.</p>
+
+      <h2>Paso 2: la corrección</h2>
+
+      <p>Ahora lo pasas por el filtro. Contesta con la lista marcada, sin escribir párrafos.</p>
+
+      <pre><code>Te voy a clasificar cada punto con una de estas cuatro etiquetas:
+
+VIGENTE — sigue siendo cierto, consérvalo.
+CADUCO — fue cierto y ya no lo es. Te doy el dato nuevo.
+FALSO — nunca fue cierto. Bórralo y no lo vuelvas a inferir.
+DE MÁS — lo generalizaste de un caso puntual. Te doy el límite real.
+
+[pega aquí tu lista marcada]
+
+Con eso:
+1. Dime qué respuestas pasadas se te pudieron haber sesgado por lo que marqué como FALSO o DE MÁS.
+2. Dime qué otras cosas de tu inventario dependían de un dato que acabo de corregir y también hay que revisar.
+3. No me agradezcas ni me digas que ahora entiendes mejor. Solo la lista.</code></pre>
+
+      <p>El punto 2 es el que casi nadie pide y el que más limpia. Los datos viejos vienen en racimo: si cambiaste de puesto, no solo cambió el puesto, cambió a quién le reportas, qué herramientas usas y qué te urge. Corregir uno sin los demás deja el perfil peor que antes, porque queda incoherente.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir qué <em>no</em> quieres que recuerde. Hay cosas útiles de mencionar en una conversación y pésimas de guardar para siempre: cifras de nómina de personas con nombre, temas de salud, la negociación que traes con un socio. Termina la auditoría diciéndole explícitamente qué categorías no debe retener, y para esos temas usa una conversación que no alimente la memoria.</p>
+      </div>
+
+      <h2>Paso 3: el perfil reescrito</h2>
+
+      <p>El último paso convierte la limpieza en algo que puedes reusar en cualquier lado.</p>
+
+      <pre><code>Escribe ahora mi perfil corregido, en un bloque de texto que yo pueda copiar y pegar como instrucciones permanentes.
+
+Requisitos:
+- Máximo 300 palabras.
+- Afirmaciones en presente, en segunda persona hacia ti ("Trabaja en...", "Prefiere que...").
+- Solo hechos vigentes. Nada de historia ni de cómo llegamos aquí.
+- Ordénalo así: quién soy y qué hago / cómo trabajo / qué estoy haciendo ahora / cómo quiero que me respondas / qué evitar.
+- Al final agrega una línea con la fecha de hoy que diga hasta cuándo es válido este perfil.
+
+No incluyas nada de lo que te pedí no retener.</code></pre>
+
+      <p>Ese bloque es lo valioso. Guárdalo en un archivo tuyo y pégalo en las instrucciones de tus proyectos. Así el contexto deja de depender de la acumulación silenciosa y pasa a ser un documento que tú controlas, que puedes versionar y que puedes llevarte a otra herramienta el día que quieras.</p>
+
+      <h2>Esto también aplica a una empresa</h2>
+
+      <p>En operaciones el mismo problema cuesta dinero. Un equipo comercial que usa Claude para preparar llamadas acumula un perfil de la empresa que arrastra la lista de precios del semestre pasado, el proceso de descuentos anterior y dos personas que ya renunciaron. Nadie nota nada hasta que un vendedor manda una propuesta con la condición vieja.</p>
+
+      <p>La regla que dejo instalada donde monto estos sistemas: la auditoría se corre cada trimestre, y siempre después de un cambio de precios, de estructura o de proceso. Diez minutos por persona. Es más barato que un mes de propuestas mal armadas.</p>
+
+      <h2>Si después de esto sigue saliendo mal</h2>
+
+      <p>La memoria es solo una de las tres capas que empujan una respuesta. Las otras dos son las instrucciones del proyecto y el desorden de la conversación en la que estás.</p>
+
+      <p>Si ya auditaste la memoria y las respuestas siguen sonando raras, el problema está en la conversación: llevas cuarenta mensajes, hay tres temas mezclados y dos archivos que ya no aplican. Eso se arregla con <a href="/guias/limpieza-de-contexto/">una limpieza de contexto</a>, no con más memoria. Y si nunca has armado la capa de instrucciones desde cero, empieza por ahí con <a href="/guias/claude-en-5-pasos-para-principiantes/">el setup en 5 pasos</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

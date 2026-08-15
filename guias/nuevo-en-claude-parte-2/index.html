@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Nuevo en Claude? Haz estas 5 cosas primero (parte 2) — Guías Flow AI</title>
+  <meta name="description" content="El setup real de cinco cosas: una skill reutilizable, una tarea programada, un artifact publicado, un plugin, y Claude dentro de Chrome." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/nuevo-en-claude-parte-2/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿Nuevo en Claude? Haz estas 5 cosas primero (parte 2)" />
+  <meta property="og:description" content="El setup real de cinco cosas: una skill reutilizable, una tarea programada, un artifact publicado, un plugin, y Claude dentro de Chrome." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/nuevo-en-claude-parte-2/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>¿Nuevo en Claude? Haz estas 5 cosas primero (parte 2)</h1>
+      <p class="lead">El setup real de cinco cosas: una skill reutilizable, una tarea programada, un artifact publicado, un plugin, y Claude dentro de Chrome.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>En <a href="/guias/nuevo-en-claude/">la primera parte</a> el objetivo era que dejaras de usar Claude como buscador: subir archivos, armar un proyecto, hablarle como a alguien que trabaja contigo. Eso te saca del 90% de la gente.</p>
+
+      <p>Esta parte es la que te saca del 99%. Son cinco cosas, y ninguna es un truco de prompt: son piezas de infraestructura. Cada una toma entre diez y treinta minutos de montar y después sigue rindiendo sin que la vuelvas a tocar. Ese es el criterio con el que las elegí.</p>
+
+      <p>Van en orden. La quinta no tiene sentido si no hiciste la primera.</p>
+
+      <div class="plugin-card">
+        <h3>1. Una skill reutilizable</h3>
+        <p>Una skill es una carpeta con un archivo <code>SKILL.md</code> que le enseña a Claude cómo se hace un trabajo específico. La diferencia con un prompt guardado es que la skill se carga sola: no tienes que acordarte de ella ni ir a buscarla, Claude la levanta cuando detecta que le estás pidiendo ese trabajo.</p>
+        <p>La primera no la inventes. Escoge la tarea que ya hiciste cinco veces este mes y que siempre te queda distinta. Un reporte semanal, una propuesta, la respuesta a un tipo de correo que llega siempre igual.</p>
+        <p>El contenido del archivo son cuatro bloques: cuándo usarla, qué información se necesita antes de empezar, los pasos, y —el que casi nadie escribe— tres ejemplos de cómo se ve bien hecho y uno de cómo se ve mal. Los ejemplos negativos hacen más por la calidad que toda la descripción junta.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> media hora la primera vez. Diez minutos las siguientes, porque ya tienes el molde.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Una tarea programada</h3>
+        <p>Claude puede correr un trabajo en un horario fijo sin que tú abras nada. Diario, semanal, mensual. La ventaja no es que te ahorra clics: es que convierte algo que dependía de que te acordaras en algo que simplemente pasa.</p>
+        <p>El error de principiante es programar un resumen de noticias. Se ve espectacular la primera semana y a la tercera lo estás ignorando, porque un resumen que no cambia nada de lo que ibas a hacer es ruido bien redactado.</p>
+        <p>Programa una tarea que produzca una decisión. En una operación comercial, el barrido de los tratos que llevan más de dos semanas sin movimiento, con el nombre de quién tiene que llamar. En finanzas, la lista de facturas que se vencen esta semana. En contenido, qué publicaste hace treinta días que sigue trayendo tráfico y merece una segunda vuelta.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> quince minutos, y la mitad se te va en escribir bien qué quieres que te entregue.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Un artifact publicado</h3>
+        <p>Un artifact es la pieza que Claude construye en una ventana aparte: una calculadora, un tablero, una herramienta interna. Publicarlo le da una dirección web, y ahí es donde cambia de categoría. Deja de ser algo que le enseñaste a alguien en una llamada y se vuelve algo que tu equipo abre el martes sin ti.</p>
+        <p>El primero que conviene construir es la calculadora que hoy vive en una hoja de cálculo que solo una persona sabe usar. La de comisiones, la de costeo, la que decide si un pedido se acepta. Le pasas la lógica —y las reglas raras, que siempre las hay—, y sale una página con campos y un resultado.</p>
+        <p>Antes de compartir el enlace, revisa dos cosas: que no haya quedado ningún dato real de cliente adentro, y que la lógica esté escrita en el propio artifact para que la próxima persona pueda auditarla sin preguntarte.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> veinte minutos si tienes clara la lógica. Si no la tienes clara, ese es el trabajo, no la herramienta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Un plugin</h3>
+        <p>Un plugin instala de golpe las skills, los conectores y los comandos de un área completa. Es el atajo para no construir a mano lo que ya está construido y probado.</p>
+        <p>Se instala desde <em>Marketplace</em> en la barra lateral o desde <a href="https://claude.com/plugins/" target="_blank" rel="noopener">claude.com/plugins</a>. Instala uno. El de tu área, el del trabajo por el que te pagan. La tentación de instalar ocho termina en un Claude que sabe de todo y no es bueno en nada, porque las skills compiten por su atención.</p>
+        <p>Y después de instalarlo, autoriza los conectores. Un plugin sin conectores conectados sabe cómo se hace el trabajo pero no tiene con qué hacerlo. El detalle de cuáles valen la pena está en <a href="/guias/plugins-cowork/">la guía de los plugins de Cowork</a>.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> dos minutos instalar. Otros diez autorizar los accesos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Claude dentro de Chrome</h3>
+        <p>La extensión pone a Claude adentro del navegador, viendo la pestaña en la que estás. Está disponible en los planes de paga. Es la pieza que cierra la distancia entre "Claude sabe hacerlo" y "Claude lo hizo aquí, donde yo trabajo".</p>
+        <p>Sirve para lo que no tiene conector: el panel de administración de tu proveedor, el portal del banco, la plataforma vieja de tu industria que nadie va a integrar nunca. Le pides que extraiga, que llene, que compare entre pestañas.</p>
+        <p>Aquí es donde recomiendo más cautela que en todo lo demás de esta guía. Una cosa es leer una pestaña y otra es actuar en ella. Empieza con tareas de lectura y extracción durante una o dos semanas antes de dejarlo hacer clics que tengan consecuencias, y nunca en una pestaña con sesión abierta donde un error cueste dinero.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> cinco minutos instalar. El resto es criterio sobre dónde lo sueltas.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probar la skill con un caso que sabes que está roto. Todos la prueban con el ejemplo perfecto, ven que sale bien y la dan por terminada. La skill se rompe cuando falta un dato, cuando el cliente mandó el archivo en otro formato, cuando el número no cuadra. Escribe en el <code>SKILL.md</code> qué hacer en esos tres casos y acabas de eliminar el 80% de las veces que ibas a tener que intervenir a mano.</p>
+      </div>
+
+      <h2>En qué orden hacerlas</h2>
+
+      <p>Una por semana. No las cinco el sábado.</p>
+
+      <ol>
+        <li><strong>Semana 1 — la skill.</strong> Es la que más te enseña, porque te obliga a escribir cómo haces tu trabajo. Mucha gente descubre aquí que su proceso no estaba definido.</li>
+        <li><strong>Semana 2 — el plugin.</strong> Ya que sabes cómo se siente una skill por dentro, vas a evaluar mucho mejor las que vienen empacadas.</li>
+        <li><strong>Semana 3 — la tarea programada.</strong> Con la skill y los conectores en su lugar, la tarea programada tiene de dónde jalar. Al revés entrega vacío.</li>
+        <li><strong>Semana 4 — el artifact.</strong> Para entonces ya identificaste cuál es la hoja de cálculo que estorba.</li>
+        <li><strong>Semana 5 — Chrome.</strong> El último a propósito. Es el que más permisos pide y el que más criterio requiere para usarse sin susto.</li>
+      </ol>
+
+      <h2>Cómo saber si funcionó</h2>
+
+      <p>La medida no es cuántas de las cinco montaste. Es esta: ¿puedes pedir algo en una frase, sin contexto, y que salga bien?</p>
+
+      <p>Si a las cinco semanas sigues escribiendo dos párrafos de explicación antes de cada petición, las piezas están instaladas pero vacías. El contexto que estás tecleando cada vez es exactamente el que debería estar escrito en la skill. Pásalo ahí y vuelve a medir.</p>
+
+      <p>Y una advertencia para no perder el tiempo: nada de esto arregla un proceso que no existe. Si el reporte semanal se hace distinto cada semana porque nunca se decidió cómo se hace, automatizarlo solo te va a dar inconsistencia más rápido. La skill te obliga a decidir. Ese suele ser el verdadero entregable de esta semana.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingeniería de loops: deja de darle prompts a Claude y constrúyele loops — Guías Flow AI</title>
+  <meta name="description" content="El responsable de Claude Code dice que su trabajo ahora es escribir loops. Las cinco piezas que forman uno, dónde vive cada una, y la carta de loop lista para pegar que corre el tuyo hoy." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/ingenieria-de-loops/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Ingeniería de loops: deja de darle prompts a Claude y constrúyele loops" />
+  <meta property="og:description" content="El responsable de Claude Code dice que su trabajo ahora es escribir loops. Las cinco piezas que forman uno, dónde vive cada una, y la carta de loop lista para pegar que corre el tuyo hoy." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/ingenieria-de-loops/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>Ingeniería de loops: deja de darle prompts a Claude y constrúyele loops</h1>
+      <p class="lead">El responsable de Claude Code dice que su trabajo ahora es escribir loops. Las cinco piezas que forman uno, dónde vive cada una, y la carta de loop lista para pegar que corre el tuyo hoy.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi todo el mundo sigue usando la IA en modo pregunta-respuesta. Escribes un prompt, lees lo que salió, corriges, vuelves a escribir. El trabajo avanza mientras tú estés sentado ahí, y se detiene en el segundo que te paras por un café.</p>
+
+      <p>Dentro del equipo que construye Claude Code la forma de decirlo ya cambió: el trabajo no es escribir prompts, es escribir loops. Un loop es un prompt que se vuelve a disparar solo, que revisa su propio resultado y que sabe cuándo parar. Es la diferencia entre tener una herramienta y tener un proceso.</p>
+
+      <p>Esta guía es el desarme de un loop en sus cinco piezas, dónde vive cada una y cómo se escribe la primera. Al final está la carta de loop: una plantilla corta que llenas y que te deja uno corriendo hoy.</p>
+
+      <h2>Qué es un loop, en una frase</h2>
+
+      <p>Un loop es una tarea con disparador, contexto, acción, verificación y condición de salida, de modo que se ejecute sin que tú inicies cada vuelta.</p>
+
+      <p>Fíjate en lo que no dice: no dice que sea autónomo, ni que no lo supervises. Un loop bien hecho te quita el trabajo de <em>arrancarlo</em>, no el de decidir qué hace. La parte de juicio sigue siendo tuya. Lo que se automatiza es la repetición.</p>
+
+      <h2>Las cinco piezas</h2>
+
+      <div class="plugin-card">
+        <h3>1. El disparador</h3>
+        <p>Qué hace que empiece la siguiente vuelta. Hay tres formas y se eligen por lo que quieres que marque el ritmo:</p>
+        <ul>
+          <li><strong>El reloj.</strong> <code>/loop</code> dentro de una sesión abierta corre un prompt cada tanto: <code>/loop 15m revisa si el deploy terminó</code>. Las unidades son <code>s</code>, <code>m</code>, <code>h</code> y <code>d</code>. Si omites el intervalo, Claude elige uno entre iteraciones según lo que vio.</li>
+          <li><strong>El turno anterior.</strong> <code>/goal</code> dispara una vuelta nueva cada vez que Claude termina de responder, hasta que se cumpla la condición que escribiste.</li>
+          <li><strong>Un evento.</strong> Una rutina en la nube con <code>/schedule</code> puede arrancar por horario, por una llamada HTTP a su endpoint, o por un evento de GitHub como un pull request abierto.</li>
+        </ul>
+        <p class="plugin-for"><strong>Dónde vive:</strong> en la sesión (<code>/loop</code>, <code>/goal</code>) o en tu cuenta (rutinas de <code>/schedule</code>, que corren aunque tu máquina esté apagada).</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El contexto</h3>
+        <p>Lo que el loop sabe sin que se lo digas cada vuelta. Es la pieza que más se subestima y la que decide si la vuelta número veinte sale igual de bien que la primera.</p>
+        <p>Va en archivos, no en el prompt: tu <code>CLAUDE.md</code> con las reglas del proyecto, los datos que el loop necesita leer, y los conectores a las herramientas donde vive la información real. Si el loop tiene que preguntarte algo para poder trabajar, no es un loop: es una conversación con retraso.</p>
+        <p class="plugin-for"><strong>Dónde vive:</strong> <code>CLAUDE.md</code>, archivos del repositorio, conectores y, para el prompt por omisión de <code>/loop</code>, un archivo <code>.claude/loop.md</code> en el proyecto o <code>~/.claude/loop.md</code> para todos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. La acción</h3>
+        <p>El trabajo de la vuelta. Aquí la regla es una sola: que quepa en una vuelta. Un loop que intenta hacer cinco cosas se atora en la tercera y se queda ahí para siempre.</p>
+        <p>Si la acción tiene más de tres pasos, sácala del prompt y métela en una skill. El prompt del loop se vuelve entonces una línea —<code>/loop 30m /reporte-de-pauta</code>— y los pasos viven en un archivo que puedes corregir sin tocar el loop.</p>
+        <p class="plugin-for"><strong>Dónde vive:</strong> el prompt del loop para acciones simples; una skill en <code>.claude/skills/</code> para todo lo demás.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El verificador</h3>
+        <p>Cómo se sabe que la vuelta salió bien. Sin esta pieza no tienes un loop, tienes un generador de trabajo que nadie revisa.</p>
+        <p>Lo mejor es algo determinista: un comando que devuelve cero o distinto de cero, un conteo de filas, un archivo que existe o no existe. Cuando no hay forma determinista, <code>/goal</code> pone un modelo chico a leer la conversación y emitir un veredicto después de cada turno. Ese evaluador no corre comandos ni abre archivos por su cuenta, así que la condición tiene que ser algo que el propio trabajo de Claude deje escrito en la conversación.</p>
+        <p class="plugin-for"><strong>Dónde vive:</strong> un script tuyo, un hook de tipo Stop, o la condición de <code>/goal</code>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. La condición de salida</h3>
+        <p>Cuándo para. La respuesta "cuando yo lo apague" no cuenta, porque se te va a olvidar.</p>
+        <p>Un loop de <code>/goal</code> termina cuando el evaluador dice que la condición se cumplió, o cuando juzga que es imposible cumplirla. Un loop por intervalo lo detienes con <code>Esc</code> mientras espera la siguiente vuelta, y de todas formas las tareas recurrentes de sesión caducan a los siete días. Escribe también un tope adentro de la condición: algo como "o detente después de 20 turnos" evita que un loop mal planteado siga gastando.</p>
+        <p class="plugin-for"><strong>Dónde vive:</strong> la condición de <code>/goal</code>, el tope de turnos que tú escribas, o la caducidad automática.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el verificador. La gente escribe disparador, contexto y acción, prende el loop y se va. A la tercera vuelta el loop está repitiendo un error con mucha disciplina. Antes de prender nada, contesta esto en una línea: <em>¿qué comando o qué salida me dice, sin que yo lea todo, que esta vuelta sirvió?</em> Si no puedes contestarlo, todavía no tienes un loop.</p>
+      </div>
+
+      <h2>La carta de loop</h2>
+
+      <p>Esta es la plantilla. Llénala antes de escribir una sola línea de prompt. Si una casilla queda vacía, el loop no está listo.</p>
+
+      <pre><code>CARTA DE LOOP
+
+Nombre del loop:
+Qué problema resuelve (una frase, sin adornos):
+
+1. DISPARADOR
+   Arranca por: [reloj cada ___ / fin del turno anterior / evento: ___]
+   Frecuencia máxima razonable:
+   Qué pasa si se salta una vuelta:
+
+2. CONTEXTO
+   Archivos que lee cada vuelta:
+   Herramientas o conectores que necesita:
+   Reglas fijas que no debe volver a preguntarme:
+   Datos que NO debe tocar:
+
+3. ACCIÓN
+   Lo que hace en una vuelta (máximo 3 pasos):
+   1)
+   2)
+   3)
+   Dónde deja el resultado:
+
+4. VERIFICADOR
+   Señal de que la vuelta salió bien:
+   Comando o salida que lo demuestra:
+   Qué hace si falla: [reintenta / se detiene y avisa / escala a mí]
+
+5. CONDICIÓN DE SALIDA
+   Termina cuando:
+   Tope duro (turnos, tiempo o costo):
+   Cómo lo apago a mano:
+
+RIESGO
+   Lo peor que puede pasar si se equivoca 20 veces seguidas:
+   Qué acción irreversible tiene prohibida:</code></pre>
+
+      <p>La última sección es la que más gente borra y la que más importa. Un loop equivocado no comete un error: comete el mismo error muchas veces, rápido y sin que nadie lo vea.</p>
+
+      <h2>Un loop real, llenado</h2>
+
+      <p>El ejemplo que uso con equipos de marketing: el reporte de pauta. Cada lunes alguien entra a la cuenta de anuncios, baja números, los pega en una hoja y escribe tres bullets. Cuarenta minutos, cero criterio, y siempre se atrasa.</p>
+
+      <p>Llenado queda así. Disparador: rutina en la nube, lunes por la mañana. Contexto: la cuenta de anuncios por conector, más un archivo con las metas del trimestre y la definición de qué cuenta como resultado. Acción, en tres pasos: bajar los números de la semana, compararlos contra las cuatro anteriores, y escribir solo las desviaciones. Verificador: el reporte tiene que traer la fecha de corte y el gasto total, y el gasto total tiene que cuadrar con la plataforma; si no cuadra, el loop se detiene y avisa en vez de publicar. Condición de salida: es un loop permanente, con revisión mía cada mes para ver si sigue sirviendo. Riesgo: no tiene permiso de pausar, activar ni cambiar presupuestos de nada. Solo lee.</p>
+
+      <p>Ese último detalle es el que convierte un experimento en algo que puedes dejar corriendo. El loop lee y escribe un documento. Las decisiones de gasto siguen pasando por una persona.</p>
+
+      <h2>El error de arranque</h2>
+
+      <p>Casi todos empiezan por el loop más ambicioso que se les ocurre: el agente que atiende clientes, el que publica solo, el que administra la operación entera. Ese loop no se termina nunca porque no hay forma de verificar una vuelta.</p>
+
+      <p>Empieza al revés: busca la tarea más aburrida y más verificable que haces cada semana. Aburrida para que no te duela equivocarte, verificable para que la pieza cuatro sea trivial. Escribe su carta de loop, ponlo a correr siete días, y léelo todos los días aunque no falle.</p>
+
+      <p>Cuando ese primero lleve un mes sin que lo toques, ya sabes cómo se siente un loop sano y puedes subir de tamaño. Antes de eso, cada loop nuevo que prendas es una fuente de trabajo, no un ahorro. Si quieres ver los comandos que ejecutan todo esto, sigue con <a href="/guias/deja-de-ser-ninera-de-claude/">deja de ser niñera de Claude</a>, y para blindarlo antes de soltarlo, con <a href="/guias/listas-de-permisos-de-claude-code/">las listas de permitidos y prohibidos</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

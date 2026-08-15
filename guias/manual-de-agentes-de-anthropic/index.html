@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Róbate el manual de agentes de Anthropic — Guías Flow AI</title>
+  <meta name="description" content="Cómo trabaja de verdad con agentes el equipo que construye Claude: escríbelo todo, define un rol y un norte, usa el par ejecutor-verificador, y construye confianza despacio." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/manual-de-agentes-de-anthropic/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Róbate el manual de agentes de Anthropic" />
+  <meta property="og:description" content="Cómo trabaja de verdad con agentes el equipo que construye Claude: escríbelo todo, define un rol y un norte, usa el par ejecutor-verificador, y construye confianza despacio." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/manual-de-agentes-de-anthropic/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Agentes</span></div>
+      <h1>Róbate el manual de agentes de Anthropic</h1>
+      <p class="lead">Cómo trabaja de verdad con agentes el equipo que construye Claude: escríbelo todo, define un rol y un norte, usa el par ejecutor-verificador, y construye confianza despacio.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay mucha gente escribiendo sobre cómo deberían trabajar los equipos con agentes de IA. Casi nadie lo está haciendo a escala dentro de su propia empresa.</p>
+
+      <p>Anthropic sí, y publicó cómo lo hace. Lo interesante no es el stack: es que casi todo lo que recomiendan tiene que ver con hábitos de equipo, no con tecnología. Escribir las cosas. Definir roles. Poner un norte. Repartir autonomía en tramos.</p>
+
+      <p>Suena poco espectacular hasta que lo intentas y descubres que tu empresa falla exactamente ahí. Esta guía es ese manual, aterrizado a una operación que no es Anthropic.</p>
+
+      <h2>El punto de partida</h2>
+
+      <p>El manual arranca de una idea sencilla: un agente es un miembro del equipo con memoria mala y acceso limitado. Todo lo que un compañero nuevo aprendería en el pasillo, un agente no lo aprende nunca. Solo sabe lo que está escrito y lo que puede alcanzar.</p>
+
+      <p>De ahí sale todo lo demás. Los equipos que trabajan bien con agentes no son los que tienen mejores modelos. Son los que ya tenían el hábito de dejar constancia de las cosas, y los agentes solo volvieron ese hábito obligatorio.</p>
+
+      <h2>Los cuatro principios</h2>
+
+      <div class="plugin-card">
+        <h3>1. Si no está escrito, no existe</h3>
+        <p>Es la frase más útil del manual entero. Un agente no puede usar lo que se decidió en una llamada, ni lo que vive en el chat privado de dos personas, ni lo que "todos sabemos". Su mundo es lo que está escrito y accesible.</p>
+        <p>La recomendación de Anthropic es fuerte: que la información sea pública por defecto dentro de la empresa, en vez de decidir caso por caso quién ve qué. No por transparencia ideológica, sino porque decidir permisos pieza por pieza es un impuesto diario que nadie paga bien, y el resultado es un agente ciego.</p>
+        <p>Cómo se ve esto en la práctica: los canales de trabajo abiertos en vez de mensajes directos, las decisiones escritas en un documento y no en el hilo de una junta, y las notas de junta guardadas donde el agente pueda leerlas. La conversación deja de ser el registro; el documento lo es.</p>
+        <p class="plugin-for"><strong>Empieza por:</strong> el proceso que más veces has explicado este mes. Escríbelo una vez, en un archivo, y manda ese archivo la próxima vez que te pregunten.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Cada quien tiene un rol, y las herramientas de ese rol</h3>
+        <p>El manual insiste en tener un padrón: quién hace qué, humanos y agentes en la misma lista. Sin eso pasa algo que ya vi en varias empresas: cada persona termina corriendo su propia flotilla de agentes en privado, duplicando trabajo y partiendo el contexto en pedazos que nadie junta.</p>
+        <p>Un rol bien definido para un agente tiene tres partes: qué tareas le tocan, a qué herramientas y datos tiene acceso, y qué NO le toca. La tercera es la que casi siempre falta, y es la que evita que el agente de soporte empiece a mandar correos comerciales.</p>
+        <p>El acceso importa tanto como la descripción. Un agente con el rol de "analista de campañas" y sin acceso a la cuenta de anuncios no es un analista: es un generador de suposiciones bien escritas.</p>
+        <p class="plugin-for"><strong>Empieza por:</strong> un documento con una fila por agente: nombre, dueño humano, tareas, herramientas conectadas, y qué está fuera de su alcance.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El norte lo pone un humano</h3>
+        <p>Un agente con instrucciones y sin objetivo hace bien lo que le pides y nada más. Un agente que conoce el objetivo del equipo empieza a proponer trabajo que nadie le encargó, y ahí es donde deja de ser una herramienta y empieza a rendir de verdad.</p>
+        <p>La condición es que el norte lo escribe una persona y está anclado al negocio. No es una frase de misión. Es una meta lo bastante concreta como para decidir con ella: qué vale la pena y qué no.</p>
+        <p>El ejemplo que dan es de un equipo con un norte del tipo "que el arranque del producto sea más útil para quien lo usa por primera vez", y un agente que a partir de eso propuso cambios de texto que movieron el resultado. Nadie le pidió esos cambios. Se los pidió el norte.</p>
+        <p class="plugin-for"><strong>Empieza por:</strong> escribe el norte de tu área en una sola frase, y pégala en las instrucciones de cada agente que corras. Si no puedes escribirla, ese es el problema, no el agente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. La confianza se reparte en tramos, no de golpe</h3>
+        <p>El principio operativo del manual: la autonomía se otorga en proporción a la confiabilidad demostrada, y se amplía a propósito, no por cansancio.</p>
+        <p>El mecanismo concreto que usan es el par ejecutor-verificador: un agente hace el trabajo y otro lo revisa antes de que llegue a un humano. Funciona por la misma razón por la que un revisor externo encuentra cosas que el autor no ve. El que revisa no tiene el razonamiento que produjo el error.</p>
+        <p>Encima de eso, dos hábitos que valen oro y que casi nadie copia: meter el método de verificación <em>dentro</em> de la tarea —una prueba, una rúbrica, una guía de estilo contra la que cotejar— y pedir un reporte periódico de lecciones y tropiezos, para que los errores se conviertan en instrucciones nuevas en vez de repetirse.</p>
+        <p class="plugin-for"><strong>Empieza por:</strong> escoge una tarea que hoy revisas al 100%. Define qué tendría que pasar tres veces seguidas para que la revises al 20%. Escríbelo antes de empezar.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> definir cómo se ve "bien" antes de soltar la tarea. Si tu criterio de aceptación es "que se vea bien", el agente no tiene contra qué medirse y tú te vuelves el único verificador del sistema. Una rúbrica de cinco líneas escrita antes de arrancar convierte una revisión de veinte minutos en una de dos.</p>
+      </div>
+
+      <h2>El reporte de lecciones y tropiezos</h2>
+
+      <p>De los cuatro principios, este es el que más rápido se puede copiar y el que más gente ignora. La idea: cada semana, el agente revisa su propio trabajo del periodo y produce las instrucciones nuevas que deberían existir para no repetir lo que salió mal.</p>
+
+      <pre><code>Revisa todo el trabajo que hiciste esta semana en este proyecto.
+
+Quiero un reporte corto de lecciones y tropiezos, en este formato:
+
+1. CORRECCIONES QUE RECIBÍ
+   Cada vez que un humano me corrigió, cambió mi entregable o me pidió
+   rehacer algo. Cita la corrección textual si la tienes.
+
+2. LA CAUSA, NO EL SÍNTOMA
+   Para cada corrección: ¿me faltó información, me faltó criterio, o entendí
+   mal la instrucción? Sé honesto; si fue una instrucción ambigua, dilo.
+
+3. INSTRUCCIONES NUEVAS
+   Redacta las reglas que deberían quedar escritas para que eso no vuelva a
+   pasar. Escríbelas listas para pegar en el archivo de instrucciones del
+   proyecto: específicas, verificables, en una línea cada una.
+
+4. LO QUE NO SE ARREGLA CON UNA REGLA
+   Qué de esto era un problema de acceso, de datos faltantes o de una
+   decisión que un humano no ha tomado. No inventes una regla para eso;
+   nómbralo y ya.
+
+Máximo una página. Si esta semana no hubo tropiezos que valgan la pena,
+dilo en una línea.</code></pre>
+
+      <p>Lo que sale de ahí se pega en el archivo de instrucciones del proyecto y se vuelve permanente. Es la diferencia entre un agente que empieza de cero cada lunes y uno que acumula oficio.</p>
+
+      <h2>Cómo se ve en una empresa que no es Anthropic</h2>
+
+      <p>Tomemos una operación de contenido con tres marcas, que es un caso que veo seguido. El manual se traduce así:</p>
+
+      <ul>
+        <li><strong>Escrito:</strong> el criterio editorial de cada marca vive en un archivo, no en la cabeza del que lleva más tiempo. Incluye lo que la marca no dice, que suele ser más definitorio que lo que sí dice.</li>
+        <li><strong>Roles:</strong> un agente que arma el reporte semanal de métricas, con acceso de solo lectura a la herramienta de analítica y prohibición explícita de publicar. Un agente distinto que redacta borradores. No el mismo.</li>
+        <li><strong>Norte:</strong> "que cada marca reporte lo suyo sin doble conteo entre plataformas" es un norte útil. "Crecer en redes" no lo es, porque no te ayuda a decidir nada.</li>
+        <li><strong>Confianza por tramos:</strong> el reporte se revisa completo el primer mes. Cuando dos meses seguidos no tiene correcciones, se revisa por muestreo. Los borradores de publicación nunca dejan de revisarse, porque el costo de un error ahí es público.</li>
+      </ul>
+
+      <p>Fíjate en el último punto. El manual no dice "confía en todo eventualmente". Dice que la autonomía sube donde el error es barato y reversible, y se queda quieta donde el error se ve desde afuera.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Casi todos empiezan por el lado equivocado: montan el agente y luego se preguntan por qué entrega genérico. La secuencia del manual es al revés. Primero el material escrito, luego el rol y el acceso, luego el norte, y hasta el final la autonomía.</p>
+
+      <p>Si tuvieras que quedarte con un solo movimiento de los cuatro, quédate con el primero. Un equipo con las decisiones escritas y accesibles funciona mejor incluso sin agentes. Un equipo con agentes y sin nada escrito solo produce material promedio más rápido.</p>
+
+      <p>Y antes de montar cualquier cosa, revisa si de verdad necesitas un agente. Muchas de las tareas que la gente quiere agentificar son un flujo fijo con dos pasos, y ahí un agente solo agrega variabilidad. Esa decisión está en <a href="/guias/agente-o-workflow/">agente o workflow</a>, y los límites que le tienes que poner desde el día uno, en <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

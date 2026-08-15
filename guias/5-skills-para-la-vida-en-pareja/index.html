@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 skills de Claude para la vida en pareja — Guías Flow AI</title>
+  <meta name="description" content="Un planeador de citas, una revisión semanal de dinero, un repartidor de carga mental, un planeador de viajes que le cuadre a los dos, y un guardián de recuerdos. El setup completo de los 5." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-skills-para-la-vida-en-pareja/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 skills de Claude para la vida en pareja" />
+  <meta property="og:description" content="Un planeador de citas, una revisión semanal de dinero, un repartidor de carga mental, un planeador de viajes que le cuadre a los dos, y un guardián de recuerdos. El setup completo de los 5." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-skills-para-la-vida-en-pareja/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>5 skills de Claude para la vida en pareja</h1>
+      <p class="lead">Un planeador de citas, una revisión semanal de dinero, un repartidor de carga mental, un planeador de viajes que le cuadre a los dos, y un guardián de recuerdos. El setup completo de los 5.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La lista de pendientes de una relación no está escrita en ningún lado. Vive repartida entre dos cabezas, casi siempre desbalanceada, y sale a la superficie un martes a las once de la noche cuando alguien pregunta por qué ya nunca hacemos nada.</p>
+
+      <p>No es un problema de cariño. Es un problema de sistema: no hay un lugar donde vivan los acuerdos, nadie los recuerda, y no existe una rutina que los revise. Ese hueco es exactamente lo que una skill llena bien.</p>
+
+      <p>Estas cinco las armé con la misma lógica con la que armo procesos dentro de una empresa: entrada clara, formato de salida fijo, frecuencia definida. Nada de "sé mi coach de pareja". Cinco trabajos concretos, cada uno con su archivo.</p>
+
+      <h2>Por qué una skill y no un prompt guardado</h2>
+
+      <p>Un prompt guardado lo tienes que ir a buscar, pegar y adaptar cada vez. Una skill vive en un archivo, Claude la carga sola cuando el tema aparece, y la puedes invocar a mano escribiendo su nombre con diagonal.</p>
+
+      <p>La diferencia real no es comodidad. Es que la skill es <em>editable</em>. Cuando el planeador de citas te propone tres restaurantes que ya conocen, abres el archivo y escribes "nunca repitas un lugar de los últimos tres meses". La siguiente vez ya lo respeta. Un prompt en tus notas no aprende nada.</p>
+
+      <h2>Cómo se instalan las cinco</h2>
+
+      <p>Una skill es una carpeta con un archivo <code>SKILL.md</code> adentro. Las personales van en tu carpeta de usuario y quedan disponibles en cualquier proyecto:</p>
+
+      <pre><code>~/.claude/skills/nombre-de-la-skill/SKILL.md</code></pre>
+
+      <p>El archivo empieza con dos datos y luego las instrucciones en texto normal:</p>
+
+      <pre><code>---
+name: planeador-de-citas
+description: Propone planes de cita concretos para nosotros dos, con
+  presupuesto, horario y reserva. Úsala cuando pida ideas de cita,
+  plan de fin de semana en pareja o aniversario.
+---
+
+# Planeador de citas
+
+## Lo que sabes de nosotros
+- Ciudad y zonas a las que sí nos movemos.
+- Presupuesto normal y presupuesto de ocasión especial.
+- Lo que ya no repetimos y por qué.
+- Restricciones de comida, alergias, horarios reales.
+
+## Cómo respondes
+1. Tres opciones, no una. Cada una con lugar, hora, costo estimado
+   y por qué encaja con nosotros esta semana.
+2. Una tiene que ser barata y una tiene que ser algo que no hemos hecho.
+3. Cierra con el mensaje exacto que hay que mandar para reservar.
+
+## Lo que nunca haces
+- Proponer algo que ya hicimos en los últimos tres meses.
+- Dar listas genéricas de "ideas románticas".
+- Terminar sin un siguiente paso concreto.</code></pre>
+
+      <p>Ese esqueleto sirve para las cinco. Lo único que cambia es el contexto y las reglas de salida.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de contexto. Sin ciudad, presupuesto y restricciones reales, las cinco skills te van a dar respuestas de revista. Siéntate quince minutos con tu pareja a llenar esa parte una sola vez. Es el único trabajo aburrido de toda la guía y es el que decide si esto sirve o no.</p>
+      </div>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Planeador de citas <code>planeador-de-citas</code></h3>
+        <p>Resuelve la pregunta que nadie quiere hacer: "¿qué hacemos el sábado?". La regla que la hace útil es la de no repetir: obliga a que la skill guarde memoria de lo que ya hicieron y empuje hacia afuera de la zona cómoda. Pídele siempre tres opciones con costo, porque una sola propuesta se discute y tres se eligen.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> la pareja que lleva meses rotando entre los mismos dos lugares y ya no lo nota.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Revisión semanal de dinero <code>revision-de-dinero</code></h3>
+        <p>Media hora, mismo día de la semana, mismo formato. Le pasas los movimientos —captura del banco, exportación de la tarjeta o lo que tengas— y devuelve tres cosas: en qué se fue el dinero por categoría, qué se salió de lo normal contra las semanas anteriores, y una sola decisión pendiente para los dos.</p>
+        <p><strong>La regla importante:</strong> que no dé consejos financieros ni moralice. Su trabajo es poner los números en la mesa en el mismo formato cada semana, para que la conversación sea sobre la decisión y no sobre quién gastó qué.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> los que tienen cuentas separadas y gastos compartidos, que es donde se acumula el resentimiento silencioso.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Repartidor de carga mental <code>carga-mental</code></h3>
+        <p>La más incómoda y la que más cambia las cosas. La carga mental es el trabajo invisible: acordarse de las citas médicas, saber cuándo se acaba el detergente, tener presente el cumpleaños de la suegra. Casi nunca está repartida y casi nunca está escrita.</p>
+        <p>La skill hace una entrevista corta a cada quien por separado, saca la lista completa de tareas recurrentes, y le pone a cada una tres etiquetas: quién la <em>ejecuta</em>, quién se <em>acuerda</em> de ella, y cuánto pesa. Casi siempre el desbalance no está en ejecutar sino en acordarse. Termina con una propuesta de reparto y una fecha para revisarla.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> la pareja donde uno dice "pídeme lo que quieras" y el otro está cansado de tener que pedir.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Planeador de viajes de dos cabezas <code>viaje-para-dos</code></h3>
+        <p>El problema de planear un viaje en pareja no es la información, es que cada quien quiere un viaje distinto y nadie lo dice hasta que ya están allá. Esta skill arranca al revés: le pide a cada uno tres cosas que quiere del viaje y una que no está dispuesto a hacer, y solo entonces arma el itinerario.</p>
+        <p>La salida es un plan por día con tiempo muerto explícito, un presupuesto por rubro, y una lista marcada de qué se reserva ya y qué se puede dejar abierto. Lo importante es que señale los choques en vez de esconderlos: "tú pediste museos y tú pediste dormir tarde, el jueves solo cabe uno".</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien ya se peleó en unas vacaciones por algo que se pudo haber hablado dos semanas antes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Guardián de recuerdos <code>guardian-de-recuerdos</code></h3>
+        <p>Vas dejando ahí lo que pasó: una frase de la cena, la foto de un viaje, el nombre del lugar donde comieron increíble. La skill lo ordena por fecha y tema y lo deja en un archivo de texto que crece solo.</p>
+        <p>Sirve para dos cosas. La primera, que cuando llegue un aniversario tengas material real en vez de una tarjeta genérica. La segunda, que las otras cuatro skills se vuelvan mejores: el planeador de citas que puede leer el archivo de recuerdos deja de proponer a ciegas.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que se acuerda de que fue un buen año pero no sabe decir qué pasó exactamente.</p>
+      </div>
+
+      <h2>Lo mismo aplica en tu operación</h2>
+
+      <p>Estas cinco skills no son un truco de vida personal. Son el mismo patrón que uso en empresas: un archivo por proceso, contexto escrito una vez, formato de salida fijo y una frecuencia de revisión.</p>
+
+      <p>La revisión semanal de dinero es un cierre financiero chiquito. El repartidor de carga mental es un mapa de responsabilidades, el mismo que le falta a la mayoría de los equipos de operación que veo. Y el guardián de recuerdos es exactamente lo que hace un <a href="/guias/3-formas-de-segundo-cerebro/">segundo cerebro</a> bien montado: acumular contexto para que las decisiones futuras no arranquen de cero.</p>
+
+      <h2>El orden que funciona</h2>
+
+      <p>No instales las cinco hoy. La que arregla más rápido es la de carga mental, porque destapa el problema del que dependen los otros. Después la de dinero, porque es la que tiene una frecuencia fija y te acostumbra al ritmo. El planeador de citas y el de viajes salen mejor cuando ya hay contexto acumulado, y el guardián de recuerdos se instala desde el día uno pero solo rinde a los tres meses.</p>
+
+      <p>El error que veo siempre: escribir las cinco skills en una tarde y no volver a abrirlas. Una skill que nadie corrige después de la primera semana es un documento muerto. Ábrelas cuando te den una respuesta mediocre y escribe la regla que faltaba. Ahí es donde se vuelven tuyas.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

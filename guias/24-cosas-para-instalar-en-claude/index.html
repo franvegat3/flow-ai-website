@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24 cosas para instalar en Claude: 8 plugins, 8 skills y 8 servidores MCP — Guías Flow AI</title>
+  <meta name="description" content="El stack exacto que armaría hoy: 8 plugins, 8 skills y 8 servidores MCP, cada uno con su link, su comando de instalación, y el orden en que conviene ponerlos." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/24-cosas-para-instalar-en-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="24 cosas para instalar en Claude: 8 plugins, 8 skills y 8 servidores MCP" />
+  <meta property="og:description" content="El stack exacto que armaría hoy: 8 plugins, 8 skills y 8 servidores MCP, cada uno con su link, su comando de instalación, y el orden en que conviene ponerlos." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/24-cosas-para-instalar-en-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Cowork</span><span class="tag">Skills</span><span class="tag">Empezar</span></div>
+      <h1>24 cosas para instalar en Claude: 8 plugins, 8 skills y 8 servidores MCP</h1>
+      <p class="lead">El stack exacto que armaría hoy: 8 plugins, 8 skills y 8 servidores MCP, cada uno con su link, su comando de instalación, y el orden en que conviene ponerlos.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 11 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La pregunta que más me hacen no es cómo usar Claude. Es qué instalarle. Y la respuesta honesta tiene tres partes, porque hay tres cosas distintas que se instalan y casi todo el mundo las confunde.</p>
+
+      <p>Un <strong>plugin</strong> es un paquete de área: trae skills, comandos y conectores ya armados. Una <strong>skill</strong> es un procedimiento suelto: le enseña a Claude cómo se hace una tarea. Un <strong>servidor MCP</strong> es un acceso: le da manos sobre una herramienta que ya usas. Plugin = oficio completo. Skill = método. MCP = llave.</p>
+
+      <p>La confusión cuesta tiempo real. Gente que lleva meses peleándose con prompts largos porque nunca escribió una skill. Gente con quince skills instaladas que sigue copiando datos a mano porque nunca conectó un MCP. Cada bloque resuelve un problema distinto y ninguno sustituye a los otros dos.</p>
+
+      <p>Esto es lo que instalaría hoy si empezara de cero, en tres bloques de ocho. Al final está el orden, que importa más que la lista.</p>
+
+      <h2>Los 8 plugins</h2>
+
+      <p>Los primeros cinco vienen del marketplace de trabajo de conocimiento de Anthropic; los últimos tres, del directorio oficial de plugins de Claude Code. Los cinco primeros son de área y los eliges según a qué te dedicas. Los tres últimos son de taller: no hacen tu trabajo, hacen que puedas construir lo que te falta. El marketplace de trabajo de conocimiento se agrega una vez:</p>
+
+      <pre><code>claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install productivity@knowledge-work-plugins</code></pre>
+
+      <p>El directorio oficial ya viene disponible dentro de Claude Code: abres <code>/plugin</code>, entras a <em>Discover</em> y buscas, o instalas directo con <code>/plugin install &lt;nombre&gt;@claude-plugins-official</code>.</p>
+
+      <div class="plugin-card">
+        <h3>1. <code>productivity</code></h3>
+        <p>Calendario, tareas y tu contexto de la semana. Es el único que instalaría sin importar a qué te dedicas: convierte a Claude en alguien que ya sabe qué traes encima.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. <code>sales</code></h3>
+        <p>Investigación de prospectos, preparación de llamadas, revisión de pipeline y seguimientos. Si tienes equipo comercial, la preparación de llamadas sola paga la suscripción.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. <code>marketing</code></h3>
+        <p>Contenido, campañas, tono de marca, vigilancia de competencia y reporte de desempeño. Trae conectores de investigación además de los de ejecución, así que cierra el ciclo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. <code>data</code></h3>
+        <p>Escribe la consulta, corre el análisis, arma el tablero y valida su propio trabajo. Para el que no es analista, es lo que le quita la dependencia del área de datos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. <code>enterprise-search</code></h3>
+        <p>Una pregunta que busca en correo, chat, documentos y wikis a la vez. Suena aburrido hasta que sumas las horas que tu equipo pierde buscando el archivo de marzo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. <code>plugin-dev</code></h3>
+        <p>Del directorio oficial. Sirve para construir y empaquetar tus propios plugins. Es el que convierte tu operación específica en algo instalable para el resto del equipo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. <code>mcp-server-dev</code></h3>
+        <p>Del directorio oficial. Claude te pregunta qué necesitas y te arma el servidor MCP, local o remoto. Es la salida cuando la herramienta que usas no tiene servidor todavía.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. <code>security-guidance</code></h3>
+        <p>Del directorio oficial. Mete revisión de seguridad dentro del flujo, en vez de dejarla como un paso que alguien hace al final si le da tiempo. Que casi nunca le da.</p>
+      </div>
+
+      <h2>Las 8 skills</h2>
+
+      <p>Todas están en el repositorio público <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a>, que se registra como marketplace y trae dos paquetes: los de documentos y los de ejemplo. Vale la pena abrir el repositorio y leer un <code>SKILL.md</code> completo aunque no instales nada: es la mejor referencia gratuita de cómo se escribe una, y lo que vas a copiar cuando te toque escribir la tuya.</p>
+
+      <pre><code>/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills</code></pre>
+
+      <div class="plugin-card">
+        <h3>9. <code>skill-creator</code></h3>
+        <p>La skill que escribe skills. Te entrevista sobre el proceso y deja el <code>SKILL.md</code> con la estructura correcta. Es la primera que instalo siempre, porque es la que hace que las demás dejen de ser necesarias.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. <code>mcp-builder</code></h3>
+        <p>Construye servidores MCP. Complementa al plugin de arriba: uno te guía el diseño, esta te escribe la implementación.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>11. <code>brand-guidelines</code></h3>
+        <p>Aplica lineamientos de marca a lo que Claude produce. Es el ejemplo canónico de skill de empresa: la instalas una vez y dejas de corregir tipografías y colores en cada entregable.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>12. <code>doc-coauthoring</code></h3>
+        <p>Escribir un documento largo a cuatro manos con el modelo, en vez de pedirle un texto completo y rehacerlo. Cambia el ritmo de trabajo, no nada más la velocidad.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>13. <code>xlsx</code></h3>
+        <p>Leer y escribir hojas de cálculo de verdad, con fórmulas y varias pestañas. Es la que más uso en trabajo de finanzas y de reporteo, sin comparación.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>14. <code>pptx</code></h3>
+        <p>Presentaciones. Lo interesante no es que arme el deck de cero: es que edite una plantilla existente respetando el formato de la empresa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>15. <code>pdf</code></h3>
+        <p>Extraer, llenar y armar PDFs. Suena poco glamoroso hasta que tienes que sacar datos de doscientos estados de cuenta o contratos escaneados.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>16. <code>internal-comms</code></h3>
+        <p>Comunicación interna: anuncios, actualizaciones al equipo, notas de cambio. Es la que estandariza el tono cuando la empresa creció y ya nadie escribe igual.</p>
+      </div>
+
+      <h2>Los 8 servidores MCP</h2>
+
+      <p>Estos son los accesos. El catálogo revisado está en <a href="https://claude.ai/directory" target="_blank" rel="noopener">claude.ai/directory</a>, y cualquier servidor remoto de ahí se agrega con el mismo comando. Sustituye por las herramientas que tú sí usas: la lista importa menos que la regla de que solo conectas lo que ya está en tu operación.</p>
+
+      <p>Dos cosas antes de pegar comandos. Los servidores remotos usan transporte HTTP y casi todos piden firmar sesión por OAuth la primera vez, así que después de agregarlos hay que abrir <code>/mcp</code> y autorizar. Los locales corren un proceso en tu máquina y llevan <code>--</code> antes del comando, que es lo que separa las opciones de Claude de las del servidor. Si un servidor te aparece en rojo, ese guion doble es el primer lugar donde buscar.</p>
+
+      <div class="plugin-card">
+        <h3>17. Notion</h3>
+        <p>Tu wiki y tus bases de datos internas. Es el conector con mejor relación entre lo que cuesta ponerlo y lo que devuelve, porque casi todo el contexto de una empresa chica vive ahí.</p>
+        <pre><code>claude mcp add --transport http notion https://mcp.notion.com/mcp</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>18. HubSpot</h3>
+        <p>El CRM. Con esto la preparación de llamadas del plugin de ventas deja de ser teoría y empieza a leer tus contactos y tus negocios reales.</p>
+        <pre><code>claude mcp add --transport http hubspot --scope user https://mcp.hubspot.com/anthropic</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>19. Stripe</h3>
+        <p>Cobros, suscripciones y reembolsos. Le abre la puerta a preguntas de negocio que hoy alguien contesta a mano exportando un CSV.</p>
+        <pre><code>claude mcp add --transport http stripe https://mcp.stripe.com</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>20. Asana</h3>
+        <p>Gestión de proyectos. Todavía expone transporte SSE, así que se agrega con esa bandera.</p>
+        <pre><code>claude mcp add --transport sse asana https://mcp.asana.com/sse</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>21. GitHub</h3>
+        <p>Repositorios, issues y pull requests. Pide un token personal de acceso, que se genera desde la configuración de tokens de tu cuenta de GitHub y se pasa como encabezado.</p>
+        <pre><code>claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer TU_TOKEN"</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>22. Sentry</h3>
+        <p>Errores en producción. Se autentica por OAuth, así que después de agregarlo hay que correr <code>/mcp</code> y firmar sesión.</p>
+        <pre><code>claude mcp add --transport http sentry https://mcp.sentry.dev/mcp</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>23. Playwright</h3>
+        <p>Manejar un navegador de verdad: abrir páginas, llenar formularios, verificar que algo se ve como debe. Es el que convierte a Claude en alguien que puede comprobar su propio trabajo en pantalla.</p>
+        <pre><code>claude mcp add playwright -- npx @playwright/mcp@latest</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>24. Tu base de datos</h3>
+        <p>DBHub conecta Claude a una base relacional por cadena de conexión. Usa un usuario de solo lectura: no hay razón para que un agente pueda escribir en tu base productiva.</p>
+        <pre><code>claude mcp add --transport stdio db -- npx -y @bytebase/dbhub \
+  --dsn "TU_CADENA_DE_CONEXION"</code></pre>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> agregar el servidor no es conectarlo. <code>claude mcp add</code> guarda la configuración sin validar credenciales, así que un token mal pegado se acepta sin queja y truena después. Corre <code>claude mcp list</code> o <code>/mcp</code> y verifica que cada uno diga que está conectado antes de darlo por hecho.</p>
+      </div>
+
+      <h2>El orden, que es lo que de verdad importa</h2>
+
+      <p>Instalar las 24 el mismo día es la forma más rápida de arruinar tu setup. Cada skill y cada herramienta compiten por la atención del modelo; con todo prendido acabas con un Claude que sabe de todo y no es bueno en nada, y además tardas más en cada respuesta.</p>
+
+      <ol>
+        <li><strong>Día 1.</strong> Solo <code>productivity</code> y el MCP de donde vive tu contexto, que casi siempre es Notion o tu gestor de proyectos. Nada más.</li>
+        <li><strong>Semana 1.</strong> El plugin de tu área. Uno. El del trabajo por el que te pagan.</li>
+        <li><strong>Semana 2.</strong> El MCP del sistema donde está el dato que más copias y pegas a mano. Si tienes que pensar cuál es, ya sabes cuál es.</li>
+        <li><strong>Semana 3.</strong> Las skills de documentos, cuando ya te fastidió reformatear a mano lo que Claude te entrega.</li>
+        <li><strong>Semana 4.</strong> <code>skill-creator</code>, y escribes la primera skill tuya. Aquí es donde el setup deja de ser el de todo el mundo y empieza a ser el tuyo.</li>
+      </ol>
+
+      <p>Lo que sobra de esta lista no es un error, es información. Si a las seis semanas hay servidores que nunca se usaron, quítalos. Un conector que no aportó nada sigue costando atención en cada sesión, y esa cuenta se paga aunque no la veas.</p>
+
+      <p>Y la parte que ninguna lista te da: los primeros 23 elementos son el punto de partida de cualquiera. El 24 —el proceso que solo existe en tu empresa, empaquetado como skill— es el único que te hace distinto. Todo lo demás es infraestructura para llegar ahí.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

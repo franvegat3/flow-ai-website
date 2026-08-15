@@ -1,0 +1,83 @@
+      <p>Si tu día con Claude se ve así —le pides algo, te entrega, le corriges, te vuelve a entregar, le vuelves a corregir— no estás delegando. Estás editando. Y editar el trabajo de alguien más toma casi el mismo tiempo que hacerlo tú.</p>
+
+      <p>La parte incómoda es que casi siempre el problema no está del lado del modelo. Está en que le entregaste una tarea sin contexto, sin criterio de terminado y sin permiso de preguntar. Un empleado nuevo con esas tres carencias también te devolvería trabajo para corregir.</p>
+
+      <p>Estos son los cuatro movimientos que me quitaron ese ciclo. No son trucos de prompt: son cambios en cómo entregas el trabajo. Al final está el prompt de arranque que uso la primera vez que le paso una tarea nueva a Claude.</p>
+
+      <h2>Corregir y delegar no son lo mismo</h2>
+
+      <p>Corregir es intervenir <em>después</em> del resultado. Delegar es invertir <em>antes</em>, para que el resultado no necesite intervención.</p>
+
+      <p>La prueba es simple: si mañana tuvieras que pedir la misma tarea otra vez, ¿tendrías que volver a explicar lo mismo? Si la respuesta es sí, todavía no delegaste nada. Nada más hiciste el trabajo con pasos extra.</p>
+
+      <h2>Los cuatro movimientos</h2>
+
+      <div class="plugin-card">
+        <h3>1. Escribe el contexto una vez, en un archivo</h3>
+        <p>Todo lo que le explicas al inicio de cada sesión —cómo se llama el cliente, qué formato usan, qué está prohibido tocar, cómo se corren las cosas— no va en el chat. Va en el <code>CLAUDE.md</code> del proyecto, que Claude lee solo cada vez que abres una sesión ahí.</p>
+        <p>La regla que uso para saber qué meter: si ya lo escribiste dos veces en dos conversaciones distintas, es contexto, no instrucción. Va al archivo.</p>
+        <p class="plugin-for"><strong>Lo que se ahorra:</strong> los primeros diez minutos de cada sesión, y la mitad de las correcciones, que son correcciones de contexto disfrazadas de correcciones de calidad.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Pide el plan antes del trabajo</h3>
+        <p>Para cualquier tarea de más de dos pasos, primero el plan. En Claude Code eso tiene un modo propio: arrancas con <code>claude --permission-mode plan</code>, o presionas <code>Shift+Tab</code> a media sesión hasta que la barra de estado muestre que el modo plan está activo. En ese modo lee y propone, pero no toca tus archivos hasta que apruebes.</p>
+        <p>Corregir un plan de ocho líneas toma treinta segundos. Corregir el trabajo ya hecho toma media hora y te deja con archivos que hay que revertir.</p>
+        <p class="plugin-for"><strong>Lo que se ahorra:</strong> el rehacer completo. Es el movimiento con mejor relación entre esfuerzo y devolución de los cuatro.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Define el terminado antes de empezar</h3>
+        <p>"Hazme el reporte" no tiene final. "El reporte está listo cuando trae las cuatro secciones, el gasto total cuadra con la plataforma, y no hay ninguna cifra sin fuente" sí lo tiene.</p>
+        <p>Cuando el criterio se puede verificar solo, puedes dejarlo trabajando hasta cumplirlo con <code>/goal</code> seguido de la condición: Claude sigue turno tras turno y un modelo aparte revisa después de cada uno si ya se cumplió. Ojo con una restricción del mecanismo: ese evaluador no corre comandos ni abre archivos por su cuenta, solo lee la conversación, así que la condición tiene que ser algo que el trabajo mismo deje escrito ahí.</p>
+        <p class="plugin-for"><strong>Lo que se ahorra:</strong> las rondas de "casi, pero le falta". Si el criterio existe desde el principio, no hay casi.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Manda la exploración a un subagente</h3>
+        <p>Cuando la tarea empieza con "primero averigua cómo funciona X", esa parte no la quieres en tu conversación. Leer veinte archivos para encontrar tres llena tu contexto de basura y a partir de ahí todo lo que pidas sale peor.</p>
+        <p>Se pide directo: "usa un subagente para investigar cómo está armado el flujo de facturación". El subagente lee en su propio espacio y te regresa la conclusión. Tu conversación se queda limpia con lo que importa.</p>
+        <p class="plugin-for"><strong>Lo que se ahorra:</strong> la degradación de la sesión larga. Es la razón por la que tu Claude "se pone tonto" a la hora y media.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> volver al archivo después de corregir. Cada vez que corriges algo, para dos minutos y pregúntate si esa corrección es de una sola vez o es una regla. Si es regla, escríbela en el <code>CLAUDE.md</code> ahí mismo. La gente que dice que Claude "no aprende" es la que corrige veinte veces la misma cosa en el chat y nunca la escribe en el archivo.</p>
+      </div>
+
+      <h2>El prompt de arranque de delegación</h2>
+
+      <p>Este no lo uso para pedir trabajo. Lo uso una sola vez por tarea nueva, para armar la delegación completa antes de que empiece.</p>
+
+      <pre><code>Voy a delegarte una tarea que hago seguido. Antes de hacerla,
+ayúdame a armar bien la delegación.
+
+LA TAREA
+Qué es: [descríbela como se la contarías a alguien que entra hoy]
+Cada cuánto la hago:
+Cuánto me toma hoy a mano:
+Dónde vive lo que necesitas: [archivos, carpetas, herramientas]
+Cómo se ve una entrega buena: [describe una que sí sirvió]
+Cómo se ve una mala: [describe un caso real que salió mal]
+Qué tienes prohibido: [tocar, publicar, borrar, mandar]
+
+QUÉ QUIERO QUE HAGAS AHORA (no la tarea todavía)
+1. Hazme las 5 preguntas cuya respuesta más cambiaría tu resultado.
+   Solo 5, las que más pesan. Espera mi respuesta.
+2. Con mis respuestas, escríbeme el bloque de contexto que debería
+   quedar guardado en el CLAUDE.md del proyecto, redactado como
+   reglas, no como descripción.
+3. Escribe el criterio de terminado en forma de lista verificable.
+   Cada punto tiene que poder contestarse con sí o no, sin opinión.
+4. Dime qué parte de esta tarea NO deberías hacer tú y por qué.
+5. Hasta el final, propón el plan de ejecución en pasos numerados.
+   No ejecutes nada hasta que lo apruebe.</code></pre>
+
+      <p>El punto 4 es el que la gente borra y el que más vale. Una tarea bien delegada casi siempre tiene un pedazo que se queda contigo, y saber cuál es de entrada evita el peor resultado posible: que te entregue algo completo donde una parte está inventada.</p>
+
+      <h2>El orden importa</h2>
+
+      <p>No hagas los cuatro hoy. El movimiento 1 solo, aplicado a tu proyecto más recurrente, ya te quita el pedazo más grande. Vive con eso una semana y ve qué correcciones te siguen apareciendo: esas son las reglas que le faltan al archivo.</p>
+
+      <p>El 2 entra cuando empieces a pedirle cosas de varios pasos. El 3, cuando quieras dejar de estar sentado esperando. El 4, cuando notes que las sesiones largas se ponen peores.</p>
+
+      <p>Y la señal de que ya delegaste de verdad no es que quede perfecto. Es que puedas describir la tarea en una frase y salga bien, porque todo lo demás ya está escrito en algún lado. Si el archivo es lo que te falta, empieza por <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a>; y cuando quieras que además arranque solo, sigue con <a href="/guias/ingenieria-de-loops/">ingeniería de loops</a>.</p>

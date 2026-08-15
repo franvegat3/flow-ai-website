@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 cosas que Anthropic cambió en Claude 4.7 — Guías Flow AI</title>
+  <meta name="description" content="Si tus salidas se han sentido raras desde la actualización, aquí está el porqué. Sacado de la guía oficial de prompting con las formulaciones exactas que hay que usar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-cambios-de-claude-4-7/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 cosas que Anthropic cambió en Claude 4.7" />
+  <meta property="og:description" content="Si tus salidas se han sentido raras desde la actualización, aquí está el porqué. Sacado de la guía oficial de prompting con las formulaciones exactas que hay que usar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-cambios-de-claude-4-7/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Novedades</span></div>
+      <h1>5 cosas que Anthropic cambió en Claude 4.7</h1>
+      <p class="lead">Si tus salidas se han sentido raras desde la actualización, aquí está el porqué. Sacado de la guía oficial de prompting con las formulaciones exactas que hay que usar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Si tus prompts de siempre empezaron a devolver algo distinto —más corto, más literal, sin las viñetas que antes salían solas— no es tu imaginación y no es que el modelo esté peor. Es que cambiaron las reglas del juego y tu prompt sigue escrito para las anteriores.</p>
+
+      <p>Cada versión nueva llega con su guía de prompting actualizada, y casi nadie la abre. Es de las lecturas con mejor retorno que hay: son unos minutos y te arregla la mitad de las quejas. La encuentras en la documentación oficial, en <a href="https://docs.claude.com/" target="_blank" rel="noopener">docs.claude.com</a>, en la sección de mejores prácticas de prompting.</p>
+
+      <p>Abajo están los cinco cambios que más se notan en el uso diario, con la formulación concreta que hay que agregarle a tus prompts para cada uno. Si tienes instrucciones guardadas —un proyecto, un archivo de instrucciones globales, una skill— este es el rato de actualizarlas.</p>
+
+      <h2>Por qué cambia el prompting entre versiones</h2>
+
+      <p>Un modelo no es una función fija a la que le encuentras el truco. Cada versión se entrena distinto, y lo que en una era "rellena lo que falte con criterio" en la siguiente puede ser "haz exactamente lo que te pidieron". Las dos son decisiones defendibles, pero la que ganaste de regalo antes ahora la tienes que pedir.</p>
+
+      <p>La regla mental que uso: <strong>cada versión nueva es más literal que la anterior.</strong> Casi todos los ajustes que siguen son consecuencia de eso.</p>
+
+      <div class="plugin-card">
+        <h3>1. Hace lo que pediste, no lo que ibas a querer</h3>
+        <p>El cambio más grande y el que explica la sensación de "se siente seco". Antes, si le pedías un resumen, muchas veces te agregaba conclusiones, recomendaciones y siguientes pasos. Ahora te da el resumen. Punto.</p>
+        <p>Eso es mejor para trabajo serio —el modelo dejó de meter opinión donde no se la pediste— y peor si tus prompts dependían de esa generosidad. La solución no es escribir más: es escribir el entregable completo.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> lista el entregable por partes, no por tema.</p>
+      </div>
+
+      <pre><code>Necesito tres cosas, en este orden y con estos títulos:
+1. Resumen de lo que dice el documento, en cinco viñetas.
+2. Los tres riesgos que veo yo y tú no mencionaste.
+3. Qué recomendarías hacer esta semana, en una frase.
+Si alguna de las tres no la puedes contestar con lo que te di,
+escribe "falta información" en esa sección y sigue con la
+siguiente.</code></pre>
+
+      <div class="plugin-card">
+        <h3>2. El formato hay que pedirlo</h3>
+        <p>Las viñetas, los encabezados y las tablas ya no aparecen solos. La salida por defecto se fue hacia prosa más limpia, que es lo correcto para la mayoría de la gente y un problema para quien pega la respuesta directo en un documento con formato.</p>
+        <p>El error típico aquí es pedir el formato al final del prompt, después de tres párrafos de contexto. Va al principio o va en su propio bloque, con nombre.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> un bloque de FORMATO explícito, separado del encargo.</p>
+      </div>
+
+      <pre><code>FORMATO DE SALIDA
+- Encabezados de segundo nivel para cada sección.
+- Viñetas cortas, máximo dos líneas cada una.
+- Sin párrafo de introducción y sin cierre resumiendo.
+- Los números van en negritas.
+- Nada de tablas.</code></pre>
+
+      <div class="plugin-card">
+        <h3>3. Los "no hagas" funcionan peor que los "haz"</h3>
+        <p>Decirle "no seas genérico" o "no uses lenguaje corporativo" rinde mucho menos que decirle qué sí quieres en su lugar. Con las versiones más literales esto se acentuó: una prohibición sin alternativa deja un hueco, y el hueco se llena con lo de siempre.</p>
+        <p>La versión que funciona convierte cada prohibición en una instrucción positiva con ejemplo.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> por cada "no", escribe el "en su lugar".</p>
+      </div>
+
+      <pre><code>En vez de: "no escribas genérico".
+Escribe: "cada afirmación va con el dato, el ejemplo o el
+nombre concreto que la sostiene. Si no tienes ninguno de los
+tres para una afirmación, bórrala en lugar de suavizarla."
+
+En vez de: "no uses lenguaje de marketing".
+Escribe: "usa las palabras que usaría alguien explicándole
+esto a un compañero en el pasillo. Frases de menos de veinte
+palabras. Verbos concretos."</code></pre>
+
+      <div class="plugin-card">
+        <h3>4. Hay que decirle cuánto pensar</h3>
+        <p>El esfuerzo de razonamiento se ajusta, y por defecto no se va al máximo en todo. Eso está bien: gastar razonamiento profundo en reformatear una lista es tirar dinero y tiempo. Pero significa que para las decisiones que sí importan tienes que pedirlo.</p>
+        <p>Lo que a mí me sirvió fue dejar de pensar en "modo rápido o modo lento" y empezar a pensar en el tipo de tarea. Reescribir, formatear, clasificar: sin razonamiento extra. Diagnosticar, comparar opciones, encontrar el error en un plan: con razonamiento extra y dicho en el prompt.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> nombrar el nivel de esfuerzo como parte del encargo.</p>
+      </div>
+
+      <pre><code>Esto es una decisión, no una redacción. Tómate el tiempo
+que haga falta antes de contestar. Primero razona en voz alta
+las opciones y dónde se rompe cada una; hasta después me das
+la recomendación. Si al razonar encuentras que la pregunta
+está mal planteada, dilo antes que nada.</code></pre>
+
+      <div class="plugin-card">
+        <h3>5. Usa herramientas de más si no le pones límites</h3>
+        <p>Con conectores y búsqueda activos, la tendencia es a ir a buscar. Eso es útil cuando el dato es de esta semana y es puro ruido cuando la respuesta ya estaba en el archivo que le pasaste.</p>
+        <p>El síntoma que delata este problema: respuestas que citan fuentes de internet cuando tú querías un análisis de tus propios documentos. La regla que le doy es de prioridad de fuente, no de prohibición.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> ordenar las fuentes antes de que pregunte.</p>
+      </div>
+
+      <pre><code>ORDEN DE FUENTES
+1. Los archivos que te di. Son la verdad para todo lo que
+   sea de este negocio.
+2. Lo que ya sabes, para contexto general.
+3. Búsqueda en internet: solo si el dato depende de algo
+   que haya cambiado en las últimas semanas, y solo después
+   de decirme por qué lo necesitas buscar.
+Si un archivo mío contradice lo que encontraste afuera, gana
+el archivo, y me lo señalas.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> actualizar las instrucciones guardadas. La gente arregla el prompt de hoy y deja intacto el archivo de instrucciones globales, el proyecto y las skills que escribió hace meses. Ahí es donde vive el prompt viejo, y ahí es donde te va a seguir mordiendo. Aparta media hora y pasa esos cinco puntos por todo lo que tengas guardado.</p>
+      </div>
+
+      <h2>En qué orden aplicarlos</h2>
+
+      <p>No los metas todos de golpe a todos tus prompts. Vas a acabar con instrucciones de doscientas palabras para pedir un correo de tres líneas.</p>
+
+      <ol>
+        <li><strong>Primero el formato.</strong> Es el que arregla la queja más común y el más barato de escribir.</li>
+        <li><strong>Luego el entregable por partes.</strong> Aplícalo solo a las tareas que repites cada semana; ahí es donde paga.</li>
+        <li><strong>Después los "en su lugar".</strong> Cada vez que te moleste algo de una salida, en vez de prohibirlo, escribe qué querías. Guárdalo.</li>
+        <li><strong>El nivel de esfuerzo y el orden de fuentes</strong> solo en los prompts de decisión y en los que tienen conectores conectados.</li>
+      </ol>
+
+      <p>Y una cosa más, que no es un cambio de esta versión sino de todas: lo que hace que un prompt funcione no es la técnica, es cuánto contexto real le diste. Si te interesa esa parte, está desarrollada en <a href="/guias/anatomia-del-prompt-perfecto/">la anatomía del prompt perfecto</a> y en <a href="/guias/ingeniero-de-contexto/">la guía de ingeniería de contexto</a>.</p>
+
+      <h2>Lo que no vas a arreglar con prompting</h2>
+
+      <p>Si tus salidas se sienten raras y ninguno de los cinco ajustes te lo compone, el problema probablemente no está en cómo pides: está en qué le estás dando. Un modelo más literal expone más rápido los prompts que dependían de que adivinara. Eso se siente como una regresión y en realidad es un diagnóstico gratis de cuánto de tu resultado venía de la suerte.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

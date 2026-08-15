@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 artifacts que construí con Claude (parte 2) — Guías Flow AI</title>
+  <meta name="description" content="Un tablero de puntos y recompensas, un calendario de flujo de efectivo, un CRM personal, un centro de mando para buscar trabajo y un tablero de patrimonio. Un prompt para cada uno." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-artifacts-que-construi-parte-2/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 artifacts que construí con Claude (parte 2)" />
+  <meta property="og:description" content="Un tablero de puntos y recompensas, un calendario de flujo de efectivo, un CRM personal, un centro de mando para buscar trabajo y un tablero de patrimonio. Un prompt para cada uno." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-artifacts-que-construi-parte-2/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Creativo</span></div>
+      <h1>5 artifacts que construí con Claude (parte 2)</h1>
+      <p class="lead">Un tablero de puntos y recompensas, un calendario de flujo de efectivo, un CRM personal, un centro de mando para buscar trabajo y un tablero de patrimonio. Un prompt para cada uno.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Un artifact es una aplicación completa que Claude escribe adentro del chat y que corre ahí mismo, sin instalar nada ni abrir un editor. Le describes lo que quieres y en un minuto tienes una pantalla con tus datos, tus reglas y tus botones.</p>
+
+      <p>La primera tanda que armé eran juguetes: se veían bien en una captura y no los volví a abrir. Estos cinco llevan meses conmigo y tres terminé replicándolos dentro de operaciones de clientes que facturan. La diferencia no fue el diseño: fue definir, antes de pedirlos, de dónde salen los datos.</p>
+
+      <p>Abajo van los cinco con su prompt completo. Cópialos tal cual, cambia lo que está entre corchetes y pégalos en un chat nuevo.</p>
+
+      <h2>Tres reglas antes de pedir el primero</h2>
+
+      <ol>
+        <li><strong>Define el modelo de datos antes que el diseño.</strong> Qué entidades hay, qué campos tiene cada una y qué operaciones existen. Si empiezas por "hazme un tablero bonito de finanzas", el modelo te lo inventa Claude y va a estar mal.</li>
+        <li><strong>Una sola pantalla.</strong> Cuando pides pestañas, menús y vistas, cada iteración se vuelve más lenta y algo se rompe en otro lado. Todo lo que necesitas ver, visible al mismo tiempo.</li>
+        <li><strong>Trata el estado como si se fuera a borrar.</strong> Un artifact no es tu base de datos. Pide siempre botón de exportar e importar JSON, y guarda ese JSON donde sí guardas cosas.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pegarle datos reales desde el primer intento. Con el artifact vacío lo vas a evaluar por cómo se ve. Con tus veinte movimientos de la semana pasada adentro, en treinta segundos descubres que le falta un campo o que la vista que pediste no responde la pregunta que en realidad tienes.</p>
+      </div>
+
+      <h2>Los cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Tablero de puntos y recompensas <code>puntos</code></h3>
+        <p>Nació para la casa y acabó en un equipo de operaciones. La gracia no son los puntos: es que te obliga a escribir las conductas que sí quieres, con su valor. La mitad del efecto ocurre al redactar esa lista, antes de que exista el tablero.</p>
+        <pre><code>Construye un artifact de una sola pantalla: un tablero de puntos y recompensas.
+
+Participantes: [nombres].
+
+Conductas que dan puntos, con su valor:
+- [conducta] = [puntos]
+- [conducta] = [puntos]
+
+Recompensas con su costo en puntos:
+- [recompensa] = [puntos]
+
+Comportamiento:
+- Un botón por conducta y por participante que suma los puntos con un clic.
+- Saldo visible de cada quien y cuánto le falta para la siguiente
+  recompensa que ya puede pagar.
+- Canjear una recompensa resta puntos y escribe una línea en el
+  historial con fecha, participante y concepto.
+- Un ajuste manual para corregir errores, con motivo obligatorio.
+
+Entrega:
+- Botón Exportar que copia todo el estado como JSON, y botón Importar
+  que lo restaura desde un JSON pegado.
+- Sin librerías externas. Arranca vacío salvo los nombres que te di.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> familias con hijos, y equipos chicos donde el reconocimiento se da de dientes para afuera y nadie lleva la cuenta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Calendario de flujo de efectivo <code>flujo</code></h3>
+        <p>Este es el que más veces he vuelto a construir para clientes. Una distribuidora que factura a treinta y sesenta días no tiene un problema de utilidad: tiene un problema de calendario. El estado de resultados dice que ganaron y aun así la quincena no sale. Este artifact pone entradas y salidas en la línea del tiempo real y te dice qué semana se pone en rojo.</p>
+        <pre><code>Construye un artifact de una sola pantalla: un calendario de flujo de
+efectivo semanal a 13 semanas.
+
+Datos de entrada, todos editables en la misma pantalla:
+- Saldo inicial en caja.
+- Cuentas por cobrar: cliente, monto, fecha esperada de pago,
+  probabilidad (alta / media / baja).
+- Cuentas por pagar: proveedor, monto, fecha de vencimiento, si es fijo
+  o negociable.
+- Gastos recurrentes: concepto, monto, periodicidad (semanal, quincenal,
+  mensual) y día.
+
+Comportamiento:
+- Una columna por semana con entradas, salidas, flujo neto y saldo
+  acumulado al cierre de esa semana.
+- Marca en rojo cualquier semana donde el saldo acumulado quede por
+  debajo del colchón mínimo que yo defina.
+- Un interruptor que recalcule todo contando solo los cobros de
+  probabilidad alta, para ver el escenario pesimista.
+- Al hacer clic en una semana, muestra su detalle de movimientos.
+
+Entrega:
+- Exportar e importar el estado completo como JSON.
+- Nada de datos de ejemplo: arranca vacío y déjame pegar los míos.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier negocio que cobre a crédito. Es la herramienta que evita descubrir el hueco la semana que ya llegó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. CRM personal <code>relaciones</code></h3>
+        <p>No es un CRM de ventas. Es la lista de las personas con las que quiero seguir hablando y la fecha en que debería hacerlo. Un CRM muere porque nadie lo llena; este sobrevive porque casi no tiene campos y su única función es empujarte a mandar un mensaje.</p>
+        <pre><code>Construye un artifact de una sola pantalla: un CRM personal de
+relaciones.
+
+Cada persona tiene: nombre, cómo la conocí, contexto libre (notas),
+frecuencia con la que quiero contactarla (cada 30, 60, 90 o 180 días)
+y fecha del último contacto.
+
+Comportamiento:
+- La vista principal ordena por urgencia: primero los vencidos según su
+  frecuencia, luego los que vencen esta semana, luego el resto.
+- Un botón "hablé con esta persona" que pone la fecha de hoy y me abre
+  un campo para agregar una nota corta.
+- Búsqueda por nombre y por texto dentro de las notas.
+- Un contador arriba: cuántos contactos tengo vencidos ahorita.
+
+Entrega:
+- Exportar e importar todo como JSON.
+- Sin datos de ejemplo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> quien vende por relación, o quien se dio cuenta de que su red se le enfrió sin notarlo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Centro de mando para buscar trabajo <code>búsqueda</code></h3>
+        <p>Buscar trabajo se lleva mal en una hoja de cálculo porque el dato que importa no es la vacante: es el estado y el siguiente paso. Este tablero lo convierte en pipeline y te dice qué lleva más de una semana sin moverse.</p>
+        <pre><code>Construye un artifact de una sola pantalla: un centro de mando para
+buscar trabajo.
+
+Cada vacante tiene: empresa, puesto, fuente, fecha en que apliqué,
+etapa (identificada, aplicada, primera entrevista, avanzada, oferta,
+descartada), contacto interno, siguiente paso, fecha del siguiente paso
+y notas.
+
+Comportamiento:
+- Vista de columnas por etapa, con el conteo de cada una arriba.
+- Alerta visible sobre cualquier vacante sin movimiento en más de
+  7 días.
+- Un panel lateral con las tres métricas de mi esfuerzo esta semana:
+  vacantes nuevas agregadas, aplicaciones enviadas, entrevistas hechas.
+- Al abrir una vacante, un campo largo para pegar la descripción del
+  puesto y otro para mis notas de la entrevista.
+
+Entrega:
+- Exportar e importar como JSON.
+- Sin datos de ejemplo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que aplica mucho y siente que no avanza. El diagnóstico aparece al ver cuántas vacantes llevan semanas en la misma etapa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Tablero de patrimonio <code>patrimonio</code></h3>
+        <p>Un solo número, actualizado a mano una vez al mes: cuánto tienes menos cuánto debes. Nada de conectar bancos. La disciplina de sentarte doce veces al año a escribir los saldos vale más que cualquier automatización.</p>
+        <pre><code>Construye un artifact de una sola pantalla: un tablero de patrimonio
+neto con historial mensual.
+
+Estructura:
+- Activos por categoría (efectivo, inversiones, inmuebles, negocio,
+  otros), cada uno con nombre, categoría y saldo.
+- Pasivos por categoría (tarjetas, créditos, hipoteca, otros), cada uno
+  con nombre, saldo y tasa si la conozco.
+- Un corte mensual: al cerrar el mes se guarda la foto completa con
+  fecha.
+
+Comportamiento:
+- Arriba, en grande: patrimonio neto de hoy y el cambio contra el corte
+  anterior en monto y porcentaje.
+- Desglose de activos y pasivos por categoría.
+- Una gráfica de línea del patrimonio neto por mes, construida solo con
+  los cortes que yo haya guardado.
+- Un campo de notas por corte para escribir qué pasó ese mes.
+
+Entrega:
+- Exportar e importar el historial completo como JSON.
+- Todo en una sola moneda, la que yo indique. Sin datos de ejemplo y
+  sin proyecciones inventadas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que revisa su dinero por app de banco y nunca ha visto el número consolidado, y el dueño que mezcla lo personal con lo de la empresa.</p>
+      </div>
+
+      <h2>Cómo iterarlos sin romperlos</h2>
+
+      <p>Cuando algo no te gusta, no lo pidas desde cero. Quédate en el mismo chat y pide un cambio a la vez, describiendo el comportamiento y no el código: "la columna debe ordenarse por fecha, no por monto".</p>
+
+      <h2>Cuándo dejar de usar un artifact</h2>
+
+      <p>Mi error con la primera tanda fue el opuesto al que te imaginas. No fue construir de más: fue quedarme en el artifact cuando la herramienta ya se había vuelto parte de la operación.</p>
+
+      <p>La señal es clara. Si más de una persona necesita ver el mismo tablero, si alguien va a tomar decisiones de dinero con lo que dice, o si el JSON ya no cabe cómodo en un copiar y pegar, el artifact cumplió su función: te sirvió para descubrir qué campos importan de verdad. Eso es justo lo que sale caro cuando arrancas mandándoselo a un desarrollador.</p>
+
+      <p>Ahí es cuando mudas, y llegas con el modelo de datos ya probado. La guía de <a href="/guias/artifacts-vivos/">artifacts vivos</a> es el puente, y <a href="/guias/tu-primera-app-sin-programar/">tu primera app sin programar</a> es el destino.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/robarle-el-diseno-a-un-sitio/" class="stack-link">
+            <span>Cómo robarle el diseño a cualquier sitio web con IA →</span>
+            <small>Los sitios hechos con IA se ven genéricos porque la IA no tiene gusto. El truco de un solo archivo que hace que Claude construya como marca premium, partiendo de un diseño que ya te gusta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

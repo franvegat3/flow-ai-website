@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El truco de prompting que casi nadie usa — Guías Flow AI</title>
+  <meta name="description" content="Deja de perfeccionar un solo borrador. Pide cinco versiones desde ángulos distintos por el mismo costo, y encuentra la que no sabías cómo poner en palabras." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/pedir-cinco-versiones/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El truco de prompting que casi nadie usa" />
+  <meta property="og:description" content="Deja de perfeccionar un solo borrador. Pide cinco versiones desde ángulos distintos por el mismo costo, y encuentra la que no sabías cómo poner en palabras." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/pedir-cinco-versiones/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span></div>
+      <h1>El truco de prompting que casi nadie usa</h1>
+      <p class="lead">Deja de perfeccionar un solo borrador. Pide cinco versiones desde ángulos distintos por el mismo costo, y encuentra la que no sabías cómo poner en palabras.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 6 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi todo el mundo trabaja igual: pide una cosa, no le gusta del todo, y empieza a pulirla. "Hazlo más corto." "Menos formal." "Que suene más fuerte." Veinte mensajes después tiene el mismo texto con distinta ropa.</p>
+
+      <p>Pulir mueve el tono. Lo que mueve el resultado es el ángulo, y el ángulo no se corrige: se cambia. Por eso el movimiento que más me ha rendido no es escribir mejores instrucciones, es pedir cinco entradas distintas al mismo problema en una sola vuelta. Cuesta prácticamente lo mismo que pedir una, y una de las cinco casi siempre dice lo que llevabas semanas sin poder poner en palabras.</p>
+
+      <h2>Por qué cinco, y por qué falla cuando lo pides mal</h2>
+
+      <p>Si escribes "dame cinco versiones", te dan cinco veces lo mismo con sinónimos. El modelo tiende a la respuesta más probable, así que sin instrucción explícita las cinco salen del mismo lugar.</p>
+
+      <p>La variación tiene que venir declarada por eje. Le dices desde qué cinco lugares distintos quieres que entre, y le prohíbes repetir estructura entre versiones. Ahí es cuando aparecen opciones que no se te habrían ocurrido, porque ninguna es una variante de otra.</p>
+
+      <h2>El prompt maestro</h2>
+
+      <pre><code>Necesito [qué es: un titular / un correo de reactivación / el nombre
+de una oferta / la apertura de una propuesta].
+
+Contexto que no puedes ignorar:
+- Para quién es: [describe a la persona concreta, no un segmento]
+- Qué tiene que lograr: [la acción única que buscas]
+- Restricción real: [precio, plazo, canal, límite legal, lo que sea]
+- Qué ya intentamos y no funcionó: [si aplica]
+
+Dame cinco versiones, cada una entrando desde un ángulo distinto:
+
+1. El costo de no actuar.
+2. La objeción principal, dicha en voz alta antes que el beneficio.
+3. Un detalle concreto y verificable de la operación, sin adjetivos.
+4. La comparación contra la alternativa real que la persona está
+   considerando hoy, incluida "no hacer nada".
+5. El ángulo que nadie de mi categoría está usando.
+
+Reglas:
+- Ninguna versión puede compartir la estructura de otra. Si dos se
+  parecen, cambia la segunda.
+- Cero datos inventados. Si un ángulo necesita un dato que no te di,
+  escribe [FALTA: qué dato] en su lugar.
+- Debajo de cada versión, una línea: a qué tipo de persona le pega esta
+  y a cuál no.
+- No me digas cuál te gusta más todavía.</code></pre>
+
+      <h2>La versión para una cuenta de anuncios</h2>
+
+      <p>Aquí es donde más rinde, porque el ángulo es justo la variable que la plataforma no puede optimizar por ti. Puedes probar creativos toda la vida y seguir compitiendo dentro del mismo argumento.</p>
+
+      <pre><code>Vamos a escribir cinco conceptos de anuncio para [producto o
+servicio], no cinco textos del mismo concepto.
+
+Datos:
+- Cliente que ya compra: [quién es, qué problema tenía]
+- Lo que dice el cliente cuando explica por qué compró: [cita textual
+  si la tienes]
+- Objeción número uno en la llamada de venta: [cuál]
+- Alternativa real del comprador: [competidor, hacerlo interno, o nada]
+
+Para cada uno de los cinco conceptos dame:
+- El ángulo en una frase (qué creencia intenta mover).
+- El gancho de las primeras tres segundos o la primera línea.
+- El cuerpo, máximo 60 palabras.
+- La llamada a la acción.
+- La razón por la que este concepto puede fracasar.
+
+Ángulos obligatorios, uno por concepto: costo de no actuar, objeción de
+frente, demostración concreta, comparación contra la alternativa real,
+y un ángulo que no esté en mi categoría.
+
+No uses cifras, porcentajes ni testimonios que yo no te haya dado.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la línea de "qué ya intentamos y no funcionó". Sin ella, el modelo va a proponerte con toda seguridad justo lo que ya probaste y descartaste. Es el dato más barato de dar y el que más recorta el desperdicio.</p>
+      </div>
+
+      <h2>Cómo elegir sin arruinarlo</h2>
+
+      <p>No elijas la que más te guste. Con cinco opciones enfrente, la que más gusta suele ser la más parecida a lo que ya hacías.</p>
+
+      <ol>
+        <li><strong>Tacha las que un competidor podría firmar sin cambiar nada.</strong> Normalmente caen dos.</li>
+        <li><strong>De las que quedan, quédate con la que tenga la objeción más fácil de contestar.</strong> No la que no tenga objeciones: esa es la que no dice nada.</li>
+        <li><strong>Pide el híbrido explícito.</strong> "Toma el ángulo de la 4 y el remate de la 2, y escríbelo otra vez." Ese suele ser el bueno.</li>
+      </ol>
+
+      <h2>Dónde no sirve</h2>
+
+      <p>En tareas con una sola respuesta correcta, pedir cinco versiones es tirar tiempo. Una minuta, una conciliación, un resumen de una llamada, un formato: ahí quieres la versión estándar y quieres una sola.</p>
+
+      <p>Sirve donde hay juicio de por medio y donde el costo de equivocarse de ángulo es alto: campañas, propuestas, nombres, la apertura de un correo en frío, la forma de dar una mala noticia. Si además quieres que las cinco arranquen lejos del promedio, corre esto encima de <a href="/guias/skill-de-criterio/">la skill de criterio</a> y compara. La diferencia entre las dos salidas es la mejor demostración de por qué el primer borrador nunca es el bueno.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

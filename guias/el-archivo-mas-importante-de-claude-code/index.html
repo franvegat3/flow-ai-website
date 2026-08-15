@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El archivo más importante de Claude Code — Guías Flow AI</title>
+  <meta name="description" content="Un solo archivo controla qué tan listo es realmente Claude Code, y casi todos lo configuran mal. Cinco reglas para armar bien tu CLAUDE.md, más un arranque y la regla de las 200 líneas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/el-archivo-mas-importante-de-claude-code/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El archivo más importante de Claude Code" />
+  <meta property="og:description" content="Un solo archivo controla qué tan listo es realmente Claude Code, y casi todos lo configuran mal. Cinco reglas para armar bien tu CLAUDE.md, más un arranque y la regla de las 200 líneas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/el-archivo-mas-importante-de-claude-code/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Prompts</span><span class="tag">Empezar</span></div>
+      <h1>El archivo más importante de Claude Code</h1>
+      <p class="lead">Un solo archivo controla qué tan listo es realmente Claude Code, y casi todos lo configuran mal. Cinco reglas para armar bien tu CLAUDE.md, más un arranque y la regla de las 200 líneas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay una diferencia enorme entre la gente que dice que Claude Code es increíble y la que dice que se equivoca todo el tiempo. Casi siempre es el mismo archivo.</p>
+
+      <p>El <code>CLAUDE.md</code> se carga al inicio de cada sesión y es todo lo que Claude sabe de tu proyecto antes de leer una sola línea de código. Está mal configurado en la mayoría de los repositorios que he abierto, y está mal en las dos direcciones: o no existe, o tiene setecientas líneas donde la instrucción que importa se perdió entre cuarenta que no.</p>
+
+      <p>Esta guía es cómo se arma bien: dónde va, qué entra, qué no, y por qué la regla de las 200 líneas no es un capricho.</p>
+
+      <h2>Qué es exactamente, y qué no es</h2>
+
+      <p>Un detalle técnico que explica casi todo el comportamiento que la gente encuentra raro: el contenido del <code>CLAUDE.md</code> no se inyecta como prompt de sistema. Llega como un mensaje de usuario justo después del prompt de sistema.</p>
+
+      <p>La consecuencia: es contexto, no configuración obligatoria. Claude lo lee y trata de seguirlo, pero no hay garantía de cumplimiento estricto, sobre todo si las instrucciones son vagas o se contradicen entre sí.</p>
+
+      <p>Por eso, si necesitas que algo pase <em>siempre</em> —correr el linter después de cada edición, bloquear escrituras a una carpeta— eso no va en el archivo. Va en un <em>hook</em>, que se ejecuta como comando de shell en un punto fijo del ciclo de vida y no depende de lo que el modelo decida.</p>
+
+      <h2>Los cuatro lugares donde puede vivir</h2>
+
+      <p>Se cargan de lo más general a lo más específico, y no se pisan entre sí: se concatenan. Lo que está más cerca de donde arrancaste la sesión se lee al final.</p>
+
+      <ul>
+        <li><strong>Política administrada</strong> — para toda una organización, desplegado por el área de sistemas. En macOS vive en <code>/Library/Application Support/ClaudeCode/CLAUDE.md</code>. No lo puede excluir nadie.</li>
+        <li><strong>Tus preferencias</strong> — <code>~/.claude/CLAUDE.md</code>. Aplica a todos tus proyectos. Aquí van tus manías, no las reglas del equipo.</li>
+        <li><strong>El proyecto</strong> — <code>./CLAUDE.md</code> o <code>./.claude/CLAUDE.md</code>. Este es el que se sube al repositorio y comparte el equipo. Es el que importa.</li>
+        <li><strong>Tus cosas de este proyecto</strong> — <code>./CLAUDE.local.md</code>, que va al <code>.gitignore</code>. Tus URLs de pruebas, tus datos de ejemplo.</li>
+      </ul>
+
+      <p>Además, Claude Code va subiendo por el árbol de directorios desde donde arrancaste, recogiendo cada <code>CLAUDE.md</code> que encuentre en el camino. En un monorepo eso significa que puedes acabar cargando el archivo de otro equipo sin darte cuenta.</p>
+
+      <h2>Las cinco reglas</h2>
+
+      <div class="plugin-card">
+        <h3>1. La prueba del borrado</h3>
+        <p>Para cada línea que quieras meter, hazte una sola pregunta: <em>si borro esto, ¿Claude se equivoca?</em> Si la respuesta es no, va fuera.</p>
+        <p>Suena obvio y elimina el 60% de lo que la gente escribe. Fuera se van: los mapas de directorios, las listas de dependencias, las descripciones archivo por archivo, las explicaciones de arquitectura que se deducen leyendo el código, y todo lo que sea "escribe código limpio".</p>
+        <p>Se quedan: los comandos que no puede adivinar, las reglas de estilo que difieren del estándar del lenguaje, cómo se corren las pruebas, las convenciones de ramas y de pull request, las decisiones de arquitectura propias del proyecto, las variables de entorno que hacen falta, y las trampas conocidas.</p>
+        <p class="plugin-for"><strong>La versión corta:</strong> escribe lo que le explicarías a alguien que llega el lunes y no puede preguntarle a nadie.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Específico y verificable, nunca adjetivos</h3>
+        <p>"Formatea bien el código" no significa nada. "Usa indentación de 2 espacios" sí. La diferencia no es de estilo: una instrucción verificable se cumple o no se cumple, y una vaga se interpreta distinto cada sesión.</p>
+        <p>El mismo principio aplica a rutas y comandos. En vez de "mantén los archivos organizados", escribe dónde viven las cosas. En vez de "prueba tus cambios", escribe el comando exacto que hay que correr.</p>
+        <p>Si una instrucción es crítica, se vale subirle el volumen. Marcarla con "IMPORTANTE" o "SIEMPRE" mejora la adherencia. Pero si todo está marcado como importante, nada lo está.</p>
+        <p class="plugin-for"><strong>Prueba rápida:</strong> si dos personas de tu equipo pueden leer la misma línea y hacer cosas distintas, está mal escrita.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Menos de 200 líneas</h3>
+        <p>Es la recomendación oficial y tiene una razón mecánica: el archivo se carga entero en cada sesión, consume contexto junto con tu conversación, y los archivos largos bajan la adherencia. No es que Claude se canse; es que tu instrucción importante compite con otras ciento cincuenta.</p>
+        <p>La señal de que rompiste el límite no es contar líneas. Es esta: Claude sigue haciendo algo que tienes prohibido por escrito. Cuando eso pasa, el reflejo de casi todos es agregar la regla otra vez, más grande. Es exactamente lo contrario de lo que hay que hacer.</p>
+        <p class="plugin-for"><strong>Verifícalo:</strong> <code>/doctor</code> revisa el archivo del repositorio y propone recortes, quitando lo que Claude puede deducir del código y conservando las trampas y las convenciones que difieren de lo estándar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Sin contradicciones, en toda la jerarquía</h3>
+        <p>Si dos reglas se contradicen, Claude puede tomar cualquiera de las dos. Y las contradicciones casi nunca están dentro del mismo archivo: están entre tu archivo personal y el del proyecto, o entre el del proyecto y uno anidado en una subcarpeta.</p>
+        <p>Revisa los tres niveles de vez en cuando y borra lo que ya no aplica. En un monorepo donde se cuelan archivos de otros equipos, existe la opción de excluirlos por patrón desde los ajustes locales.</p>
+        <p class="plugin-for"><strong>Para diagnosticar:</strong> <code>/context</code> te dice qué archivos de memoria se cargaron de verdad en esta sesión. Si el tuyo no aparece ahí, Claude no lo está viendo y no hay nada que redactar mejor.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Trátalo como código</h3>
+        <p>Revísalo cuando algo salga mal. Pódalo cada tanto. Súbelo al repositorio para que el equipo lo mejore. Y cuando cambies una instrucción, comprueba que el comportamiento cambió de verdad, en vez de asumir que sí.</p>
+        <p>Este archivo es de las pocas cosas en un proyecto que se vuelven más valiosas con el tiempo, porque cada tropiezo que documentas es un tropiezo que no se repite. También es de las que más rápido se pudren si nadie las mantiene.</p>
+        <p class="plugin-for"><strong>El hábito:</strong> cuando corrijas a Claude por segunda vez sobre lo mismo, esa corrección se escribe en el archivo. No la tercera. La segunda.</p>
+      </div>
+
+      <h2>Un arranque que puedes copiar hoy</h2>
+
+      <p>La forma más rápida de tener uno es correr <code>/init</code>, que analiza el proyecto y genera un archivo inicial con los comandos y convenciones que encuentra. Si ya existe uno, propone mejoras en vez de sobrescribirlo. Después lo refinas con lo que Claude no puede descubrir solo.</p>
+
+      <p>Si prefieres arrancar a mano, esta estructura cubre lo que de verdad hace falta:</p>
+
+      <pre><code># Nombre del proyecto
+
+Una línea: qué es esto y para quién.
+
+## Comandos
+- Instalar: [comando]
+- Correr en local: [comando]
+- Pruebas: [comando exacto, y cómo correr una sola prueba]
+- Lint y tipos: [comando]
+
+## Dónde vive qué
+Solo lo que no es obvio navegando el repo. 3 o 4 líneas, no un árbol completo.
+
+## Convenciones que difieren de lo estándar
+- [regla concreta y verificable]
+- [regla concreta y verificable]
+
+## Trampas conocidas
+- [cosa que rompe y no es evidente]
+- [variable de entorno obligatoria y qué pasa sin ella]
+
+## Flujo de trabajo
+- Antes de terminar una serie de cambios: [comando de verificación]
+- Ramas: [convención]
+- Commits y PR: [convención]
+
+## No tocar
+- [archivos, carpetas o procesos que Claude no debe modificar]</code></pre>
+
+      <p>La última sección es la que más devuelve y la que casi nunca aparece. Un "no tocar" explícito ahorra más problemas que diez reglas de estilo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> confirmar que el archivo se cargó. Corre <code>/context</code> y búscalo en la lista de archivos de memoria. He visto a gente pasar una hora reescribiendo instrucciones que Claude nunca leyó, porque el archivo estaba en una carpeta que no se recorre. Antes de mejorar la redacción, comprueba que existe en el contexto.</p>
+      </div>
+
+      <h2>Cuando ya no cabe en 200 líneas</h2>
+
+      <p>Hay tres salidas, y solo dos sirven.</p>
+
+      <p><strong>La que no sirve del todo:</strong> partirlo en varios archivos con importaciones <code>@ruta/al/archivo</code>. Ordena la lectura para humanos, pero los archivos importados se cargan igual al arrancar, así que no ahorras nada de contexto. Sirve para organizar, no para adelgazar.</p>
+
+      <p><strong>La primera que sí:</strong> las reglas por ruta. En <code>.claude/rules/</code> pones archivos de markdown por tema, y con un campo <code>paths</code> en el encabezado los amarras a patrones de archivo. Esas reglas solo entran al contexto cuando Claude trabaja con archivos que coinciden. Es la forma correcta de tener reglas de API que no molestan cuando estás tocando el frontend.</p>
+
+      <p><strong>La segunda que sí:</strong> las skills. Si lo que creció es un procedimiento de varios pasos y no un hecho, eso no es memoria: es una skill, y las skills se cargan solo cuando se usan. Un procedimiento de doscientas líneas cuesta casi nada mientras no lo invoques.</p>
+
+      <p>La regla para decidir entre las tres: <em>hechos</em> que aplican siempre van al <code>CLAUDE.md</code>; hechos que aplican a una parte del código van a reglas con ruta; <em>procedimientos</em> van a skills. Dónde encaja cada mecanismo está en <a href="/guias/7-formas-de-controlar-claude-code/">las 7 formas de controlar Claude Code</a>.</p>
+
+      <h2>Cómo saber si está funcionando</h2>
+
+      <p>Dos señales, y las dos son de comportamiento, no de contenido.</p>
+
+      <p>La primera: <strong>Claude deja de preguntarte cosas que están en el archivo.</strong> Si te sigue preguntando algo que escribiste, la redacción es ambigua o el archivo está tan largo que se perdió.</p>
+
+      <p>La segunda: <strong>puedes pedirle algo en una frase sin contexto y sale bien.</strong> Si antes de cada petición tienes que escribir dos párrafos de explicación, esos dos párrafos son justo lo que le falta al archivo.</p>
+
+      <p>Y si el archivo sobrevive un <code>/compact</code> y aun así se pierde alguna instrucción: el del proyecto se vuelve a inyectar tras compactar, pero los anidados en subcarpetas y las reglas por ruta no. Se recargan la próxima vez que Claude toque un archivo de esa zona.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

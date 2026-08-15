@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué es un archivo .md? Curso relámpago — Guías Flow AI</title>
+  <meta name="description" content="Los archivos markdown suenan técnicos, pero son texto plano que la IA lee, y son la base de todo agente. El curso para principiantes, más una plantilla de &quot;cómo trabajo&quot; para llenar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/que-es-un-archivo-md/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿Qué es un archivo .md? Curso relámpago" />
+  <meta property="og:description" content="Los archivos markdown suenan técnicos, pero son texto plano que la IA lee, y son la base de todo agente. El curso para principiantes, más una plantilla de &quot;cómo trabajo&quot; para llenar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/que-es-un-archivo-md/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>¿Qué es un archivo .md? Curso relámpago</h1>
+      <p class="lead">Los archivos markdown suenan técnicos, pero son texto plano que la IA lee, y son la base de todo agente. El curso para principiantes, más una plantilla de "cómo trabajo" para llenar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Llevas semanas viendo la palabra. Que si el <code>CLAUDE.md</code>, que si el README, que si "ponlo en un archivo markdown". Suena a cosa de programador y por eso lo has estado saltando.</p>
+
+      <p>No lo es. Un archivo <code>.md</code> es texto. El mismo texto que escribirías en cualquier lado, con cinco símbolos que le indican qué es un título y qué es una lista. Se aprende en diez minutos y es la base de casi todo lo que hace un agente de IA bien montado.</p>
+
+      <p>Al final de esta guía hay una plantilla completa de "cómo trabajo" para que la llenes y se la des a tu IA. Ese solo archivo cambia la calidad de todo lo que te responde.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Markdown es una forma de darle formato a texto plano usando símbolos del teclado, y <code>.md</code> es la extensión de los archivos escritos así.</p>
+
+      <p>Piensa en la diferencia con Word. Un documento de Word guarda el texto <em>y</em> un montón de información sobre tipografías, márgenes, versiones y comentarios, todo comprimido en un formato que solo Word entiende bien. Un <code>.md</code> guarda el texto y ya. Lo abre cualquier programa, pesa nada, y dentro de veinte años se va a poder leer igual.</p>
+
+      <h2>Por qué la IA trabaja mejor con ellos</h2>
+
+      <p>Un modelo lee texto. Cuando le das un PDF o un Word, alguien tiene que convertirlo primero a texto, y en esa conversión se pierden cosas: el orden de las columnas, qué era encabezado y qué era nota al pie, dónde empezaba la tabla.</p>
+
+      <p>Con markdown no hay conversión. Los símbolos que le pones son los mismos que el modelo usa para entender la jerarquía: esto es un título, esto cuelga de aquel, esto es una lista de tres cosas del mismo tipo. Le estás dando el contenido y la estructura al mismo tiempo, sin ambigüedad.</p>
+
+      <p>Por eso las instrucciones de los agentes, las skills y los archivos de memoria se escriben en markdown. No es moda de programadores: es el formato con menos ruido entre lo que escribes y lo que el modelo entiende.</p>
+
+      <h2>Los seis símbolos que necesitas</h2>
+
+      <p>Son estos. No hay más que aprender para empezar:</p>
+
+      <pre><code># Título principal
+## Título de sección
+### Subtítulo
+
+Un párrafo normal se escribe tal cual, sin ningún símbolo.
+Para separar párrafos, deja una línea en blanco.
+
+- Una lista
+- Otro punto de la lista
+- Y otro
+
+1. Una lista numerada
+2. Segundo paso
+3. Tercer paso
+
+**Esto queda en negrita** y *esto en cursiva*.
+
+`Esto es un dato literal`, como un nombre de archivo.
+
+[Texto del enlace](https://claude.com/)</code></pre>
+
+      <p>Eso es todo. El número de <code>#</code> indica el nivel: uno para el título del documento, dos para cada sección, tres para las subdivisiones. El guion hace listas. Los asteriscos dobles hacen negritas.</p>
+
+      <p>Si escribes el archivo y lo abres en un editor que entiende markdown, vas a ver los títulos grandes y las negritas puestas. Si lo abres en un editor que no lo entiende, vas a ver los símbolos crudos. Las dos cosas están bien: el archivo es el mismo.</p>
+
+      <h2>Cómo creas uno, paso a paso</h2>
+
+      <ol>
+        <li><strong>En Mac:</strong> abre TextEdit, y en el menú <em>Formato</em> elige "Convertir en texto simple". Escribe. Guarda con el nombre que quieras, terminado en <code>.md</code>. Si te pregunta si quieres usar esa extensión, di que sí.</li>
+        <li><strong>En Windows:</strong> abre el Bloc de notas, escribe, y al guardar cambia el tipo de archivo a "Todos los archivos" y escribe el nombre completo con <code>.md</code> al final. Si guardas sin eso, Windows le pone <code>.txt</code>.</li>
+        <li><strong>Más cómodo:</strong> instala un editor que lo entienda. Obsidian y Visual Studio Code son gratis y muestran el formato mientras escribes. Si vas a hacer esto seguido, vale los cinco minutos de instalación.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El error de principiante:</strong> creer que guardaste un <code>.md</code> cuando en realidad tienes un <code>mi-archivo.md.txt</code>. Pasa en Windows todo el tiempo porque el sistema esconde las extensiones. Actívalas en las opciones del explorador de archivos y revisa el nombre completo. Y nunca escribas estos archivos en Word: aunque le pongas la extensión, adentro no va texto plano.</p>
+      </div>
+
+      <h2>La plantilla de "cómo trabajo"</h2>
+
+      <p>Este es el archivo que le sirve a cualquiera, sin importar a qué te dediques. Es la descripción de tu contexto para que la IA deje de darte respuestas de manual.</p>
+
+      <p>Cópialo, guárdalo como <code>como-trabajo.md</code> y llena lo que está entre corchetes. Después súbelo a tu proyecto de Claude o pégalo en las instrucciones personalizadas.</p>
+
+      <pre><code># Cómo trabajo
+
+## Quién soy
+- Nombre: [tu nombre]
+- Puesto: [tu puesto real, no el del organigrama]
+- Empresa e industria: [qué hace la empresa y de qué tamaño es]
+- Ciudad y zona horaria: [dónde]
+- Idioma: [español de México / el que uses]
+
+## De qué soy responsable
+- [Resultado 1 por el que te evalúan]
+- [Resultado 2]
+- [Resultado 3]
+
+## Con quién trabajo
+- [Nombre o rol] — [qué le entrego o qué me entrega]
+- [Nombre o rol] — [qué le entrego o qué me entrega]
+
+## Herramientas que uso todos los días
+- [Ej. Excel, HubSpot, Slack, Shopify]
+
+## Cómo quiero que me respondas
+- Tono: [directo / con matices / formal]
+- Largo: [respuestas cortas / desarrolladas]
+- Formato: [prosa / bullets / tablas]
+- Si te falta un dato para responder bien, pregúntamelo.
+  No lo inventes.
+- Si algo que te pido es mala idea, dímelo antes de hacerlo.
+
+## Cosas que ya intenté y no funcionaron
+- [Lo que no quieres que te vuelvan a proponer]
+
+## Vocabulario de mi empresa
+- [Término interno] = [qué significa]
+- [Término interno] = [qué significa]
+
+## Lo que nunca debes hacer
+- [Ej. no escribir a clientes sin que yo lo revise]
+- [Ej. no inventar cifras; si no las tienes, dilo]</code></pre>
+
+      <p>Llénalo con lo específico. "Trabajo en ventas" no sirve; "llevo 40 cuentas de distribuidores en el bajío y me evalúan por recompra, no por cuentas nuevas" cambia todas las respuestas que vas a recibir.</p>
+
+      <h2>Dónde acaban usándose estos archivos</h2>
+
+      <p>Una vez que sabes hacer uno, se te abren tres cosas. La primera son las instrucciones de proyecto: subes tu <code>como-trabajo.md</code> y ya no repites tu contexto en cada chat. La segunda es el <code>CLAUDE.md</code>, el archivo que define cómo se comporta la IA dentro de una carpeta o un proyecto de trabajo; está explicado a fondo en <a href="/guias/el-archivo-mas-importante-de-claude-code/">esta guía</a> y hay una <a href="/guias/plantilla-de-claude-md/">plantilla lista para copiar</a>.</p>
+
+      <p>La tercera son las skills, que no son otra cosa que una carpeta con un archivo markdown adentro explicando cómo se hace un trabajo. Cuando alguien te diga "instálate esta skill", ahora ya sabes exactamente qué le estás dando de comer al modelo.</p>
+
+      <h2>Qué hacer hoy</h2>
+
+      <p>No te pongas a estudiar markdown. Se aprende usándolo y con los seis símbolos de arriba ya tienes el 95%.</p>
+
+      <p>Haz una sola cosa: llena la plantilla, guárdala, y úsala esta semana. La primera vez que te responda algo que ya toma en cuenta tu industria, tus herramientas y a quién le reportas, sin que se lo hayas explicado, vas a entender por qué todo el mundo insiste con los archivos <code>.md</code>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

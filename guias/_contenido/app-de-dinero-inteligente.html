@@ -1,0 +1,112 @@
+      <p>Hay tres flujos de información pública donde la gente que sabe algo tiene que enseñar la mano por obligación legal o porque puso dinero real. Un directivo que compra acciones de su propia empresa lo reporta a la autoridad. Un legislador que opera en bolsa lo declara. Y en los mercados de predicción, cualquiera que crea saber algo tiene que pagar por decirlo.</p>
+
+      <p>Los tres son gratis y los tres están en sitios distintos, con formatos distintos, hechos para abogados y no para leerse. Por eso casi nadie los mira, y los que los miran ven uno solo.</p>
+
+      <p>Esta guía es para construir el tablero que los junta. No es una recomendación de inversión ni un sistema de señales: es un panel de contexto que te dice qué está pasando en esos tres lugares esta semana, sin que abras nada.</p>
+
+      <h2>Las tres fuentes, y qué mide cada una</h2>
+
+      <p>Antes del prompt hay que entender qué te dice cada una, porque las tres tienen un defecto distinto y el tablero tiene que enseñarlo.</p>
+
+      <ul>
+        <li><strong>Mercados de predicción.</strong> Plataformas como Polymarket y Kalshi cotizan la probabilidad de eventos concretos: decisiones de política monetaria, elecciones, resultados macro. La virtud es que el precio lo mueve gente que arriesga dinero, no comentaristas. El defecto es que en mercados con poco volumen el precio no significa nada: lo mueve una apuesta grande de una sola persona. Por eso el volumen tiene que ir siempre junto a la probabilidad.</li>
+        <li><strong>Compras de directivos.</strong> En Estados Unidos, quien tiene cargo o participación relevante en una empresa que cotiza reporta sus operaciones ante la SEC en el formulario 4, dentro de los dos días hábiles siguientes. Todo eso vive público en EDGAR. La regla vieja de este dato: la venta es ruido —la gente vende por impuestos, por divorcio, por comprar casa—, la compra con dinero propio y en el mercado abierto es la que dice algo.</li>
+        <li><strong>Operaciones de legisladores.</strong> Bajo la ley de transparencia estadounidense, los miembros del Congreso publican sus operaciones en los portales de divulgación de la Cámara y del Senado. Aquí el defecto es grande y hay que dejarlo a la vista: se reportan con semanas de retraso y muchas veces solo en rangos de monto, no en cifras exactas. Es un dato tardío. Sirve como contexto, no como disparador.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ponerle la fecha del dato a cada tarjeta del tablero. No la fecha en que se publicó: la fecha en que ocurrió la operación. Un tablero que enseña una compra de hace cinco semanas como si fuera de hoy es peor que no tener tablero, porque te da confianza sobre información caduca. Que cada renglón diga cuántos días pasaron entre la operación y su publicación.</p>
+      </div>
+
+      <h2>Dónde construirlo</h2>
+
+      <p>La ruta corta es un artifact: le pegas los datos a mano y él arma el tablero. Sirve para ver si el diseño te gusta, pero cada actualización la haces tú.</p>
+
+      <p>La ruta que se sostiene es una aplicación chica hecha con Claude Code: un script que consulta las tres fuentes, guarda lo que bajó, y genera una página que abres en el navegador. No necesitas saber programar —necesitas saber describir lo que quieres y probar lo que sale—. Si nunca has hecho esto, <a href="/guias/tu-primera-app-sin-programar/">construye tu primera app sin programar</a> cubre el arranque.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Pégalo completo en Claude Code, dentro de una carpeta vacía. Está escrito para que primero verifique las fuentes y después construya, que es el orden que evita perder una tarde con endpoints que ya no existen.</p>
+
+      <pre><code>Vas a construir una aplicación local que llamaremos el tablero de
+dinero informado. Junta tres flujos de datos públicos en una sola
+página. Trabaja en dos etapas y no empieces a programar hasta
+terminar la primera.
+
+ETAPA 1 — VERIFICACIÓN
+Antes de escribir código, investiga y confírmame:
+1. Cómo se consultan hoy, de forma pública y gratuita, los mercados
+   de predicción de Polymarket y de Kalshi: qué expone cada uno,
+   si requiere registro y qué límites de uso tiene.
+2. Cómo se obtienen los formularios 4 desde EDGAR de la SEC,
+   incluyendo el encabezado de identificación que exigen a quien
+   consulta de forma automatizada.
+3. Cómo se obtienen las declaraciones de operaciones de los
+   portales de divulgación de la Cámara y del Senado de Estados
+   Unidos, y en qué formato vienen.
+Dime cuáles de las tres son viables hoy y cuáles no. Si alguna no
+lo es, propón la alternativa pública y dime qué se pierde. No
+inventes rutas: si no encuentras algo, dilo.
+
+ETAPA 2 — CONSTRUCCIÓN
+Cuando te confirme, construye:
+
+ESTRUCTURA
+- Un script de recolección por fuente, independiente de los otros.
+  Si una fuente truena, las otras dos siguen.
+- Almacenamiento local de lo que se descarga, con la fecha de
+  descarga. Nunca borres el histórico: úsalo para detectar cambios.
+- Una página estática que se genera a partir de lo almacenado.
+- Un solo comando que corre todo y abre la página.
+
+EL TABLERO, EN TRES BLOQUES
+
+Bloque 1 — Probabilidades
+- Los mercados con más volumen, con probabilidad actual, cambio
+  contra la semana pasada y volumen.
+- Marca en gris cualquier mercado cuyo volumen esté por debajo del
+  umbral que definamos: probabilidad sin volumen no se destaca.
+- Ordena por magnitud del cambio semanal, no por probabilidad.
+
+Bloque 2 — Compras de directivos
+- Solo compras en mercado abierto. Excluye ejercicios de opciones,
+  entregas de acciones y transacciones automáticas por plan.
+- Por cada una: empresa, cargo de quien compra, monto, si es la
+  primera compra de esa persona en el año, y cuántos directivos
+  distintos de la misma empresa compraron en los últimos 90 días.
+- Ese último dato es el que importa: destácalo.
+
+Bloque 3 — Operaciones de legisladores
+- Emisor, tipo de operación, rango de monto declarado, fecha de la
+  operación y fecha de publicación.
+- Una columna visible con los días de retraso entre ambas.
+- Agrupa por emisor para ver cuando varios coinciden.
+
+REGLAS DEL TABLERO
+- Cada dato lleva su fecha de origen y un enlace al documento
+  público del que salió. Sin enlace, no se muestra.
+- Ningún bloque emite recomendación, calificación ni puntaje de
+  compra. El tablero informa, no aconseja.
+- Si una fuente lleva más de tres días sin actualizarse, la página
+  lo dice arriba, en grande.
+- Respeta los límites de uso de cada fuente y ponle una pausa entre
+  consultas. Identifica la aplicación como pide cada servicio.
+- Diseño sobrio, una sola columna en móvil, legible sin explicación.
+
+ENTRÉGAME AL FINAL
+- Cómo se corre y cómo se programa para que corra solo cada día.
+- Qué se rompe primero cuando alguna fuente cambie de formato, y
+  dónde se arregla.
+- Qué NO puede ver este tablero.</code></pre>
+
+      <h2>Cómo se mantiene vivo</h2>
+
+      <p>Estas tres fuentes cambian de formato sin avisar. Por eso el prompt pide que cada recolector sea independiente y que la página grite cuando una lleva días sin refrescarse: la falla silenciosa es la peligrosa, porque el tablero se ve igual de bonito con datos de la semana pasada.</p>
+
+      <p>Ponlo a correr una vez al día, temprano. Más frecuente no aporta: los formularios 4 se publican por lotes y las declaraciones del Congreso llegan cuando llegan. Y guarda el histórico desde el primer día, aunque no lo uses. Lo interesante de este tablero no aparece en una foto, aparece cuando puedes comparar contra hace tres semanas.</p>
+
+      <h2>El error que hace inútil el tablero</h2>
+
+      <p>Tratarlo como sistema de señales. La tentación, a las dos semanas, es agregarle un puntaje que diga qué comprar. En cuanto lo haces dejas de mirar los datos y empiezas a mirar tu propio número, que está construido con supuestos que inventaste un martes.</p>
+
+      <p>El uso que sí rinde es al revés: el tablero te da la pregunta, no la respuesta. Ves que cuatro directivos distintos de la misma empresa compraron el mismo mes, y eso te manda a leer el reporte trimestral y a entender por qué. El trabajo sigue siendo tuyo. Lo que el tablero te quitó fue la hora de andar abriendo portales para enterarte de que había algo que leer.</p>

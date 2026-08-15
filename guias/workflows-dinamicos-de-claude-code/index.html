@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflows dinámicos de Claude Code: la hoja de referencia — Guías Flow AI</title>
+  <meta name="description" content="Una sesión puede levantar decenas o cientos de subagentes en paralelo, con agentes verificadores revisando el trabajo. Cómo se prende, cuándo vale los tokens, y 5 flujos reales para correr esta semana." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/workflows-dinamicos-de-claude-code/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Workflows dinámicos de Claude Code: la hoja de referencia" />
+  <meta property="og:description" content="Una sesión puede levantar decenas o cientos de subagentes en paralelo, con agentes verificadores revisando el trabajo. Cómo se prende, cuándo vale los tokens, y 5 flujos reales para correr esta semana." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/workflows-dinamicos-de-claude-code/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>Workflows dinámicos de Claude Code: la hoja de referencia</h1>
+      <p class="lead">Una sesión puede levantar decenas o cientos de subagentes en paralelo, con agentes verificadores revisando el trabajo. Cómo se prende, cuándo vale los tokens, y 5 flujos reales para correr esta semana.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay un techo que se siente clarísimo cuando trabajas con Claude Code todos los días: la conversación es una sola línea. Puedes pedirle que abra subagentes, pero es él quien decide turno por turno qué lanzar después, y cada resultado regresa a su ventana de contexto. A las cuarenta tareas, el orquestador ya se está ahogando en lo que orquesta.</p>
+
+      <p>Los workflows dinámicos rompen ese techo. En lugar de que Claude vaya decidiendo sobre la marcha, escribe un script en JavaScript que sostiene el plan, y un runtime lo ejecuta aparte de la conversación. Los resultados intermedios viven en variables del script, no en el contexto. Tu sesión queda libre.</p>
+
+      <p>Una corrida puede llegar a cientos de agentes, con verificadores revisando de forma adversarial lo que encontraron los demás antes de que llegue a tu pantalla. Aquí está cómo se prende, cuánto cuesta de verdad, y cinco flujos que puedes correr esta semana.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un workflow dinámico es un script que orquesta subagentes a escala, que Claude escribe por ti, que corre en segundo plano, y que puedes guardar para volver a correrlo igual la próxima vez.</p>
+
+      <p>Esa última parte es la que casi nadie ve. Con subagentes normales, lo repetible es la definición del trabajador. Con un workflow, lo repetible es <strong>la orquestación completa</strong>: el ciclo, las bifurcaciones, la verificación cruzada. Se vuelve un comando tuyo.</p>
+
+      <h2>Cómo se prende</h2>
+
+      <p>Hay tres caminos, de menos a más compromiso.</p>
+
+      <ol>
+        <li><strong>Palabra clave en el prompt.</strong> Escribe <code>ultracode</code> dentro de tu petición y Claude arma un workflow para esa tarea, sin cambiarle nada a la sesión. Pedirlo en tus palabras —"usa un workflow"— cuenta como lo mismo.</li>
+        <li><strong>Modo de esfuerzo.</strong> Corre <code>/effort ultracode</code> y Claude decide solo cuándo una tarea amerita un workflow, para toda la sesión. Se puede arrancar así de entrada con <code>claude --effort ultracode</code>. Dura hasta que cierras la sesión; para volver al trabajo de rutina, <code>/effort high</code>.</li>
+        <li><strong>Un workflow ya hecho.</strong> Viene uno de fábrica: <code>/deep-research</code>. Le das una pregunta, abre búsquedas por varios ángulos, cruza las fuentes entre sí y entrega un reporte con citas donde lo que no sobrevivió al cruce ya está filtrado.</li>
+      </ol>
+
+      <p>Mientras corre, <code>/workflows</code> te abre la vista de progreso: cada fase con su número de agentes, sus tokens y su tiempo. Ahí puedes pausar, detener un agente suelto, reiniciarlo, o guardar el script de la corrida como comando propio.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los subagentes de un workflow corren siempre en modo de aceptar ediciones, sin importar el modo de permisos de tu sesión. Las ediciones de archivos se aprueban solas. Antes de soltar uno grande sobre un repo que te importa, asegúrate de estar en una rama limpia y de tener el <code>git status</code> vacío. La red de seguridad aquí es git, no el diálogo de permisos.</p>
+      </div>
+
+      <h2>Cuándo vale los tokens y cuándo no</h2>
+
+      <p>Un workflow gasta bastante más que hacer la misma tarea conversando. No es un truco de eficiencia: es comprar profundidad y verificación con tokens. Los números que sí puedes usar para calibrar:</p>
+
+      <ul>
+        <li>El runtime corre <strong>hasta 16 agentes en paralelo</strong>, menos si tu máquina tiene pocos núcleos, y tiene un tope duro de <strong>1,000 agentes por corrida</strong>. Ese tope es lo que evita que un ciclo mal escrito se te vaya de las manos.</li>
+        <li>Hay una guía de tamaño en <code>/config</code>: <code>small</code> apunta a menos de 5 agentes, <code>medium</code> a menos de 15, <code>large</code> a menos de 50. El default es <code>medium</code>. También se fija directo con <code>/config workflowSizeGuideline=small</code>.</li>
+        <li>Cuando una corrida programa más de 25 agentes, o su proyección de tokens se pasa de 1.5 millones, aparece una advertencia de workflow grande en el panel de tareas. Es aviso, no freno: no pausa nada.</li>
+        <li>Todos los agentes usan el modelo de tu sesión salvo que el script mande una etapa a otro. Revisa <code>/model</code> antes de una corrida grande.</li>
+      </ul>
+
+      <p>La regla que aplico: antes de soltarlo sobre todo el repo, córrelo sobre una carpeta. La vista de <code>/workflows</code> te va mostrando el consumo por agente, y puedes detenerlo ahí mismo sin perder casi nada de lo terminado.</p>
+
+      <h2>Cinco flujos para correr esta semana</h2>
+
+      <p>En todos, tú no escribes el script: describes la tarea y pides el workflow. Los prompts van completos.</p>
+
+      <div class="plugin-card">
+        <h3>1. Barrido de seguridad archivo por archivo</h3>
+        <p>Un agente por archivo, y verificadores que intentan tumbar cada hallazgo antes de reportarlo. Es el flujo que más rinde, porque los falsos positivos son lo que hace que la gente deje de leer estos reportes.</p>
+        <pre><code>ultracode: audita cada manejador de ruta bajo src/routes/ buscando
+endpoints sin verificación de autenticación. Un agente por archivo.
+Antes de reportar cualquier hallazgo, otro agente independiente tiene que
+intentar refutarlo leyendo el código otra vez. Lo que no sobreviva a esa
+revisión, descártalo. Entrégame una sola lista ordenada por severidad,
+con archivo, línea y la razón por la que es explotable.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Migración grande sin que se peleen los agentes</h3>
+        <p>El punto fino es que cada archivo se trabaje en una copia aislada. Si no lo pides, veinte agentes editando el mismo árbol se pisan entre ellos.</p>
+        <pre><code>ultracode: migra cada componente bajo src/components/ de styled-components
+a Tailwind. Trabaja cada archivo en una copia aislada para que las
+ediciones no se estorben. Después de cada migración, verifica que el
+componente siga compilando y que las clases equivalgan al estilo original.
+Si un archivo no se puede migrar limpio, no lo fuerces: márcalo y explica
+por qué.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Arreglar hasta que el chequeo pase</h3>
+        <p>Un ciclo con condición de salida. Lo importante es el freno: sin él, un workflow se puede quedar dando vueltas sobre el mismo error.</p>
+        <pre><code>usa un workflow: corre npx tsc --noEmit y arregla los errores que reporte.
+Repite hasta que el chequeo de tipos pase limpio, o hasta que dos rondas
+seguidas no bajen el número de errores. Si te topas con esa segunda
+condición, para y dime qué errores quedaron y por qué crees que no ceden.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Auditar la operación, no solo el código</h3>
+        <p>Aquí es donde esto deja de ser cosa de programadores. Un workflow lee cualquier carpeta de archivos, y la mayoría de las empresas tiene contratos, propuestas y procedimientos sin auditar desde hace años.</p>
+        <pre><code>ultracode: en la carpeta contratos/, revisa cada documento y sácame
+para cada uno: cliente, fecha de firma, vigencia, cláusula de renovación
+automática, y penalización por terminación anticipada. Un agente por
+documento. Después, un agente que junte todo en una sola tabla ordenada
+por fecha de vencimiento y me marque cuáles se renuevan solos en los
+próximos 90 días si nadie hace nada.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Inteligencia de competencia con fuentes cruzadas</h3>
+        <p>La versión estrecha de <code>/deep-research</code>. Sirve para un área de marketing o de producto que necesita una lectura defendible, no un resumen de blogs.</p>
+        <pre><code>usa un workflow: investiga cómo manejan los precios nuestros tres
+competidores. Lee en paralelo sus páginas públicas de precios, sus
+changelogs recientes y lo que digan sus términos de servicio. Cruza cada
+afirmación contra al menos dos fuentes antes de dármela. Si algo solo
+aparece en una fuente, márcalo como no verificado en vez de descartarlo.
+Al final, una comparación por modelo de cobro, no una lista de features.</code></pre>
+      </div>
+
+      <h2>Cómo se guarda lo que sí funcionó</h2>
+
+      <p>Cuando una corrida hizo exactamente lo que querías, abre <code>/workflows</code>, selecciónala y presiona <code>s</code>. Se guarda como comando en <code>.claude/workflows/</code> del proyecto —compartido con quien clone el repo— o en <code>~/.claude/workflows/</code>, que es solo tuyo y sirve en todos tus proyectos. De ahí en adelante corre como <code>/&lt;nombre&gt;</code> y acepta argumentos.</p>
+
+      <p>Ese es el momento en que un workflow deja de ser un truco y se vuelve infraestructura. La auditoría de contratos del flujo 4 no es algo que corras una vez: es algo que corres el primer lunes de cada mes.</p>
+
+      <div class="callout-box">
+        <p><strong>Lo que se pierde si lo detienes a media corrida:</strong> el replay sigue el orden en que arrancaron los agentes. Los resultados en caché se aprovechan hasta el primer agente que no terminó, y todos los que arrancaron después de ese vuelven a correr, aunque hayan acabado bien. Por eso un workflow repartido en muchos agentes chicos conserva más avance que uno con pocos agentes largos. Y si sales de Claude Code con una corrida viva, la siguiente sesión empieza de cero.</p>
+      </div>
+
+      <h2>El error de leerlo como "más agentes es mejor"</h2>
+
+      <p>La lectura fácil es que un workflow sirve para hacer lo mismo más rápido. No es eso. Un workflow es caro y lento comparado con pedir la cosa directo; lo que compra es una forma de trabajo que una sola conversación no puede sostener: revisión adversarial, varios ángulos independientes pesados uno contra otro, y un ciclo que se detiene solo cuando deja de encontrar cosas nuevas.</p>
+
+      <p>Si la tarea la resuelve un buen prompt, resuélvela con un buen prompt. Si cabe en tres subagentes, usa tres subagentes —eso lo cubro en <a href="/guias/agentes-de-claude-en-paralelo/">agentes de Claude en paralelo</a>—. El workflow entra cuando el trabajo no cabe en un contexto, cuando el mismo paso se tiene que repetir sobre cientos de elementos, o cuando el resultado tiene que ser defendible y no solo plausible.</p>
+
+      <p>Y antes de la primera corrida grande, revisa que tu <code>CLAUDE.md</code> esté al día. Cien agentes trabajando con supuestos equivocados es cien veces el error, no cien veces el trabajo. Ahí está <a href="/guias/plantilla-de-claude-md/">la plantilla que se mejora sola</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De 65% a 94% de precisión en Claude Code en 30 segundos — Guías Flow AI</title>
+  <meta name="description" content="Karpathy se quejó de 3 cosas que hacen mal los agentes de código. Alguien convirtió esas quejas en un CLAUDE.md de 65 líneas. Lo pones en la carpeta del proyecto y Claude Code lo lee solo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/de-65-a-94-por-ciento-de-precision/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="De 65% a 94% de precisión en Claude Code en 30 segundos" />
+  <meta property="og:description" content="Karpathy se quejó de 3 cosas que hacen mal los agentes de código. Alguien convirtió esas quejas en un CLAUDE.md de 65 líneas. Lo pones en la carpeta del proyecto y Claude Code lo lee solo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/de-65-a-94-por-ciento-de-precision/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Prompts</span><span class="tag">Empezar</span></div>
+      <h1>De 65% a 94% de precisión en Claude Code en 30 segundos</h1>
+      <p class="lead">Karpathy se quejó de 3 cosas que hacen mal los agentes de código. Alguien convirtió esas quejas en un CLAUDE.md de 65 líneas. Lo pones en la carpeta del proyecto y Claude Code lo lee solo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Empecemos por lo que sí es esa cifra, porque el título la trae y no quiero que la uses mal. El salto de 65% a 94% viene de una anécdota que circuló en redes: alguien midió sus propias corridas antes y después de poner un archivo de reglas. No es un estudio, no es una medición de Anthropic, y no hay forma de que reproduzcas esos porcentajes en tu repositorio. Trátalo como lo que es: la señal de que alguien encontró una mejora grande, no un número que puedas prometerle a nadie.</p>
+
+      <p>Lo que sí se puede copiar tal cual es el archivo. Y ese es el punto de esta guía.</p>
+
+      <p>El origen es Andrej Karpathy quejándose en público de lo que hacen mal los agentes que escriben código. Sus quejas se resumen en tres, y alguien tuvo la buena idea de convertirlas en instrucciones permanentes en vez de repetirlas en cada chat.</p>
+
+      <h2>Las tres quejas</h2>
+
+      <ul>
+        <li><strong>Código defensivo de más.</strong> El agente envuelve todo en manejo de errores, valida cosas que no pueden fallar y agrega respaldos silenciosos. El resultado se ve robusto y es lo contrario: cuando algo truena, el error queda enterrado y tú te enteras tres días después.</li>
+        <li><strong>Ignora lo que ya existe en tu proyecto.</strong> Escribe su propia función para algo que ya tenías resuelto, agrega una dependencia nueva teniendo una equivalente instalada, y usa un estilo distinto al del resto del repositorio.</li>
+        <li><strong>Sobreingeniería.</strong> Pides un script de treinta líneas y recibes tres clases, una interfaz y una capa de configuración. Más código del que pediste, con la excusa de que "así queda listo para producción".</li>
+      </ul>
+
+      <p>Las tres tienen la misma raíz: el modelo optimiza para que su respuesta se vea completa e impresione. Y las tres se corrigen con instrucciones, no con mejores prompts.</p>
+
+      <h2>El archivo</h2>
+
+      <p>Va en la raíz del proyecto, se llama <code>CLAUDE.md</code>, y Claude Code lo lee solo al abrir la sesión. No hay que invocarlo ni recordárselo.</p>
+
+      <pre><code># Reglas del proyecto
+
+## Principio general
+Escribe el código mínimo que resuelve lo que se pidió. Nada más.
+Si crees que hace falta algo adicional, dilo en texto y espera; no
+lo escribas por tu cuenta.
+
+## Manejo de errores
+- No agregues try/except a menos que yo lo pida o que el error sea
+  esperable y recuperable.
+- Prohibido capturar una excepción para registrarla y seguir como
+  si nada. Si algo falla, que falle fuerte y de inmediato.
+- Prohibidos los valores de respaldo silenciosos. Un dato que no
+  llegó es un error, no un cero.
+- No valides argumentos que solo puede pasar el propio código.
+
+## Antes de escribir código nuevo
+- Busca primero en el repositorio si ya existe algo que haga eso.
+  Si existe, úsalo. Si está mal, dímelo antes de reemplazarlo.
+- No agregues dependencias nuevas. Si de verdad hace falta una,
+  para y pregunta, con el motivo y la alternativa que descartaste.
+- Copia el estilo del código que ya está: nombres, estructura de
+  carpetas, formato. Aunque tú lo harías distinto.
+
+## Alcance
+- No refactorices código que no te pedí tocar.
+- No renombres variables, archivos ni funciones fuera del alcance.
+- No agregues compatibilidad hacia atrás si no te la pedí.
+- No agregues opciones de configuración "por si acaso".
+- No crees abstracciones para un solo caso de uso. Tres usos reales
+  antes de abstraer.
+
+## Comentarios y documentación
+- Comenta solo lo que no es obvio: por qué, nunca qué.
+- Prohibidos los comentarios que repiten el nombre de la función.
+- No generes archivos README, resúmenes ni documentación salvo que
+  se pidan.
+
+## Cambios
+- Un cambio a la vez. No mezcles el arreglo con la limpieza.
+- No borres código que no entiendas. Pregunta.
+- Si tu cambio rompe algo existente, dilo antes de aplicarlo.
+
+## Cómo me reportas
+- Empieza por lo que hiciste, en dos líneas. Sin preámbulo.
+- Después, qué NO hiciste y por qué.
+- Marca explícitamente lo que no probaste.
+- Si asumiste algo, ponlo en una lista de supuestos al final.
+- Prohibido afirmar que algo funciona si no lo corriste.
+
+## Prohibido
+- Emojis en el código, en los commits y en la salida.
+- Reescribir archivos completos cuando basta con editar unas líneas.
+- Cambiar el formato de un archivo entero por un cambio de dos
+  líneas.</code></pre>
+
+      <h2>Cómo se pone</h2>
+
+      <ol>
+        <li>Crea el archivo <code>CLAUDE.md</code> en la carpeta raíz del proyecto y pega el contenido.</li>
+        <li>Ajusta lo que no aplique a tu lenguaje o a tu equipo. Es una plantilla, no un dogma.</li>
+        <li>Si quieres las mismas reglas en todos tus proyectos, la misma instrucción vive en el archivo global de tu usuario. Lo específico de cada proyecto se queda en el archivo del proyecto.</li>
+        <li>Súbelo al control de versiones. Si el resto del equipo usa Claude Code, todos trabajan con las mismas reglas y las mejoras se comparten.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> mantenerlo vivo. La primera versión es la que copias; la que sirve es la de dentro de un mes. Cada vez que el agente haga algo que te moleste, no lo corrijas nada más en el chat: agrega la regla que lo evita para siempre. Un archivo de reglas que no ha cambiado en tres meses es un archivo que ya nadie está leyendo, empezando por ti.</p>
+      </div>
+
+      <h2>Por qué esto funciona más que un buen prompt</h2>
+
+      <p>Un prompt aplica a un mensaje. Un archivo de reglas aplica a todas las sesiones, para todos los que trabajan en el proyecto, sin que nadie se acuerde de nada. La diferencia no es de calidad, es de consistencia.</p>
+
+      <p>Y hay un efecto secundario que vale más que el ahorro de tiempo: las revisiones de código se vuelven cortas. Cuando el agente entrega el cambio mínimo y te dice qué no probó y qué supuso, revisar toma minutos. Cuando entrega cuatrocientas líneas con refactor incluido, nadie lo revisa de verdad y todos lo aprueban.</p>
+
+      <h2>Lo que el archivo no arregla</h2>
+
+      <p>No te va a salvar de pedir mal las cosas. Si tu instrucción es ambigua, el agente va a elegir por ti, y ninguna regla del mundo adivina qué querías.</p>
+
+      <p>Tampoco sustituye las pruebas. Que el modelo tenga prohibido decir que algo funciona sin correrlo es una regla que él mismo tiene que respetar, y a veces no lo hace. Verifica igual.</p>
+
+      <p>Si quieres ir más a fondo en cómo estructurar este archivo por proyecto y por equipo, <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a> tiene la versión larga, y <a href="/guias/plantilla-de-claude-md/">la plantilla que se mejora sola</a> es lo que uso para que las reglas nuevas se agreguen sin que yo abra el editor.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

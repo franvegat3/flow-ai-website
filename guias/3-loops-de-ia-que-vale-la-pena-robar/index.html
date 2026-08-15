@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los 3 loops de IA que vale la pena robarse — Guías Flow AI</title>
+  <meta name="description" content="Un loop es simplemente decidir cuánto tiempo sigue trabajando tu agente. Los tres que la gente sí corre —construir-probar-arreglar, la meta-skill de objetivo, y la cola de aprobación humana." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/3-loops-de-ia-que-vale-la-pena-robar/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Los 3 loops de IA que vale la pena robarse" />
+  <meta property="og:description" content="Un loop es simplemente decidir cuánto tiempo sigue trabajando tu agente. Los tres que la gente sí corre —construir-probar-arreglar, la meta-skill de objetivo, y la cola de aprobación humana." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/3-loops-de-ia-que-vale-la-pena-robar/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>Los 3 loops de IA que vale la pena robarse</h1>
+      <p class="lead">Un loop es simplemente decidir cuánto tiempo sigue trabajando tu agente. Los tres que la gente sí corre —construir-probar-arreglar, la meta-skill de objetivo, y la cola de aprobación humana.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Un prompt, por bueno que sea, tiene un techo: lo que se pueda resolver en una pasada. Cuando el trabajo requiere intentar, revisar y volver a intentar, el prompt se queda corto por definición, y lo que estabas haciendo era ser tú el que revisa y vuelve a pedir.</p>
+
+      <p>Un loop es exactamente eso, pero escrito. La palabra suena técnica y no lo es: un loop es una decisión sobre cuánto tiempo sigue trabajando el modelo sin ti, y bajo qué condición se detiene.</p>
+
+      <p>Hay muchos loops posibles. Tres son los que veo funcionando en operaciones reales y los que valen la pena copiar tal cual.</p>
+
+      <h2>Las tres piezas de cualquier loop</h2>
+
+      <p>Antes de los ejemplos, la anatomía, porque los loops que fallan siempre fallan por la misma pieza.</p>
+
+      <ul>
+        <li><strong>La acción.</strong> Lo que se hace cada vuelta. Es la parte fácil y la única que casi todos escriben.</li>
+        <li><strong>El juez.</strong> Cómo se sabe si esta vuelta salió mejor que la anterior. Si el juez es el propio modelo opinando de su trabajo, no hay loop: hay un monólogo con más pasos.</li>
+        <li><strong>La salida.</strong> La condición que lo detiene. Siempre son dos: la buena (se cumplió el criterio) y la mala (se acabaron los intentos, o dos vueltas seguidas sin mejorar). Sin la segunda, el loop se queda dando vueltas quemando tu límite de uso.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir la condición de salida mala antes de arrancar. Es aburrido y es lo único que separa un agente de una fuga de presupuesto. La regla que uso: máximo de intentos explícito, y freno automático si dos vueltas consecutivas no mejoran la métrica. Si no puedes definir esa métrica, todavía no tienes un loop.</p>
+      </div>
+
+      <h2>Loop 1: construir, probar, arreglar</h2>
+
+      <p>El más viejo y el más productivo. El modelo produce algo, corre una prueba objetiva, lee el resultado de la prueba y corrige. Se repite hasta que pasa o hasta que se acaban los intentos.</p>
+
+      <p>La gente cree que es solo para programar y no. Funciona en cualquier tarea donde exista una verificación mecánica: un archivo que tiene que cumplir un formato, una nómina que tiene que cuadrar contra un total, un catálogo de productos donde ningún renglón puede quedarse sin categoría. Lo que hace falta no es código, es un juez que devuelva pasa o no pasa sin opinión de por medio.</p>
+
+      <pre><code>Vas a trabajar en ciclos hasta que la verificación pase.
+
+Objetivo: [qué hay que producir]
+Verificación: [el comando, script o revisión mecánica que dice si
+está bien; tiene que devolver pasa o no pasa, no una opinión]
+
+Cada ciclo:
+1. Produce o corrige el entregable.
+2. Corre la verificación y pega el resultado completo, sin resumir.
+3. Si falla, di en una línea cuál es la causa raíz antes de tocar
+   nada. Si la causa es la misma que el ciclo anterior, cambia de
+   enfoque en vez de repetir el mismo arreglo.
+4. Vuelve al paso 1.
+
+Detente cuando pase, o después de 5 ciclos, o si dos ciclos
+seguidos fallan por lo mismo. En cualquiera de los tres casos
+entrégame: el estado final, la lista de lo que intentaste, y qué
+harías distinto con más información.
+
+No me pidas permiso entre ciclos. No declares que quedó listo sin
+pegar la salida de la verificación.</code></pre>
+
+      <h2>Loop 2: la meta-skill de objetivo</h2>
+
+      <p>El problema de los agentes largos no es que se equivoquen, es que se desvían. A la vuelta doce están resolviendo con brillantez un problema que no era el que les pediste.</p>
+
+      <p>La meta-skill es una capa que corre encima del trabajo y solo hace una cosa: recordar el objetivo y decidir si seguir. No produce nada. Cada cierto número de vueltas se detiene, relee el objetivo original, califica qué tan cerca está, y toma una de tres decisiones: continuar, cambiar de camino, o parar y pedir ayuda.</p>
+
+      <p>Suena a sobrecarga y es lo que hace que valga la pena dejar algo corriendo una hora. Guárdala como skill y actívala en cualquier tarea larga.</p>
+
+      <pre><code>Antes de empezar, escribe en pantalla el OBJETIVO en una frase y
+tres CRITERIOS DE ACEPTACIÓN medibles. No avances hasta tenerlos.
+
+Después trabaja normal, pero cada 3 pasos detente y haz este
+control, en cinco líneas máximo:
+
+- Objetivo (cópialo textual, no lo reescribas de memoria).
+- Avance: qué porcentaje de cada criterio está cumplido y con qué
+  evidencia concreta.
+- Deriva: en qué se parece lo que estoy haciendo ahora a lo que
+  pedía el objetivo. Si la respuesta cuesta trabajo, hay deriva.
+- Decisión: CONTINUAR, CAMBIAR DE ENFOQUE o PARAR.
+- Si es CAMBIAR: qué abandono y qué intento en su lugar.
+- Si es PARAR: qué necesito de la persona para seguir.
+
+Reglas de la decisión:
+- Dos controles seguidos sin avance en ningún criterio: CAMBIAR.
+- Tres controles seguidos sin avance: PARAR.
+- Si descubres que el objetivo estaba mal planteado, PARAR y dilo.
+  No lo corrijas por tu cuenta.</code></pre>
+
+      <h2>Loop 3: la cola de aprobación humana</h2>
+
+      <p>Este es el que permite que la cosa toque el mundo real. El agente trabaja solo, pero nada que salga hacia afuera —un correo a un cliente, un cambio de presupuesto, un pago, una publicación— se ejecuta directo. Todo va a una cola que una persona vacía una vez al día.</p>
+
+      <p>La diferencia con pedir permiso paso a paso es enorme. Pedir permiso en cada acción convierte al humano en cuello de botella y a la persona en niñera. La cola separa los tiempos: el agente avanza a su ritmo, tú revisas veinte decisiones juntas en diez minutos, y lo que rechazas se vuelve regla escrita para que no vuelva a proponerlo.</p>
+
+      <p>La clave está en el formato de cada renglón de la cola. Si para aprobar tienes que ir a abrir tres pestañas, la cola se acumula y en dos semanas la apruebas toda sin leer, que es peor que no tenerla.</p>
+
+      <pre><code>Trabaja de forma autónoma en todo lo que sea leer, analizar,
+redactar y preparar. Nunca ejecutes por tu cuenta nada que:
+- salga hacia un cliente o hacia afuera de la empresa,
+- mueva dinero o cambie un presupuesto,
+- borre o sobrescriba información,
+- se publique.
+
+Todo eso se acumula en una COLA DE APROBACIÓN. Cada renglón lleva
+exactamente esto y nada más:
+
+[ID] Qué se va a hacer, en una frase.
+POR QUÉ: el dato concreto que lo detonó.
+IMPACTO: monto, destinatario o alcance.
+SI NO SE HACE: qué pasa.
+REVERSIBLE: sí o no. Si no, dilo en mayúsculas.
+LISTO PARA VER: el borrador o el cambio exacto, completo.
+
+Ordena la cola por impacto, de mayor a menor. Cuando yo responda
+con los ID aprobados, ejecuta solo esos y reporta el resultado de
+cada uno.
+
+Cuando rechace algo, pregúntame por qué en una sola pregunta y
+escribe la regla que aprendiste al final del archivo de reglas.
+Nunca vuelvas a proponer algo que ya rechacé por la misma razón.</code></pre>
+
+      <h2>En qué orden se montan</h2>
+
+      <p>El error de todos es empezar por el tercero, porque es el que suena a delegar de verdad. Y el tercero sin los dos primeros es un agente que te llena la cola de propuestas malas, que tú apruebas por cansancio.</p>
+
+      <p>Va al revés. Primero el uno, en una tarea con verificación objetiva: es donde aprendes a escribir un juez que no sea el modelo dándose la razón. Después el dos, cuando ya dejes corriendo cosas largas y notes la deriva. El tres al final, y solo sobre procesos donde ya sabes cómo se ve una decisión buena, porque tu criterio es lo único que hay entre la cola y el mundo.</p>
+
+      <p>Antes de soltar cualquiera de los tres sobre una operación real, pásale <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a>. Y si todavía no tienes claro si tu caso pide un agente o basta un flujo fijo, esa frontera está en <a href="/guias/agente-o-workflow/">agente o workflow</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

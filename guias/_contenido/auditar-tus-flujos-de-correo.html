@@ -1,0 +1,144 @@
+      <p>Los flujos automáticos de correo son la parte de la operación que más dinero produce por hora de trabajo y la que menos gente vuelve a abrir. Se montan una vez, quedan prendidos, y ahí siguen mandando el mismo mensaje de bienvenida que se escribió cuando el catálogo era otro.</p>
+
+      <p>En cada cuenta que he auditado el patrón se repite: hay tres o cuatro flujos vivos, uno de ellos lleva meses sin generar un solo clic, y falta por completo el que más valdría. Nadie lo ve porque el reporte que revisa la gente es el de las campañas, no el de los flujos.</p>
+
+      <p>Esta guía es la skill que hace esa auditoría, más los dos prompts que van después: el de reescritura con tu voz y el del calendario a noventa días.</p>
+
+      <h2>Qué exportar antes de empezar</h2>
+
+      <p>La calidad de la auditoría depende de esto y no del prompt. Casi todas las plataformas de correo permiten exportar reportes en CSV. Necesitas cinco cosas:</p>
+
+      <ol>
+        <li><strong>El mapa de tus flujos activos.</strong> Nombre del flujo, disparador, cada mensaje en orden, y cuánto tiempo espera entre uno y otro.</li>
+        <li><strong>Desempeño por mensaje, no por flujo.</strong> Enviados, aperturas, clics, bajas y, si tu plataforma lo atribuye, ingreso por mensaje. El promedio del flujo esconde justo lo que buscas.</li>
+        <li><strong>Tus últimas veinte o treinta campañas</strong> con las mismas columnas.</li>
+        <li><strong>Los segmentos que tienes creados</strong> y cuánta gente hay en cada uno.</li>
+        <li><strong>Los cinco correos que mejor te han funcionado</strong>, con su texto completo. Esos son el material de voz.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> exportar agregados, no la lista. Para auditar flujos no hace falta un solo correo de un cliente ni un solo nombre. Necesitas métricas por mensaje. Si tu exportación trae columnas de datos personales, bórralas antes de subir el archivo. Es la diferencia entre una auditoría y un incidente de datos.</p>
+      </div>
+
+      <h2>La skill de auditoría</h2>
+
+      <p>Guárdala en <code>.claude/skills/auditar-correo/SKILL.md</code>, o súbela desde la configuración si trabajas en la app.</p>
+
+      <pre><code>---
+name: auditar-correo
+description: Audita flujos y campañas de email marketing a partir de
+  exportaciones de la plataforma. Úsala cuando el usuario suba reportes
+  de correo, pregunte por qué su email no vende, pida revisar sus
+  automatizaciones, flujos, secuencias o campañas.
+---
+
+Trabaja solo con los datos que te suban. Si falta algo, pídelo y no
+sigas.
+
+PASO 1 — INVENTARIO
+Lista los flujos que existen y márcalos contra esta referencia de los
+que suele haber que tener:
+- Bienvenida a suscriptor nuevo
+- Carrito o cotización abandonada
+- Post-compra o post-contratación
+- Reactivación de inactivos
+- Nutrición de prospecto que aún no compra
+- Recuperación de cobro fallido, si hay suscripción
+
+Di cuáles existen, cuáles existen pero están vacíos de contenido útil,
+y cuáles no existen. Los que no existen van primero en el reporte: un
+flujo ausente pesa más que un correo mal escrito.
+
+PASO 2 — DIAGNÓSTICO POR MENSAJE
+Para cada mensaje de cada flujo calcula sus tasas y compáralas contra
+la mediana de esa misma cuenta, nunca contra promedios de industria que
+no tienes. Marca:
+- Mensajes con clics muy por debajo de la mediana de su flujo.
+- Mensajes con bajas por arriba de la mediana: ahí estás quemando lista.
+- Ventanas de espera sospechosas: el primer mensaje de un flujo de
+  abandono que sale muchas horas después, o dos mensajes seguidos el
+  mismo día.
+- Flujos donde todo el ingreso lo produce un solo mensaje. El resto es
+  desgaste.
+- Mensajes que piden más de una acción distinta.
+
+PASO 3 — LAS CAMPAÑAS
+Ordena las campañas por clics y por ingreso. Escribe qué tienen en
+común las cinco mejores y qué tienen en común las cinco peores, en
+términos de tema, oferta y estructura. Sin adjetivos.
+
+PASO 4 — ENTREGA
+Devuelve en este orden:
+A. Calificación de cada flujo: sano, tibio o roto, con la razón en una
+   línea.
+B. Los cinco arreglos ordenados por dinero probable, no por facilidad.
+   Cada uno con: qué se cambia, dónde exactamente, y cómo sabremos en
+   dos semanas si funcionó.
+C. El flujo faltante que construiría primero, con sus mensajes y sus
+   tiempos propuestos.
+D. Lo que NO hay que tocar, y por qué.
+
+REGLAS
+- Cero cifras que no salgan de los archivos. Nada de referencias de
+  industria ni porcentajes "típicos".
+- Si un flujo tiene pocos envíos, dilo y no saques conclusiones de ahí.
+- Prohibido recomendar "mejorar el asunto" sin decir cuál y por qué.</code></pre>
+
+      <h2>El prompt de reescritura</h2>
+
+      <p>Con el diagnóstico en la mano, el siguiente paso es reescribir los mensajes que salieron rotos. Y aquí es donde casi todo se echa a perder: el correo reescrito sale correcto, neutro y ajeno, y a los suscriptores les suena a otra empresa.</p>
+
+      <pre><code>Vamos a reescribir los mensajes que marcaste como rotos, uno por uno.
+
+Primero, lee los cinco correos que mejor me han funcionado y escribe mi
+huella de voz: largo de frase, cómo abro, qué palabras repito, qué
+nunca digo, cómo cierro. Muéstramela antes de escribir nada.
+
+Después, para cada mensaje roto entrégame:
+- El diagnóstico en una línea: qué estaba haciendo mal.
+- La versión nueva completa, en mi voz, con asunto y preencabezado.
+- Una sola acción por correo, con su llamada a la acción explícita.
+- Qué hipótesis estamos probando con este cambio.
+
+Reglas: nada de urgencia inventada, descuentos que no autoricé, cifras
+de resultados ni testimonios que no te di. Si el correo necesita un
+dato que no tengo, escribe [FALTA: qué dato].</code></pre>
+
+      <h2>El calendario de noventa días</h2>
+
+      <p>Lo último es el plan de campañas, y tiene que salir de la auditoría, no de un calendario de días festivos bajado de internet.</p>
+
+      <pre><code>Con base en la auditoría y en lo que aprendimos de mis cinco mejores
+campañas, arma un calendario de campañas a 90 días.
+
+Reglas del calendario:
+- Frecuencia realista para quien lo va a ejecutar: [personas y horas
+  disponibles].
+- Cada semana con un solo tema. Nada de dos ofertas compitiendo.
+- Mezcla declarada entre correos de venta directa y correos que solo
+  dan valor, en la proporción que tú recomiendes según mis datos.
+- Los correos que tocan a segmentos inactivos van marcados aparte.
+- Fechas reales del calendario de mi negocio: [temporadas, cierres de
+  mes, eventos]. No metas fechas comerciales que no apliquen.
+
+Para cada campaña dame: semana, segmento, tema, oferta o ángulo,
+asunto propuesto y qué métrica esperamos mover.
+
+Al final, una lista corta de lo que hay que preparar antes de arrancar:
+segmentos por crear, contenido por producir, integraciones por revisar.</code></pre>
+
+      <h2>Lo que suele salir en una cuenta B2B</h2>
+
+      <p>En negocios que venden por cotización, la auditoría casi siempre encuentra lo mismo. Hay flujo de bienvenida, hay campañas mensuales, y no existe el flujo de la cotización que se mandó y nunca se contestó. Es el momento de mayor intención de compra de todo el ciclo y está desatendido, mientras el equipo comercial persigue a mano y sin orden.</p>
+
+      <p>El arreglo no es sofisticado: tres mensajes, uno a los dos días, otro a la semana, otro a las tres semanas, cada uno con una sola acción y ninguno pidiendo disculpas por escribir. Se construye en un día. En el reporte, ese flujo faltante va arriba de cualquier mejora de redacción.</p>
+
+      <h2>El error que hace inútil toda la auditoría</h2>
+
+      <p>Empezar por el copy. Es la parte divertida y es la que menos mueve.</p>
+
+      <p>El orden que sí funciona es el que fuerza la skill: primero el flujo que no existe, después las ventanas de tiempo mal puestas, después los mensajes que están quemando lista, y hasta el final la redacción. Un flujo de abandono que nunca se construyó vale más que treinta correos reescritos con mejores palabras.</p>
+
+      <p>Y una advertencia sobre las bajas. Cuando alguien se da de baja después de un correo, la conclusión fácil es que el correo estuvo mal. Muchas veces el problema está tres pasos atrás: en cómo entró esa persona a la lista y qué le prometiste ahí. Si el flujo de bienvenida promete una cosa y las campañas mandan otra, ningún asunto te va a salvar.</p>
+
+      <p>Si quieres llevar esto un paso más lejos y que corra solo, el siguiente escalón es <a href="/guias/agente-para-tu-email-marketing/">un agente para tu email marketing</a>.</p>

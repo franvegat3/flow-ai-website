@@ -1,0 +1,145 @@
+      <p>"Oye, ¿qué te parece esta idea?" es la peor pregunta que le puedes hacer a una IA. Te va a contestar que es interesante, te va a listar tres fortalezas y dos retos, y vas a cerrar la ventana sintiéndote validado y sin saber absolutamente nada nuevo.</p>
+
+      <p>El problema no es el modelo. Es que le hiciste una pregunta que no tiene respuesta. Nadie —ni un inversionista, ni tu socio, ni yo— puede decirte si una idea es buena. Lo que sí se puede hacer es someterla a cinco exámenes distintos y ver por cuál se rompe primero.</p>
+
+      <p>Eso es lo que hace este prompt. Pone cinco especialistas con criterios que chocan entre sí, los hace discutir en dos rondas, y termina con dos cosas concretas: un veredicto y una prueba de demanda que cuesta menos de cien dólares y se corre esta semana.</p>
+
+      <h2>Por qué cinco especialistas y no un análisis</h2>
+
+      <p>Un análisis general te da una lista de consideraciones. Un panel te da un punto de ruptura.</p>
+
+      <p>Los cinco roles están elegidos porque cada uno mata ideas por una razón distinta y ninguno puede cubrir al otro. El de economía unitaria no sabe si hay demanda; el de demanda no sabe si el margen aguanta. Cuando los pones a discutir, la idea se cae por donde de verdad es débil, no por donde tú tienes más miedo.</p>
+
+      <p>Y hay una segunda razón, más práctica: la discusión obliga al modelo a tomar posición. Un asesor que ya escribió "la demanda existe" tiene que defenderlo cuando el de competencia le contesta que existe pero ya está atendida. Ahí es donde salen las frases que sirven.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Va completo. Solo cambias el bloque de LA IDEA.</p>
+
+      <pre><code>Eres un panel de estrategia de cinco personas evaluando una idea de
+negocio. No eres un asistente. Cada miembro tiene un criterio propio,
+mata ideas por razones distintas, y no le importa quedar bien conmigo.
+
+REGLAS DEL PANEL
+1. Prohibido abrir validando. Nada de "idea interesante" ni de
+   resumirme lo que acabo de escribir.
+2. Cada miembro tiene que terminar su intervención con un veredicto
+   de una palabra: PASA, PASA CON CONDICIÓN o NO PASA.
+3. Nada de datos de mercado inventados. Si citas un tamaño de mercado,
+   una tasa de conversión o un precio de la competencia, marca la
+   línea con "SUPUESTO:" y di cómo lo verificaría yo en una tarde.
+4. Prohibido usar "podría", "posiblemente" y "depende" sin seguir con
+   la condición concreta de la que depende.
+5. En la ronda 2, cada miembro tiene que refutar por nombre a otro.
+
+LA IDEA
+Qué vendo exactamente: [producto o servicio, en una frase]
+A quién exactamente: [no "pymes": di quién firma el cheque y en qué
+  tipo de empresa o situación]
+Precio que voy a cobrar: [monto y si es único, mensual o por proyecto]
+Cómo se entrega: [quién hace el trabajo y cuánto tiempo toma cada venta]
+Qué cuesta entregarlo: [costo directo por unidad vendida, sin sueldos
+  de estructura]
+De dónde saldrían los primeros 10 clientes: [canal concreto, no
+  "redes sociales"]
+Qué ya intenté: [lo que hiciste hasta hoy y qué pasó]
+Dinero y meses que puedo poner: [lo que estás dispuesto a perder]
+Por qué yo: [ventaja real que tienes: acceso, oficio, lista, permiso]
+
+RONDA 1 — APERTURA
+Cada miembro escribe 120 a 160 palabras.
+
+1. RIESGO
+   El supuesto del que cuelga todo: si ese supuesto es falso, el
+   negocio no existe. Nómbralo, di por qué crees que puede ser falso,
+   y di qué evidencia lo confirmaría o lo tumbaría en 7 días.
+
+2. DEMANDA
+   ¿Alguien está gastando dinero hoy en resolver esto, aunque sea mal?
+   Nombra el sustituto actual —incluida la opción de no hacer nada— y
+   di qué tendría que pasar para que alguien lo abandone. Si el dolor
+   es real pero no es urgente, dilo con esas palabras.
+
+3. CRECIMIENTO
+   ¿Cómo llega el cliente 100 si el cliente 10 llegó por conocidos?
+   Describe un solo canal, el más probable, con el trabajo semanal que
+   exige. Marca si el negocio escala con más gente, con más gasto o
+   con más tiempo mío, y qué techo le pone eso.
+
+4. COMPETENCIA
+   Quién ya resuelve esto y por qué el cliente se quedaría con ellos.
+   Incluye a los competidores que no parecen competidores: una hoja de
+   cálculo, un becario, la agencia que ya tiene contratada. Di qué es
+   lo que yo puedo ofrecer que ellos estructuralmente no pueden copiar
+   en seis meses. Si no hay nada, dilo.
+
+5. ECONOMÍA UNITARIA
+   Con mis números de arriba: margen por unidad vendida, cuántas
+   unidades al mes para cubrir un sueldo digno, y cuánto puedo pagar
+   por adquirir un cliente sin perder dinero. Muestra la aritmética en
+   líneas separadas. Si mis números no alcanzan para calcularlo, di
+   exactamente qué dato falta.
+
+RONDA 2 — RÉPLICA
+Cada miembro escribe 60 a 90 palabras refutando a otro por nombre.
+Empieza por el desacuerdo más fuerte del panel, no por el más cortés.
+Si al final del debate el panel converge, di en qué convergió y qué
+sigue en disputa.
+
+VEREDICTO DEL PANEL
+VEREDICTO: [CONSTRÚYELO / CONSTRÚYELO CHIQUITO Y VERIFICA X /
+  NO TODAVÍA / NO ASÍ]
+La razón, en una frase:
+El supuesto más frágil de toda la idea:
+Qué versión más pequeña de esto probaría lo mismo:
+Lo que el panel no pudo evaluar por falta de datos míos:
+
+PRUEBA DE DEMANDA DE 100 DÓLARES
+Diseña un experimento que cueste menos de 100 dólares y menos de 7
+días, y que produzca evidencia de que alguien paga. No sirven encuestas
+ni "¿lo comprarías?". Entrega:
+- Qué se construye exactamente (una página, 20 mensajes, un anuncio)
+- El texto literal que voy a usar, listo para copiar
+- A cuántas personas se les pone enfrente y de dónde salen
+- El precio que se muestra
+- Qué cuenta como sí: la acción específica que la persona tiene que
+  hacer para que cuente
+- El número mínimo de síes que valida y el que invalida
+- Qué hago el día 8 con cada resultado
+
+Empieza con la ronda 1. No hagas resumen final.</code></pre>
+
+      <h2>Qué buscar en cada intervención</h2>
+
+      <h3>Riesgo</h3>
+      <p>Su único trabajo es encontrar el supuesto del que cuelga todo lo demás. Si nombra tres, no hizo el trabajo: dile que elija uno. Casi siempre el supuesto verdadero no es sobre el producto, es sobre el comportamiento del cliente.</p>
+
+      <h3>Demanda</h3>
+      <p>La línea que importa es la del sustituto. Todo problema que vale la pena resolver ya se está resolviendo de alguna forma horrible. Si el asesor no encuentra el sustituto actual, hay dos opciones: el dolor no existe, o no describiste bien a quién le duele.</p>
+
+      <h3>Crecimiento</h3>
+      <p>Fíjate en la marca de qué hace crecer el negocio. Si escala con más tiempo tuyo, no tienes un negocio, tienes un trabajo con más riesgo. Eso puede estar perfectamente bien, pero conviene saberlo antes de renunciar al que ya tenías.</p>
+
+      <h3>Competencia</h3>
+      <p>El aporte real está en los competidores que no lo parecen. La hoja de cálculo que el cliente ya usa gratis gana más batallas que cualquier startup de tu categoría.</p>
+
+      <h3>Economía unitaria</h3>
+      <p>El más aburrido y el que más ideas mata. Si no puede hacer la aritmética con lo que escribiste, el problema no es el prompt: es que todavía no sabes cuánto te cuesta entregar lo que vendes.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el bloque "a quién exactamente". La gente escribe "pymes", "emprendedores" o "gente que quiere aprender IA", y con eso los cinco asesores se ven obligados a inventar. Escribe quién firma el cheque, en qué momento de su semana le duele el problema, y cómo lo encuentras. Ese solo campo cambia la mitad de la salida.</p>
+      </div>
+
+      <h2>La prueba de cien dólares es lo único que cuenta</h2>
+
+      <p>Todo lo anterior es opinión estructurada. La última sección es la que produce un hecho.</p>
+
+      <p>La regla que la hace funcionar es que no acepta intención. "Lo compraría" no vale; "me dejó su tarjeta", "apartó el lugar", "pagó el anticipo" sí. La diferencia entre esos dos verbos es la diferencia entre seis meses construyendo algo que nadie quería y una semana descubriéndolo.</p>
+
+      <p>Y sí, el panel a veces diseña un experimento demasiado cómodo. Cuando la prueba que te propone no incluye una acción con costo para el otro, devuélvesela con una línea: "esta prueba no distingue entre alguien interesado y alguien que paga, rediséñala".</p>
+
+      <h2>Córrelo dos veces, no cinco</h2>
+
+      <p>La primera corrida te dice por dónde se rompe. La segunda es después de la prueba de demanda, con los resultados reales metidos en el bloque de "qué ya intenté". Ahí el panel deja de opinar sobre una hipótesis y empieza a razonar sobre evidencia, y las intervenciones cambian por completo.</p>
+
+      <p>Lo que no funciona es correrlo cinco veces reescribiendo la idea hasta que los cinco digan PASA. Un panel que aprueba todo es exactamente el problema que este prompt vino a resolver. Si lo que traes entre manos no es una idea de negocio sino una decisión personal, el formato equivalente está en <a href="/guias/consejo-de-asesores-para-decisiones/">el consejo de cinco asesores</a>, y para dejar de pedirle ideas y empezar a pedirle demolición, sirve <a href="/guias/deja-de-pedirle-ideas-de-negocio/">esta otra</a>.</p>

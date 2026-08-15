@@ -1,0 +1,161 @@
+      <p>Casi todo el mundo le da a la IA una instrucción de tarea: hazme esto, resúmeme aquello, escribe esto otro. Y recibe la respuesta promedio, que es exactamente lo que pediste.</p>
+
+      <p>La gente que le saca cosas útiles hace algo distinto: antes de decirle qué hacer, le dice desde qué postura pensar. No es un truco de personalidad —nada de "eres un experto de clase mundial"— sino un método de razonamiento explícito, con qué buscar, en qué orden y qué entregar.</p>
+
+      <p>Estos son siete modos que uso de verdad. Cada uno está completo para copiar y pegar. Pégalos antes de tu pregunta, no después.</p>
+
+      <h2>Por qué esto cambia la respuesta</h2>
+
+      <p>Un modelo sin postura definida optimiza para que la respuesta se sienta bien. Te va a dar equilibrio, matices y un cierre conciliador, porque estadísticamente eso es lo que la gente premia.</p>
+
+      <p>Cuando le impones un método, cambias el criterio de qué es una buena respuesta. Un modo Red Team bien escrito no puede terminar diciendo "en general tu idea es sólida", porque su entregable es una lista de fallas. La postura no cambia lo que sabe: cambia qué parte de lo que sabe te muestra.</p>
+
+      <div class="plugin-card">
+        <h3>1. Red Team</h3>
+        <p>Para cuando ya te enamoraste de una idea. Su trabajo no es opinar: es encontrar por dónde se rompe.</p>
+        <pre><code>Modo Red Team. Tu único trabajo es encontrar cómo falla esto.
+No me des lo bueno, no equilibres, no cierres con un elogio.
+
+1. Los 5 supuestos que tiene que ser ciertos para que funcione,
+   ordenados del más frágil al más sólido.
+2. Por cada uno: qué pasa si es falso y qué tan caro sale.
+3. El escenario concreto en que esto fracasa en 90 días. Escríbelo
+   como si ya hubiera pasado.
+4. Qué información me falta y quién la tiene.
+5. La objeción que me va a hacer la persona más escéptica de la
+   sala, en sus palabras.
+
+Si de verdad no encuentras nada grave, dilo en una línea y explica
+qué tendría que ser cierto para que estés equivocado.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> antes de comprometer dinero, contratar, o mandar una propuesta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Primeros principios</h3>
+        <p>Para cuando la respuesta obvia es "así se hace siempre" y sospechas que ese siempre ya no aplica.</p>
+        <pre><code>Modo primeros principios. Prohibido razonar por analogía o por
+buenas prácticas de la industria.
+
+1. Descompón el problema hasta lo que sé que es cierto: física,
+   números, restricciones legales, comportamiento humano
+   observable. Nada de "normalmente se hace así".
+2. Lista qué de la solución actual existe por una razón real y qué
+   existe solo por costumbre o por herencia de una herramienta.
+3. Reconstruye la solución desde cero con las restricciones
+   verdaderas.
+4. Dime en qué se parece y en qué difiere de lo que se hace hoy, y
+   por qué nadie lo hace así.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> procesos heredados, costos que nadie ha vuelto a revisar, "es que el sistema no deja".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. CEO</h3>
+        <p>No es el que da discursos. Es el que decide con información incompleta y se hace responsable del resultado.</p>
+        <pre><code>Modo CEO. Tienes que decidir hoy con la información que hay. No
+puedes pedir más datos ni dejarlo abierto.
+
+1. La decisión, en una frase, con verbo.
+2. Las 2 o 3 opciones reales. Descarta las que suenan bien y no
+   son ejecutables con lo que tengo.
+3. Tu recomendación, y por qué esa y no la otra.
+4. Qué estás sacrificando al elegirla. Nómbralo.
+5. Cómo sabremos en 30 días si fue un error, con una señal
+   concreta y observable.
+6. Qué es lo peor que puede pasar y si es reversible.
+
+Nada de "depende". Si de verdad depende, dime de qué y elige el
+supuesto más probable.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> llevas tres semanas dándole vueltas a algo que ya no va a mejorar con más análisis.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Consultor</h3>
+        <p>Estructura antes que opinión. Sirve para problemas grandes y mal definidos, donde el trabajo real es partirlos.</p>
+        <pre><code>Modo consultor. Estructura primero, respuesta después.
+
+1. Reformula el problema como una pregunta que se pueda contestar
+   con evidencia.
+2. Pártelo en 3 a 5 sub-preguntas que no se traslapen y que juntas
+   lo cubran completo.
+3. Por cada sub-pregunta: la hipótesis inicial, qué dato la
+   confirmaría, y qué dato la tumbaría.
+4. Cuál de esas ramas resuelve más incertidumbre por menos
+   esfuerzo. Empezamos por ahí.
+5. Qué se puede saber en una semana y qué no se va a poder saber
+   nunca.
+
+No des la recomendación todavía. Quiero el mapa.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> "tenemos que crecer", "hay que mejorar el margen", y cosas igual de grandes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Premortem</h3>
+        <p>Es el Red Team aplicado a un plan que ya arrancó. El cambio de tiempo verbal es lo que hace el trabajo.</p>
+        <pre><code>Modo premortem. Estamos a [fecha, seis meses adelante]. Esto
+fracasó. No preguntes si pudo fracasar: ya pasó.
+
+1. Escribe la crónica de qué salió mal, en orden, con fechas.
+2. La causa raíz. No "mala ejecución": el mecanismo específico.
+3. La primera señal de alerta que hubo y por qué la ignoramos.
+4. Quién lo sabía antes que nadie y por qué no lo dijo.
+5. Los 3 controles que, puestos hoy, habrían cambiado la historia.
+
+Escríbelo en pasado. Es más honesto que el condicional.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> el arranque de un proyecto, una campaña grande, un lanzamiento con fecha.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Editor implacable</h3>
+        <p>Para texto que va a leer alguien cuyo tiempo cuesta: un cliente, un consejo, un inversionista.</p>
+        <pre><code>Modo editor implacable. No reescribas todavía. Diagnostica.
+
+1. Marca cada frase que se puede borrar sin perder información.
+2. Marca cada afirmación sin evidencia y dime qué evidencia
+   necesitaría.
+3. Dime en qué línea exacta el lector deja de leer y por qué.
+4. Cuál es el punto principal y en qué párrafo aparece. Si no
+   aparece en el primero, dilo.
+5. Qué palabras están ahí para sonar profesional y no significan
+   nada.
+
+Después de eso, y solo después, dame la versión corta con el
+mismo contenido.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> propuestas, correos importantes, cualquier cosa larga que no está funcionando.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Científico</h3>
+        <p>El antídoto contra la respuesta segura de sí misma. Obliga a separar lo que se sabe de lo que se supone.</p>
+        <pre><code>Modo científico. Separa hechos de interpretación en todo lo que
+digas.
+
+1. Qué sé con evidencia, y de dónde viene cada cosa.
+2. Qué estoy infiriendo y con qué nivel de confianza: alto, medio
+   o bajo. Sin porcentajes inventados.
+3. Qué no se puede saber con la información disponible. Dilo con
+   esas palabras.
+4. La hipótesis más probable, y el experimento más barato que la
+   tumbaría si es falsa.
+5. Qué explicación alternativa da los mismos datos.
+
+Si una cifra viene de una sola fuente sin respaldo, márcala.</code></pre>
+        <p class="plugin-for"><strong>Para cuándo:</strong> "las ventas cayeron y creemos que es por X". Casi nunca es por X.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> quitar el modo cuando ya sirvió. Estos prompts imponen una postura, y una postura sostenida demasiado tiempo se vuelve ruido: un Red Team corriendo tres días seguidos te va a encontrar problemas en todo, incluido lo que ya estaba bien. Úsalo, saca la lista, cierra la conversación y sigue en una nueva.</p>
+      </div>
+
+      <h2>Cómo se encadenan</h2>
+
+      <p>Sueltos rinden. Encadenados es donde cambian una decisión de verdad.</p>
+
+      <p>La secuencia que más uso en trabajo de empresa son tres: Consultor para partir el problema, Científico para separar lo que sabemos de lo que estamos suponiendo, y CEO para forzar la decisión. Antes de ejecutar, Premortem. Y si el entregable es un documento que va a leer alguien importante, Editor implacable al final.</p>
+
+      <p>Lo que no funciona es pedirlos todos en el mismo mensaje. Se promedian y sale una respuesta que no es ninguno de los siete. Uno por conversación, en orden.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>Estos modos no son magia de prompting. Son la parte del pensamiento que tú deberías estar haciendo y que se te olvida hacer cuando tienes prisa.</p>
+
+      <p>El valor real no es que el modelo piense mejor. Es que a los dos meses de usarlos empiezas a hacerte esas preguntas solo, antes de abrir el chat. Cuando llegue ese día, el prompt sobra y tú ya cambiaste. Ese siempre fue el punto.</p>

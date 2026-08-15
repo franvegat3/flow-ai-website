@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El tutor de IA que no te da la respuesta — Guías Flow AI</title>
+  <meta name="description" content="Cómo funciona el tutor socrático que guía con preguntas en vez de respuestas, más el prompt y el proyecto de Claude para convertir la IA que ya usas en uno que de verdad haga pensar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tutor-que-no-da-la-respuesta/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El tutor de IA que no te da la respuesta" />
+  <meta property="og:description" content="Cómo funciona el tutor socrático que guía con preguntas en vez de respuestas, más el prompt y el proyecto de Claude para convertir la IA que ya usas en uno que de verdad haga pensar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tutor-que-no-da-la-respuesta/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Prompts</span></div>
+      <h1>El tutor de IA que no te da la respuesta</h1>
+      <p class="lead">Cómo funciona el tutor socrático que guía con preguntas en vez de respuestas, más el prompt y el proyecto de Claude para convertir la IA que ya usas en uno que de verdad haga pensar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le pegas el problema, te devuelve la solución explicada paso a paso, la lees y todo tiene sentido. Cierras la ventana con la sensación de haber entendido. Tres días después te topas con el mismo problema y no sabes por dónde empezar.</p>
+
+      <p>Esa sensación tiene nombre: reconocer no es lo mismo que saber. Leer una explicación clara se siente idéntico a haberla resuelto, y el cerebro no distingue una cosa de la otra hasta que le toca producirla sin ayuda.</p>
+
+      <p>El tutor socrático existe para evitar exactamente eso. No te da la respuesta: te hace las preguntas que te llevan a ella. Aquí está cómo funciona, el prompt completo y cómo dejarlo montado como proyecto para no rearmarlo cada vez.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un tutor socrático es el que responde con preguntas hasta que tú produces la respuesta, y solo interviene cuando te atoras de verdad.</p>
+
+      <p>El nombre viene de Sócrates, que enseñaba así hace dos mil cuatrocientos años. La razón por la que sigue funcionando no es filosófica: el esfuerzo de intentar recuperar algo de tu propia cabeza es lo que lo fija. Si alguien te lo entrega, ese esfuerzo no ocurre.</p>
+
+      <h2>Por qué la IA hace lo contrario por default</h2>
+
+      <p>Un asistente está entrenado para ser útil, y "útil" casi siempre significa resolver rápido. Si le preguntas algo, te contesta. Es lo correcto en el 95% de los usos —cuando quieres el dato, quieres el dato— y es exactamente lo contrario de lo que necesitas cuando el objetivo es aprender.</p>
+
+      <p>Por eso no basta con decirle "sé mi tutor". Con esa instrucción vaga vuelve al modo de resolver a los dos o tres mensajes, casi siempre en el momento en que titubeas, porque interpreta tu duda como una petición de ayuda. Hay que quitarle explícitamente el permiso de contestar.</p>
+
+      <h2>El prompt</h2>
+
+      <pre><code>Vas a ser mi tutor. Tu regla número uno es que NO me das la
+respuesta. Tampoco me das el siguiente paso resuelto.
+
+Tema: [qué estoy estudiando]
+Mi nivel: [desde cero / sé lo básico / me atoré en algo
+específico]
+Para qué lo necesito: [examen, trabajo, entender un
+concepto]
+Tiempo que tengo hoy: [minutos]
+
+CÓMO TRABAJAS
+
+1. Empieza diagnosticando. Hazme dos o tres preguntas para
+   saber qué sé ya. No asumas mi nivel por lo que te dije:
+   compruébalo.
+
+2. Después, una pregunta a la vez. Espera mi respuesta antes
+   de seguir. Nunca me mandes tres preguntas juntas.
+
+3. Cuando me equivoque, no me corrijas de frente. Hazme una
+   pregunta que exponga la contradicción y déjame verla.
+
+4. Cuando me atore, sube la ayuda en este orden, un escalón
+   por intento:
+   - Escalón 1: una pregunta más chica sobre la misma idea.
+   - Escalón 2: un ejemplo análogo de otro terreno.
+   - Escalón 3: la mitad del razonamiento, y yo cierro.
+   Solo después de tres intentos míos fallidos me das la
+   respuesta completa, y me explicas dónde se rompió mi
+   razonamiento.
+
+5. Cuando conteste bien, no felicites. Pregúntame por qué
+   funciona, o dame un caso donde eso ya no aplique.
+
+6. Prohibido: darme código completo, resolver el ejercicio,
+   escribir el ensayo, o adelantarte a lo que iba a decir.
+
+7. Si te pido la respuesta directa, recuérdame esta regla y
+   ofréceme un escalón de ayuda. Solo si escribo la palabra
+   RENDIRME en mayúsculas me das la solución completa.
+
+CADA 20 MINUTOS O AL FINAL
+Hazme un corte: qué logré resolver solo, qué necesité ayuda
+para ver, y cuál es el único concepto que debería repasar
+antes de la próxima sesión. Escríbelo para que yo lo guarde.
+
+Empieza ahora con el diagnóstico.</code></pre>
+
+      <p>Las dos piezas que hacen que esto no se degrade son la escalera de ayuda del punto cuatro y la palabra de rendición del punto siete. Sin la escalera, o te deja solo o te resuelve todo. Sin la palabra de rendición, tú vas a insistir hasta romperlo, porque frustrarse es incómodo y ceder es lo natural.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> guardar el corte final. Ese resumen de "qué resolviste solo y qué no" es el material más valioso de la sesión y casi nadie lo conserva. Pégalo en el conocimiento de tu proyecto. A la quinta sesión tienes un mapa de tus huecos reales, no de los que crees tener, y el tutor puede empezar por ahí en vez de diagnosticarte desde cero cada vez.</p>
+      </div>
+
+      <h2>Cómo se vuelve proyecto</h2>
+
+      <p>Pegar el prompt cada vez funciona, pero se abandona. La versión que sí se sostiene es un proyecto de Claude dedicado a lo que estás aprendiendo, con tres cosas adentro.</p>
+
+      <ul>
+        <li><strong>Las instrucciones:</strong> el prompt de arriba, sin la sección de tema. Esa cambia en cada sesión.</li>
+        <li><strong>El material:</strong> el temario, los apuntes, el capítulo del libro, la documentación. Lo que sea que estés estudiando, para que las preguntas salgan de ahí y no de conocimiento general.</li>
+        <li><strong>Tu bitácora:</strong> un documento donde acumulas los cortes de cada sesión. Es lo que convierte una serie de chats sueltos en un curso con memoria.</li>
+      </ul>
+
+      <p>Con eso, cada sesión empieza con "sigamos" y el tutor ya sabe dónde te quedaste y qué se te dificulta. Es la diferencia entre un tutor y alguien que te conoce desde hace un mes.</p>
+
+      <h2>Tres modos que uso distinto</h2>
+
+      <h3>Concepto nuevo</h3>
+
+      <p>Aquí el diagnóstico es lo importante. Dile explícitamente "no sé nada de esto" y deja que empiece por lo que ya sabes de otro terreno. Los buenos tutores construyen sobre analogías que tú ya dominas.</p>
+
+      <h3>Atorado en un problema específico</h3>
+
+      <p>El uso más frecuente y donde más se gana. Pega el problema y tu intento fallido, no solo el problema. La pregunta clave que quieres que te haga es "¿qué te hizo pensar que ese era el camino?", y para eso necesita ver tu razonamiento.</p>
+
+      <h3>Repaso antes de un examen o una presentación</h3>
+
+      <p>Invierte los papeles: pídele que te examine él a ti sobre el material del proyecto, con preguntas de dificultad creciente y sin decirte si vas bien hasta el final. Es incómodo y es la forma más rápida de encontrar lo que no sabes.</p>
+
+      <h2>Lo mismo, para capacitar gente en una empresa</h2>
+
+      <p>Este molde no es solo para estudiantes. Donde más rinde en operación es en la incorporación de gente nueva.</p>
+
+      <p>Un vendedor que entra puede leerse el manual de producto en dos días y no retener nada. El mismo manual cargado en un proyecto con este tutor encima, y con la instrucción de examinarlo sobre objeciones reales de clientes, produce otra cosa: alguien que ya se equivocó veinte veces en privado antes de equivocarse una vez frente a un cliente. La diferencia de costo entre esos dos errores es todo el argumento.</p>
+
+      <p>Lo mismo aplica a políticas internas, procedimientos de operación y sistemas propios. Si tienes un manual que nadie lee, no necesitas un manual mejor: necesitas que alguien lo pregunte.</p>
+
+      <h2>Cuándo no usar esto</h2>
+
+      <p>Cuando no estás aprendiendo. Si necesitas el dato para entregar algo en veinte minutos, pide el dato. Usar el tutor para todo es la forma más rápida de dejar de usarlo.</p>
+
+      <p>Y cuando el tema no es tuyo. Aprender socráticamente cuesta energía y tiempo, así que reserva ese esfuerzo para lo que sí quieres tener en la cabeza dentro de un año. Para el resto, la respuesta directa está bien. Si quieres ver otras variantes del mismo enfoque, están <a href="/guias/modo-tutor-escondido/">el modo tutor escondido</a> y <a href="/guias/cualquier-video-de-youtube-como-tutor/">convertir un video de YouTube en tutor</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

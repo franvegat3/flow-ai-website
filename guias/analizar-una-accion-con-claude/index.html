@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿El mercado está equivocado con esta acción? Pregúntale a Claude — Guías Flow AI</title>
+  <meta name="description" content="Un prompt que jala los reportes recientes, lee las noticias, y te dice si una acción está abajo por razones reales o solo por percepción. La distinción con la que Buffett hizo su carrera. No es asesoría financiera." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/analizar-una-accion-con-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿El mercado está equivocado con esta acción? Pregúntale a Claude" />
+  <meta property="og:description" content="Un prompt que jala los reportes recientes, lee las noticias, y te dice si una acción está abajo por razones reales o solo por percepción. La distinción con la que Buffett hizo su carrera. No es asesoría financiera." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/analizar-una-accion-con-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Negocio</span></div>
+      <h1>¿El mercado está equivocado con esta acción? Pregúntale a Claude</h1>
+      <p class="lead">Un prompt que jala los reportes recientes, lee las noticias, y te dice si una acción está abajo por razones reales o solo por percepción. La distinción con la que Buffett hizo su carrera. No es asesoría financiera.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Una acción cae fuerte y la conversación se vuelve siempre la misma: ¿está barata o se está muriendo? La gente contesta esa pregunta con el gráfico, que es justo lo único que no la contesta.</p>
+
+      <p>La distinción que importa es vieja y aburrida: el precio bajó porque el negocio se deterioró, o bajó porque la percepción se deterioró. En el primer caso lo barato es una trampa. En el segundo es una oportunidad. Warren Buffett hizo su carrera sobre esa diferencia, y no la resolvió con velas japonesas: la resolvió leyendo reportes.</p>
+
+      <p>Leer reportes es exactamente el trabajo aburrido que Claude hace bien. Abajo está el prompt completo que uso para eso, con las salvaguardas que evitan que se invente números.</p>
+
+      <p><strong>Esto no es asesoría financiera.</strong> No lo es lo que escribo aquí ni lo que te conteste el modelo. Es una herramienta para leer más rápido y preguntar mejor. Las decisiones de inversión son tuyas y de tu asesor, y un modelo de lenguaje puede equivocarse en un dato con toda la confianza del mundo.</p>
+
+      <h2>La pregunta correcta, en una frase</h2>
+
+      <p>No es "¿va a subir?". Es: <em>¿qué cambió en la capacidad del negocio de generar efectivo, y qué solo cambió en el ánimo de quien lo mira?</em></p>
+
+      <p>Todo lo que sigue es una forma de forzar esa separación. Deterioro de negocio son márgenes que se comprimen, clientes que se van, deuda que vence sin refinanciamiento, un producto que perdió su ventaja, una demanda regulatoria que cambia el modelo. Deterioro de percepción es un trimestre que quedó abajo del consenso, una nota de prensa, una rotación sectorial, un directivo que dijo algo torpe en la llamada.</p>
+
+      <h2>Antes del prompt: cómo evitar que invente</h2>
+
+      <p>El riesgo real de este ejercicio no es que Claude te dé una opinión mala. Es que te dé un número inventado con formato de dato duro. Tres reglas que uso siempre:</p>
+
+      <ul>
+        <li><strong>Búsqueda web prendida.</strong> Sin acceso a la web, el modelo contesta con lo que recuerda de su entrenamiento, y eso está viejo. Un balance de hace dos años no sirve para decidir hoy.</li>
+        <li><strong>Fuente obligatoria por cifra.</strong> Toda cifra tiene que venir con su documento y su fecha. Si no la encontró, quiero que lo diga, no que la estime.</li>
+        <li><strong>Cero precio objetivo.</strong> En el momento en que le pides un precio, el ejercicio deja de ser análisis y se vuelve adivinanza con decimales.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar dos cifras a mano. Toma las dos que más peso tienen en la conclusión, ábrelas en el reporte original de la empresa y compáralas. Si las dos cuadran, el resto del análisis es confiable. Si una no cuadra, tira todo el análisis y vuelve a empezar. Toma cuatro minutos y es la diferencia entre una herramienta y un generador de excusas.</p>
+      </div>
+
+      <h2>El prompt</h2>
+
+      <p>Cambia el ticker y el nombre. Lo demás déjalo tal cual: cada restricción está ahí porque sin ella el resultado se degrada.</p>
+
+      <pre><code>Vas a actuar como analista de renta variable escéptico. No eres asesor y no vas a recomendar comprar ni vender.
+
+EMPRESA: [nombre] ([ticker], [bolsa])
+CONTEXTO: la acción cayó de forma notable en los últimos [periodo].
+
+Antes de escribir nada, busca en la web y usa solo fuentes primarias o de prensa financiera reconocida:
+- Los dos reportes trimestrales más recientes y el reporte anual (busca en la sección de relación con inversionistas de la empresa y en el regulador que le corresponda).
+- La transcripción o el resumen de las dos últimas llamadas con analistas.
+- Las noticias de los últimos 90 días sobre la empresa y su sector.
+- Cambios recientes en dirección, en deuda o en regulación.
+
+REGLAS DURAS
+1. Cada cifra que escribas lleva entre paréntesis su fuente y la fecha del documento.
+2. Si no encontraste un dato, escribe "no encontrado". Está prohibido estimarlo.
+3. No des precio objetivo, ni valuación implícita, ni recomendación.
+4. Separa siempre lo que dice un documento de lo que es interpretación tuya.
+5. Si las fuentes se contradicen, muéstrame las dos y di cuál es más confiable y por qué.
+
+ENTREGA ESTA ESTRUCTURA
+
+1) QUÉ PASÓ
+Cronología breve de la caída. Qué evento coincidió con cada tramo.
+
+2) EL NEGOCIO, EN NÚMEROS
+Ingresos, margen bruto, margen operativo y flujo de efectivo libre de los últimos periodos comparables.
+Deuda total, efectivo y vencimientos próximos.
+Marca con una flecha lo que empeoró y con un igual lo que se mantuvo.
+
+3) DETERIORO REAL — evidencia de que el negocio vale menos
+Lista solo lo que esté sostenido en un documento. Para cada punto: qué dice, dónde, y si es reversible o permanente.
+
+4) DETERIORO DE PERCEPCIÓN — evidencia de que solo cambió el ánimo
+Expectativas de analistas contra resultados, tono de la prensa, movimientos de todo el sector, cambios de flujo sin noticia de la empresa.
+
+5) EL VEREDICTO SEPARADO
+Dos párrafos. Uno arma el caso de que el mercado tiene razón. El otro arma el caso de que el mercado está equivocado. Escribe los dos con la misma fuerza.
+
+6) QUÉ TENDRÍA QUE SER CIERTO
+Tres condiciones verificables que tendrían que cumplirse para que la tesis optimista funcione, y dónde se verifica cada una en el próximo reporte.
+
+7) LO QUE NO SÉ
+Los tres huecos más importantes de información y qué documento los cerraría.
+
+Termina con: "Esto no es asesoría de inversión."</code></pre>
+
+      <h2>Los tres seguimientos que valen más que el primer análisis</h2>
+
+      <p>La primera respuesta es materia prima. El valor sale de aquí:</p>
+
+      <h3>1. La inversión de la carga</h3>
+
+      <pre><code>Toma tu sección 6. Para cada condición, dime qué probabilidad histórica tiene de cumplirse en una empresa de este sector y de este tamaño, con base en casos comparables que puedas citar. Si no hay comparables citables, dilo.</code></pre>
+
+      <h3>2. El caso bajista honesto</h3>
+
+      <pre><code>Ahora escribe el caso bajista como si administraras un fondo que ya está corto en esta acción y tienes que defender la posición ante tu comité. Usa solo hechos de las fuentes que ya citaste. Sin adjetivos.</code></pre>
+
+      <h3>3. La autopsia adelantada</h3>
+
+      <pre><code>Es un año después y esta inversión salió muy mal. Escribe la explicación de por qué, en orden de probabilidad. Luego dime cuál de esas causas ya se puede detectar hoy en los documentos.</code></pre>
+
+      <h2>Cómo se usa esto en una operación real</h2>
+
+      <p>Fuera del ahorro personal, este mismo esqueleto sirve para decisiones que sí toman las empresas. Un área de tesorería lo usa para evaluar la salud del banco o del proveedor al que le está confiando saldo. Un equipo comercial lo corre sobre un cliente grande antes de otorgarle crédito a 90 días: los reportes públicos dicen mucho sobre si va a pagar. Un comité de compras lo corre sobre el proveedor único de un insumo crítico antes de firmar un contrato de varios años.</p>
+
+      <p>Es la misma pregunta con otro traje: ¿esta contraparte se está deteriorando de verdad, o solo tiene mala prensa?</p>
+
+      <h2>El error que arruina el ejercicio</h2>
+
+      <p>Usarlo para que te dé permiso. Si ya compraste y estás buscando quién te diga que aguantes, vas a redactar el prompt de forma que salga lo que quieres, y va a salir. Los modelos son complacientes por diseño y ese sesgo es el más caro de todos aquí.</p>
+
+      <p>La prueba es simple: si nunca te ha hecho cambiar de opinión, no lo estás usando como análisis. Estás usándolo como espejo. Cuando eso pase, cárgalo con <a href="/guias/consejo-contra-la-adulacion/">un consejo contra la adulación</a> o pásale la tesis a <a href="/guias/abogado-del-diablo/">un abogado del diablo</a> antes de mover un peso. Y si quieres el recorrido completo del análisis paso a paso, está en <a href="/guias/analizar-cualquier-accion-en-5-pasos/">analizar cualquier acción en 5 pasos</a>.</p>
+
+      <p>Dicho una última vez, porque importa: nada de esto es asesoría financiera.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

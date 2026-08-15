@@ -1,0 +1,95 @@
+      <p>La pregunta llega siempre igual: "queremos un agente que haga esto". Y en ocho de cada diez casos, lo que describen después es un flujo de cinco pasos fijos que no necesita ningún agente.</p>
+
+      <p>Equivocarse de lado es caro en las dos direcciones. Un agente donde bastaba un flujo te cuesta permisos, bitácora, revisión y una caja negra que nadie sabe defender cuando falla. Un flujo donde hacía falta un agente te cuesta seis meses de estar parchando excepciones hasta que el equipo deja de usarlo.</p>
+
+      <p>Hay una sola pregunta que separa los dos casos, y una hoja para cuando la pregunta no basta.</p>
+
+      <h2>La pregunta</h2>
+
+      <p><strong>¿Puedes escribir hoy, en una servilleta y sin correr nada, todos los caminos que puede tomar este proceso?</strong></p>
+
+      <p>Si la respuesta es sí, es un workflow. Tú ya sabes la secuencia; lo único que falta es que alguien la ejecute rápido y sin equivocarse.</p>
+
+      <p>Si la respuesta es no —porque el paso tres depende de lo que se encontró en el paso dos, y no sabes de antemano cuántas ramas hay— es un agente. El modelo tiene que decidir el camino sobre la marcha porque nadie puede escribirlo por adelantado.</p>
+
+      <p>Ojo con la trampa: mucha gente contesta "no" cuando la respuesta honesta es "sí, pero son diez caminos y me da flojera escribirlos". Diez caminos conocidos son un workflow con diez ramas, no un agente. La diferencia no es el número de caminos, es si los conoces.</p>
+
+      <h2>Los cuatro flujos que resuelven la mayoría de los casos</h2>
+
+      <p>Antes de saltar al agente vale la pena ver lo que un workflow ya puede hacer, porque la gente subestima cuánto cabe aquí.</p>
+
+      <ul>
+        <li><strong>El encadenado.</strong> Salida de un paso, entrada del siguiente. Extrae los datos del correo, valida contra el catálogo, redacta la respuesta. Cada paso hace una cosa y se puede revisar solo.</li>
+        <li><strong>El de ruteo.</strong> Un primer paso clasifica y manda a la rama que toca. Los tickets de facturación por acá, los técnicos por allá. Clasificar es la tarea donde el modelo brilla y el ruteo es determinista: sabes exactamente a dónde puede ir cada cosa.</li>
+        <li><strong>El paralelo.</strong> Tres revisiones distintas del mismo documento al mismo tiempo, y al final se juntan. Sirve cuando quieres criterios independientes que no se contaminen entre sí, como en una revisión legal, de marca y de datos.</li>
+        <li><strong>El de doble pasada.</strong> Uno produce, otro critica contra un criterio explícito, el primero corrige. Es el que más sube la calidad y el que casi nadie monta, porque exige escribir el criterio de evaluación.</li>
+      </ul>
+
+      <p>Los cuatro son predecibles, se auditan paso por paso, y cuando fallan sabes en cuál renglón. Esa propiedad es la que pierdes al subir a agente, y hay que perderla a cambio de algo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> preguntar qué pasa cuando falla, antes de elegir. En un flujo, la falla es visible: se rompió el paso cuatro. En un agente, la falla es que entregó algo plausible por un camino que nadie vio. Si tu proceso toca dinero, clientes o algo irreversible, y todavía no tienes forma de ver qué hizo el agente y por qué, la respuesta correcta es workflow aunque el proceso parezca pedir agente.</p>
+      </div>
+
+      <h2>La hoja que elige por ti</h2>
+
+      <p>Ocho preguntas. Cada sí suma un punto. Contéstalas del proceso como es hoy, no como te gustaría que fuera.</p>
+
+      <ol>
+        <li>¿El siguiente paso cambia según lo que devolvió el anterior, de formas que no puedes enumerar?</li>
+        <li>¿El número de vueltas es distinto en cada caso y no lo sabes de antemano?</li>
+        <li>¿Hace falta buscar información que no está en un lugar fijo?</li>
+        <li>¿Hay que reintentar con otro enfoque cuando algo no da resultado?</li>
+        <li>¿La entrada llega en formatos y calidades muy distintas cada vez?</li>
+        <li>¿Un humano experto tarda más de veinte minutos y toma varias decisiones intermedias?</li>
+        <li>¿Intentaste dibujar el diagrama y te salieron más de seis ramas de excepción?</li>
+        <li>¿El resultado bueno se reconoce cuando lo ves, pero no se puede describir como una regla?</li>
+      </ol>
+
+      <p>Cero a dos puntos: workflow, sin discusión. Tres a cinco: workflow con un paso de juicio del modelo adentro —normalmente el de ruteo o el de doble pasada—. Seis a ocho: agente, y ahora sí toca hablar de límites, permisos y bitácora antes de escribir nada.</p>
+
+      <p>La lectura importante de la hoja: si sacaste seis puntos pero el proceso toca algo irreversible, no construyas el agente todavía. Construye el workflow de la parte que sí es predecible, y deja la parte incierta en manos de una persona. Casi siempre resulta que el 70% del proceso era mecánico y solo un tramo requería criterio.</p>
+
+      <h2>El prompt para el caso concreto</h2>
+
+      <pre><code>Ayúdame a decidir entre un workflow y un agente. No propongas
+soluciones hasta terminar el diagnóstico.
+
+Mi proceso, como pasa hoy: [descríbelo en cuatro o cinco líneas]
+
+Primero hazme estas preguntas, una a la vez, y espera respuesta:
+1. Dame tres casos reales recientes de este proceso, incluyendo uno
+   que se haya salido de lo normal.
+2. ¿En qué punto exacto las tres corridas dejaron de parecerse?
+3. ¿Qué sistemas hay que tocar y en cuáles se puede escribir, no
+   solo leer?
+4. ¿Qué pasa si sale mal y nadie se da cuenta hasta el día
+   siguiente?
+5. ¿Quién va a revisar lo que produzca, y cuánto tiempo tiene al día
+   para eso?
+
+Con mis respuestas, entrégame:
+
+A. VEREDICTO. Workflow o agente. Una sola respuesta, sin "depende".
+   Si es workflow, di cuál de estos cuatro: encadenado, de ruteo,
+   paralelo o de doble pasada.
+B. EL DIAGRAMA. Los pasos concretos, con las ramas que sí existen
+   según los casos que te di.
+C. LA FRONTERA. Qué parte del proceso queda automatizada y qué parte
+   sigue siendo de una persona, y por qué esa línea y no otra.
+D. LOS LÍMITES. Qué no debe poder hacer nunca sin aprobación.
+E. LA VERSIÓN DE UNA SEMANA. Qué construyo primero para saber si
+   esto funciona, sin construirlo completo.
+F. LA SEÑAL DE QUE ME EQUIVOQUÉ DE LADO. Qué voy a ver en el primer
+   mes si elegí mal, en cada dirección.
+
+Si de mis respuestas concluyes que el proceso está mal diseñado y
+automatizarlo sería un error, dilo en la primera línea.</code></pre>
+
+      <h2>Por qué la respuesta prudente casi siempre es empezar abajo</h2>
+
+      <p>Un agente tiene tres costos que no aparecen en la propuesta: los permisos que hay que dar, la bitácora que alguien tiene que poder leer, y las primeras semanas en que una persona revisa todo lo que hizo. Ninguno de los tres se ve en la demostración y los tres llegan puntuales.</p>
+
+      <p>El workflow no tiene ese costo y tiene una ventaja que se subestima: te obliga a escribir el proceso. Ese documento —el orden real, las excepciones, quién aprueba qué— es el activo. Si algún día subes a agente, es lo que le vas a dar como reglas. Y si nunca subes, resulta que era lo que te faltaba desde el principio.</p>
+
+      <p>Si además estás dudando si lo tuyo es solo escribir el criterio y ya, esa tercera capa está en <a href="/guias/skill-workflow-o-agente/">skill, workflow o agente</a>. Y cuando ya tengas el veredicto de agente, pásale <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a> antes de conectarlo a nada.</p>

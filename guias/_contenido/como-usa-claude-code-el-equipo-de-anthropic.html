@@ -1,0 +1,104 @@
+      <p>La gente que construye Claude Code lo usa todos los días, y publicó cómo. Lo que más me llamó la atención al leerlo es cuántos de los consejos no son trucos de prompt: son formas de administrar una sola cosa, la ventana de contexto.</p>
+
+      <p>Casi todo lo que hace que Claude Code se sienta tonto tiene la misma causa. El contexto se llenó de basura y el modelo empezó a olvidar lo que le dijiste hace veinte minutos. Los ocho movimientos de abajo atacan eso desde ángulos distintos.</p>
+
+      <p>Van ordenados por lo que más cambia el resultado, no por dificultad.</p>
+
+      <h2>Los 8 movimientos</h2>
+
+      <div class="plugin-card">
+        <h3>1. Dale una forma de verificarse solo</h3>
+        <p>Este es el que separa una sesión que tienes que vigilar de una en la que te puedes ir. Claude se detiene cuando el trabajo <em>parece</em> terminado. Si no hay nada que produzca un pasa o no pasa, "parece terminado" es la única señal disponible, y tú te conviertes en el ciclo de verificación.</p>
+        <p>La verificación es cualquier cosa que devuelva un resultado que Claude pueda leer: una suite de pruebas, el código de salida de un build, un linter, un script que compara contra un archivo de referencia, una captura de pantalla contra el diseño.</p>
+        <p>Hay tres niveles de qué tan duro amarras eso: pedirlo en el mismo prompt ("corre las pruebas después de implementar e itera hasta que pasen"), fijarlo como condición con <code>/goal</code> para que se revise después de cada turno, o ponerlo como <em>hook</em> de <code>Stop</code>, que bloquea el fin del turno hasta que tu script pase.</p>
+        <p class="plugin-for"><strong>Ganancia real:</strong> pasas de revisar cada paso a revisar la evidencia. Pide siempre que te muestre la salida del comando, no que te diga que funcionó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Explora, planea, y hasta entonces construye</h3>
+        <p>Dejar que Claude programe de inmediato produce código que resuelve el problema equivocado con mucha elegancia. El modo plan separa las dos cosas: entras presionando <code>Shift+Tab</code> hasta que la barra de estado lo indique, o arrancas la sesión con <code>claude --permission-mode plan</code>. Ahí lee archivos y contesta preguntas sin tocar nada.</p>
+        <p>La secuencia es explorar, planear, implementar, comprometer. Y el plan se puede abrir en tu editor con <code>Ctrl+G</code> para corregirlo antes de que arranque, que es donde de verdad se gana tiempo.</p>
+        <p>Para algo grande, el movimiento superior es dejar que te entreviste antes de escribir nada:</p>
+        <pre><code>Quiero construir [descripción de una línea].
+
+Entrevístame a fondo antes de proponer nada. Pregunta sobre implementación
+técnica, experiencia de uso, casos límite, riesgos y compromisos que voy a
+tener que hacer.
+
+No me hagas preguntas obvias. Métete en las partes difíciles que yo
+probablemente no he pensado.
+
+Sigue preguntando hasta que hayamos cubierto todo. Cuando terminemos,
+escribe la especificación completa en un archivo SPEC.md, y que incluya:
+los archivos y componentes involucrados, lo que queda explícitamente fuera
+de alcance, y un paso final de verificación de punta a punta que demuestre
+que funciona.</code></pre>
+        <p>Después abres una sesión nueva para ejecutar la especificación. Contexto limpio, y un documento contra el cual verificar.</p>
+        <p class="plugin-for"><strong>Cuándo saltártelo:</strong> si puedes describir el cambio en una frase, planear es puro costo. El modo plan es para cuando no sabes qué vas a tocar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Que arregle su propia memoria</h3>
+        <p>Claude Code tiene dos memorias: el <code>CLAUDE.md</code> que escribes tú, y una memoria automática donde el propio Claude va guardando lo que aprende de tus correcciones. Las dos se cargan al inicio de cada sesión.</p>
+        <p>El movimiento del equipo interno es tratar el <code>CLAUDE.md</code> como código: revisarlo cuando algo sale mal, podarlo seguido, y comprobar si el cambio de verdad movió el comportamiento. La regla de oro que dan para cada línea es brutal y sirve: <em>¿si borro esto, Claude se equivoca?</em> Si no, va fuera.</p>
+        <p>Para auditarlo: <code>/memory</code> lista y abre los archivos de memoria, <code>/context</code> te dice cuáles se cargaron de verdad en esta sesión, y <code>/doctor</code> propone recortes al archivo que está en el repositorio.</p>
+        <p class="plugin-for"><strong>La señal de que está roto:</strong> si Claude te pregunta algo que ya está en el archivo, el archivo está demasiado largo o la instrucción está mal redactada. Los detalles están en <a href="/guias/el-archivo-mas-importante-de-claude-code/">la guía del archivo más importante</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Empuja más allá de la primera respuesta</h3>
+        <p>El instinto es aceptar lo que salió y corregirlo después. Los mejores resultados vienen de ciclos de corrección cortos: parar en cuanto ves que va para otro lado, no al final.</p>
+        <p>Las herramientas son cuatro: <code>Esc</code> para detenerlo a media acción conservando el contexto, <code>Esc</code> dos veces o <code>/rewind</code> para regresar la conversación y el código a un punto anterior, pedirle que deshaga lo que hizo, y <code>/clear</code> para reiniciar el contexto entre tareas que no tienen que ver.</p>
+        <p>Y la regla que más me ha servido: <strong>si ya corregiste lo mismo dos veces en una sesión, no corrijas una tercera</strong>. El contexto está lleno de intentos fallidos que ahora compiten con tu instrucción. Corre <code>/clear</code> y vuelve a arrancar con un prompt mejor, que incorpore lo que aprendiste.</p>
+        <p class="plugin-for"><strong>Contraintuitivo:</strong> una sesión limpia con un mejor prompt casi siempre gana contra una sesión larga llena de correcciones.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Manda a investigar con subagentes</h3>
+        <p>Cuando Claude investiga algo, lee muchos archivos, y todos esos archivos se quedan ocupando tu contexto. Un subagente corre en su propia ventana y regresa solo el resumen.</p>
+        <p>La forma de pedirlo es literal: "usa subagentes para investigar cómo funciona X y si ya existe algo que pueda reutilizar". No necesitas configurarlos para empezar; Claude Code ya trae varios registrados por defecto.</p>
+        <p>Si te vas a quedar con uno, defínelo en <code>.claude/agents/</code> con su propio conjunto de herramientas permitidas y su propio modelo. Un revisor que solo puede leer es más útil y menos peligroso que uno que puede escribir.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que trabaje sobre código que no escribió. El costo de explorar deja de recaer en tu conversación principal.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Mete un revisor adversarial antes de dar algo por terminado</h3>
+        <p>Entre más tiempo trabaja Claude sin supervisión, más importa una revisión independiente. Un revisor que corre en un subagente ve solo el cambio y los criterios que le diste, no el razonamiento que lo produjo, así que lo juzga por sus propios méritos.</p>
+        <p>Para una revisión de correctitud está la skill empaquetada <code>/code-review</code>. Para revisar contra tu plan, el prompt lo escribes tú: nombra el trabajo, el documento contra el que se revisa, y qué cuenta como hallazgo.</p>
+        <p>Aquí hay una advertencia que el propio equipo pone y que conviene tomarse en serio: un revisor al que le pides encontrar huecos casi siempre va a encontrar algunos, aunque el trabajo esté bien. Perseguir cada hallazgo lleva a sobre-ingeniería. Dile que solo marque lo que afecta correctitud o los requisitos declarados.</p>
+        <p class="plugin-for"><strong>Ganancia real:</strong> el hallazgo llega directo a la sesión que implementó, así que puede corregir y volver a revisar sin que tú copies nada entre ventanas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Sácalo de la terminal: loops y modo no interactivo</h3>
+        <p>Con <code>claude -p "tu prompt"</code> corre sin sesión interactiva. Eso es lo que lo convierte en una pieza de tu automatización en vez de una herramienta que abres a mano.</p>
+        <p>Los formatos de salida te dejan procesarlo: <code>--output-format json</code> devuelve un objeto con el resultado, y <code>--output-format stream-json --verbose</code> emite un objeto por línea para procesar en vivo.</p>
+        <p>El patrón que más rinde en operación real es abrir en abanico: generas una lista de las cosas a procesar en un archivo, y luego recorres esa lista llamando a <code>claude -p</code> una vez por elemento, acotando lo que puede hacer con <code>--allowedTools</code>. Prueba con dos o tres antes de soltarlo sobre todo el conjunto; el prompt casi nunca queda bien a la primera.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier área con trabajo repetitivo por lote — migrar archivos, clasificar tickets, revisar un catálogo entero de anuncios contra una lista de cumplimiento.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Dictado por voz</h3>
+        <p>El menos técnico y el que más gente descarta sin probar. Se activa con <code>/voice</code>. La primera vez hace una revisión del micrófono.</p>
+        <p>Hay dos modos: mantener presionada la barra espaciadora mientras hablas, que es el predeterminado, o el modo de toque con <code>/voice tap</code>, donde tocas para empezar y el texto se envía solo. La transcripción está afinada para vocabulario técnico y toma el nombre de tu proyecto y de tu rama como pistas de reconocimiento.</p>
+        <p>Por qué importa más de lo que parece: el prompt escrito tiende a ser corto porque escribir cansa, y los prompts cortos son los que producen respuestas genéricas. Dictando das el triple de contexto sin darte cuenta.</p>
+        <p class="plugin-for"><strong>Si no te funciona:</strong> el modo de mantener presionado depende de que tu terminal emita eventos de repetición de tecla. Si no pasa nada, cámbiate al modo de toque.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> <code>/clear</code> entre tareas distintas. Suena trivial y es el que más veces arregla una sesión que "de repente se puso tonta". Empiezas con una tarea, preguntas algo sin relación, regresas a la primera, y ahora el contexto está lleno de información irrelevante que compite con tus instrucciones. Es el error más común de todos.</p>
+      </div>
+
+      <h2>El hilo que conecta los ocho</h2>
+
+      <p>Si los relees, seis de los ocho son maneras de que el contexto no se ensucie: planear en frío, limpiar entre tareas, mandar la investigación afuera, revisar en una ventana aparte, correr por lote en procesos separados, podar el archivo de memoria.</p>
+
+      <p>Los otros dos —verificación y voz— son maneras de subir la calidad de lo que entra y de lo que se acepta como terminado.</p>
+
+      <p>Esa es toda la tesis, y explica por qué no hay ningún truco de prompt en la lista. En una herramienta agéntica, el prompt importa menos de lo que la gente cree; lo que importa es qué información tiene enfrente el modelo cuando decide, y quién dice que el trabajo terminó.</p>
+
+      <h2>Por dónde empezar si solo vas a hacer uno</h2>
+
+      <p>El primero. Escoge una tarea que hagas seguido y define qué comprobación produce un pasa o no pasa. Puede ser una prueba, un script de diez líneas o una comparación contra un archivo de referencia.</p>
+
+      <p>El día que Claude puede comprobar su propio trabajo, dejas de ser el cuello de botella y empiezas a revisar resultados en vez de pasos. Todo lo demás de esta lista es cómodo. Ese es el que cambia el tipo de trabajo que puedes delegar.</p>

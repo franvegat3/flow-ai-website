@@ -1,0 +1,120 @@
+      <p>Codex dejó de ser un autocompletado con esteroides hace rato. Hoy es un agente que corre en tu terminal, dentro de tu editor y también en la nube, y en las últimas semanas le cayeron encima suficientes cambios como para que la forma de usarlo ya no se parezca a la de hace tres meses.</p>
+
+      <p>El problema con las actualizaciones es que todas suenan importantes en el anuncio y la mayoría no cambian nada en tu semana. Estas tres sí. Son las que uso cada semana, y aquí va el prompt exacto con el que pongo a trabajar cada una.</p>
+
+      <h2>Dónde vive Codex, para ubicarnos</h2>
+
+      <p>Hay tres puertas al mismo agente y conviene saber cuál te toca. La terminal, que es donde tienes control fino y donde corren los trabajos largos. La extensión del editor, para cuando ya estás viendo el archivo y quieres un cambio acotado. Y la versión en la nube desde ChatGPT, que trabaja contra tu repositorio sin ocupar tu máquina.</p>
+
+      <p>La diferencia práctica es dónde se está gastando el tiempo: si es tuyo o si es de un servidor. Las tres actualizaciones de abajo empujan justo hacia el segundo.</p>
+
+      <h2>1. Paquetes de configuración por rol</h2>
+
+      <p>Esta es la que más cambió mi semana y la que menos se ve en los resúmenes de novedades. La idea es que la configuración del agente —qué sabe, qué puede tocar, cómo entrega— deje de vivir en tu cabeza y se empaquete por rol, para que viaje con el proyecto y la use todo el equipo.</p>
+
+      <p>Antes cada persona tenía su propio arreglo y el resultado dependía de quién lo corriera. Con el paquete por rol, quien entra nuevo hereda el criterio del que lleva un año. Ese es el valor real, y no tiene nada que ver con escribir código más rápido.</p>
+
+      <p>Este es el prompt con el que armo uno. Se corre dentro del proyecto, con el agente ya viendo los archivos:</p>
+
+      <pre><code>Vas a construir el paquete de configuración del rol
+[nombre del rol: revisor de código / integrador de datos /
+encargado de la documentación] para este repositorio.
+
+Primero, sin escribir nada, recorre el proyecto y dime:
+- Qué convenciones ya existen aunque no estén escritas.
+- Qué partes son peligrosas de tocar y por qué.
+- Qué tareas de este rol se repiten cada semana.
+
+Después escribe el paquete, con:
+1. El encargo del rol en tres frases.
+2. Las rutas y archivos que puede modificar, y los que no.
+3. Los comandos de verificación que debe correr antes de
+   dar por terminado cualquier cambio.
+4. El formato del reporte con el que entrega su trabajo.
+5. Tres ejemplos de tareas típicas de este rol, con el
+   resultado esperado de cada una.
+6. La lista de cosas que siempre debe consultar conmigo.
+
+No inventes convenciones que no viste en el código. Si algo
+no está definido en el proyecto, márcalo como decisión
+pendiente en vez de resolverlo tú.</code></pre>
+
+      <p>El punto tres es el que hace que esto funcione sin supervisión. Un agente que sabe cómo verificar su propio trabajo entrega otra cosa que uno que solo escribe.</p>
+
+      <h2>2. Sitios completos desde el agente</h2>
+
+      <p>La segunda es que armar y publicar un sitio dejó de ser un proyecto y se volvió un encargo. No hablo de una landing bonita: hablo de esa herramienta interna que llevas dos años pidiendo y que nadie ha priorizado porque "no justifica un sprint".</p>
+
+      <p>El uso que le doy en operación real es ese: tableros y calculadoras internas. La cotizadora que hoy es un Excel con macros que solo entiende una persona. El tablero de pedidos que se arma a mano cada lunes. Cosas que no valen un desarrollo formal y que sí valen mucho cuando existen.</p>
+
+      <pre><code>Construye un sitio de una sola página para uso interno del
+área de [área].
+
+Qué resuelve: [describe el proceso manual que reemplaza,
+quién lo hace hoy y cuánto le toma].
+
+Entradas: [qué datos captura o de dónde los lee].
+Salidas: [qué tiene que mostrar o calcular exactamente].
+Quién lo usa: [perfil, y si es desde computadora o celular].
+
+Requisitos:
+- Que funcione sin conexión a servicios externos.
+- Que la lógica de negocio esté en un solo archivo y
+  comentada en español, para que alguien no técnico
+  pueda ajustar los valores.
+- Nada de dependencias que haya que instalar.
+
+Antes de escribir nada, hazme las preguntas que te falten
+para no asumir reglas de negocio. Después muéstrame el plan
+y espera mi visto bueno.</code></pre>
+
+      <p>La última línea es la que evita que te entregue algo precioso que calcula mal. Las reglas de negocio nunca están completas en el pedido inicial, y un agente que asume en vez de preguntar te devuelve un problema con buena tipografía.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> leer el cambio antes de integrarlo. Cuando el agente trabaja solo durante horas, la tentación es revisar el resultado final en pantalla y darlo por bueno. Revisa el conjunto de cambios archivo por archivo, aunque sea rápido. No es desconfianza del modelo: es que ahora el volumen de cambios que puede generar en una noche es mayor que el que alcanzas a revisar en una mañana, y ese desbalance es nuevo.</p>
+      </div>
+
+      <h2>3. Trabajos grandes que corren de noche</h2>
+
+      <p>La tercera es la que más cambia la planeación. Un trabajo largo ya no necesita tu máquina ni tu presencia: se encarga, corre en la nube y amanece con el resultado y su bitácora.</p>
+
+      <p>Eso mueve qué tipo de tareas vale la pena empezar. Migrar una convención en 200 archivos, escribir la batería de pruebas que nadie ha escrito, actualizar dependencias y arreglar lo que truene: todas son tareas donde el trabajo es tedioso pero verificable. Justo el perfil que quieres soltar de noche.</p>
+
+      <p>El encargo nocturno se escribe distinto a una petición normal. Necesita criterio de aceptación, límite y bitácora, porque no vas a estar ahí para corregir el rumbo:</p>
+
+      <pre><code>Trabajo nocturno. No voy a estar disponible para preguntas.
+
+Objetivo: [una sola frase, verificable].
+
+Alcance:
+- Puedes tocar: [rutas].
+- No toques: [rutas, migraciones, configuración, secretos].
+
+Criterio de terminado (los tres deben cumplirse):
+1. [Comando de verificación] pasa sin errores.
+2. [Segunda verificación objetiva].
+3. No hay cambios fuera de las rutas autorizadas.
+
+Si te topas con una decisión que no puedes tomar sin mí:
+detente, no adivines, y déjalo anotado como pendiente.
+Prefiero avanzar 60% bien que 100% con una decisión
+inventada.
+
+Entrega al terminar:
+- Resumen de qué hiciste, en español, para alguien que no
+  vio el proceso.
+- Lista de decisiones que tomaste y por qué.
+- Lista de pendientes que dejaste y qué te faltó para
+  resolverlos.
+- Los riesgos que detectaste aunque no fueran parte del
+  encargo.</code></pre>
+
+      <p>Ese "prefiero 60% bien" es la línea más importante del prompt. Sin ella, un agente que trabaja seis horas sin supervisión toma cuarenta decisiones pequeñas y tú te enteras de todas al mismo tiempo, cuando ya están entrelazadas.</p>
+
+      <h2>En qué orden vale la pena adoptarlas</h2>
+
+      <p>La tentación es ir directo a los trabajos nocturnos, porque es lo que suena impresionante. Es el orden equivocado.</p>
+
+      <p>Empieza por el paquete de rol, aunque no sea la actualización más vistosa: es la que define los límites y las verificaciones, y sin esos dos las otras dos son peligrosas. Sigue con los sitios internos, que son de bajo riesgo y te enseñan cómo pide las cosas el agente cuando le falta información. Y hasta que ya confíes en cómo se comporta con supervisión, suéltale la noche.</p>
+
+      <p>Si vienes de Claude Code, el salto conceptual es corto y vale compararlos con calma; <a href="/guias/empezar-con-un-agente-de-codex/">la guía de arranque de Codex</a> cubre el setup, y <a href="/guias/deja-de-ser-ninera-de-claude/">esta otra</a> trata el mismo problema de fondo: cómo dejar de vigilar al agente sin perder el control de lo que hace.</p>

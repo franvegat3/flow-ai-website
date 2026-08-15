@@ -1,0 +1,120 @@
+      <p>La secuencia normal es esta: ves una lista de "las 20 skills que necesitas", instalas doce, conectas todo lo que se deja conectar, y dos semanas después tu IA es más lenta, te pide permisos que no entiendes y sigue sin resolver el pendiente que te quita el domingo.</p>
+
+      <p>No es culpa de las herramientas. Es que instalaste antes de diagnosticar. Nadie compra maquinaria antes de saber qué se produce en la planta, pero con software todos lo hacemos porque instalar es gratis y decidir cuesta.</p>
+
+      <p>Esta skill invierte el orden. Te entrevista primero —y no deja que le pidas recomendaciones hasta terminar— y luego entrega un plano: qué instalar, en qué orden, qué conectar, y la lista explícita de lo que no vas a instalar y por qué. Está completa abajo.</p>
+
+      <h2>Por qué el diagnóstico va antes</h2>
+
+      <p>Cada cosa que instalas tiene tres costos que nadie cuenta. Uno es de atención del modelo: cada skill activa compite por decidir cuándo entrar, y con demasiadas, ninguna entra bien. Otro es de superficie: cada conector es una llave a un sistema tuyo, y las llaves que no usas siguen siendo llaves. El tercero es tuyo: mantener lo que instalaste.</p>
+
+      <p>Como los tres costos son invisibles el día uno, la señal solo llega en la semana tres, cuando ya no sabes qué de todo lo que instalaste es lo que está estorbando.</p>
+
+      <p>Un plano evita eso porque escribe la decisión antes de que exista el ruido. Y porque te obliga a nombrar el problema en términos de tu semana, no en términos de catálogo.</p>
+
+      <h2>Las tres fases de la entrevista</h2>
+
+      <p>La skill no pregunta "qué quieres automatizar". Esa pregunta produce respuestas de folleto. Pregunta tres cosas concretas, en este orden.</p>
+
+      <ul>
+        <li><strong>Dónde se va el tiempo de verdad.</strong> Cinco tareas reales de tu semana pasada, con minutos y frecuencia. No lo que te gustaría automatizar: lo que hiciste.</li>
+        <li><strong>Qué restricciones tienes.</strong> Herramientas que tu empresa ya paga, datos que no pueden salir, sistemas donde no tienes permisos, cuánto puedes gastar, y qué tan técnico eres de verdad.</li>
+        <li><strong>Cómo se ve ganar.</strong> Una frase que se pueda verificar en 30 días. "Ser más productivo" no cuenta. "El reporte de campañas de los lunes lo genero en 15 minutos en vez de dos horas" sí.</li>
+      </ul>
+
+      <p>La tercera es la que más gente se salta y la única que permite decir después si el setup sirvió.</p>
+
+      <h2>La skill completa</h2>
+
+      <pre><code>---
+name: arquitecto-de-setup
+description: Se usa cuando alguien pregunta qué skills, plugins, conectores
+  o herramientas de IA debería instalar, cómo configurar su IA, por dónde
+  empezar, o pide que le armen su setup. Entrevista primero y entrega un
+  plano por escrito. NO recomienda nada antes de terminar la entrevista.
+---
+
+# Arquitecto de setup
+
+## Regla cero
+
+Tienes prohibido nombrar una herramienta, skill, plugin o conector antes
+de completar las tres fases. Si el usuario pide recomendaciones de
+entrada, contesta: "Te las doy en cinco minutos, pero si te las doy ahora
+van a ser genéricas. Tres preguntas primero."
+
+## Fase 1 — Inventario de tiempo
+
+Pide cinco tareas reales de la semana pasada, con minutos y frecuencia.
+Insiste si contesta en abstracto. Para cada tarea, obtén:
+- Dónde vive la información que necesita (aplicación concreta).
+- Si el resultado lo consume él o alguien más.
+- Qué tan estandarizada está: ¿la haría igual otra persona?
+
+Sin las cinco tareas, no avances.
+
+## Fase 2 — Restricciones
+
+Pregunta en un solo mensaje:
+1. Qué herramientas ya paga su empresa o él.
+2. Qué datos no pueden salir de la empresa.
+3. A qué sistemas NO tiene permisos de administrador.
+4. Presupuesto mensual disponible para herramientas nuevas.
+5. Nivel técnico: ¿usa terminal, o solo navegador y apps?
+
+Una restricción mal entendida invalida el plano entero. Si una respuesta
+es ambigua, repregunta.
+
+## Fase 3 — Criterio de éxito
+
+Pide una frase verificable en 30 días, con número o con tiempo. Si la
+frase es vaga, propón tres versiones concretas basadas en la fase 1 y
+deja que elija.
+
+## Entregable — El plano
+
+Solo aquí puedes nombrar herramientas. Entrega exactamente estas seis
+secciones:
+
+1. **Diagnóstico.** Dónde se va su tiempo, en una tabla de tarea, minutos
+   al mes y qué tan automatizable es (alto, medio, nulo). Sé honesto con
+   los "nulo": hay trabajo que no se automatiza.
+2. **Instalar ahora.** Máximo tres cosas. Para cada una: qué resuelve de
+   la fase 1, cuánto tarda en configurarse y cuál es el primer uso real.
+3. **Conectar ahora.** Solo los conectores que las tres cosas de arriba
+   necesitan de verdad. Ninguno más. Si un conector choca con la
+   restricción de datos de la fase 2, no lo pongas y explícalo.
+4. **No instalar todavía.** Lista de lo popular que NO le sirve hoy, con
+   la razón en una línea y la condición que lo volvería útil.
+5. **Orden de las primeras cuatro semanas.** Una cosa por semana. Nada de
+   instalar todo el primer día.
+6. **Cómo se mide.** El criterio de la fase 3, con la fecha exacta de
+   revisión y qué se hace si no se cumplió.
+
+## Prohibiciones
+
+- No inventes precios ni planes. Si no sabes cuánto cuesta algo, escribe
+  "verifica el precio actual" y sigue.
+- No recomiendes nada que la fase 2 haya descartado.
+- No pongas más de tres cosas en "instalar ahora", aunque el usuario
+  insista. Si insiste, explica el costo de atención y de mantenimiento.
+- Si la mejor recomendación es no instalar nada y cambiar un proceso,
+  dilo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección 4 del plano, la de lo que no vas a instalar. Se siente inútil y es la más valiosa dentro de tres semanas, cuando alguien te mande otra lista de imperdibles y puedas revisar por qué ya lo descartaste. Guarda el plano en un archivo, no en un chat.</p>
+      </div>
+
+      <h2>Cómo se ve cuando funciona</h2>
+
+      <p>Un caso típico en una empresa que factura: el área de marketing quería instalar todo lo que sonara a contenido. La fase 1 mostró que el consumo real de tiempo no era escribir —eran cuatro horas al mes juntando números de cinco plataformas para el reporte del lunes—. El plano acabó con dos cosas instaladas y una tercera descartada, y el criterio de éxito era una hora en vez de cuatro.</p>
+
+      <p>Nada de eso sale si empiezas por el catálogo. Sale de las cinco tareas con minutos.</p>
+
+      <h2>El error que arruina el plano</h2>
+
+      <p>Contestar la fase 1 con lo que te gustaría, no con lo que hiciste. Es tentador porque las tareas que te gustaría automatizar son las interesantes, y las que de verdad te comen la semana son aburridas y un poco vergonzosas.</p>
+
+      <p>Si no tienes las cinco tareas a la mano, no arranques la entrevista. Trae la semana pasada en el calendario y sácalas de ahí. Con datos inventados, el arquitecto te va a entregar un plano precioso para la vida de alguien más.</p>
+
+      <p>Para seguir: <a href="/guias/auditoria-de-tareas/">la auditoría que te dice qué automatizar</a>, que es la fase 1 hecha en serio, y <a href="/guias/plugins-cowork/">los plugins que sí cambian tu día</a> cuando ya tengas el plano.</p>

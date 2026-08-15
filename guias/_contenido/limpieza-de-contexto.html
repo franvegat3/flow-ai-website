@@ -1,0 +1,110 @@
+      <p>Anthropic recortó más del 80% de las instrucciones del sistema de Claude Code y no perdió calidad en sus propias evaluaciones. No agregaron reglas para arreglar comportamientos raros. Borraron.</p>
+
+      <p>Eso rompe el hábito con el que casi todos venimos trabajando: cada vez que el modelo se equivoca, le agregamos una línea al archivo de instrucciones. Un año de eso y tienes un documento de 300 líneas donde la mitad son parches contra fallas de modelos que ya ni existen.</p>
+
+      <p>Esta es la lista para podar el tuyo, con el prompt que hace el trabajo pesado.</p>
+
+      <h2>Por qué el contexto de más sí hace daño</h2>
+
+      <p>La intuición dice que una instrucción extra es, en el peor de los casos, ruido inofensivo. No lo es, por tres razones.</p>
+
+      <ul>
+        <li><strong>El modelo trata todo como accionable.</strong> Una advertencia que escribiste para un caso raro se aplica en casos donde no venía al cuento.</li>
+        <li><strong>Las reglas se contradicen entre sí.</strong> Cuando dos líneas apuntan a lados distintos, el modelo gasta esfuerzo reconciliándolas en vez de resolver tu problema.</li>
+        <li><strong>El énfasis se devalúa.</strong> Si tienes ocho instrucciones marcadas como críticas, ninguna es crítica. Y el registro del archivo se contagia a la respuesta: un documento ansioso produce un modelo que se cubre las espaldas en vez de trabajar.</li>
+      </ul>
+
+      <p>Sumado a eso, cada línea se paga en tokens en cada petición. Pero ese es el argumento chico. El argumento grande es que la instrucción vieja empeora el comportamiento, no solo lo encarece.</p>
+
+      <h2>La lista de poda</h2>
+
+      <p>Recorre tu archivo de instrucciones —<code>CLAUDE.md</code>, instrucciones personalizadas de ChatGPT, el prompt de sistema de tu agente, las descripciones de tus skills— y busca esto:</p>
+
+      <h3>1. Mayúsculas y signos de alarma</h3>
+      <p><strong>CRÍTICO:</strong>, <strong>NUNCA</strong>, <strong>SIEMPRE DEBES</strong>. Se escribieron contra modelos que ignoraban las instrucciones suaves. Los modelos de hoy siguen el prompt muy de cerca, así que ese énfasis ahora provoca lo contrario: activa la conducta donde no tocaba. Bájalo a la frase normal: "Usa X cuando…".</p>
+
+      <h3>2. Instrucciones de "sé bueno"</h3>
+      <p>"Sé preciso", "sé exhaustivo", "no seas flojo", "no te detengas antes de terminar". Son la definición del comportamiento por defecto. Bórralas completas.</p>
+
+      <h3>3. Coreografías paso a paso para tareas de criterio</h3>
+      <p>PASO 1, PASO 2, PASO 3 para algo que no tiene un orden obligatorio. El plan del modelo suele ser mejor que tu guion. Deja los pasos numerados solo donde el orden es frágil de verdad: comandos destructivos, flujos de autenticación, procesos con requisitos legales.</p>
+
+      <h3>4. Listas de prohibiciones sin razón</h3>
+      <p>Una prohibición que trae su porqué se queda. Una que solo dice "nunca empieces con 'Claro'" es un parche de estilo contra un tic de otro modelo. Conviértela en una afirmación positiva o bórrala.</p>
+
+      <h3>5. Andamios que la herramienta ya reemplazó</h3>
+      <p>"Piensa paso a paso", "usa etiquetas de scratchpad", "muestra tu razonamiento", "responde solo con JSON válido". Todo eso existe hoy como función del producto o del modelo: el razonamiento es nativo, y el formato de salida se configura en vez de pedirse.</p>
+
+      <h3>6. Cadencias y topes numéricos</h3>
+      <p>"Resume cada 3 llamadas a herramientas", "máximo 120 palabras". Los números salieron de calibrar contra un modelo viejo. Cámbialos por la intención: "que se pueda leer de un vistazo".</p>
+
+      <h3>7. Fósiles con fecha</h3>
+      <p>Nombres de modelos retirados, "esto ya no funciona así", rutas que cambiaron, referencias a un incidente de hace ocho meses. Si nadie recuerda por qué está esa línea, es candidata directa.</p>
+
+      <h3>8. Reglas que nada verifica</h3>
+      <p>Instrucciones que ningún proceso revisa y que tú mismo ves incumplidas sin darte cuenta. Si nadie lo nota, no está aportando señal.</p>
+
+      <h2>El prompt de limpieza</h2>
+
+      <p>Abre un chat nuevo, pega tu archivo completo y encima esto:</p>
+
+      <pre><code>Te voy a pasar el archivo de instrucciones que usa mi IA.
+Quiero que lo audites, no que lo reescribas todavía.
+
+Para cada línea o bloque, clasifícalo en una de estas tres:
+
+A) CONTEXTO — información que solo yo puedo saber: quién es mi
+   público, cómo funciona mi negocio, qué herramientas uso, cuál
+   es mi estándar de calidad, restricciones reales. Esto NO se
+   toca nunca, aunque sea largo.
+
+B) SOBRA — algo que el modelo ya hace por defecto, énfasis
+   inflado, un paso a paso para una tarea de criterio, una
+   prohibición sin razón, un tope numérico arbitrario, o un
+   parche contra un modelo viejo.
+
+C) DUDOSO — no puedes decidir sin más información.
+
+Devuélveme una tabla con: el texto exacto citado, la
+clasificación, y una frase de por qué. Ordena de más seguro a
+menos seguro.
+
+Al final, y solo al final, escríbeme la versión podada del
+archivo. Reglas para esa versión:
+- Todo lo de A se queda íntegro.
+- Todo lo de B se borra.
+- Todo lo de C se queda, marcado con un comentario para que
+  yo lo revise.
+- Si una regla de B tenía un propósito real, no la borres:
+  reescríbela en su forma mínima y en positivo.
+- No agregues nada que yo no haya escrito.
+
+No optimices por longitud. Optimiza por que cada línea que
+sobreviva cambie de verdad el comportamiento.</code></pre>
+
+      <p>Esa última instrucción es la más importante del prompt. Sin ella el modelo entiende "limpiar" como "acortar" y te borra justo el contexto de negocio, que es lo único irremplazable.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probar el recorte. Borrar es una hipótesis, no una conclusión. Guarda la versión vieja, corre con la nueva durante una semana de trabajo real, y si algo se degrada, no restaures el archivo completo —restaura solo esa regla, en su versión corta. En cuatro o cinco ciclos así te queda un archivo del que cada línea se ganó su lugar.</p>
+      </div>
+
+      <h2>Lo que nunca se borra</h2>
+
+      <p>Una auditoría mal hecha borra lo valioso, porque lo valioso a veces es largo. Estas categorías se quedan sin importar cuánto ocupen:</p>
+
+      <ul>
+        <li><strong>Quién es tu cliente y qué le vendes.</strong> El modelo no lo puede adivinar.</li>
+        <li><strong>Datos del entorno.</strong> Dónde viven los archivos, qué herramientas hay conectadas, qué sistema usa tu equipo, qué está prohibido tocar.</li>
+        <li><strong>El estándar de calidad.</strong> Cómo se ve un buen entregable en tu operación, con ejemplos.</li>
+        <li><strong>Las razones detrás de las restricciones.</strong> "No mandes correos sin aprobación porque el cliente lo pidió por contrato" vale mucho más que "no mandes correos".</li>
+        <li><strong>Contratos de herramientas.</strong> Qué recibe cada una, qué devuelve, cómo falla. Ahí el problema casi siempre es que falta detalle, no que sobre.</li>
+        <li><strong>Guiones exactos para operaciones frágiles.</strong> Donde solo hay una secuencia segura, el paso a paso es correcto.</li>
+      </ul>
+
+      <h2>Cuándo volver a hacerlo</h2>
+
+      <p>Cada vez que cambies de modelo. Un archivo de instrucciones no es un documento eterno: es un artefacto calibrado contra una generación concreta. La línea que sostenía el comportamiento con el modelo del año pasado es basura con el de este año, y la que hoy sobra puede volverse necesaria con el siguiente.</p>
+
+      <p>En operación real, el hábito que funciona es este: cuando el modelo falle, resiste el impulso de agregar una regla. Primero pregúntate si el problema es que le falta contexto o que le sobran instrucciones que se estorban entre sí. En mi experiencia, después del primer año de uso, la respuesta es la segunda más seguido de lo que uno esperaría.</p>
+
+      <p>Si el archivo que vas a limpiar es un <code>CLAUDE.md</code>, la guía sobre <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a> tiene el detalle de qué debería contener después de la poda.</p>

@@ -1,0 +1,77 @@
+      <p>La pregunta que más me hacen es cuál es el mejor modelo. Es la pregunta equivocada y cuesta dinero y tiempo real: gente corriendo su clasificación de correos en el modelo más caro, y gente peleándose con el más barato para un análisis que necesitaba cabeza.</p>
+
+      <p>Elegir modelo se parece más a elegir herramienta que a elegir marca. Nadie pregunta cuál es el mejor destornillador.</p>
+
+      <p>Abajo está la hoja de referencia con la que trabajo, y los tres atajos que aplico todos los días sin pensarlo.</p>
+
+      <h2>Los Claudes, en una frase cada uno</h2>
+
+      <ul>
+        <li><strong>Claude Fable 5</strong> — el más capaz que hay disponible de forma general. Para razonamiento exigente y trabajo de horas sin supervisión. Piensa siempre, y una sola petición difícil puede tardar varios minutos.</li>
+        <li><strong>Claude Opus 5</strong> — el caballo de batalla para trabajo agéntico complejo y trabajo de empresa. Un salto real sobre la generación anterior, y en la API cuesta la mitad por token que Fable 5.</li>
+        <li><strong>Claude Sonnet 5</strong> — la mejor combinación de velocidad e inteligencia. En codificación y trabajo con herramientas queda cerca del nivel Opus, a costo de Sonnet.</li>
+        <li><strong>Claude Haiku 4.5</strong> — el más rápido y barato. Para tareas simples y de volumen donde lo que importa es el tiempo de respuesta.</li>
+      </ul>
+
+      <p>Referencia de precio de API por millón de tokens, para tener la proporción en la cabeza: Fable 5 está en 10 de entrada y 50 de salida; Opus 5 en 5 y 25; Sonnet 5 en 3 y 15; Haiku 4.5 en 1 y 5. En los planes de suscripción no pagas por token, pero la proporción sí explica cuánto de tu límite semanal te come cada uno.</p>
+
+      <h2>La hoja de referencia</h2>
+
+      <p>Por tipo de trabajo, no por qué tan importante te parece la tarea:</p>
+
+      <h3>Usa Haiku 4.5 cuando…</h3>
+      <p>Clasificar, etiquetar, extraer un dato de un texto, decidir a qué categoría va algo, responder algo que ya está escrito en el material. Todo lo que hagas cien veces y donde la respuesta correcta sea evidente al verla.</p>
+
+      <h3>Usa Sonnet 5 cuando…</h3>
+      <p>Es tu opción por defecto para el día. Redactar, resumir, revisar, programar cosas acotadas, correr flujos con herramientas. Si no tienes una razón concreta para subir, quédate aquí: la mayoría del trabajo de oficina cabe en Sonnet y la diferencia de velocidad se nota mucho más que la de calidad.</p>
+
+      <h3>Usa Opus 5 cuando…</h3>
+      <p>El trabajo es multi-archivo, multi-paso o tiene consecuencias. Un cambio grande de código, un análisis donde una conclusión mal sacada cuesta caro, un agente que va a tocar sistemas reales, una revisión de código donde quieres que encuentre lo que se te pasó. También cuando el problema requiere sostener contexto largo sin perder el hilo.</p>
+
+      <h3>Usa Fable 5 cuando…</h3>
+      <p>Es un problema que sabes que está en el límite. Trabajo autónomo de horas, la implementación completa de algo bien especificado a la primera, análisis profundo con muchas fuentes, coordinación de varios agentes trabajando en paralelo.</p>
+
+      <p>Y algo que vale más que la lista: los mejores resultados que he visto con Fable 5 salieron de darle el problema más difícil que había sobre la mesa, no de darle tareas normales para "aprovecharlo". En una tarea normal no vas a ver la diferencia y sí vas a ver la tardanza.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ajustar el prompt al modelo. Los prompts escritos para modelos anteriores suelen ser demasiado prescriptivos para Fable 5 y le <em>bajan</em> la calidad al resultado. Si le pasas tu guion de diez pasos, lo va a seguir en vez de resolver el problema mejor de lo que tú lo planeaste. Dale el objetivo, las restricciones y cómo se verifica; quítale la coreografía. Eso solo cambia más el resultado que cambiar de modelo.</p>
+      </div>
+
+      <h2>El esfuerzo importa más que el modelo</h2>
+
+      <p>Esta es la parte que casi nadie usa y que mueve más la aguja que la elección de modelo.</p>
+
+      <p>Los modelos actuales tienen un nivel de esfuerzo configurable —bajo, medio, alto, muy alto y máximo— que controla qué tanto piensan y qué tanto trabajo hacen antes de responder. En la API se configura explícitamente; en los productos se refleja en cómo y cuánto delibera.</p>
+
+      <p>Lo que aprendí probándolo: en Opus 5, los niveles bajo y medio rinden sorprendentemente bien. Muchas tareas que uno correría en alto por costumbre salen igual de bien en medio, en menos tiempo y con menos consumo. Y al revés: si ves razonamiento superficial en un problema complejo, la solución es subir el esfuerzo, no escribir tres párrafos más de instrucciones pidiéndole que piense mejor.</p>
+
+      <p>La regla práctica: para codificar y para trabajo agéntico, empieza alto. Para todo lo demás, empieza en medio y sube solo si el resultado se queda corto.</p>
+
+      <h2>Los tres atajos que uso a diario</h2>
+
+      <h3>Atajo 1: empieza abajo y sube, nunca al revés</h3>
+      <p>Arranca en el modelo rápido. Si el resultado sirve, terminaste. Si no, subes un escalón con el mismo prompt. Cuesta un intento extra y evita el hábito caro de correr todo en el modelo grande "por si acaso". La mayoría de las veces el modelo rápido bastaba.</p>
+
+      <h3>Atajo 2: modelo grande para pensar, modelo rápido para producir</h3>
+      <p>Este es el que más rinde. El trabajo casi nunca es uniforme: hay una parte de criterio —el plan, la estructura, qué enfoque tomar— y una parte de ejecución repetitiva. Usa el modelo caro para la primera y bájate para la segunda.</p>
+      <p>En la práctica: le pides a Opus 5 el plan y el criterio de qué es un buen resultado, guardas eso como documento, y corres las veinte piezas con Sonnet contra ese documento. Sale mejor y más barato que hacer las veinte con el modelo grande sin plan.</p>
+
+      <h3>Atajo 3: dale la razón, no solo la petición</h3>
+      <p>Los modelos de esta generación trabajan claramente mejor cuando entienden para qué es lo que piden. La diferencia entre "resume esto" y "resume esto porque se lo voy a presentar al comité de crédito, que va a decidir si aprueba la línea" es enorme, y no cuesta nada escribirla.</p>
+      <p>La fórmula que uso: <em>"Estoy trabajando en [el objetivo grande] para [quién]. Lo que necesitan de esto es [qué decisión habilita]. Con eso en mente: [la petición]."</em></p>
+
+      <h2>Cómo notas que elegiste mal</h2>
+
+      <p><strong>Señal de que te quedaste corto:</strong> tienes que corregir la misma cosa tres veces, o la respuesta suena razonable pero se cae cuando la verificas. Sube de modelo o sube el esfuerzo.</p>
+
+      <p><strong>Señal de que te fuiste largo:</strong> esperas medio minuto para que te clasifique un correo, o la respuesta trae tres párrafos de matices para una pregunta de sí o no. Baja.</p>
+
+      <p><strong>Señal de que el problema no era el modelo:</strong> cambiaste al más caro y el resultado sigue mal. Casi siempre significa que falta contexto, no capacidad. Ningún modelo adivina cómo funciona tu empresa.</p>
+
+      <h2>Lo que de verdad decide el resultado</h2>
+
+      <p>Después de bastante tiempo montando esto en empresas, el orden de impacto es este, y no está ni cerca de ser parejo: primero, qué contexto le diste; segundo, si definiste cómo se ve un buen resultado; tercero, el nivel de esfuerzo; y muy al final, cuál modelo elegiste.</p>
+
+      <p>La gente pasa el 80% de su energía en la cuarta variable. Si vas a mover una sola cosa esta semana, mueve la primera.</p>
+
+      <p>Si quieres el detalle de cada modelo por separado, <a href="/guias/hoja-de-referencia-de-modelos/">la hoja de referencia de modelos de IA</a> lo tiene completo, y <a href="/guias/como-usar-fable-5/">cómo usar de verdad el modelo más potente de Claude</a> entra en cómo se le habla a Fable 5 sin desperdiciarlo.</p>

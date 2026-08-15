@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill, workflow o agente: cuál es cuál — Guías Flow AI</title>
+  <meta name="description" content="La explicación más simple de las tres capas de la IA, más un prompt para mapear tu primera construcción de verdad." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/skill-workflow-o-agente/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Skill, workflow o agente: cuál es cuál" />
+  <meta property="og:description" content="La explicación más simple de las tres capas de la IA, más un prompt para mapear tu primera construcción de verdad." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/skill-workflow-o-agente/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Agentes</span><span class="tag">Empezar</span></div>
+      <h1>Skill, workflow o agente: cuál es cuál</h1>
+      <p class="lead">La explicación más simple de las tres capas de la IA, más un prompt para mapear tu primera construcción de verdad.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Tres palabras que se usan como si fueran sinónimos y no lo son. La confusión no es de vocabulario: es cara. Casi todos los proyectos de IA que veo atorados en una empresa están atorados porque alguien construyó un agente donde bastaba una skill, o al revés.</p>
+
+      <p>La distinción real es simple. Una skill es <em>saber</em>. Un workflow es <em>hacer siempre lo mismo</em>. Un agente es <em>decidir qué hacer</em>. Todo lo demás es detalle de implementación.</p>
+
+      <h2>Las tres capas, una frase cada una</h2>
+
+      <div class="plugin-card">
+        <h3>1. Skill: le enseñas el oficio</h3>
+        <p>Un archivo de instrucciones que el modelo carga cuando la tarea lo pide. No se ejecuta sola, no tiene disparador, no toca tus herramientas. Solo cambia la calidad de lo que sale cuando tú pides algo.</p>
+        <p>Es la respuesta correcta cuando el problema es que <strong>sale mal</strong>. Si te entrega cotizaciones con la estructura equivocada, no necesitas automatizar nada: necesitas escribir cómo se arma una cotización en tu empresa.</p>
+        <p class="plugin-for"><strong>Señal de que es lo que te toca:</strong> cada vez que pides la misma tarea, vuelves a explicar las mismas reglas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Workflow: tú defines la secuencia</h3>
+        <p>Pasos fijos en un orden fijo, con un disparador. Llega algo, pasa esto, después esto, sale aquello. El modelo hace el trabajo de juicio dentro de cada paso, pero no elige el camino: el camino lo escribiste tú.</p>
+        <p>Es la respuesta correcta cuando el problema es que <strong>toma tiempo</strong> y ya sabes exactamente qué hay que hacer. Su virtud es que es predecible: corre igual el lunes que el viernes y puedes auditarlo paso por paso.</p>
+        <p class="plugin-for"><strong>Señal de que es lo que te toca:</strong> puedes dibujar los pasos en una servilleta sin dudar en ninguna flecha.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Agente: decide la secuencia solo</h3>
+        <p>Le das un objetivo, herramientas y límites. Él elige qué hacer, en qué orden, cuándo reintentar y cuándo parar. Dos corridas del mismo agente sobre casos parecidos pueden verse distintas por dentro, y eso es la característica, no la falla.</p>
+        <p>Es la respuesta correcta cuando <strong>la secuencia depende de lo que encuentre</strong>. Si el paso tres cambia según lo que devolvió el paso dos, ningún diagrama fijo te va a alcanzar.</p>
+        <p class="plugin-for"><strong>Señal de que es lo que te toca:</strong> intentaste dibujar el diagrama y te salieron seis ramas de excepción.</p>
+      </div>
+
+      <h2>El mismo proceso, en las tres capas</h2>
+
+      <p>Una distribuidora que cotiza por correo. El mismo problema se puede atacar en cualquiera de las tres, y cada capa cuesta distinto.</p>
+
+      <ul>
+        <li><strong>Como skill:</strong> un archivo con cómo se arma una cotización en esa empresa. Qué campos lleva, cómo se calcula el flete, qué descuento puede dar cada quien sin autorización, qué se escribe cuando el producto tiene entrega diferida. El vendedor pega el correo del cliente y pide la cotización. Se construye en una tarde.</li>
+        <li><strong>Como workflow:</strong> llega correo a la cuenta de cotizaciones, se extraen los productos y cantidades, se buscan precios vigentes, se arma el documento con la skill de arriba y se deja en borrador para que una persona lo revise y lo mande. Días de trabajo, y hay que decidir qué pasa cuando el correo llega incompleto.</li>
+        <li><strong>Como agente:</strong> vigila el buzón, decide si el pedido está completo, escribe al cliente pidiendo lo que falta, consulta inventario, detecta que un producto está agotado y propone el sustituto, y escala a un humano cuando el monto pasa cierto límite. Es lo que todos quieren y es lo que casi nadie necesita el primer año.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las capas se apilan, no se sustituyen. Un workflow sin skill automatiza tu proceso mal hecho a mayor velocidad. Un agente sin workflows probados es una caja negra que nadie sabe por qué falló. Cada capa hacia arriba multiplica el valor de la de abajo y también multiplica el costo de haberla construido sobre bases flojas.</p>
+      </div>
+
+      <h2>El prompt para mapear tu primera construcción</h2>
+
+      <p>Este es el que uso en la primera sesión con un cliente. No pide ideas: pide clasificación. Contesta con un proceso que ya te esté doliendo, no con uno hipotético.</p>
+
+      <pre><code>Vas a ayudarme a decidir si lo que necesito es una skill, un workflow
+o un agente. No propongas nada hasta terminar el diagnóstico.
+
+Mi proceso: [descríbelo en tres o cuatro líneas, como pasa hoy]
+
+Hazme estas preguntas de una en una y espera mi respuesta:
+
+1. Cuántas veces por semana ocurre y cuánto tiempo se lleva cada vez.
+2. Quién lo hace hoy y qué pasa cuando esa persona no está.
+3. Cuál es el paso donde se equivoca más seguido, y qué cuesta ese
+   error cuando pasa.
+4. ¿Los pasos son siempre los mismos, o cambian según lo que se
+   encuentra? Dame un ejemplo de un caso raro.
+5. ¿Qué sistemas hay que tocar y cuáles permiten escribir, no solo
+   leer?
+6. ¿Alguien tiene que aprobar antes de que salga al mundo?
+
+Con mis respuestas entrégame:
+
+A. El diagnóstico: skill, workflow o agente, y por qué no las otras
+   dos. Una sola recomendación, sin "depende".
+B. Qué construir primero, que debe poder estar listo en una semana.
+C. Los tres puntos donde esto puede fallar en producción y qué límite
+   pongo en cada uno.
+D. La forma de medir si sirvió: qué número miro antes y después.
+E. Lo que NO hay que automatizar de este proceso todavía, y por qué.
+
+Si por mis respuestas concluyes que el proceso está mal diseñado y
+automatizarlo sería un error, dilo en la primera línea.</code></pre>
+
+      <h2>Cómo se ve haberse equivocado de capa</h2>
+
+      <p>Hay tres síntomas y cada uno apunta a un lado distinto.</p>
+
+      <ul>
+        <li><strong>Construiste un workflow y la gente lo evita.</strong> Casi siempre es porque el proceso real tenía excepciones que nadie te contó, y el flujo rígido las rompe. Necesitabas menos automatización y más criterio escrito.</li>
+        <li><strong>Construiste un agente y nadie confía en lo que entrega.</strong> No es el modelo: es que no hay forma de ver qué hizo. Un agente sin bitácora es imposible de defender frente a quien firma.</li>
+        <li><strong>Escribiste una skill y el trabajo sigue tardando lo mismo.</strong> Correcto: la skill nunca prometió velocidad. Prometió que saliera bien. Si el problema era el tiempo, ahora sí toca subir a workflow.</li>
+      </ul>
+
+      <h2>Por qué casi siempre la respuesta es empezar abajo</h2>
+
+      <p>La presión de una empresa siempre empuja hacia el agente, porque es lo que suena a transformación. Y el agente es la capa con más costo escondido: necesita permisos, necesita que alguien vea qué hizo y por qué, y necesita a alguien que revise las primeras semanas.</p>
+
+      <p>Empieza por la skill. Es la única de las tres que se construye en una tarde, y es la que te obliga a escribir cómo se hace bien el trabajo. Ese documento es el activo. Cuando lo tengas, el workflow se vuelve mecánico y el agente deja de ser una apuesta.</p>
+
+      <p>Si ya tienes claro que lo tuyo es la tercera capa, sigue con <a href="/guias/tu-primer-agente-de-ia/">tu primer agente de IA</a> y ponle antes <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a>. Y si sigues dudando entre las dos de arriba, <a href="/guias/agente-o-workflow/">agente o workflow</a> entra al detalle de esa frontera.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

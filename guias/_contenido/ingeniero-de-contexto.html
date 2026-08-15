@@ -1,0 +1,138 @@
+      <p>Hace un par de años el puesto de moda era ingeniero de prompts. Salían vacantes con sueldos de seis cifras en dólares para gente cuyo trabajo era encontrar la forma mágica de pedirle las cosas al modelo. Cursos, certificaciones, listas de las 500 fórmulas secretas.</p>
+
+      <p>Ese trabajo se murió por una razón simple: los modelos se volvieron buenos entendiendo peticiones normales. Ya no hace falta el conjuro. Le pides las cosas como se las pedirías a una persona competente y funciona.</p>
+
+      <p>Lo que no se resolvió solo es lo otro: qué información tiene el modelo enfrente cuando le pides algo. Ahí sigue estando el 90% de la diferencia entre un resultado inservible y uno que te ahorra una semana. A esa disciplina se le llama ingeniería de contexto, y es el rol que de verdad están contratando ahora.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>La ingeniería de contexto es el diseño de todo lo que el modelo ve antes de responder: las instrucciones, los datos, las herramientas, la memoria, los ejemplos y el formato del entregable.</p>
+
+      <p>El prompt es una de esas seis piezas. La más visible y la menos determinante.</p>
+
+      <h2>Por qué el prompt dejó de ser el trabajo</h2>
+
+      <p>Haz este ejercicio mental. Contratas a alguien excelente y le pides el reporte de cierre del mes. Si no le das acceso al sistema contable, no le dices qué formato usa la dirección, no le cuentas que el mes pasado hubo una reclasificación rara y no le enseñas un cierre anterior bien hecho, va a entregar algo mediocre. No porque sea malo: porque no tenía con qué.</p>
+
+      <p>Nadie diría que el problema fue "cómo se lo pediste". Y sin embargo con la IA todo el mundo llega a la misma conclusión equivocada: que la respuesta pobre se arregla reescribiendo la petición.</p>
+
+      <p>Lo que veo en las empresas donde monto estos sistemas es exactamente eso. Equipos enteros puliendo la frase mientras el modelo trabaja a ciegas sobre el negocio. Cuando el contexto está bien armado, los prompts se vuelven aburridos y cortos, que es la señal de que la cosa va bien.</p>
+
+      <h2>Las 6 partes que controlas</h2>
+
+      <div class="plugin-card">
+        <h3>1. El encargo <code>instrucciones</code></h3>
+        <p>Quién es el modelo en este trabajo, para quién trabaja, qué decide solo y qué te consulta. No es la petición del día: es la descripción del puesto, y se escribe una vez.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> el modelo toma decisiones que le tocaban a un humano, o pregunta cosas que ya podía resolver.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El conocimiento <code>documentos</code></h3>
+        <p>La verdad de tu operación: políticas, catálogos, precios, el vocabulario interno, los casos resueltos. Aquí la trampa es meter todo. Mucho documento irrelevante empeora las respuestas, no las mejora.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> te contesta con generalidades correctas que no aplican a tu empresa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Las herramientas <code>conectores</code></h3>
+        <p>A qué sistemas puede llamar y qué le devuelven: el CRM, el calendario, la base de datos, la búsqueda web. Cada herramienta amplía lo que puede hacer y también lo que puede romper.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> tiene diez herramientas y usa la equivocada, o cuando una devuelve tanto texto que sepulta el resto del contexto.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. La memoria <code>persistencia</code></h3>
+        <p>Qué sobrevive de una sesión a la siguiente. Sin esto, corriges lo mismo cada lunes. Con esto mal hecho, arrastras un dato viejo durante meses y contamina todo.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> le repites la misma corrección por tercera vez, o cuando insiste en algo que era cierto hace seis meses.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Los ejemplos <code>muestras</code></h3>
+        <p>Dos o tres piezas de trabajo bien hecho y, más importante, una mal hecha con la explicación de por qué está mal. Es la pieza más barata de armar y la que más rápido sube la calidad.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> el resultado es correcto pero no se parece a como se hacen las cosas en tu casa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. El molde de salida <code>formato</code></h3>
+        <p>La estructura exacta del entregable y el criterio de aceptación: qué secciones lleva, qué largo, qué nunca debe incluir, cómo sabes que quedó bien. Sin esto cada corrida devuelve otra forma y no puedes automatizar nada aguas abajo.</p>
+        <p class="plugin-for"><strong>Falla cuando:</strong> tienes que reformatear a mano lo que te entregó.</p>
+      </div>
+
+      <h2>La plantilla</h2>
+
+      <p>Esto es lo que escribo antes de montar cualquier asistente o agente, para un cliente o para mí. Es un documento, no un prompt: se llena una vez, se revisa cada mes y de ahí salen todas las instrucciones.</p>
+
+      <pre><code># Especificación de contexto — [nombre del sistema]
+
+## 1. ENCARGO
+- Trabajo que hace: [una frase]
+- Para quién trabaja: [rol, área]
+- Decide solo: [lista de decisiones autorizadas]
+- Siempre consulta antes de: [lista de acciones que requieren
+  aprobación humana]
+- Nunca hace: [límites duros]
+
+## 2. CONOCIMIENTO
+| Documento | Para qué se usa | Quién lo actualiza | Cada cuándo |
+- [documento] — [uso] — [dueño] — [frecuencia]
+Fuera de alcance: [lo que a propósito NO se le da y por qué]
+
+## 3. HERRAMIENTAS
+- [herramienta] — [para qué] — [qué puede escribir, si algo]
+Regla de última milla: [qué acción jamás ejecuta sin humano]
+
+## 4. MEMORIA
+- Persiste entre sesiones: [qué]
+- No persiste nunca: [qué, típicamente datos sensibles]
+- Se purga: [cada cuándo y quién lo hace]
+
+## 5. EJEMPLOS
+- Bueno 1: [enlace o pegado] — por qué está bien: [razón]
+- Bueno 2: [enlace o pegado] — por qué está bien: [razón]
+- Malo 1: [enlace o pegado] — por qué está mal: [razón]
+
+## 6. SALIDA
+- Estructura: [secciones exactas]
+- Largo: [rango]
+- Prohibido: [lo que nunca debe aparecer]
+- Criterio de aceptación: [cómo sé, en objetivo, que quedó
+  bien; idealmente algo verificable]
+
+## MANTENIMIENTO
+- Señales de que este contexto se quedó viejo: [lista]
+- Revisión: [fecha fija]
+- Dueño: [persona]</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el apartado de "fuera de alcance". La reacción natural al armar contexto es acumular: subir toda la carpeta, conectar todas las herramientas, dejar todo en memoria. El contexto es un presupuesto, no un almacén. Cada documento irrelevante compite por la atención del modelo con el que sí importaba, y el efecto no se nota como un error: se nota como respuestas que poco a poco se vuelven más genéricas.</p>
+      </div>
+
+      <h2>3 ejercicios para desarrollar el músculo</h2>
+
+      <h3>Ejercicio 1: la misma tarea, tres niveles de contexto</h3>
+
+      <p>Toma una tarea real de tu trabajo. Pídela tres veces, en tres conversaciones limpias: la primera solo con la petición; la segunda agregando el encargo y el molde de salida; la tercera agregando además dos ejemplos de trabajo bien hecho.</p>
+
+      <p>Pon los tres resultados lado a lado y mide cuánto tiempo te tomaría dejar cada uno presentable. Ese número es la única evidencia que convence a un jefe, y es también lo que te enseña a ti dónde estaba el cuello de botella real.</p>
+
+      <h3>Ejercicio 2: el corte al hueso</h3>
+
+      <p>Agarra un proyecto que ya tengas armado y quítale la mitad del conocimiento. El material que menos usas, los documentos que subiste "por si acaso". Corre las cinco peticiones que más haces y compara.</p>
+
+      <p>Casi siempre pasa una de dos cosas: no cambia nada, y acabas de aprender que ese material sobraba; o empeora en un punto específico, y acabas de descubrir exactamente qué documento estaba cargando el trabajo. Las dos respuestas valen. La intuición aquí no sirve, hay que medirla.</p>
+
+      <h3>Ejercicio 3: el manual del puesto</h3>
+
+      <p>Elige un proceso que hoy hace una sola persona en tu empresa —el cierre mensual, la cotización, la respuesta al cliente molesto— y escribe su especificación de contexto completa con la plantilla de arriba. Sin construir nada todavía.</p>
+
+      <p>Este es el ejercicio que separa a quien juega con IA de quien la implementa. La mitad de las veces vas a descubrir que el proceso no está documentado en ningún lado y que nadie sabe cuál es el criterio de aceptación. Ese hallazgo vale por sí solo, con o sin IA de por medio.</p>
+
+      <h2>Cómo se demuestra que sabes hacer esto</h2>
+
+      <p>No con un certificado. Con un antes y después: el proceso, cuánto tomaba, qué contexto le construiste, cuánto toma ahora y cómo lo mides. Dos párrafos y un ejemplo del entregable.</p>
+
+      <p>Es el mismo formato que sirve para una entrevista, para pedir presupuesto interno o para cobrarle a un cliente. Y es difícil de fingir, que es justo lo que lo hace valioso.</p>
+
+      <h2>El error que veo en todos lados</h2>
+
+      <p>Tratar el contexto como una instalación y no como un mantenimiento. Se arma el proyecto en una tarde con entusiasmo, funciona increíble dos semanas, y luego cambia el catálogo, se va la persona que sabía el proceso, se actualiza la política de descuentos, y nadie toca el archivo.</p>
+
+      <p>Tres meses después el sistema sigue respondiendo con la misma seguridad de siempre, solo que con información falsa. Por eso la plantilla termina con un dueño y una fecha de revisión: son las dos líneas que hacen la diferencia entre un sistema y un experimento. Si quieres profundizar en la capa de memoria, <a href="/guias/memoria-perfecta-en-3-capas/">el sistema de 3 capas</a> es el complemento directo de esto, y <a href="/guias/de-prompt-a-intencion/">este otro texto</a> explica hacia dónde se está moviendo el resto del oficio.</p>

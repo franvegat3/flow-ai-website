@@ -1,0 +1,94 @@
+      <p>Cada semana sale un modelo nuevo y cada semana alguien publica un benchmark demostrando que ese es el mejor. Nada de eso te sirve para decidir qué usar el lunes.</p>
+
+      <p>Lo que sí sirve es saber para qué está construido cada uno, dónde truena, y cuánto cuesta correrlo de verdad. Esta es la hoja que consulto cuando tengo que elegir —ocho modelos, con su debilidad honesta incluida.</p>
+
+      <p>Una aclaración antes de empezar, porque es la fuente número uno de confusión: <strong>los precios que verás aquí son de API, por millón de tokens</strong>. No son lo que pagas por una suscripción de chat. Si usas Claude o ChatGPT desde la app, pagas una mensualidad fija y estos números no te aplican; te aplican en el momento en que automatizas algo.</p>
+
+      <h2>Cómo leer un precio de modelo</h2>
+
+      <p>Todos se cotizan igual: un precio por millón de tokens de <em>entrada</em> (lo que le mandas) y otro, más caro, por millón de tokens de <em>salida</em> (lo que te contesta). Un token es aproximadamente tres cuartos de una palabra en español.</p>
+
+      <p>Dos cosas que casi nadie considera y que dominan la factura real:</p>
+
+      <ul>
+        <li><strong>El caché de prompt.</strong> Si mandas el mismo contexto grande muchas veces, la parte cacheada se cobra a una fracción del precio. En una operación con instrucciones largas y fijas, esto cambia el costo más que elegir otro modelo.</li>
+        <li><strong>El razonamiento cuenta como salida.</strong> Los modelos que piensan antes de contestar cobran ese pensamiento a precio de salida. Un modelo "más barato" que piensa el doble puede salir más caro que uno "caro" que va al grano.</li>
+      </ul>
+
+      <p>Los precios de Anthropic los doy exactos porque son públicos y estables. Para los demás doy el posicionamiento y no la cifra: los proveedores han estado moviendo tarifas y niveles cada pocas semanas durante 2026, y un número desactualizado en una hoja de referencia es peor que ningún número. Verifícalos en la página de precios del proveedor antes de calcular nada.</p>
+
+      <h2>Los 8 modelos</h2>
+
+      <div class="plugin-card">
+        <h3>1. Claude Opus 5 <code>claude-opus-5</code></h3>
+        <p>El caballo de batalla para trabajo agéntico y de código. Es el que uso por defecto para todo lo que corre solo por horas: migraciones, análisis multiarchivo, agentes que tienen que sostener un objetivo sin supervisión. Ventana de 1M de tokens, hasta 128K de salida.</p>
+        <p><strong>Su debilidad honesta:</strong> es verboso. Escribe respuestas más largas de lo necesario y produce archivos más largos de lo necesario, y bajarle el esfuerzo no lo arregla —hay que pedírselo explícitamente. También tiende a ampliar el alcance de la tarea: te arregla cosas que no pediste.</p>
+        <p class="plugin-for"><strong>Precio:</strong> $5 de entrada y $25 de salida por millón de tokens.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Claude Sonnet 5 <code>claude-sonnet-5</code></h3>
+        <p>La mejor relación velocidad-inteligencia de la familia. Llega a calidad cercana a la de Opus en código y trabajo agéntico, a menos de la mitad del precio. Para la mayoría de las automatizaciones de producción, este es el que debería estar corriendo.</p>
+        <p><strong>Su debilidad honesta:</strong> cambió de tokenizador. El mismo texto produce alrededor de 30% más tokens que en la generación anterior, así que aunque el precio por token no subió, el costo de una petición equivalente sí se mueve. Si migras desde Sonnet 4.6 con presupuestos calculados, recalcula.</p>
+        <p class="plugin-for"><strong>Precio:</strong> $3 de entrada y $15 de salida por millón. Hay tarifa introductoria de $2 y $10 hasta el 31 de agosto de 2026.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Claude Haiku 4.5 <code>claude-haiku-4-5</code></h3>
+        <p>Volumen y latencia. Clasificar mil correos, etiquetar tickets, extraer campos de formularios, cualquier tarea simple que corras muchas veces. En un pipeline con subagentes es el que pones a leer, mientras el modelo caro piensa.</p>
+        <p><strong>Su debilidad honesta:</strong> la ventana es de 200K, no de 1M, y la salida tope es de 64K. Es el único de la familia con esa restricción, y te vas a topar con ella justo cuando le mandes el documento grande.</p>
+        <p class="plugin-for"><strong>Precio:</strong> $1 de entrada y $5 de salida por millón. Es el que hace viables los volúmenes altos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Claude Fable 5 <code>claude-fable-5</code></h3>
+        <p>El techo de capacidad para razonamiento difícil y trabajo autónomo de horizonte largo. No es el default de nada: es lo que sacas cuando el problema es genuinamente duro y el costo de equivocarse supera el costo del modelo.</p>
+        <p><strong>Su debilidad honesta:</strong> caro, lento —una sola petición difícil puede correr muchos minutos— y con clasificadores de seguridad activos que pueden rechazar peticiones legítimas en temas de ciberseguridad o biología. Además exige retención de datos de 30 días, así que las organizaciones con política de retención cero no lo pueden usar.</p>
+        <p class="plugin-for"><strong>Precio:</strong> $10 de entrada y $50 de salida por millón. El doble de Opus 5, para problemas donde eso se justifica.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. GPT-5.6, de OpenAI</h3>
+        <p>La familia con el ecosistema más ancho: integraciones, herramientas de terceros, comunidad y documentación. Viene en varios niveles —de un modelo insignia de razonamiento hasta uno rápido y económico para volumen— así que la decisión no es "GPT o no", es cuál de sus niveles.</p>
+        <p><strong>Su debilidad honesta:</strong> la nomenclatura y los precios se han movido mucho en 2026. Si construyes sobre un nivel específico, ancla la versión en tu código y revisa las notas de cambios; lo que fue barato hace dos meses puede no serlo.</p>
+        <p class="plugin-for"><strong>Precio:</strong> varía fuerte entre niveles, del económico al insignia. Consúltalo en la página de precios de OpenAI antes de presupuestar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Gemini 3, de Google</h3>
+        <p>Su ventaja es la casa: si tu operación vive en Workspace —Drive, Docs, Sheets, Gmail— la integración es la más natural del mercado y no requiere conectores de terceros. Trae también un nivel Flash pensado para volumen alto a costo bajo.</p>
+        <p><strong>Su debilidad honesta:</strong> el precio se estructura por tramos de contexto, así que una petición con mucho contexto puede costar bastante más que la misma petición corta. Calcula con tu tamaño real de prompt, no con la tarifa base.</p>
+        <p class="plugin-for"><strong>Precio:</strong> tramo económico agresivo en Flash, tramo profesional en el modelo insignia. Verifica el cobro por contexto largo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Grok 4.5, de xAI</h3>
+        <p>Su diferenciador es el acceso a lo que está pasando ahora mismo en X, y una estructura de precios agresiva donde la salida cuesta bastante menos, en proporción, que en la competencia. Para tareas que generan mucho texto, esa proporción importa.</p>
+        <p><strong>Su debilidad honesta:</strong> el ecosistema de herramientas y de integraciones empresariales es el más chico de los cuatro grandes. Vas a construir más plomería tú.</p>
+        <p class="plugin-for"><strong>Precio:</strong> posicionado por debajo de los modelos insignia, con una brecha entrada-salida más estrecha.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Los modelos abiertos: Llama, DeepSeek, Qwen</h3>
+        <p>La categoría que casi nadie evalúa en serio. Los descargas y los corres tú, en tu infraestructura o en una nube de tu elección. Costo marginal por petición prácticamente cero una vez que pagas el cómputo, y ningún dato sale de tu red.</p>
+        <p><strong>Su debilidad honesta:</strong> "gratis" es el precio de la licencia, no el del proyecto. Necesitas GPU, alguien que sepa desplegar, y disposición a quedarte una generación atrás de la frontera. Para la mayoría de las empresas medianas, eso cuesta más que la API.</p>
+        <p class="plugin-for"><strong>Cuándo sí:</strong> volumen muy alto y estable, o datos que por regulación no pueden salir de tu infraestructura.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> medir antes de elegir. Toma tu prompt real —el largo, el que usas en producción, con su contexto— y cuenta sus tokens contra cada candidato. La diferencia entre modelos en tu caso concreto casi nunca se parece a la diferencia en la tabla de precios, porque tu prompt no es del tamaño promedio.</p>
+      </div>
+
+      <h2>La regla de elección en tres pasos</h2>
+
+      <ol>
+        <li><strong>Empieza por el mejor modelo que puedas pagar</strong> y haz que la tarea funcione. Optimizar costo sobre algo que todavía no funciona es perder el tiempo dos veces.</li>
+        <li><strong>Cuando funcione, baja un nivel</strong> y mide si la calidad aguanta. La mayoría de las tareas de producción corren bien en el nivel intermedio; solo lo descubres probando.</li>
+        <li><strong>Reparte por tipo de trabajo, no por modelo favorito.</strong> El modelo caro planea y verifica; el barato lee, clasifica y extrae. Ese reparto ahorra más que cualquier cambio de proveedor.</li>
+      </ol>
+
+      <h2>Lo que esta hoja no te va a dar</h2>
+
+      <p>Ningún modelo de esta lista es tan distinto de sus vecinos como para justificar rediseñar tu operación alrededor de él. Las diferencias reales entre las opciones de frontera son de margen; las diferencias entre una empresa que sabe qué automatizar y una que no, son de orden de magnitud.</p>
+
+      <p>Elige el que se integre con lo que ya usas, ánclalo por versión en tu código, y vuelve a esta decisión en seis meses. Ahí es donde estará el trabajo que sí mueve la aguja.</p>

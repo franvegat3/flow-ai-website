@@ -1,0 +1,111 @@
+      <p>Hay un patrón raro con Claude Fable 5: la gente que trae prompts muy trabajados de modelos anteriores obtiene resultados peores que la gente que llega sin nada. No es un error de la herramienta. Es que buena parte de lo que aprendimos a escribir en un prompt eran muletas, y este modelo ya no las necesita.</p>
+
+      <p>Anthropic publicó su guía de prompting para Fable 5 y el mensaje de fondo es incómodo: la mayor parte del trabajo es <em>quitar</em>. Aquí van los tres cambios que de verdad mueven la aguja, cada uno con el prompt que uso.</p>
+
+      <h2>Antes de nada: qué cambió en la máquina</h2>
+
+      <p>Dos cosas que conviene tener claras porque explican todo lo demás.</p>
+
+      <p><strong>El razonamiento siempre está encendido.</strong> No hay un interruptor de "piensa más". El control que sí existe es el nivel de esfuerzo, y ahí la recomendación de Anthropic es empezar en alto para casi todo, subir solo en lo más difícil, y bajar a medio o bajo en trabajo rutinario. Los niveles bajos de Fable 5 rinden mejor que los niveles altos de modelos anteriores, así que subirle a todo por default es tirar dinero.</p>
+
+      <p><strong>Las corridas son largas.</strong> Una sola petición difícil puede tardar minutos, y una corrida autónoma puede irse horas. Eso cambia el diseño de tu trabajo: dejas de sentarte a esperar y empiezas a revisar de forma asíncrona. Si tienes un sistema que se cae por timeout, ese es el primer arreglo, antes de tocar un solo prompt.</p>
+
+      <h2>Cambio 1: escribe menos instrucciones, no más</h2>
+
+      <p>Un prompt escrito para un modelo de hace dos generaciones suele ser una lista de veinte reglas, la mitad de ellas puestas para corregir un defecto que ese modelo tenía. Fable 5 sigue esas reglas al pie de la letra, incluidas las que ya no aplican, y el resultado es un modelo trabado.</p>
+
+      <p>El cambio de mentalidad es pasar del guion al objetivo. En vez de decirle los diez pasos, le dices qué tiene que ser cierto al final y qué no debe hacer. La única parte donde sí conviene el guion exacto es donde una sola secuencia es segura: comandos destructivos, flujos de autorización, pasos de cumplimiento.</p>
+
+      <p>El otro lado de escribir menos es que hay que ser explícito con los límites, porque un modelo muy capaz interpreta el encargo con generosidad y termina haciendo cosas que nadie pidió. Este bloque lo pongo en las instrucciones del proyecto y resuelve casi todo:</p>
+
+      <pre><code>Alcance del trabajo:
+
+- Entrega lo que te pedí, al tamaño que te lo pedí. No agregues
+  funciones, refactores ni abstracciones que la tarea no requiere.
+- Cuando yo esté describiendo un problema, haciendo una pregunta o
+  pensando en voz alta, el entregable es tu diagnóstico. Repórtalo
+  y detente. No apliques el arreglo hasta que te lo pida.
+- No construyas para requisitos hipotéticos del futuro. Haz lo más
+  simple que funcione bien.
+- No agregues validaciones ni manejo de errores para escenarios que
+  no pueden ocurrir. Valida solo en las fronteras: entrada del
+  usuario y servicios externos.
+- Antes de ejecutar algo que cambia el estado del sistema (borrar,
+  reiniciar, editar configuración), verifica que la evidencia
+  sostiene esa acción específica. Una señal que se parece a una
+  falla conocida puede tener otra causa.
+- Si crees que lo que te pedí está mal o que hay un camino mejor,
+  dilo en una frase y sigue con lo que te pedí. No lo cambies
+  por tu cuenta.
+- Termina la tarea completa. Solo reporta que está lista cuando
+  de verdad lo esté; si algo no pudiste, haz el resto y di con
+  claridad qué falta y por qué.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>Revisa tus skills viejas antes de migrar:</strong> las skills y los system prompts escritos para modelos anteriores son la fuente más común de resultados peores. Ábrelos, borra las reglas que existían para corregir defectos que ya no están, y compara. Hay un caso especial que sí truena: cualquier instrucción del tipo "muéstrame tu razonamiento" o "explica tu proceso paso a paso en la respuesta" puede activar los filtros de seguridad del modelo y hacer que rechace la petición. Si necesitas ver el razonamiento, se lee del bloque de pensamiento, no se le pide en el texto.</p>
+      </div>
+
+      <h2>Cambio 2: obliga al modelo a auditar su propio avance</h2>
+
+      <p>Este es el cambio que más importa si lo dejas trabajar solo, y es el que casi nadie implementa.</p>
+
+      <p>Cuando una corrida dura horas, tú no ves lo que pasó. Ves el reporte final. Y un reporte que dice "listo, los tests pasan" es indistinguible de un reporte correcto hasta que abres el proyecto y descubres que no. Anthropic reporta que instruir al modelo para que audite cada afirmación contra un resultado de herramienta real casi elimina los reportes de avance inventados, incluso en pruebas diseñadas para provocarlos.</p>
+
+      <p>Este es el bloque que le pego a cualquier agente que va a correr sin supervisión:</p>
+
+      <pre><code>Reporte de avance:
+
+Antes de decirme que algo está hecho, audita esa afirmación contra
+un resultado concreto de una herramienta en esta misma sesión.
+
+- Solo reporta trabajo del que puedas señalar la evidencia: la
+  salida del comando, el archivo escrito, la respuesta del API.
+- Si algo no está verificado, dilo explícitamente. "Escribí el
+  código pero no lo he corrido" es una respuesta válida; "listo"
+  no lo es.
+- Si una prueba falló, dímelo con la salida. Si te saltaste un
+  paso, dímelo. Si algo quedó a medias, dímelo.
+- Cuando algo sí está hecho y verificado, afírmalo sin rodeos y
+  sin matizarlo.
+
+Establece además un método para revisar tu propio trabajo mientras
+avanzas, y córrelo cada [intervalo: cada hora / cada bloque de
+tareas], contrastando contra la especificación original.</code></pre>
+
+      <p>Ese último párrafo es el que convierte una corrida larga en algo confiable. Y funciona mejor si la revisión la hace un subagente con contexto limpio en vez de el mismo hilo que hizo el trabajo, porque el que escribió el código es mal juez de su propio código.</p>
+
+      <h2>Cambio 3: dale un lugar donde guardar lo que aprende</h2>
+
+      <p>Fable 5 rinde notablemente mejor cuando puede escribir lecciones y volver a leerlas después. No hace falta nada sofisticado: un archivo de texto sirve. Lo que hace falta es la instrucción de mantenerlo, porque si no le dices cómo, acumula notas duplicadas y contradictorias hasta que el archivo estorba más de lo que ayuda.</p>
+
+      <pre><code>Memoria de trabajo:
+
+Mantén un archivo llamado LECCIONES.md en la raíz del proyecto.
+
+Cómo escribir en él:
+- Una lección por bloque, con un resumen de una línea al inicio.
+- Registra tanto las correcciones que te hice como los enfoques
+  que sí funcionaron, y por qué importaron.
+- No guardes lo que el proyecto ya documenta ni lo que se puede
+  leer del código. Solo lo que se perdería si cerramos el chat.
+- Si ya existe una nota sobre el tema, actualízala en vez de
+  crear otra.
+- Si una nota resultó equivocada, bórrala. No la dejes marcada
+  como obsoleta.
+
+Cómo usarlo:
+- Léelo al inicio de cada sesión, antes de tocar nada.
+- Cuando yo te corrija algo que ya estaba escrito ahí, avísame:
+  significa que la nota está mal redactada.</code></pre>
+
+      <p>Si ya llevas meses trabajando con el modelo, se puede arrancar la memoria desde el historial. Le pides que revise las sesiones anteriores, saque los temas y las lecciones recurrentes, y las escriba en ese archivo. En una hora tienes destilado lo que te tomó tres meses aprender a golpes.</p>
+
+      <h2>Lo que no hay que tocar</h2>
+
+      <p>Dos advertencias para cerrar.</p>
+
+      <p>La primera: no le muestres al modelo cuánto contexto le queda. Cuando el sistema le enseña una cuenta regresiva de tokens, tiende a preocuparse, a proponer abrir una sesión nueva o a recortar su propio trabajo antes de tiempo. Si tu herramienta lo muestra y no lo puedes apagar, una línea de "tienes contexto de sobra, continúa" lo estabiliza.</p>
+
+      <p>La segunda: no lo estrenes con una tarea fácil. Los equipos que sacan más de este modelo son los que le dieron su problema más difícil sin resolver, le pidieron que lo acotara, hiciera preguntas y lo ejecutara de punta a punta. Probarlo solo con lo que ya te resolvía el modelo anterior te va a dar la impresión de que no cambió nada.</p>
+
+      <p>Si estás decidiendo entre este modelo y el de siempre, el criterio está en <a href="/guias/opus-5-vs-fable-5/">cuándo usar Claude Opus 5 y cuándo Fable 5</a>.</p>

@@ -1,0 +1,103 @@
+      <p>Si trabajas con dos o tres terminales abiertas, ya conoces el ritual: en una cambias algo, te acuerdas de que eso rompe lo que está haciendo la otra, te cambias de ventana y le escribes a mano "oye, cambié el esquema". Eso es la mitad de tu día como mensajero entre dos copias del mismo modelo.</p>
+
+      <p>Claude Code ya no lo necesita. Una sesión puede mandarle un mensaje a otra: la primera descubre a las demás, escribe el texto y lo entrega. Tú no invocas nada, solo dices a quién quieres avisarle qué.</p>
+
+      <p>La función viene encendida cuando tu instalación cumple los requisitos, así que lo primero no es configurarla: es verificar si ya la tienes. Y lo que hace la diferencia entre un truco y algo que de verdad usas todos los días son dos pasos que casi nadie da: ponerles nombre a las sesiones y escribirles una carta de equipo.</p>
+
+      <h2>Qué se manda exactamente</h2>
+
+      <p>Un mensaje es texto plano que un Claude le escribe a otro. Nada más. No viaja tu historial, no viajan tus archivos, no viaja el contexto de la conversación. La sesión que recibe ve el nombre de quien mandó y el texto, y ya.</p>
+
+      <p>Esa limitación es lo que hay que entender antes de usarlo. Si lo que quieres es mover una conversación completa a otra terminal, esto no es la herramienta: para eso se retoma la sesión. Los mensajes sirven para hechos cortos y accionables —"la migración terminó, la columna nueva se llama tenant_id"— no para transferir trabajo.</p>
+
+      <p>El resto de las reglas van en la misma dirección. Un mensaje de otra sesión no cuenta como tu consentimiento: no puede aprobar un permiso pendiente ni pedirle a la otra sesión que cambie configuración. Un comando dentro del texto llega como texto y no se ejecuta. Y si dos sesiones se ponen a contestarse en círculo, el sistema corta el ciclo solo.</p>
+
+      <h2>Cómo verificar que ya lo tienes</h2>
+
+      <ol>
+        <li><strong>Escribe <code>/list-agents</code> en una sesión.</strong> También responde a <code>/peers</code>. Si te lista tus otras sesiones, ya lo tienes y no hay nada que activar.</li>
+        <li><strong>Si el comando no se reconoce</strong>, empieza por la versión: <code>claude --version</code>. La mensajería entre sesiones pide una versión reciente de Claude Code.</li>
+        <li><strong>Revisa el sistema operativo.</strong> Corre en macOS y en Linux, incluido Linux dentro de WSL 2. En Windows nativo no está.</li>
+        <li><strong>Revisa por dónde te conectas.</strong> No está disponible en algunos proveedores en la nube; si tu empresa te conecta a Claude por Bedrock o por una plataforma similar, no la vas a ver.</li>
+        <li><strong>Con <code>/status</code></strong> aparece una fila de dirección de la sesión. Si está, esa sesión tiene su buzón abierto.</li>
+      </ol>
+
+      <p>Si <code>/list-agents</code> sí funciona pero tu mensaje no llegó, el problema es más chico: puede ser una regla de permisos que quitó las herramientas de mensajería, o el control de entrada de la sesión que recibe, que está reteniendo lo que le mandan.</p>
+
+      <h2>El paso de nombrarlas</h2>
+
+      <p>Aquí es donde la mayoría se queda a medias. Si no le pones nombre a una sesión, el sistema le pone uno derivado de la carpeta donde corre, del estilo <code>mi-app-3f</code>. Funciona, pero cuando tienes cuatro terminales en el mismo repositorio, todas se llaman casi igual y tú ya no sabes cuál es cuál.</p>
+
+      <p>Nómbralas por función, no por carpeta. Se puede al arrancar, con la bandera <code>--name</code>, o en caliente con el comando <code>/rename</code>.</p>
+
+      <pre><code>claude --name migraciones
+claude --name api
+claude --name reportes</code></pre>
+
+      <p>Con nombres así, pedir el mensaje se vuelve una frase normal: "avísale a la sesión de reportes que la columna cambió de nombre". Y en versiones recientes puedes mencionar la sesión con arroba, escribiendo <code>@</code> y las primeras letras para que aparezca el selector.</p>
+
+      <p>Un detalle que ahorra confusiones: si le pones a una sesión un nombre que otra sesión viva ya está usando, el nombre se queda con la que llegó primero y la tuya recibe una variante. Cuando dos sesiones comparten nombre, la lista te muestra en qué carpeta corre cada una para que las distingas.</p>
+
+      <h2>La carta de equipo</h2>
+
+      <p>Esta parte no la trae la herramienta y es la que hace que sirva. Sin ella pasa lo mismo que con un equipo humano sin roles: se mandan mensajes de más, se avisan cosas que a nadie le importan, y lo importante no se avisa porque cada quien supuso que el otro ya sabía.</p>
+
+      <p>La carta es un archivo corto que vive en el repositorio y que todas las sesiones leen al arrancar, porque va dentro del contexto del proyecto. Define quién es cada sesión, qué le toca avisar y qué no. Este es el formato que uso:</p>
+
+      <pre><code># Carta de equipo — sesiones de este repositorio
+
+## Roles
+
+- migraciones: cambios de esquema y datos. Nadie más toca la base.
+- api: endpoints y contratos de respuesta.
+- reportes: consultas de lectura y tableros. Solo lee.
+
+## Qué se avisa siempre
+
+1. Cualquier cambio en el esquema de base de datos, con el nombre exacto
+   de lo que cambió. Va a api y a reportes.
+2. Cualquier cambio en la forma de una respuesta de la API. Va a reportes.
+3. Cuando algo queda a medias y otra sesión podría chocar con ese archivo.
+4. Cuando termina un proceso largo que alguien más está esperando.
+
+## Qué NO se avisa
+
+- Avances parciales sin consecuencia para nadie más.
+- Preguntas de opinión. Esas van al humano, no a otra sesión.
+- Nada que requiera aprobar un permiso: un mensaje entre sesiones no
+  aprueba nada, así que eso regresa al humano.
+
+## Formato del mensaje
+
+Una oración. Hecho concreto y nombre exacto. Sin contexto de por qué.
+Bien: "Migración lista: la columna nueva es tenant_id."
+Mal: "Terminé de trabajar en la migración que habíamos platicado."
+
+## Dueño de archivos
+
+Si dos sesiones necesitan el mismo archivo, no se coordinan por mensaje:
+se detiene una y lo hace la otra. Los mensajes avisan, no reparten
+trabajo simultáneo sobre el mismo archivo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de "qué NO se avisa". Sin ella, las sesiones se vuelven un chat de grupo: cada mensaje que llega arranca un turno en la sesión que lo recibe y te consume igual que un prompt tuyo. Un equipo de sesiones sin reglas de silencio cuesta dinero y no coordina nada.</p>
+      </div>
+
+      <h2>Los controles que conviene poner antes</h2>
+
+      <p>Antes de dejar esto suelto en una máquina de trabajo, vale revisar dos ajustes.</p>
+
+      <ul>
+        <li><strong>Qué hace una sesión con lo que le llega.</strong> Hay un ajuste de entrada con tres valores: aceptar, retener para que tú apruebes, o rechazar sin entregar. En una sesión que corre desatendida, aceptar es lo práctico; en una sesión donde ya bajaste las barreras de permisos, retener es lo prudente.</li>
+        <li><strong>Si los mensajes pueden salir de la máquina.</strong> Entre sesiones de la misma computadora el mensaje viaja por un canal local y no pasa por servidores. Para alcanzar una sesión en otra máquina tuya o en la nube sí pasa. Hay un ajuste para exigir tu aprobación antes de que cualquier mensaje salga del equipo.</li>
+      </ul>
+
+      <p>Y si tu organización no quiere nada de esto, se apaga por los dos lados: reglas que nieguen las herramientas de listar y mandar, más el ajuste de entrada en rechazar.</p>
+
+      <h2>El error que lo vuelve ruido</h2>
+
+      <p>Usarlo para repartir trabajo. La tentación es armar una fábrica: una sesión que asigna y tres que ejecutan. Para eso hay otras funciones, con lista de tareas compartida y coordinación de verdad. La mensajería entre sesiones es más simple y más útil de lo que parece: sirve para que una sesión no siga trabajando sobre un supuesto que otra acaba de romper.</p>
+
+      <p>Empieza con dos sesiones, tres reglas en la carta y una semana de uso. Cuando veas cuáles avisos sí te salvaron y cuáles fueron ruido, ahí creces la carta.</p>
+
+      <p>Para seguir: <a href="/guias/agentes-de-claude-en-paralelo/">cómo correr agentes en paralelo</a> y <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a>, que es donde va a vivir tu carta de equipo.</p>

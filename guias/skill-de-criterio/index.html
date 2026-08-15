@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Róbate mi skill de criterio — Guías Flow AI</title>
+  <meta name="description" content="La IA se va sola hacia la respuesta más promedio. Esta skill la obliga a pelearse con su propio primer borrador, para que tu trabajo deje de sonar como el de todos." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/skill-de-criterio/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Róbate mi skill de criterio" />
+  <meta property="og:description" content="La IA se va sola hacia la respuesta más promedio. Esta skill la obliga a pelearse con su propio primer borrador, para que tu trabajo deje de sonar como el de todos." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/skill-de-criterio/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Prompts</span></div>
+      <h1>Róbate mi skill de criterio</h1>
+      <p class="lead">La IA se va sola hacia la respuesta más promedio. Esta skill la obliga a pelearse con su propio primer borrador, para que tu trabajo deje de sonar como el de todos.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El primer borrador de cualquier modelo es el promedio de todo lo que se ha escrito sobre el tema. No es un defecto: es literalmente cómo funciona. Le pides un nombre para un producto y te da el nombre que cualquiera daría. Le pides el ángulo de una campaña y te da el ángulo que ya está en veinte anuncios de tu categoría.</p>
+
+      <p>El problema no es que esté mal. Es que está bien de la manera más predecible posible, y en un mercado donde todos usan la misma herramienta, lo predecible ya no distingue a nadie.</p>
+
+      <p>Esta skill existe para romper eso. No le pide al modelo que "sea creativo", porque esa instrucción no hace nada. Le pide que produzca su respuesta promedio, la nombre como tal, y después la use como lista de lo que tiene prohibido entregar.</p>
+
+      <h2>Qué hace, en una frase</h2>
+
+      <p>Obliga a Claude a escribir primero la respuesta obvia, marcarla como obvia, y solo entonces buscar la respuesta que sobrevive a tres filtros: que no la dé cualquiera, que sea específica de tu caso, y que aguante una objeción.</p>
+
+      <h2>La skill completa</h2>
+
+      <pre><code>---
+name: criterio
+description: Fuerza respuestas no promedio en tareas de juicio. Úsala
+  cuando el usuario pida ángulos, nombres, ideas, estrategia,
+  posicionamiento, un titular, un enfoque de campaña, o cuando rechace
+  algo por sonar genérico, obvio o hecho con inteligencia artificial.
+---
+
+Esta skill aplica a tareas de juicio, no a tareas de formato.
+
+Trabaja en cuatro pasos y muestra los cuatro.
+
+PASO 1 — EL PROMEDIO
+Escribe rápido las tres respuestas que darías sin pensar. Rotúlalas
+como "lo predecible". No las adornes: entre más honesto sea este paso,
+mejor sale el resto.
+
+PASO 2 — POR QUÉ SON PREDECIBLES
+Para cada una, di de dónde viene. Es el consejo estándar de la
+categoría, la estructura que usa todo el mundo, o la metáfora que ya
+está gastada. Nombra el patrón, no la respuesta.
+
+PASO 3 — LA LISTA NEGRA
+Convierte lo anterior en reglas explícitas de lo que ya no puedes usar
+en esta conversación: estructuras, palabras, ángulos y comparaciones
+quemadas. Escríbela como lista.
+
+PASO 4 — LA RESPUESTA
+Ahora responde de verdad, respetando la lista negra. La respuesta tiene
+que pasar los tres filtros y tú lo verificas por escrito:
+
+- ESPECIFICIDAD: usa al menos dos hechos del caso concreto del usuario
+  (su industria, su cliente, su restricción, su historia). Si no tienes
+  esos hechos, pídelos antes de escribir. No los inventes.
+- PROPIEDAD: si un competidor pudiera firmar esta respuesta sin cambiar
+  nada, no sirve. Explica en una línea por qué solo el usuario puede
+  decirla.
+- RESISTENCIA: escribe la mejor objeción contra tu respuesta y
+  contéstala. Si no puedes contestarla, cambia la respuesta.
+
+REGLAS
+- Nunca entregues solo el paso 4. El valor está en ver el contraste.
+- Nunca inventes datos, cifras, casos ni nombres para verse específico.
+  Un dato falso destruye el ejercicio completo.
+- Una sola respuesta final. No devuelvas cinco opciones para que el
+  usuario elija: eso es devolverle el trabajo.
+- Si después de los cuatro pasos la respuesta obvia sigue siendo la
+  mejor, dilo con esas palabras y explica por qué. Es un resultado
+  válido y poco frecuente.</code></pre>
+
+      <h2>Dónde va el archivo</h2>
+
+      <p>En Claude Code, dentro de tu proyecto: <code>.claude/skills/criterio/SKILL.md</code>. En la app de escritorio o en el navegador, se sube desde la sección de capacidades de la configuración. Es el mismo archivo en los dos lados.</p>
+
+      <p>Un detalle que importa más de lo que parece: la <code>description</code> incluye a propósito las palabras con las que uno rechaza un borrador, como "genérico" o "suena a inteligencia artificial". Así la skill se activa sola en el momento en que la necesitas, que es cuando ya viste algo que no te gustó, no cuando te acordaste de que la tenías instalada.</p>
+
+      <h2>Cómo se ve trabajando</h2>
+
+      <p>Un ejemplo real de forma, no de cifras. Una empresa de servicios industriales quería el ángulo de su campaña anual. Sin la skill, salió lo de siempre: años de experiencia, calidad garantizada, atención personalizada. Tres respuestas que podría firmar cualquiera de sus competidores, que es exactamente el criterio del filtro de propiedad.</p>
+
+      <p>Con la skill, el paso 2 nombró el patrón: todo el sector vende confianza genérica porque nadie quiere hablar de precio. La lista negra prohibió experiencia, calidad y personalización. Y el paso 4 obligó a usar hechos del caso, que en su operación era un dato que ellos daban por aburrido: el tiempo que tardan en mandar a alguien cuando algo se rompe de madrugada. Ese fue el ángulo. Estaba ahí desde el principio y nadie lo veía porque no sonaba a publicidad.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> darle hechos. La skill exige dos datos concretos de tu caso, y si no se los das, va a pedirlos. Ahí es donde la mayoría se rinde y vuelve a pedir "algo creativo". Si respondes con la restricción real, el cliente que sí tienes y lo que de verdad te distingue en la operación, la salida cambia por completo. La skill no inventa criterio: te obliga a poner el tuyo sobre la mesa.</p>
+      </div>
+
+      <h2>Cuándo no usarla</h2>
+
+      <p>Esta skill hace el trabajo más lento y más caro en tokens. En tareas de formato es un estorbo: para resumir una junta, ordenar un CSV, redactar una respuesta de servicio o armar una minuta, lo que quieres es exactamente la respuesta estándar. Ahí el promedio del mundo es la respuesta correcta.</p>
+
+      <p>Úsala donde el resultado depende de tener un punto de vista: posicionamiento, ángulos de anuncio, nombres, propuestas, la estructura de una oferta, la decisión entre dos caminos. Y si la respuesta que produce te incomoda un poco, es buena señal. Lo que no incomoda a nadie es justo lo que nadie recuerda.</p>
+
+      <p>Cuando quieras el complemento, la que va con esta es <a href="/guias/prueba-de-presion-de-4-preguntas/">la prueba de presión de cuatro preguntas</a>: una genera el criterio y la otra lo golpea.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

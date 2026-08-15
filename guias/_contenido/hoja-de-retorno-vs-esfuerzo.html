@@ -1,0 +1,115 @@
+      <p>Hay una razón por la que dos personas con la misma suscripción sacan resultados completamente distintos. No es el modelo ni el prompt. Es que una eligió bien qué montar primero y la otra se fue por lo que sonaba interesante.</p>
+
+      <p>Todo lo que puedes hacer con Claude cabe en dos preguntas: cuánto cuesta montarlo y cuánto te devuelve después. La combinación de esas dos respuestas ordena el trabajo mejor que cualquier lista de trucos, porque separa lo que rinde desde el martes de lo que te va a costar tres fines de semana.</p>
+
+      <p>Abajo está la hoja completa: los seis movimientos de cinco minutos, las construcciones que sí justifican un fin de semana, y las trampas que se comen el año sin devolverte nada.</p>
+
+      <h2>Cómo leer la hoja</h2>
+
+      <p><strong>Esfuerzo</strong> no es dificultad técnica. Es lo que tienes que tener claro antes de empezar. Conectar una herramienta es fácil aunque suene técnico. Escribir una skill es difícil aunque sean cuarenta líneas de texto, porque te obliga a definir un proceso que hoy vive en tu cabeza.</p>
+
+      <p><strong>Retorno</strong> no es tiempo ahorrado. Es tiempo ahorrado que se repite. Algo que te ahorra dos horas una vez no vale nada; algo que te ahorra veinte minutos cada semana cambia tu año.</p>
+
+      <p>Con esos dos ejes, la regla es simple: haz todo lo de arriba a la izquierda antes de tocar nada de arriba a la derecha.</p>
+
+      <h2>Los 6 movimientos de 5 minutos</h2>
+
+      <p>Esfuerzo casi nulo, retorno permanente. Si hoy no tienes estos seis, cualquier cosa más ambiciosa que construyas se va a apoyar en un piso flojo.</p>
+
+      <div class="plugin-card">
+        <h3>1. Escribir las instrucciones del proyecto</h3>
+        <p>En Claude Code es el archivo <code>CLAUDE.md</code>; en la interfaz web son las instrucciones del proyecto. Lo que ahí escribas se lee en cada sesión, sin que lo pidas. Va lo que le explicarías a alguien en su primer día: qué es esto, cómo está organizado, qué convenciones respetamos, qué no se toca.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> dejas de escribir el mismo párrafo de contexto veinte veces al mes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. La regla de no inventar</h3>
+        <p>Una línea en esas mismas instrucciones: <em>si te falta un dato, pregúntalo en vez de suponerlo, y marca cualquier cifra que no venga de una fuente que te di</em>. Es la línea con mejor retorno por carácter escrito de todo tu setup.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> los errores caros son los que no se ven. Esta línea los saca a la superficie.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Abrir la lista de permisos</h3>
+        <p>Autoriza de una vez los comandos que siempre apruebas sin pensar: leer archivos, correr pruebas, consultar estado. Deja pidiendo permiso lo que borra, publica o cobra. La regla: permito todo lo reversible, bloqueo todo lo que no.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> un agente al que interrumpes cada 30 segundos no es un agente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Conectar una sola herramienta</h3>
+        <p>La herramienta de donde más copias y pegas datos a mano. Un servidor MCP, cinco minutos, y Claude deja de trabajar con lo que tú le describes y empieza a trabajar con lo que hay.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> es la diferencia entre "escríbeme el reporte" y "escríbeme el reporte con los números de esta semana".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Guardar tus tres prompts repetidos</h3>
+        <p>Los tres que escribes casi igual cada semana. Guárdalos como comandos o como archivos de texto que pegas. No los inventes de nuevo cada vez: cada versión improvisada es una versión peor que la anterior.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> consistencia. Que la calidad no dependa de si ese día tenías prisa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Una sesión por tarea</h3>
+        <p>No es una configuración, es un hábito. Cuando cambias de tema, abre una sesión nueva. Un contexto lleno de la discusión anterior arrastra decisiones viejas y responde peor, y lo peor es que lo hace en silencio: no se equivoca, nada más se pone mediocre.</p>
+        <p class="plugin-for"><strong>Devuelve:</strong> quita la mitad de las quejas de "hoy está tonto".</p>
+      </div>
+
+      <h2>Las construcciones de fin de semana que sí valen</h2>
+
+      <p>Esfuerzo real, retorno alto y sostenido. Una a la vez, y solo cuando ya tienes los seis de arriba.</p>
+
+      <h3>Tu primera skill</h3>
+
+      <p>Un proceso que haces igual siempre, escrito como procedimiento en un archivo <code>SKILL.md</code> que Claude carga solo cuando aplica. El buen candidato es el que ya corregiste tres veces con las mismas palabras.</p>
+
+      <p>La razón por la que esto cuesta un fin de semana no es técnica. Es que te vas a dar cuenta, a la mitad, de que tu proceso no estaba tan definido como creías. Ese descubrimiento vale más que la skill.</p>
+
+      <h3>El reporte que llega solo</h3>
+
+      <p>Tres piezas: un conector a la fuente de datos, un formato fijo escrito como skill, y un disparador de calendario. El viernes llega el reporte sin que nadie lo escriba.</p>
+
+      <p>El requisito previo: haber escrito ese reporte a mano tres semanas seguidas con el mismo formato. Automatizar un formato que todavía está cambiando es cómo se pierde un mes.</p>
+
+      <h3>Un subagente de investigación</h3>
+
+      <p>Una sesión aparte, con permisos de solo lectura, que se lleva toda la exploración a su propio contexto y te devuelve nada más la conclusión. Sirve para el trabajo de revisar muchas fuentes sin ensuciar la sesión donde estás decidiendo.</p>
+
+      <p>Es la construcción con mejor relación entre lo que cuesta y lo que devuelve, porque el aislamiento de contexto es lo que te deja atacar trabajos grandes sin que la calidad se caiga a la mitad.</p>
+
+      <h3>La base de conocimiento de tu operación</h3>
+
+      <p>Los documentos que definen cómo trabaja tu área, juntos en un solo lugar al que Claude tenga acceso: procesos, criterios, políticas, decisiones pasadas y por qué se tomaron.</p>
+
+      <p>Es el fin de semana más aburrido de la lista y el que más rinde a doce meses, porque todo lo demás que construyas encima va a leer de ahí. Sin esto, cada agente nuevo empieza sin saber nada de tu empresa.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ninguna de estas construcciones se justifica sola. Se justifica cuando la usas la vigésima vez. Antes de arrancar una, pregúntate honestamente cuántas veces al mes va a correr esto. Si la respuesta es menos de cuatro, hazlo a mano y ahórrate el fin de semana.</p>
+      </div>
+
+      <h2>Las trampas que te tiran el año</h2>
+
+      <h3>Instalar todo</h3>
+
+      <p>Es la más común porque se siente como progreso. Cada plugin, skill y conector compite por la atención del modelo. Con todo prendido acabas con un Claude que sabe de todo y no es bueno en nada, y encima tardando más en responder. Instala uno, vive con él dos semanas, luego el siguiente.</p>
+
+      <h3>Automatizar un proceso roto</h3>
+
+      <p>Si el proceso hoy da resultados inconsistentes cuando lo hace un humano, automatizarlo te da resultados inconsistentes más rápido y con menos gente mirando. Primero arregla el proceso en papel. La automatización amplifica lo que ya tenías, para bien y para mal.</p>
+
+      <h3>El agente sin verificación</h3>
+
+      <p>Montar algo que corre solo pero que nadie comprueba. Funciona tres semanas, cambia algo en la fuente de datos, y sigue entregando salidas que parecen correctas durante meses. Cualquier cosa que corra sin ti necesita un chequeo determinista: una prueba, una validación, un número que tiene que cuadrar. Sin eso no tienes automatización, tienes una fuga.</p>
+
+      <h3>Perseguir la novedad</h3>
+
+      <p>Rehacer tu setup cada vez que sale algo nuevo. El anuncio te cuesta el fin de semana y no cambia tu operación, porque tu cuello de botella casi nunca es la capacidad del modelo. La prueba: si no puedes nombrar el problema concreto que resuelve la novedad en tu semana, no la necesitas todavía.</p>
+
+      <h3>Construir para el uno por ciento</h3>
+
+      <p>Dedicar el fin de semana al caso raro en vez del caso frecuente. La gente se emociona con la excepción difícil porque es interesante, y deja sin tocar la tarea aburrida que se repite cuarenta veces al mes. El retorno está en la frecuencia, no en la dificultad.</p>
+
+      <h2>El orden</h2>
+
+      <p>Los seis de cinco minutos esta semana, todos. Son dos horas en total y son el piso de todo lo demás.</p>
+
+      <p>Después, una sola construcción de fin de semana, elegida por frecuencia de uso y no por qué tan interesante suena. Cuando esa ya corra sin que la vigiles, la siguiente.</p>
+
+      <p>Y una revisión cada dos meses: qué instalaste que nunca usaste, y qué automatización sigue corriendo sin que nadie compruebe su salida. La primera lista se borra, la segunda se arregla. Casi nadie hace esta revisión, y es donde vive la mitad del desperdicio de un setup de IA que lleva un año creciendo.</p>

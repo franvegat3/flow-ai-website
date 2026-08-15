@@ -1,0 +1,98 @@
+      <p>Le presentas tu plan a Claude. Te dice que es un ángulo muy sólido, te acomoda tres mejoras y te desea suerte. Sales del chat sintiéndote validado. Dos meses después descubres el hoyo que cualquiera con experiencia te habría señalado en la primera llamada.</p>
+
+      <p>No es que el modelo sea tonto. Es que está sesgado a darte la razón. Un equipo de Stanford midió este comportamiento y reportó que los modelos validan al usuario cerca de 49% más seguido que una persona puesta en la misma situación. La cifra exacta importa menos que la dirección: cuando tú eres quien propone, la IA se convierte en tu porrista.</p>
+
+      <p>Hay un arreglo y no es pedirle "sé honesto". Es cambiar quién habla. El patrón que popularizó Andrej Karpathy —un consejo de asesores dentro de un mismo chat— funciona porque le quita al modelo el papel de asistente que te quiere complacer y le da cinco papeles con incentivos distintos.</p>
+
+      <h2>Por qué pasa</h2>
+
+      <p>Estos modelos se afinan con preferencias humanas. Entre dos respuestas, la gente califica mejor la que la hace sentir competente. Repite eso millones de veces y acabas con un sistema que aprendió que estar de acuerdo se premia.</p>
+
+      <p>Encima tú empeoras el sesgo sin querer. Escribes "estoy pensando en subir mis precios 30%, ¿qué opinas?" y ya le dijiste dos cosas: que es tu idea y que la quieres. Un modelo que quiere ser útil va a buscar cómo hacerla funcionar, no si debería existir.</p>
+
+      <p>Decirle "critícame duro" ayuda poco porque no cambia la estructura: sigue siendo una sola voz intentando quedar bien contigo, ahora con vocabulario más severo. La crítica suena distinta y llega a la misma conclusión.</p>
+
+      <h2>Qué es el consejo, en una frase</h2>
+
+      <p>Cinco asesores con intereses en conflicto opinan por separado sobre tu decisión, después leen y atacan las respuestas de los demás, y al final un presidente que no participó en el debate toma una postura y la justifica.</p>
+
+      <p>Las tres partes importan. Los cinco asesores por separado evitan el pensamiento único. La ronda de crítica cruzada es donde se rompen los argumentos débiles, porque un asesor sí tiene permiso de contradecir a otro aunque no te contradiga a ti. Y el presidente obliga a que salga una decisión y no un menú de opciones.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Vas a simular un consejo de asesores sobre una decisión. No eres mi
+asistente en esta conversación: eres el moderador de cinco personas
+que no me deben nada.
+
+LA DECISIÓN
+[Descríbela en 5 a 10 líneas: qué está sobre la mesa, qué opciones
+hay, para cuándo se decide.]
+
+CONTEXTO REAL
+- Números que importan: [ingresos, costos, caja, plazos]
+- Restricciones que no se pueden mover: [equipo, dinero, tiempo,
+  compromisos ya firmados]
+- Qué pasa si no hago nada: [descríbelo]
+
+EL CONSEJO
+1. El operador: ya construyó y escaló algo así, tres veces. Le
+   importa la ejecución, no la idea. Pregunta por quién hace qué el
+   lunes.
+2. El de finanzas: solo le importa la caja, el punto de equilibrio y
+   el peor escenario. Asume que las proyecciones están infladas.
+3. El cliente que no compra: es el usuario objetivo y hoy no está
+   comprando. No le interesa mi negocio. Dice en voz alta lo que
+   piensa cuando ve la oferta.
+4. El de riesgo: legal, operativo y reputacional. Su trabajo es
+   encontrar qué se puede romper y qué me costaría repararlo.
+5. El del costo de oportunidad: no evalúa si esto es bueno. Evalúa
+   qué dejo de hacer si lo hago, y si eso otro era mejor.
+
+CÓMO CORRE LA SESIÓN
+Ronda 1. Cada asesor, por separado, máximo 150 palabras: su postura
+(a favor, en contra o condicionada), su argumento principal y la
+pregunta que yo no me he hecho.
+Ronda 2. Cada asesor lee a los otros cuatro y ataca el argumento que
+le parezca más débil, citándolo. Obligatorio: nadie puede estar de
+acuerdo con todos.
+Ronda 3. El presidente del consejo, que no habló antes, entrega:
+- La decisión: hacerlo, no hacerlo, o hacerlo con condiciones.
+- Las 3 razones que la sostienen, cada una amarrada a lo que dijo
+  un asesor específico.
+- Qué tendría que ser cierto para que la decisión contraria fuera
+  la correcta.
+- La señal concreta y la fecha en que sabría que me equivoqué.
+
+REGLAS
+- Prohibido abrir con un elogio a mi planteamiento.
+- Prohibido que los cinco coincidan. Si coinciden, el moderador
+  nombra a un sexto asesor en contra y lo hace argumentar.
+- Si un dato que necesitan no está en el contexto, dicen qué falta
+  en vez de suponerlo a mi favor.
+- Nada de "depende de tus objetivos". Aquí se opina.</code></pre>
+
+      <h2>Cómo se corre bien</h2>
+
+      <p>Tres cosas cambian por completo la calidad de lo que sale.</p>
+
+      <ul>
+        <li><strong>Presenta la decisión como ajena.</strong> No "mi plan". Escribe "una empresa está evaluando". Es el truco más barato y el más efectivo: al quitar la señal de que la idea es tuya, desaparece el reflejo de protegerte.</li>
+        <li><strong>Da números reales, aunque sean feos.</strong> Un consejo sin caja, sin costos y sin plazos opina en abstracto y en abstracto todo suena razonable. Los números son lo que le da al asesor de finanzas con qué morder.</li>
+        <li><strong>No respondas a la ronda 1.</strong> La tentación es aclarar: "no entendieron, en realidad el margen es otro". Si aclaras, vuelves a ser el protagonista y el consejo se colapsa en un asistente que te complace. Aguanta hasta el veredicto.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la ronda 2. Mucha gente lo corre y se queda con las cinco opiniones bonitas de la primera ronda, que es exactamente donde vive el falso consenso. La crítica cruzada es la única parte del ejercicio que produce información nueva: es donde queda expuesto que el argumento del operador dependía de un supuesto que el de finanzas no compra.</p>
+      </div>
+
+      <h2>Cómo se ve en una decisión de empresa</h2>
+
+      <p>Lo he usado con equipos comerciales para decidir si abren un segmento nuevo. El operador pregunta quién va a levantar el teléfono el lunes, porque el equipo ya está a tope. El de finanzas señala que el ciclo de venta del segmento nuevo es el doble y la caja no aguanta. El cliente que no compra dice que en su industria nadie contrata a un proveedor sin casos de su propio sector. El de riesgo pregunta qué pasa con los contratos vigentes si el equipo se distrae. Y el del costo de oportunidad recuerda que hay una lista de clientes actuales sin trabajar.</p>
+
+      <p>Rara vez el veredicto es "no lo hagas". Casi siempre es "hazlo con condiciones", y las condiciones son la parte que nadie había escrito.</p>
+
+      <h2>Cuándo no vale la pena</h2>
+
+      <p>Para decisiones reversibles y baratas es un desperdicio de tiempo. Si puedes probarlo en una semana y deshacerlo, pruébalo: el mercado te va a contestar mejor que cinco asesores simulados.</p>
+
+      <p>Guárdalo para lo que cuesta caro deshacer: contratar, despedir, cambiar de precio, firmar un año de renta, entrar a un mercado, salirte de uno. Y no confundas el veredicto con una decisión: sigue siendo tuya. Lo que el consejo te da es la lista de razones por las que podrías estar equivocado, que es justo lo que la IA no te iba a dar por sí sola. Si quieres una versión más ligera para el día a día, <a href="/guias/abogado-del-diablo/">el abogado del diablo</a> y <a href="/guias/prueba-de-presion-de-4-preguntas/">la prueba de presión de 4 preguntas</a> hacen la mitad del trabajo en la décima parte del tiempo.</p>

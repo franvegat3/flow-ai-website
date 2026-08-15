@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convierte cualquier video de YouTube en tu tutor personal — Guías Flow AI</title>
+  <meta name="description" content="Un flujo de 5 minutos con dos herramientas gratis de Google. Metes el video a NotebookLM, le pasas el cuaderno a Gemini, y pides una app interactiva de aprendizaje hecha a la medida. Con quizzes y todo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/cualquier-video-de-youtube-como-tutor/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Convierte cualquier video de YouTube en tu tutor personal" />
+  <meta property="og:description" content="Un flujo de 5 minutos con dos herramientas gratis de Google. Metes el video a NotebookLM, le pasas el cuaderno a Gemini, y pides una app interactiva de aprendizaje hecha a la medida. Con quizzes y todo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/cualquier-video-de-youtube-como-tutor/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Gemini</span><span class="tag">Productividad</span><span class="tag">Carrera</span></div>
+      <h1>Convierte cualquier video de YouTube en tu tutor personal</h1>
+      <p class="lead">Un flujo de 5 minutos con dos herramientas gratis de Google. Metes el video a NotebookLM, le pasas el cuaderno a Gemini, y pides una app interactiva de aprendizaje hecha a la medida. Con quizzes y todo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Ves una clase de dos horas en YouTube. Le entiendes todo mientras la ves. A la semana siguiente no puedes explicar ni la mitad, y si alguien te pregunta, contestas con la sensación de que "algo así era".</p>
+
+      <p>No es tu memoria. Ver un video es reconocimiento pasivo: sientes que sabes porque el material te resulta familiar. Aprender es otra cosa —es poder recuperar la información sin tenerla enfrente— y eso solo pasa cuando te obligan a producir la respuesta.</p>
+
+      <p>Este flujo convierte cualquier video en el material que sí te obliga: un temario con marcas de tiempo, preguntas que te hacen recuperar, y una app interactiva hecha a la medida de ese contenido. Toma unos cinco minutos y usa dos herramientas gratuitas de Google.</p>
+
+      <h2>Qué hace cada herramienta</h2>
+
+      <p><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a> es un cuaderno que solo responde con base en las fuentes que tú le das, y cita de dónde sacó cada cosa. Acepta un video de YouTube como fuente directa, tomando su transcripción. Su valor aquí es que no inventa: si algo no estaba en el video, te lo dice.</p>
+
+      <p><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a> es el que construye. Con su lienzo de trabajo puede generar una aplicación interactiva completa a partir de un texto, y eso es lo que va a hacer con el material del cuaderno.</p>
+
+      <p>La división de trabajo es la clave del flujo: uno extrae con fidelidad, el otro construye. Si le pides directo a un modelo general que te haga la app desde la liga del video, vas a acabar con una app bonita sobre un contenido que se inventó a medias.</p>
+
+      <h2>Paso 1: el video entra a NotebookLM</h2>
+
+      <p>Creas un cuaderno nuevo, eliges agregar fuente y pegas la liga del video. Requisito: el video tiene que ser público y tener transcripción disponible. Si es privado, si no tiene subtítulos o si el audio es una grabación muy sucia, no va a jalar y te vas a ahorrar el intento.</p>
+
+      <p>Aprovecha para agregar otras fuentes en el mismo cuaderno: el PDF del curso, la documentación oficial de lo que estás estudiando, otro video del mismo tema. Entre más fuentes buenas, más completo el material y más fácil que el cuaderno te marque dónde el video se contradice con la documentación.</p>
+
+      <h2>Paso 2: sacar el material base</h2>
+
+      <p>Aquí no le pides un resumen. Un resumen es exactamente lo que no necesitas: te devuelve la sensación de familiaridad sin el esfuerzo de recuperar.</p>
+
+      <pre><code>Con base únicamente en las fuentes de este cuaderno, arma el
+material de estudio. No resumas.
+
+1. TEMARIO
+   Los conceptos que se enseñan, en el orden en que aparecen. Para
+   cada uno: nombre, definición en una frase, y la marca de tiempo
+   donde se explica.
+
+2. LO QUE HAY QUE ENTENDER, NO MEMORIZAR
+   Los 5 mecanismos o relaciones de causa y efecto más importantes.
+   Explica cada uno como si yo tuviera que aplicarlo mañana.
+
+3. PREGUNTAS DE RECUPERACIÓN
+   20 preguntas abiertas ordenadas de fácil a difícil. Ninguna se
+   contesta con sí o no. Aparte, la respuesta correcta de cada una
+   con su marca de tiempo.
+
+4. ERRORES PROBABLES
+   Qué se suele confundir de este tema, y por qué. Si el video lo
+   advierte, cítalo.
+
+5. HUECOS
+   Qué preguntas quedan sin responder con estas fuentes. Sé
+   explícito: prefiero saber qué me falta.
+
+Regla: si algo no está en las fuentes, no lo escribas. Marca cada
+sección con la cita de dónde salió.</code></pre>
+
+      <p>Copia esa salida completa. No hay un botón que mande el cuaderno a Gemini: lo que viaja es este documento, y es suficiente.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección 5. Un video de YouTube es la opinión de una persona, y casi siempre deja fuera lo incómodo. Saber qué no te contestó el material es lo que te dice si necesitas una segunda fuente antes de dar el tema por aprendido. Y si estás estudiando algo donde equivocarse cuesta —dinero, salud, temas legales— verifica contra la documentación oficial antes de memorizar nada. Un video puede estar desactualizado y el cuaderno lo va a repetir con total seguridad, porque su trabajo es ser fiel a la fuente, no tener la razón.</p>
+      </div>
+
+      <h2>Paso 3: la app interactiva</h2>
+
+      <p>Abres Gemini, activas el lienzo de trabajo, pegas el material y pides la aplicación.</p>
+
+      <pre><code>Te voy a pegar el material de estudio de un curso. Constrúyeme
+una aplicación web interactiva de una sola página para aprenderlo.
+
+Debe tener:
+- Un mapa del temario como pantalla de inicio, con el avance de
+  cada tema visible.
+- Tarjetas de estudio por concepto: pregunta de un lado, respuesta
+  del otro, y que yo marque si la supe o no.
+- Un quiz por tema, con opción múltiple y con preguntas abiertas.
+  Al fallar, no me des solo la respuesta: dime por qué lo que elegí
+  está mal.
+- Un modo de repaso que me vuelva a mostrar únicamente lo que
+  fallé, y que lo repita con más frecuencia mientras siga fallando.
+- Un registro de mis errores por concepto, para ver dónde estoy
+  flojo.
+- Las marcas de tiempo del video en cada concepto, para regresar
+  a la fuente.
+
+Reglas:
+- Todo el contenido sale del material que te pego. No agregues
+  temas ni ejemplos que no estén ahí.
+- Que funcione en un solo archivo y que guarde mi avance en el
+  navegador.
+- Interfaz limpia, en español, legible en celular.
+
+Material:
+[pega aquí la salida de NotebookLM]</code></pre>
+
+      <p>Pruébala y pide ajustes en el mismo lienzo: más preguntas de un tema, subir la dificultad, cambiar el orden. Cada iteración toma segundos, y ya no estás pagando el costo de armar el contenido: ese ya está.</p>
+
+      <h2>Para qué sirve esto en una empresa</h2>
+
+      <p>El caso más directo es la capacitación que ya existe y que nadie termina. Toda empresa tiene grabaciones: la sesión de producto, el webinar del proveedor, la explicación del proceso que dio alguien que ya se fue. Están en una carpeta y nadie las abre porque son dos horas de video.</p>
+
+      <p>Ese mismo flujo las convierte en una app de práctica de veinte minutos por tema. Para un equipo comercial que tiene que dominar objeciones y detalles de producto, la diferencia es medible: un vendedor nuevo que hizo el quiz de objeciones tres veces llega a la llamada distinto que uno que vio el video en segundo plano.</p>
+
+      <p>Con dos cuidados. Uno, no metas grabaciones con información confidencial de clientes a herramientas que no estén aprobadas por tu empresa. Dos, alguien del equipo tiene que revisar el material generado antes de repartirlo: si el video traía un precio viejo, ahora ese precio viejo está en un quiz que todo el mundo va a estudiar.</p>
+
+      <h2>El error que hace inútil todo esto</h2>
+
+      <p>Armar la app y usarla una vez. Se siente productivo, se ve impresionante, y funciona igual de mal que ver el video.</p>
+
+      <p>La única parte que enseña es la de fallar y volver a intentar, repartida en varios días. Tres sesiones de quince minutos en tres días distintos valen más que una tarde completa. Si abres la app hoy, mañana y el viernes, para el lunes puedes explicar el tema sin abrirla. Ese es el punto, y es el único que cuenta.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

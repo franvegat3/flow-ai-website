@@ -1,0 +1,114 @@
+      <p>La primera vez que alguien prende el modelo más caro, casi siempre le pide algo que el modelo barato ya hacía bien. Le pide un resumen, una tabla, un correo. Y sale igual. Entonces concluye que no vale la pena y regresa al de siempre.</p>
+
+      <p>El error no está en el modelo. Está en la tarea. Fable 5 no es "el mismo asistente pero mejorcito": está construido para trabajo que no cabe en una sola sentada, y en una sola sentada no se le nota.</p>
+
+      <p>Esta guía es para que la primera vez que lo uses le des lo que sí lo distingue.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Fable 5 es el modelo más capaz de Claude: sostiene sesiones autónomas largas, investiga antes de actuar y verifica su propio trabajo sin que se lo pidas.</p>
+
+      <p>Esas tres características son la explicación completa de para qué sirve. No responde más rápido ni escribe más bonito. Aguanta el hilo de un problema grande durante horas sin perderlo, y cuando no está seguro, va y lo comprueba en lugar de adivinar.</p>
+
+      <h2>Para qué es bueno de verdad</h2>
+
+      <p>Hay un patrón claro en las tareas donde la diferencia se siente. Son las tres L.</p>
+
+      <ul>
+        <li><strong>Lo difícil.</strong> Problemas donde el primer diagnóstico obvio suele estar mal: una falla intermitente, una caída de conversión sin causa evidente, una decisión de arquitectura con tres caminos defendibles. Fable 5 investiga antes de comprometerse con una hipótesis.</li>
+        <li><strong>Lo largo.</strong> Trabajo que normalmente partirías en pedazos para no perder el hilo: una migración completa, la revisión de un contrato de cuarenta páginas contra tu política interna, un análisis que cruza seis fuentes. Aquí es donde la ventana de un millón de tokens deja de ser una cifra de folleto.</li>
+        <li><strong>Lo complejo.</strong> Tareas con muchas restricciones que se contradicen entre sí. Un plan de operación con presupuesto fijo, personas limitadas y tres objetivos que compiten. La capacidad de sostener todas las restricciones a la vez es donde se despega.</li>
+      </ul>
+
+      <p>Si tu tarea no cae en ninguna de las tres, el modelo de siempre te va a dar el mismo resultado más rápido y más barato.</p>
+
+      <h2>Cuándo no usarlo</h2>
+
+      <p>Vale la pena decirlo con claridad porque casi nadie lo dice: la mayoría del trabajo diario no necesita Fable 5.</p>
+
+      <p>No lo uses para resúmenes, borradores de correo, dar formato, traducir, clasificar o cualquier cosa que ya te sale bien al primer intento. Tampoco para tareas donde lo que quieres es velocidad de respuesta: piensa más y se tarda más, por diseño.</p>
+
+      <p>Y hay un límite duro que conviene saber antes de chocar con él: en trabajo de seguridad ofensiva y en temas de biología, sus clasificadores marcan las peticiones con frecuencia y la sesión se cambia sola a otro modelo. No es una marca en tu cuenta, es el ruteo esperado de esos dominios.</p>
+
+      <h2>Cómo se prende</h2>
+
+      <p><strong>En la app de Claude:</strong> es una opción más en el selector de modelo, arriba de la conversación. Si no la ves, tu organización todavía no la tiene habilitada o tu plan no la incluye. Dependiendo del plan, su uso puede cobrarse contra créditos en vez de contra los límites incluidos; cuando así es, la propia app te avisa antes de la primera petición.</p>
+
+      <p><strong>En Claude Code:</strong> se selecciona con un comando.</p>
+
+      <pre><code>/model fable</code></pre>
+
+      <p>Necesitas una versión reciente de Claude Code —si tu selector de modelo no lo lista, corre <code>claude update</code> primero—. Y no está disponible en configuraciones de retención cero de datos: ahí el selector lo omite o lo muestra deshabilitado.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> quitar las instrucciones que escribiste para el modelo anterior. Los prompts muy prescriptivos —"paso 1, paso 2, ahora verifica, ahora revisa otra vez"— le bajan la calidad a Fable 5, no se la suben. Verifica su trabajo por su cuenta; recordárselo lo empuja a repetir revisiones que ya hizo. Si vas a migrar un prompt largo que te funcionaba, quítale primero todo el andamiaje de verificación y compara.</p>
+      </div>
+
+      <h2>Las tres cosas que hay que saber</h2>
+
+      <div class="plugin-card">
+        <h3>1. El razonamiento no se apaga <code>siempre encendido</code></h3>
+        <p>En otros modelos puedes desactivar el pensamiento extendido para ir más rápido. En Fable 5 no: piensa siempre, y decide él mismo cuánto en cada paso. Lo que sí controlas es el nivel de esfuerzo, que va de <code>low</code> a <code>max</code>. El default es <code>high</code>, y en la práctica <code>low</code> y <code>medium</code> rinden mucho mejor de lo que sugiere el nombre.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> si una tarea sale bien pero tarda de más, baja el esfuerzo antes de cambiar de modelo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Describe el resultado, no los pasos <code>cambia el estilo de prompt</code></h3>
+        <p>Con modelos anteriores, la técnica ganadora era desmenuzar el proceso. Aquí es al revés: le das el resultado que quieres y las restricciones reales, y lo dejas planear el camino. Los prompts paso a paso lo encajonan y le impiden usar justo lo que lo hace bueno.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> escribe qué significa "terminado" y qué no puedes negociar. Nada más.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Dale la tarea completa desde el primer mensaje <code>una sola sentada</code></h3>
+        <p>Rinde mejor con una especificación completa al arranque que con instrucciones que le vas soltando de a poco a lo largo de la conversación. Cada aclaración tardía lo hace replanear. Si el trabajo va a durar horas, vale la pena invertir diez minutos en escribir bien el primer mensaje.</p>
+        <p class="plugin-for"><strong>Qué hacer:</strong> antes de mandarlo, pregúntate qué te va a preguntar. Contéstalo desde ya.</p>
+      </div>
+
+      <h2>Los 5 mejores prompts para estrenarlo</h2>
+
+      <p>Todos siguen la misma forma: resultado, restricciones, y libertad para elegir el camino.</p>
+
+      <pre><code>1) AUDITORÍA DE UN PROCESO COMPLETO
+Te voy a dar acceso a [documentos / hoja / repositorio] de nuestro proceso
+de [PROCESO, por ejemplo cotización a cobro]. Quiero saber dónde se pierde
+tiempo y dónde se pierde dinero, con evidencia de dónde lo sacaste.
+Restricciones: no puedo cambiar de sistema este año y no puedo contratar.
+Entrégame el diagnóstico y los tres cambios con mejor retorno, cada uno con
+qué se rompería si lo hago mal.</code></pre>
+
+      <pre><code>2) CAUSA RAÍZ DE ALGO INTERMITENTE
+[Descripción de la falla, cuándo aparece, cuándo no, qué ya intentamos.]
+Encuentra la causa raíz. Puede tomarte todo el tiempo que necesites y
+puedes pedirme los datos o los registros que te falten.
+No me des la primera explicación que encaje: descarta las alternativas
+explícitamente y dime con qué evidencia descartaste cada una.</code></pre>
+
+      <pre><code>3) REVISIÓN DE UN DOCUMENTO LARGO CONTRA UNA POLÍTICA
+Te paso dos archivos: nuestro documento de política interna y un contrato
+de [N] páginas que nos mandó un proveedor.
+Quiero saber qué cláusulas se salen de la política, cuáles son negociables
+y cuáles son un no rotundo, y el texto alternativo que yo propondría para
+cada una. Cita la página y el párrafo de cada hallazgo.
+Esto no sustituye la revisión de un abogado; es para llegar preparado.</code></pre>
+
+      <pre><code>4) PLAN CON RESTRICCIONES QUE SE CONTRADICEN
+Quiero [OBJETIVO] en [PLAZO], con [PRESUPUESTO] y [N] personas cuyo perfil
+es [PERFILES]. Además no puedo [RESTRICCIÓN 1] ni [RESTRICCIÓN 2].
+Sé que estas condiciones no caben todas. Dime cuál hay que soltar, cuánto
+cuesta soltarla, y arma el plan con la que decidas. Justifica el sacrificio
+antes de darme el plan.</code></pre>
+
+      <pre><code>5) EL TRABAJO QUE NORMALMENTE PARTIRÍAS EN PEDAZOS
+Quiero [MIGRACIÓN / REESCRITURA / CONSOLIDACIÓN] de [QUÉ] a [QUÉ].
+Normalmente esto lo haría por fases a lo largo de semanas. Hazlo completo
+en esta sesión: explora primero, dime tu plan, y luego ejecútalo.
+Si en el camino descubres algo que invalida el plan, cámbialo y dime por qué.
+Al final quiero la lista de lo que quedó pendiente y por qué.</code></pre>
+
+      <h2>La prueba de si te está sirviendo</h2>
+
+      <p>No la midas por la calidad de una respuesta. Mídela por cuántas veces tuviste que corregirlo.</p>
+
+      <p>Con un modelo normal, una tarea grande se ve así: le pides, revisas, corriges, le vuelves a pedir, revisas otra vez. Con Fable 5 bien usado, la forma cambia: le das el encargo completo, se tarda mucho más, y lo que regresa ya viene verificado. Si sigues en el ciclo de corregirlo cada tres mensajes, el problema es el tamaño de la tarea que le estás dando, no el modelo.</p>
+
+      <p>Y si después de dos semanas la mayoría de tu trabajo diario funcionaba igual de bien en el modelo de siempre, esa también es una respuesta válida: úsalo para las tres o cuatro cosas grandes del mes y deja el resto donde estaba. Para decidir eso caso por caso, la comparación de <a href="/guias/opus-5-vs-fable-5/">cuándo usar Opus 5 y cuándo Fable 5</a> y la <a href="/guias/hoja-de-referencia-de-modelos/">hoja de referencia de modelos</a> te ahorran la prueba y error.</p>

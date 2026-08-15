@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La ingeniería de prompts se está volviendo ingeniería de intención — Guías Flow AI</title>
+  <meta name="description" content="Describe el resultado, no los pasos, y quítate del camino de un modelo listo. Incluye un prompt convertidor que reescribe cualquier prompt por ti." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/de-prompt-a-intencion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La ingeniería de prompts se está volviendo ingeniería de intención" />
+  <meta property="og:description" content="Describe el resultado, no los pasos, y quítate del camino de un modelo listo. Incluye un prompt convertidor que reescribe cualquier prompt por ti." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/de-prompt-a-intencion/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Prompts</span></div>
+      <h1>La ingeniería de prompts se está volviendo ingeniería de intención</h1>
+      <p class="lead">Describe el resultado, no los pasos, y quítate del camino de un modelo listo. Incluye un prompt convertidor que reescribe cualquier prompt por ti.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Los trucos de prompting que aprendiste en 2023 hoy te están estorbando. "Actúa como un experto en...", "piensa paso a paso", "respira profundo", las plantillas de cinco secciones con ROLE y CONTEXT en mayúsculas. Todo eso existía porque los modelos de entonces necesitaban que los empujaras.</p>
+
+      <p>Los de ahora no. Piensan solos, planean solos y siguen instrucciones de forma mucho más literal. Eso invierte la regla: un prompt sobre-especificado —lleno de pasos, prohibiciones y andamios— ahora <em>baja</em> la calidad de la respuesta, porque el modelo se pega a tu guion en lugar de resolver el problema.</p>
+
+      <p>El oficio se está moviendo de escribir instrucciones a describir resultados. De ingeniería de prompts a ingeniería de intención. Esta guía es cómo se hace, y trae al final un prompt convertidor que te reescribe cualquier prompt viejo.</p>
+
+      <h2>Qué cambió, en una frase</h2>
+
+      <p>Antes tu trabajo era decirle al modelo <strong>cómo</strong> hacer la tarea. Ahora tu trabajo es decirle <strong>qué tiene que ser cierto</strong> cuando termine.</p>
+
+      <p>Es un cambio de rol. Dejas de ser el que dicta el método y pasas a ser el que define el criterio de aceptación. Es exactamente lo que haces cuando le encargas algo a alguien bueno: no le explicas cómo hacer su trabajo, le explicas para qué es, para quién, y cómo vas a saber si quedó bien.</p>
+
+      <h2>La diferencia en un ejemplo</h2>
+
+      <p>Un caso real de operación: analizar el pipeline de un equipo comercial.</p>
+
+      <p><strong>Como se escribía antes</strong> —instrucciones:</p>
+
+      <pre><code>Actúa como un analista de ventas senior con 15 años de experiencia.
+Piensa paso a paso.
+PASO 1: Lee el CSV.
+PASO 2: Calcula el total por etapa.
+PASO 3: Identifica los deals estancados.
+PASO 4: Haz una tabla.
+PASO 5: Escribe 3 recomendaciones.
+IMPORTANTE: NO inventes datos. NO uses lenguaje florido.
+CRÍTICO: DEBES incluir porcentajes.</code></pre>
+
+      <p><strong>Como se escribe ahora</strong> —intención:</p>
+
+      <pre><code>Adjunto el export del pipeline. Necesito saber, antes del lunes,
+en qué parte del embudo se nos está atorando el dinero y qué
+tenemos que hacer esta semana al respecto.
+
+Lo lee el director comercial, que conoce el negocio y no necesita
+que le expliquen qué es un pipeline. Va a tomar decisiones de
+asignación de gente con esto, así que cualquier cifra tiene que
+salir del archivo y ser rastreable.
+
+Está bien si el hallazgo es incómodo. Lo que no sirve es un
+resumen que no cambie ninguna decisión.</code></pre>
+
+      <p>El segundo es más corto, no tiene ni un solo paso numerado, y produce un análisis mejor. Porque el modelo ya sabe cómo se analiza un pipeline. Lo que no sabía era para quién es, cuándo se necesita, qué decisión depende de eso, y qué cuenta como respuesta inútil.</p>
+
+      <h2>Los cuatro componentes de una intención</h2>
+
+      <div class="plugin-card">
+        <h3>1. El resultado, no la tarea</h3>
+        <p>"Escribe un correo" es una tarea. "Necesito que este cliente conteste con una fecha para la junta" es un resultado. La segunda forma le deja al modelo elegir el tono, el largo y el ángulo, que es precisamente donde es bueno.</p>
+        <p class="plugin-for"><strong>La prueba:</strong> si tu frase describe algo que el modelo va a <em>producir</em>, es tarea. Si describe algo que va a <em>pasar</em>, es resultado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El lector y lo que va a hacer con esto</h3>
+        <p>Un mismo análisis se escribe distinto para un inversionista, para tu jefe y para el equipo que lo va a ejecutar. Decir quién lo lee y qué decisión va a tomar reemplaza a diez instrucciones de formato y tono.</p>
+        <p class="plugin-for"><strong>La prueba:</strong> si borraras la mitad de tus reglas de estilo y agregaras una línea sobre el lector, ¿se perdería algo? Casi nunca.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Las restricciones reales, con su porqué</h3>
+        <p>Las restricciones que importan son las que tienen consecuencia: presupuesto, plazo, marco legal, cifras que no se pueden inventar, cosas que la empresa no puede prometer. Las que no importan son las preferencias de estilo disfrazadas de reglas. Y siempre di el porqué: una restricción con motivo se aplica con criterio, una sin motivo se aplica al pie de la letra en casos donde no tiene sentido.</p>
+        <p class="plugin-for"><strong>La prueba:</strong> ¿qué pasa si el modelo rompe esta regla? Si la respuesta es "nada grave", bórrala.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Cómo sabrás que quedó bien</h3>
+        <p>Este es el que casi nadie escribe y el que más cambia el resultado. Un criterio de aceptación explícito —"tiene que traer una columna numérica de precio por SKU", "cada afirmación tiene que apuntar a una fuente del archivo"— le da al modelo con qué verificarse a sí mismo antes de entregarte.</p>
+        <p class="plugin-for"><strong>La prueba:</strong> si tú no puedes decir en una frase cómo distinguirías un buen entregable de uno malo, el modelo tampoco.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decir qué <em>no</em> es el trabajo. Los modelos actuales tienden a ampliar el alcance —te arreglan cosas que no pediste, agregan secciones que no van, refactorizan de más. Una línea del tipo "no toques el resto del documento" o "si crees que el enfoque está mal, dilo en una frase y sigue con lo que pedí" ahorra más idas y vueltas que cualquier otra cosa que escribas.</p>
+      </div>
+
+      <h2>El prompt convertidor</h2>
+
+      <p>No tienes que reescribir tu biblioteca de prompts a mano. Pégale este a Claude o a ChatGPT junto con cualquier prompt viejo y te lo convierte. Lo uso cada vez que rescato algo de mis notas de hace dos años.</p>
+
+      <pre><code>Eres un editor de prompts. Te voy a pegar un prompt que escribí
+para un modelo más viejo. Conviértelo de instrucciones a intención.
+
+Tu criterio para reescribirlo:
+
+1. BORRA el andamiaje muerto. Fuera "actúa como", "piensa paso a
+   paso", "respira profundo", "eres un experto en X con N años de
+   experiencia", los pasos numerados de tareas que son de juicio y
+   no de secuencia obligada, y los énfasis en mayúsculas.
+
+2. CONSERVA todo lo que solo yo puedo saber: quién lee esto, para
+   qué se va a usar, restricciones de negocio, límites legales,
+   datos que no se pueden inventar, formato cuando de verdad es
+   rígido, y contexto de mi empresa o mi producto.
+
+3. CONVIERTE cada prohibición en una descripción de lo que sí
+   quiero, salvo que la prohibición proteja contra un error real.
+   Si una restricción se queda, ponle el porqué en la misma frase.
+
+4. AGREGA lo que falte, y márcalo como pregunta si no lo puedes
+   deducir del original:
+   - el resultado (qué tiene que pasar, no qué tienes que producir)
+   - el lector y la decisión que va a tomar con esto
+   - el criterio de aceptación: cómo sabré que quedó bien
+   - qué queda fuera de alcance
+
+5. CONSERVA los pasos numerados SOLO cuando el orden sea
+   obligatorio de verdad (procesos destructivos, secuencias de
+   autenticación, cumplimiento). Ahí la precisión sigue ganando.
+
+Devuélveme tres cosas, en este orden:
+A) El prompt reescrito, listo para copiar.
+B) Una lista de qué borraste y por qué, en una línea cada uno.
+C) Las preguntas que necesito contestarte para que quede completo.
+
+No suavices el diagnóstico. Si el prompt original estaba pidiendo
+algo mal definido, dímelo.
+
+Aquí va el prompt original:
+---
+[PEGA AQUÍ TU PROMPT]</code></pre>
+
+      <h2>Dónde sí sigue valiendo la ingeniería de prompts</h2>
+
+      <p>Esto no es "escribe menos y ya". Hay tres lugares donde la especificación detallada sigue ganando, y confundirlos es el error más caro:</p>
+
+      <ul>
+        <li><strong>Operaciones frágiles.</strong> Comandos destructivos, flujos de autenticación, pasos de cumplimiento. Donde solo existe una secuencia segura, escribe la secuencia exacta.</li>
+        <li><strong>Descripciones de herramientas.</strong> Si le das herramientas a un agente, el detalle sobra por el lado contrario: la mayoría de las descripciones son <em>demasiado</em> escuetas. Di qué hace, cuándo llamarla, qué significa cada parámetro y qué no devuelve.</li>
+        <li><strong>Formatos rígidos de verdad.</strong> Si la salida alimenta a otro sistema, no la describas: usa salidas estructuradas y define el esquema.</li>
+      </ul>
+
+      <h2>La prueba de si lo estás haciendo bien</h2>
+
+      <p>Toma tu prompt reescrito y quítale la última frase de criterio de aceptación. ¿Cambia el resultado? Si no cambia, el criterio estaba de adorno y no era un criterio. Si cambia mucho, escribiste el prompt correcto y acabas de encontrar la parte que carga el peso.</p>
+
+      <p>Lo que veo en las empresas donde esto funciona no es que escriban prompts más elegantes. Es que la persona que escribe el prompt tiene claro qué decisión depende del resultado. Cuando eso no está claro, ningún formato de prompt lo arregla —solo produce un documento bonito que nadie usa.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

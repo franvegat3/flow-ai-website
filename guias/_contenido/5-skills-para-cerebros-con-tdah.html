@@ -1,0 +1,189 @@
+      <p>El problema casi nunca es la falta de ganas. Es que la tarea no tiene una primera línea visible: dice "preparar la propuesta" y no dice por dónde se toca. Ahí se va el día, y luego llega la culpa, que quita más energía.</p>
+
+      <p>Casi todo el consejo de productividad está escrito para alguien que ya arrancó: sirve para ordenar el trabajo, no para empezarlo. Estas cinco skills asumen lo contrario, que lo difícil es arrancar, cambiar de tarea y volver a encontrar el hilo.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de seguir:</strong> esto no es orientación médica ni sirve para diagnosticar nada. Son herramientas de trabajo. Si lo que vives te está costando el trabajo, el sueño o las relaciones, eso lo acompaña un profesional de la salud, no un archivo de texto.</p>
+      </div>
+
+      <h2>Qué es una skill, en una frase</h2>
+
+      <p>Es un archivo de instrucciones que Claude carga solo cuando la situación lo pide, sin que tú lo invoques. Eso importa más aquí que en otros temas: una herramienta que depende de que te acuerdes ya perdió.</p>
+
+      <p>En Claude Code se guarda en <code>.claude/skills/nombre/SKILL.md</code>. En la app de escritorio y en el navegador se sube desde la sección de capacidades de tu configuración. El archivo es idéntico: un encabezado entre líneas de tres guiones con <code>name</code> y <code>description</code>, y abajo las instrucciones.</p>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. Arranque de tareas <code>arranque</code></h3>
+        <p>No parte la tarea en pasos: parte el primer paso hasta que sea físico y ridículamente chico. "Abrir el documento y escribir el título" es un arranque. "Definir la estructura" no, porque sigue siendo una decisión.</p>
+        <pre><code>---
+name: arranque
+description: Convierte una tarea atorada en la primera acción física
+  de dos minutos. Úsala cuando el usuario diga que no puede empezar,
+  que lleva días con lo mismo, que no sabe por dónde entrarle, o
+  cuando pida "arráncame esto".
+---
+
+Cuando el usuario traiga una tarea atorada:
+
+1. Pregunta una sola cosa: qué pasa cuando se sienta a hacerla.
+   Una pregunta, no tres.
+
+2. Devuelve UNA acción de dos minutos, física y verificable: abrir
+   un archivo, escribir una línea, mandar un mensaje. Si incluye
+   decidir, pensar o revisar, no sirve: vuelve a partirla.
+
+3. Debajo, la acción que sigue. Solo una. No des la lista completa:
+   la lista completa es parte del problema.
+
+4. Termina con la frase exacta que va a escribir o abrir, ya
+   redactada para que solo la pegue.
+
+Reglas: no motives, no felicites, no expliques por qué cuesta
+empezar. Sin preámbulo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que tiene la propuesta abierta desde el martes. En un equipo comercial, "actualizar el pipeline" se destraba cuando se vuelve "abre la oportunidad más vieja y cámbiale la fecha".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Freno de cambio de contexto <code>freno-de-cambio</code></h3>
+        <p>El costo de cambiar de tarea no está en irse: está en volver. Esta skill te obliga a soltar el estado antes de salir, para que regresar no sea reconstruir todo.</p>
+        <pre><code>---
+name: freno-de-cambio
+description: Guarda el estado mental antes de cambiar de tarea y lo
+  devuelve al volver. Úsala cuando el usuario diga que lo
+  interrumpieron, que va a una junta, que ya no sabe en qué iba, o
+  cuando pida "guarda dónde iba".
+---
+
+Tienes dos modos.
+
+MODO GUARDAR (el usuario se va):
+Haz tres preguntas juntas, en un solo mensaje:
+- ¿En qué estabas exactamente?
+- ¿Qué era lo siguiente que ibas a hacer?
+- ¿Qué tenías en la cabeza que no está escrito en ningún lado?
+
+Con eso escribe una nota de máximo seis líneas titulada con la tarea
+y la hora. Incluye la siguiente acción redactada como orden directa.
+
+MODO VOLVER (el usuario regresa):
+Primero la siguiente acción, sola, en una línea. El contexto va
+abajo, por si lo necesita.
+
+Reglas: nunca preguntes por qué se fue ni juzgues el número de
+cambios. Si vuelve a algo que guardó hace más de una semana, pregunta
+si sigue vivo antes de retomarlo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera con juntas encimadas. En un área de finanzas durante el cierre mensual, es la diferencia entre retomar una conciliación en un minuto o en veinte.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Traductor del yo futuro <code>yo-futuro</code></h3>
+        <p>Las notas que dejas cuando entiendes el problema son ilegibles para quien las abre el jueves. Esta skill las reescribe en el idioma de quien llega sin contexto y con poca batería.</p>
+        <pre><code>---
+name: yo-futuro
+description: Reescribe notas y pendientes para la persona que los va
+  a abrir después sin contexto. Úsala cuando el usuario deje algo
+  para más tarde, guarde una idea, o diga "no voy a entender esto
+  luego".
+---
+
+Toma lo que te dé el usuario y devuélvelo en este formato:
+
+QUÉ ES: una línea. Sin jerga interna, sin abreviaturas propias.
+
+POR QUÉ IMPORTA: una línea. Qué pasa si nadie lo hace. Si no pasa
+nada, dilo: puede que no valga la pena.
+
+DÓNDE ESTÁ TODO: archivos, ligas, nombres. Si falta alguno, escribe
+la pregunta que hay que hacer para conseguirlo.
+
+PRIMERA ACCIÓN: una sola, de menos de cinco minutos, como instrucción.
+
+FECHA DE CADUCIDAD: cuándo deja de tener sentido hacerlo.
+
+Reglas: escribe como si el lector no supiera nada y no tuviera ganas.
+Prohibida cualquier frase que solo entienda quien la escribió.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que llena notas que luego no reconoce. Es también la forma más barata de que un pendiente se pueda pasar a otra persona sin una junta de por medio.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Reencuadre del rechazo <code>reencuadre</code></h3>
+        <p>Un mensaje seco de un cliente puede tumbarte la tarde. Esta skill mete un paso entre lo que leíste y lo que vas a contestar.</p>
+        <pre><code>---
+name: reencuadre
+description: Separa el contenido literal de un mensaje de la lectura
+  emocional antes de responder. Úsala cuando el usuario pegue un
+  mensaje que le cayó mal, diga que alguien está molesto con él, o
+  pida ayuda para contestar algo que le pegó.
+---
+
+Cuando el usuario pegue un mensaje o describa una situación:
+
+1. LO QUE DICE. Solo lo textual. Los hechos verificables, sin
+   interpretar el tono.
+
+2. LO QUE ESTÁS LEYENDO ENCIMA. La interpretación en una línea, sin
+   evaluarla: "estás leyendo que ya no confían en tu trabajo".
+
+3. OTRAS DOS LECTURAS. Igual de razonables con la misma información.
+   Nada de optimismo forzado: tienen que ser plausibles.
+
+4. QUÉ FALTA POR SABER. La pregunta que resolvería la duda.
+
+5. RESPUESTA SUGERIDA. Corta, sin disculpas de más y sin defensa. Si
+   lo mejor es esperar, dilo.
+
+Reglas: no digas que se está imaginando cosas ni minimices. Devuelve
+información para que decida él.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que contesta rápido y se arrepiente, y el que no contesta en tres días por la misma razón. En ventas, el filtro antes de responderle al cliente que pidió descuento en tres palabras.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Menú de dopamina <code>menu-de-dopamina</code></h3>
+        <p>Cuando el cerebro pide un premio y no hay nada preparado, la mano agarra el teléfono. La skill arma un menú por tiempo y energía, listo antes de que lo necesites.</p>
+        <pre><code>---
+name: menu-de-dopamina
+description: Arma y consulta un menú de actividades que dan
+  recompensa rápida sin tragarse la tarde. Úsala cuando el usuario
+  diga que está saturado, que necesita un descanso, que se le fue la
+  hora en el teléfono, o pida "dame algo".
+---
+
+MODO ARMAR (la primera vez):
+Pregunta por actividades que ya disfruta, no propongas tú. Ordénalas
+en cuatro columnas:
+- Aperitivos: menos de 5 minutos.
+- Platos fuertes: de 20 a 60 minutos, para después de terminar algo.
+- Guarniciones: lo que se hace mientras trabaja (música, café,
+  caminar en la llamada).
+- Postres: caros en tiempo o dinero, se agendan.
+
+MODO SERVIR (día a día):
+El usuario dice cuánto tiempo tiene y cómo está de energía. Devuelves
+UNA opción, no una lista. Si insiste, una segunda y ya.
+
+Reglas: nunca propongas nada con pantalla infinita ni conviertas el
+descanso en otra tarea productiva.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que trabaja solo y no tiene la pausa del café de oficina.</p>
+      </div>
+
+      <h2>En qué orden instalarlas</h2>
+
+      <p>No instales las cinco el mismo día: compiten por atención y acabas con un asistente que no se activa cuando debe.</p>
+
+      <ol>
+        <li><strong>Primero <code>arranque</code>.</strong> Resuelve el problema más caro. Vive con ella una semana.</li>
+        <li><strong>Luego <code>freno-de-cambio</code>.</strong> Cuando ya empiezas cosas, el cuello de botella pasa a ser volver a ellas.</li>
+        <li><strong>Después las otras tres</strong>, en el orden que te duela más.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ajustar la <code>description</code> con tus propias palabras. Si cuando estás atorado escribes "no puedo con esto" y la skill espera "ayúdame a empezar", nunca se va a disparar. Anota tres días las frases exactas que escribes cuando te trabas y pégalas ahí. Ese ajuste es la diferencia entre una skill instalada y una que funciona.</p>
+      </div>
+
+      <h2>Lo que ninguna de estas arregla</h2>
+
+      <p>Un archivo de instrucciones no cambia que tengas demasiado encima. Si tu semana tiene el doble de compromisos de los que caben, <code>arranque</code> solo te va a ayudar a empezar más cosas que no vas a terminar. Primero se recorta la lista, después se instalan herramientas: para eso está <a href="/guias/auditoria-de-tareas/">la auditoría que te dice qué automatizar</a>. Si vas a construir más de estas, <a href="/guias/3-formas-de-construir-una-skill/">las tres formas de construir una skill</a> ahorran el ensayo y error.</p>
+
+      <p>Empieza por una y úsala una semana entera. Las herramientas que sobreviven no son las más ingeniosas: son las que se activan solas el día que estás peor.</p>

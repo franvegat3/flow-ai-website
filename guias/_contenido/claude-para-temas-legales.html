@@ -1,0 +1,125 @@
+      <p>El trabajo legal de una empresa chica en México casi nunca se hace. No porque no importe, sino porque cada consulta se siente cara: hablarle al abogado por un contrato de renta, por un proveedor que no cumplió, por tres facturas que llevan noventa días sin pagarse. Entonces se firma sin leer y se cobra sin insistir.</p>
+
+      <p>Ahí es donde Claude cambia la ecuación. No porque sustituya a tu abogado, sino porque te deja llegar con él con el trabajo a la mitad: ya leíste el contrato, ya sabes qué tres cláusulas te preocupan, ya tienes el borrador de la carta. Eso convierte una consulta de cuatro horas en una de veinte minutos.</p>
+
+      <div class="callout-box">
+        <p><strong>Léelo antes de seguir:</strong> nada de lo que hay en esta guía es asesoría legal, y yo no soy abogado. Todo documento que salga de aquí es un borrador de trabajo. Antes de firmarlo, mandarlo o usarlo en cualquier trámite, tiene que revisarlo un abogado con cédula. Un texto legal mal armado no solo no te protege: puede dejarte peor de lo que estabas, y en materia de cobro o de propiedad industrial hay plazos que se vencen.</p>
+      </div>
+
+      <h2>Qué significa y qué no significa la cifra</h2>
+
+      <p>Con el anuncio de las capacidades legales de Claude circuló un número: 90.9% en un examen de referencia del sector. Vale la pena entender qué es eso. Es el desempeño en una prueba estandarizada, con preguntas cerradas y respuestas conocidas. Es una señal de que el modelo maneja el lenguaje y el razonamiento del oficio mejor que antes.</p>
+
+      <p>No es una promesa sobre tu contrato. Tu contrato tiene un contexto que no está en el texto: qué se negoció verbalmente, cómo se ha comportado la contraparte, qué tanto necesitas ese cliente. Un examen no mide nada de eso, y ese es exactamente el terreno donde vive el criterio de un abogado.</p>
+
+      <p>Lo que sí puedes hacer hoy, sin herramienta especializada, son las tres cosas de abajo. Si además usas Claude Cowork, el plugin oficial <code>legal</code> del marketplace de Anthropic ya trae parte de este trabajo empaquetado; está en la guía de <a href="/guias/plugins-cowork/">los 10 plugins que sí cambian tu día</a>.</p>
+
+      <h2>1. Revisión de contrato, cláusula por cláusula</h2>
+
+      <p>El error clásico es pedir "resume este contrato". El resumen te tranquiliza y te esconde justo lo que te iba a costar dinero. Lo que quieres es lo contrario: que te señale, cláusula por cláusula, qué te obliga a ti y qué no obliga a nadie.</p>
+
+      <pre><code>Vas a revisar un contrato. No lo resumas.
+
+Mi lado del trato: soy [proveedor / cliente / arrendatario].
+Mi objetivo: [firmar rápido / reducir riesgo / renegociar].
+País y jurisdicción: México, [estado].
+
+Devuélveme una revisión cláusula por cláusula con esta estructura,
+en el orden en que aparecen:
+
+Cláusula [número] — [tema en 3 palabras]
+- Qué dice, en español simple, una línea.
+- A quién favorece: a mí, a la contraparte o neutra.
+- Riesgo para mí: alto, medio o bajo, y por qué en una línea.
+- Redacción alternativa, solo si es alto o medio.
+
+Después de eso, cuatro listas:
+1. Lo que este contrato NO dice y debería decir: terminación
+   anticipada, penas por incumplimiento, propiedad de los
+   entregables, confidencialidad, manejo de datos personales,
+   ley aplicable y tribunales competentes.
+2. Obligaciones que quedan a mi cargo y que quizá no noté.
+3. Todo plazo, fecha y monto del documento, en una sola lista.
+4. Las 5 preguntas exactas que le llevaría a un abogado, ordenadas
+   por lo que más dinero me puede costar.
+
+No me digas que el contrato "está bien". Si algo te parece estándar,
+dilo y explica por qué es estándar.</code></pre>
+
+      <p>La lista 1 es la que más veces me ha salvado. En México, los contratos entre empresas chicas suelen omitir la cláusula de terminación anticipada y la de jurisdicción, y esas dos son las que definen qué tan caro te sale salirte y en qué ciudad te van a demandar.</p>
+
+      <h2>2. Carta de cese</h2>
+
+      <p>Alguien está usando tu nombre comercial, copió tu página completa, o un ex proveedor sigue diciendo que trabaja contigo. La primera respuesta rara vez es demandar: es un requerimiento por escrito, firmado, con fecha y con constancia de que llegó.</p>
+
+      <pre><code>Redacta un requerimiento extrajudicial (carta de cese) en español
+de México.
+
+Datos:
+- Quien reclama: [nombre o razón social, domicilio]
+- A quién se dirige: [nombre, domicilio o correo]
+- Qué está haciendo: [describe la conducta con fechas y ligas]
+- Qué derecho creo que se está afectando: [marca registrada / obra
+  propia / cláusula de confidencialidad de un contrato firmado]
+- Qué quiero que pase: [que deje de usarlo / que lo retire en X días]
+- Plazo que doy: [días naturales]
+
+Reglas:
+- Tono firme y profesional. Sin insultos, sin amenazas personales,
+  sin adjetivos.
+- Describe los hechos con fecha y evidencia. Separa hechos de
+  interpretaciones.
+- No cites artículos ni leyes específicas: deja marcada la posición
+  con [PENDIENTE: fundamento legal a confirmar por abogado].
+- No afirmes que tengo un registro que no te dije que tengo.
+- Cierra con el plazo, la vía de respuesta y la constancia de
+  recepción.
+
+Al final, aparte de la carta, dame:
+1. Qué evidencia debo conservar antes de mandarla y en qué formato.
+2. Qué se me puede voltear en contra si mando esto sin tener el
+   derecho registrado.</code></pre>
+
+      <p>Ese último punto no es decorativo. Si reclamas una marca que nunca registraste ante el IMPI, o exiges confidencialidad que nunca quedó por escrito, la carta puede dejarte expuesto. Por eso va a revisión antes de salir.</p>
+
+      <h2>3. Carta de cobro por facturas impagas</h2>
+
+      <p>Este es el que más dinero recupera y el que menos se hace. Casi todas las empresas chicas tienen cartera vencida que nadie persigue porque perseguirla se siente incómodo. Una carta formal, con el detalle correcto, cobra más que diez llamadas.</p>
+
+      <pre><code>Redacta una carta de requerimiento de pago para México.
+
+Datos:
+- Acreedor: [razón social, RFC, domicilio]
+- Deudor: [razón social, contacto]
+- Facturas: [folio fiscal, fecha de emisión, monto, condiciones de
+  pago pactadas, días de atraso] — una línea por factura
+- Documento que sustenta la relación: [contrato firmado / orden de
+  compra / correo de aceptación]
+- Interés moratorio pactado, si existe: [sí, cuál / no se pactó]
+- Qué ofrezco: [pago en una exhibición / convenio en parcialidades]
+- Fecha límite: [fecha]
+
+Reglas:
+- Profesional y sin hostilidad. Quiero cobrar, no quiero pelearme.
+- Incluye la tabla de facturas con folio, fecha, monto y días de
+  atraso, y el total.
+- Si no se pactó interés moratorio, no inventes una tasa. Escribe
+  [PENDIENTE: tasa aplicable a confirmar].
+- Cierra con: fecha límite, forma de pago, y la consecuencia
+  concreta si no hay respuesta, redactada sin exagerar.
+
+Dame además tres versiones del mismo texto:
+A) Recordatorio amable, primer contacto.
+B) Requerimiento formal, segundo contacto.
+C) Aviso previo a acciones legales, último contacto.
+
+Y una nota corta de qué documentos debería tener ordenados antes
+de escalarlo con un abogado.</code></pre>
+
+      <p>Ordena esa evidencia aunque nunca escales: contrato u orden de compra, los CFDI, los correos de aceptación del entregable y el historial de recordatorios. Si la cobranza acaba en manos de un abogado, ese expediente es la diferencia entre un caso rápido y uno imposible.</p>
+
+      <h2>Dónde está la línea</h2>
+
+      <p>Claude es excelente leyendo documentos largos, encontrando lo que falta y redactando en un tono que tú no tienes ganas de encontrar un jueves a las nueve de la noche. Es pésimo sabiendo qué te conviene: no sabe que ese cliente moroso es el que te da el 40% de tu facturación, ni que el proveedor con el contrato abusivo es el único que te surte.</p>
+
+      <p>La regla que aplico y que le pido a los equipos con los que trabajo: la IA hace la lectura y el borrador; la persona decide; el abogado revisa antes de que salga. Los tres pasos, siempre, aunque el documento se vea impecable. Un texto legal que se ve impecable y está mal es peor que uno que se ve improvisado, porque nadie lo vuelve a revisar.</p>

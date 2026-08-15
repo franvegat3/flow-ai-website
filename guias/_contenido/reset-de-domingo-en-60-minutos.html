@@ -1,0 +1,138 @@
+      <p>El lunes no se arruina el lunes. Se arruina el domingo en la noche, cuando llegas a la cama con la sensación de que se te está olvidando algo y no sabes qué.</p>
+
+      <p>Esto es lo que corro cada domingo: seis bloques de diez minutos, con temporizador. Al final tengo la semana peleada contra el calendario real, tres prioridades escritas, las comidas resueltas, el dinero revisado y el lunes ya arrancado. Sesenta minutos, y el resto del domingo es domingo.</p>
+
+      <p>Los seis prompts van completos. Copia, pega, contesta.</p>
+
+      <h2>Cómo se corre</h2>
+
+      <p>Crea un proyecto de Claude que se llame Reset de domingo y pon los seis prompts en las instrucciones del proyecto, o guárdalos en una nota. Lo importante es no volver a escribirlos: si cada domingo tienes que recordar qué preguntar, esto no llega al tercer domingo.</p>
+
+      <p>Pon temporizador de diez minutos por bloque. Cuando suene, pasas al siguiente aunque no hayas terminado. El bloque incompleto no importa; el reset abandonado sí.</p>
+
+      <p>Y usa un solo chat para los seis. El bloque 3 necesita lo que salió del 1 y del 2.</p>
+
+      <h2>Los seis bloques</h2>
+
+      <div class="plugin-card">
+        <h3>1. El vaciado <code>10 min</code></h3>
+        <p>Todo lo que traes en la cabeza, afuera. Sin ordenar, sin filtrar. Este bloque es el único que se hace hablando: dictado por voz, sin pensar.</p>
+        <pre><code>Te voy a dictar todo lo que traigo en la cabeza sobre la semana
+que viene: pendientes, preocupaciones, cosas sueltas, gente a la
+que le debo una respuesta. Va a salir desordenado.
+
+Cuando termine, devuélveme:
+1. La lista limpia, agrupada en TRABAJO, CASA y PERSONAL.
+2. Lo que en realidad es una sola cosa dicha de tres formas.
+3. Lo que ya no aplica o que nadie va a extrañar si no se hace.
+4. Lo que no depende de mí y solo estoy cargando.
+
+No propongas soluciones todavía. Solo ordena y devuélvemelo.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> la mitad de lo que te pesaba no era trabajo, era repetición.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. La semana contra el calendario <code>10 min</code></h3>
+        <p>Aquí es donde se cae el plan optimista. Le pegas tus compromisos reales y le pides que te diga cuántas horas libres quedan de verdad.</p>
+        <pre><code>Estos son mis compromisos fijos de la semana que viene, con día y
+hora: [pégalos]. Trabajo de [hora] a [hora].
+
+Con la lista del bloque anterior:
+1. Dime cuántas horas realmente libres me quedan por día, restando
+   traslados y una hora de comida.
+2. Estima cuánto tarda cada pendiente de la lista.
+3. Dime si la suma cabe. Si no cabe, dilo con el número: cuántas
+   horas de trabajo tengo para cuántas horas disponibles.
+4. Propón qué se cae o qué se mueve a la semana siguiente.
+
+No me acomodes las cosas para que quepan. Prefiero saber que no cabe.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> dejar de prometer el jueves cosas que no caben desde el domingo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Las tres prioridades <code>10 min</code></h3>
+        <p>Tres, no cinco. Y escritas como resultado terminado, no como área de atención. "Avanzar la propuesta" no es una prioridad; "propuesta mandada al cliente" sí.</p>
+        <pre><code>De todo lo que quedó en pie, elige las tres cosas que si se hacen
+hacen que la semana haya valido la pena.
+
+Para cada una devuélveme:
+- El resultado terminado, en una línea, en pasado: "propuesta
+  enviada", no "trabajar en la propuesta".
+- El día y la hora en que cabe, según el bloque anterior.
+- La primera acción de diez minutos.
+- Qué tiene que ser cierto para que no se logre. Sé concreto.
+
+Después dime qué queda fuera de las tres y por qué está bien que
+quede fuera. Necesito la frase para decirla sin culpa.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> el viernes puedes contestar si la semana sirvió o no.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El dinero <code>10 min</code></h3>
+        <p>Diez minutos alcanzan para lo que importa: qué entra, qué sale y qué se te va a pasar. No es armar un presupuesto, es no llevarte sustos.</p>
+        <pre><code>Revisión de dinero de la semana. Te doy los datos:
+- Cobros o ingresos que esperaba y aún no llegan: [lista]
+- Pagos que salen esta semana, con fecha: [lista]
+- Compras arriba de [monto] que estoy considerando: [lista]
+
+Devuélveme:
+1. Los pagos que caen antes de que entre el dinero. Ese es el
+   riesgo real, no el saldo del mes.
+2. Los cobros vencidos y a quién hay que escribirle. Redáctame el
+   mensaje de cobro, corto y sin disculpas.
+3. Una pregunta incómoda sobre las compras que estoy considerando.
+
+No me des consejos generales de finanzas personales.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> si facturas por tu cuenta o llevas un negocio chico, este bloque solo ya paga el reset. La cobranza se atrasa por no tener escrito el mensaje.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Las comidas <code>10 min</code></h3>
+        <p>El bloque que parece el menos serio y es el que más decisiones te ahorra. Cinco comidas decididas son cinco discusiones internas que no vas a tener a las dos de la tarde.</p>
+        <pre><code>Arma el plan de comidas de lunes a viernes con estas condiciones:
+- En casa cocinamos [número] personas.
+- Tiempo máximo entre semana: [minutos].
+- Lo que no comemos: [restricciones].
+- Lo que ya hay en el refrigerador y hay que gastar: [lista].
+- Los días que como fuera: [días].
+
+Devuélveme:
+1. Las cinco comidas, una por día, priorizando lo que ya tengo.
+2. La lista del súper agrupada por pasillo, no por receta.
+3. Qué se puede dejar hecho el domingo en menos de 40 minutos.
+
+Nada de recetas de más de siete ingredientes.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> menos gasto de última hora y una decisión menos al día.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. La nota para el lunes <code>10 min</code></h3>
+        <p>El último bloque no planea: entrega. Escribe la nota que vas a abrir mañana a primera hora, cuando no te acuerdes de nada de esto.</p>
+        <pre><code>Con todo lo de esta sesión, escríbeme la nota que voy a abrir
+mañana a primera hora. Máximo 12 líneas.
+
+Estructura:
+- La primera acción de mañana, sola, arriba de todo. Concreta y de
+  menos de diez minutos.
+- Las tres prioridades de la semana, en una línea cada una.
+- Los compromisos de mañana con hora.
+- Los mensajes que debo mandar antes de mediodía, ya redactados.
+- Una línea con lo que decidí NO hacer esta semana.
+
+Sin frases de ánimo. Escríbela para alguien que va a media máquina.</code></pre>
+        <p class="plugin-for"><strong>Lo que se gana:</strong> el lunes arranca en la primera acción, no en decidir cuál es.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el bloque 2 se hace con el calendario abierto, pegando los compromisos reales. Casi todos lo contestan de memoria y por eso el plan siempre cabe. Un reset que nunca te dice que no cabe la semana no te está sirviendo de nada: es un ejercicio de autoengaño con mejor formato.</p>
+      </div>
+
+      <h2>Lo que hace que se sostenga</h2>
+
+      <p>El error más común no es saltarse un bloque. Es alargarlos. El día que el reset se vuelve de dos horas, se convierte en trabajo, y lo que se vuelve trabajo se abandona el domingo que estás cansado.</p>
+
+      <p>El segundo error es no volver a abrirlo. Deja la nota del bloque 6 en el mismo lugar donde ves la hora en la mañana. Si vive en un chat que hay que buscar, no existe.</p>
+
+      <p>Si esto te funciona dos o tres domingos, el siguiente paso natural es convertirlo en algo que se dispare solo. Ahí es donde <a href="/guias/los-5-proyectos-de-claude-que-necesitas/">un proyecto bien montado</a> deja de ser una carpeta y empieza a ser un sistema, y donde <a href="/guias/archivo-sobre-mi/">un archivo de contexto sobre ti</a> hace que dejes de repetirle lo mismo cada semana.</p>
+
+      <p>Empieza este domingo con tres bloques nada más: vaciado, calendario y prioridades. Los otros tres se agregan solos cuando extrañes lo que hacen.</p>

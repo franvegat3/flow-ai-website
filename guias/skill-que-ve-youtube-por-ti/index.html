@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La skill que ve YouTube por ti — Guías Flow AI</title>
+  <meta name="description" content="Una skill que se ve el video completo —lo visual y el audio— para que puedas hacerle ingeniería inversa a un creador viral y sacar el paso a paso de cualquier video." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/skill-que-ve-youtube-por-ti/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La skill que ve YouTube por ti" />
+  <meta property="og:description" content="Una skill que se ve el video completo —lo visual y el audio— para que puedas hacerle ingeniería inversa a un creador viral y sacar el paso a paso de cualquier video." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/skill-que-ve-youtube-por-ti/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Skills</span><span class="tag">Contenido</span></div>
+      <h1>La skill que ve YouTube por ti</h1>
+      <p class="lead">Una skill que se ve el video completo —lo visual y el audio— para que puedas hacerle ingeniería inversa a un creador viral y sacar el paso a paso de cualquier video.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Ves un video con dos millones de vistas, te gusta, y sacas la conclusión equivocada: que el tema funcionó. Entonces haces un video del mismo tema y no pasa nada.</p>
+
+      <p>Lo que hizo que ese video funcionara casi nunca es el tema. Es qué aparece en pantalla en el segundo dos, cada cuánto corta, cuándo entra el texto, en qué momento cambia el tono de voz, qué promete antes de los diez segundos y cuándo la cumple. Nada de eso está en el título ni en el transcript.</p>
+
+      <p>Esta skill hace que la IA se vea el video completo —lo que se oye y lo que se ve— y te devuelva el desglose por segundos. No para copiarlo, sino para entender la mecánica y aplicarla a lo tuyo.</p>
+
+      <h2>Por qué el transcript no alcanza</h2>
+
+      <p>Casi todo el mundo que "analiza videos con IA" en realidad analiza texto: baja los subtítulos y se los pega al modelo. Sirve para entender el argumento y para nada más.</p>
+
+      <p>La retención no la sostiene el argumento. La sostiene el ritmo. Un mismo guion, leído a cámara fija sin cortes, se muere a los quince segundos; con un corte cada dos y medio y una palabra en pantalla en el momento correcto, aguanta el minuto. Si tu análisis solo ve el texto, los dos videos te parecen idénticos.</p>
+
+      <p>Lo mismo con el gancho. En el transcript el gancho son ocho palabras. En el video, el gancho es esas ocho palabras <em>más</em> lo que se ve mientras se dicen. Ahí es donde está la decisión que quieres robarte.</p>
+
+      <h2>Las dos formas de que la IA sí vea el video</h2>
+
+      <p><strong>La directa:</strong> Gemini acepta un enlace de YouTube y procesa el video con su audio. No hay que descargar nada. Es la vía más rápida y la que uso para el primer barrido.</p>
+
+      <p><strong>La de cuadros:</strong> para lo demás, bajas el video, le sacas un cuadro cada pocos segundos y le pasas al modelo los cuadros junto con el transcript con marcas de tiempo. Es más trabajo, pero funciona con cualquier modelo que vea imágenes y te deja controlar la resolución del muestreo. Con <code>yt-dlp</code> para bajar y <code>ffmpeg</code> para extraer, un cuadro cada dos segundos es suficiente para leer el ritmo:</p>
+
+      <pre><code>ffmpeg -i video.mp4 -vf fps=1/2 cuadros/%04d.jpg</code></pre>
+
+      <p>Si vas a hacer esto seguido, vale la pena que la skill haga las dos: barrido con el enlace directo, y cuadros solo del primer minuto, que es donde se decide todo.</p>
+
+      <h2>La skill</h2>
+
+      <p>Guárdala como <code>SKILL.md</code>. Si es tu primera, el procedimiento completo está en <a href="/guias/construir-skills-de-claude/">construye skills de Claude</a>.</p>
+
+      <pre><code>Nombre: desglose-de-video
+Cuándo usarla: cuando el usuario pase un enlace de YouTube y pida
+analizarlo, desglosarlo, entender por qué funcionó, o sacar el
+paso a paso para replicar la estructura.
+
+ANTES DE EMPEZAR pregunta una sola cosa: para qué formato va a
+servir el desglose (video largo, corto vertical, anuncio). El
+desglose cambia según eso.
+
+PASO 1 — VER EL VIDEO
+Procesa el video completo con audio. Si no es posible, pide el
+archivo o los cuadros. Nunca analices solo el transcript: si eso
+es todo lo que tienes, dilo antes de entregar y márcalo como
+análisis parcial.
+
+PASO 2 — LOS PRIMEROS 15 SEGUNDOS, SEGUNDO A SEGUNDO
+Para cada segundo: qué se dice, qué se ve, qué texto aparece en
+pantalla, si hubo corte. Después contesta:
+- Cuál es la promesa y en qué segundo queda hecha.
+- Qué tensión abre y en qué segundo la cierra.
+- Qué pasa en el segundo 3, exactamente.
+
+PASO 3 — MECÁNICA DEL RESTO
+- Duración total y número de cortes. Corte promedio en segundos.
+- Dónde están los tres cortes más largos y qué pasa ahí.
+- Cada aparición de texto en pantalla: segundo, qué dice, cuánto
+  dura, si repite lo que se está diciendo o agrega algo.
+- Cambios de encuadre, de locación, de energía en la voz.
+- Uso de música: entra, sube, se corta. En qué segundos.
+- Qué material de apoyo se usa y cuánto dura cada inserto.
+
+PASO 4 — ESTRUCTURA
+El video en bloques, con su marca de tiempo, y qué hace cada
+bloque: promete, prueba, tensiona, resuelve, pide algo.
+Marca el momento exacto de la llamada a la acción y qué la
+precede.
+
+PASO 5 — QUÉ SE PUEDE ROBAR
+De 5 a 8 decisiones concretas y transferibles. Una decisión es
+"el texto en pantalla nunca repite lo que dice la voz", no "buena
+edición". Cada una con el segundo donde se ve.
+
+PASO 6 — QUÉ NO
+Qué de este video depende de cosas que el usuario no tiene: la
+cara del creador, su audiencia previa, presupuesto de producción,
+acceso a algo. Sé directo. Es la parte más útil del desglose.
+
+REGLAS
+- Marcas de tiempo siempre. Una afirmación sin segundo no va.
+- No opines sobre si el video es bueno. Describe qué hace.
+- No propongas guion nuevo salvo que te lo pidan aparte.
+- Si el video dura más de 20 minutos, haz el paso 2 y 3 completos
+  solo de los primeros 3 minutos y del último minuto, y el resto
+  por bloques.</code></pre>
+
+      <h2>Qué haces con el desglose</h2>
+
+      <p>El desglose por sí solo no produce nada. Lo que lo convierte en contenido es correrlo sobre varios videos del mismo creador y buscar lo que se repite.</p>
+
+      <ol>
+        <li><strong>Cinco videos, no uno.</strong> Los tres más vistos y dos de los que no funcionaron. La comparación es donde aparece el patrón; un solo video te da anécdota.</li>
+        <li><strong>Arma la ficha del creador.</strong> Corte promedio, estructura de gancho recurrente, cuándo mete la llamada a la acción, qué hace con el texto en pantalla. Eso es su fórmula.</li>
+        <li><strong>Quédate con lo transferible.</strong> El paso 6 de la skill es el que evita que copies lo que solo funciona porque ese señor tiene esa cara y ese estudio.</li>
+        <li><strong>Escribe el tuyo con tu tema.</strong> Estructura prestada, contenido propio. Al revés —mismo tema, estructura tuya— es exactamente lo que ya no está funcionando.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> desglosar también los videos que <em>no</em> funcionaron del mismo creador. Analizar solo los éxitos te deja creyendo que todo lo que hace es la razón del éxito. Cuando metes dos fracasos suyos a la comparación, la mitad de las "claves" se caen solas, porque también estaban ahí. Lo que queda después de ese filtro sí es señal.</p>
+      </div>
+
+      <h2>Esto también sirve fuera de contenido</h2>
+
+      <p>El uso que menos gente le da es en operación. Un equipo comercial puede desglosar así las grabaciones de sus propias llamadas: en qué minuto se pierde el cliente, qué pregunta antecede a la objeción, cuánto habla cada quien. Un área de capacitación puede sacar el paso a paso de un video de producto en vez de escribir el manual desde cero.</p>
+
+      <p>Es el mismo mecanismo. La diferencia es que ahí el material es tuyo y el hallazgo se aplica el lunes.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>La ingeniería inversa se vuelve inútil en el momento en que la usas para copiar. Un video con la estructura de alguien más y su tema es un video peor que el original, y encima se nota.</p>
+
+      <p>Lo que sí compone la operación es hacerlo veinte veces sobre creadores distintos hasta que dejas de necesitar la skill, porque ya ves los cortes y el texto en pantalla sin que nadie te los marque. Ese es el verdadero entregable: dejar de consumir video como espectador. La herramienta es el andamio mientras aprendes a mirar.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

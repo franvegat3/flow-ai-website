@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 tableros escondidos en tu bandeja de entrada — Guías Flow AI</title>
+  <meta name="description" content="Tu correo es la base de datos más subestimada que tienes. Conecta Claude a Gmail y arma 5 tableros en una tarde: mapa de viajes, cargos recurrentes escondidos, gasto real en comida, reembolsos perdidos e historial de precios." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-tableros-escondidos-en-tu-correo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 tableros escondidos en tu bandeja de entrada" />
+  <meta property="og:description" content="Tu correo es la base de datos más subestimada que tienes. Conecta Claude a Gmail y arma 5 tableros en una tarde: mapa de viajes, cargos recurrentes escondidos, gasto real en comida, reembolsos perdidos e historial de precios." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-tableros-escondidos-en-tu-correo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Automatización</span></div>
+      <h1>5 tableros escondidos en tu bandeja de entrada</h1>
+      <p class="lead">Tu correo es la base de datos más subestimada que tienes. Conecta Claude a Gmail y arma 5 tableros en una tarde: mapa de viajes, cargos recurrentes escondidos, gasto real en comida, reembolsos perdidos e historial de precios.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Llevas años acumulando la mejor base de datos que tienes sobre ti y sobre tu negocio, y nunca la has consultado. Cada confirmación de vuelo, cada recibo, cada renovación automática, cada aviso de que te subieron el precio: todo eso está en tu bandeja de entrada, en texto, con fecha y con monto.</p>
+
+      <p>El problema nunca fue tener los datos. Fue que sacarlos a mano era insoportable. Buscar, abrir, copiar el monto, pegarlo en una hoja, repetir cuatrocientas veces. Con Claude conectado a Gmail eso se convierte en una tarde de trabajo, y el resultado son cinco tableros que te dicen cosas que no sabías.</p>
+
+      <h2>Cómo se conecta y cómo se trabaja</h2>
+
+      <p>Primero el conector de Gmail, en la configuración de conectores de Claude. Es acceso de lectura a tu correo, así que aplica la regla obvia: si es tu cuenta corporativa, revisa la política de tu empresa antes. Si no lo tienes activado, el paso a paso está en <a href="/guias/conectar-gmail-a-claude/">conecta tu Gmail a Claude</a>.</p>
+
+      <p>El método es el mismo para los cinco tableros y tiene tres tiempos:</p>
+
+      <ol>
+        <li><strong>Buscar acotado.</strong> Se le da la consulta exacta de Gmail, no "busca mis recibos". El buscador de Gmail es preciso y el modelo lo usa mejor cuando le pasas la sintaxis.</li>
+        <li><strong>Extraer a tabla.</strong> Una fila por correo, con columnas definidas por ti, y una columna extra con el remitente y la fecha para poder auditar.</li>
+        <li><strong>Convertir en tablero.</strong> Con la tabla ya limpia, le pides el artifact interactivo. Nunca antes: si le pides el tablero de entrada, va a inventar los huecos.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> exigir trazabilidad fila por fila. Agrega siempre esta línea al prompt: "cada fila debe traer el remitente y la fecha exacta del correo del que salió; si un dato no aparece literal en el correo, escribe SIN DATO en vez de estimarlo". Sin eso vas a tener un tablero bonito con montos aproximados, y un tablero de dinero aproximado no sirve para tomar ninguna decisión.</p>
+      </div>
+
+      <p>Este es el prompt base. Los cinco tableros son el mismo prompt cambiando la consulta y las columnas:</p>
+
+      <pre><code>Busca en mi Gmail con esta consulta exacta:
+[CONSULTA]
+
+Extrae una fila por correo con estas columnas:
+[COLUMNAS]
+
+Reglas duras:
+- Cada fila lleva remitente y fecha del correo de origen.
+- Si un dato no aparece literal en el correo, escribe SIN DATO.
+  Prohibido estimar, redondear o completar por contexto.
+- Si el mismo cargo o pedido aparece en dos correos (confirmación y
+  recibo), déjalo una sola vez y dime cuál usaste.
+- Monedas: no conviertas. Deja el monto y la moneda como venían.
+
+Primero muéstrame la tabla en texto y dime cuántos correos revisaste
+y cuántos descartaste, con el motivo. Cuando yo apruebe la tabla,
+entonces me armas el artifact del tablero.</code></pre>
+
+      <p>Dos límites que conviene saber antes de empezar. Uno: el buscador de Gmail no encuentra texto dentro de los PDF adjuntos, así que los recibos que llegan solo como archivo se te van a escapar; para esos, pídele que abra los adjuntos de una consulta corta y acotada. Dos: mucho de lo que buscas vive en la pestaña de promociones y ahí es donde el filtro se pone quisquilloso. Si un tablero sale con menos filas de las que esperabas, quítale filtros a la consulta y amplía el rango de fechas antes de concluir que no hay datos.</p>
+
+      <h2>Los 5 tableros</h2>
+
+      <div class="plugin-card">
+        <h3>1. Tu mapa de viajes</h3>
+        <p>Todos los vuelos, hoteles y rentas de auto que has pagado, en una línea de tiempo con ciudades, noches y costo. Sirve para ver el gasto real de viaje del año, para saber si ya te conviene un programa de lealtad, y en una empresa, para saber cuánto está costando de verdad ir a ver a un cliente que no ha cerrado.</p>
+        <p class="plugin-for"><strong>Consulta y columnas:</strong> <code>(subject:(confirmación OR reservación OR itinerario OR "boarding pass")) after:2024/01/01</code> · fecha de viaje, origen, destino, aerolínea u hotel, noches, monto, moneda, motivo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Los cargos recurrentes que no recuerdas</h3>
+        <p>Este es el que más dinero recupera. No las suscripciones que sabes que tienes: las que se renovaron solas después de una prueba gratis, las herramientas que un equipo contrató por su cuenta, las apps que pagas por año y que usaste dos veces. Pídele además que marque cuáles no tienen un correo de uso en los últimos seis meses.</p>
+        <p class="plugin-for"><strong>Consulta y columnas:</strong> <code>subject:(renovación OR "se renovó" OR suscripción OR receipt OR invoice) after:2025/01/01</code> · servicio, monto, periodicidad, fecha del último cargo, próximo cargo, quién lo contrató.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Tu gasto real en comida</h3>
+        <p>Pedidos a domicilio, restaurantes y súper en línea, sumados por mes y por día de la semana. El número casi siempre incomoda, y la parte interesante no es el total: es el patrón. Un pico consistente en ciertos días te dice más de tu agenda que de tu apetito, y en una operación con equipo, dice en qué días la gente se está quedando tarde.</p>
+        <p class="plugin-for"><strong>Consulta y columnas:</strong> <code>(from:(uber OR rappi OR didi) OR subject:(pedido OR "tu orden" OR ticket)) after:2025/01/01</code> · fecha, comercio, monto, propina, día de la semana, hora.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Los reembolsos que nunca llegaron</h3>
+        <p>Cancelaste un vuelo, devolviste un producto, te cobraron dos veces y te dijeron que en 15 días hábiles regresaba el dinero. La mitad de esas promesas no se cumplen y nadie las persigue porque nadie lleva la lista. Aquí la lista se arma sola: correos que prometen reembolso, cruzados contra correos que confirman el depósito.</p>
+        <p class="plugin-for"><strong>Consulta y columnas:</strong> <code>subject:(reembolso OR cancelación OR devolución OR refund) after:2024/06/01</code> · fecha de la promesa, comercio, monto, plazo prometido, ¿hay confirmación de depósito?, días transcurridos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El historial de precios de tus proveedores</h3>
+        <p>El mismo servicio, todos sus recibos, ordenados por fecha. Ahí ves el aumento que te pasaron sin avisar y el que te avisaron en un correo que no leíste. Es la mejor herramienta de renegociación que existe: llegar a la llamada con la fecha exacta en que pasaste de un precio a otro y cuántos aumentos van en dos años.</p>
+        <p class="plugin-for"><strong>Consulta y columnas:</strong> <code>from:[dominio-del-proveedor] subject:(factura OR recibo OR invoice)</code> · fecha, concepto, monto, moneda, variación contra el cargo anterior en porcentaje.</p>
+      </div>
+
+      <h2>Cómo se ve esto en una empresa</h2>
+
+      <p>Los cinco funcionan igual en un buzón corporativo, y dos de ellos se vuelven otra cosa.</p>
+
+      <p>El de cargos recurrentes corrido sobre el correo de administración o de pagos es una auditoría de software en una tarde. Lo que sale casi siempre es lo mismo: tres herramientas que hacen lo mismo contratadas por tres áreas distintas, licencias de gente que ya no trabaja ahí, y planes anuales que se renovaron con aumento sin que nadie lo aprobara.</p>
+
+      <p>El de historial de precios corrido sobre tus diez proveedores principales es el insumo de la renegociación del año. No es un ejercicio de ahorro personal: es una tabla con fechas y porcentajes que cambia el tono de la conversación con quien te surte.</p>
+
+      <h2>El orden y el error</h2>
+
+      <p>Empieza por el de cargos recurrentes. Es el que paga la tarde en la primera hora. Luego el de reembolsos, que es dinero que ya es tuyo y está esperando que alguien lo reclame. Los otros tres son de diagnóstico y pueden esperar al fin de semana.</p>
+
+      <p>El error que veo es querer los cinco tableros en un solo chat. La conversación se llena de tablas parciales, el modelo empieza a perder el hilo de qué correos ya revisó y las cifras se contaminan entre sí. Un chat por tablero, y cuando la tabla esté aprobada, guárdala fuera del chat.</p>
+
+      <p>Y no confundas el tablero con el trabajo. Ninguno de los cinco cancela una suscripción, reclama un reembolso ni renegocia un contrato. Lo único que hacen es quitarte el pretexto de no saber. Si quieres el siguiente paso, <a href="/guias/auditor-de-suscripciones/">el auditor de suscripciones</a> convierte el primer tablero en un plan de cancelaciones.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

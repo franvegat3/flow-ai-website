@@ -1,0 +1,99 @@
+      <p>La demo siempre es la misma. Alguien escribe una frase, presiona enter, y aparece una pantalla completa: tipografía elegida, jerarquía resuelta, botones en su lugar. La sala aplaude.</p>
+
+      <p>Lo que la demo no enseña es que esa frase la escribió alguien que sabe diseñar. Cuando la escribe alguien que no, sale lo que ya estás viendo en todas partes: gradiente morado, tres columnas, íconos redonditos, tipografía sin carácter. El agente no falló. Le dieron un encargo vago y contestó con el promedio de internet.</p>
+
+      <p>Aquí va qué cambió de verdad con los agentes de diseño, qué tipo de trabajo sí resuelven, y el prompt de Claude que escribe el brief creativo que cualquiera de estas herramientas sí puede ejecutar bien.</p>
+
+      <h2>Qué cambió, en una frase</h2>
+
+      <p>Antes la IA generaba imágenes que tenías que rehacer a mano; ahora los agentes operan dentro de la herramienta y producen capas editables con tus propios componentes.</p>
+
+      <p>Esa es toda la diferencia, y es enorme. Una imagen bonita que no puedes abrir no sirve para trabajar: la tienes que reconstruir. Un archivo generado con los componentes de tu librería, tus tokens de color y tus variables ya es material de producción. Pasa de inspiración a insumo.</p>
+
+      <h2>Los tres tipos que existen hoy</h2>
+
+      <p>Se están mezclando en la conversación y no hacen lo mismo. Vale la pena separarlos antes de decidir cuál te toca.</p>
+
+      <div class="plugin-card">
+        <h3>1. El agente dentro del lienzo</h3>
+        <p>Vive en tu archivo de diseño y trabaja sobre él: genera pantallas, prueba variantes, cambia una paleta en toda la vista, arma layouts usando los componentes y variables que tu equipo ya definió. El de <a href="https://www.figma.com/solutions/ai-design-agent/" target="_blank" rel="noopener">Figma</a> es el ejemplo más claro. Lo interesante no es que dibuje, es que dibuja con tu sistema, así que lo que sale se puede entregar sin rehacerlo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos que ya tienen librería de componentes. Si no tienes sistema, el agente no tiene con qué construir y regresas al promedio de internet.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El agente de plantilla y marca</h3>
+        <p>El territorio de Canva y las herramientas de contenido. No razona sobre un sistema de diseño: razona sobre plantillas, formatos y tu manual de marca. Te da volumen consistente —treinta piezas para redes, la presentación completa, el mismo mensaje en cinco tamaños— en el tiempo en que un diseñador abre el archivo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> marketing y contenido, donde el problema no es originalidad sino cantidad con la marca respetada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El agente que no dibuja</h3>
+        <p>El menos glamoroso y el que más ahorra. Anthropic publicó un plugin de diseño en su repositorio <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">knowledge-work-plugins</a> que hace crítica de diseño estructurada, auditoría de tu sistema, revisión de accesibilidad, copy de interfaz y documentos de entrega a desarrollo. Le pasas una captura o una liga y te devuelve dónde se rompe la jerarquía y qué contraste no pasa. Funciona sin conectar nada, con solo describir el diseño o pegar la imagen.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que ya diseña y no tiene con quién revisar antes de mandar a producción.</p>
+      </div>
+
+      <h2>Por qué los resultados salen genéricos</h2>
+
+      <p>Porque el prompt es el brief, y casi nadie sabe escribir un brief. "Hazme una landing moderna para una empresa de logística" tiene tres decisiones tomadas y treinta sin tomar. El agente tiene que rellenar esas treinta, y las rellena con lo que vio más veces.</p>
+
+      <p>Un brief de verdad cierra las decisiones que importan: a quién le habla, qué tiene que sentir, qué tiene que hacer, qué NO puede parecer, qué restricciones de marca hay, en qué contexto se va a ver la pieza. Con eso, cualquiera de las tres herramientas de arriba se comporta mucho mejor. Sin eso, ninguna se salva.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir qué <em>no</em> debe parecer. Es la instrucción de mayor rendimiento en todo el brief y también la única que obliga a mirar lo que ya hace tu competencia. Si no le dices que no quieres verte como los otros cuatro de tu categoría, te va a entregar exactamente eso, porque es el patrón dominante de tu industria.</p>
+      </div>
+
+      <h2>El prompt que escribe el brief</h2>
+
+      <p>Este va en Claude, no en la herramienta de diseño. Sale un brief que pegas tal cual en el agente que vayas a usar.</p>
+
+      <pre><code>Vas a actuar como director creativo y escribir un brief de diseño que después voy a pegarle a un agente de diseño para que lo ejecute.
+
+LO QUE TENGO
+Producto o servicio: [qué es y cómo gana dinero]
+Pieza que necesito: [landing, anuncio, presentación, empaque, pantalla de producto]
+Dónde se va a ver: [feed de celular, pantalla de laptop, impresa, proyectada en sala]
+Público exacto: [quién, en qué momento, qué está haciendo cuando la ve]
+Qué quiero que pase después de verla: [una sola acción]
+Marca: [colores, tipografías y reglas que ya existan; si no hay, dilo]
+Competidores que se ven así: [dos o tres, con lo que hacen visualmente]
+Restricciones: [presupuesto, tiempo, herramienta, accesibilidad, idiomas]
+
+PRIMERO
+Antes de escribir el brief, hazme las 5 preguntas cuya respuesta más cambiaría el resultado. Una por una, no todas juntas. Si algo lo puedes asumir sin riesgo, asúmelo y dime qué asumiste.
+
+DESPUÉS ENTREGA ESTE BRIEF
+
+1. EL TRABAJO
+Una frase: qué tiene que lograr esta pieza y para quién.
+
+2. LA IDEA
+El concepto en una línea, sin adjetivos de marketing. Si no se entiende leyéndolo en voz alta, no sirve.
+
+3. JERARQUÍA
+Qué se lee primero, segundo y tercero. Con el texto real de cada nivel, no con marcadores de posición.
+
+4. DIRECCIÓN VISUAL
+Ánimo en tres palabras concretas. Paleta con nombre y uso de cada color. Tipografía por función. Densidad y espacio. Estilo de imagen o ilustración.
+
+5. LO QUE NO
+Cinco cosas que esta pieza no debe parecer, y por qué. Incluye los clichés visuales de mi industria y los del diseño hecho con IA.
+
+6. ESPECIFICACIONES
+Medidas, formatos, texto máximo por bloque, contraste mínimo para accesibilidad, qué pasa en pantalla chica.
+
+7. CÓMO SE JUZGA
+Tres criterios verificables para decir si una propuesta sirve. Nada de "que se vea profesional".
+
+Escribe el brief completo, listo para copiar. Sin introducción ni despedida.</code></pre>
+
+      <h2>Cómo se ve esto en una operación real</h2>
+
+      <p>Un equipo que maneja su propia cuenta de anuncios tiene el mismo cuello de botella todos los meses: necesita variaciones para probar, y el diseñador es uno solo. Con brief escrito, ese equipo genera doce versiones de la misma idea —tres encabezados por cuatro tratamientos visuales— en una tarde, las sube en pausa y deja que los datos decidan.</p>
+
+      <p>Fíjate dónde quedó el trabajo humano: no en producir las doce piezas, sino en escribir el brief y en decidir qué se prueba. El brief se volvió el activo. Se guarda, se versiona y se reusa cada campaña.</p>
+
+      <h2>Lo que ningún agente va a hacer por ti</h2>
+
+      <p>Decidir qué merece existir. Un agente te da cuarenta opciones y ninguna te dice cuál es la buena, ni si el mensaje era el correcto desde el principio.</p>
+
+      <p>Esa parte se llama criterio y sigue siendo tuya. Se entrena mirando trabajo bueno y entendiendo por qué funciona, no generando más rápido. Si notas que todo lo que sacas se siente hecho con IA, el diagnóstico está en <a href="/guias/por-que-tus-disenos-se-ven-hechos-con-ia/">por qué tus diseños se ven hechos con IA</a>, y la forma de meterle dirección está en <a href="/guias/director-creativo-de-ia/">el director creativo de IA</a>.</p>

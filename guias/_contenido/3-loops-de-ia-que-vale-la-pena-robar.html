@@ -1,0 +1,117 @@
+      <p>Un prompt, por bueno que sea, tiene un techo: lo que se pueda resolver en una pasada. Cuando el trabajo requiere intentar, revisar y volver a intentar, el prompt se queda corto por definición, y lo que estabas haciendo era ser tú el que revisa y vuelve a pedir.</p>
+
+      <p>Un loop es exactamente eso, pero escrito. La palabra suena técnica y no lo es: un loop es una decisión sobre cuánto tiempo sigue trabajando el modelo sin ti, y bajo qué condición se detiene.</p>
+
+      <p>Hay muchos loops posibles. Tres son los que veo funcionando en operaciones reales y los que valen la pena copiar tal cual.</p>
+
+      <h2>Las tres piezas de cualquier loop</h2>
+
+      <p>Antes de los ejemplos, la anatomía, porque los loops que fallan siempre fallan por la misma pieza.</p>
+
+      <ul>
+        <li><strong>La acción.</strong> Lo que se hace cada vuelta. Es la parte fácil y la única que casi todos escriben.</li>
+        <li><strong>El juez.</strong> Cómo se sabe si esta vuelta salió mejor que la anterior. Si el juez es el propio modelo opinando de su trabajo, no hay loop: hay un monólogo con más pasos.</li>
+        <li><strong>La salida.</strong> La condición que lo detiene. Siempre son dos: la buena (se cumplió el criterio) y la mala (se acabaron los intentos, o dos vueltas seguidas sin mejorar). Sin la segunda, el loop se queda dando vueltas quemando tu límite de uso.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir la condición de salida mala antes de arrancar. Es aburrido y es lo único que separa un agente de una fuga de presupuesto. La regla que uso: máximo de intentos explícito, y freno automático si dos vueltas consecutivas no mejoran la métrica. Si no puedes definir esa métrica, todavía no tienes un loop.</p>
+      </div>
+
+      <h2>Loop 1: construir, probar, arreglar</h2>
+
+      <p>El más viejo y el más productivo. El modelo produce algo, corre una prueba objetiva, lee el resultado de la prueba y corrige. Se repite hasta que pasa o hasta que se acaban los intentos.</p>
+
+      <p>La gente cree que es solo para programar y no. Funciona en cualquier tarea donde exista una verificación mecánica: un archivo que tiene que cumplir un formato, una nómina que tiene que cuadrar contra un total, un catálogo de productos donde ningún renglón puede quedarse sin categoría. Lo que hace falta no es código, es un juez que devuelva pasa o no pasa sin opinión de por medio.</p>
+
+      <pre><code>Vas a trabajar en ciclos hasta que la verificación pase.
+
+Objetivo: [qué hay que producir]
+Verificación: [el comando, script o revisión mecánica que dice si
+está bien; tiene que devolver pasa o no pasa, no una opinión]
+
+Cada ciclo:
+1. Produce o corrige el entregable.
+2. Corre la verificación y pega el resultado completo, sin resumir.
+3. Si falla, di en una línea cuál es la causa raíz antes de tocar
+   nada. Si la causa es la misma que el ciclo anterior, cambia de
+   enfoque en vez de repetir el mismo arreglo.
+4. Vuelve al paso 1.
+
+Detente cuando pase, o después de 5 ciclos, o si dos ciclos
+seguidos fallan por lo mismo. En cualquiera de los tres casos
+entrégame: el estado final, la lista de lo que intentaste, y qué
+harías distinto con más información.
+
+No me pidas permiso entre ciclos. No declares que quedó listo sin
+pegar la salida de la verificación.</code></pre>
+
+      <h2>Loop 2: la meta-skill de objetivo</h2>
+
+      <p>El problema de los agentes largos no es que se equivoquen, es que se desvían. A la vuelta doce están resolviendo con brillantez un problema que no era el que les pediste.</p>
+
+      <p>La meta-skill es una capa que corre encima del trabajo y solo hace una cosa: recordar el objetivo y decidir si seguir. No produce nada. Cada cierto número de vueltas se detiene, relee el objetivo original, califica qué tan cerca está, y toma una de tres decisiones: continuar, cambiar de camino, o parar y pedir ayuda.</p>
+
+      <p>Suena a sobrecarga y es lo que hace que valga la pena dejar algo corriendo una hora. Guárdala como skill y actívala en cualquier tarea larga.</p>
+
+      <pre><code>Antes de empezar, escribe en pantalla el OBJETIVO en una frase y
+tres CRITERIOS DE ACEPTACIÓN medibles. No avances hasta tenerlos.
+
+Después trabaja normal, pero cada 3 pasos detente y haz este
+control, en cinco líneas máximo:
+
+- Objetivo (cópialo textual, no lo reescribas de memoria).
+- Avance: qué porcentaje de cada criterio está cumplido y con qué
+  evidencia concreta.
+- Deriva: en qué se parece lo que estoy haciendo ahora a lo que
+  pedía el objetivo. Si la respuesta cuesta trabajo, hay deriva.
+- Decisión: CONTINUAR, CAMBIAR DE ENFOQUE o PARAR.
+- Si es CAMBIAR: qué abandono y qué intento en su lugar.
+- Si es PARAR: qué necesito de la persona para seguir.
+
+Reglas de la decisión:
+- Dos controles seguidos sin avance en ningún criterio: CAMBIAR.
+- Tres controles seguidos sin avance: PARAR.
+- Si descubres que el objetivo estaba mal planteado, PARAR y dilo.
+  No lo corrijas por tu cuenta.</code></pre>
+
+      <h2>Loop 3: la cola de aprobación humana</h2>
+
+      <p>Este es el que permite que la cosa toque el mundo real. El agente trabaja solo, pero nada que salga hacia afuera —un correo a un cliente, un cambio de presupuesto, un pago, una publicación— se ejecuta directo. Todo va a una cola que una persona vacía una vez al día.</p>
+
+      <p>La diferencia con pedir permiso paso a paso es enorme. Pedir permiso en cada acción convierte al humano en cuello de botella y a la persona en niñera. La cola separa los tiempos: el agente avanza a su ritmo, tú revisas veinte decisiones juntas en diez minutos, y lo que rechazas se vuelve regla escrita para que no vuelva a proponerlo.</p>
+
+      <p>La clave está en el formato de cada renglón de la cola. Si para aprobar tienes que ir a abrir tres pestañas, la cola se acumula y en dos semanas la apruebas toda sin leer, que es peor que no tenerla.</p>
+
+      <pre><code>Trabaja de forma autónoma en todo lo que sea leer, analizar,
+redactar y preparar. Nunca ejecutes por tu cuenta nada que:
+- salga hacia un cliente o hacia afuera de la empresa,
+- mueva dinero o cambie un presupuesto,
+- borre o sobrescriba información,
+- se publique.
+
+Todo eso se acumula en una COLA DE APROBACIÓN. Cada renglón lleva
+exactamente esto y nada más:
+
+[ID] Qué se va a hacer, en una frase.
+POR QUÉ: el dato concreto que lo detonó.
+IMPACTO: monto, destinatario o alcance.
+SI NO SE HACE: qué pasa.
+REVERSIBLE: sí o no. Si no, dilo en mayúsculas.
+LISTO PARA VER: el borrador o el cambio exacto, completo.
+
+Ordena la cola por impacto, de mayor a menor. Cuando yo responda
+con los ID aprobados, ejecuta solo esos y reporta el resultado de
+cada uno.
+
+Cuando rechace algo, pregúntame por qué en una sola pregunta y
+escribe la regla que aprendiste al final del archivo de reglas.
+Nunca vuelvas a proponer algo que ya rechacé por la misma razón.</code></pre>
+
+      <h2>En qué orden se montan</h2>
+
+      <p>El error de todos es empezar por el tercero, porque es el que suena a delegar de verdad. Y el tercero sin los dos primeros es un agente que te llena la cola de propuestas malas, que tú apruebas por cansancio.</p>
+
+      <p>Va al revés. Primero el uno, en una tarea con verificación objetiva: es donde aprendes a escribir un juez que no sea el modelo dándose la razón. Después el dos, cuando ya dejes corriendo cosas largas y notes la deriva. El tres al final, y solo sobre procesos donde ya sabes cómo se ve una decisión buena, porque tu criterio es lo único que hay entre la cola y el mundo.</p>
+
+      <p>Antes de soltar cualquiera de los tres sobre una operación real, pásale <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a>. Y si todavía no tienes claro si tu caso pide un agente o basta un flujo fijo, esa frontera está en <a href="/guias/agente-o-workflow/">agente o workflow</a>.</p>

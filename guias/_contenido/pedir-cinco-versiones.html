@@ -1,0 +1,85 @@
+      <p>Casi todo el mundo trabaja igual: pide una cosa, no le gusta del todo, y empieza a pulirla. "Hazlo más corto." "Menos formal." "Que suene más fuerte." Veinte mensajes después tiene el mismo texto con distinta ropa.</p>
+
+      <p>Pulir mueve el tono. Lo que mueve el resultado es el ángulo, y el ángulo no se corrige: se cambia. Por eso el movimiento que más me ha rendido no es escribir mejores instrucciones, es pedir cinco entradas distintas al mismo problema en una sola vuelta. Cuesta prácticamente lo mismo que pedir una, y una de las cinco casi siempre dice lo que llevabas semanas sin poder poner en palabras.</p>
+
+      <h2>Por qué cinco, y por qué falla cuando lo pides mal</h2>
+
+      <p>Si escribes "dame cinco versiones", te dan cinco veces lo mismo con sinónimos. El modelo tiende a la respuesta más probable, así que sin instrucción explícita las cinco salen del mismo lugar.</p>
+
+      <p>La variación tiene que venir declarada por eje. Le dices desde qué cinco lugares distintos quieres que entre, y le prohíbes repetir estructura entre versiones. Ahí es cuando aparecen opciones que no se te habrían ocurrido, porque ninguna es una variante de otra.</p>
+
+      <h2>El prompt maestro</h2>
+
+      <pre><code>Necesito [qué es: un titular / un correo de reactivación / el nombre
+de una oferta / la apertura de una propuesta].
+
+Contexto que no puedes ignorar:
+- Para quién es: [describe a la persona concreta, no un segmento]
+- Qué tiene que lograr: [la acción única que buscas]
+- Restricción real: [precio, plazo, canal, límite legal, lo que sea]
+- Qué ya intentamos y no funcionó: [si aplica]
+
+Dame cinco versiones, cada una entrando desde un ángulo distinto:
+
+1. El costo de no actuar.
+2. La objeción principal, dicha en voz alta antes que el beneficio.
+3. Un detalle concreto y verificable de la operación, sin adjetivos.
+4. La comparación contra la alternativa real que la persona está
+   considerando hoy, incluida "no hacer nada".
+5. El ángulo que nadie de mi categoría está usando.
+
+Reglas:
+- Ninguna versión puede compartir la estructura de otra. Si dos se
+  parecen, cambia la segunda.
+- Cero datos inventados. Si un ángulo necesita un dato que no te di,
+  escribe [FALTA: qué dato] en su lugar.
+- Debajo de cada versión, una línea: a qué tipo de persona le pega esta
+  y a cuál no.
+- No me digas cuál te gusta más todavía.</code></pre>
+
+      <h2>La versión para una cuenta de anuncios</h2>
+
+      <p>Aquí es donde más rinde, porque el ángulo es justo la variable que la plataforma no puede optimizar por ti. Puedes probar creativos toda la vida y seguir compitiendo dentro del mismo argumento.</p>
+
+      <pre><code>Vamos a escribir cinco conceptos de anuncio para [producto o
+servicio], no cinco textos del mismo concepto.
+
+Datos:
+- Cliente que ya compra: [quién es, qué problema tenía]
+- Lo que dice el cliente cuando explica por qué compró: [cita textual
+  si la tienes]
+- Objeción número uno en la llamada de venta: [cuál]
+- Alternativa real del comprador: [competidor, hacerlo interno, o nada]
+
+Para cada uno de los cinco conceptos dame:
+- El ángulo en una frase (qué creencia intenta mover).
+- El gancho de las primeras tres segundos o la primera línea.
+- El cuerpo, máximo 60 palabras.
+- La llamada a la acción.
+- La razón por la que este concepto puede fracasar.
+
+Ángulos obligatorios, uno por concepto: costo de no actuar, objeción de
+frente, demostración concreta, comparación contra la alternativa real,
+y un ángulo que no esté en mi categoría.
+
+No uses cifras, porcentajes ni testimonios que yo no te haya dado.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la línea de "qué ya intentamos y no funcionó". Sin ella, el modelo va a proponerte con toda seguridad justo lo que ya probaste y descartaste. Es el dato más barato de dar y el que más recorta el desperdicio.</p>
+      </div>
+
+      <h2>Cómo elegir sin arruinarlo</h2>
+
+      <p>No elijas la que más te guste. Con cinco opciones enfrente, la que más gusta suele ser la más parecida a lo que ya hacías.</p>
+
+      <ol>
+        <li><strong>Tacha las que un competidor podría firmar sin cambiar nada.</strong> Normalmente caen dos.</li>
+        <li><strong>De las que quedan, quédate con la que tenga la objeción más fácil de contestar.</strong> No la que no tenga objeciones: esa es la que no dice nada.</li>
+        <li><strong>Pide el híbrido explícito.</strong> "Toma el ángulo de la 4 y el remate de la 2, y escríbelo otra vez." Ese suele ser el bueno.</li>
+      </ol>
+
+      <h2>Dónde no sirve</h2>
+
+      <p>En tareas con una sola respuesta correcta, pedir cinco versiones es tirar tiempo. Una minuta, una conciliación, un resumen de una llamada, un formato: ahí quieres la versión estándar y quieres una sola.</p>
+
+      <p>Sirve donde hay juicio de por medio y donde el costo de equivocarse de ángulo es alto: campañas, propuestas, nombres, la apertura de un correo en frío, la forma de dar una mala noticia. Si además quieres que las cinco arranquen lejos del promedio, corre esto encima de <a href="/guias/skill-de-criterio/">la skill de criterio</a> y compara. La diferencia entre las dos salidas es la mejor demostración de por qué el primer borrador nunca es el bueno.</p>

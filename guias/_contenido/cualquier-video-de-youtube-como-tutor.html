@@ -1,0 +1,105 @@
+      <p>Ves una clase de dos horas en YouTube. Le entiendes todo mientras la ves. A la semana siguiente no puedes explicar ni la mitad, y si alguien te pregunta, contestas con la sensación de que "algo así era".</p>
+
+      <p>No es tu memoria. Ver un video es reconocimiento pasivo: sientes que sabes porque el material te resulta familiar. Aprender es otra cosa —es poder recuperar la información sin tenerla enfrente— y eso solo pasa cuando te obligan a producir la respuesta.</p>
+
+      <p>Este flujo convierte cualquier video en el material que sí te obliga: un temario con marcas de tiempo, preguntas que te hacen recuperar, y una app interactiva hecha a la medida de ese contenido. Toma unos cinco minutos y usa dos herramientas gratuitas de Google.</p>
+
+      <h2>Qué hace cada herramienta</h2>
+
+      <p><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a> es un cuaderno que solo responde con base en las fuentes que tú le das, y cita de dónde sacó cada cosa. Acepta un video de YouTube como fuente directa, tomando su transcripción. Su valor aquí es que no inventa: si algo no estaba en el video, te lo dice.</p>
+
+      <p><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a> es el que construye. Con su lienzo de trabajo puede generar una aplicación interactiva completa a partir de un texto, y eso es lo que va a hacer con el material del cuaderno.</p>
+
+      <p>La división de trabajo es la clave del flujo: uno extrae con fidelidad, el otro construye. Si le pides directo a un modelo general que te haga la app desde la liga del video, vas a acabar con una app bonita sobre un contenido que se inventó a medias.</p>
+
+      <h2>Paso 1: el video entra a NotebookLM</h2>
+
+      <p>Creas un cuaderno nuevo, eliges agregar fuente y pegas la liga del video. Requisito: el video tiene que ser público y tener transcripción disponible. Si es privado, si no tiene subtítulos o si el audio es una grabación muy sucia, no va a jalar y te vas a ahorrar el intento.</p>
+
+      <p>Aprovecha para agregar otras fuentes en el mismo cuaderno: el PDF del curso, la documentación oficial de lo que estás estudiando, otro video del mismo tema. Entre más fuentes buenas, más completo el material y más fácil que el cuaderno te marque dónde el video se contradice con la documentación.</p>
+
+      <h2>Paso 2: sacar el material base</h2>
+
+      <p>Aquí no le pides un resumen. Un resumen es exactamente lo que no necesitas: te devuelve la sensación de familiaridad sin el esfuerzo de recuperar.</p>
+
+      <pre><code>Con base únicamente en las fuentes de este cuaderno, arma el
+material de estudio. No resumas.
+
+1. TEMARIO
+   Los conceptos que se enseñan, en el orden en que aparecen. Para
+   cada uno: nombre, definición en una frase, y la marca de tiempo
+   donde se explica.
+
+2. LO QUE HAY QUE ENTENDER, NO MEMORIZAR
+   Los 5 mecanismos o relaciones de causa y efecto más importantes.
+   Explica cada uno como si yo tuviera que aplicarlo mañana.
+
+3. PREGUNTAS DE RECUPERACIÓN
+   20 preguntas abiertas ordenadas de fácil a difícil. Ninguna se
+   contesta con sí o no. Aparte, la respuesta correcta de cada una
+   con su marca de tiempo.
+
+4. ERRORES PROBABLES
+   Qué se suele confundir de este tema, y por qué. Si el video lo
+   advierte, cítalo.
+
+5. HUECOS
+   Qué preguntas quedan sin responder con estas fuentes. Sé
+   explícito: prefiero saber qué me falta.
+
+Regla: si algo no está en las fuentes, no lo escribas. Marca cada
+sección con la cita de dónde salió.</code></pre>
+
+      <p>Copia esa salida completa. No hay un botón que mande el cuaderno a Gemini: lo que viaja es este documento, y es suficiente.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección 5. Un video de YouTube es la opinión de una persona, y casi siempre deja fuera lo incómodo. Saber qué no te contestó el material es lo que te dice si necesitas una segunda fuente antes de dar el tema por aprendido. Y si estás estudiando algo donde equivocarse cuesta —dinero, salud, temas legales— verifica contra la documentación oficial antes de memorizar nada. Un video puede estar desactualizado y el cuaderno lo va a repetir con total seguridad, porque su trabajo es ser fiel a la fuente, no tener la razón.</p>
+      </div>
+
+      <h2>Paso 3: la app interactiva</h2>
+
+      <p>Abres Gemini, activas el lienzo de trabajo, pegas el material y pides la aplicación.</p>
+
+      <pre><code>Te voy a pegar el material de estudio de un curso. Constrúyeme
+una aplicación web interactiva de una sola página para aprenderlo.
+
+Debe tener:
+- Un mapa del temario como pantalla de inicio, con el avance de
+  cada tema visible.
+- Tarjetas de estudio por concepto: pregunta de un lado, respuesta
+  del otro, y que yo marque si la supe o no.
+- Un quiz por tema, con opción múltiple y con preguntas abiertas.
+  Al fallar, no me des solo la respuesta: dime por qué lo que elegí
+  está mal.
+- Un modo de repaso que me vuelva a mostrar únicamente lo que
+  fallé, y que lo repita con más frecuencia mientras siga fallando.
+- Un registro de mis errores por concepto, para ver dónde estoy
+  flojo.
+- Las marcas de tiempo del video en cada concepto, para regresar
+  a la fuente.
+
+Reglas:
+- Todo el contenido sale del material que te pego. No agregues
+  temas ni ejemplos que no estén ahí.
+- Que funcione en un solo archivo y que guarde mi avance en el
+  navegador.
+- Interfaz limpia, en español, legible en celular.
+
+Material:
+[pega aquí la salida de NotebookLM]</code></pre>
+
+      <p>Pruébala y pide ajustes en el mismo lienzo: más preguntas de un tema, subir la dificultad, cambiar el orden. Cada iteración toma segundos, y ya no estás pagando el costo de armar el contenido: ese ya está.</p>
+
+      <h2>Para qué sirve esto en una empresa</h2>
+
+      <p>El caso más directo es la capacitación que ya existe y que nadie termina. Toda empresa tiene grabaciones: la sesión de producto, el webinar del proveedor, la explicación del proceso que dio alguien que ya se fue. Están en una carpeta y nadie las abre porque son dos horas de video.</p>
+
+      <p>Ese mismo flujo las convierte en una app de práctica de veinte minutos por tema. Para un equipo comercial que tiene que dominar objeciones y detalles de producto, la diferencia es medible: un vendedor nuevo que hizo el quiz de objeciones tres veces llega a la llamada distinto que uno que vio el video en segundo plano.</p>
+
+      <p>Con dos cuidados. Uno, no metas grabaciones con información confidencial de clientes a herramientas que no estén aprobadas por tu empresa. Dos, alguien del equipo tiene que revisar el material generado antes de repartirlo: si el video traía un precio viejo, ahora ese precio viejo está en un quiz que todo el mundo va a estudiar.</p>
+
+      <h2>El error que hace inútil todo esto</h2>
+
+      <p>Armar la app y usarla una vez. Se siente productivo, se ve impresionante, y funciona igual de mal que ver el video.</p>
+
+      <p>La única parte que enseña es la de fallar y volver a intentar, repartida en varios días. Tres sesiones de quince minutos en tres días distintos valen más que una tarde completa. Si abres la app hoy, mañana y el viernes, para el lunes puedes explicar el tema sin abrirla. Ese es el punto, y es el único que cuenta.</p>

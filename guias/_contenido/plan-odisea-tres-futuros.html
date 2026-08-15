@@ -1,0 +1,113 @@
+      <p>La mayoría de la gente no tiene un plan de carrera. Tiene un plan y una angustia: seguir en lo mismo, o el vacío. Y como el vacío da miedo, se sigue en lo mismo por default, no por decisión.</p>
+
+      <p>El Plan Odisea existe para romper esa falsa disyuntiva. Sale del curso de <em>Designing Your Life</em> de Stanford, de Bill Burnett y Dave Evans, y la idea central es sencilla: no diseñas una vida, diseñas tres, y las comparas. Tres futuros distintos, no tres versiones del mismo.</p>
+
+      <p>Toma diez minutos hacerlo mal y una hora hacerlo bien. Abajo está el ejercicio y el prompt que lo construye contigo, con una vuelta de tuerca: cada plan tiene que decir explícitamente qué hace la IA dentro de él. En 2026 un plan de carrera que no responde eso está incompleto.</p>
+
+      <h2>Qué es un Plan Odisea</h2>
+
+      <p>Son tres planes de cinco años, escritos en paralelo, que responden a tres preguntas distintas:</p>
+
+      <ul>
+        <li><strong>Plan A — lo que ya traes.</strong> Tu vida actual, proyectada cinco años hacia adelante si todo sale razonablemente bien. No es el plan aburrido: es la línea base contra la que vas a comparar.</li>
+        <li><strong>Plan B — si lo de hoy desaparece.</strong> Tu puesto se automatiza, tu industria se contrae, tu cliente principal se va. ¿Qué harías? La regla es que no puede ser una variante del A.</li>
+        <li><strong>Plan C — si el dinero y la opinión de los demás no importaran.</strong> Qué harías si tuvieras el dinero resuelto y nadie se fuera a enterar de tu decisión. Este es el que la gente escribe con vergüenza y es el que más información trae.</li>
+      </ul>
+
+      <p>Los tres tienen que ser vidas que de verdad te gustaría vivir. Un Plan B que odias no sirve como plan B, sirve como amenaza.</p>
+
+      <h2>Las cuatro piezas de cada plan</h2>
+
+      <p>El formato del curso pide, para cada plan, una línea de tiempo de cinco años con los hitos, un título de tres a cinco palabras (como el título de una película), y dos o tres preguntas abiertas que ese plan tendría que resolver.</p>
+
+      <p>Después cada plan se califica del 1 al 5 en cuatro tableros:</p>
+
+      <ol>
+        <li><strong>Recursos</strong> — ¿tienes el tiempo, el dinero, la habilidad y los contactos para esto?</li>
+        <li><strong>Gusto</strong> — ¿qué tanto te emociona de verdad, no en teoría?</li>
+        <li><strong>Confianza</strong> — ¿qué tan seguro te sientes de poder ejecutarlo?</li>
+        <li><strong>Coherencia</strong> — ¿este plan embona con quién eres y qué crees, o es el plan de alguien más?</li>
+      </ol>
+
+      <p>La calificación no elige por ti. Sirve para ver el patrón: casi siempre el plan con más gusto es el que tiene menos recursos, y ahí es donde está la conversación real.</p>
+
+      <h2>El prompt que arma los tres</h2>
+
+      <p>Este prompt hace el ejercicio contigo, no por ti. Lo primero que hace es preguntarte; si le pides que escriba los tres planes de una, te va a dar tres planes genéricos que no son tuyos.</p>
+
+      <pre><code>Vas a guiarme por el ejercicio del Plan Odisea del curso
+Designing Your Life de Stanford: tres planes de cinco años,
+radicalmente distintos entre sí.
+
+FASE 1 — ENTREVISTA
+Antes de escribir nada, hazme estas preguntas de una en una y
+espera mi respuesta antes de la siguiente:
+1. ¿A qué te dedicas hoy y desde cuándo?
+2. ¿Qué parte de tu trabajo actual harías gratis?
+3. ¿Qué parte harías solo si te pagan?
+4. ¿Qué sabes hacer que a la gente le sorprende que sepas?
+5. ¿Qué tienes que sea difícil de copiar: una red de contactos,
+   un acceso, una experiencia rara, un idioma, un oficio?
+6. ¿Cuánto necesitas ganar al mes para no estar en estrés?
+7. ¿Qué restricciones son reales y no negociables: ciudad,
+   familia, salud, deudas?
+8. ¿Qué es lo que más te da miedo que pase en cinco años?
+
+Si mis respuestas son vagas, repregunta antes de avanzar.
+
+FASE 2 — LOS TRES PLANES
+Con eso, escribe tres planes de cinco años:
+- PLAN A: mi trayectoria actual, bien ejecutada.
+- PLAN B: qué haría si lo que hago hoy dejara de existir. No
+  puede ser una variante del A: distinta industria, distinto
+  modelo de ingreso o distinto rol.
+- PLAN C: qué haría si el dinero estuviera resuelto y nadie
+  fuera a opinar sobre mi decisión.
+
+Para cada plan dame:
+- Un título de 3 a 5 palabras, como título de película.
+- Línea de tiempo año por año, del 1 al 5, con el hito de cada
+  año. Hitos concretos y verificables, no aspiraciones.
+- Cómo se gana dinero en ese plan, con qué modelo.
+- Qué habilidad tengo que construir que hoy no tengo.
+- 3 preguntas abiertas que ese plan tendría que resolver.
+- EL PAPEL DE LA IA: qué hace la IA dentro de ese plan. Divide
+  en tres: (a) qué parte de ese trabajo la IA hace mejor que yo
+  en cinco años, (b) qué parte se vuelve más valiosa
+  precisamente porque la IA existe, (c) qué tendría que aprender
+  para estar del lado correcto de esa línea.
+
+FASE 3 — TABLEROS
+Califica cada plan del 1 al 5 en recursos, gusto, confianza y
+coherencia. Explica cada calificación en una línea, usando lo
+que te dije en la fase 1. No me califiques parejo para quedar
+bien.
+
+FASE 4 — LA PRUEBA MÁS BARATA
+Para cada plan, dame un experimento que pueda hacer en 30 días,
+que cueste menos de lo que gasto en un fin de semana, y que me
+diga algo real sobre si ese plan me late. Nada de "investiga
+más": tiene que ser algo que produzca una conversación, un
+prototipo o un primer cliente.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la fase 4. La gente termina con tres planes bonitos y ninguno se toca nunca. El ejercicio no se cierra eligiendo un plan —no tienes información para elegir—; se cierra con tres experimentos de 30 días. Sales de aquí con una llamada agendada, no con un documento.</p>
+      </div>
+
+      <h2>Cómo se ve en alguien que ya está operando</h2>
+
+      <p>Un gerente comercial con quince años en la misma industria hace el ejercicio. El Plan A dice director comercial en cinco años. El Plan B, que le costó trabajo escribir, es montar una operación propia de generación de demanda para empresas de su sector. El Plan C, el que escribió con pena, es enseñar.</p>
+
+      <p>Los tableros salen así: el A tiene recursos altos y gusto medio, el B tiene gusto alto y confianza baja, el C tiene coherencia alta y recursos bajos. Ese perfil es el más común que veo.</p>
+
+      <p>Lo que la mayoría concluye —"entonces me quedo en el A"— es la lectura equivocada. La lectura útil es que el B y el C comparten una habilidad: explicar y vender una idea a alguien que no la conoce. Esa habilidad se puede construir sin renunciar a nada, dentro del A, este trimestre. Y en la columna de IA, el análisis de cuentas y la redacción de propuestas es lo que se automatiza; la relación con el segundo decisor y el criterio de a qué cliente decir que no, es lo que se vuelve más caro.</p>
+
+      <h2>Los errores que arruinan el ejercicio</h2>
+
+      <p><strong>Tres planes que son el mismo.</strong> Si tus tres planes son "lo mismo pero en otra empresa", no hiciste el ejercicio. La prueba: si un plan lo puedes ejecutar con el mismo currículum que el otro, no son distintos.</p>
+
+      <p><strong>Dejar que la IA escriba el Plan C.</strong> Es el que más se contamina, porque el modelo tiende a escribir el sueño estándar: un negocio propio, una cabaña, un libro. Tu Plan C tiene que ser incómodamente específico. Si no te da un poco de pena leerlo en voz alta, es de alguien más.</p>
+
+      <p><strong>Confundirlo con metas.</strong> Un plan odisea no es una lista de objetivos; es una hipótesis de vida completa. Si quieres el ejercicio complementario, la <a href="/guias/ejercicio-de-vision-vivida/">visión vívida</a> es el que trabaja el detalle sensorial de uno solo de estos futuros. Y si de aquí sale que necesitas cambiar de puesto, sigue con el <a href="/guias/plan-de-30-dias-para-tu-siguiente-trabajo/">plan de 30 días para tu siguiente trabajo</a>.</p>
+
+      <p>Guarda los tres planes en un archivo con la fecha de hoy. Reléelos en seis meses. Lo interesante no va a ser cuál elegiste: va a ser cuál cambió.</p>

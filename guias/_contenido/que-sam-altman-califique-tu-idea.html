@@ -1,0 +1,112 @@
+      <p>Tu idea de negocio le ha gustado a todo el mundo. A tu socio, a tu pareja, a los tres amigos a los que se la contaste en la comida. Eso no significa nada. Nadie te va a decir en la cara que tu idea es mala, y la IA menos que nadie: si le preguntas qué opina, te va a felicitar y te va a proponer un nombre.</p>
+
+      <p>Lo que necesitas no es una opinión más. Necesitas que alguien tome tu idea y la someta a un criterio duro y escrito por alguien que ha visto miles de empresas nacer y morir, y te diga en qué parte estás débil. Antes de renunciar, antes de meter ahorros, antes del año que se va sin darte cuenta.</p>
+
+      <p>Sam Altman publicó gratis su manual de startups. Aquí está cómo lo convierto en el juez de una idea, con el prompt completo.</p>
+
+      <h2>Qué es el material y por qué funciona como juez</h2>
+
+      <p>El <em>Startup Playbook</em> está publicado en abierto en <a href="https://playbook.samaltman.com/" target="_blank" rel="noopener">playbook.samaltman.com</a>, y sus ensayos están en <a href="https://blog.samaltman.com/" target="_blank" rel="noopener">blog.samaltman.com</a>. No es un curso ni un embudo: es texto, gratis, escrito desde la posición de alguien que evaluó una cantidad absurda de empresas en etapa temprana.</p>
+
+      <p>Lo que lo hace un buen juez es que su estructura ya es un criterio. Ordena todo en cuatro cosas —idea, equipo, producto, ejecución— y sostiene posiciones incómodas: que es mejor que un grupo pequeño de usuarios ame lo que haces a que un grupo grande lo apruebe; que el mercado y el "por qué ahora" pesan más que lo ingenioso del producto; que una empresa que no crece no se está incubando, se está muriendo despacio.</p>
+
+      <p>Un modelo por sí solo te da consejos de negocio genéricos. Un modelo con este material adentro te da una evaluación con un punto de vista, que es lo que necesitas para que la crítica muerda.</p>
+
+      <h2>Paso 1: mete el material</h2>
+
+      <p>Crea un proyecto de Claude y llámalo como se llame tu idea. En el conocimiento del proyecto pon el contenido del playbook y de los ensayos que te interesen. Si tienes búsqueda web activa, puedes pasarle las direcciones y pedirle que las lea; si no, copiar y pegar el texto funciona igual de bien.</p>
+
+      <p>Después, en el mismo proyecto, escribe en un mensaje aparte la descripción de tu idea. Sin adornos de pitch: qué haces, para quién, cómo cobras, qué ya existe hoy y qué has hecho hasta ahora. Cinco párrafos honestos valen más que una presentación de veinte láminas.</p>
+
+      <h2>Paso 2: el prompt</h2>
+
+      <pre><code>Eres un evaluador de empresas en etapa temprana. Tu único
+marco de referencia es el material que está en el conocimiento
+de este proyecto: el Startup Playbook y los ensayos de Sam
+Altman. No uses consejos genéricos de negocio ni frameworks
+de consultoría. Si algo no está cubierto por el material,
+dilo explícitamente en vez de rellenar.
+
+Tu trabajo NO es animarme. Es encontrar dónde se rompe esta
+idea. Asume que tengo un año de vida y ahorros limitados, y
+que tu evaluación decide si los gasto aquí.
+
+Evalúa mi idea en estas seis dimensiones. Para cada una:
+- Una calificación del 1 al 10.
+- La razón en dos o tres frases, citando qué parte del
+  material la sustenta.
+- La pregunta que yo debería poder contestar y hoy no puedo.
+
+1. MERCADO. ¿Es un mercado grande y creciendo, o grande y
+   estancado? ¿Por qué ahora y no hace cinco años?
+2. AMOR CONTRA APROBACIÓN. ¿Hay un grupo pequeño de gente
+   que ame esto, o mucha gente a la que le parece buena idea?
+3. CLARIDAD. ¿Se puede explicar en una frase sin adjetivos?
+   Escríbela tú. Si no se puede, dime por qué.
+4. DIFERENCIA. ¿Qué pasa cuando alguien con más dinero copia
+   esto en seis meses? ¿Qué queda de mi lado?
+5. EQUIPO. ¿Somos las personas obvias para hacer esto?
+   ¿Qué falta y qué tan caro es conseguirlo?
+6. EJECUCIÓN. ¿Cuál es la métrica que debería crecer cada
+   semana y qué tan rápido? ¿Ya la puedo medir?
+
+Después de las seis dimensiones, entrégame:
+
+A) LA CALIFICACIÓN GLOBAL, con la dimensión más débil
+   señalada explícitamente.
+B) LAS TRES SUPOSICIONES que, si son falsas, hunden todo.
+   Ordénalas de la más peligrosa a la menos.
+C) EL EXPERIMENTO DE 14 DÍAS que probaría la suposición
+   número uno, con lo que tendría que pasar para considerarla
+   confirmada y el número exacto que la desmiente.
+D) LA VERSIÓN MÁS FUERTE DE ESTA IDEA que se puede armar con
+   lo mismo que ya tengo, si la que traigo está mal enfocada.
+E) LA RAZÓN MÁS PROBABLE POR LA QUE ESTO FRACASE, en una
+   frase, sin suavizarla.
+
+Reglas:
+- Nada de "depende" sin comprometerte con una respuesta.
+- Si mi descripción no te alcanza para calificar algo,
+  pregúntamelo antes de inventarlo.
+- No propongas nombre, logo, ni plan de marketing.</code></pre>
+
+      <h2>Cómo se lee el resultado</h2>
+
+      <p>La calificación global es lo menos importante. Lo que vale son tres cosas.</p>
+
+      <ul>
+        <li><strong>La pregunta que no puedes contestar.</strong> Aparece una por dimensión. La que te haga sentir incómodo es tu siguiente semana de trabajo, no un pendiente para después.</li>
+        <li><strong>La suposición número uno.</strong> Casi siempre es una sobre la demanda, y casi siempre es la que llevas meses evitando probar porque probarla implica hablar con desconocidos.</li>
+        <li><strong>La versión más fuerte de la idea.</strong> Es el apartado que más gente ignora y el que más veces me ha cambiado un proyecto. No es "tu idea está mal": es "tienes los ingredientes apuntando al problema equivocado".</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedir la evaluación otra vez cuando la primera salió bien. Si tu idea sacó ochos y nueves en todo, la revisión no fue dura: fue complaciente contigo. Pega esto como respuesta: "Vuelve a evaluar asumiendo que eres el inversionista que ya rechazó tres empresas idénticas a esta y sabe exactamente cómo murieron. Sé más duro." La segunda pasada es la buena.</p>
+      </div>
+
+      <h2>La segunda ronda: el plan de las dos semanas</h2>
+
+      <p>La evaluación no sirve de nada si se queda en documento. El seguimiento que sí convierte esto en acción es corto:</p>
+
+      <pre><code>Toma el experimento de 14 días que propusiste y conviértelo
+en un plan diario. Para cada día: la acción concreta, a
+quién contacto, qué le digo y cuánto tiempo me toma. Asume
+que tengo dos horas al día y cero presupuesto de anuncios.
+Al final, dime en qué día debería cancelarlo si los números
+van mal.</code></pre>
+
+      <p>Ese último punto —cuándo cancelar— es el que evita el año perdido. Escribirlo antes de empezar, cuando todavía no estás enamorado de los resultados, es la única forma de que se respete.</p>
+
+      <h2>El mismo movimiento dentro de una empresa que ya factura</h2>
+
+      <p>Esto no es solo para fundadores en su cochera. La misma evaluación se le aplica a una línea de negocio nueva dentro de una empresa que ya opera, y ahí encuentra cosas más rápido, porque el mercado y el equipo ya son conocidos y el hoyo casi siempre está en las dimensiones tres y cuatro: no se puede explicar en una frase, o no queda nada del lado propio cuando alguien lo copia.</p>
+
+      <p>Cambia una línea del prompt: donde dice "tengo un año de vida y ahorros limitados", pon el presupuesto y el plazo reales del proyecto interno. El resto funciona igual.</p>
+
+      <h2>El error que hace inútil todo esto</h2>
+
+      <p>Describir la idea como se la cuentas a un inversionista. Si le pasas el pitch, evalúa el pitch. Los adjetivos, el mercado inflado y el "somos el Uber de" se los va a creer, porque no tiene otra fuente que tú.</p>
+
+      <p>Descríbela como se la contarías a alguien que ya te dijo que no. Con lo que no has probado, con los clientes que no has conseguido, con la parte que te da flojera. Una evaluación es tan buena como el material que le diste, y aquí el material eres tú siendo honesto.</p>
+
+      <p>Si quieres seguir presionando la idea desde otros ángulos, <a href="/guias/prueba-de-presion-de-4-preguntas/">la prueba de presión de 4 preguntas</a> y <a href="/guias/consejo-de-asesores-para-decisiones/">el consejo de asesores</a> se llevan bien con esto y no se pisan.</p>

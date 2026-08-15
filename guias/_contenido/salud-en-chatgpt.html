@@ -1,0 +1,113 @@
+      <p>Tu historial médico está repartido en seis lugares: los PDFs del laboratorio en el correo, la receta que te tomaste foto, el resumen que te dio el especialista en papel, los datos del reloj en una app que nunca abres, y lo que recuerdas de memoria cuando el doctor pregunta desde cuándo.</p>
+
+      <p>Por eso cada consulta empieza igual: reconstruyendo tu propia historia mal y de memoria. Y por eso nadie ve el patrón obvio de que ese valor lleva tres años subiendo poco a poco.</p>
+
+      <p>OpenAI lanzó una función para resolver justo eso. Tiene un límite grande que conviene saber antes de empezar, y hay una ruta alterna que funciona sin ella.</p>
+
+      <h2>Qué es la función y dónde está disponible</h2>
+
+      <p>Se llama Health en ChatGPT y permite conectar información de salud para que el asistente la use en la conversación: comparar resultados de laboratorio entre fechas, resumir qué cambió desde tu última cita, llevar el control de medicamentos, y relacionar sueño y actividad con lo que estás midiendo.</p>
+
+      <p>Las fuentes que conecta son Apple Health, expedientes de sistemas hospitalarios compatibles de Estados Unidos, One Medical y Function Health.</p>
+
+      <p><strong>El límite duro:</strong> se está liberando para usuarios en Estados Unidos, mayores de 18 años, en web y iOS. Los expedientes que conecta son de sistemas hospitalarios estadounidenses. Si estás en México o en cualquier otro lado, la parte de expedientes no te aplica hoy.</p>
+
+      <p>Sobre privacidad, lo que declara OpenAI: pide permiso antes de usar la información de salud en una conversación, puedes darle acceso una vez, siempre, o desactivarlo desde los ajustes de Health, y los expedientes conectados, los datos de Apple Health y las conversaciones relacionadas no se usan para entrenar modelos ni para publicidad.</p>
+
+      <h2>El setup nativo, si estás en Estados Unidos</h2>
+
+      <ol>
+        <li>Entra a los ajustes de ChatGPT y abre la sección de Health.</li>
+        <li>Conecta Apple Health desde la app de iOS y elige qué categorías compartes. No las prendas todas: empieza con sueño, actividad y frecuencia cardiaca, que es donde hay señal.</li>
+        <li>Conecta tu sistema hospitalario si está en la lista de compatibles.</li>
+        <li>Decide el modo de permiso. Yo dejaría "preguntar cada vez" al principio, hasta que veas qué está jalando en cada conversación.</li>
+      </ol>
+
+      <h2>La ruta manual, que funciona en cualquier país</h2>
+
+      <p>Esta es la que uso yo y la que aplica para la mayoría de quien lee esto. Es más trabajo la primera vez y en realidad da un resultado más limpio, porque tú controlas qué entra.</p>
+
+      <h3>Paso 1: junta el material</h3>
+
+      <p>Una carpeta. Adentro, en PDF o foto legible: todos los estudios de laboratorio que tengas, los reportes de imagen, las recetas actuales, y los resúmenes de consulta que conserves. Ordénalos por fecha en el nombre del archivo —<code>2024-03-quimica-sanguinea.pdf</code>— porque eso solo ya le ahorra la mitad del trabajo de reconstruir la cronología.</p>
+
+      <h3>Paso 2: exporta lo del reloj</h3>
+
+      <p>Casi todas las apps de salud y de relojes permiten exportar. Busca la opción de exportar datos en los ajustes de la tuya. Lo que interesa es sueño, pasos, frecuencia cardiaca en reposo y variabilidad si la mide.</p>
+
+      <h3>Paso 3: crea un proyecto dedicado</h3>
+
+      <p>Un Proyecto en ChatGPT o en Claude, solo para esto. Sube ahí los archivos. La ventaja sobre pegarlos en un chat suelto es que el material queda disponible en todas las conversaciones futuras sin volver a subirlo, y que lo de salud no se mezcla con el resto de tu vida.</p>
+
+      <h2>El prompt que construye la línea del tiempo</h2>
+
+      <p>Con el material cargado, este es el prompt. Está escrito para forzar dos cosas que el modelo no hace solo: citar el estudio de cada dato y separar lo que sabe de lo que supone.</p>
+
+      <pre><code>Adjunté todos mis estudios médicos y mis datos de actividad.
+Quiero que construyas mi expediente en una sola línea del tiempo.
+
+Trabaja en este orden y no te saltes pasos:
+
+1. INVENTARIO
+   Lista cada documento: fecha, tipo de estudio, quién lo
+   ordenó. Si un archivo está ilegible o le falta la fecha,
+   dímelo y no lo uses.
+
+2. LINEA DEL TIEMPO
+   Ordena todo cronológicamente. Para cada evento: fecha, qué
+   se midió, resultado, y si el resultado estaba dentro o
+   fuera del rango de referencia que aparece EN ESE MISMO
+   estudio (no uses rangos de memoria: los rangos cambian
+   entre laboratorios).
+
+3. MARCADORES QUE SE REPITEN
+   Identifica qué se ha medido más de una vez. Para cada uno,
+   arma una tabla de fecha contra valor y dime la tendencia:
+   sube, baja o estable. Marca cuál sí tiene suficientes
+   puntos para hablar de tendencia y cuál no.
+
+4. LO QUE FALTA
+   Qué estudios de seguimiento parecen indicados y no
+   aparecen. Qué periodos no tienen ningún dato.
+
+5. PARA MI PROXIMA CONSULTA
+   Cinco preguntas concretas para llevarle a mi médico,
+   basadas en lo que viste. No preguntas genéricas: preguntas
+   que solo tienen sentido con MIS datos.
+
+REGLAS QUE NO SE ROMPEN
+- Cada dato que menciones tiene que venir de un archivo que
+  te di. Cita cuál. Si no está, di "no aparece en el
+  material" — no lo completes con lo típico.
+- Separa siempre lo que dice el documento de lo que tú
+  infieres. Marca lo segundo como inferencia.
+- No me des diagnósticos ni me digas qué tomar. Tu trabajo
+  es organizar y señalar, no tratar.
+- Si algo se ve fuera de rango de forma importante, dilo
+  claro y recomiéndame que lo vea un médico, sin dramatizar.
+
+Salida en markdown, para que la pueda guardar y actualizar.</code></pre>
+
+      <p>La regla de citar cada dato es la que más trabajo hace. Sin ella, el modelo rellena con valores de referencia típicos y termina describiendo a un paciente promedio en vez de a ti.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar la línea del tiempo antes de usarla. Abre tres estudios al azar y compara los números contra lo que escribió. Es el material con el que vas a tomar decisiones y a hablar con tu médico; un valor mal transcrito ahí vale mucho más caro que en cualquier otro documento. Cinco minutos.</p>
+      </div>
+
+      <h2>Las cinco preguntas que sí rinden después</h2>
+
+      <p>Con la línea del tiempo lista, el valor está en las preguntas de seguimiento. Estas son las que rinden de verdad:</p>
+
+      <ul>
+        <li><strong>"¿Qué cambió entre mi último estudio y el anterior, y qué se mantuvo igual?"</strong> Nadie hace esta comparación en la consulta de veinte minutos.</li>
+        <li><strong>"Prepárame un resumen de una página para un médico nuevo."</strong> Historia relevante, medicamentos actuales, alergias, estudios recientes. Cambia por completo cómo arranca una primera consulta.</li>
+        <li><strong>"¿Qué relación se ve entre mi sueño de las últimas semanas y mi frecuencia cardiaca en reposo?"</strong> Ahí es donde los datos del reloj aportan algo que el laboratorio no ve.</li>
+        <li><strong>"Explícame este estudio en lenguaje normal, sin quitarle los matices."</strong> La segunda mitad de la frase importa: sin ella recibes una simplificación que te tranquiliza de más.</li>
+        <li><strong>"¿Qué me preguntaría un médico que ve esto por primera vez?"</strong> Te prepara para la consulta en vez de dejarte reaccionando.</li>
+      </ul>
+
+      <h2>Los límites, dichos claro</h2>
+
+      <p>Esto organiza información. No diagnostica, no sustituye a nadie y no debe cambiar tu tratamiento. La utilidad real es que llegas a la consulta con tu historia ordenada y con preguntas específicas, no que tengas una segunda opinión en el bolsillo.</p>
+
+      <p>Y sobre privacidad: estás subiendo lo más sensible que tienes. Antes de conectar nada o de subir archivos, vale la pena pasar por <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión antes de que la IA toque algo sensible</a>. Revisa qué guarda el proveedor, qué usa para entrenar y cómo se borra. Que la función sea útil no quita que la decisión sea tuya.</p>

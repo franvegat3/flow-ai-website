@@ -1,0 +1,196 @@
+      <p>Una skill es un archivo de texto con instrucciones que Claude carga solo cuando hace falta. No es un prompt que pegas: es conocimiento que se queda instalado y que se activa cuando el trabajo lo pide.</p>
+
+      <p>Las cuatro entregas anteriores fueron de skills que me ahorran tiempo. Estas cinco no ahorran tiempo: cambian la calidad de lo que sale. Tres de ellas las tengo también instaladas en el entorno de trabajo de un cliente, y la última es la que uso antes de mandar cualquier cosa que lleve mi nombre.</p>
+
+      <p>Cada una viene completa. Cópiala tal cual, guárdala y ya está lista.</p>
+
+      <h2>Cómo se instala cualquiera de estas</h2>
+
+      <p>En Claude Code creas la carpeta <code>.claude/skills/nombre-de-la-skill/</code> dentro de tu proyecto y adentro pones un archivo <code>SKILL.md</code> con el contenido que te doy. En la app de escritorio y en el navegador, las skills se suben desde la sección de capacidades de tu configuración. El archivo es el mismo en los dos lados.</p>
+
+      <p>La estructura tiene dos partes: un encabezado entre líneas de tres guiones con <code>name</code> y <code>description</code>, y abajo las instrucciones en texto normal.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir bien la <code>description</code>. Es lo único que Claude lee siempre, y con eso decide si abre la skill o no. Si dice "ayuda con escritura", nunca se va a disparar. Tiene que decir cuándo usarla y con qué palabras la pides. La mayoría de las skills que no funcionan no están mal escritas: están mal anunciadas.</p>
+      </div>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El cosechador de páginas <code>cosechar-pagina</code></h3>
+        <p>Le pasas una liga y te devuelve la pieza reutilizable, no un resumen. La uso con las páginas de venta de la competencia: en dos minutos tengo su estructura, sus argumentos y las objeciones que están tratando de tapar.</p>
+        <pre><code>---
+name: cosechar-pagina
+description: Extrae la estructura reutilizable de una página web. Úsala
+  cuando te pase una liga y pida analizarla, desarmarla, "cosecharla",
+  o entender por qué funciona una landing, un artículo o una página de
+  venta de la competencia.
+---
+
+Cuando te pasen una liga, lee la página completa y devuelve esto y
+nada más:
+
+1. ESQUELETO. La secuencia de bloques en orden, con una frase por
+   bloque diciendo qué trabajo hace ese bloque. No describas el diseño.
+
+2. PROMESA. La promesa central en una sola oración, con las palabras
+   exactas de la página. Si hay varias, dilo: eso es un defecto.
+
+3. OBJECIONES. Qué objeción está atacando cada sección. Si hay una
+   objeción obvia del lector que la página nunca atiende, señálala.
+
+4. FRASES QUE SÍ. De 5 a 8 frases textuales que carguen el peso, con
+   comillas. Solo las que un competidor podría envidiar.
+
+5. QUÉ ROBARÍA. Tres movimientos concretos aplicables a otro negocio,
+   escritos como instrucción, no como observación.
+
+Reglas: no elogies la página. No inventes datos que no estén en el
+texto. Si la página tiene cifras, cópialas tal cual y márcalas como
+afirmación del sitio, no como hecho verificado.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> marketing, ventas y cualquiera que escriba páginas. Es la forma honesta de estudiar a la competencia sin copiarla.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El ghostwriter con tu voz <code>escribir-como-yo</code></h3>
+        <p>Esta skill no sirve sin trabajo previo: necesita un archivo con textos tuyos. Ese es el precio y por eso casi nadie la tiene funcionando. A cambio, deja de salirte el español de folleto.</p>
+        <pre><code>---
+name: escribir-como-yo
+description: Escribe textos en la voz del usuario usando su corpus.
+  Úsala cuando pida escribir un post, un correo, un guion o un texto
+  "con mi voz", "como yo lo diría", o cuando rechace un borrador por
+  sonar genérico o a inteligencia artificial.
+---
+
+Antes de escribir, lee el archivo voz.md que está junto a esta skill.
+Contiene textos escritos por el usuario. Si no existe, pídelo y no
+escribas nada todavía.
+
+Del corpus saca y usa:
+- Largo típico de frase y de párrafo.
+- Cómo abre. Casi nunca es con contexto general.
+- Palabras que repite y palabras que nunca aparecen.
+- Cómo cierra: si remata con instrucción, con pregunta o cortando seco.
+
+Al escribir:
+- Frases cortas. Una idea por frase.
+- Cero conectores de relleno: "en resumen", "es importante destacar",
+  "sin duda", "en la era digital".
+- Ningún dato, cifra ni nombre que no esté en el material que te dieron.
+- Si te falta un dato para que el texto funcione, deja [FALTA: qué] en
+  lugar de inventarlo.
+
+Al terminar, agrega una línea: qué tres rasgos del corpus usaste. Si no
+puedes nombrarlos, el texto no está en su voz y hay que rehacerlo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que publica con su nombre. Cómo armar el corpus está en <a href="/guias/que-claude-suene-como-tu/">que Claude suene como tú</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El jefe de gabinete <code>jefe-de-gabinete</code></h3>
+        <p>No es una lista de pendientes: es la persona que te dice qué se cancela. La corro cada mañana. La parte que más me ha servido en la operación de un cliente es la última: a quién hay que empujar hoy para que la semana no se caiga el jueves.</p>
+        <pre><code>---
+name: jefe-de-gabinete
+description: Convierte la agenda y los pendientes del día en tres
+  decisiones y una lista de a quién empujar. Úsala cuando el usuario
+  diga "arranca mi día", "qué sigue hoy", "ordéname la semana" o pegue
+  su calendario y sus pendientes.
+---
+
+Pide el calendario del día y la lista de pendientes si no los tienes.
+
+Devuelve exactamente cuatro bloques:
+
+LAS TRES DE HOY. Las tres cosas que, si se hacen, el día valió la pena.
+Ordenadas por consecuencia, no por urgencia. Una línea cada una.
+
+QUÉ SE CANCELA. Al menos una junta o pendiente que se puede mover,
+delegar o matar, con la razón y la frase exacta para decirlo.
+
+A QUIÉN EMPUJAR. Personas que le deben algo al usuario y que bloquean
+lo de arriba, con el mensaje ya redactado, corto y sin rodeos.
+
+EL RIESGO. La cosa que hoy no se ve y que el jueves va a ser un
+problema. Una sola.
+
+Reglas: nunca devuelvas más de tres prioridades. Si el usuario te da
+diez pendientes, elige. No preguntes cuál prefiere: decide y explica en
+media línea por qué esa. Prohibido felicitarlo o motivarlo.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> quien dirige a otros. Sirve poco si tu día es ejecución pura y sirve muchísimo si tu día es decidir.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El interrogador <code>interrogatorio</code></h3>
+        <p>La activo antes de arrancar algo grande. Su único trabajo es hacerme las preguntas que no me hice. Es incómoda a propósito: si respondes las siete y el proyecto sigue en pie, el proyecto es bueno.</p>
+        <pre><code>---
+name: interrogatorio
+description: Interroga al usuario antes de ejecutar algo grande. Úsala
+  cuando plantee un proyecto, una contratación, un lanzamiento, una
+  inversión o diga "voy a hacer X, ayúdame".
+---
+
+No des consejos ni empieces a ejecutar. Interroga.
+
+Haz máximo siete preguntas, una a la vez, esperando respuesta antes de
+la siguiente. Cada pregunta debe atacar un supuesto distinto:
+
+1. Qué tiene que ser cierto del mundo para que esto funcione.
+2. Cómo se ve el fracaso, en concreto, y cuándo lo sabrías.
+3. Quién paga y por qué hoy y no en seis meses.
+4. Qué se deja de hacer para hacer esto.
+5. Cuál es la parte más cara o más lenta, y por qué crees que no lo es.
+6. Quién ya lo intentó y qué le pasó.
+7. Si dentro de tres meses esto está muerto, cuál fue la causa.
+
+Adapta la redacción al caso, no cambies el ángulo. No aceptes
+respuestas vagas: si contesta "mucha gente lo necesita", pregunta
+quién, dónde y cómo lo sabe.
+
+Al terminar, entrega: los dos supuestos más frágiles, la prueba más
+barata para cada uno, y una recomendación de seguir, ajustar o parar.
+Si la recomendación es parar, dilo en la primera línea.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que se emociona con proyectos nuevos. Combínala con <a href="/guias/consejo-contra-la-adulacion/">el consejo contra la adulación</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El guardaespaldas <code>guardaespaldas</code></h3>
+        <p>La última puerta antes de mandar algo. Revisa el entregable buscando lo que te puede costar caro: un dato sin fuente, una promesa que no puedes sostener, un número que salió de la nada. En trabajo con clientes la corro sobre propuestas y correos antes de enviarlos.</p>
+        <pre><code>---
+name: guardaespaldas
+description: Revisa un entregable antes de enviarlo y marca lo que
+  puede costar caro. Úsala cuando el usuario diga "ya lo voy a mandar",
+  "revísalo antes de enviarlo", o pegue una propuesta, un correo a
+  cliente, un contrato o un texto público.
+---
+
+Revisa el texto en este orden y devuelve solo hallazgos, sin reescribir
+nada todavía.
+
+1. AFIRMACIONES SIN RESPALDO. Toda cifra, porcentaje, fecha o nombre
+   propio. Marca cada una: verificada en el material, o sin fuente.
+
+2. PROMESAS. Cualquier frase que comprometa un resultado, un plazo o un
+   alcance. Escribe qué tendría que pasar para incumplirla.
+
+3. AMBIGÜEDAD CARA. Frases que el receptor puede leer de dos formas,
+   donde una de las dos le cuesta dinero o tiempo al usuario.
+
+4. TONO. Lugares donde suena a defensa, a disculpa o a superioridad.
+   Cita la frase.
+
+5. LO QUE FALTA. El dato que el receptor va a pedir en su respuesta y
+   que obliga a un correo más.
+
+Cierra con un veredicto de una línea: enviar, enviar con cambios, o no
+enviar. Si es no enviar, di la razón única y principal.
+
+Solo si te lo piden después, reescribe las partes marcadas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que mande propuestas, cotizaciones o comunicados. Es la skill que más veces me ha detenido a tiempo.</p>
+      </div>
+
+      <h2>En qué orden instalarlas</h2>
+
+      <p>No instales las cinco hoy. Cada skill compite por la atención del modelo, y cinco skills nuevas el mismo día se pisan entre ellas.</p>
+
+      <p>Empieza por el <code>guardaespaldas</code>: es la única que rinde sin configuración y su valor se nota el primer día. La segunda es el <code>interrogatorio</code>, porque te ahorra proyectos completos. El <code>cosechador</code> entra cuando tengas algo real que estudiar. El <code>jefe-de-gabinete</code> pide que tu calendario y tus pendientes vivan en algún lado accesible. Y el <code>ghostwriter</code> va al final, porque sin corpus no sirve y armar el corpus es una tarde de trabajo.</p>
+
+      <p>Si alguna no se dispara sola cuando debería, casi nunca es la skill: es la <code>description</code>. Reescríbela con las palabras exactas que tú usas al pedir esa tarea.</p>

@@ -1,0 +1,116 @@
+      <p>El problema no es que la IA se equivoque. Todos nos equivocamos. El problema es que se equivoca con exactamente el mismo tono con el que acierta.</p>
+
+      <p>Cuando un compañero no sabe algo, lo notas: duda, dice "creo que", te manda con alguien más. El modelo no hace nada de eso. Te entrega el dato falso con la misma prosa limpia que el dato bueno. Por eso el error se cuela: nada te avisa que hay que revisarlo.</p>
+
+      <p>Abajo van los tres prompts que uso para que esa señal aparezca. Pero primero hay que entender por qué pasa, porque si crees que es un bug que van a arreglar, vas a seguir esperando la versión que no inventa.</p>
+
+      <h2>Por qué inventa, en español simple</h2>
+
+      <p>Un modelo de lenguaje no guarda hechos como los guarda una base de datos. No hay una tabla adentro donde diga "artículo 27, fracción tercera". Lo que aprendió es qué tan probable es que una palabra siga a otra, a partir de una cantidad enorme de texto.</p>
+
+      <p>Cuando le preguntas algo que sí estaba bien representado en ese texto, la continuación más probable resulta ser la verdadera. Cuando le preguntas algo que no estaba —una cifra específica de tu industria, el nombre exacto de un estudio, un artículo de un reglamento poco citado— el modelo no se queda callado, porque no tiene un mecanismo que le diga "aquí no hay nada". Sigue generando la continuación más plausible. Y una continuación plausible, con la forma correcta de una cita, es indistinguible de una cita real hasta que la buscas.</p>
+
+      <p>Por eso las alucinaciones tienen un patrón tan reconocible: casi siempre son cosas <em>con formato</em>. Números, fechas, nombres propios, referencias, URLs. Lo que tiene forma de dato es lo que el modelo puede fabricar con más facilidad, porque solo necesita imitar la forma.</p>
+
+      <p>La conclusión práctica: la IA no es una fuente. Es un procesador de texto muy bueno. Cuando le das el material, es confiable. Cuando le pides que saque el material de su memoria, tienes que verificar.</p>
+
+      <h2>Prompt 1: el contrato, antes de preguntar</h2>
+
+      <p>Este va al inicio, pegado antes de tu pregunta. No evita que invente —nada lo evita del todo— pero obliga a que las partes inventadas queden marcadas por separado en vez de mezcladas con el resto.</p>
+
+      <pre><code>Antes de responder, aplica estas reglas y no las negocies:
+
+1. Separa tu respuesta en dos bloques.
+
+   BLOQUE A — Lo que puedo sostener.
+   Solo afirmaciones que puedas defender con confianza alta.
+
+   BLOQUE B — Lo que estoy infiriendo o no sé.
+   Todo lo demás: lo que dedujiste, lo que suena razonable pero
+   no puedes confirmar, y lo que directamente no sabes.
+
+2. Para cada dato con formato (cifra, porcentaje, fecha, nombre
+   propio, ley o artículo, nombre de estudio, URL) que aparezca
+   en el bloque A, agrega entre corchetes de dónde sale ese dato
+   y cómo lo verificaría yo en menos de cinco minutos.
+
+3. Si un dato con formato no puede cumplir la regla 2, no va en
+   el bloque A. Va en el B, o no va.
+
+4. Está permitido que el bloque A quede corto. Un bloque A de
+   tres frases y un bloque B largo es una respuesta correcta.
+   No rellenes el A para que se vea completo.
+
+5. Si mi pregunta parte de un supuesto que no es cierto,
+   corrígeme antes de contestarla.
+
+Mi pregunta es: [tu pregunta]</code></pre>
+
+      <p>La regla 4 es la que hace el trabajo. Sin ella, el modelo tiende a llenar el bloque A porque un bloque A vacío se siente como una mala respuesta. Hay que darle permiso explícito de no saber.</p>
+
+      <h2>Prompt 2: la auditoría, después de la respuesta</h2>
+
+      <p>Este va en el mismo hilo, justo después de que te entregó algo. Le pides que se revise a sí mismo, pero cambiándole el papel: ya no es quien responde, es quien audita.</p>
+
+      <pre><code>Cambia de papel. Ya no eres quien escribió esa respuesta: eres
+el auditor que tiene que encontrarle errores antes de que se
+publique, y tu trabajo depende de encontrar al menos uno.
+
+Haz esto sobre tu respuesta anterior:
+
+1. Lista TODOS los datos con formato que aparecen: cifras,
+   porcentajes, fechas, nombres de personas, empresas,
+   productos, leyes, estudios y URLs.
+
+2. Clasifica cada uno en una de estas tres:
+   - VERIFICABLE: existe y es fácil de comprobar. Di dónde.
+   - PROBABLE: crees que es correcto pero podrías estar
+     confundiendo la fuente, el año o la cifra exacta.
+   - RIESGOSO: pudiste haberlo construido para que sonara bien.
+
+3. De los RIESGOSOS, dime cuál sería el más caro si yo lo
+   repitiera frente a un cliente o en un documento formal.
+
+4. Reescribe la respuesta quitando todo lo RIESGOSO y
+   reformulando lo PROBABLE con el nivel de certeza real.
+
+No defiendas tu respuesta anterior. Si toda ella era
+sostenible, dilo en una línea, pero primero haz el ejercicio
+completo.</code></pre>
+
+      <p>Un aviso honesto: esto no es infalible. El mismo modelo que inventó el dato puede volver a considerarlo cierto en la auditoría. Lo que sí logra, de forma consistente, es cambiar la distribución: las cosas más frágiles se caen a la categoría de riesgosas, y eso te dice exactamente dónde poner tus cinco minutos de verificación.</p>
+
+      <h2>Prompt 3: la trampa de calibración</h2>
+
+      <p>Este es distinto. No sirve para corregir una respuesta: sirve para saber si en este tema puedes confiar en el modelo o no. Es una prueba que haces una vez, en un tema nuevo, antes de trabajar en serio.</p>
+
+      <pre><code>Voy a hacerte una prueba de calibración sobre [tema]. Son
+cuatro preguntas. Contéstalas en orden y con una sola frase
+cada una. Si no sabes, di "no lo sé" y no expliques.
+
+1. [Una pregunta de ese tema cuya respuesta tú ya sabes bien.]
+2. [Una pregunta de ese tema cuya respuesta también sabes,
+   pero más específica y menos conocida.]
+3. Explícame [nombre de algo que suena a ese tema pero que te
+   acabas de inventar: un método, una norma, un autor].
+4. ¿Cuál fue el cambio más importante en [tema] del último año
+   y de dónde lo sabes?
+
+Después de contestar las cuatro, dime tú mismo en cuál de las
+cuatro estuviste menos seguro y por qué.</code></pre>
+
+      <p>La pregunta 3 es la prueba real. Si te explica con detalle algo que no existe, ya sabes que en ese tema va a inventar y todo lo que salga de ahí necesita verificación externa. Si te dice que no le consta, tienes una señal buena. La 4 revela otra cosa: si te responde con seguridad sobre lo más reciente sin haber consultado nada, está reconstruyendo de memoria y ahí es donde más se equivoca.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> darle el material en lugar de pedirle el material. La mayoría de las alucinaciones que veo en empresas se evitan con un cambio de hábito, no con un prompt: en vez de "¿qué dice la norma sobre esto?", adjunta la norma y pregunta sobre el documento. En vez de "¿cuánto cobra la competencia?", pega las páginas de precios que tú bajaste. El modelo es muy confiable leyendo y muy poco confiable recordando. Casi todo el riesgo se apaga moviendo el trabajo de la segunda columna a la primera.</p>
+      </div>
+
+      <h2>Dónde esto se vuelve caro de verdad</h2>
+
+      <p>En una operación, el daño no lo hace el error: lo hace el error que se propagó antes de que alguien lo notara.</p>
+
+      <p>Una battlecard de ventas con precios de un competidor que el modelo estimó, y que el equipo comercial repite en veinte llamadas. Un resumen de una obligación fiscal con un artículo que no dice lo que ahí dice, que se convirtió en una política interna. Un reporte para un cliente con un porcentaje de mercado que nadie buscó de dónde salió.</p>
+
+      <p>Los tres casos comparten la misma causa: nadie separó el dato del razonamiento. El razonamiento del modelo suele ser bueno. Los datos que él mismo produjo son los que hay que tocar con guantes.</p>
+
+      <p>La regla corta, si te quedas con una sola: <strong>todo lo que tenga forma de dato se verifica; todo lo demás se discute.</strong> Y si vas a llevarlo más lejos, sigue con <a href="/guias/nunca-confies-sin-hacer-esto/">nunca confíes sin hacer esto</a> y con <a href="/guias/3-formas-en-que-la-ia-te-miente/">las tres formas en que la IA te miente</a>.</p>

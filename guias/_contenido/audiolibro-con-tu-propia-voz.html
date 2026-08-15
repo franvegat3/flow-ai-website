@@ -1,0 +1,126 @@
+      <p>Tienes una carpeta de cosas guardadas para leer después. Guías largas, el reporte de la industria, tres newsletters, el documento que te mandó tu socio. No las vas a leer. Y las dos horas de silencio que sí tienes al día —el coche, el gimnasio, la caminata— se te van en música o en un podcast repetido.</p>
+
+      <p>Convertir esa carpeta en audio resuelve la mitad del problema. Convertirla en audio <em>con tu propia voz</em> resuelve la otra mitad, y esa parte casi nadie la explica bien.</p>
+
+      <p>Aquí va el pipeline completo: cómo grabar la muestra, con qué clonar sin pagar, y los dos prompts para adaptar el texto antes de convertirlo —que es lo que separa un audiolibro escuchable de un robot leyendo viñetas.</p>
+
+      <h2>Por qué tu voz y no una voz sintética bonita</h2>
+
+      <p>Las voces sintéticas de catálogo son mejores que tu voz: suenan más limpias, respiran mejor y no se cansan. Y aun así abandonas el archivo a los ocho minutos.</p>
+
+      <p>Tu cerebro procesa una voz ajena como contenido de alguien más: te sientas a recibirlo. Tu propia voz la procesa como pensamiento propio, y baja la resistencia al material denso. Es la diferencia entre escuchar una clase y repasar tus apuntes en voz alta.</p>
+
+      <p>Hay un efecto secundario que a mí me terminó importando más: cuando escuchas tu propia voz leyendo lo que tú escribiste, detectas todo lo que está mal redactado. La frase de cuatro líneas, la muletilla, el párrafo que no dice nada. Es el mejor corrector de estilo que he usado y no cuesta nada.</p>
+
+      <div class="callout-box">
+        <p><strong>La regla que no se negocia:</strong> clona tu voz, no la de alguien más. Ni la de un colega "para probar", ni la de un locutor que te gusta, ni la de una figura pública. Es la línea que separa una herramienta de trabajo de un problema legal, y en varios lugares la voz está protegida como dato personal. Si vas a usar la voz de un tercero en algo que publicas, necesitas su permiso por escrito y punto.</p>
+      </div>
+
+      <h2>Las tres piezas</h2>
+
+      <p>El pipeline es siempre el mismo, sin importar qué herramienta uses:</p>
+
+      <ol>
+        <li><strong>Una muestra de tu voz</strong> de buena calidad. Es el insumo de todo.</li>
+        <li><strong>Un modelo de síntesis</strong> que clone a partir de esa muestra.</li>
+        <li><strong>El texto adaptado</strong> para ser escuchado, no leído. Esta es la pieza que todo mundo omite y por eso la mayoría de los intentos suenan mal.</li>
+      </ol>
+
+      <h2>Paso 1 — La muestra</h2>
+
+      <p>Los modelos actuales clonan desde muestras cortas: segundos, no horas. Eso engaña, porque la gente asume que si basta con poco, la calidad de ese poco da igual. Es al revés: como hay tan poco material, cada defecto se amplifica. Lo que sí importa:</p>
+
+      <ul>
+        <li><strong>Un cuarto con cosas blandas.</strong> Cortinas, sillón, ropa. El eco es lo único que ninguna herramienta te va a quitar después.</li>
+        <li><strong>Micrófono cerca y estable.</strong> El de tus audífonos con cable sirve. El de la laptop no.</li>
+        <li><strong>Silencio absoluto de fondo.</strong> Nada de música, ventilador ni tráfico. El modelo clona el ruido junto con tu voz.</li>
+        <li><strong>Lee algo neutro.</strong> Un párrafo informativo, con tu ritmo normal de conversación. Si lo lees con voz de comercial, tu audiolibro va a sonar a comercial durante cuarenta minutos.</li>
+        <li><strong>Graba de más y recorta.</strong> Un par de minutos y te quedas con el fragmento más parejo, sin trabarte ni tragar saliva.</li>
+      </ul>
+
+      <h2>Paso 2 — Clonar sin pagar</h2>
+
+      <p>Hay dos caminos y conviene saber cuál te toca antes de perder una tarde.</p>
+
+      <p><strong>Si te da lo mismo instalar cosas:</strong> los modelos abiertos son la vía gratuita real. <code>Chatterbox</code>, de Resemble AI, es el que recomiendo empezar: es de licencia permisiva, clona desde una muestra muy corta y corre razonablemente en una máquina normal. <code>F5-TTS</code> y <code>XTTS</code> son las otras dos que la gente usa en serio; dan buenos resultados pero el rato de instalación es mayor. Los tres están publicados en repositorios públicos, así que búscalos por nombre en GitHub y sigue el instructivo del propio proyecto en vez de una guía de terceros, porque los pasos cambian seguido.</p>
+
+      <p><strong>Si no quieres instalar nada:</strong> los servicios comerciales de voz tienen niveles gratuitos, pero la clonación de voz casi siempre está detrás del plan de paga. Vale para probar el sonido antes de comprometerte, no para procesar cien páginas al mes. Si tu volumen es alto, el camino abierto es el que sale a cuenta.</p>
+
+      <p>Y una expectativa que hay que calibrar: la clonación te va a dar tu timbre, no tu interpretación. Va a sonar a ti; no va a sonar a ti entusiasmado. Para material informativo eso es perfecto. Para una novela, no.</p>
+
+      <h2>Paso 3 — El prompt que convierte texto en guion de audio</h2>
+
+      <p>Este es el paso que separa un audiolibro de un robot leyendo. Un artículo está lleno de cosas que no existen en audio: encabezados, viñetas, tablas, paréntesis, direcciones web, notas al pie. Si se lo avientas crudo al sintetizador, escuchas "abre paréntesis" durante media hora.</p>
+
+      <pre><code>Vas a convertir este texto en un guion para ser escuchado,
+no leído. Quien escucha va manejando o caminando: no puede
+regresar, no puede ver nada, no puede tomar notas.
+
+Reglas de conversión:
+1. Convierte todas las listas y viñetas en prosa hablada.
+   Usa "primero", "el segundo caso", "y por último".
+2. Elimina paréntesis. Si el contenido importa, vuélvelo
+   frase; si no, bórralo.
+3. Elimina direcciones web, notas al pie y referencias
+   cruzadas. Si una fuente es importante, di el nombre.
+4. Las tablas se vuelven comparación hablada, máximo tres
+   elementos. Si la tabla tiene más, di solo lo relevante y
+   avisa que el detalle está en el texto original.
+5. Números: redondea para hablar. "Cerca de tres cuartas
+   partes" en vez de "74.3%".
+6. Cada vez que cambie el tema, mete una frase puente que
+   diga de qué vamos a hablar ahora.
+7. Rompe toda frase de más de 25 palabras en dos.
+8. Al inicio, una frase que diga qué va a aprender quien
+   escucha. Al final, las tres ideas que debe recordar.
+
+Restricciones duras:
+- No agregues información que no esté en el original.
+- No cambies las conclusiones ni suavices las críticas.
+- No metas relleno de locutor, ni saludos, ni despedidas.
+- Conserva el nivel técnico. Esto no es una versión fácil,
+  es la misma versión hecha para el oído.
+
+Devuélveme solo el guion, en texto corrido, listo para
+pegarse en un sintetizador de voz.
+
+Texto original:
+[pega aquí]</code></pre>
+
+      <h2>El segundo prompt: la cola semanal</h2>
+
+      <p>Un audiolibro suelto es una novedad. Lo que cambia el hábito es tener una cola de escucha fija, con duración conocida, todas las semanas. Este es el prompt que la arma a partir de todo lo que guardaste.</p>
+
+      <pre><code>Te voy a pasar todo el material que guardé esta semana.
+Ármame una cola de escucha de aproximadamente [45] minutos
+en total, para convertir a audio.
+
+Proceso:
+1. Descarta lo repetido. Si tres textos dicen lo mismo,
+   quédate con el mejor y menciona en una línea que los
+   otros dos coinciden.
+2. Descarta lo que no cambia ninguna decisión mía. Sé duro.
+   Prefiero 30 minutos útiles que 45 completos.
+3. Ordena lo que queda de más a menos accionable, no por
+   fecha ni por longitud.
+4. Estima los minutos de cada pieza a 150 palabras por
+   minuto y ajusta hasta llegar al total pedido.
+
+Entrégame:
+- La cola numerada, con título y minutos estimados de cada
+  pieza, y una línea de por qué la dejaste.
+- La lista de lo que descartaste, con el motivo en cinco
+  palabras.
+- Un bloque de apertura de 60 segundos que anuncie qué trae
+  la cola de hoy.
+
+Material:
+[pega los textos o los enlaces]</code></pre>
+
+      <p>Ese bloque de apertura parece adorno y no lo es: es lo que te deja decidir si escuchas completo o te saltas la tercera pieza, sin tocar el teléfono.</p>
+
+      <h2>Dónde no funciona</h2>
+
+      <p>El audio es pésimo para material que tiene que verse: código, fórmulas, cualquier cosa con estructura visual. También cuando de verdad necesitas retener detalle fino, porque escuchar es más pasivo que leer y lo sabes.</p>
+
+      <p>Úsalo para lo que corresponde: material de contexto, reportes de industria, entrevistas transcritas, la investigación que quieres tener en la cabeza pero no en el cuaderno. Y para revisar tus propios textos antes de publicarlos, que sigue siendo el uso con mejor retorno.</p>

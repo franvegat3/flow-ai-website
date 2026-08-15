@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 sistemas de IA para tu vida real, no para tu trabajo — Guías Flow AI</title>
+  <meta name="description" content="Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-sistemas-de-ia-para-tu-vida/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 sistemas de IA para tu vida real, no para tu trabajo" />
+  <meta property="og:description" content="Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-sistemas-de-ia-para-tu-vida/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Productividad</span><span class="tag">Empezar</span></div>
+      <h1>5 sistemas de IA para tu vida real, no para tu trabajo</h1>
+      <p class="lead">Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Casi todo lo que se escribe sobre IA asume que la quieres para trabajar. Y la parte de tu vida que de verdad está desordenada casi nunca es el trabajo: es el expediente médico repartido en cinco laboratorios, el súper que decides con hambre a las ocho de la noche, los cargos recurrentes que nadie revisa.</p>
+
+      <p>Esas cosas no se arreglan con un chat suelto. Se arreglan con un sistema: un lugar fijo donde vive el contexto, un prompt de arranque que lo carga, y una revisión con fecha. Sin las tres partes, vuelves a empezar de cero cada vez.</p>
+
+      <p>Aquí van cinco, uno por área, con su prompt de arranque completo para pegar en un Proyecto de Claude o de ChatGPT.</p>
+
+      <h2>Por qué un chat suelto no es un sistema</h2>
+
+      <p>Un chat es una conversación que se muere cuando cierras la pestaña. Un sistema tiene tres piezas que un chat no tiene.</p>
+
+      <ul>
+        <li><strong>Un contenedor con memoria</strong> — un Proyecto, con sus archivos y sus instrucciones. Ahí viven tus estudios, tus estados de cuenta, tu inventario de la casa. No lo vuelves a explicar.</li>
+        <li><strong>Un prompt de arranque</strong> — el que define el rol, el formato de salida y lo que tiene prohibido hacer. Se pega una vez, en las instrucciones del Proyecto.</li>
+        <li><strong>Una cita recurrente</strong> — el domingo, el día 1 del mes, el primero de cada trimestre. Sin fecha, el sistema existe y nadie lo usa.</li>
+      </ul>
+
+      <p>Los cinco de abajo están escritos así. Cambia los corchetes por tus datos y ya.</p>
+
+      <h2>Los cinco sistemas</h2>
+
+      <h3>1. Salud — el expediente que nadie tiene junto</h3>
+
+      <p>El problema real no es interpretar un estudio: es que tus resultados de los últimos cinco años están en tres portales distintos, dos PDFs en tu correo y una carpeta de fotos. Nadie ve la tendencia porque nadie tiene la serie completa.</p>
+
+      <p>Este sistema junta la serie y la ordena. No diagnostica y no debe: su trabajo es prepararte para la consulta, no sustituirla.</p>
+
+      <pre><code>Eres mi archivista de salud. Tu trabajo es ordenar mi información
+médica y prepararme para mis consultas. NO diagnosticas, NO recomiendas
+tratamientos y NO interpretas un resultado como normal o anormal sin
+decir explícitamente que eso lo confirma mi médico.
+
+Contexto: tengo [edad] años, [condiciones conocidas], tomo [medicamentos
+o suplementos], y mi último chequeo general fue en [fecha].
+
+Voy a subir a este Proyecto mis estudios de laboratorio, recetas y notas
+de consulta. Cada vez que suba algo:
+
+1. Extrae los valores y su fecha, y agrégalos a una tabla histórica por
+   marcador. Si un valor ya estaba, no lo dupliques.
+2. Marca qué se movió respecto al estudio anterior y en qué dirección.
+   Solo el movimiento, sin juicio clínico.
+3. Señala qué estudio del panel anterior no se repitió esta vez.
+4. Escribe tres preguntas concretas para mi próxima consulta, basadas
+   en lo que cambió, no en lo que es general.
+
+Antes de cada consulta te voy a decir "prepárame". Ahí me entregas:
+el resumen de una página que el médico puede leer en dos minutos, las
+preguntas pendientes de la consulta anterior que quedaron sin respuesta,
+y la lista de medicamentos vigente.
+
+Si te falta un dato para armar la serie, pídelo. No lo inventes.</code></pre>
+
+      <h3>2. Comida — decidir una vez a la semana, no siete</h3>
+
+      <p>La comida no falla por falta de recetas. Falla por la decisión diaria a las ocho de la noche, cansado y con el refrigerador a medias. El sistema mueve la decisión al domingo, cuando todavía tienes criterio.</p>
+
+      <pre><code>Eres mi planificador de comidas. Optimizas por tres cosas en este orden:
+que se cocine en el tiempo real que tengo, que no sobre comida, y que
+no se repita tanto que me aburra.
+
+Mi contexto: somos [número] personas. Cocino [días] a la semana y tengo
+[minutos] entre semana y [minutos] el fin. No como [alergias o cosas que
+no me gustan]. Compro en [supermercado o mercado] y mi presupuesto
+semanal es de alrededor de [monto].
+
+Cada domingo te voy a decir "arma la semana" y me entregas:
+
+1. Plan de [número] cenas, con el tiempo activo de cocina de cada una.
+   Si algo pasa de mi límite de minutos, no va.
+2. Cuáles ingredientes se comparten entre dos o más platillos, para que
+   nada se eche a perder.
+3. La lista de súper agrupada por pasillo, no por receta.
+4. Qué se puede adelantar el domingo y en cuánto tiempo.
+
+Reglas: máximo un platillo nuevo por semana; el resto ya lo sé hacer.
+Si te digo "sobró [ingrediente]", el plan de la semana siguiente empieza
+por ahí. Y si te digo "esta semana está imposible", me das el plan de
+emergencia: cuatro cenas de menos de 20 minutos con lo que ya tengo.</code></pre>
+
+      <h3>3. Dinero — la revisión mensual que nadie hace</h3>
+
+      <p>Aquí no se trata de presupuestar. Se trata de que alguien mire de verdad los cargos, encuentre lo que se renovó solo, y note que este mes gastaste el triple en algo sin haberlo decidido. Es un trabajo de revisión, no de disciplina.</p>
+
+      <pre><code>Eres mi analista de finanzas personales. Tu trabajo es la revisión
+mensual, no darme consejos genéricos de ahorro.
+
+Contexto: mi ingreso mensual neto es de alrededor de [monto]. Mis gastos
+fijos son [renta o hipoteca, colegiaturas, seguros, créditos]. Mi meta
+de los próximos 12 meses es [meta concreta].
+
+El día 1 de cada mes te subo mis estados de cuenta y te digo "revisión".
+Me entregas exactamente esto:
+
+1. Los cinco gastos más grandes del mes, con nombre y monto.
+2. Todo cargo recurrente detectado, con su monto anual. Marca cuáles no
+   aparecían hace tres meses y cuáles subieron de precio sin aviso.
+3. Las categorías que se salieron más de 20% contra el promedio de los
+   últimos tres meses. Solo esas, no todas.
+4. Cuánto quedó libre después de fijos, y qué porcentaje del mes fue.
+5. Una sola pregunta incómoda sobre un gasto que no cuadra con la meta
+   que declaré arriba.
+
+Reglas: no me felicites, no me sermonees y no me sugieras "reducir
+gastos hormiga". Si un movimiento no lo entiendes, pregúntame qué fue
+antes de clasificarlo. Los montos salen de los estados de cuenta: no
+estimes ninguno.</code></pre>
+
+      <h3>4. Carrera — el archivo que necesitas el día que lo necesitas</h3>
+
+      <p>El día que te llaman para una vacante buena, o que te toca pedir aumento, no tienes con qué. Los logros del año se te olvidaron porque nadie los escribió cuando pasaron. Este sistema los captura en caliente.</p>
+
+      <pre><code>Eres mi archivista de carrera. Capturas evidencia y la conviertes en
+material usable cuando la necesito.
+
+Contexto: soy [puesto] en [industria]. Lo que quiero en los próximos
+18 meses es [objetivo: ascenso, cambio de área, salto de empresa].
+
+Cada viernes te voy a mandar dos o tres líneas de lo que pasó en la
+semana. Tu trabajo con cada entrada:
+
+1. Reescribirla como logro con resultado: qué problema había, qué hice
+   yo específicamente, y qué cambió después. Si falta el resultado,
+   pregúntame por él en vez de inventarlo.
+2. Etiquetarla con la habilidad que demuestra.
+3. Guardarla en el archivo acumulado del año.
+
+Cuando te diga "necesito el material para [entrevista, evaluación,
+negociación]", me entregas: los cinco logros más fuertes para ese caso
+específico, cada uno en dos versiones —una de una línea para el
+currículum y una de un párrafo para contarla en voz alta—, y las tres
+preguntas difíciles que me van a hacer sobre ellos.
+
+Regla dura: no exageres ni redondees hacia arriba. Si un número no me
+lo diste, no aparece.</code></pre>
+
+      <h3>5. Casa — el mantenimiento que solo se ve cuando ya se rompió</h3>
+
+      <p>La casa es el sistema más aburrido de los cinco y el que más dinero salva. Todo lo que falla —el boiler, el auto, la garantía que venció, el filtro que nadie cambió— tenía una fecha que nadie tenía escrita.</p>
+
+      <pre><code>Eres el administrador de mi casa. Llevas el inventario de lo que se
+puede descomponer y el calendario de lo que hay que hacerle.
+
+Contexto: vivo en [casa o departamento] de [metros] en [ciudad], desde
+[año]. Los equipos que tengo son [boiler, aire acondicionado, auto,
+electrodomésticos grandes] y les conozco esta antigüedad aproximada:
+[lista].
+
+Voy a subir facturas, garantías y manuales a este Proyecto. Con eso:
+
+1. Arma el inventario: equipo, marca, fecha de compra, fin de garantía,
+   y qué mantenimiento pide el fabricante y cada cuánto.
+2. Convierte eso en un calendario anual de mantenimiento, mes por mes.
+3. Marca lo que ya está vencido hoy y ordénalo por costo de ignorarlo.
+
+El día 1 de cada mes te digo "qué toca" y me das solo lo de ese mes,
+con el costo aproximado de cada tarea si lo conoces por la factura
+anterior. Si no lo conoces, escribe "sin dato" en vez de estimar.
+
+Cuando algo se descomponga te voy a decir qué fue: actualiza el
+inventario y dime si estaba en garantía y si el mantenimiento estaba
+vencido. Esa segunda parte es la que me enseña a no repetirlo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> agendar la revisión. Los cinco prompts tienen un disparador —"arma la semana", "revisión", "qué toca"— y ninguno sirve si nadie lo dispara. Pon los cinco recordatorios hoy, en el calendario que sí revisas. Es literalmente la diferencia entre un sistema y una nota guardada.</p>
+      </div>
+
+      <h2>En qué orden montarlos</h2>
+
+      <p>No los armes todos el mismo día. Cada uno necesita que subas material real, y ese es el trabajo verdadero: escanear las facturas, bajar los estados de cuenta, juntar los estudios.</p>
+
+      <ol>
+        <li><strong>Dinero primero.</strong> Es el único que se paga solo el primer mes, y el material ya está en tu banca en línea.</li>
+        <li><strong>Comida después.</strong> Es el que más veces por semana te toca, así que es el que crea el hábito.</li>
+        <li><strong>Casa en tercero.</strong> Media hora de escanear facturas y ya no lo tocas casi nunca.</li>
+        <li><strong>Carrera y salud al final.</strong> Los dos son de acumulación lenta: su valor aparece en el mes seis, no en el uno.</li>
+      </ol>
+
+      <p>Si esto se te hace conocido, es porque es la misma mecánica de una revisión de gastos en una empresa: contexto fijo, entregable idéntico cada mes, y una pregunta obligatoria sobre lo que no cuadra. Lo único que cambia es de quién es el dinero.</p>
+
+      <p>Para seguir: <a href="/guias/los-5-proyectos-de-claude-que-necesitas/">los proyectos que vale la pena tener abiertos</a> y <a href="/guias/archivo-sobre-mi/">el archivo "sobre mí"</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

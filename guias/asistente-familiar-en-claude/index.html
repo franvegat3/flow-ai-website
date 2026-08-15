@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arma el asistente familiar viral dentro de Claude — Guías Flow AI</title>
+  <meta name="description" content="Planea cenas, controla los recibos y corre el calendario de la casa. Constrúyelo gratis en Claude: el proyecto, el prompt de entrevista, y los conectores de calendario y correo que lo hacen correr solo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/asistente-familiar-en-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Arma el asistente familiar viral dentro de Claude" />
+  <meta property="og:description" content="Planea cenas, controla los recibos y corre el calendario de la casa. Constrúyelo gratis en Claude: el proyecto, el prompt de entrevista, y los conectores de calendario y correo que lo hacen correr solo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/asistente-familiar-en-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span></div>
+      <h1>Arma el asistente familiar viral dentro de Claude</h1>
+      <p class="lead">Planea cenas, controla los recibos y corre el calendario de la casa. Constrúyelo gratis en Claude: el proyecto, el prompt de entrevista, y los conectores de calendario y correo que lo hacen correr solo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La carga de la casa no está en las tareas. Está en ser la única persona que se acuerda de todo: que el martes hay junta de padres, que se acabó el detergente, que el pago de la tarjeta cae el 17, que hoy toca cenar algo que a los niños no les dé asco.</p>
+
+      <p>Hay veinte apps que prometen resolverlo y todas fallan por lo mismo: hay que alimentarlas. Alguien tiene que capturar los pendientes, cargar los tickets y actualizar el calendario. Es un trabajo administrativo para dejar de hacer trabajo administrativo.</p>
+
+      <p>Lo que sí funciona es distinto: un proyecto de Claude que ya sabe cómo vive tu familia, conectado a tu calendario y a tu correo, al que le hablas como le hablarías a alguien que trabaja contigo desde hace años. Se arma en una tarde y no hay que pagar una app nueva.</p>
+
+      <h2>Qué es esto, en una frase</h2>
+
+      <p>Un proyecto de Claude con las instrucciones de tu casa adentro, más los conectores de calendario y correo, para que la coordinación deje de vivir en la cabeza de una sola persona.</p>
+
+      <p>La pieza que casi nadie hace bien es la primera: las instrucciones. Sin ellas tienes un chat genérico que te propone recetas con ingredientes que no compras y horarios que no existen.</p>
+
+      <h2>Paso 1: crea el proyecto</h2>
+
+      <p>En Claude, entra a <em>Projects</em> y crea uno nuevo. Llámalo como se llame tu familia. Un proyecto es un espacio con memoria propia: las instrucciones y los archivos que le pongas ahí aplican a todas las conversaciones que abras dentro, y nada de eso se mezcla con tus chats de trabajo.</p>
+
+      <p>Esa separación importa más de lo que parece. El asistente de la casa y el asistente del trabajo tienen contextos incompatibles, y cuando los juntas los dos empeoran.</p>
+
+      <h2>Paso 2: el prompt de entrevista</h2>
+
+      <p>Aquí está el truco que cambia el resultado. En vez de escribir tú las instrucciones desde cero, haces que Claude te entreviste y las redacte él. Pega esto como primer mensaje dentro del proyecto:</p>
+
+      <pre><code>Vas a ayudarme a construir las instrucciones de un asistente
+familiar que va a vivir en este proyecto de Claude.
+
+No escribas todavía las instrucciones. Primero entrevístame.
+
+Reglas de la entrevista:
+- Hazme UNA pregunta a la vez y espera mi respuesta.
+- Máximo 15 preguntas en total.
+- Si mi respuesta es vaga, repregunta antes de avanzar.
+- No asumas nada sobre mi familia, mi ciudad ni mi presupuesto.
+
+Cubre estos temas, en este orden:
+1. Quiénes viven en la casa, edades y rol de cada quien.
+2. Restricciones de comida: alergias, cosas que nadie se come,
+   dietas, y qué tan seguido se come fuera.
+3. Cómo se hace la despensa hoy: dónde, qué día, quién,
+   presupuesto aproximado y si hay entrega a domicilio.
+4. Ritmo de la semana: horarios de escuela y trabajo,
+   actividades fijas, quién lleva y quién recoge.
+5. Las tres cosas que más se caen o se olvidan.
+6. Cómo se llevan las cuentas de la casa hoy y quién paga qué.
+7. Qué quiero que este asistente NO haga nunca.
+8. Cómo quiero que me hable: directo, con opciones, con
+   recordatorios suaves.
+
+Cuando termines la entrevista, entrégame un solo bloque de texto
+titulado INSTRUCCIONES DEL PROYECTO, escrito en segunda persona
+dirigido a ti mismo como asistente, que incluya:
+- El perfil de la familia y sus restricciones duras.
+- El ritmo semanal.
+- Los tres trabajos que haces: menú y despensa, gastos,
+  calendario.
+- El formato exacto de cada entregable.
+- Lo que nunca debes hacer.
+- Una regla: si te falta un dato, pregúntalo; no lo inventes.
+
+Después de entregármelo, dime en qué momento del mes conviene
+revisarlo y qué señales indican que se quedó viejo.</code></pre>
+
+      <p>Contesta la entrevista con calma. Es la única parte que cuesta trabajo, y es la que hace la diferencia entre un asistente que sirve y uno que da consejos de revista.</p>
+
+      <p>Cuando te entregue el bloque, cópialo y pégalo en las instrucciones del proyecto. Léelo antes: si algo no describe tu casa, corrígelo ahí mismo.</p>
+
+      <h2>Paso 3: los conectores que lo hacen correr solo</h2>
+
+      <p>Con las instrucciones puestas ya tienes algo útil, pero sigue siendo un chat al que hay que contarle todo. Los conectores son los que quitan la captura manual.</p>
+
+      <ul>
+        <li><strong>Calendario</strong> — para que lea la semana real en vez de preguntártela. Es el que más se nota: cambia "¿qué tienes el jueves?" por un plan que ya toma en cuenta que el jueves llegas a las nueve.</li>
+        <li><strong>Correo</strong> — para que saque de ahí los recibos, las confirmaciones de escuela y los avisos de pago sin que reenvíes nada.</li>
+        <li><strong>Un espacio de notas o documentos</strong> — opcional, pero es donde conviene que deje el menú de la semana y la lista del súper para que los vea todo mundo en casa.</li>
+      </ul>
+
+      <p>Se activan desde la configuración de conectores de Claude y hay que autorizar cada cuenta una vez. La disponibilidad depende de tu plan y de si tu correo es personal o de empresa; si el conector de tu correo de trabajo está bloqueado por tu organización, usa la cuenta personal para esto y ya.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir qué <em>no</em> entra. Un asistente familiar con acceso a tu correo va a ver estados de cuenta, temas médicos y conversaciones que no son tuyas. Antes de conectar nada, escribe en las instrucciones del proyecto la lista de lo que no debe leer ni repetir, y no metas ahí documentos con números de tarjeta ni identificaciones. La comodidad de que lo lea todo no vale un dato que no querías compartir.</p>
+      </div>
+
+      <h2>Los tres trabajos, en la práctica</h2>
+
+      <h3>Cenas y despensa</h3>
+
+      <p>El pedido semanal es una sola línea: "arma el menú de cenas de lunes a viernes y la lista del súper, respetando lo que ya tenemos". Lo que lo vuelve útil es que las instrucciones ya traen las alergias, el presupuesto y qué tan tarde llegan todos. Un menú que ignora que el miércoles hay futbol a las siete no se cumple.</p>
+
+      <p>Una vez a la semana, mándale foto de lo que hay en el refrigerador antes de que arme la lista. Claude también ve, y eso baja el desperdicio más que cualquier plan bonito.</p>
+
+      <h3>Recibos y gastos</h3>
+
+      <p>Con el correo conectado, el pedido es "revisa los recibos de este mes y dime en qué se nos fue el dinero, qué subió contra el mes pasado y qué se puede cancelar". No necesitas una app de finanzas: necesitas que alguien lea 40 correos y te diga las tres cosas que importan.</p>
+
+      <p>El hallazgo típico de la primera corrida son suscripciones que nadie usa. Si quieres llevar eso más lejos, <a href="/guias/auditor-de-suscripciones/">el auditor de suscripciones</a> es el mismo mecanismo aplicado a fondo.</p>
+
+      <h3>Calendario de la casa</h3>
+
+      <p>Cada domingo: "revisa la semana que viene y dime dónde hay choques, qué falta preparar con anticipación y qué se puede mover". Lo valioso no es la lista de eventos, que ya la tienes. Es que alguien cruce los eventos con las obligaciones que no están en ningún calendario.</p>
+
+      <h2>El mismo patrón, en un negocio chico</h2>
+
+      <p>Esto no es una curiosidad doméstica. La estructura —instrucciones que describen la operación, conectores a las fuentes reales, tres entregables fijos— es exactamente la que uso cuando le monto a una empresa de veinte personas su primer asistente interno.</p>
+
+      <p>Cambia el contenido, no el molde: en vez de alergias, las reglas de facturación; en vez del menú, el reporte semanal de pedidos; en vez del calendario familiar, el de entregas comprometidas. Si el proyecto de tu casa te funciona un mes, ya sabes armar el de tu operación. Puedes ver esa versión completa en <a href="/guias/los-5-proyectos-de-claude-que-necesitas/">los 5 proyectos de Claude que necesitas</a>.</p>
+
+      <h2>Por qué se abandona a las tres semanas</h2>
+
+      <p>Porque se arma en modo entusiasmo y se le pide todo el primer día. Menú, gastos, calendario, pendientes, mantenimiento de la casa, cumpleaños. A la tercera semana ninguno de los seis está pasando.</p>
+
+      <p>Arranca con uno. El de cenas, casi siempre, porque el resultado se nota el mismo día y lo valida alguien más en tu casa. Cuando ese ya corra sin que lo empujes, agregas el segundo.</p>
+
+      <p>Y ponle una revisión mensual a las instrucciones. Las familias cambian de horario, de escuela y de gustos; un asistente con las instrucciones del mes de enero en junio se equivoca con mucha seguridad, que es la peor forma de equivocarse.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

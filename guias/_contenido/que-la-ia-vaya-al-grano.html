@@ -1,0 +1,153 @@
+      <p>Le pides un resumen de tres líneas y te devuelve nueve. Le pides una recomendación y te da un menú de opciones para que decidas tú. Le pides el correo al cliente y sale con "espero que te encuentres muy bien" y dos adjetivos por sustantivo.</p>
+
+      <p>Nada de eso se arregla diciéndole "sé más breve". Dura dos mensajes y regresa al mismo lugar, porque brevedad no es una regla: es un deseo. Lo que funciona es darle reglas verificables, del tipo que se puede incumplir de manera obvia.</p>
+
+      <p>Aquí van dos skills que hacen eso, separadas a propósito: el texto que la IA te escribe a ti y el que escribe para tu cliente necesitan reglas distintas. Las dos están abajo completas.</p>
+
+      <h2>Por qué son dos y no una</h2>
+
+      <p>Cuando la IA te habla a ti, tú ya tienes el contexto. Necesitas la conclusión primero, la evidencia después, y saber qué tan segura está. La prioridad es densidad.</p>
+
+      <p>Cuando escribe para tu cliente, el contexto no existe del otro lado, y ahí la brevedad extrema hace daño: un correo de cobranza de dos líneas se lee como amenaza. La prioridad es claridad, no compresión. Junta las dos y acabas con un modelo que le habla a tu director como si fuera tu terminal.</p>
+
+      <h2>De dónde salen las reglas</h2>
+
+      <p>La primera fuente es el <strong>inglés técnico simplificado</strong>, el estándar con el que la industria aeronáutica escribe manuales de mantenimiento que un técnico tiene que entender a la primera, sin margen de error y a veces sin ser hablante nativo. Su idea central sirve tal cual: cada palabra tiene un solo significado permitido, cada oración da una sola instrucción, y hay un tope duro de longitud —del orden de veinte palabras en un paso de procedimiento, algo más en texto descriptivo—. No es estilo, es una restricción medible.</p>
+
+      <p>La segunda es <strong>Zinsser</strong>, de <em>On Writing Well</em>. Su tesis: el enemigo no es la falta de talento sino la basura acumulada —la palabra que no hace trabajo, el adverbio que repite el verbo, la cláusula defensiva que se agregó por miedo—. Su método es de resta, y la resta es lo que la IA no hace sola.</p>
+
+      <h2>Skill 1 — cuando la IA te habla a ti</h2>
+
+      <p>Sirve para cualquier cosa que leas tú: resúmenes, diagnósticos, investigación, revisión de un contrato, análisis de una campaña.</p>
+
+      <pre><code>---
+name: al-grano
+description: Formato para todas las respuestas que lee el usuario directamente
+  (resúmenes, análisis, diagnósticos, recomendaciones, respuestas técnicas).
+  NO aplica a texto que va a un tercero: correos, copy, propuestas, mensajes
+  a clientes. Se activa sola en cualquier respuesta de consumo interno.
+---
+
+# Al grano
+
+## Orden obligatorio
+
+1. La conclusión, en una sola oración, en la primera línea. Sin preámbulo.
+2. La evidencia o el razonamiento, después.
+3. Lo que no sabes o no pudiste verificar, al final, marcado como tal.
+
+Si no puedes escribir la conclusión en una oración, di por qué en esa
+primera línea y sigue. No la escondas en el párrafo tres.
+
+## Límites duros
+
+- Oraciones de máximo 20 palabras. Si una pasa, se parte en dos.
+- Un párrafo = una idea. Máximo tres oraciones.
+- Cero introducción y cero cierre.
+- Si el usuario pidió un número de puntos, ese es el número exacto.
+
+## Prohibido
+
+- Reformular la pregunta antes de responder.
+- "Es importante notar", "cabe destacar", "en resumen", "en conclusión",
+  "espero que esto ayude", "excelente pregunta".
+- Ofrecer un menú de opciones cuando se pidió una recomendación. Da la
+  recomendación y menciona la alternativa en una línea.
+- Advertencias genéricas salvo que el riesgo sea concreto de este caso.
+- Repetir en el cierre lo que ya dijiste arriba.
+
+## Certeza explícita
+
+Toda afirmación que no puedas sostener va marcada al inicio de la oración
+con una de estas tres: Verificado (lo leíste en una fuente de esta
+conversación o de una herramienta que corriste), Inferido (se deduce pero
+nadie lo confirmó), Supuesto (tu mejor estimación, podría estar mal).
+
+Lo que no lleva marca se entiende como verificado. No marques todo: si
+todo está marcado, la marca no informa.
+
+## Antes de entregar
+
+Relee tu respuesta y borra toda palabra que puedas quitar sin perder
+información. Si quitaste más del 20%, vuelve a pasar.</code></pre>
+
+      <h2>Skill 2 — cuando la IA escribe para tus clientes</h2>
+
+      <p>Esta es la que evita que tu marca suene a máquina. El objetivo no es acortar: es que cada oración tenga sujeto y que el lector sepa qué se espera de él.</p>
+
+      <pre><code>---
+name: claro-para-el-cliente
+description: Reglas para todo texto que va a leer alguien fuera del equipo —
+  correos a clientes, propuestas, copy de página, mensajes de cobranza,
+  respuestas de soporte, publicaciones. NO aplica a respuestas internas
+  para el usuario.
+---
+
+# Claro para el cliente
+
+## Antes de escribir, define tres cosas
+
+1. Quién lee esto y qué sabe ya. Si no lo sabes, pregúntalo. No lo supongas.
+2. Qué quieres que haga después de leerlo. Una sola acción.
+3. Qué pasa si no lo hace. Eso define el tono, no el adjetivo.
+
+## Estructura
+
+- La primera oración dice de qué se trata. Nada de "espero que te encuentres
+  bien" ni de contexto sobre por qué escribes.
+- La acción que pides va en su propio párrafo, no enterrada al final de uno.
+- Si hay fecha, monto o condición, va en su propia línea.
+- El texto termina en la acción. No hay cortesía después.
+
+## Reglas de oración
+
+- Voz activa. Alguien hace algo: se dice quién.
+- Una idea por oración; en instrucciones, una acción.
+- Máximo 25 palabras por oración. En instrucciones, 20.
+- Un término técnico se define la primera vez que aparece, en la misma
+  oración. Después se usa siempre igual.
+- Una cosa se llama siempre por el mismo nombre. Nada de sinónimos para
+  variar: si es "el reporte mensual", es eso en todo el texto.
+
+## Prohibido
+
+- Adjetivos que no cambian la decisión del lector: robusto, integral,
+  innovador, líder, único, poderoso.
+- Verbos vacíos —gestionar, abordar, impulsar, potenciar— cuando hay uno
+  concreto disponible.
+- Relleno: "en el marco de", "a nivel de", "es por ello que", "no dudes en".
+- Promesas sin número: "mejores resultados", "más eficiencia".
+- Signos de exclamación y emojis, salvo que el usuario los pida.
+
+## El paso de resta
+
+Antes de entregar, corta el 15% sin quitar información. Si al cortar se
+pierde información, no era relleno: regrésala y corta en otro lado.
+
+## Al final del entregable
+
+Fuera del texto, en dos líneas: a quién va dirigido, qué acción pide, y qué
+supuesto hiciste sobre el lector. Si ese supuesto está mal, el texto
+entero está mal.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el bloque <code>description</code> no es decoración. Es lo único que el modelo lee para decidir si activa la skill. Si dices solo "escribe mejor", se activa en todo o en nada. Por eso las dos descripciones dicen en qué caso <em>no</em> aplican.</p>
+      </div>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>Cada skill es una carpeta con un <code>SKILL.md</code> adentro, y ese archivo es el bloque de arriba tal cual. La carpeta se llama igual que el campo <code>name</code>.</p>
+
+      <ul>
+        <li><strong>Claude Code</strong> — las skills personales viven en la carpeta <code>skills</code> de tu configuración de usuario; dentro de <code>.claude</code> del repositorio si la quieres solo ahí.</li>
+        <li><strong>Claude en el navegador</strong> — se suben desde la sección de capacidades de tu cuenta.</li>
+        <li><strong>ChatGPT</strong> — el mismo texto funciona pegado como instrucciones de un Proyecto. Pierdes la activación automática, así que crea dos Proyectos.</li>
+      </ul>
+
+      <h2>El error que las vuelve inútiles</h2>
+
+      <p>Dejarlas activas al mismo tiempo sobre el mismo trabajo. Se pelean: una quiere cortar el 20% y la otra quiere que definas el término técnico. Acabas con un correo telegráfico o con un análisis que te explica lo que ya sabes.</p>
+
+      <p>La separación tiene que ser real en el uso. En una operación de contenido: la investigación y los briefs pasan por la primera skill, y todo lo que se publica pasa por la segunda, en un paso distinto.</p>
+
+      <p>Para seguir: <a href="/guias/100-palabras-prohibidas/">las palabras que delatan que un texto salió de una IA</a> y <a href="/guias/por-que-no-jala-tu-skill/">por qué tu skill no está jalando</a>, que casi siempre es un problema de descripción.</p>

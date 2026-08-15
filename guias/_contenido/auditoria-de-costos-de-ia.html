@@ -1,0 +1,102 @@
+      <p>Pregúntale a un director de operaciones cuánto gasta su empresa en software y te da el número en treinta segundos. Pregúntale cuánto gasta en IA y empieza a hacer cuentas en voz alta.</p>
+
+      <p>No es descuido. El gasto en IA entra por puertas que la contabilidad no tenía marcadas: suscripciones que se pagan con tarjeta personal y se reembolsan, créditos de API que se cargan por consumo y no por mes, herramientas de video que se cobran en créditos que nadie convierte a pesos, y pilotos que alguien prendió en marzo y nunca apagó.</p>
+
+      <p>La auditoría son tres pasos, y ninguno requiere que le pidas nada a finanzas. Al final tienes una hoja que un agente actualiza sola cada mes, con cada peso amarrado a algo que produce y con un tope que te avisa antes de que lo cruces, no después.</p>
+
+      <h2>Paso 1: la hoja de costos que nadie tiene</h2>
+
+      <p>El primer problema no es que gastes de más. Es que el gasto vive en cinco lugares y ninguno se habla con otro. Antes de optimizar nada, hay que juntarlo.</p>
+
+      <p>Estas son las cinco puertas por donde entra, y dónde se busca cada una:</p>
+
+      <ul>
+        <li><strong>Suscripciones por asiento.</strong> Los planes de equipo de asistentes y herramientas de escritura. Se encuentran en el estado de cuenta de la tarjeta corporativa, buscando por nombre del proveedor.</li>
+        <li><strong>Consumo por API.</strong> El más traicionero, porque escala con el uso y no tiene techo natural. Vive en la consola de cada proveedor, no en la tarjeta.</li>
+        <li><strong>Créditos.</strong> Generación de imagen, video, voz. Se compran en paquetes y se consumen sin que nadie los convierta a pesos por pieza entregada.</li>
+        <li><strong>Automatización e infraestructura.</strong> La plataforma donde corren tus flujos, el servidor donde vive el agente, la base de datos.</li>
+        <li><strong>Reembolsos individuales.</strong> Lo que cada quien paga por su cuenta y mete a gastos. Este renglón casi siempre es más grande de lo que la empresa cree.</li>
+      </ul>
+
+      <p>La hoja necesita exactamente estas columnas, ni una más: <code>herramienta</code>, <code>tipo de cobro</code>, <code>quién la usa</code>, <code>gasto del mes</code>, <code>gasto del mes anterior</code>, <code>qué produce</code>, <code>tope mensual</code>. Las últimas dos son las que la convierten en auditoría en lugar de en un inventario.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> contar el tiempo de tu gente como costo. Si alguien de tu equipo dedicó tres semanas a montar un flujo, ese flujo costó tres semanas de su sueldo antes del primer peso de API. Es el renglón más grande de casi todas las auditorías que he corrido y el único que nunca aparece en un estado de cuenta. Ponlo en la hoja como un renglón más, con su número, aunque duela.</p>
+      </div>
+
+      <h2>Paso 2: amarrar cada peso a lo que produce</h2>
+
+      <p>Aquí es donde la auditoría deja de ser un ejercicio de contabilidad y empieza a servir para decidir.</p>
+
+      <p>La columna <code>qué produce</code> no acepta respuestas como "productividad del equipo" o "mejor calidad". Acepta una de tres formas, y solo tres:</p>
+
+      <ol>
+        <li><strong>Horas recuperadas al mes.</strong> Cuántas horas de trabajo humano desapareció esta herramienta, multiplicadas por el costo de esa hora. Requiere que sepas cuánto tardaba antes. Si no lo sabes, mídelo una semana antes de escribir el número.</li>
+        <li><strong>Unidades entregadas al mes.</strong> Piezas de contenido, propuestas, reportes, tickets resueltos. Divide el gasto entre las unidades y tienes un costo por pieza que puedes comparar contra el precio de comprarlo afuera.</li>
+        <li><strong>Ingreso atribuible.</strong> El más difícil y el más valioso. Solo aplica cuando la herramienta toca directamente una venta y puedes rastrearla.</li>
+      </ol>
+
+      <p>Cualquier renglón que no llene ninguna de las tres es candidato a cancelación. No automáticamente —a veces la herramienta apenas se está adoptando— pero sí a una fecha límite: "si en 60 días esta línea sigue vacía, se cancela".</p>
+
+      <h2>Paso 3: topes con alerta al 80%</h2>
+
+      <p>El gasto por consumo no avisa. Ese es todo el problema. Un mes con un flujo mal diseñado corriendo en loop puede costar varias veces el mes anterior, y te enteras cuando llega el cargo.</p>
+
+      <p>La regla que uso es simple: <strong>todo lo que se cobra por consumo lleva tope, y el tope avisa al 80%</strong>, no al 100%. El 100% ya es el problema; el 80% todavía es una decisión.</p>
+
+      <p>Los topes se ponen en dos capas, y necesitas las dos:</p>
+
+      <ul>
+        <li><strong>En el proveedor.</strong> Casi todas las consolas de API tienen un límite de gasto configurable y un correo de alerta. Es la capa dura: cuando se cruza, se corta.</li>
+        <li><strong>En tu hoja.</strong> Es la capa blanda, y es la que te da contexto: un tope al 80% aquí no corta nada, pero te dice qué renglón se está saliendo y desde qué semana.</li>
+      </ul>
+
+      <p>Poner solo la capa dura te protege el bolsillo pero te deja sin explicación. Poner solo la blanda te da la explicación después del cargo.</p>
+
+      <h2>El agente que la actualiza cada mes</h2>
+
+      <p>Una hoja que se llena a mano se llena dos meses y se abandona al tercero. Esta es la parte que la mantiene viva.</p>
+
+      <pre><code>Eres el auditor de costos de IA de mi empresa. Corres una vez al mes.
+
+TU FUENTE
+Te voy a pasar tres cosas: (1) la hoja de costos del mes pasado, (2) los
+estados de cuenta o capturas de consumo de este mes, (3) cualquier
+herramienta nueva que alguien haya dado de alta.
+
+QUÉ HACES
+1. Actualiza el gasto del mes de cada renglón. Si un estado de cuenta no
+   trae el desglose que necesitas, dime exactamente qué me falta en vez de
+   estimarlo. No inventes ninguna cifra bajo ninguna circunstancia.
+2. Calcula la variación contra el mes anterior en pesos y en porcentaje.
+3. Marca en una lista de ALERTAS:
+   - Todo renglón que superó el 80% de su tope mensual.
+   - Todo renglón que creció más de 30% contra el mes anterior.
+   - Todo renglón con la columna "qué produce" vacía por segundo mes seguido.
+   - Toda herramienta que aparece en el estado de cuenta y no está en la hoja.
+4. Calcula el costo unitario de cada renglón que tenga unidades entregadas
+   (gasto ÷ unidades) y compáralo contra el mes anterior.
+5. Devuélveme la hoja completa actualizada, en formato de tabla que pueda
+   pegar en una hoja de cálculo, y arriba de ella un resumen de 5 líneas:
+   gasto total, variación, la alerta más cara, la herramienta con mejor
+   costo unitario y la peor.
+
+REGLAS
+- Si un dato no está en lo que te di, escribe "sin dato" y agrégalo a una
+  lista de pendientes al final. Nunca lo rellenes con un supuesto.
+- No propongas cancelar nada en la primera corrida. En la segunda sí, y
+  solo con el número que lo justifica.
+- El tiempo de mi equipo es un renglón más. Si te doy horas dedicadas,
+  conviértelas a pesos con el costo por hora que yo te dé.</code></pre>
+
+      <p>Guárdalo como un proyecto o una skill con la hoja del mes anterior adentro. Así cada corrida arranca con el histórico ya cargado y solo le pasas los estados de cuenta nuevos.</p>
+
+      <h2>Lo que la auditoría te va a mostrar y no te va a gustar</h2>
+
+      <p>En las empresas donde he corrido esto, el resultado casi siempre tiene la misma forma. El gasto no está en el lugar donde la gente lo imaginaba.</p>
+
+      <p>Aparecen suscripciones duplicadas: dos áreas pagando herramientas que hacen lo mismo porque cada una la compró por su lado. Aparecen asientos pagados de gente que ya no está o que nunca entró. Aparecen pilotos de hace ocho meses que nadie apagó porque apagarlos no era tarea de nadie. Y aparece, casi siempre, que la línea más cara del año no fue una suscripción sino las semanas que alguien dedicó a construir algo que hoy no se usa.</p>
+
+      <p>Esa última no se arregla cancelando. Se arregla decidiendo mejor qué construir, y para eso sirve hacer <a href="/guias/auditoria-de-tareas/">la auditoría de tareas</a> antes de montar el siguiente sistema. Si quieres seguir por el lado del recorte, el <a href="/guias/auditor-de-suscripciones/">auditor de suscripciones</a> y la lista de <a href="/guias/5-formas-de-ahorrar-dinero/">formas en que Claude debería estarte ahorrando dinero</a> atacan la otra mitad del problema.</p>
+
+      <p>Lo importante de esta auditoría no es el ahorro del primer mes. Es que a partir del segundo, cuando alguien proponga una herramienta nueva, la pregunta deja de ser "¿cuánto cuesta?" y pasa a ser "¿en qué renglón de qué produce va a entrar?". Esa pregunta sola detiene más gasto inútil que cualquier política de compras.</p>

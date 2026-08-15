@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El coach que programa tu semana según tu ciclo — Guías Flow AI</title>
+  <meta name="description" content="Un proyecto de Claude que arma entrenamientos, comidas, suplementos y agenda alrededor de cada fase del ciclo, y se corre solo cada mañana. Setup para pegar más los conectores de salud y calendario." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/coach-de-ciclo-en-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El coach que programa tu semana según tu ciclo" />
+  <meta property="og:description" content="Un proyecto de Claude que arma entrenamientos, comidas, suplementos y agenda alrededor de cada fase del ciclo, y se corre solo cada mañana. Setup para pegar más los conectores de salud y calendario." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/coach-de-ciclo-en-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span></div>
+      <h1>El coach que programa tu semana según tu ciclo</h1>
+      <p class="lead">Un proyecto de Claude que arma entrenamientos, comidas, suplementos y agenda alrededor de cada fase del ciclo, y se corre solo cada mañana. Setup para pegar más los conectores de salud y calendario.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de los sistemas de productividad asumen que todas las semanas son iguales. Mismo entrenamiento el lunes, misma agenda cargada, misma expectativa de rendimiento. Para quien menstrúa, esa suposición es falsa cuatro veces al mes, y el costo no es solo físico: es planear en contra de tu propio cuerpo y luego sentir que fallaste.</p>
+
+      <p>Existen apps de seguimiento del ciclo, pero casi todas terminan en lo mismo: te dicen en qué fase estás y ahí se acaban. El dato sin decisión no sirve de nada. Lo que falta es la parte que traduce "estás en fase lútea" a "entonces hoy conviene mover esta junta y hacer esta rutina".</p>
+
+      <p>Eso sí se puede armar en Claude, con tus datos, en una tarde. Aquí está cómo.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de nada:</strong> esto es una herramienta de organización, no de salud. No diagnostica, no receta y no sustituye a un médico, a un ginecólogo ni a un nutriólogo. Si tu ciclo cambió, si hay dolor que interfiere con tu vida o si estás considerando cualquier suplemento o cambio de medicación, eso se habla con un profesional de la salud. Lo que hace este sistema es ordenar y anticipar lo que tú ya sabes de ti, y ayudarte a llegar mejor preparada a esa consulta.</p>
+      </div>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Un proyecto de Claude que conoce tu ciclo, tu agenda y tu registro personal, y cada mañana te entrega un plan de entrenamiento, comidas, rutina y agenda que corresponde al día en el que estás.</p>
+
+      <h2>Las cuatro fases, y una advertencia honesta</h2>
+
+      <p>El ciclo se suele dividir en cuatro tramos: menstrual, folicular, ovulatorio y lúteo. La versión popular en redes asigna a cada uno un tipo de entrenamiento y una lista de alimentos, con mucha seguridad y poca evidencia.</p>
+
+      <p>Voy a ser directo: la investigación sobre entrenar por fases no es concluyente, y la variación entre personas es enorme. Hay quien rinde igual toda la semana y quien no puede sostener una sesión intensa dos días específicos. Construir el sistema sobre la tabla genérica de internet es construirlo sobre algo que puede no describirte.</p>
+
+      <p>Por eso este proyecto arranca distinto: las primeras semanas no planean nada, registran. El plan sale de tu patrón, no del de un artículo.</p>
+
+      <h2>Paso 1: el proyecto y sus instrucciones</h2>
+
+      <p>Crea un proyecto de Claude aparte de todo lo demás. Va a manejar información personal y no quieres que se mezcle con tus chats de trabajo. Pega esto como instrucciones del proyecto:</p>
+
+      <pre><code>Eres mi asistente de planeación por ciclo. Tu trabajo es
+organizar mi semana alrededor de dónde estoy en mi ciclo.
+
+LÍMITES DUROS
+- No das diagnósticos ni interpretas síntomas como
+  enfermedad.
+- No recomiendas suplementos, dosis ni medicamentos nuevos.
+  Solo organizas los que yo te diga que ya tomo por
+  indicación de un profesional.
+- Si detectas algo fuera de mi patrón habitual, no lo
+  interpretas: me lo señalas y me sugieres anotarlo para mi
+  siguiente consulta.
+- Nunca asumes un dato que no te di. Lo preguntas.
+
+MIS DATOS
+- Duración típica de mi ciclo: [días]
+- Primer día del último ciclo: [fecha]
+- Método anticonceptivo, si aplica: [cuál o ninguno]
+- Cómo entreno hoy: [tipo, días, a qué hora]
+- Restricciones de comida: [alergias, dietas, lo que no como]
+- Lo que ya tomo por indicación profesional: [lista]
+- Mi trabajo tiene picos fijos en: [días, cierres, juntas]
+
+CÓMO TRABAJAS
+- Cada mañana me entregas el plan del día, no de la semana.
+- El plan se apoya en MI REGISTRO, no en tablas generales.
+  Si todavía no hay suficiente registro, dilo y propón la
+  versión conservadora.
+- Formato fijo: FASE Y DÍA / ENTRENAMIENTO / COMIDAS /
+  RUTINA Y DESCANSO / AGENDA (qué mover y qué proteger) /
+  UNA PREGUNTA PARA MI REGISTRO DE HOY.
+- Nada de lenguaje de coach motivacional. Directo y corto.
+- Si mi agenda choca con lo que propones, gana mi agenda:
+  ajusta el plan a lo que sí es posible hoy.</code></pre>
+
+      <p>Rellena los corchetes con lo tuyo. Lo que quede vacío es exactamente donde el sistema va a inventar, así que mejor poner "no sé" que dejarlo en blanco.</p>
+
+      <h2>Paso 2: los conectores</h2>
+
+      <p>Con las instrucciones ya tienes algo funcional. Los conectores son los que le quitan la captura diaria.</p>
+
+      <ul>
+        <li><strong>Calendario</strong> — es el más importante y el que menos gente conecta. Sin él, el plan es una sugerencia genérica; con él, sabe que hoy tienes tres juntas seguidas y una presentación, y ajusta en consecuencia.</li>
+        <li><strong>Datos de salud o actividad</strong> — sueño, pasos, frecuencia cardiaca en reposo, entrenamientos registrados. Depende de qué exporte tu reloj o tu app; muchas permiten sacar un archivo que puedes subir al proyecto cada semana aunque no haya conector directo.</li>
+        <li><strong>Tu registro</strong> — un documento en el proyecto donde se acumulan tus notas diarias. Esta es la fuente que hace que el sistema sea tuyo y no de internet.</li>
+      </ul>
+
+      <p>Si un conector de salud no está disponible o no confías en darle acceso, la versión manual funciona: una vez por semana pegas los datos y ya. Pierdes automatización, no calidad.</p>
+
+      <h2>Paso 3: la corrida de la mañana</h2>
+
+      <p>El pedido diario cabe en una línea, porque las instrucciones ya cargan todo lo demás:</p>
+
+      <pre><code>Plan de hoy. Estoy en el día [n] de mi ciclo. Ayer: sueño
+[horas], energía [1-10], entrenamiento [qué hice o nada],
+lo que noté: [texto libre].</code></pre>
+
+      <p>Toma treinta segundos escribirlo y es lo que alimenta el registro. Si tienes los conectores puestos, el sueño y el entrenamiento ya los lee solo y solo escribes energía y notas.</p>
+
+      <p>Para que corra sin que te acuerdes, hay dos caminos. El sencillo: un recordatorio a la misma hora todos los días, y contestarlo como quien manda un mensaje. El automático: si usas Claude Code, dejar la corrida programada en tu computadora para que el plan te espere ya escrito. La versión con recordatorio es la que la gente sostiene; la automática se ve mejor y se abandona igual si no la revisas.</p>
+
+      <h2>Los cuatro entregables, con criterio</h2>
+
+      <h3>Entrenamiento</h3>
+
+      <p>Lo útil no es "hoy toca fuerza" sino "hoy toca la sesión de fuerza que tenías planeada, pero con el volumen que sí sostuviste las últimas tres veces que estuviste en este punto del ciclo". Eso solo lo puede decir con tu registro.</p>
+
+      <h3>Comidas</h3>
+
+      <p>Sin dietas de fase. Lo que sí funciona es continuidad: el menú de la semana ajustado a lo que sabes que se te antoja y a lo que se te dificulta comer en ciertos días, con la lista del súper que lo hace posible.</p>
+
+      <h3>Suplementos y rutina</h3>
+
+      <p>Aquí el sistema es un organizador, no un asesor. Ordena y recuerda lo que un profesional ya te indicó, y lleva la bitácora de cómo te fue. Si sale una duda —si algo te cayó distinto, si quieres cambiar algo— lo que hace es redactarte la pregunta para llevarla a consulta, no responderla.</p>
+
+      <h3>Agenda</h3>
+
+      <p>La parte más valiosa y la que nadie usa. Si sabes por tu propio registro que hay dos días del mes en los que sostienes mal una conversación difícil, esos días no se agenda la negociación del contrato ni la evaluación de desempeño. Se agenda el trabajo que sí rinde ahí.</p>
+
+      <p>En eso he visto el mayor efecto con mujeres que dirigen equipos o llevan su propio negocio: no es que trabajen menos, es que dejan de poner lo más caro de su mes en el peor día posible. Mover una junta de venta tres días es gratis; llegar a ella sin energía cuesta el trato.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir dónde viven estos datos. Un registro de ciclo es información sensible. Mantenlo en un proyecto separado, no lo subas a espacios de trabajo compartidos de tu empresa, revisa la configuración de privacidad de tu cuenta y no pongas ahí resultados de laboratorio ni identificaciones. Y si el sistema te acaba sirviendo, exporta tu registro cada tanto: el valor está en el histórico, y ese no lo quieres atado a una sola herramienta.</p>
+      </div>
+
+      <h2>Las primeras ocho semanas</h2>
+
+      <p>El error es esperar un plan perfecto la primera semana. No lo va a haber, porque no hay registro todavía. Los primeros dos ciclos son de observación: contestas la línea de la mañana, el sistema acumula y no promete mucho.</p>
+
+      <p>Del tercero en adelante empieza a servir de verdad, porque ya puede decirte "esto te pasó las últimas dos veces en este punto". Ahí es cuando deja de ser una app más y se vuelve algo que sabe de ti lo que nadie más registró. Si te sirve el patrón, <a href="/guias/asistente-hormonal/">el asistente hormonal</a> y <a href="/guias/entrenador-sin-pretextos/">el entrenador sin pretextos</a> son variantes del mismo molde con otro enfoque.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

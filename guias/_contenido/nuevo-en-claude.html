@@ -1,0 +1,98 @@
+      <p>La primera semana con Claude casi todo el mundo la usa como buscador con mejores modales: pregunta, copia, se va. Y después concluye que "es igual que los demás".</p>
+
+      <p>Sí es igual que los demás si lo dejas sin contexto. La diferencia no la hace el prompt perfecto que viste en un video: la hacen cinco movimientos de configuración que se hacen una vez y que cambian todas las respuestas que vas a recibir después. Ninguno toma más de veinte minutos.</p>
+
+      <p>Van en orden. Si solo vas a hacer dos, haz el uno y el dos.</p>
+
+      <div class="plugin-card">
+        <h3>1. Escribe tus instrucciones personales</h3>
+        <p>En la configuración de tu cuenta hay un campo para decirle cómo quieres que te responda siempre. Esa instrucción se aplica a todas tus conversaciones, no solo a una. Es el ajuste con mayor retorno de todos y es el que casi nadie llena, o lo llena con tres adjetivos vagos.</p>
+        <p>La clave es que sea conductual, no de personalidad. "Sé conciso" no hace nada. "Máximo tres párrafos salvo que pida más" sí.</p>
+        <pre><code>Cómo quiero que me respondas:
+
+- Ve directo. Sin preámbulo, sin repetir mi pregunta, sin resumen final
+  de lo que acabas de decir.
+- Máximo tres párrafos, salvo que te pida profundidad.
+- Si mi pregunta tiene un supuesto equivocado, dímelo antes de
+  responder.
+- Cuando no sepas algo o no puedas verificarlo, dilo con esas palabras.
+  Prefiero un "no lo sé" que una respuesta bien redactada e inventada.
+- Nada de cifras, fechas ni nombres propios que no puedas sostener.
+- No me elogies la pregunta ni me digas que es interesante.
+- Si hay dos caminos razonables, elige uno, avísame cuál y sigue. Solo
+  pregúntame si la decisión es irreversible.
+- Español de México, tuteo, sin emojis.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> diez minutos, una sola vez. Vale la pena revisarlo al mes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Arma tu archivo de contexto</h3>
+        <p>El segundo movimiento es darle los hechos de tu vida y de tu trabajo. Sin esto, cada conversación arranca con un desconocido que tiene que adivinar a qué te dedicas.</p>
+        <p>Abre un documento, contesta estas preguntas y guárdalo. Ese archivo lo vas a pegar en tus proyectos y lo vas a actualizar cada tanto.</p>
+        <pre><code>Ayúdame a armar mi archivo de contexto personal. Hazme estas preguntas
+de una en una y con mis respuestas escribe un documento ordenado que yo
+pueda reutilizar en cada proyecto:
+
+1. A qué me dedico, en concreto: puesto, empresa, tamaño del equipo.
+2. Quiénes son mis clientes o mi audiencia y qué les vendo.
+3. Cuáles son mis tres prioridades de este trimestre.
+4. Qué herramientas uso todos los días.
+5. Con quién trabajo y quién decide qué.
+6. Cómo se ve un buen trabajo entregado, según yo.
+7. Qué me choca de cómo suelen escribirme las respuestas.
+
+Al final entrégame el documento en texto plano, ordenado por secciones,
+sin adornos. No agregues nada que yo no haya dicho.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> veinte minutos de conversación. Más detalle en <a href="/guias/archivo-sobre-mi/">el archivo sobre mí</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Conecta dos herramientas, no diez</h3>
+        <p>Los conectores le dan acceso a tus datos reales: tu correo, tu calendario, tus documentos, tu gestor de tareas. Es el salto de "me redacta cosas" a "sabe qué traigo esta semana".</p>
+        <p>La tentación es conectar todo el primer día. No lo hagas. Conecta dos: tu calendario y el lugar donde viven tus documentos de trabajo. Vive con eso una semana. Cada conexión nueva es superficie de acceso a información tuya, y merece que decidas una por una si vale.</p>
+        <p>En una empresa esto tiene un paso más: antes de conectar el correo corporativo o el almacenamiento del equipo, revisa con quien lleve seguridad qué queda expuesto y a quién. No es burocracia, es la diferencia entre una herramienta aprobada y una conversación incómoda.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> cinco minutos por conector. La revisión previa está en <a href="/guias/es-seguro-conectar-tus-herramientas/">es seguro conectar tus herramientas</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Entiende qué modelo estás usando</h3>
+        <p>Hay varios modelos y no son el mismo producto. Los rápidos sirven para volumen y tareas mecánicas. Los grandes sirven cuando la respuesta requiere razonar sobre muchas piezas a la vez, y además puedes pedirles que piensen más antes de contestar.</p>
+        <p>La regla práctica que uso: si la tarea la podría hacer un becario aplicado, el modelo rápido. Si al terminar alguien va a tomar una decisión con eso, el grande y con pensamiento extendido activado.</p>
+        <p>El error caro es el contrario al que te imaginas. No es usar el modelo chico para algo difícil: eso se nota. Es usar el modelo grande para todo, quemar tu límite de uso a media semana y quedarte sin herramienta el día que sí la necesitas.</p>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> nada, es una decisión por tarea. Los criterios completos, en <a href="/guias/que-modelo-de-claude-usar/">qué modelo de Claude usar</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Guarda lo que ya funcionó</h3>
+        <p>Esta es la que separa a quien lleva seis meses de quien lleva seis meses repitiéndose. Cuando algo salga bien, no cierres la ventana: captúralo.</p>
+        <p>Un proyecto agrupa conversaciones con instrucciones y archivos fijos, y ahí adentro no tienes que volver a explicar el contexto. Una skill es un archivo de instrucciones que Claude carga solo cuando la tarea lo pide. Empieza por proyectos; las skills vienen después.</p>
+        <pre><code>Acabamos de resolver algo que quiero repetir. Con base en esta
+conversación, escríbeme:
+
+1. Las instrucciones de proyecto que debería guardar para no volver a
+   explicar el contexto.
+2. Los archivos que convendría subir a ese proyecto y por qué cada uno.
+3. El prompt exacto con el que debería arrancar la próxima vez.
+
+Escríbelo para que otra persona de mi equipo lo pueda usar sin
+preguntarme nada. Nada de generalidades.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> dos minutos al final de cada trabajo que salió bien.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el uno. Suena a ajuste cosmético y no lo es. Sin instrucciones personales, el modelo escribe para el promedio de la humanidad, y el promedio de la humanidad quiere párrafos de introducción, resúmenes y elogios. Todo lo que la gente odia de "cómo escribe la inteligencia artificial" se apaga con ese campo lleno.</p>
+      </div>
+
+      <h2>Cómo se ve esto en un equipo</h2>
+
+      <p>Cuando entro a instalar esto en un área comercial, el orden es el mismo pero con una diferencia: el archivo de contexto no lo escribe cada quien por su lado. Se escribe uno de la empresa, con qué se vende, a quién, cuál es la objeción de siempre y cómo se llama cada cosa internamente. Ese documento se sube a un proyecto compartido y ahí trabajan todos.</p>
+
+      <p>El resultado que se nota a la semana no es que escriban más rápido. Es que las propuestas dejan de contradecirse entre vendedores. Cuando cada quien improvisa su contexto, cada quien le describe el producto distinto al cliente.</p>
+
+      <h2>En qué orden hacerlos</h2>
+
+      <p>Uno y dos, hoy, en media hora. Con eso ya recibes respuestas que suenan a que alguien te conoce.</p>
+
+      <p>El tres, cuando ya hayas tenido la sensación de estar copiando y pegando lo mismo desde otra herramienta. El cuatro se aprende solo la primera vez que topas tu límite de uso. Y el cinco no lo hagas antes de tener algo que valga la pena guardar: una plantilla vacía guardada el día uno no la vuelve a abrir nadie.</p>
+
+      <p>Cuando termines los cinco, sigue con <a href="/guias/nuevo-en-claude-parte-2/">la parte 2</a>, que ya es sobre cómo pedir las cosas y no sobre cómo dejar la herramienta lista.</p>

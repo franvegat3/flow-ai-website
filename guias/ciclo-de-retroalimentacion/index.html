@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El ciclo de retroalimentación que nadie construye — Guías Flow AI</title>
+  <meta name="description" content="Tu agente redacta, tú editas, tú publicas, y la lección se pierde. El setup exacto que escribe lo que cambiaste de regreso en el archivo de la skill." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/ciclo-de-retroalimentacion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El ciclo de retroalimentación que nadie construye" />
+  <meta property="og:description" content="Tu agente redacta, tú editas, tú publicas, y la lección se pierde. El setup exacto que escribe lo que cambiaste de regreso en el archivo de la skill." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/ciclo-de-retroalimentacion/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>El ciclo de retroalimentación que nadie construye</h1>
+      <p class="lead">Tu agente redacta, tú editas, tú publicas, y la lección se pierde. El setup exacto que escribe lo que cambiaste de regreso en el archivo de la skill.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El agente te entrega el borrador. Tú lo lees, le quitas dos adjetivos, le cambias el arranque porque nunca empiezas así, le metes el dato que faltaba y lo publicas.</p>
+
+      <p>Mañana pides lo mismo. Y el agente te entrega otra vez el borrador con los dos adjetivos, el arranque equivocado y el dato faltante.</p>
+
+      <p>Esa es la fuga. No es que el modelo sea malo: es que la corrección que hiciste vive en tu cabeza y en el documento final, y ninguno de los dos es un lugar que el agente pueda leer la próxima vez. Lo que sigue es el setup para cerrar ese ciclo: cómo capturar lo que cambiaste, cómo convertirlo en una regla y cómo hacer que esa regla termine escrita dentro del archivo de la skill.</p>
+
+      <h2>Por qué la memoria del chat no resuelve esto</h2>
+
+      <p>La respuesta reflejo es "actívale memoria". No alcanza, por tres razones.</p>
+
+      <p>La memoria guarda hechos sobre ti, no criterios sobre tu trabajo. Sabe que trabajas en una agencia; no sabe que tus correos nunca abren con una pregunta retórica. Segundo, es global: no distingue entre el tono de un correo a cliente y el de una nota interna, y acaba mezclándolos. Tercero, y esto es lo que rompe el asunto en un equipo, la memoria es tuya. Si tu colega corre la misma skill, arranca desde cero.</p>
+
+      <p>Una regla escrita en el archivo de la skill no tiene ninguno de esos problemas. Es específica de ese trabajo, viaja en el repositorio y aplica para todo el que use la skill. La memoria es un cuaderno personal; la skill es el manual del área.</p>
+
+      <h2>El ciclo, en cuatro piezas</h2>
+
+      <p>Todo sistema de retroalimentación que funciona tiene estas cuatro y en este orden. La mayoría de la gente monta la primera y la tercera, y por eso no cierra.</p>
+
+      <ol>
+        <li><strong>Congelar el borrador.</strong> Guardar la salida del agente antes de tocarla. Sin esto no hay contra qué comparar.</li>
+        <li><strong>Capturar el delta.</strong> La diferencia entre lo que entregó y lo que publicaste. Ahí está toda la información.</li>
+        <li><strong>Destilar la regla.</strong> Convertir ese delta en una instrucción general. Este es el paso de juicio y el único que no se puede automatizar del todo.</li>
+        <li><strong>Escribirla de vuelta.</strong> Meter la regla en el <code>SKILL.md</code> para que la próxima corrida ya la traiga.</li>
+      </ol>
+
+      <h2>El setup, paso a paso</h2>
+
+      <p>Lo monto igual en todos lados. Necesitas una carpeta y tres minutos.</p>
+
+      <h3>1. Dos archivos, no uno</h3>
+
+      <p>Cuando el agente entregue, la salida se guarda en un archivo aparte —<code>borrador.md</code>— y tú editas una copia —<code>final.md</code>. Nunca edites encima del borrador. Es la regla más simple de todas y es la que se salta todo el mundo, porque editar encima se siente natural.</p>
+
+      <p>Si trabajas en la terminal, esto es literalmente copiar el archivo antes de abrirlo. Si trabajas en la aplicación, es pegar la salida cruda en un documento antes de empezar a modificarla.</p>
+
+      <h3>2. Sacar el delta</h3>
+
+      <p>Con los dos archivos en disco, la diferencia se obtiene con la herramienta que ya tienes:</p>
+
+      <pre><code>diff -u borrador.md final.md &gt; delta.txt</code></pre>
+
+      <p>Si no eres de terminal, hay una versión que funciona igual de bien: pega los dos textos en el chat y pídele al modelo que te liste las diferencias. El punto no es el comando, es tener el delta como texto y no como recuerdo.</p>
+
+      <h3>3. Destilar la regla</h3>
+
+      <p>Este es el prompt. Va completo porque la mitad de su valor está en las restricciones del final, que son las que evitan que te devuelva veinte reglas inútiles.</p>
+
+      <pre><code>Te voy a pasar tres cosas: la instrucción original, el borrador que
+generaste y la versión final que yo publiqué después de editarla.
+
+Tu trabajo NO es disculparte ni explicarme los cambios. Tu trabajo es
+inferir qué reglas tendrías que haber tenido para producir la versión
+final desde el principio.
+
+Instrucción original:
+[pega aquí lo que pediste]
+
+Borrador que generaste:
+[pega el borrador]
+
+Versión final publicada:
+[pega el final]
+
+Analiza las diferencias y clasifícalas en tres cubetas:
+
+A. PATRÓN — cambios que se repetirían en cualquier pieza parecida
+   (tono, estructura, palabras que siempre quito, formato).
+B. CONTEXTO — cambios que vienen de información que tú no tenías
+   (un dato de la empresa, una restricción del cliente, una política).
+C. IRRELEVANTE — cambios de gusto puntual que no se generalizan.
+
+Para la cubeta A, escribe cada regla así:
+- En imperativo y en segunda persona.
+- Con el ejemplo concreto de este caso: "no escribas X, escribe Y".
+- Máximo dos líneas por regla.
+
+Para la cubeta B, escribe el dato como hecho, no como regla.
+
+Ignora por completo la cubeta C. No me la muestres.
+
+Al final dime cuántas reglas de A salieron. Si salieron más de cinco,
+quédate solo con las tres que más veces aparecen en el delta.</code></pre>
+
+      <p>El tope de tres reglas por ciclo no es capricho. Una skill con cuarenta reglas es una skill que el modelo lee por encima. La disciplina de quedarte con las tres que más pesan es lo que la mantiene afilada.</p>
+
+      <h3>4. Escribirlas de vuelta</h3>
+
+      <p>Las reglas de la cubeta A se pegan en la sección de criterios del <code>SKILL.md</code>. Los hechos de la cubeta B van en una sección aparte de contexto, porque envejecen distinto: una regla de tono dura años, el nombre del responsable de un área dura meses.</p>
+
+      <p>Y una línea más, al final del archivo: la fecha del último ajuste. Cuando la skill lleve seis meses sin cambios, o está perfecta o nadie la está usando, y conviene saber cuál de las dos.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedirle al modelo que analice sus propios cambios sin darle la instrucción original. Sin ella no puede distinguir entre "me equivoqué de tono" y "me pediste otra cosa". Va a inventar reglas para justificar cada edición, incluidas las que hiciste porque cambiaste de opinión a medio camino. Las tres piezas o ninguna.</p>
+      </div>
+
+      <h2>Cuándo correrlo</h2>
+
+      <p>Después de cada pieza es demasiado. Vas a abandonar en la tercera y el sistema muere.</p>
+
+      <p>Lo que funciona en operación real es por lote. En una operación de contenido con la que trabajo, se acumulan los pares borrador–final de la semana y el viernes se corre el ciclo una sola vez con los cinco o seis pares juntos. Eso tiene una ventaja que no es obvia: con un solo par, cualquier cambio parece un patrón. Con seis, los patrones de verdad aparecen tres veces y el gusto del día aparece una. La cubeta A se llena sola con lo correcto.</p>
+
+      <p>La misma lógica aplica a un equipo comercial que edita correos de seguimiento, o a un área de finanzas que corrige el resumen del cierre. El lote semanal es la unidad correcta casi siempre.</p>
+
+      <h2>La regla de las tres veces</h2>
+
+      <p>No toda corrección merece volverse regla. El filtro que uso: una corrección se promueve a regla cuando la hiciste tres veces en piezas distintas.</p>
+
+      <p>Antes de eso es ruido. Después de eso, ya no es opinión: es cómo se trabaja aquí. Y si nunca llega a tres, la corrección no era del agente, era tuya, del día que la hiciste.</p>
+
+      <div class="callout-box">
+        <p><strong>La prueba de que está cerrando el ciclo:</strong> el volumen de tus ediciones tiene que bajar mes con mes. Si a los dos meses sigues editando lo mismo con la misma intensidad, no estás capturando el delta —estás editando encima del borrador y tirándolo. Revisa ahí antes de cambiar de modelo o de reescribir la skill entera.</p>
+      </div>
+
+      <h2>Lo que este sistema no arregla</h2>
+
+      <p>No te va a dar criterio. Si tus ediciones son inconsistentes —hoy quitas los adjetivos, mañana los pones—, el ciclo va a capturar esa inconsistencia con una fidelidad incómoda y te la va a devolver escrita. Eso duele, pero es información: significa que el estándar no existía y ahora tienes que decidirlo.</p>
+
+      <p>Ese es probablemente el beneficio real de montar esto. No que el agente mejore. Que tú tengas que escribir, por primera vez y en imperativo, qué es lo que consideras bien hecho.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

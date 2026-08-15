@@ -1,0 +1,85 @@
+      <p>Es jueves, traes algo a la mitad, y aparece el aviso de que llegaste a tu límite. Lo peor no es esperar: es que casi siempre pasa por cosas que no te dieron nada. Un chat de setenta mensajes que se fue por las ramas, un PDF gigante que subiste y solo necesitabas de una página, el modelo más caro contestando "gracias, quedó bien".</p>
+
+      <p>Casi nadie tiene un problema de límite. Tiene un problema de desperdicio. Estos son los cinco arreglos que aplico y que en la práctica lo resuelven, en orden de cuánto rinden.</p>
+
+      <h2>Cómo se cuenta el consumo</h2>
+
+      <p>Dos cosas que conviene entender antes de los arreglos, porque explican todo lo demás.</p>
+
+      <p><strong>Cada mensaje reenvía la conversación completa.</strong> No pagas por lo que escribes: pagas por todo lo que el modelo tiene que releer para contestarte. En el mensaje 3 de un chat eso es barato. En el mensaje 60, cada "sí, ese" tuyo arrastra las sesenta interacciones anteriores. El consumo de un chat largo no crece parejo, se dispara.</p>
+
+      <p><strong>La ventana es rodante, no es un reinicio diario.</strong> El uso se contabiliza en una ventana móvil de unas cinco horas, y encima hay un tope de periodo más largo. Rodante significa que no hay una hora mágica en la que "se limpia el contador": lo que gastaste va saliendo del cálculo conforme pasa el tiempo desde que lo gastaste. Por eso una sesión intensa de dos horas te deja topado el resto de la tarde, aunque el resto del día no toques nada.</p>
+
+      <h2>1. Chats cortos, con corte deliberado</h2>
+
+      <p>Es el arreglo que más rinde y el que más cuesta adoptar, porque da flojera perder el contexto. La regla que uso: cuando un chat pasa de unos veinte intercambios o cambia de tema, se cierra. No se estira.</p>
+
+      <p>Para no perder nada, el chat se cierra con un traspaso. Este prompt te da el bloque que pegas al abrir el siguiente:</p>
+
+      <pre><code>Vamos a cerrar este chat. Escríbeme el bloque de traspaso para
+arrancar uno nuevo sin perder nada. Solo el bloque, sin comentarios.
+
+Incluye:
+1. Objetivo: qué estamos tratando de lograr, en dos líneas.
+2. Decisiones ya tomadas y que NO se vuelven a discutir, con la
+   razón de cada una en media línea.
+3. Restricciones que debes respetar.
+4. Estado actual: qué está terminado y qué está a medias.
+5. El siguiente paso concreto.
+6. Los archivos o datos que voy a tener que volver a subir.
+
+Máximo 400 palabras. Escribe en imperativo, dirigido a ti mismo en
+el chat nuevo. No incluyas el historial de la conversación ni
+explicaciones de cómo llegamos aquí.</code></pre>
+
+      <p>Cuesta un mensaje y te ahorra decenas. Además el chat nuevo responde mejor, porque arranca con el contexto limpio en vez de con sesenta mensajes de ruido.</p>
+
+      <h2>2. Proyectos para todo lo que se repite</h2>
+
+      <p>Si estás pegando el mismo contexto en cada chat —tu tono, los datos de tu empresa, el brief del cliente, las reglas del reporte— estás pagando por lo mismo una y otra vez. Eso va en un proyecto, con sus instrucciones y sus archivos de conocimiento.</p>
+
+      <p>La diferencia práctica es enorme para trabajo recurrente. Una operación de contenido que arma diez piezas a la semana pegando el manual de marca en cada chat está gastando diez veces en el mismo texto. Con el manual dentro del proyecto, cada chat arranca ya sabiendo, y tú escribes tres líneas en vez de tres párrafos.</p>
+
+      <h2>3. El modelo correcto para cada tarea</h2>
+
+      <p>Usar el modelo más potente para todo es la forma más rápida y más silenciosa de quemarte el límite. La mitad de lo que le pides no lo necesita: reformatear una lista, sacar los datos de un correo, traducir, ordenar una tabla, redactar una respuesta de dos líneas.</p>
+
+      <p>Reserva el modelo grande para lo que sí tiene dificultad real: razonamiento sobre información contradictoria, código no trivial, estrategia con muchas restricciones, documentos largos donde el matiz importa. Para lo demás, el modelo rápido contesta igual de bien y te cuesta una fracción. Si no tienes claro cuál usar cuándo, <a href="/guias/elegir-el-claude-correcto/">cómo elegir el Claude correcto</a> lo aterriza tarea por tarea.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los archivos. Subir un PDF de doscientas páginas al inicio de un chat no lo lees una vez: ese documento viaja otra vez en cada mensaje que mandes después. Si solo necesitas el capítulo tres, sube el capítulo tres. Y cuando ya sacaste lo que querías del documento, cierra ese chat y sigue en uno nuevo con el resumen. Este solo hábito le baja el consumo a la mayoría de la gente más que los otros cuatro juntos.</p>
+      </div>
+
+      <h2>4. Preguntas en lote</h2>
+
+      <p>Diez preguntas sueltas en diez mensajes cuestan mucho más que las mismas diez en un solo mensaje bien armado, porque en el segundo caso el historial se relee una vez y no diez.</p>
+
+      <p>El hábito es juntar. En vez de ir preguntando conforme se te ocurre, escribe la lista completa y mándala junta:</p>
+
+      <pre><code>Te voy a hacer 8 preguntas sobre el mismo material. Contéstalas
+todas en una sola respuesta, numeradas, sin repetir el contexto
+entre una y otra.
+
+Si dos preguntas se contestan igual, dilo en una sola y no la
+repitas. Si alguna no se puede contestar con lo que te di, ponla
+en una lista al final de "me falta información para esto" en vez
+de suponer.
+
+1. ...
+2. ...</code></pre>
+
+      <p>Aplica igual al trabajo en lote de verdad: revisar veinte títulos, clasificar treinta tickets, evaluar quince currículums. Todo junto, en una petición, con el formato de salida definido.</p>
+
+      <h2>5. Trabajar con la ventana a favor</h2>
+
+      <p>Como la ventana es rodante, la forma de no toparla es no concentrar todo el trabajo pesado en el mismo bloque de horas. En la práctica eso significa dos cosas.</p>
+
+      <p>Primero, separa la parte cara de la barata. La investigación larga, el análisis de documentos y el trabajo con código son lo caro. Redactar, corregir y formatear son lo barato. Si haces lo caro en la mañana y dejas lo barato para la tarde, la ventana se te libera sola en vez de tronar a media tarea.</p>
+
+      <p>Segundo, cuando ya vas topado, deja de pelearte con el aviso. Cambia al modelo más ligero, que suele seguir disponible cuando el grande ya no, y usa ese rato para lo que no requiere potencia. Casi siempre hay una hora de trabajo de formato y limpieza esperando.</p>
+
+      <h2>El orden en el que conviene arreglarlo</h2>
+
+      <p>No hagas los cinco a la vez. Una semana con cada uno, en este orden: primero los archivos y los chats cortos, que son el 80% del desperdicio. Después los proyectos, que además te mejoran la calidad. Luego el modelo por tarea, que se vuelve automático rápido. El lote y la ventana al final, cuando ya lo demás sea hábito.</p>
+
+      <p>Y si después de las cinco semanas sigues topando cada semana, entonces sí no es desperdicio: estás trabajando en algo que necesita más capacidad, y ahí la conversación ya no es de higiene, es de plan o de mover ese trabajo a una herramienta que corra en tu máquina.</p>

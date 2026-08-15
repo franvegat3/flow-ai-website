@@ -1,0 +1,88 @@
+      <p>Casi todo lo que se enseña de prompting son plantillas de veinte líneas con secciones en mayúsculas. Sirven cuando estás armando algo repetible. No sirven para el noventa por ciento de tus conversaciones, que son de ida y vuelta y donde nadie va a pegar una plantilla.</p>
+
+      <p>Ahí lo que funciona son frases sueltas. Una línea que mandas <em>después</em> de la respuesta mediocre y que la convierte en la buena. No cambian lo que el modelo sabe: cambian qué parte te muestra y con cuánta honestidad.</p>
+
+      <p>Estos son dieciocho. Los primeros ocho arreglan cualquier respuesta, sin importar el tema. Los otros diez son los que uso cada semana en trabajo real. Todos están completos: se copian tal cual.</p>
+
+      <h2>Por qué una línea alcanza</h2>
+
+      <p>Cuando le pides algo sin más contexto, el modelo escribe para el lector promedio. Y el lector promedio quiere una introducción, tres puntos equilibrados y un cierre conciliador. Por eso las respuestas se sienten correctas y vacías al mismo tiempo.</p>
+
+      <p>Una línea bien puesta cambia el criterio de qué cuenta como buena respuesta en ese turno. "Dime qué información te falta" hace imposible que conteste completo sobre algo que no sabe. "Quítale todo lo que se pueda borrar" hace imposible el relleno. No estás pidiendo mejor calidad en abstracto: estás cerrando la salida fácil.</p>
+
+      <h2>Los 8 que arreglan cualquier respuesta</h2>
+
+      <pre><code>1. Antes de responder, dime qué información te falta para hacerlo
+   bien.
+
+2. Dame la versión que daría alguien que ya hizo esto cien veces,
+   no la respuesta de manual.
+
+3. ¿Qué estoy dando por hecho aquí que podría estar mal?
+
+4. Dame tres versiones distintas entre sí, no tres variaciones de
+   la misma.
+
+5. ¿Qué de todo esto no puedes verificar? Márcalo.
+
+6. Ahora quítale todo lo que se pueda borrar sin perder
+   información.
+
+7. Explícame el razonamiento antes de la conclusión, no después.
+
+8. Si estuvieras en desacuerdo conmigo, ¿cuál sería tu mejor
+   argumento?</code></pre>
+
+      <p>El uno va antes de todo lo demás y es el que más devuelve. La mayoría de las respuestas malas no son un problema del modelo: son la consecuencia de que le pediste algo con la mitad del contexto y él prefirió rellenar el hueco antes que preguntarte.</p>
+
+      <p>El cuatro merece una advertencia. Si solo dices "dame tres opciones" te va a dar la misma idea con tres adjetivos distintos. La palabra que hace el trabajo es <em>distintas entre sí</em>. Y si de todas formas se parecen, la vuelta completa está en <a href="/guias/pedir-cinco-versiones/">el truco de prompting que casi nadie usa</a>.</p>
+
+      <p>El seis lo mando siempre en segundo lugar, nunca en el primer intento. Pedirle desde el arranque que sea breve corta contenido; pedírselo sobre una respuesta que ya está completa corta relleno. Es la misma frase con resultados opuestos según cuándo la mandes.</p>
+
+      <h2>Los 10 que uso cada semana</h2>
+
+      <pre><code>9.  ¿Cuál es la pregunta que debería estar haciéndote y no se me
+    ocurrió?
+
+10. Dame el siguiente paso. Uno solo, el más chico que se pueda
+    hacer hoy.
+
+11. Convierte esto en una lista de decisiones, no de tareas.
+
+12. ¿Qué tendría que pasar para que esto fracasara?
+
+13. Escríbelo como se lo explicarías a quien lo va a ejecutar sin
+    mí.
+
+14. Dame la versión de la mitad de largo, con la misma
+    información.
+
+15. ¿Qué de esto es un hecho y qué es interpretación tuya?
+
+16. Antes de escribir, dame el esqueleto en cinco viñetas y
+    espera mi visto bueno.
+
+17. ¿Quién más debería opinar de esto antes de que yo decida?
+
+18. Resúmeme en tres líneas qué resolvimos y con qué prompt
+    debería arrancar la próxima vez.</code></pre>
+
+      <p>El nueve es el que más veces me ha salvado una junta. Cuando llevas rato metido en un problema, tus preguntas ya están contaminadas por cómo decidiste verlo. Esa línea saca lo que quedó fuera del encuadre.</p>
+
+      <p>El once cambia reuniones enteras. Una lista de tareas se reparte y se olvida; una lista de decisiones obliga a que alguien diga sí o no. En las operaciones donde he trabajado, la mitad de los proyectos atorados no estaban esperando trabajo: estaban esperando una decisión que nadie había nombrado como tal.</p>
+
+      <p>El trece es el filtro de calidad más honesto que conozco. Todo se entiende cuando tú lo escribiste y tienes el contexto en la cabeza. Escribirlo para quien lo va a ejecutar sin ti expone en dos segundos los pasos que estaban implícitos.</p>
+
+      <p>Y el dieciocho es el único que no mejora la respuesta de hoy: mejora la de la próxima vez. Mándalo al final de cualquier conversación que salió bien y pega el resultado en un archivo. En tres meses tienes tu propio manual, escrito con tus casos y no con los de un curso.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir los mejores a las instrucciones globales de tu cuenta. Cuatro de estos dejan de ser prompts si los conviertes en política permanente: pedir el dato faltante en vez de inventarlo, marcar lo que no se puede verificar, separar hecho de interpretación, y no elogiar la pregunta. Escritos ahí una vez, aplican a todas tus conversaciones y ya no tienes que acordarte de ellos.</p>
+      </div>
+
+      <h2>Cómo se usan de verdad</h2>
+
+      <p>No los mandes en fila. Dieciocho preguntas seguidas convierten una respuesta en una tesis, y para eso hubieras trabajado tú.</p>
+
+      <p>El patrón que funciona son tres turnos. Pides lo que necesitas. Mandas el uno o el tres, según si el problema es de contexto o de supuestos. Y cierras con el seis. Con eso ya estás arriba del noventa por ciento de la gente que solo copia el primer intento.</p>
+
+      <p>Guárdalos donde los veas: un documento fijado, una nota en el escritorio, un archivo en tu proyecto. Un prompt que tienes que ir a buscar es un prompt que no vas a usar. Ese es todo el criterio para decidir dónde los pones. Si quieres los largos, los que sí son plantilla, están en <a href="/guias/10-prompts-que-deberias-tener-guardados/">10 prompts de Claude que ya deberías tener guardados</a>.</p>

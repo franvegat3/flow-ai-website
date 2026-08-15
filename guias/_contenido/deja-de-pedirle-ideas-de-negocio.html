@@ -1,0 +1,118 @@
+      <p>"Dame 10 ideas de negocio con IA para 2026." Todo el mundo lo ha escrito. Todo el mundo recibió lo mismo: una agencia de automatización, un SaaS de nicho, una newsletter de pago, consultoría para pymes. Ideas que no están mal y que no sirven, porque son el promedio de lo que ya está escrito en internet y porque las tienen otras diez mil personas idénticas.</p>
+
+      <p>Hay tres razones de fondo por las que pedir ideas no funciona. La primera es que el modelo devuelve el consenso, y en negocios el consenso ya está atendido. La segunda es que no conoce tu ventaja injusta: a quién conoces, qué sabes hacer que a otros les cuesta, a qué información tienes acceso. La tercera es que una idea sin distribución no es un negocio, y la distribución es tuya, no suya.</p>
+
+      <p>Lo que sí hace bien —y hace mejor que cualquier consultor que puedas pagar— es investigación a escala y presión sobre tus supuestos. Ese es el flujo de tres pasos que uso, con el prompt de cada uno.</p>
+
+      <h2>Paso 1: cartografía del dolor</h2>
+
+      <p>No preguntas qué negocio montar. Preguntas dónde se está quejando la gente en un mercado que ya conoces. La restricción importa: tiene que ser un mercado donde tú ya tengas algo, aunque sea haber trabajado ahí tres años. Si eliges un mercado que no conoces, todo lo que sigue se vuelve teoría.</p>
+
+      <p>Este paso se corre con una herramienta que busque en la web en vivo, como Perplexity, o con Claude en modo de investigación. Sin búsqueda real, el modelo te va a dar dolores plausibles pero inventados.</p>
+
+      <pre><code>Vas a hacer investigación de campo, no lluvia de ideas.
+
+Mercado: [industria y tipo de empresa o persona]
+País: [país]
+
+Busca en fuentes donde la gente se queja de verdad: reseñas de
+productos del sector, foros y comunidades, hilos de Reddit, grupos
+públicos, comentarios en publicaciones de proveedores del sector,
+notas de la prensa especializada.
+
+Devuélveme 15 quejas concretas y recurrentes. Para cada una:
+- La queja en las palabras del que la escribió, entre comillas.
+- Dónde la encontraste, con la liga.
+- Con qué frecuencia la viste repetida.
+- Qué están haciendo hoy para sobrellevarla.
+- Cuánto les cuesta, en dinero o en horas, si el texto lo dice. Si
+  no lo dice, escribe NO DICE. No estimes.
+
+Reglas:
+- Solo quejas que hayas encontrado. Prohibido rellenar con dolores
+  genéricos del sector que "seguramente existen".
+- Descarta las quejas sobre precio: casi siempre son otra cosa.
+- Marca cuáles vienen de gente que ya está pagando por una solución
+  y sigue insatisfecha. Esas valen el triple.</code></pre>
+
+      <p>La última regla es la que separa este ejercicio de una encuesta. Un dolor de alguien que ya está pagando y sigue molesto es un mercado con presupuesto asignado y con proveedor reemplazable. Un dolor de alguien que nunca ha pagado por resolverlo puede ser real y aun así no ser negocio.</p>
+
+      <h2>Paso 2: la hipótesis la escribes tú</h2>
+
+      <p>Aquí es donde la mayoría se equivoca: le pide al modelo que convierta las quejas en ideas. Y vuelves al mismo lugar, porque el que decide cuál dolor atacar tiene que ser el que va a trabajar cinco años en eso.</p>
+
+      <p>Eliges tú, de las quince, la que cruce con tu ventaja injusta. Y luego usas el modelo para estructurarla y para encontrar quién ya lo intentó.</p>
+
+      <pre><code>Esta es mi hipótesis de negocio, escrita por mí:
+
+Creo que [quién exactamente] tiene el problema de [problema],
+y que hoy lo resuelve con [alternativa actual].
+Yo puedo resolverlo mejor porque [tu ventaja concreta].
+Cobraría [modelo y rango de precio].
+
+Tu trabajo NO es mejorarla. Es dármela por escrito y buscar quién
+ya lo hizo.
+
+1. Reescribe la hipótesis en una tabla de supuestos: cada afirmación
+   de arriba separada, y al lado, cómo se podría comprobar o tumbar
+   en menos de dos semanas y con menos de lo que cuesta un mes de
+   sueldo.
+2. Busca en la web quién ya está atacando ese problema: empresas
+   activas, herramientas, gente que lo hace como servicio. Dame
+   nombres y ligas. Incluye a los que lo intentaron y ya no están,
+   si encuentras rastro.
+3. Para cada competidor: qué hace distinto, a quién le vende y qué
+   dicen sus clientes que le falta.
+4. Dime en qué se parece mi ventaja a la de ellos. Si mi ventaja ya
+   la tienen tres de ellos, no es ventaja, y quiero que me lo digas
+   así.</code></pre>
+
+      <p>Encontrar competidores es buena noticia, no mala. Un problema sin nadie atacándolo casi siempre es un problema que no duele lo suficiente. Lo que sí es mala noticia es el punto 4: descubrir que lo que creías que era tu diferencial es la descripción estándar de la categoría.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la columna de "cómo se comprueba en dos semanas". Sin ella, la tabla de supuestos es un documento bonito que valida lo que ya querías creer. Con ella, sales del ejercicio con una lista de pruebas baratas que puedes correr esta quincena. La regla es que cada supuesto tenga una prueba que se pueda perder: si no existe un resultado posible que te haría abandonar la idea, no es una prueba, es teatro.</p>
+      </div>
+
+      <h2>Paso 3: la presión</h2>
+
+      <p>El último paso es el que nadie aguanta. Ya tienes la hipótesis estructurada y sabes quién más está ahí. Ahora hay que intentar destruirla antes de que el mercado lo haga con tu dinero.</p>
+
+      <pre><code>Vas a hacer un pre-mortem de esta hipótesis de negocio.
+
+[Pega la hipótesis y la tabla de supuestos del paso anterior.]
+
+Estamos a 18 meses en el futuro. El negocio fracasó. No cerró por
+mala suerte: fracasó por una razón que hoy es visible y que yo estoy
+ignorando.
+
+Escribe las 6 razones más probables, ordenadas por probabilidad, no
+por gravedad. Para cada una:
+- Qué pasó, en concreto.
+- Qué señal existía HOY que la anticipaba.
+- Qué habría tenido que hacer en el mes 1 para evitarla.
+
+Después:
+1. Los números que tienen que cerrar para que esto funcione: cuántos
+   clientes, a qué precio, con qué costo de adquisición y cuánto
+   tiempo se quedan. No inventes las cifras: dime qué números
+   necesito conseguir yo y de dónde los saco.
+2. La versión más chica de esta idea que se puede probar en 30 días.
+3. Si tuvieras que apostar tu propio dinero, ¿a favor o en contra?
+   Contesta con una palabra y luego justifícala en tres líneas.
+
+Prohibido cerrar con ánimo. No quiero "con la ejecución correcta
+esto puede funcionar".</code></pre>
+
+      <p>Ese último candado es necesario porque el modelo tiende a validarte, sobre todo cuando le presentaste la idea como tuya. Si quieres subirle el nivel a este paso, corre la hipótesis por <a href="/guias/consejo-contra-la-adulacion/">el consejo de asesores</a>, que es la versión con cinco voces en conflicto.</p>
+
+      <h2>Cómo se ve en una empresa que ya factura</h2>
+
+      <p>El mismo flujo sirve para decidir una línea de producto nueva, y ahí es todavía más barato. El paso 1 se corre sobre tus propios tickets de soporte, las notas de tus vendedores y las razones de cancelación de tus clientes: dolor real, documentado, de gente que ya te paga.</p>
+
+      <p>El paso 2 cambia poco, salvo que tu ventaja injusta ya existe y es medible: tienes distribución, tienes datos y tienes gente que confía en ti. Y el paso 3 se vuelve la conversación que normalmente no se tiene, porque en una empresa las ideas nuevas llegan con dueño y con orgullo, y nadie quiere ser quien las tumbe.</p>
+
+      <h2>Lo que sigue después del paso 3</h2>
+
+      <p>Nada de esto es una idea validada. Es una hipótesis con supuestos separados y pruebas baratas identificadas. La validación no ocurre en un chat: ocurre cuando alguien te da dinero o te dice que no.</p>
+
+      <p>Así que el paso siguiente no es otro prompt. Es tomar la versión más chica de la idea, la del punto 2 del pre-mortem, y ponerla en vivo. Si quieres el calendario para eso, <a href="/guias/lista-de-lanzamiento-de-30-dias/">la lista de 30 días</a> es exactamente eso: la continuación operativa de este flujo.</p>

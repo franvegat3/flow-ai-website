@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La skill que audita tus flujos de correo — Guías Flow AI</title>
+  <meta name="description" content="Conectas los datos de tu plataforma de correo y Claude audita cada flujo, reescribe tus correos más flojos con tu voz, y arma un calendario de campañas a 90 días." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/auditar-tus-flujos-de-correo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La skill que audita tus flujos de correo" />
+  <meta property="og:description" content="Conectas los datos de tu plataforma de correo y Claude audita cada flujo, reescribe tus correos más flojos con tu voz, y arma un calendario de campañas a 90 días." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/auditar-tus-flujos-de-correo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Ventas</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Ventas</span><span class="tag">Skills</span></div>
+      <h1>La skill que audita tus flujos de correo</h1>
+      <p class="lead">Conectas los datos de tu plataforma de correo y Claude audita cada flujo, reescribe tus correos más flojos con tu voz, y arma un calendario de campañas a 90 días.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Los flujos automáticos de correo son la parte de la operación que más dinero produce por hora de trabajo y la que menos gente vuelve a abrir. Se montan una vez, quedan prendidos, y ahí siguen mandando el mismo mensaje de bienvenida que se escribió cuando el catálogo era otro.</p>
+
+      <p>En cada cuenta que he auditado el patrón se repite: hay tres o cuatro flujos vivos, uno de ellos lleva meses sin generar un solo clic, y falta por completo el que más valdría. Nadie lo ve porque el reporte que revisa la gente es el de las campañas, no el de los flujos.</p>
+
+      <p>Esta guía es la skill que hace esa auditoría, más los dos prompts que van después: el de reescritura con tu voz y el del calendario a noventa días.</p>
+
+      <h2>Qué exportar antes de empezar</h2>
+
+      <p>La calidad de la auditoría depende de esto y no del prompt. Casi todas las plataformas de correo permiten exportar reportes en CSV. Necesitas cinco cosas:</p>
+
+      <ol>
+        <li><strong>El mapa de tus flujos activos.</strong> Nombre del flujo, disparador, cada mensaje en orden, y cuánto tiempo espera entre uno y otro.</li>
+        <li><strong>Desempeño por mensaje, no por flujo.</strong> Enviados, aperturas, clics, bajas y, si tu plataforma lo atribuye, ingreso por mensaje. El promedio del flujo esconde justo lo que buscas.</li>
+        <li><strong>Tus últimas veinte o treinta campañas</strong> con las mismas columnas.</li>
+        <li><strong>Los segmentos que tienes creados</strong> y cuánta gente hay en cada uno.</li>
+        <li><strong>Los cinco correos que mejor te han funcionado</strong>, con su texto completo. Esos son el material de voz.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> exportar agregados, no la lista. Para auditar flujos no hace falta un solo correo de un cliente ni un solo nombre. Necesitas métricas por mensaje. Si tu exportación trae columnas de datos personales, bórralas antes de subir el archivo. Es la diferencia entre una auditoría y un incidente de datos.</p>
+      </div>
+
+      <h2>La skill de auditoría</h2>
+
+      <p>Guárdala en <code>.claude/skills/auditar-correo/SKILL.md</code>, o súbela desde la configuración si trabajas en la app.</p>
+
+      <pre><code>---
+name: auditar-correo
+description: Audita flujos y campañas de email marketing a partir de
+  exportaciones de la plataforma. Úsala cuando el usuario suba reportes
+  de correo, pregunte por qué su email no vende, pida revisar sus
+  automatizaciones, flujos, secuencias o campañas.
+---
+
+Trabaja solo con los datos que te suban. Si falta algo, pídelo y no
+sigas.
+
+PASO 1 — INVENTARIO
+Lista los flujos que existen y márcalos contra esta referencia de los
+que suele haber que tener:
+- Bienvenida a suscriptor nuevo
+- Carrito o cotización abandonada
+- Post-compra o post-contratación
+- Reactivación de inactivos
+- Nutrición de prospecto que aún no compra
+- Recuperación de cobro fallido, si hay suscripción
+
+Di cuáles existen, cuáles existen pero están vacíos de contenido útil,
+y cuáles no existen. Los que no existen van primero en el reporte: un
+flujo ausente pesa más que un correo mal escrito.
+
+PASO 2 — DIAGNÓSTICO POR MENSAJE
+Para cada mensaje de cada flujo calcula sus tasas y compáralas contra
+la mediana de esa misma cuenta, nunca contra promedios de industria que
+no tienes. Marca:
+- Mensajes con clics muy por debajo de la mediana de su flujo.
+- Mensajes con bajas por arriba de la mediana: ahí estás quemando lista.
+- Ventanas de espera sospechosas: el primer mensaje de un flujo de
+  abandono que sale muchas horas después, o dos mensajes seguidos el
+  mismo día.
+- Flujos donde todo el ingreso lo produce un solo mensaje. El resto es
+  desgaste.
+- Mensajes que piden más de una acción distinta.
+
+PASO 3 — LAS CAMPAÑAS
+Ordena las campañas por clics y por ingreso. Escribe qué tienen en
+común las cinco mejores y qué tienen en común las cinco peores, en
+términos de tema, oferta y estructura. Sin adjetivos.
+
+PASO 4 — ENTREGA
+Devuelve en este orden:
+A. Calificación de cada flujo: sano, tibio o roto, con la razón en una
+   línea.
+B. Los cinco arreglos ordenados por dinero probable, no por facilidad.
+   Cada uno con: qué se cambia, dónde exactamente, y cómo sabremos en
+   dos semanas si funcionó.
+C. El flujo faltante que construiría primero, con sus mensajes y sus
+   tiempos propuestos.
+D. Lo que NO hay que tocar, y por qué.
+
+REGLAS
+- Cero cifras que no salgan de los archivos. Nada de referencias de
+  industria ni porcentajes "típicos".
+- Si un flujo tiene pocos envíos, dilo y no saques conclusiones de ahí.
+- Prohibido recomendar "mejorar el asunto" sin decir cuál y por qué.</code></pre>
+
+      <h2>El prompt de reescritura</h2>
+
+      <p>Con el diagnóstico en la mano, el siguiente paso es reescribir los mensajes que salieron rotos. Y aquí es donde casi todo se echa a perder: el correo reescrito sale correcto, neutro y ajeno, y a los suscriptores les suena a otra empresa.</p>
+
+      <pre><code>Vamos a reescribir los mensajes que marcaste como rotos, uno por uno.
+
+Primero, lee los cinco correos que mejor me han funcionado y escribe mi
+huella de voz: largo de frase, cómo abro, qué palabras repito, qué
+nunca digo, cómo cierro. Muéstramela antes de escribir nada.
+
+Después, para cada mensaje roto entrégame:
+- El diagnóstico en una línea: qué estaba haciendo mal.
+- La versión nueva completa, en mi voz, con asunto y preencabezado.
+- Una sola acción por correo, con su llamada a la acción explícita.
+- Qué hipótesis estamos probando con este cambio.
+
+Reglas: nada de urgencia inventada, descuentos que no autoricé, cifras
+de resultados ni testimonios que no te di. Si el correo necesita un
+dato que no tengo, escribe [FALTA: qué dato].</code></pre>
+
+      <h2>El calendario de noventa días</h2>
+
+      <p>Lo último es el plan de campañas, y tiene que salir de la auditoría, no de un calendario de días festivos bajado de internet.</p>
+
+      <pre><code>Con base en la auditoría y en lo que aprendimos de mis cinco mejores
+campañas, arma un calendario de campañas a 90 días.
+
+Reglas del calendario:
+- Frecuencia realista para quien lo va a ejecutar: [personas y horas
+  disponibles].
+- Cada semana con un solo tema. Nada de dos ofertas compitiendo.
+- Mezcla declarada entre correos de venta directa y correos que solo
+  dan valor, en la proporción que tú recomiendes según mis datos.
+- Los correos que tocan a segmentos inactivos van marcados aparte.
+- Fechas reales del calendario de mi negocio: [temporadas, cierres de
+  mes, eventos]. No metas fechas comerciales que no apliquen.
+
+Para cada campaña dame: semana, segmento, tema, oferta o ángulo,
+asunto propuesto y qué métrica esperamos mover.
+
+Al final, una lista corta de lo que hay que preparar antes de arrancar:
+segmentos por crear, contenido por producir, integraciones por revisar.</code></pre>
+
+      <h2>Lo que suele salir en una cuenta B2B</h2>
+
+      <p>En negocios que venden por cotización, la auditoría casi siempre encuentra lo mismo. Hay flujo de bienvenida, hay campañas mensuales, y no existe el flujo de la cotización que se mandó y nunca se contestó. Es el momento de mayor intención de compra de todo el ciclo y está desatendido, mientras el equipo comercial persigue a mano y sin orden.</p>
+
+      <p>El arreglo no es sofisticado: tres mensajes, uno a los dos días, otro a la semana, otro a las tres semanas, cada uno con una sola acción y ninguno pidiendo disculpas por escribir. Se construye en un día. En el reporte, ese flujo faltante va arriba de cualquier mejora de redacción.</p>
+
+      <h2>El error que hace inútil toda la auditoría</h2>
+
+      <p>Empezar por el copy. Es la parte divertida y es la que menos mueve.</p>
+
+      <p>El orden que sí funciona es el que fuerza la skill: primero el flujo que no existe, después las ventanas de tiempo mal puestas, después los mensajes que están quemando lista, y hasta el final la redacción. Un flujo de abandono que nunca se construyó vale más que treinta correos reescritos con mejores palabras.</p>
+
+      <p>Y una advertencia sobre las bajas. Cuando alguien se da de baja después de un correo, la conclusión fácil es que el correo estuvo mal. Muchas veces el problema está tres pasos atrás: en cómo entró esa persona a la lista y qué le prometiste ahí. Si el flujo de bienvenida promete una cosa y las campañas mandan otra, ningún asunto te va a salvar.</p>
+
+      <p>Si quieres llevar esto un paso más lejos y que corra solo, el siguiente escalón es <a href="/guias/agente-para-tu-email-marketing/">un agente para tu email marketing</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

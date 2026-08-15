@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La plantilla de CLAUDE.md que se mejora sola — Guías Flow AI</title>
+  <meta name="description" content="El hábito que jura el propio equipo de Anthropic: cada vez que Claude se equivoca, le dices que actualice el CLAUDE.md para que no lo repita. El truco, la plantilla de arranque y el ritual de 2 semanas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/plantilla-de-claude-md/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La plantilla de CLAUDE.md que se mejora sola" />
+  <meta property="og:description" content="El hábito que jura el propio equipo de Anthropic: cada vez que Claude se equivoca, le dices que actualice el CLAUDE.md para que no lo repita. El truco, la plantilla de arranque y el ritual de 2 semanas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/plantilla-de-claude-md/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude Code</span><span class="tag">Prompts</span><span class="tag">Agentes</span></div>
+      <h1>La plantilla de CLAUDE.md que se mejora sola</h1>
+      <p class="lead">El hábito que jura el propio equipo de Anthropic: cada vez que Claude se equivoca, le dices que actualice el CLAUDE.md para que no lo repita. El truco, la plantilla de arranque y el ritual de 2 semanas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay un impuesto que casi nadie contabiliza: el tiempo que pasas volviéndole a explicar a Claude cosas que ya le habías explicado. Que las pruebas se corren con un comando y no con otro. Que ese servicio está deprecado. Que en este repo los handlers viven en tal carpeta.</p>
+
+      <p>Cada sesión arranca con la memoria en blanco. Tú no. Entonces tú cargas con la diferencia, todos los días, y ni siquiera lo notas porque son treinta segundos cada vez.</p>
+
+      <p>El archivo <code>CLAUDE.md</code> es donde se paga ese impuesto una sola vez. Y hay una forma de escribirlo que la documentación oficial recomienda de frente: no lo redactes de golpe, déjalo crecer cada vez que Claude se equivoca. Aquí está el mecanismo, la plantilla completa para arrancar, y el ritual de dos semanas que lo deja afilado.</p>
+
+      <h2>Qué es y dónde vive</h2>
+
+      <p><code>CLAUDE.md</code> es un archivo de texto con instrucciones que Claude lee al principio de cada sesión. Nada más. Su poder no está en la tecnología, está en que es el único lugar donde el conocimiento de tu proyecto no se evapora.</p>
+
+      <p>Puede vivir en varias capas, y todas se cargan juntas:</p>
+
+      <ul>
+        <li><strong>Tuyo, para todos los proyectos:</strong> <code>~/.claude/CLAUDE.md</code>. Tus manías, tu forma de trabajar.</li>
+        <li><strong>Del proyecto, compartido con el equipo:</strong> <code>./CLAUDE.md</code> o <code>./.claude/CLAUDE.md</code>. Esto se sube a control de versiones y es lo que hace que tu compañero nuevo arranque con contexto.</li>
+        <li><strong>Tuyo, solo en ese proyecto:</strong> <code>./CLAUDE.local.md</code>. Tus URLs de pruebas, tus datos de sandbox. Va al <code>.gitignore</code>.</li>
+      </ul>
+
+      <p>El comando <code>/memory</code> te abre esos archivos desde la sesión, y <code>/context</code> te confirma cuáles cargaron de verdad. Ese segundo paso es el que salta la gente que jura que "Claude no le hace caso a mi CLAUDE.md": muchas veces el archivo ni siquiera se está cargando.</p>
+
+      <h2>El truco: que Claude escriba sus propias correcciones</h2>
+
+      <p>La regla que recomienda la documentación es simple. <strong>Cuando Claude comete el mismo error por segunda vez, no lo corriges: le pides que actualice el archivo.</strong></p>
+
+      <p>La diferencia es que corregir en el chat dura lo que dura la sesión. Corregir en el archivo dura para siempre y le sirve a todo el equipo. Este es el mensaje que uso, tal cual:</p>
+
+      <pre><code>Acabas de cometer un error que ya habías cometido antes en este repo.
+
+Antes de seguir, haz esto:
+
+1. Nombra en una frase qué asumiste mal.
+2. Escribe la regla que te habría evitado el error. Concreta y verificable:
+   "corre `pnpm test:unit` antes de cada commit", no "prueba tus cambios".
+3. Revisa el CLAUDE.md del proyecto. Si ya hay una instrucción sobre ese
+   tema, corrígela en vez de agregar una nueva. No quiero reglas duplicadas
+   ni contradictorias.
+4. Agrega o edita la línea en la sección que le corresponda.
+5. Muéstrame el diff del CLAUDE.md antes de guardarlo.
+
+Si la regla solo aplica a una parte del repo, dímelo y la movemos a
+.claude/rules/ en vez de meterla al archivo principal.</code></pre>
+
+      <p>Ese paso 3 es el que hace que funcione a largo plazo. Sin él, a los dos meses tienes un archivo con cuatro reglas sobre lo mismo, dos de ellas contradiciéndose, y Claude escoge una al azar.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> <code>CLAUDE.md</code> no es configuración, es contexto. Claude lo lee y trata de seguirlo, pero no hay garantía dura. Si algo <em>tiene</em> que pasar siempre —correr el linter antes de cada commit, no tocar producción— eso no va en <code>CLAUDE.md</code>: va en un hook o en las reglas de permisos, que sí se ejecutan pase lo que pase.</p>
+      </div>
+
+      <h2>La plantilla de arranque</h2>
+
+      <p>Puedes correr <code>/init</code> y Claude genera un primer <code>CLAUDE.md</code> leyendo tu código. Sirve, pero sale genérico: describe lo que ya se puede deducir del repo. El valor está en lo que <em>no</em> se deduce.</p>
+
+      <p>Esta es la estructura con la que arranco. Cópiala, bórrale lo que no aplique y llénala con lo que solo sabe alguien que ya trabajó ahí.</p>
+
+      <pre><code># Contexto del proyecto
+
+Qué es esto y para quién, en dos frases. Nada de marketing.
+
+## Comandos
+
+- Instalar: `...`
+- Correr en local: `...`
+- Pruebas: `...`
+- Linter y formato: `...`
+- Build de producción: `...`
+
+## Dónde vive cada cosa
+
+- `src/...` — ...
+- `tests/...` — ...
+- Las migraciones se generan con `...`, nunca a mano.
+
+## Convenciones que no son obvias
+
+- Indentación de 2 espacios.
+- Los nombres de archivo van en kebab-case.
+- Los errores se devuelven con el formato estándar de `src/errors.ts`.
+
+## Reglas duras
+
+- Nunca hacer commit directo a `main`.
+- Nunca tocar los archivos de `vendor/`.
+- Antes de cambiar el esquema de base de datos, propón el plan y espera OK.
+
+## Trampas conocidas
+
+- Las pruebas de integración necesitan Redis corriendo en local.
+- El servicio de correo está apagado en desarrollo: no intentes probarlo.
+- El módulo de facturación se ve muerto pero lo usa el cierre mensual.
+
+## Decisiones ya tomadas (no volver a discutirlas)
+
+- Usamos X y no Y porque Z. Si crees que hay que cambiarlo, dilo, no lo cambies.
+
+## Aprendizajes
+&lt;!-- Aquí se acumula lo que sale del bucle de corrección. Una línea cada uno. --&gt;
+</code></pre>
+
+      <p>La sección de <strong>trampas conocidas</strong> es la que más rinde y la que nadie escribe. Un modelo puede leer tu código y deducir la arquitectura. Lo que no puede deducir es que ese módulo que parece muerto lo usa finanzas el último día del mes.</p>
+
+      <h2>El ritual de dos semanas</h2>
+
+      <p>Un <code>CLAUDE.md</code> escrito de un jalón y nunca revisado se pudre. Este es el ciclo que sí aguanta:</p>
+
+      <ol>
+        <li><strong>Día 1.</strong> Corre <code>/init</code>, quédate con lo útil y llena a mano las secciones de trampas y decisiones. No pases de una página.</li>
+        <li><strong>Días 2 al 13.</strong> Cada vez que corrijas a Claude por segunda vez, pega el prompt de arriba. No lo hagas a la primera: la primera puede ser mala suerte, la segunda es un patrón.</li>
+        <li><strong>Día 14.</strong> Abre el archivo y léelo completo. Borra lo que ya no aplica, junta las reglas que dicen lo mismo, y mueve a <code>.claude/rules/</code> todo lo que solo importe en una parte del repo.</li>
+        <li><strong>Repite.</strong> A la tercera vuelta el archivo deja de crecer y empieza a mejorar. Ese es el punto al que quieres llegar.</li>
+      </ol>
+
+      <p>Sobre el largo: la recomendación oficial es quedarse por debajo de 200 líneas. No es un límite técnico, es que los archivos largos consumen contexto y bajan la adherencia. Si tu archivo se desborda, no lo compactes escribiendo más corto: separa por ruta. Un archivo en <code>.claude/rules/</code> con un campo <code>paths</code> en el frontmatter solo se carga cuando Claude toca archivos que hacen match.</p>
+
+      <div class="callout-box">
+        <p><strong>No confundas los dos sistemas:</strong> además de <code>CLAUDE.md</code>, que escribes tú, Claude mantiene su propia memoria automática por repositorio. Esa la escribe él con lo que va aprendiendo, y viene encendida. Se revisa desde <code>/memory</code>. Son complementarias: en <code>CLAUDE.md</code> van tus reglas; en la memoria automática, sus descubrimientos. Vale la pena auditarla de vez en cuando, porque también acumula supuestos viejos.</p>
+      </div>
+
+      <h2>El error que veo en las empresas</h2>
+
+      <p>El patrón más común no es descuidar el archivo. Es lo contrario: convertirlo en un manual de operaciones de 600 líneas donde alguien volcó toda la wiki interna.</p>
+
+      <p>Eso no funciona por dos razones. Consume contexto que le hace falta al trabajo real, y entierra las cinco reglas que sí importan entre doscientas que no. Un archivo de veinte líneas bien escogidas le gana a uno de seiscientas, todos los días.</p>
+
+      <p>La prueba para decidir si una línea se queda: <em>¿esto le hace falta a Claude en cada sesión, o solo cuando toca un tema específico?</em> Si es lo segundo, eso es una skill o una regla por ruta, no una instrucción global. La diferencia entre esas tres cosas la desarrollo en <a href="/guias/skill-workflow-o-agente/">skill, workflow o agente</a>, y el resto de las palancas de la sesión están en <a href="/guias/comandos-de-claude-code-que-uso-diario/">los comandos que uso todos los días</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

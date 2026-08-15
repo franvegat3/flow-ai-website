@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pronóstico de inventario con IA para tu marca — Guías Flow AI</title>
+  <meta name="description" content="Deja de adivinar cuánto pedir. Cómo uso Claude para pronosticar qué resurtir, cuánto y cuándo, más curvas de talla y color, productos nuevos sin historial, y un reporte semanal de resurtido." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/pronostico-de-inventario-con-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Pronóstico de inventario con IA para tu marca" />
+  <meta property="og:description" content="Deja de adivinar cuánto pedir. Cómo uso Claude para pronosticar qué resurtir, cuánto y cuándo, más curvas de talla y color, productos nuevos sin historial, y un reporte semanal de resurtido." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/pronostico-de-inventario-con-ia/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Negocio</span><span class="tag">Automatización</span></div>
+      <h1>Pronóstico de inventario con IA para tu marca</h1>
+      <p class="lead">Deja de adivinar cuánto pedir. Cómo uso Claude para pronosticar qué resurtir, cuánto y cuándo, más curvas de talla y color, productos nuevos sin historial, y un reporte semanal de resurtido.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El dinero de una marca con inventario no está en el banco: está en cajas. Y casi siempre está en las cajas equivocadas. Bodega llena de la talla que nadie pide, mientras el modelo que sí se vende lleva cinco semanas agotado y el comprador se fue con otro.</p>
+
+      <p>La decisión de cuánto resurtir casi nunca se toma con datos. Se toma con la memoria del dueño y el mínimo que exige el proveedor. Después llega el rebajado de fin de temporada a limpiar el error, y como el rebajado también vende, nadie lo registra como error.</p>
+
+      <p>Esto es lo que hago con Claude cuando una marca mexicana con producto físico —ropa, calzado, abarrote de marca propia, cuidado personal— quiere dejar de adivinar. No es un modelo estadístico: es un proceso repetible que convierte tu historial en una lista de compra defendible, con los supuestos escritos para que alguien los pueda discutir.</p>
+
+      <h2>Qué puede pronosticar un modelo y qué no</h2>
+
+      <p>Un modelo de lenguaje no adivina la demanda. Lee tu historial, le aplica una lógica de reabasto consistente y te explica cada número. La ganancia no es precisión mágica: es que la decisión deja de depender de quién estaba de humor ese día.</p>
+
+      <ul>
+        <li><strong>Sí puede:</strong> ordenar tus SKU por velocidad real de venta, detectar estacionalidad, calcular cuántos días de inventario te quedan, proyectar el quiebre antes de que pase y proponer la curva de tallas de la siguiente compra.</li>
+        <li><strong>No puede:</strong> saber que un video te va a hacer viral, que tu competidor va a rematar, o que tu proveedor se va a atorar en aduana. Eso lo pones tú, en el prompt, como supuesto.</li>
+      </ul>
+
+      <p>El resultado es una propuesta de compra, no una orden automática.</p>
+
+      <h2>Los datos que necesitas antes de escribir un prompt</h2>
+
+      <p>Este paso es el grueso del trabajo y es donde casi todos se rinden. Necesitas un solo archivo por SKU, exportado de donde tengas la verdad —Shopify, tu punto de venta, tu ERP— con estas columnas:</p>
+
+      <ul>
+        <li><strong>SKU, nombre, categoría, talla, color</strong> — separados, no pegados en el nombre del producto.</li>
+        <li><strong>Unidades vendidas por semana</strong> de los últimos 12 a 24 meses. Semanal, no mensual: el mes esconde los picos.</li>
+        <li><strong>Inventario actual</strong> por ubicación, si tienes tienda y bodega separadas.</li>
+        <li><strong>Costo unitario y precio de venta</strong>, para que el modelo priorice por dinero y no por unidades.</li>
+        <li><strong>Días de agotado</strong> por SKU y por semana. Esta es la columna que nadie exporta.</li>
+        <li><strong>Lead time real</strong> del proveedor: días desde que mandas la orden hasta que la mercancía está lista para vender, no lo que dice el contrato.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> marcar las semanas en que un producto estuvo agotado. Sin esa columna, el modelo ve ceros de venta y concluye que el SKU no se mueve, cuando la realidad es que no había qué vender. Es la forma más común de matar tu mejor producto con tu propio reporte. Si tu sistema no guarda el dato, aproxímalo: cualquier semana que cerró en cero cuenta como agotada.</p>
+      </div>
+
+      <h2>Prompt 1: la foto de dónde está tu dinero</h2>
+
+      <p>Antes de pedir nada, entiende qué tienes. Este prompt clasifica el catálogo y separa lo que factura de lo que estorba.</p>
+
+      <pre><code>Eres el planeador de demanda de una marca mexicana de [categoría] que
+vende en [tienda física / ecommerce / mayoreo]. Adjunto el historial
+semanal por SKU de los últimos [N] meses.
+
+Analiza y entrégame:
+
+1. Clasificación ABC por margen aportado en los últimos 12 meses
+   (A = 80% del margen, B = siguiente 15%, C = el resto). Cuenta
+   cuántos SKU hay en cada grupo.
+2. Velocidad de venta por SKU: unidades por semana promedio de las
+   últimas 8 semanas, y la comparación contra el mismo periodo del
+   año anterior.
+3. Días de inventario restantes = inventario actual / velocidad
+   semanal, expresado en días.
+4. Inventario muerto: SKU sin venta en las últimas 12 semanas,
+   con el dinero a costo que tienen atorado.
+5. Riesgo de quiebre: SKU clase A con menos días de inventario
+   que el lead time del proveedor.
+
+Ignora las semanas marcadas como agotado al calcular velocidad.
+Entrega tablas ordenadas por dinero, no por unidades. Al final,
+escribe las 3 cosas que más te llamaron la atención.</code></pre>
+
+      <p>Las dos últimas listas son las que mueven caja esta misma semana: una te dice qué rematar y la otra qué pedir hoy.</p>
+
+      <h2>Prompt 2: cuánto pedir y cuándo</h2>
+
+      <p>Aquí entra la única fórmula que de verdad importa en reabasto: el punto de reorden. Es el nivel de inventario en el que tienes que disparar la compra para que la mercancía llegue justo antes de quedarte en cero.</p>
+
+      <pre><code>Con el mismo archivo, calcula para cada SKU clase A y B:
+
+- Demanda semanal promedio de las últimas 8 semanas.
+- Demanda durante el lead time = demanda semanal x (lead time en
+  semanas). Mi lead time real es [N] semanas para producto
+  importado y [N] para producto nacional.
+- Inventario de seguridad: usa la variabilidad de las últimas 12
+  semanas para cubrir una semana mala, no una promedio.
+- Punto de reorden = demanda durante lead time + inventario de
+  seguridad.
+- Cantidad sugerida a pedir para cubrir [N] semanas de venta,
+  redondeada al múltiplo de empaque de [N] piezas y respetando el
+  mínimo de compra del proveedor de [N] piezas.
+
+Ajusta por estacionalidad: mis meses fuertes son [meses] y
+noviembre trae El Buen Fin. Si el periodo de cobertura cruza un
+mes fuerte, súbelo con el factor que veas en el historial del año
+pasado y dime qué factor usaste.
+
+Devuélveme una tabla: SKU, inventario actual, punto de reorden,
+¿pedir sí o no?, cantidad, dinero a costo y semana límite para
+colocar la orden.
+
+Al final, suma el dinero total de la compra y dime qué recortarías
+si mi presupuesto fuera [monto].</code></pre>
+
+      <p>Esa última línea es la que vuelve usable el ejercicio. Nunca hay dinero para todo, y forzar la priorización dentro del mismo prompt evita la junta donde cada quien defiende su categoría.</p>
+
+      <h2>Prompt 3: la curva de tallas y colores</h2>
+
+      <p>Pedir bien el total y repartirlo mal es el error más caro de una marca de ropa o calzado: terminas con las tallas de los extremos colgadas hasta el remate.</p>
+
+      <pre><code>Analiza mi historial solo a nivel talla y color, no a nivel modelo.
+
+1. Curva de tallas real por categoría: qué porcentaje de las
+   unidades vendidas se fue a cada talla, usando únicamente
+   semanas en las que la corrida estaba completa. Si una talla se
+   agotó, esa semana no cuenta: la venta perdida se ve como
+   demanda menor y no lo es.
+2. Compara esa curva contra cómo compré la última temporada y
+   dime dónde me equivoqué, en unidades y en dinero.
+3. Lo mismo por color: cuáles se venden a precio completo y
+   cuáles solo se mueven con descuento. Sepáralos.
+4. Propón la curva de compra para la siguiente temporada de
+   [N] unidades totales, repartida por talla y color, con la
+   justificación de cada ajuste contra la curva histórica.
+
+Marca cualquier talla o color donde la muestra sea tan chica que
+tu recomendación no sea confiable.</code></pre>
+
+      <p>Ese último punto separa un análisis honesto de uno decorativo. Si un color tuvo cuarenta ventas en todo el año, no hay curva que valga y hay que decirlo.</p>
+
+      <h2>Prompt 4: producto nuevo, sin historial</h2>
+
+      <p>El caso incómodo. No hay dato del producto que vas a lanzar, así que la única salida es la analogía: pronosticar con el comportamiento de lo más parecido que ya vendiste.</p>
+
+      <pre><code>Voy a lanzar [producto nuevo]: [descripción, precio, categoría,
+canal, mes de lanzamiento].
+
+No tengo historial de este producto. Haz esto:
+
+1. Identifica en mi catálogo los 3 a 5 productos más comparables
+   por precio, categoría y temporada de lanzamiento, y explica
+   por qué cada uno es comparable.
+2. Saca la curva de sus primeras 12 semanas de vida: unidades por
+   semana desde el lanzamiento, no por fecha de calendario.
+3. Construye tres escenarios —bajo, medio, alto— como porcentaje
+   de esa curva base, y di qué supuesto sostiene cada uno.
+4. Recomienda la compra inicial para cubrir [N] semanas en el
+   escenario medio, más el punto en el que tendría que recomprar
+   si se comporta como el escenario alto.
+5. Dime qué señal de las primeras 2 semanas me diría en cuál de
+   los tres escenarios estoy, y qué haría en cada caso.
+
+No inventes datos de mercado ni cifras de la industria. Trabaja
+solo con mi historial.</code></pre>
+
+      <p>El punto 5 es el que más valor da. Una compra inicial pequeña con un plan de recompra claro casi siempre le gana a una compra grande basada en entusiasmo.</p>
+
+      <h2>Prompt 5: el reporte semanal de resurtido</h2>
+
+      <p>Lo anterior sirve una vez. Esto sirve cada semana, y es lo que convierte el ejercicio en operación: el mismo archivo exportado cada lunes, con un prompt fijo.</p>
+
+      <pre><code>Este es mi export de inventario y venta de la semana que cerró el
+[fecha]. Compáralo contra el archivo de la semana anterior y
+entrégame el reporte de resurtido en este formato exacto:
+
+PEDIR ESTA SEMANA
+SKU / unidades / dinero a costo / por qué ahora
+(solo lo que cruzó su punto de reorden)
+
+QUIEBRE EN LAS PRÓXIMAS 3 SEMANAS
+SKU / días de inventario / fecha estimada de agotado
+(aunque ya no dé tiempo de pedir: quiero saberlo para el
+contenido y la pauta)
+
+SE ESTÁ ACELERANDO
+SKU cuya venta subió más de 30% contra las 4 semanas previas,
+con la venta de esta semana y la del promedio previo
+
+SE ESTÁ FRENANDO
+Mismo criterio a la baja, con recomendación: aguantar, promover
+o rematar
+
+DINERO ATORADO
+Top 10 de SKU con más inventario en días, valuado a costo
+
+CAMBIOS CONTRA LA SEMANA PASADA
+Qué recomendaciones cambiaron y por qué
+
+Máximo una página. Si un número te parece raro, dilo en lugar de
+suavizarlo.</code></pre>
+
+      <p>Ese reporte se manda a compras, a operación y a marketing. La última sección es la que evita el reporte zombi: si las recomendaciones cambian cada semana sin razón, algo está mal en los datos y hay que verlo antes de seguir comprando.</p>
+
+      <h2>Cómo se vuelve rutina</h2>
+
+      <p>El patrón es siempre el mismo: un script hace la parte mecánica —bajar el export, unirlo con el de la semana anterior, calcular los días de agotado— y el modelo hace la parte de juicio. Guarda los prompts y los supuestos del negocio (lead times, mínimos de compra, múltiplos de empaque, meses fuertes) en un proyecto dedicado, para no volver a explicarlos cada lunes. Si vas a montarlo completo, <a href="/guias/agente-o-workflow/">decidir entre agente y workflow</a> te ahorra construir de más.</p>
+
+      <h2>El error que cuesta más caro</h2>
+
+      <p>No es el pronóstico. Es pronosticar sobre un inventario que no existe.</p>
+
+      <p>Casi todas las marcas con las que he trabajado tienen una diferencia real entre lo que dice el sistema y lo que hay en el piso: mercancía dañada que nadie dio de baja, devoluciones que volvieron sin revisar, unidades apartadas para una influencer. Si esa diferencia es grande, todo lo de arriba produce números elegantes y equivocados.</p>
+
+      <p>Así que antes del primer prompt: cuenta físicamente los SKU clase A. Solo esos, no todo el catálogo. Un pronóstico bueno sobre datos malos no es neutral: te hace comprar mal más rápido y con más seguridad.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/medio-tiempo-de-la-ia-2026/" class="stack-link">
+            <span>El reporte de medio tiempo de la IA en 2026 →</span>
+            <small>Los 3 cambios que movieron el tablero este año, una autoevaluación de 2 minutos para ver dónde estás parado, y 3 apuestas de lo que viene.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

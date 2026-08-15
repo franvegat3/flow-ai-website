@@ -1,0 +1,87 @@
+      <p>Todos hemos vivido el bot de Slack que nadie usa. Se instala con entusiasmo, responde tres veces, y a la semana la gente lo ignora porque contesta cosas que ya sabía.</p>
+
+      <p>Claude Tag es otra categoría, y la diferencia no está en el modelo. Está en que Anthropic lo montó como un miembro del equipo y no como una herramienta: tiene identidad propia, tiene los accesos que un administrador le dio, acumula contexto de los canales donde vive, y puede seguir trabajando después de que la conversación siguió sin él.</p>
+
+      <p>Eso cambia qué le puedes pedir. Y también cambia lo que hay que configurar antes de soltarlo, que es donde la mayoría se equivoca.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Etiquetas a <code>@Claude</code> en un hilo de Slack, le encargas algo, y se va a hacerlo con las herramientas y los datos que tu organización le conectó, reportando en el mismo hilo.</p>
+
+      <p>Hay tres formas de hablarle: mencionándolo en un canal, por mensaje directo, y desde el panel de asistente de la barra lateral de Slack. Está disponible en los planes Team y Enterprise, en beta, y por ahora solo en Slack.</p>
+
+      <h2>Por qué actúa como él mismo y no como tú</h2>
+
+      <p>Esta es la decisión de diseño que más consecuencias tiene y la que menos se explica.</p>
+
+      <p>En un canal, Claude trabaja bajo la identidad de la organización, no bajo la tuya. Usa las credenciales que un administrador configuró, no tus accesos personales, y el consumo se le carga a la organización. En mensaje directo es al revés: ahí opera con tu cuenta personal y se cobra a tu cuenta.</p>
+
+      <p>Suena a detalle administrativo y no lo es. Significa tres cosas prácticas:</p>
+
+      <ul>
+        <li><strong>Hay un solo Claude por canal.</strong> Todo el equipo le habla al mismo, y lo que aprendió de una conversación le sirve en la siguiente. No es que cada quien traiga su propia versión con su propio contexto a medias.</li>
+        <li><strong>Lo que puede ver no depende de quién lo etiquetó.</strong> Depende de lo que el administrador le conectó a esa identidad. Un administrador puede tener identidades separadas para usos distintos, de modo que el Claude del área comercial no alcance los datos ni la memoria del área de ingeniería.</li>
+        <li><strong>Su actividad queda registrada.</strong> Hay bitácora que los administradores pueden revisar. Cuando un asistente actúa suplantando a cada usuario, esa trazabilidad se vuelve confusa; aquí no.</li>
+      </ul>
+
+      <p>Si vienes de la versión anterior de Claude en Slack, este es el cambio de fondo: se retiró en favor de un modelo donde <code>@Claude</code> es una identidad compartida con accesos configurados por un administrador, en vez de un asistente que actuaba en nombre de cada persona.</p>
+
+      <h2>Quién lo instala y qué hay que decidir</h2>
+
+      <p>Lo instala un dueño del espacio de trabajo desde el directorio de aplicaciones de Slack. Un punto que atora a varios equipos: el rol de <em>Admin</em> no alcanza. Tiene que ser el propietario principal o un propietario.</p>
+
+      <p>Las decisiones que hay que tomar en la configuración, en orden de importancia:</p>
+
+      <ol>
+        <li><strong>A qué canales entra.</strong> Empieza corto. Un canal, el que más preguntas repetidas genera.</li>
+        <li><strong>Qué herramientas y datos se le conectan.</strong> Esto define lo que puede hacer de verdad. Un Claude sin conexiones es un chat con pasos extra.</li>
+        <li><strong>Los límites de gasto.</strong> Se pueden fijar topes duros por canal y para toda la organización. Ponlos desde el día uno, no cuando llegue la factura.</li>
+        <li><strong>Los accesos por rol.</strong> Disponible en Enterprise. Es lo que evita que cualquier persona en un canal amplio dispare trabajo caro sobre datos sensibles.</li>
+        <li><strong>Los canales privados.</strong> El acceso se puede dar canal por canal. Piénsalo dos veces antes de meterlo a uno donde se discute personal o compensación.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> decidir qué NO se le conecta. La tentación es darle todo el primer día para "ver qué puede hacer". El resultado es un asistente con acceso a información que nadie revisó, en canales donde entra gente externa. Conecta solo lo que hace falta para el primer caso de uso, y amplía cuando ese caso ya esté rindiendo. La autonomía se gana por tramos.</p>
+      </div>
+
+      <h2>Las tres formas en que los equipos le sacan valor</h2>
+
+      <div class="plugin-card">
+        <h3>1. La pregunta de datos que nadie quiere contestar</h3>
+        <p>Es el uso que más rápido paga. En toda empresa hay una persona que recibe treinta mensajes a la semana del tipo "oye, ¿cuántos X hubo el mes pasado?". Esa persona no está haciendo su trabajo: está haciendo de buscador.</p>
+        <p>Con las fuentes de datos conectadas a la identidad de la organización, esas preguntas se contestan en el canal, con el número y con la consulta que lo produjo. La ganancia no es la velocidad de la respuesta: es que la pregunta deja de pasar por una persona.</p>
+        <p>Cómo se ve bien hecho: en el canal donde ya se hacen esas preguntas, con acceso de solo lectura, y pidiéndole siempre que muestre de dónde salió la cifra. Una respuesta sin fuente en un canal público es peor que ninguna respuesta.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos comerciales, de operación y de marketing que hoy dependen de una sola persona para cualquier número.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El trabajo largo que corre mientras la conversación sigue</h3>
+        <p>Claude Tag puede desglosar un encargo en etapas, trabajar de forma asíncrona y agendarse tareas a sí mismo para seguir un proyecto durante horas o días. Reporta en el hilo conforme avanza.</p>
+        <p>Eso cambia el tipo de encargo. No es "resúmeme esto", es "revisa los tickets de esta semana, agrúpalos por causa raíz y regresa el viernes con los tres temas que más se repiten". El hilo se queda como el registro de lo que pasó.</p>
+        <p>El detalle que hay que cuidar: un encargo así consume mucho más que una pregunta. Los topes de gasto por canal existen exactamente por esto.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> atención a clientes, investigación, y cualquier área con trabajo de revisión por lote que hoy nadie alcanza a hacer.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El contexto que se acumula solo</h3>
+        <p>Claude construye contexto recordando lo relevante de los canales donde está. Esa es la parte que no se puede replicar copiando y pegando en un chat aparte.</p>
+        <p>En la práctica significa que a la tercera semana ya no tienes que explicarle quiénes son tus clientes, cómo se llaman tus productos internamente ni por qué el proyecto que todos mencionan por sus iniciales importa. Deja de ser un asistente genérico y empieza a sonar a alguien que trabaja ahí.</p>
+        <p>También es la razón para separar identidades por área. Si el mismo Claude vive en el canal comercial y en el de producto, acumula contexto cruzado, y eso a veces es lo que quieres y a veces es exactamente lo que no.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos que ya trabajan en canales abiertos. Si tu empresa opera por mensajes directos, este beneficio no aparece nunca.</p>
+      </div>
+
+      <h2>El comportamiento ambiental: úsalo despacio</h2>
+
+      <p>Además de responder cuando lo etiquetas, Claude Tag puede tomar iniciativa: señalar información relevante y dar seguimiento a hilos que quedaron sin resolver.</p>
+
+      <p>Es la función con más potencial y la que más rápido puede volverse ruido. Un asistente que interviene sin que nadie lo llame, en un canal ocupado, se gana el mismo destino que cualquier bot: que la gente lo silencie.</p>
+
+      <p>La forma sensata de encenderlo es en un canal donde el olvido cuesta dinero —seguimiento comercial, incidencias abiertas, entregables con fecha— y no en el canal general. Y con una regla escrita de cuándo debe intervenir y cuándo no, porque sin eso el criterio lo pone él.</p>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Meterlo a todos los canales el primer día y anunciarlo en el general. Es la forma más rápida de que la organización concluya que "no sirve": la gente le pregunta cosas para las que no tiene datos conectados, recibe respuestas genéricas, y decide que ya lo probó.</p>
+
+      <p>La secuencia que sí funciona: un canal, un caso de uso concreto que hoy consume el tiempo de alguien, las conexiones mínimas para resolverlo, topes de gasto puestos, y dos semanas de uso real antes de ampliar. Si en esas dos semanas nadie lo extraña cuando no está, el problema no era la falta de un asistente.</p>
+
+      <p>Y una nota para quien ya trae la operación en Claude por otro lado: lo que le conectes aquí es independiente de lo que tengas instalado en tu propio Claude. Si quieres que el equipo tenga las mismas capacidades del lado individual, eso se resuelve con <a href="/guias/plugins-cowork/">plugins</a>, no con Claude Tag.</p>

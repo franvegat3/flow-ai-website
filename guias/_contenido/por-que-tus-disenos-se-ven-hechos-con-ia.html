@@ -1,0 +1,92 @@
+      <p>Le enseñas tu imagen a alguien y en medio segundo te dice "ah, es de IA". No supo explicarte por qué. Simplemente lo supo.</p>
+
+      <p>La respuesta fácil es echarle la culpa al modelo. No es el modelo. Los mismos modelos que te dan esa imagen de plástico están produciendo campañas que ves todos los días sin darte cuenta de que son generadas. La diferencia está completa en lo que se escribió antes.</p>
+
+      <p>Y el problema de fondo es este: cuando no le das dirección de arte, el modelo tiene que elegir por ti, y elige el promedio de todo lo que vio. El promedio de millones de imágenes es exactamente eso que tu ojo ya aprendió a reconocer.</p>
+
+      <h2>Las cuatro marcas que te delatan</h2>
+
+      <p>Antes del marco, aprende a ver los delatores. Son los mismos siempre y todos vienen de la misma causa: nadie especificó, así que el modelo puso el valor por defecto.</p>
+
+      <ul>
+        <li><strong>Luz de ningún lado.</strong> Todo iluminado parejo, sin una fuente que puedas señalar, sin sombras que caigan hacia un lado. La luz real siempre viene de algún lugar.</li>
+        <li><strong>Piel y superficies sin poros.</strong> Demasiado limpio. Nada de grano, nada de polvo, nada de desgaste. Se lee como render, no como foto.</li>
+        <li><strong>Composición centrada y simétrica.</strong> El sujeto exactamente en medio, mirando a cámara, con espacio igual de todos lados. Un fotógrafo casi nunca encuadra así.</li>
+        <li><strong>Saturación de más y contraste dramático.</strong> Colores que ninguna cámara vio. El modelo interpreta "que se vea bien" como "que se vea intenso".</li>
+      </ul>
+
+      <p>Si tu imagen tiene tres de las cuatro, no necesitas otro modelo. Necesitas otro prompt.</p>
+
+      <h2>El marco de seis bloques</h2>
+
+      <p>Un prompt visual que funciona nombra seis cosas, siempre en este orden. Si te saltas uno, ese lo elige el modelo, y ya sabemos qué elige.</p>
+
+      <h3>1. Sujeto y acción</h3>
+
+      <p>Qué hay y qué está pasando, en lenguaje concreto. "Una mujer profesional" no es un sujeto: es una categoría. "Una arquitecta de unos cincuenta años revisando un plano extendido sobre el cofre de una camioneta" sí lo es. La especificidad no limita al modelo, lo libera de tener que promediar.</p>
+
+      <h3>2. Encuadre y lente</h3>
+
+      <p>Aquí es donde se arregla la mitad de los problemas. Di el tipo de toma y el equipo: plano medio, lente de 85 milímetros, profundidad de campo corta, tomada ligeramente desde abajo. El lenguaje de fotografía funciona porque el modelo aprendió de imágenes que venían descritas exactamente así.</p>
+
+      <h3>3. Luz</h3>
+
+      <p>Nombra la fuente, la dirección y la hora. "Luz de ventana entrando por la izquierda, media tarde, sombras largas" produce algo radicalmente distinto a la misma escena sin esa línea. Este es el bloque que más cambia el resultado por cada palabra que escribes.</p>
+
+      <h3>4. Paleta</h3>
+
+      <p>Tres colores, máximo cuatro, y di cuál domina. Si trabajas para una marca, esta es la línea que hace que la imagen se pueda usar. Sin ella vas a recibir el mismo naranja y azul cinematográfico que todos.</p>
+
+      <h3>5. Referencia de medio, no de artista</h3>
+
+      <p>En vez de pedir el estilo de un fotógrafo famoso —que además es terreno resbaloso— nombra el medio y la época: fotografía editorial de revista de negocios, película de 35 milímetros escaneada, publicidad impresa de los noventa, catálogo de producto escandinavo. El medio trae consigo la luz, el grano y la composición de esa época.</p>
+
+      <h3>6. La imperfección</h3>
+
+      <p>El bloque que casi nadie escribe y el que más rompe el efecto de IA. Pide grano fino, una viñeta ligera, un reflejo en el lente, polvo en la superficie, una mano cortada por el borde del encuadre. La realidad tiene ruido. Cuando lo pides explícitamente, el resultado deja de leerse como render.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir qué <em>no</em> quieres. La mayoría de las herramientas aceptan una lista de exclusión, y ahí es donde se corta el promedio de golpe: nada de sonrisa perfecta a cámara, nada de composición centrada, nada de fondo desenfocado genérico, nada de tipografía sobrepuesta. Tres líneas de exclusiones cambian más el resultado que veinte adjetivos de más.</p>
+      </div>
+
+      <h2>La plantilla completa</h2>
+
+      <p>Esta es la que uso. Se llena y se pega tal cual:</p>
+
+      <pre><code>SUJETO Y ACCIÓN: [quién o qué, con edad, ropa, y qué está haciendo exactamente en este instante]
+
+ENCUADRE: [plano cerrado / medio / general], lente de [24 / 35 / 50 / 85] mm, cámara [a la altura de los ojos / ligeramente abajo / arriba], profundidad de campo [corta / media / amplia], sujeto [descentrado a la izquierda / a la derecha / regla de tercios]
+
+LUZ: fuente [ventana / sol directo / lámpara práctica en cuadro / nublado], entrando desde [izquierda / derecha / atrás], hora [amanecer / media tarde / hora dorada / noche], sombras [largas y duras / suaves y difusas]
+
+PALETA: dominante [color], secundario [color], acento [color]. Sin colores fuera de esta paleta.
+
+MEDIO Y ÉPOCA: [fotografía editorial de negocios / película de 35 mm escaneada / catálogo de producto / documental] de [década o estilo]
+
+IMPERFECCIÓN: grano de película fino, ligera viñeta, [reflejo de lente / polvo en la superficie / desenfoque de movimiento leve en las manos]
+
+NO QUIERO: sujeto centrado y mirando a cámara, sonrisa perfecta, iluminación pareja sin fuente, piel sin textura, saturación alta, fondo desenfocado genérico, texto o logotipos sobrepuestos, marcas de agua.</code></pre>
+
+      <p>Aterrizado en algo real. Una empresa de logística necesitaba imágenes para su campaña y no tenía presupuesto de sesión fotográfica. Sin plantilla, todo salía a operador sonriendo en almacén impecable con chaleco naranja saturado: la imagen de banco de fotos que nadie cree. Con el bloque de luz —nave iluminada por tragaluces a media mañana, sombras largas de los racks— y el de imperfección —polvo en el aire, grano fino— las mismas herramientas dieron algo que se puede publicar. Ni un cambio de modelo. Solo dos bloques que antes estaban vacíos.</p>
+
+      <h2>Lo mismo aplica en video, con una regla extra</h2>
+
+      <p>Los seis bloques funcionan igual para generar video. La diferencia es que ahí hay un séptimo: el movimiento de cámara, y hay que ser tacaño con él.</p>
+
+      <p>El error clásico es pedir un movimiento espectacular —dron ascendente, giro alrededor del sujeto, acercamiento rápido— y el modelo gasta toda su coherencia en el movimiento y deforma todo lo demás. Un plano casi fijo con una deriva mínima se ve infinitamente más profesional y falla mucho menos. Pide poco movimiento y córtalo en edición.</p>
+
+      <h2>Dónde conseguir prompts que ya funcionan</h2>
+
+      <p>No tienes que escribir todo desde cero. Hay bibliotecas públicas de prompts visuales con la imagen resultante al lado, y ese formato es el que sirve: ves el resultado, copias el prompt, cambias el sujeto y te quedas con la dirección de arte.</p>
+
+      <p>La forma de distinguir las que valen: las buenas las arman personas que vienen del diseño de verdad —portadas de disco, identidad de artistas, editorial— y no del mundo de la IA. Se nota porque sus prompts hablan de luz, lente y paleta, no de "ultra realista, 8K, obra maestra". Esas tres palabras no hacen nada y son la señal de que quien escribió el prompt está adivinando.</p>
+
+      <p>La ruta de las que uso y para qué sirve cada una está en <a href="/guias/5-sitios-para-mejor-diseno/">los 5 sitios para que tu IA diseñe mejor</a>. Y si lo que quieres es que un diseño completo —no una imagen— deje de verse genérico, el método de partir de una referencia real está en <a href="/guias/robarle-el-diseno-a-un-sitio/">cómo robarle el diseño a cualquier sitio</a>.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>Todo lo de arriba es técnica y la técnica se aprende en una tarde. Lo que no se aprende en una tarde es tener una referencia en la cabeza.</p>
+
+      <p>La gente que saca buenos resultados con IA no escribe mejores prompts porque conozca las palabras mágicas. Los escribe mejor porque ya sabe cómo se ve lo que quiere antes de empezar a escribir. Ve mucho diseño, tiene opiniones sobre luz, y reconoce cuando algo está mal aunque no sepa nombrar qué.</p>
+
+      <p>Ese sigue siendo el trabajo. La IA quitó la barrera de ejecutar; no quitó la de tener criterio. Y ahora que todos pueden ejecutar, el criterio es lo único que separa una imagen de otra.</p>

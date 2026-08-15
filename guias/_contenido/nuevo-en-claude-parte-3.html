@@ -1,0 +1,111 @@
+      <p>La <a href="/guias/nuevo-en-claude/">parte 1</a> dejó la herramienta configurada. La <a href="/guias/nuevo-en-claude-parte-2/">parte 2</a> montó la infraestructura: skills, tareas programadas, un plugin. Con eso ya trabajas distinto.</p>
+
+      <p>Esta parte es otra cosa. Son cinco funciones que ya están adentro del producto, que la mayoría de la gente vio una vez, y que quedan sin usar porque nadie explica para qué sirven de verdad. No hay que instalar nada. Hay que saber dónde se prenden y con qué frase se les saca provecho.</p>
+
+      <p>De cada una te doy lo mismo: qué hace, dónde está el interruptor, y el prompt exacto que la convierte en algo que sí cambia tu semana.</p>
+
+      <div class="plugin-card">
+        <h3>1. Memoria</h3>
+        <p>Claude puede acordarse de ti entre conversaciones. Sin eso, cada chat arranca con alguien que no sabe a qué te dedicas y tú vuelves a teclear el mismo párrafo de contexto por enésima vez.</p>
+        <p><strong>Dónde se activa:</strong> en la configuración de tu cuenta, en la sección de memoria. Ahí mismo puedes ver lo que recuerda, editarlo y borrar lo que no quieres que conserve. Vale la pena abrirlo aunque no cambies nada: es la única forma de saber qué está cargando en cada respuesta.</p>
+        <p>El error es dejarla acumular sola. La memoria se llena de detalles de un proyecto que ya cerraste y empieza a colorear respuestas de temas que no tienen nada que ver. Una vez al mes, esta revisión:</p>
+        <pre><code>Muéstrame todo lo que tienes guardado sobre mí, agrupado en tres
+listas y sin adornos:
+
+1. Lo que sigue siendo cierto hoy.
+2. Lo que ya caducó: proyectos cerrados, herramientas que dejé de
+   usar, cargos que cambiaron.
+3. Lo que nunca debiste guardar: datos de clientes, cifras
+   confidenciales, cosas de una conversación puntual.
+
+Para cada punto de la lista 2 y 3, dime exactamente qué debería
+borrar. No suavices: si algo está desactualizado, dilo aunque yo lo
+haya escrito.</code></pre>
+        <p class="plugin-for"><strong>Cuánto toma:</strong> diez minutos al mes. El sistema completo, en <a href="/guias/memoria-perfecta-en-3-capas/">memoria perfecta en 3 capas</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Claude Design</h3>
+        <p>Es el lienzo donde describes lo que quieres y sale construido: un prototipo, una presentación, un tablero, un formulario, una landing. Lo importante es que produce código funcionando, no una imagen. Por eso se puede seguir editando pieza por pieza en vez de regenerar todo.</p>
+        <p><strong>Dónde se activa:</strong> está en beta para los planes de paga, en <a href="https://claude.com/product/design" target="_blank" rel="noopener">claude.com/product/design</a> o desde la barra lateral de la aplicación de escritorio. En cuentas de empresa puede venir apagado y lo prende quien administre.</p>
+        <p>La forma de pedirlo que separa un resultado usable de uno bonito:</p>
+        <pre><code>Antes de construir nada, propón 3 direcciones distintas en una
+línea cada una. Espero a que elija.
+
+QUÉ NECESITO: [presentación / tablero / formulario / landing]
+PARA QUIÉN: [quién lo va a abrir y qué decisión toma con eso]
+CONTENIDO REAL: [los textos y números exactos, no de ejemplo]
+
+Reglas:
+- Nada decorativo. Si un elemento no ayuda a entender, quítalo.
+- Deja colores, textos y tamaños como valores nombrados arriba,
+  para que yo los cambie sin tocar la lógica.
+- Si te falta un dato, pídemelo. No lo inventes.</code></pre>
+        <p class="plugin-for"><strong>Ojo con esto:</strong> consume del mismo bote de uso que todo lo demás. Más detalle en <a href="/guias/claude-design-esta-subestimado/">Claude Design está muy subestimado</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Dispatch</h3>
+        <p>Dispatch conecta la aplicación de tu teléfono con Claude corriendo en tu computadora. Le mandas la tarea desde el celular, el trabajo se ejecuta en la máquina —con tus archivos locales, tus conectores y tus permisos— y revisas el resultado cuando llegues.</p>
+        <p><strong>Dónde se activa:</strong> desde Cowork en la aplicación de escritorio se genera un código que escaneas con el teléfono para vincular las dos sesiones. La computadora tiene que quedarse encendida: el celular manda la orden, no hace el trabajo.</p>
+        <p>La trampa es usarlo para preguntas. Para preguntar ya tenías el chat del teléfono. Dispatch se paga solo cuando le mandas trabajo que necesita tus archivos:</p>
+        <pre><code>Tarea para correr ahora en la computadora, no me contestes desde
+el teléfono:
+
+Abre la carpeta [ruta] y revisa los archivos que cambiaron esta
+semana. Arma un resumen de una página con:
+- Qué cambió y quién lo cambió.
+- Qué quedó a medias.
+- Las tres cosas que necesitan una decisión mía.
+
+Déjalo guardado en esa misma carpeta como texto plano y avísame
+cuando esté. Si algo requiere borrar o mandar información hacia
+afuera, no lo hagas: pregúntame primero.</code></pre>
+        <p class="plugin-for"><strong>La regla:</strong> esa última línea. Lo que se dispara sin que tú estés viendo la pantalla necesita un límite escrito.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Nivel de esfuerzo</h3>
+        <p>Es la perilla que decide cuánto piensa el modelo antes de contestarte. Va de bajo hasta máximo y el valor por omisión es alto. No cambia el precio por token: cambia cuántos tokens gasta razonando, así que subirlo cuesta tiempo y consumo, y bajarlo te devuelve las dos cosas.</p>
+        <p><strong>Dónde se activa:</strong> en el selector de modelo, junto al nombre del modelo. En la terminal es un ajuste de la sesión.</p>
+        <p>La regla que uso: bajo para trabajo mecánico —extraer campos de un documento, clasificar correos, reformatear una lista—; alto para lo que alguien va a usar para decidir; máximo solo cuando el problema tiene varias piezas que se contradicen y una respuesta rápida sale mal. Subirlo por costumbre es la forma más común de quemar el límite semanal a media semana. Los números por modelo están en <a href="/guias/hoja-de-referencia-de-modelos/">la hoja de referencia de modelos</a>.</p>
+        <p class="plugin-for"><strong>Cómo lo pruebas:</strong> corre la misma tarea en bajo y en alto. Si no notas diferencia, esa tarea vive en bajo para siempre.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Modo Research</h3>
+        <p>En vez de contestar de un jalón, Claude descompone la pregunta, busca en varias fuentes —la web y los conectores que le diste— y entrega un documento con lo que encontró y de dónde salió cada cosa. Tarda minutos, no segundos.</p>
+        <p><strong>Dónde se activa:</strong> es una opción en la barra de herramientas del chat, junto a los adjuntos. Conviene activar antes los conectores que quieras que consulte, porque ahí es donde deja de ser un buscador y empieza a mezclar lo de afuera con lo tuyo.</p>
+        <p>El uso que más rinde en una empresa no es "investiga tal tema". Es preparar una decisión concreta:</p>
+        <pre><code>Investiga esto y entrégame un documento, no un resumen.
+
+DECISIÓN QUE TENGO QUE TOMAR: [la decisión, en una frase]
+LO QUE YA SÉ: [lo que no hace falta que investigues]
+PLAZO: [cuándo se decide]
+
+Quiero:
+1. Los hechos verificables, cada uno con su fuente y su fecha.
+2. Lo que encontraste que contradice mi supuesto actual.
+3. Qué no se puede saber con información pública, dicho así.
+4. Las tres preguntas que debería contestar antes de decidir.
+
+Separa hechos de interpretación. Si una cifra viene de una sola
+fuente sin respaldo, márcala como tal.</code></pre>
+        <p class="plugin-for"><strong>Para qué sí:</strong> revisar un proveedor antes de firmar, entender un competidor nuevo, preparar una junta con alguien que sabe más que tú del tema.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el punto 4 de ese último prompt, el de "qué no se puede saber". Sin esa línea, un modo de investigación siempre entrega algo, y ese algo llena los huecos con lo que suena razonable. Pedirle explícitamente que marque el vacío es lo que convierte la investigación en algo con lo que puedes decidir. Aplícalo también fuera del modo Research.</p>
+      </div>
+
+      <h2>En qué orden</h2>
+
+      <p>No las cinco hoy. Memoria primero, porque mejora todas las respuestas que vas a recibir después. Nivel de esfuerzo el mismo día, porque es una decisión, no una instalación.</p>
+
+      <p>Research la semana que tengas una decisión de verdad enfrente. Claude Design cuando te toque hacer una pieza que normalmente le pedirías a alguien más. Y Dispatch al último, porque es la que necesita más criterio: es la única de las cinco que actúa sobre tu máquina cuando tú no estás viendo.</p>
+
+      <h2>Cómo saber si valió</h2>
+
+      <p>La señal no es que usaste las cinco. Es que dejaste de teclear contexto.</p>
+
+      <p>Si en tres semanas sigues explicando quién eres al empezar cada chat, la memoria está prendida pero vacía. Si sigues pidiendo tres versiones porque la primera nunca sirve, probablemente estás en un nivel de esfuerzo que no le hace justicia a la tarea. Las funciones ya están ahí. Lo que falta casi siempre es decirle en qué contexto operar, y eso se escribe una vez.</p>

@@ -1,0 +1,154 @@
+      <p>La mayoría de los malos resultados con IA no son culpa del modelo. Son culpa de una petición que dejaba cinco decisiones abiertas y el modelo tuvo que tomarlas por ti. Tomó las más probables, que casi nunca son las tuyas.</p>
+
+      <p>Un prompt bien armado no es un prompt largo. Es un prompt que cierra huecos. Y los huecos siempre son los mismos cinco, en el mismo orden: quién lo escribe, qué sabe, cómo se ve lo bueno, qué está prohibido y en qué forma se entrega.</p>
+
+      <p>Esa es toda la anatomía. Rol, contexto, ejemplo, reglas y formato. Abajo está qué hace cada parte, qué pasa cuando falta, y tres prompts terminados que puedes copiar y adaptar en dos minutos.</p>
+
+      <h2>La estructura, en una frase</h2>
+
+      <p>Le das una identidad, le das los datos, le enseñas cómo se ve terminado, le pones los límites y le dices en qué envase te lo entrega.</p>
+
+      <h2>Las 5 partes</h2>
+
+      <h3>1. Rol: desde dónde escribe</h3>
+
+      <p>Una línea que define el punto de vista. No es un adorno: cambia qué considera relevante, qué vocabulario usa y qué da por obvio. "Eres un director comercial que revisa el pipeline de un equipo de cinco vendedores" produce un análisis distinto a "eres un asistente de ventas", aunque le des los mismos datos.</p>
+
+      <p>Cuando falta, el modelo escribe desde el promedio de internet. Que es exactamente el tono neutro y explicativo que después te molesta.</p>
+
+      <h3>2. Contexto: lo que solo tú sabes</h3>
+
+      <p>La parte que más se salta la gente y la que más pesa. Aquí va el negocio, el público, la restricción, el histórico. Nada de esto lo puede adivinar el modelo.</p>
+
+      <p>Un truco que uso: antes de escribir, me pregunto qué le tendría que explicar a alguien que entra hoy a trabajar conmigo para que hiciera esta tarea sin volver a preguntarme. Eso es el contexto. Si tu respuesta cabe en una línea, la tarea es simple. Si son ocho líneas, escríbelas: te las vas a ahorrar en correcciones.</p>
+
+      <h3>3. Ejemplo: cómo se ve lo bueno</h3>
+
+      <p>Un ejemplo terminado vale más que tres párrafos de adjetivos. Si quieres que el texto sea "directo y sin relleno", pega un texto tuyo que ya sea directo y sin relleno. El modelo es mucho mejor imitando que interpretando descripciones.</p>
+
+      <p>También sirve el ejemplo negativo, y a veces sirve más: "así <em>no</em>, porque suena a comunicado corporativo". Un buen ejemplo y un mal ejemplo juntos definen el rango completo.</p>
+
+      <h3>4. Reglas: los límites duros</h3>
+
+      <p>Las restricciones que no se negocian. Longitud, cosas prohibidas, qué hacer cuando falta información. Esta última es la regla más valiosa de todas y casi nadie la escribe: <em>si te falta un dato, pregúntalo en vez de inventarlo</em>. Sin ella, el modelo rellena el hueco con algo plausible y tú lo descubres tarde.</p>
+
+      <p>Escribe las reglas en positivo cuando puedas. "Usa frases de menos de 20 palabras" funciona mejor que "no escribas frases largas", porque la segunda deja la definición de largo en manos de alguien más.</p>
+
+      <h3>5. Formato: en qué envase</h3>
+
+      <p>Tabla, viñetas, JSON, correo listo para enviar, tres opciones numeradas. Si no lo dices, te llega un ensayo, y tú vas a pasar diez minutos reformateando.</p>
+
+      <p>El formato también controla la cantidad de trabajo. "Dame tres opciones de máximo 40 palabras cada una" obliga a decidir. "Dame ideas" invita a divagar.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el criterio de terminado. Antes del formato, agrega una línea que diga cómo sabrías tú que el resultado sirve. "Está bien si un vendedor puede usarlo en la llamada de mañana sin editarlo." Esa frase le da al modelo algo contra qué revisar su propia salida, y es la diferencia entre un borrador y algo entregable.</p>
+      </div>
+
+      <h2>Tres prompts terminados</h2>
+
+      <h3>Ejemplo 1: revisión de pipeline comercial</h3>
+
+      <pre><code>Eres el director comercial de una empresa B2B de servicios que
+vende contratos anuales a empresas medianas. Revisas el pipeline
+con cinco vendedores cada lunes.
+
+CONTEXTO
+- Ciclo de venta promedio: entre 6 y 10 semanas.
+- El equipo tiende a dejar oportunidades abiertas por meses
+  porque nadie quiere marcarlas como perdidas.
+- Al cierre de trimestre faltan cuatro semanas.
+- Te paso el listado de oportunidades abiertas al final.
+
+QUÉ QUIERO
+Clasifica cada oportunidad en: cierra este trimestre, se pasa al
+siguiente, o hay que matarla. Para cada una, la señal concreta en
+la que te basaste y la siguiente acción con responsable.
+
+REGLAS
+- Si una oportunidad no tiene actividad registrada en más de tres
+  semanas, va a "hay que matarla" salvo que el monto la justifique.
+- No inventes datos. Si falta información para clasificar una,
+  ponla en una lista aparte de "faltan datos" y di cuál falta.
+- Nada de consejos genéricos de ventas.
+
+FORMATO
+Tres bloques con esos tres nombres. Dentro de cada bloque, una
+línea por oportunidad: nombre, monto, señal, siguiente acción.
+Cierra con las tres oportunidades donde meter el tiempo esta
+semana y por qué esas.
+
+Está bien si puedo llevar esto tal cual a la junta del lunes.
+
+DATOS:
+[pega aquí el listado]</code></pre>
+
+      <h3>Ejemplo 2: guion de video corto</h3>
+
+      <pre><code>Eres un guionista de video corto para redes. Escribes para que
+alguien lo diga en cámara, no para que se lea.
+
+CONTEXTO
+- La cuenta habla de automatización con IA para dueños de negocio
+  que no son técnicos.
+- El público ya probó ChatGPT y le pareció poco útil.
+- El video dura entre 45 y 60 segundos.
+- Tema de hoy: [TEMA].
+
+EJEMPLO DE TONO QUE SÍ
+"Le pediste un correo y te dio un ensayo. No es que la
+herramienta sea mala. Es que le pediste sin decirle nada."
+
+EJEMPLO DE TONO QUE NO
+"En el mundo actual, la inteligencia artificial está
+transformando la manera en que trabajamos."
+
+REGLAS
+- Una sola idea en todo el video.
+- Frases de máximo 15 palabras.
+- El primer renglón tiene que funcionar sin contexto previo.
+- Sin cifras, sin estudios, sin nombres de empresas.
+- Sin emojis y sin signos de exclamación.
+
+FORMATO
+Guion corrido, sin marcas de escena, listo para teleprompter.
+Después del guion, tres alternativas para el primer renglón.</code></pre>
+
+      <h3>Ejemplo 3: análisis de variación de presupuesto</h3>
+
+      <pre><code>Eres el controller de una empresa con operación en varias
+sucursales. Explicas variaciones a un director general que no
+es financiero y tiene siete minutos.
+
+CONTEXTO
+- Te paso el presupuestado contra el real del mes por categoría.
+- El director quiere saber qué hacer, no qué pasó.
+- Hay categorías donde una variación de 5% es normal y otras
+  donde 2% ya es alarma. Si no te lo digo, pregúntame cuáles.
+
+QUÉ QUIERO
+Las variaciones que importan, ordenadas por impacto en el
+resultado, cada una con la causa más probable y una decisión
+concreta que él pueda tomar esta semana.
+
+REGLAS
+- Máximo cinco variaciones. Si hay más, quédate con las cinco
+  de mayor impacto y di cuántas dejaste fuera.
+- No mezcles causas con síntomas.
+- Si un número no cuadra con otro, dilo en vez de acomodarlo.
+- Sin jerga contable.
+
+FORMATO
+Una tabla de cinco filas: categoría, variación, causa probable,
+decisión, responsable sugerido. Debajo, un párrafo de máximo
+80 palabras con lo único que él tiene que recordar.
+
+DATOS:
+[pega aquí el presupuestado contra real]</code></pre>
+
+      <h2>El error que arruina prompts buenos</h2>
+
+      <p>Amontonar tareas. Un prompt con la estructura completa pero que pide analizar, resumir, redactar y proponer siguientes pasos al mismo tiempo va a hacer las cuatro cosas a medias. La estructura no compensa la falta de foco.</p>
+
+      <p>La otra: escribir el prompt una sola vez. Los prompts que uso a diario están en su quinta versión, y cada versión nació de un error concreto. La primera vez que el modelo inventó un dato agregué la regla de no inventar. La primera vez que me entregó un ensayo cuando quería una tabla, agregué el formato. Un prompt no se diseña, se afila.</p>
+
+      <p>Cuando uno de esos prompts ya lleva tres o cuatro rondas de afilado, es hora de sacarlo del chat: eso ya es un procedimiento y merece vivir como skill, no como texto que pegas cada vez. Ese es el momento en que dejas de escribir prompts y empiezas a construir sistema.</p>

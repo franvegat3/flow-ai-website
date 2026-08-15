@@ -1,0 +1,138 @@
+      <p>La forma más común de usar la IA hoy es la peor: le pides algo, te quedas viendo cómo escribe, la corriges, le vuelves a pedir, la vuelves a corregir. Al final tardaste lo mismo que si lo hubieras hecho tú, y encima estuviste ahí todo el rato.</p>
+
+      <p>Eso no es delegar. Es ser niñera de una máquina.</p>
+
+      <p>El método sándwich es la forma de salir de ahí: tú trabajas al principio y al final, la IA trabaja sola en medio. Abajo está el método completo y quince tareas concretas donde funciona, cada una con la parte que casi nadie escribe —cómo sabes que salió bien.</p>
+
+      <h2>Por qué acabas de niñera</h2>
+
+      <p>No es que el modelo necesite supervisión. Es que le entregaste una tarea sin dos cosas, y sin ellas nadie puede trabajar solo: el contexto completo y la definición de terminado.</p>
+
+      <p>Cuando falta contexto, el modelo lo rellena con supuestos y tú tienes que estar ahí corrigiendo cada supuesto. Cuando falta la definición de terminado, no puede verificar nada, así que te entrega lo primero que le parece razonable y el verificador tienes que ser tú, línea por línea.</p>
+
+      <p>La ironía es que la gente da esa información de todos modos —solo que a cuentagotas, a lo largo de veinte mensajes. El método sándwich la junta toda antes.</p>
+
+      <h2>El método, capa por capa</h2>
+
+      <h3>Pan de arriba: el brief completo, de una sola vez</h3>
+
+      <p>Todo el contexto arriba, en el primer mensaje. Esto es lo contrario de la conversación natural y es lo que hace que funcione. Cinco cosas:</p>
+
+      <ul>
+        <li><strong>La tarea</strong> en una frase, en resultado y no en actividad. "Deja listas las tres cotizaciones de esta semana", no "ayúdame con cotizaciones".</li>
+        <li><strong>El contexto</strong> que solo tú sabes: quién es el cliente, qué pasó antes, qué no se puede decir, qué formato usan.</li>
+        <li><strong>El material</strong> completo. Los archivos, los correos, la plantilla. Completos, no resumidos —el resumen ya es una decisión que tomaste tú.</li>
+        <li><strong>La definición de terminado</strong>, verificable. No "que quede bien"; una lista contra la que se pueda revisar.</li>
+        <li><strong>Los límites</strong>: qué no debe tocar, cuándo debe parar y preguntar.</li>
+      </ul>
+
+      <h3>Relleno: se suelta</h3>
+
+      <p>Aquí es donde hay que aguantarse. No interrumpas para ajustar el rumbo a la mitad. Cada interrupción reinicia el contexto de trabajo y te vuelve a meter en el ciclo de niñera.</p>
+
+      <p>Si a los cinco minutos ves que va mal, no lo corrijas: cancela, arregla el pan de arriba y vuelve a empezar. Es más rápido y te deja un brief mejor para la próxima vez.</p>
+
+      <h3>Pan de abajo: verificas, no revisas</h3>
+
+      <p>Revisar es leer todo buscando errores. Verificar es comprobar contra la lista que escribiste arriba. Lo primero se lleva el ahorro completo; lo segundo toma minutos.</p>
+
+      <p>Y verificas contra una fuente, no contra tu impresión. Si el criterio era que los precios cuadren con la lista vigente, abres la lista. La salida de la IA suena bien siempre —esa es justamente la parte peligrosa.</p>
+
+      <h2>La plantilla del pan de arriba</h2>
+
+      <pre><code>TAREA
+[Qué quiero terminado, en una frase, como resultado.]
+
+CONTEXTO
+[Quién es el cliente / el equipo / el destinatario.]
+[Qué pasó antes que necesitas saber.]
+[Qué tono, qué formato, qué plantilla usamos aquí.]
+[Qué NO se puede decir o prometer.]
+
+MATERIAL
+[Adjunto todo. Archivos, correos, datos, plantilla.]
+
+TERMINADO SIGNIFICA
+- [criterio verificable 1]
+- [criterio verificable 2]
+- [criterio verificable 3]
+
+Antes de entregarme nada, revisa cada criterio y dime contra
+qué lo verificaste. Si uno no lo puedes verificar, dímelo en
+vez de asumirlo.
+
+LIMITES
+- No toques [X].
+- Detente y pregúntame si [situación].
+- Para decisiones chicas (nombres, orden, formato), elige lo
+  razonable y anótalo. No me preguntes.
+
+ENTREGA
+Al final: qué quedó hecho, cómo verificaste cada criterio, y
+qué no pudiste resolver.</code></pre>
+
+      <p>La sección de límites es la que evita los dos extremos: el agente que pregunta por el nombre del archivo y el que manda un correo sin permiso.</p>
+
+      <h2>Las 15 tareas</h2>
+
+      <p>Todas cumplen la misma condición: tienen un criterio verificable. Por eso se pueden soltar.</p>
+
+      <h3>Antes y después de las juntas</h3>
+
+      <ol>
+        <li><strong>Preparar la junta de mañana.</strong> Quién asiste, qué se acordó la vez pasada, qué quedó pendiente, tres preguntas que conviene hacer. <em>Verificas:</em> que cada pendiente citado exista en las notas anteriores.</li>
+        <li><strong>Convertir la nota de junta en pendientes.</strong> Cada acuerdo con dueño y fecha; lo que se dijo sin dueño va a una lista aparte de "sin asignar". <em>Verificas:</em> que ningún pendiente tenga dueño inventado.</li>
+        <li><strong>El resumen para quien no fue.</strong> Qué se decidió, qué cambió respecto a lo planeado, qué necesitan de él. <em>Verificas:</em> que las decisiones aparezcan en la transcripción.</li>
+      </ol>
+
+      <h3>Comercial</h3>
+
+      <ol start="4">
+        <li><strong>El primer borrador de la cotización.</strong> Con tu plantilla exacta, no una inventada. <em>Verificas:</em> que cada precio coincida con la lista vigente.</li>
+        <li><strong>Investigar al prospecto antes de la llamada.</strong> A qué se dedican, qué cambió este año, quién decide, qué preguntar. <em>Verificas:</em> que cada dato traiga su fuente.</li>
+        <li><strong>El barrido semanal del pipeline.</strong> Qué oportunidad no se ha movido, cuál no tiene siguiente paso, cuál tiene fecha vencida. <em>Verificas:</em> que la lista cuadre con lo que ves en el CRM.</li>
+        <li><strong>Los seguimientos del viernes.</strong> Un borrador por cada conversación abierta, con el contexto de lo último que se habló. <em>Verificas:</em> que ninguno prometa algo que no ofreces.</li>
+      </ol>
+
+      <h3>Datos y papeleo</h3>
+
+      <ol start="8">
+        <li><strong>Limpiar y deduplicar una lista de contactos.</strong> <em>Verificas:</em> conteo antes y después, y una muestra de diez registros a mano.</li>
+        <li><strong>Conciliar dos archivos que deberían cuadrar.</strong> Ventas contra facturación, inventario contra sistema. <em>Verificas:</em> que las diferencias que reporta existan de verdad al abrirlas.</li>
+        <li><strong>El reporte mensual desde los datos crudos.</strong> <em>Verificas:</em> que los totales sumen igual que la fuente.</li>
+        <li><strong>Revisar un contrato contra tu lista de cláusulas rojas.</strong> No como abogado: como primer filtro para saber qué mandarle al abogado. <em>Verificas:</em> que cada hallazgo cite la cláusula textual.</li>
+      </ol>
+
+      <h3>Contenido y comunicación</h3>
+
+      <ol start="12">
+        <li><strong>Convertir un webinar o podcast largo en cinco piezas.</strong> <em>Verificas:</em> que cada pieza corresponda a un momento real de la grabación, con el minuto.</li>
+        <li><strong>Auditar la bandeja de entrada.</strong> Qué necesita respuesta hoy, qué puede esperar, qué se archiva. <em>Verificas:</em> abriendo los tres que marcó como urgentes.</li>
+        <li><strong>Segunda opinión sobre un correo difícil.</strong> Cómo lo va a leer quien lo recibe, qué frase se puede malinterpretar, qué falta. <em>Verificas:</em> tú, leyéndolo con esa lente.</li>
+      </ol>
+
+      <h3>Interno</h3>
+
+      <ol start="15">
+        <li><strong>Actualizar la documentación después de un cambio de proceso.</strong> Le das el cambio y encuentra todos los documentos que quedaron desfasados. <em>Verificas:</em> que cada archivo que dice haber tocado exista y diga lo nuevo.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> guardar el pan de arriba. La primera vez escribir el brief completo se siente lento —quince minutos para una tarea de treinta. Pero ese brief es reutilizable: la próxima vez cambias tres datos y corres. A la tercera repetición el ahorro ya es enorme, y esa versión afinada es exactamente el material de una skill o un proyecto guardado. Si lo escribes en el chat y lo dejas ahí, vas a pagar los quince minutos cada vez.</p>
+      </div>
+
+      <h2>Con cuál empezar</h2>
+
+      <p>No con la más pesada. Con la que cumpla estas tres al mismo tiempo: la haces al menos una vez por semana, tiene un criterio de "bien hecho" que puedes escribir en una frase, y si sale mal no pasa nada grave.</p>
+
+      <p>De la lista de arriba, las que casi siempre califican primero son la 2, la 6 y la 10. Son repetitivas, tienen una fuente contra la cual verificar, y el peor escenario es rehacerlas.</p>
+
+      <p>Las que yo dejaría para el final son la 11 y la 14, no porque la IA sea mala en ellas —es buena— sino porque el costo de un error es alto y conviene tener calibrado tu propio criterio de verificación antes.</p>
+
+      <h2>El error que mantiene a la gente de niñera</h2>
+
+      <p>Delegar la actividad en vez del resultado. "Ayúdame a redactar" te deja adentro de la tarea; "deja los cinco correos listos en borradores, cumpliendo estos tres criterios" te deja fuera.</p>
+
+      <p>Y el corolario: si te descubres corrigiendo lo mismo tres veces, el problema no está en la respuesta. Está en el pan de arriba. Súbelo ahí, no lo pelees abajo.</p>
+
+      <p>Cuando ya tengas tres o cuatro tareas corriendo así, el siguiente paso es dejarlas correr sin que tú las dispares. Ahí es donde entran los límites duros de <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails para tus agentes</a>, que es el mismo principio llevado a trabajo desatendido.</p>

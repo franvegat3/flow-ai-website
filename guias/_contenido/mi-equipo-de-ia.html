@@ -1,0 +1,137 @@
+      <p>Llevo dos frentes al mismo tiempo. Uno es mi negocio de automatización, donde vendo e implemento sistemas de IA para otras empresas. El otro es dirigir la IA dentro de una empresa de contenido y finanzas que factura de verdad, con equipo, con marcas y con calendario de publicación. Y encima están mis propias cuentas.</p>
+
+      <p>No tengo un equipo humano proporcional a eso. Lo que tengo es un conjunto de piezas de IA con puestos definidos, y esa palabra —puestos— es la que hace toda la diferencia.</p>
+
+      <p>La gente arma "stacks": una lista de herramientas que compró. Yo armo un organigrama: cada pieza tiene una responsabilidad, un jefe, un insumo y un entregable. Cuando algo sale mal sé exactamente quién falló. Cuando algo se repite sé exactamente a quién asignarlo. Eso no se logra comprando herramientas, se logra escribiendo puestos.</p>
+
+      <p>Abajo está el organigrama completo: quién hace qué, qué herramienta ocupa ese puesto, cómo se conecta a Claude, y al final el prompt que corre en el centro de todo.</p>
+
+      <h2>Por qué "contrataciones" y no "herramientas"</h2>
+
+      <p>Cuando piensas en herramientas, la pregunta es cuál comprar. Cuando piensas en puestos, la pregunta es qué trabajo estás tratando de sacar. La segunda pregunta es mucho mejor, porque casi siempre revela que el trabajo no estaba definido.</p>
+
+      <p>Un puesto necesita cuatro cosas escritas: qué recibe, qué entrega, contra qué criterio se evalúa y qué no le corresponde. Si no puedes escribir esas cuatro para una automatización, todavía no está lista para existir. Ese ejercicio me ha ahorrado más fines de semana que cualquier truco de prompting.</p>
+
+      <h2>El organigrama</h2>
+
+      <div class="plugin-card">
+        <h3>1. El socio fundador</h3>
+        <p><strong>Herramienta:</strong> Claude, en la interfaz de chat, con un proyecto dedicado y su base de conocimiento.</p>
+        <p>Es el único puesto que no ejecuta nada. Piensa conmigo: decisiones de precio, si tomo o no un cliente, cómo respondo a una propuesta, en qué orden ataco el trimestre. Lo separo del resto a propósito, porque un asistente que además ejecuta tiende a empujarte hacia la acción cuando lo que necesitas es que alguien te discuta la premisa.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> nada de conectores. Solo archivos: números del negocio, propuestas pasadas, decisiones que tomé y en qué acabaron. El prompt completo está más abajo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El jefe de operaciones</h3>
+        <p><strong>Herramienta:</strong> Claude Code, con las instrucciones del proyecto en <code>CLAUDE.md</code> y los servidores MCP de las herramientas donde vive la operación.</p>
+        <p>Este sí ejecuta. Es el que toca archivos, corre scripts, consulta el tablero de proyectos y arma entregables. Vive en la carpeta donde está todo el trabajo, así que no tengo que explicarle el contexto: lo lee.</p>
+        <p>Es la contratación con más impacto de todas, y también la más incómoda al principio, porque hay que darle permisos de verdad. Mi regla es simple: puede hacer solo todo lo reversible, y para lo irreversible me pregunta.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> servidores MCP al gestor de proyectos y a las fuentes de datos. Un conector por sistema donde antes copiaba y pegaba a mano.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El investigador</h3>
+        <p><strong>Herramienta:</strong> subagentes de solo lectura, más un servicio de scraping para redes ajenas y <code>yt-dlp</code> para YouTube público.</p>
+        <p>Todo lo que es "revisa muchas fuentes y tráeme la conclusión" va aquí, y va en un contexto aparte. Esa es la razón real del puesto: la exploración genera muchísimo material irrelevante, y no quiero esa basura en la sesión donde estoy decidiendo algo.</p>
+        <p>Regla dura de este puesto: solo lectura, nunca interactuar, y jamás con una cuenta personal. Automatizar una cuenta real para que siga gente o deje comentarios es la forma más rápida de perderla.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> el scraping corre como script determinista y deja archivos; el subagente lee esos archivos. Nunca dejo que el modelo y la descarga de datos sean el mismo paso.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El editor de video</h3>
+        <p><strong>Herramienta:</strong> una skill de edición propia, con transcripción local por Whisper y procesamiento de video por línea de comandos.</p>
+        <p>Recibe el video crudo grabado con teleprompter y devuelve el reel listo: cortadas las tomas fallidas y los silencios, audio limpio, subtítulos y música. La skill trae adentro las reglas específicas de cómo grabo yo y qué se puede y no se puede tapar en pantalla.</p>
+        <p>Este puesto es el mejor ejemplo de por qué una skill vale más que un prompt. El criterio de "qué toma sirve" no cabe en una petición: son quince reglas que aprendí a fuerza de reeditar.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> vive dentro de Claude Code, en <code>.claude/skills/</code>. Transcripción en mi máquina, sin mandar material de cliente a un tercero.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El publicador</h3>
+        <p><strong>Herramienta:</strong> una skill que habla directo con las APIs oficiales de cada red, más la plataforma de programación que ya pago.</p>
+        <p>Sube la pieza a varias redes con el texto adaptado a cada una. Sin cookies, sin intermediarios raros: credenciales oficiales.</p>
+        <p>Lo importante de este puesto no es la publicación, es el bloqueo. Nada sale sin que yo apruebe. Es el único paso del organigrama donde puse una puerta manual a propósito, porque el costo de un error aquí es público y permanente.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> credenciales en un archivo de entorno fuera del repositorio, nunca en el prompt ni en el código.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. El analista</h3>
+        <p><strong>Herramienta:</strong> una skill de desempeño que corre contra las métricas oficiales de cada plataforma.</p>
+        <p>Los viernes me dice qué decisión funcionó —el formato, el tipo de apertura, el día—, no qué publicación ganó. Y tiene permiso explícito para decirme que esta semana no hay conclusión, que es la instrucción que más me costó escribir y la que más valor da.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> un script baja las métricas por API y las deja en un archivo; la skill analiza el archivo. Misma separación de siempre: la máquina trae el dato, el modelo lo interpreta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. El archivista</h3>
+        <p><strong>Herramienta:</strong> un segundo cerebro en archivos de texto, versionado con git.</p>
+        <p>Es el puesto menos vistoso y el que sostiene a los otros seis. Cada decisión, cada junta, cada criterio de cliente queda escrito en un archivo con fecha. Todo lo demás lee de ahí.</p>
+        <p>Uso texto plano y control de versiones por una razón concreta: quiero ver qué cambió y cuándo, y quiero poder volver atrás. Una base de conocimiento que no tiene historia es una base de conocimiento en la que no puedes confiar cuando dos documentos se contradicen.</p>
+        <p class="plugin-for"><strong>Cómo se conecta:</strong> es una carpeta que Claude Code lee directo. Sin base de datos, sin servicio, sin nada que se pueda caer.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la separación entre lo determinista y lo que opina. En cada puesto de arriba hay un script que hace la parte mecánica y verificable, y un modelo que hace la parte de juicio. Cuando los junto en un solo paso, el modelo empieza a rellenar huecos de datos con cosas que suenan razonables. Esa es, de lejos, la fuente número uno de errores caros que he visto en operaciones reales.</p>
+      </div>
+
+      <h2>El prompt de socio fundador</h2>
+
+      <p>Este es el centro. Lo corro en un proyecto dedicado, con los archivos del negocio cargados, y es al que le llevo cualquier decisión que involucre dinero o tiempo mío.</p>
+
+      <pre><code>Eres mi socio fundador. No mi asistente. Tienes participación
+en este negocio, así que las decisiones malas también te cuestan
+a ti.
+
+QUÉ SABES
+Tienes en los archivos: los números del negocio, las propuestas
+que he mandado, los clientes actuales, las decisiones que tomé
+en los últimos meses y en qué acabaron. Úsalos. Si algo que te
+pregunto contradice lo que ya está escrito ahí, dímelo antes de
+contestar cualquier otra cosa.
+
+CÓMO OPERAS
+1. Antes de opinar, dime qué decisión crees que estoy tomando
+   en realidad. Muchas veces pregunto por la táctica cuando el
+   problema es la estrategia.
+2. Dime qué tendría que ser cierto para que mi plan funcione.
+   Explícito, en lista. Después dime cuál de esas condiciones
+   es la más frágil.
+3. Dame tu recomendación con nombre y apellido. Nada de
+   "depende" ni de tres opciones equivalentes. Si de verdad
+   depende, dime de qué y qué harías tú con la información
+   que hay hoy.
+4. Nombra el costo. De tiempo, de dinero y de lo que dejo de
+   hacer por hacer esto. Ese tercero es el que se me olvida.
+
+REGLAS
+- No me des la razón por default. Si mi idea es floja, tu
+  trabajo es decirlo en la primera línea, no al final y suave.
+- No inventes números. Si te falta un dato para opinar, pídelo
+  antes de opinar. Una recomendación con un número inventado
+  es peor que ninguna recomendación.
+- Nada de marcos de consultoría genéricos. Este negocio y sus
+  restricciones concretas.
+- Si estoy a punto de repetir un error que ya está en los
+  archivos, empieza por ahí.
+
+FORMATO
+1. La decisión real que veo.
+2. Qué tendría que ser cierto, y cuál supuesto es el más frágil.
+3. Tu recomendación, en una frase.
+4. El costo, en las tres monedas.
+5. La pregunta que deberías estarte haciendo y no te hiciste.
+
+DECISIÓN:
+[aquí escribo el problema]</code></pre>
+
+      <p>El punto cinco es el que más veces me ha cambiado el rumbo. No la recomendación: la pregunta que no me había hecho.</p>
+
+      <h2>Lo que no delego, y por qué</h2>
+
+      <p>Tres cosas se quedan conmigo y no las voy a mover.</p>
+
+      <p><strong>Qué clientes tomo.</strong> El modelo no sabe con quién voy a poder trabajar seis meses sin que se me haga insoportable. Ese criterio no está en ningún archivo.</p>
+
+      <p><strong>Lo que sale publicado.</strong> El publicador prepara, yo apruebo. El costo de un error público no se compara con los minutos que me ahorraría quitar esa puerta.</p>
+
+      <p><strong>Qué automatizo primero.</strong> Esta es la que más me tienta delegar y la que más importa. Lo que veo en las empresas con las que trabajo es que el problema casi nunca es la herramienta: es que nadie se sentó a mapear dónde se pierde el tiempo de verdad. Un organigrama de IA sobre una operación que nadie entendió te da la misma operación, igual de confusa, corriendo más rápido.</p>
+
+      <p>Si vas a copiar algo de todo esto, copia el ejercicio de los puestos. Toma una hoja, escribe los trabajos que se repiten en tu semana, y para cada uno anota qué recibe, qué entrega y contra qué se evalúa. Los que puedas llenar completos son tus primeras contrataciones. Los que no, todavía no son un puesto: son una queja.</p>

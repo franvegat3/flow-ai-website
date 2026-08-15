@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convierte cualquier guía en una skill de Claude — Guías Flow AI</title>
+  <meta name="description" content="Deja de guardar tips de IA que nunca usas. Descarga la guía en PDF, dásela a Claude, y que te escriba una skill reutilizable que corres con un comando." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/convierte-cualquier-guia-en-skill/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Convierte cualquier guía en una skill de Claude" />
+  <meta property="og:description" content="Deja de guardar tips de IA que nunca usas. Descarga la guía en PDF, dásela a Claude, y que te escriba una skill reutilizable que corres con un comando." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/convierte-cualquier-guia-en-skill/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>Convierte cualquier guía en una skill de Claude</h1>
+      <p class="lead">Deja de guardar tips de IA que nunca usas. Descarga la guía en PDF, dásela a Claude, y que te escriba una skill reutilizable que corres con un comando.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Tienes carpetas de guías de IA guardadas. Capturas de pantalla, PDFs, hilos que marcaste. En el momento en que las guardaste pensaste que las ibas a usar. No las usaste.</p>
+
+      <p>No es flojera. Es que una guía guardada te obliga a acordarte de que existe, encontrarla, releerla y traducirla a un prompt, justo cuando estás ocupado haciendo la tarea. Ese costo es más alto que el de improvisar, así que improvisas.</p>
+
+      <p>La solución no es organizar mejor las guías. Es convertirlas en algo que Claude use solo, o que tú invoques con una palabra. Eso es una skill, y escribirla toma unos diez minutos por guía.</p>
+
+      <h2>Qué es una skill, sin rodeos</h2>
+
+      <p>Una skill es una carpeta con un archivo <code>SKILL.md</code> adentro. Ese archivo tiene dos partes: unas líneas de metadatos arriba, entre <code>---</code>, que le dicen a Claude cuándo usarla; y abajo, el procedimiento en markdown.</p>
+
+      <p>El nombre de la carpeta se vuelve el comando. Una carpeta llamada <code>auditar-anuncios</code> te da <code>/auditar-anuncios</code>. Y si la descripción está bien escrita, Claude la carga solo cuando el tema aparece, sin que la invoques.</p>
+
+      <p>La ventaja sobre pegar la guía en el chat cada vez: el cuerpo de la skill solo se carga cuando se usa. Puedes tener veinte skills largas sin que ninguna te cueste contexto hasta que hace falta.</p>
+
+      <h2>Dónde vive</h2>
+
+      <ul>
+        <li><strong>Personal</strong> — <code>~/.claude/skills/&lt;nombre&gt;/SKILL.md</code>. Disponible en todos tus proyectos.</li>
+        <li><strong>Del proyecto</strong> — <code>.claude/skills/&lt;nombre&gt;/SKILL.md</code> dentro del repositorio. Se comparte con quien trabaje ahí.</li>
+      </ul>
+
+      <p>Para algo que sacaste de una guía y quieres usar en todos lados, va en la personal. Para un procedimiento de tu empresa que tu equipo también debe seguir, va en la del proyecto y se sube al repositorio como cualquier archivo.</p>
+
+      <h2>Los cuatro pasos</h2>
+
+      <ol>
+        <li><strong>Baja la guía completa.</strong> El PDF, el artículo, el video con su transcripción. Completa, no el resumen.</li>
+        <li><strong>Pásasela a Claude con el prompt de abajo.</strong></li>
+        <li><strong>Guarda el resultado</strong> en la carpeta que le corresponda.</li>
+        <li><strong>Pruébala en una sesión nueva.</strong> Este paso no es opcional y explico por qué más abajo.</li>
+      </ol>
+
+      <h2>El prompt que convierte la guía en skill</h2>
+
+      <pre><code>Te voy a dar una guía. Quiero que la conviertas en una skill de
+Claude: un archivo SKILL.md que yo pueda guardar y reusar.
+
+Antes de escribir nada, hazme estas tres preguntas y espera mi
+respuesta:
+1. ¿En qué momento de mi trabajo quiero que esto se dispare?
+2. ¿Cuál es el resultado que espero cuando corre bien?
+3. ¿Qué de mi contexto (mi negocio, mis herramientas, mi forma
+   de trabajar) tiene que quedar dentro de la skill?
+
+Después escribe el archivo con estas reglas:
+
+FRONTMATTER
+- Entre marcadores ---
+- Campo `description`: qué hace la skill Y cuándo usarla, en una
+  o dos frases. Empieza por el caso de uso principal, porque es
+  con esto con lo que decides cargarla o no. Escríbelo en tercera
+  persona, describiendo la situación del usuario.
+
+CUERPO
+- Instrucciones, no explicación. Nada de por qué es importante
+  el tema, nada de introducción.
+- Pasos numerados en el orden real de ejecución.
+- Los criterios de decisión explícitos: qué hacer cuando falta
+  un dato, cuándo preguntarme y cuándo asumir el default.
+- El formato exacto de salida que espero.
+- Una sección "Errores comunes" con lo que la guía advierta que
+  sale mal.
+- Si la guía trae ejemplos, deja uno completo. Un ejemplo hace
+  más que tres párrafos de instrucción.
+
+REGLAS DURAS
+- No inventes pasos que la guía no dice.
+- Si la guía es vaga en algún punto, márcalo con un comentario
+  en vez de rellenarlo.
+- Máximo 400 palabras en el cuerpo. Si no cabe, dime qué dejaste
+  fuera y por qué.
+
+Devuélveme el archivo completo en un solo bloque, listo para
+guardar. Al final, aparte, dime el nombre de carpeta que le
+pondrías y tres frases que yo podría escribir en el chat que
+deberían activar esta skill sola.
+
+Aquí está la guía:
+[pega o adjunta la guía]</code></pre>
+
+      <h2>Cómo se ve el resultado</h2>
+
+      <p>Este es un ejemplo corto, para que veas la forma. Sale de una guía de revisión de creativos de anuncios:</p>
+
+      <pre><code>---
+description: Revisa creativos de anuncios antes de subirlos a
+  la cuenta. Úsala cuando el usuario comparta un anuncio, un
+  copy publicitario o un guion de video para pauta, o pida
+  feedback sobre creativos.
+---
+
+## Qué hacer
+
+1. Identifica el objetivo declarado del anuncio. Si no está,
+   pregúntalo antes de revisar.
+2. Revisa en este orden y no lo cambies:
+   hook (primeros 3 segundos) / claridad de la oferta /
+   prueba / llamado a la acción.
+3. Para cada uno: qué está bien, qué falla, y la corrección
+   concreta. Nada de "podría mejorarse".
+4. Marca cualquier promesa de resultado que no traiga sustento.
+
+## Formato de salida
+
+Una tabla mental de 4 filas, un veredicto de una línea, y la
+única corrección que haría antes de subirlo.
+
+## Errores comunes
+
+- Comentar el diseño y saltarse el hook.
+- Dar cinco correcciones. Una sola, la que más mueve la aguja.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probarla en una sesión nueva. Si la pruebas en la misma conversación donde la escribieron, Claude ya tiene todo el contexto en la cabeza y la skill parece perfecta aunque le falte la mitad. Abre una sesión limpia, escribe una de las frases que te sugirió, y verifica dos cosas por separado: que la skill se haya activado, y que el resultado sea el que querías. Son dos fallas distintas y se arreglan distinto.</p>
+      </div>
+
+      <h2>Las dos fallas y su arreglo</h2>
+
+      <p><strong>No se activa.</strong> El problema está en la descripción, no en el cuerpo. Casi siempre porque describe qué hace la skill pero no cuándo usarla, o porque usa el vocabulario de la guía en vez del tuyo. Si tú dices "creativos" y la descripción dice "activos publicitarios", nunca va a coincidir. Mete tus palabras reales.</p>
+
+      <p><strong>Se activa y sale mal.</strong> Ahí sí es el cuerpo. La causa habitual es que quedó explicativo en vez de imperativo. Una skill no enseña, ordena. Cambia todo "es importante considerar" por "haz esto".</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>La tentación es convertir todas tus guías guardadas en skills en una tarde. Vas a acabar con quince skills que compiten entre sí y ninguna que uses.</p>
+
+      <p>La regla que aplico: solo se vuelve skill lo que ya hiciste a mano al menos tres veces. Si nunca has aplicado esa guía manualmente, no sabes dónde truena, y lo que vas a empaquetar es la teoría de alguien más con formato bonito.</p>
+
+      <p>Empieza por la guía que sí usaste y te dio flojera repetir. Esa es la que vale. Cuando ya tengas tres o cuatro corriendo, sigue con <a href="/guias/por-que-no-jala-tu-skill/">por qué no jala tu skill</a> para afinarlas, o mira <a href="/guias/84-skills-gratis-de-claude/">las skills gratis que ya existen</a> antes de escribir una que alguien más ya resolvió.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

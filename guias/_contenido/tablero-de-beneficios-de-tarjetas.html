@@ -1,0 +1,96 @@
+      <p>Pagas la anualidad de una tarjeta por beneficios que no recuerdas. El seguro de viaje que ya traías cuando compraste otro aparte. La garantía extendida que hubiera cubierto la pantalla. Los pases de sala que caducaron en diciembre sin que los usaras.</p>
+
+      <p>No es descuido. Es que esa información vive en un documento de condiciones generales de treinta páginas, escrito para que nadie lo lea, y cada tarjeta tiene el suyo. Nadie va a abrir cuatro documentos así para decidir con qué tarjeta paga la cena.</p>
+
+      <p>Un artifact resuelve esto en una sesión: una sola página, filtrable, con todos tus beneficios juntos, que puedes abrir desde el teléfono en la caja y compartir con quien más usa tus tarjetas. Aquí está el prompt completo.</p>
+
+      <h2>Por qué un artifact y no una hoja de cálculo</h2>
+
+      <p>Porque una hoja de cálculo la abres el día que la haces y nunca más. El artifact gana en tres cosas concretas: se ve bien en el teléfono, tiene buscador y filtros sin que programes nada, y se comparte con un enlace en vez de un archivo que alguien tiene que descargar.</p>
+
+      <p>Pero el motivo real es otro. La decisión de "con cuál pago esto" se toma en diez segundos, de pie, con el terminal en la mano. Cualquier formato que tarde más de diez segundos en darte la respuesta no se usa nunca, por bonito que esté.</p>
+
+      <h2>Lo que hay que juntar antes</h2>
+
+      <p>El tablero vale lo que valgan los datos. Necesitas, por cada tarjeta:</p>
+
+      <ul>
+        <li>El documento de <strong>condiciones generales</strong> o el contrato, que es donde están los seguros y las coberturas de verdad. Se descarga del portal del banco.</li>
+        <li>La <strong>tabla de comisiones y anualidad</strong>, con el monto y en qué mes se cobra.</li>
+        <li>La página de <strong>beneficios del programa</strong> de la marca de la tarjeta, que suele ser distinta a la del banco y donde están las salas, los seguros de auto rentado y la asistencia en viaje.</li>
+        <li>Tus <strong>reglas de puntos o cashback</strong>: cuánto acumulas por peso, si hay categorías que pagan más, y si los puntos caducan.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> no subas estados de cuenta ni fotos de las tarjetas. Para este tablero no hace falta ningún número: los términos de la tarjeta son documentos públicos del banco, iguales para todos los que tienen ese producto. Sube esos y refiérete a cada tarjeta por un apodo. Los últimos cuatro dígitos, si acaso, y solo si tienes dos del mismo tipo.</p>
+      </div>
+
+      <h2>El prompt</h2>
+
+      <p>Sube los documentos y pega esto. Está escrito para que no rellene huecos con lo que "normalmente" traen las tarjetas, que es el error que arruina el tablero.</p>
+
+      <pre><code>Vas a construir un artifact: un tablero de los beneficios de mis
+tarjetas, para consultarlo desde el teléfono en el momento de pagar.
+
+Te subí los documentos de cada tarjeta. Trabaja SOLO con lo que
+dicen esos documentos. Si un beneficio no aparece ahí, no lo pongas
+aunque sea común en tarjetas de ese tipo. Lo que no encuentres,
+márcalo como "por confirmar" con el nombre del documento donde
+debería estar.
+
+Mis tarjetas y cómo las llamo: [lista con apodos]
+
+EXTRACCIÓN
+Por cada tarjeta, saca:
+- Anualidad: monto, mes de cobro, y qué condición la exenta si
+  existe.
+- Seguros y protecciones: cada uno con qué cubre, el tope de
+  cobertura, qué lo activa (por ejemplo, haber pagado el boleto
+  con esa tarjeta) y qué lo excluye.
+- Beneficios de viaje: salas, asistencia, seguro de auto rentado.
+- Recompensas: cuánto se acumula por peso, categorías con tasa
+  distinta, si caducan y cuándo.
+- Promociones a meses: en qué comercios y con qué plazo.
+- Beneficios de uso limitado al año, con cuántos quedan si el
+  documento lo dice.
+- Requisitos de activación: cualquier beneficio que haya que
+  registrar antes de usarlo.
+
+EL TABLERO
+Construye un artifact de una sola página con:
+1. Arriba, un buscador por tipo de gasto. Escribo "vuelo",
+   "restaurante", "gasolina", "hospital" y me dice con cuál pagar y
+   por qué, en una línea.
+2. Una vista por tarjeta, colapsable, con todos sus beneficios.
+3. Una vista comparativa por categoría de gasto, donde se vea de
+   un golpe cuál gana en cada una.
+4. Una sección de "antes de que se venza": beneficios anuales que
+   caducan y beneficios que requieren activación previa.
+5. Una sección de "lo que estoy pagando": la suma de anualidades
+   del año y, junto a cada una, qué beneficios de esa tarjeta usé.
+   Déjame marcar los que sí uso.
+6. Cada renglón con la cita corta del documento del que salió y el
+   nombre del documento. Nada sin fuente.
+
+DISEÑO
+Sobrio, legible en pantalla chica, sin gráficas decorativas. Que
+la respuesta a "con cuál pago" se vea sin hacer scroll.
+
+AL FINAL, FUERA DEL ARTIFACT
+- Qué beneficios quedaron "por confirmar" y qué documento me falta.
+- Los tres beneficios que más gente deja sin usar de los que tengo.
+- Qué tarjeta, con estos datos, no está justificando su anualidad.</code></pre>
+
+      <h2>Cómo mantenerlo vivo</h2>
+
+      <p>Los bancos cambian condiciones y el tablero envejece. Dos hábitos bastan.</p>
+
+      <p>Uno: revísalo el mes en que te cobran cada anualidad. Es el momento natural para preguntarte si esa tarjeta se ganó el año, y es cuando todavía tienes margen para cancelar o pedir que te la exenten.</p>
+
+      <p>Dos: cuando uses un beneficio, márcalo. Al cabo de un año tienes la única información que importa de verdad, que no es qué beneficios tienes sino cuáles usas. Ahí es donde el tablero deja de ser una lista bonita y se vuelve la base para decidir qué cancelar.</p>
+
+      <h2>El error que le quita el valor</h2>
+
+      <p>Confiar en la memoria del modelo en vez de en los documentos. Si le preguntas por una tarjeta sin subirle nada, te va a contestar con lo que suelen traer las tarjetas de esa gama. Va a sonar preciso y va a estar parcialmente mal, y no vas a saber en qué parte. Ese error se paga el día que reclamas una cobertura que tu contrato no incluía.</p>
+
+      <p>El otro, más caro: usar el tablero para justificar tener más tarjetas. La sección de "lo que estoy pagando" está en el prompt a propósito. Casi siempre revela una anualidad que llevas dos años pagando por un beneficio que usaste una vez. Ese hallazgo vale más que optimizar puntos. Si quieres seguir por ahí, <a href="/guias/auditor-de-suscripciones/">el auditor de suscripciones</a> hace lo mismo con tus cargos recurrentes.</p>

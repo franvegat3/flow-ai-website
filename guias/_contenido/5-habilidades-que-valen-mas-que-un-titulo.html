@@ -1,0 +1,82 @@
+      <p>Nadie te va a contratar por saber usar ChatGPT. Eso ya lo sabe todo el mundo y dejó de ser una ventaja hace dos años, igual que dejó de serlo saber usar Excel.</p>
+
+      <p>Lo que sí escasea —y por eso se paga— es la gente que puede hacer que un sistema de IA funcione dentro de una empresa que factura, con datos sucios, procesos raros y consecuencias reales si se equivoca. Esa distancia entre "el modelo contestó bien en mi prueba" y "esto corre en producción y no rompe nada" es donde está el trabajo.</p>
+
+      <p>Cinco habilidades cubren esa distancia. Ninguna se enseña en una universidad todavía, ninguna requiere un título, y las cinco se pueden practicar esta semana con lo que ya tienes.</p>
+
+      <h2>Por qué estas cinco</h2>
+
+      <p>Porque son las que no desaparecen cuando sale el siguiente modelo. Un truco de prompting se vuelve obsoleto en un lanzamiento; saber qué información necesita el modelo para decidir bien, no.</p>
+
+      <p>Todas comparten la misma forma: no son sobre el modelo, son sobre el <em>sistema alrededor</em> del modelo. Y eso es exactamente lo que las empresas no pueden comprar hecho.</p>
+
+      <h2>Las 5 habilidades</h2>
+
+      <div class="plugin-card">
+        <h3>1. Ingeniería de contexto</h3>
+        <p><strong>Qué es:</strong> decidir qué información entra al modelo, en qué orden, en qué formato, y qué se queda fuera. No es escribir prompts bonitos: es diseñar el flujo de información completo —qué se recupera de dónde, qué se resume, qué se descarta, qué se cachea— para que el modelo tenga exactamente lo que necesita para decidir y nada más.</p>
+        <p><strong>Por qué se paga:</strong> es el cuello de botella real de casi todo proyecto que fracasa. Las empresas culpan al modelo cuando el problema es que le están dando cuarenta páginas de contexto irrelevante, o que la información que sí necesitaba nunca llegó. Quien sabe diagnosticar eso resuelve en una tarde lo que un equipo lleva un mes debatiendo.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> toma un flujo tuyo que funcione a medias y quítale contexto hasta que se rompa. Ese ejercicio enseña más que cualquier curso. Después, <a href="/guias/ingeniero-de-contexto/">el puesto que reemplazó al ingeniero de prompts</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Orquestación de agentes</h3>
+        <p><strong>Qué es:</strong> repartir un trabajo grande entre varios agentes que corren en paralelo, y coordinar sus resultados. Quién hace qué, con qué modelo, con qué herramientas, qué se le pasa a cada uno, y cómo se junta lo que devuelven sin que se pisen entre ellos.</p>
+        <p><strong>Por qué se paga:</strong> porque es donde se decide el costo. Un agente caro leyendo mil documentos cuesta una fortuna; un agente barato leyendo y uno caro sintetizando cuesta una fracción y suele dar mejor resultado. Esa decisión de arquitectura es la diferencia entre un piloto que se aprueba y uno que se cancela por presupuesto.</p>
+        <p><strong>El error típico:</strong> creer que más agentes es mejor. Cada delegación cuesta una ida y vuelta, un re-briefing y contexto que se pierde. La habilidad no es repartir: es saber qué <em>no</em> repartir.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> arma un flujo de dos agentes —uno que lea y extraiga, otro que verifique— sobre una tarea real tuya. Ver <a href="/guias/como-estructurar-tus-agentes/">cómo estructurar tus agentes de IA</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Ingeniería de loops</h3>
+        <p><strong>Qué es:</strong> dejar de darle instrucciones sueltas al modelo y construirle ciclos que se ejecutan solos: se dispara con un evento, hace el trabajo, verifica su resultado contra un criterio, y si no pasa, vuelve a intentar. Un loop tiene disparador, trabajo, criterio de salida y registro.</p>
+        <p><strong>Por qué se paga:</strong> es la diferencia entre ahorrar diez minutos y ahorrar diez horas a la semana. Un prompt bien escrito te resuelve una tarea; un loop bien construido resuelve esa tarea todas las semanas sin que nadie la toque. Las empresas pagan por lo segundo y siguen comprando lo primero.</p>
+        <p><strong>La parte difícil:</strong> el criterio de salida. Casi todos los loops que fallan en producción fallan porque nadie definió qué significa "terminado" y el sistema o se detiene demasiado pronto o no se detiene nunca.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> convierte una tarea semanal tuya en un loop con disparador de calendario. Está desarrollado en <a href="/guias/ingenieria-de-loops/">ingeniería de loops</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Evaluaciones</h3>
+        <p><strong>Qué es:</strong> construir la manera de medir si tu sistema de IA está funcionando. Un conjunto de casos de prueba con su respuesta correcta, una forma de puntuarlos, y un número que se mueve cuando cambias algo. Suena aburrido y es la habilidad más escasa de las cinco.</p>
+        <p><strong>Por qué se paga:</strong> sin evaluaciones nadie puede decir si un cambio mejoró o empeoró el sistema, así que las decisiones se toman por intuición y por la última anécdota. Cuando sale un modelo nuevo, la empresa con evaluaciones lo prueba en una tarde y decide con datos; la que no las tiene se pasa un mes discutiendo si "se siente mejor".</p>
+        <p><strong>Lo que casi nadie entiende:</strong> no necesitas mil casos. Veinte casos reales bien elegidos —incluidos los tres que siempre salen mal— te dan el 80% del valor y los armas en una tarde.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> junta veinte entradas reales de un flujo tuyo, escribe a mano cuál sería la salida correcta de cada una, y córrelo. Ese archivo es más valioso que cualquier certificado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. RAG</h3>
+        <p><strong>Qué es:</strong> conectar un modelo a la información de una empresa para que conteste con sus documentos y no de memoria. Buscar el fragmento correcto, dárselo, y hacer que cite de dónde salió.</p>
+        <p><strong>Por qué se paga:</strong> es la petición número uno de cualquier empresa que quiere IA —"que sepa de lo nuestro"— y la que más proyectos entierra. Porque la parte difícil no es la técnica: es que los documentos de la empresa están desordenados, duplicados, desactualizados y a veces se contradicen entre sí. Quien puede navegar eso vale más que quien sabe montar la base de datos.</p>
+        <p><strong>La habilidad real:</strong> no es elegir la herramienta, es decidir qué documento manda cuando dos se contradicen, y cómo se mantiene todo eso actualizado sin que dependa de un heroico.</p>
+        <p class="plugin-for"><strong>Por dónde empezar:</strong> monta un sistema de preguntas sobre la documentación de tu propia área. Vas a chocar con el problema real —el desorden— en el primer día.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las evaluaciones. Es la habilidad menos glamorosa de las cinco y la que más rápido te separa del resto, precisamente porque casi nadie la quiere hacer. Si tuvieras que elegir una sola de esta lista para dominar, elige esa: es la única que hace que las otras cuatro se puedan mejorar de forma medible en lugar de a puro instinto.</p>
+      </div>
+
+      <h2>El orden en que se aprenden</h2>
+
+      <p>Intentar las cinco a la vez es la forma más segura de no adquirir ninguna. Este orden funciona porque cada una vuelve más fácil la siguiente:</p>
+
+      <ol>
+        <li><strong>Ingeniería de contexto.</strong> Sin esto, todo lo demás se construye sobre arena. Además es la que puedes practicar hoy con la herramienta que ya usas, sin escribir una línea de código.</li>
+        <li><strong>Evaluaciones.</strong> En cuanto tengas algo que funcione a medias, mídelo. A partir de aquí dejas de adivinar.</li>
+        <li><strong>Ingeniería de loops.</strong> Automatiza lo que ya sabes que funciona y ya sabes medir.</li>
+        <li><strong>RAG.</strong> Cuando el loop necesite conocimiento de la empresa y no solo del modelo.</li>
+        <li><strong>Orquestación de agentes.</strong> Al final, porque solo tiene sentido cuando el trabajo ya creció lo suficiente para necesitar repartirse.</li>
+      </ol>
+
+      <p>Dos meses de ratos sueltos, aplicados a problemas reales de tu propio trabajo, y estás por delante de la enorme mayoría.</p>
+
+      <h2>Qué pones en el currículum</h2>
+
+      <p>Ninguna de estas habilidades se demuestra nombrándola. Se demuestra con un antes y un después medibles.</p>
+
+      <p>"Sé ingeniería de contexto" no significa nada. "Reduje el costo por consulta de nuestro asistente interno a la mitad recortando el contexto que le pasábamos, sin perder precisión —medido contra un conjunto de 40 casos" es una frase que consigue entrevistas, y la puedes producir con el trabajo que ya haces.</p>
+
+      <h2>El error que cuesta más caro</h2>
+
+      <p>Esperar a que exista el curso oficial. Estas habilidades se están definiendo ahora mismo, en empresas que las están inventando sobre la marcha, y para cuando haya un plan de estudios formal la ventaja ya se repartió.</p>
+
+      <p>La forma de aprenderlas es la misma que la de siempre: escoge un problema de tu propio trabajo que hoy le cuesta horas a alguien, resuélvelo con estas herramientas, mide el resultado, y escríbelo. Repítelo tres veces y ya tienes un portafolio que ningún título reemplaza.</p>

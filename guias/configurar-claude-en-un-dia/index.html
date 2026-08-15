@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo dejar configurado Claude en un día — Guías Flow AI</title>
+  <meta name="description" content="Siete pasos que convierten Claude de chatbot a asistente real: tu modelo, la memoria, los proyectos, los conectores, los artifacts, las skills y Cowork." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/configurar-claude-en-un-dia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo dejar configurado Claude en un día" />
+  <meta property="og:description" content="Siete pasos que convierten Claude de chatbot a asistente real: tu modelo, la memoria, los proyectos, los conectores, los artifacts, las skills y Cowork." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/configurar-claude-en-un-dia/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>Cómo dejar configurado Claude en un día</h1>
+      <p class="lead">Siete pasos que convierten Claude de chatbot a asistente real: tu modelo, la memoria, los proyectos, los conectores, los artifacts, las skills y Cowork.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de la gente lleva meses pagando Claude y lo usa igual que el primer día: abre una conversación, pregunta algo, copia la respuesta, cierra. Cada sesión empieza de cero. Cada vez hay que volver a explicar quién eres, en qué trabajas y cómo te gustan las cosas.</p>
+
+      <p>Esa es la diferencia entre tener un chatbot y tener un asistente. Y no se cierra con mejores prompts: se cierra con configuración. Siete piezas, todas gratis o incluidas en lo que ya pagas, que se dejan puestas una vez.</p>
+
+      <p>Toma un día. No un día de trabajo intenso: un día normal, con las pausas repartidas. Al final tienes un Claude que ya sabe quién eres, tiene acceso a tus herramientas, conoce el oficio de tu área y puede trabajar sobre tus archivos sin supervisión.</p>
+
+      <h2>El plan del día</h2>
+
+      <p>El orden importa, porque cada paso alimenta al siguiente. Configurar conectores antes de tener memoria produce un asistente con mucho acceso y ningún criterio.</p>
+
+      <ol>
+        <li><strong>Tu modelo</strong> — 15 minutos</li>
+        <li><strong>La memoria</strong> — 45 minutos</li>
+        <li><strong>Los proyectos</strong> — 45 minutos</li>
+        <li><strong>Los conectores</strong> — 30 minutos</li>
+        <li><strong>Los artifacts</strong> — 30 minutos</li>
+        <li><strong>Las skills</strong> — 45 minutos</li>
+        <li><strong>Cowork</strong> — 60 minutos</li>
+      </ol>
+
+      <h2>Los siete pasos</h2>
+
+      <h3>1. Tu modelo</h3>
+
+      <p>Entra a la configuración y decide cuál es tu default. La regla corta: usa el modelo más capaz que tu plan te dé para trabajo que requiere juicio, y baja de nivel para lo repetitivo.</p>
+
+      <p>Lo que casi nadie ajusta es el segundo control: el nivel de razonamiento. Un modelo puede pensar poco y contestar rápido, o pensar mucho y tardar minutos. Para redactar un correo, pensar mucho es tirar dinero y tiempo; para revisar un contrato o depurar un problema raro, es exactamente lo que quieres.</p>
+
+      <p>Deja tu default en el punto medio y aprende a subirlo a mano cuando la tarea lo pida. Si esa elección te da vueltas, está desarrollada en <a href="/guias/elegir-el-claude-correcto/">cómo elegir el Claude correcto siempre</a>.</p>
+
+      <h3>2. La memoria</h3>
+
+      <p>Este es el paso que más cambia el día a día y el que más gente se salta porque no ve resultado inmediato.</p>
+
+      <p>Son dos cosas distintas. Las <strong>preferencias</strong> son instrucciones cortas que aplican a todo: cómo quieres que te hable, qué formato prefieres, qué nunca debe hacer. La <strong>memoria</strong> es el contexto acumulado sobre ti y tu trabajo.</p>
+
+      <p>Para llenar la segunda no escribas un documento en frío. Deja que Claude te entreviste con esto:</p>
+
+      <pre><code>Vas a construir el archivo de contexto que vas a usar conmigo de
+aquí en adelante. Entrevístame.
+
+Hazme una pregunta a la vez y espera mi respuesta antes de la
+siguiente. Empieza por lo que más cambiaría tus respuestas si lo
+supieras, no por lo obvio. Cubre al menos:
+
+- A qué me dedico exactamente y cómo entra el dinero.
+- Quiénes son las personas con las que trabajo y qué hace cada una.
+- Las decisiones que tomo cada semana y con qué información.
+- Cómo se ve un buen entregable mío y cómo se ve uno malo.
+- Qué me choca de las respuestas de IA que he recibido.
+- Qué nunca debes asumir sobre mí ni sobre mi industria.
+
+Cuando tengas suficiente para ser útil de verdad, dímelo y para.
+No me hagas veinte preguntas si con ocho ya podías.
+
+Al final devuélveme un solo documento en markdown, escrito en
+tercera persona, listo para que yo lo guarde. Ordénalo por lo que
+más te va a servir a ti, no por lo que suene más presentable.</code></pre>
+
+      <p>El documento que sale de ahí es el activo. Guárdalo, y pégalo también en las instrucciones de cada proyecto del paso siguiente. Se actualiza cada tres meses, no cada semana.</p>
+
+      <h3>3. Los proyectos</h3>
+
+      <p>Un proyecto es un espacio con sus propias instrucciones y sus propios archivos, donde todas las conversaciones arrancan ya sabiendo el contexto.</p>
+
+      <p>El error es crear un proyecto por cliente o por tarea; terminas con cuarenta y no usas ninguno. Lo que funciona es crear pocos, por <em>rol</em>, y que cada uno responda a un tipo de pensamiento distinto. Cuatro o cinco cubren a casi cualquiera:</p>
+
+      <ul>
+        <li><strong>Operación</strong> — el trabajo que te paga: propuestas, entregables, seguimiento de clientes.</li>
+        <li><strong>Análisis</strong> — números, reportes, decisiones con datos.</li>
+        <li><strong>Contenido</strong> — todo lo que escribes hacia afuera, con tu voz cargada como archivo.</li>
+        <li><strong>Estrategia</strong> — el proyecto donde piensas, no donde produces. Con instrucciones que le pidan explícitamente que te contradiga.</li>
+        <li><strong>Personal</strong> — finanzas, salud, familia, separado del trabajo a propósito.</li>
+      </ul>
+
+      <p>En las instrucciones de cada uno va tu documento del paso 2, más lo específico de ese rol. Ese es el trabajo real de esta hora.</p>
+
+      <h3>4. Los conectores</h3>
+
+      <p>Ahora sí, el acceso. Calendario, correo, Drive, tu gestor de tareas, tu CRM si tienes.</p>
+
+      <p>Conecta solo lo que usas de verdad todos los días. Un conector que instalaste para probar y nunca volviste a abrir es superficie de riesgo sin beneficio.</p>
+
+      <p>Y antes de dar el primer clic de autorización, decide los permisos con criterio: lectura permanente para consultar, aprobación manual para todo lo que escriba, mande, publique o borre. La regla completa —y por qué el riesgo no es el que la gente cree— está en <a href="/guias/permisos-de-conectores/">la configuración de Claude que todo mundo debería revisar</a>. Léela antes de este paso, no después.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probar cada conector con una pregunta boba antes de seguir. "¿Qué tengo en el calendario el jueves?" "¿Cuál fue el último archivo que edité en Drive?" Si no contesta bien, el conector está conectado pero no está funcionando, y te vas a enterar dentro de tres semanas en medio de algo urgente.</p>
+      </div>
+
+      <h3>5. Los artifacts</h3>
+
+      <p>Un artifact es una pieza que Claude construye y que vive fuera del chat: un documento, una calculadora, un tablero, una app chiquita. Es la función que más gente ha visto y menos gente usa en serio.</p>
+
+      <p>Este paso no es de configuración, es de hábito. Dedica media hora a construir <strong>una</strong> herramienta que te resuelva algo esta semana. Las que más rinden en una operación real:</p>
+
+      <ul>
+        <li>Una calculadora de precios o de cotización con tus reglas de negocio adentro.</li>
+        <li>Un tablero que lee tu export mensual y te muestra las tres cosas que cambiaron.</li>
+        <li>Una lista de verificación interactiva para un proceso que hoy vive en la cabeza de una persona.</li>
+      </ul>
+
+      <p>El punto de hacerlo hoy es descubrir que puedes. Después de la primera, dejas de pedirle a alguien que te haga herramientas internas.</p>
+
+      <h3>6. Las skills</h3>
+
+      <p>Una skill es conocimiento de oficio que Claude carga solo cuando la tarea lo amerita. La diferencia con las instrucciones del proyecto es que la skill no ocupa espacio mientras no aplica, y viaja entre proyectos.</p>
+
+      <p>Instala <strong>dos</strong>, no diez. Una general del área por la que te pagan, y una de formato para el entregable que más produces —presentaciones, hojas de cálculo, documentos.</p>
+
+      <p>Si tu trabajo tiene componente visual, la primera que instalaría es la de guías de marca, por la razón que explico en <a href="/guias/5-skills-de-diseno/">las 5 skills de diseño que vas a querer guardar</a>: le da criterio propio a todo lo que produce, en vez de dejarlo caer en el promedio.</p>
+
+      <p>La tercera skill que vas a querer no está en ningún catálogo: es la de tu proceso, el que solo existe en tu empresa. Esa la escribes tú, y por eso este paso va al final y no al principio —hasta ahora no tenías con qué compararla.</p>
+
+      <h3>7. Cowork</h3>
+
+      <p>El último paso es el que convierte todo lo anterior en trabajo terminado. Cowork es la arquitectura de agente de Claude metida en la app de escritorio: trabaja directamente sobre las carpetas de tu computadora, sin que tú subas ni bajes archivos, y parte las tareas complejas en subagentes que corren en paralelo.</p>
+
+      <p>Para arrancarlo bien, tres decisiones:</p>
+
+      <ol>
+        <li><strong>Apúntalo a una carpeta acotada</strong>, no a todo tu disco. Una carpeta de proyecto, con material real adentro.</li>
+        <li><strong>Dale una tarea completa, no un paso.</strong> Cowork rinde cuando le describes el resultado y lo dejas trabajar. Pedirle un paso a la vez es usar un agente como si fuera un chat.</li>
+        <li><strong>Supervisa las primeras tres corridas.</strong> No porque vaya a romper algo, sino porque vas a aprender a describir tareas viéndolo trabajar.</li>
+      </ol>
+
+      <p>Una buena primera tarea: "toma los archivos de esta carpeta, arma el resumen mensual como el del mes pasado, y déjame en un documento aparte las tres cosas que cambiaron y no me cuadran."</p>
+
+      <h2>Qué tienes al final del día</h2>
+
+      <p>Un Claude que sabe quién eres sin que se lo cuentes, que tiene acceso a tus herramientas con permisos que no te van a dar un susto, que conoce el oficio de tu área, que puede construirte herramientas, y que trabaja sobre tus archivos por su cuenta.</p>
+
+      <p>La prueba de si quedó bien es una sola: a la semana siguiente, deberías poder pedirle algo en una frase, sin contexto, y que salga bien. Si sigues escribiendo párrafos de explicación antes de cada petición, algo del paso 2 o del paso 3 quedó a medias. Vuelve ahí antes de agregar nada nuevo.</p>
+
+      <h2>El error de querer terminarlo todo</h2>
+
+      <p>Si solo tienes dos horas, haz el paso 2 y nada más. La memoria sola —el documento de quién eres y cómo trabajas— rinde más que los otros seis pasos juntos, porque es el único que hace que <em>cada</em> conversación futura empiece mejor.</p>
+
+      <p>Los conectores impresionan en la demostración. Cowork es lo que sale en los anuncios. Pero lo que hace que la herramienta se sienta tuya es que sepa quién eres. Eso se escribe una vez, en una hora, y paga durante años.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

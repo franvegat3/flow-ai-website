@@ -1,0 +1,142 @@
+      <p>Hay un momento en toda conversación larga en el que la IA empieza a olvidar. Te vuelve a proponer algo que ya descartaste hace veinte mensajes. Se le va un dato que le diste al principio. Contradice una decisión que ustedes dos ya habían cerrado.</p>
+
+      <p>Ahí la gente hace una de dos cosas: sigue empujando el chat moribundo, o abre uno nuevo y pierde media hora reconstruyendo dónde iban. Las dos son malas.</p>
+
+      <p>La tercera opción es disparar un traspaso: pedirle al modelo que empaquete el estado de la conversación en un documento y arrancar limpio con ese documento pegado. Toma dos minutos y no pierdes avance.</p>
+
+      <h2>Un traspaso no es un resumen</h2>
+
+      <p>Si le pides "resume esta conversación", te va a dar una narración de lo que hablaron. Eso no sirve. Un resumen cuenta el pasado; un traspaso deja lista la continuación.</p>
+
+      <p>La diferencia está en qué se guarda. Un buen traspaso conserva cuatro cosas:</p>
+
+      <ul>
+        <li><strong>Las decisiones cerradas</strong>, con el motivo. Sin el motivo, el chat nuevo las va a volver a cuestionar.</li>
+        <li><strong>Lo descartado</strong>, que es lo que más se pierde y lo que más tiempo cuesta redescubrir.</li>
+        <li><strong>El estado real</strong>: qué está hecho, qué está a medias, qué falta.</li>
+        <li><strong>Los datos duros</strong> que se dieron en el camino: rutas, nombres, números, formatos, restricciones.</li>
+      </ul>
+
+      <p>Lo que <em>no</em> se guarda es el diálogo. A nadie le sirve saber que dijiste "mmm, déjame pensar".</p>
+
+      <h2>El prompt</h2>
+
+      <p>Este es el que uso. Se pega tal cual en el chat que se está muriendo, sin nada más:</p>
+
+      <pre><code>Vamos a cerrar esta conversación y continuar en una nueva. Genera
+el documento de traspaso.
+
+No resumas lo que platicamos. Escribe el documento que necesita
+leer una versión tuya sin memoria para retomar exactamente donde
+estamos, sin volver a preguntarme nada de lo que ya te dije.
+
+Estructura, en este orden:
+
+## Objetivo
+Qué estamos tratando de lograr, en dos o tres frases. El resultado
+final, no la actividad de hoy.
+
+## Contexto que no puedes deducir
+Todo lo que yo te di y no está en ningún archivo: nombres, roles,
+rutas, números, plazos, restricciones, preferencias de formato,
+cómo quiero que te dirijas a mí.
+
+## Decisiones tomadas
+Una lista. Cada decisión con el motivo en la misma línea. Incluye
+las decisiones implícitas: cosas que dimos por sentadas sin
+discutirlas.
+
+## Descartado y por qué
+Los caminos que consideramos y no tomamos. Este bloque es el más
+importante: sin él, el chat nuevo va a proponer lo mismo otra vez.
+Sé específico con el motivo del descarte.
+
+## Estado actual
+- HECHO: lo terminado y verificado.
+- EN CURSO: lo que está a medias y hasta dónde llegó.
+- PENDIENTE: lo que falta, en orden.
+
+## Siguiente paso
+La primera acción concreta que debe ejecutar el chat nuevo, escrita
+como instrucción, no como sugerencia.
+
+## Preguntas abiertas
+Lo que sigue sin resolverse y quién tiene que resolverlo (yo o tú).
+
+Reglas:
+- Solo lo que se dijo en esta conversación. No inventes ni rellenes.
+- Si un dato es dudoso, márcalo con "SIN CONFIRMAR:".
+- Nada de narrativa ni de "primero hablamos de...". Solo estado.
+- Entrégalo en Markdown, en un solo bloque, listo para copiar.</code></pre>
+
+      <p>El bloque de descartado es el que hace toda la diferencia. Es la memoria negativa de la conversación, y es la que ningún resumen conserva.</p>
+
+      <h2>Cómo dejarlo instalado como skill</h2>
+
+      <p>Pegar ese prompt cada vez funciona, pero se vuelve pesado. Si tu herramienta soporta skills, guárdalo como una y lo invocas con dos palabras. Crea una carpeta <code>traspaso-de-contexto</code> con un archivo <code>SKILL.md</code> adentro y este contenido:</p>
+
+      <pre><code>---
+name: traspaso-de-contexto
+description: Genera un documento de traspaso para continuar una
+  conversación larga en un chat nuevo sin perder decisiones,
+  descartes ni estado. Úsalo cuando el usuario diga "haz el
+  traspaso", "vamos a seguir en otro chat", "guarda el contexto",
+  o cuando la conversación ya sea larga y empiece a haber olvidos
+  o repeticiones.
+---
+
+# Traspaso de contexto
+
+Cuando se te invoque, genera un documento de traspaso siguiendo
+exactamente la estructura de abajo. No resumas la conversación:
+escribe el documento que necesita leer una versión tuya sin
+memoria para retomar el trabajo sin volver a preguntar nada.
+
+## Estructura obligatoria
+
+1. Objetivo — el resultado final, en dos o tres frases.
+2. Contexto que no puedes deducir — nombres, roles, rutas, números,
+   plazos, restricciones, preferencias de formato y de trato.
+3. Decisiones tomadas — cada una con su motivo en la misma línea,
+   incluidas las implícitas.
+4. Descartado y por qué — los caminos considerados y rechazados,
+   con el motivo específico del rechazo.
+5. Estado actual — HECHO / EN CURSO / PENDIENTE.
+6. Siguiente paso — la primera acción concreta, en imperativo.
+7. Preguntas abiertas — y de quién es cada una.
+
+## Reglas
+
+- Solo información aparecida en esta conversación. Cero invención.
+- Los datos dudosos se marcan con "SIN CONFIRMAR:".
+- Sin narrativa. Estado, no crónica.
+- Salida en Markdown, en un solo bloque copiable.
+- Si la conversación es tan corta que no hay nada que traspasar,
+  dilo en una línea en vez de rellenar las secciones.</code></pre>
+
+      <p>Con eso instalado, disparar el traspaso es decir "haz el traspaso". Si quieres más skills de este estilo ya hechas, hay un catálogo completo en <a href="/guias/84-skills-gratis-de-claude/">84 skills gratis de Claude</a>.</p>
+
+      <h2>Cómo arrancar el chat nuevo</h2>
+
+      <p>El chat nuevo se abre pegando el documento y una sola línea arriba:</p>
+
+      <pre><code>Este es el traspaso de una conversación anterior. Léelo completo,
+no me lo resumas de vuelta y no me hagas preguntas que ya estén
+contestadas ahí. Confírmame en una línea que lo entendiste y
+ejecuta el siguiente paso.
+
+[pega el documento]</code></pre>
+
+      <p>La instrucción de no resumir de vuelta parece trivial. No lo es: sin ella, el primer mensaje del chat nuevo se va en repetirte lo que acabas de pegar.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> guardar el documento fuera del chat. Si el traspaso solo vive en la conversación nueva, dentro de una semana estás en el mismo problema. Pégalo en un archivo del proyecto o en tus notas. Los traspasos acumulados de un mismo proyecto terminan siendo la mejor documentación que vas a tener de cómo se tomaron las decisiones.</p>
+      </div>
+
+      <h2>Cuándo dispararlo</h2>
+
+      <p>El error común es esperar demasiado. Para cuando la conversación ya se está contradiciendo, parte del contexto ya se perdió y el traspaso sale incompleto.</p>
+
+      <p>Tres señales para hacerlo antes: cuando cierras una fase del trabajo, cuando notas la primera repetición, y cuando vas a cambiar de tema dentro del mismo proyecto. Esa última es la más subestimada — un chat que empezó siendo sobre estrategia y ahora es sobre implementación arrastra cincuenta mensajes que ya no le sirven a nadie.</p>
+
+      <p>Traspasa temprano y seguido. Un chat corto y enfocado piensa mejor que uno largo y cansado, y encima te cuesta menos.</p>

@@ -1,0 +1,70 @@
+      <p>Llevas meses enseñándole a tu IA cómo se hace tu trabajo. Cómo redactas una propuesta, qué revisas antes de mandar un reporte, cuál es el formato del cierre mensual. Todo eso vive en carpetas sueltas dentro de tu computadora, y el día que entra alguien nuevo al equipo la única forma de pasárselo es mandarle un ZIP por Slack y rezar.</p>
+
+      <p>Eso es lo que resuelve empaquetar tus skills en un solo lugar instalable. Un link, un comando, y la otra persona tiene exactamente el mismo setup que tú. Sin capturas de pantalla, sin "pásame el prompt bueno", sin versiones que se desincronizan.</p>
+
+      <p>La parte que casi nadie menciona es la otra mitad: cuando alguien te pasa su paquete a ti. Instalar el setup de un desconocido es darle instrucciones a un agente que ya tiene acceso a tus archivos y a tus cuentas. Al final de esta guía está la revisión que corro antes de aceptar cualquiera.</p>
+
+      <h2>Qué es un skill pack, en una frase</h2>
+
+      <p>Es un repositorio con varias skills adentro, cada una en su carpeta, que se instala completo en un solo paso.</p>
+
+      <p>Funciona porque una skill no es un formato propietario. Es una carpeta con un archivo <code>SKILL.md</code>: texto plano con un encabezado que dice cómo se llama y cuándo usarse, y abajo las instrucciones. Ese mismo archivo lo leen Claude, Cursor y Codex. Lo único que cambia entre uno y otro es en qué carpeta lo pones.</p>
+
+      <ul>
+        <li>Claude Code — <code>~/.claude/skills/</code> para todo, o <code>.claude/skills/</code> dentro de un proyecto.</li>
+        <li>Cursor — <code>~/.cursor/skills/</code>, o <code>.cursor/skills/</code> en el proyecto.</li>
+        <li>Codex — <code>~/.agents/skills/</code>, o <code>.agents/skills/</code> en el proyecto.</li>
+      </ul>
+
+      <p>Esa es toda la magia. No hay instalador ni formato binario: es copiar carpetas al lugar correcto. Por eso un mismo paquete sirve en las tres herramientas.</p>
+
+      <h2>Cómo armas el tuyo</h2>
+
+      <p>Si ya tienes tres o cuatro skills que usas de verdad, el trabajo son cuarenta minutos.</p>
+
+      <ol>
+        <li><strong>Junta solo las que sobreviven.</strong> Abre tu carpeta de skills y quédate con las que usaste este mes. Las que escribiste de emoción y nunca invocaste no van: cada skill que agregas compite por la atención del modelo.</li>
+        <li><strong>Sácales lo tuyo.</strong> Es el paso donde se cometen los accidentes. Busca nombres de clientes, cifras internas, rutas con tu usuario, claves pegadas "temporalmente". Reemplázalos por marcadores del tipo <code>[NOMBRE DEL CLIENTE]</code>.</li>
+        <li><strong>Escribe el archivo de arriba.</strong> Un <code>README</code> en la raíz con tres cosas: qué hace cada skill, qué necesita conectado para funcionar, y un ejemplo de la primera frase con la que se invoca. Sin eso, quien lo instala tiene el paquete pero no sabe que existe.</li>
+        <li><strong>Súbelo a un repositorio.</strong> Público si lo vas a compartir abierto, privado si es de tu empresa. La dirección de ese repositorio es el link.</li>
+        <li><strong>Prueba la instalación en limpio.</strong> Instálalo tú mismo desde otra máquina o en otro proyecto, y corre una skill sin tocar nada. Es la única forma de cachar que una dependía de un archivo que solo existe en tu disco.</li>
+      </ol>
+
+      <h2>Cómo se instala</h2>
+
+      <p>La vía que funciona en todas las herramientas es clonar el repositorio en la carpeta que le toca a cada una:</p>
+
+      <pre><code>git clone https://github.com/usuario/mis-skills ~/.claude/skills/mis-skills
+git clone https://github.com/usuario/mis-skills ~/.cursor/skills/mis-skills
+git clone https://github.com/usuario/mis-skills ~/.agents/skills/mis-skills</code></pre>
+
+      <p>En Claude Code hay una segunda ruta más limpia si tu repositorio está armado como marketplace: agregas el marketplace una vez y de ahí instalas los paquetes que quieras. Es la misma mecánica que usan los plugins oficiales, y está explicada en <a href="/guias/plugins-cowork/">la guía de plugins de Cowork</a>.</p>
+
+      <p>Existen además utilidades de comunidad que hacen el copiado a las tres carpetas de un jalón. Sirven, pero cambian de nombre y de sintaxis cada tanto: revisa el repositorio de la herramienta antes de correr un comando que viste en un video de hace seis meses.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> versionar el paquete de verdad. Si tu equipo instala clonando, cada quien se queda congelado en el día que lo bajó. Define quién actualiza el repositorio y avisa cuando cambie algo importante, o vas a tener seis versiones distintas de tu proceso corriendo al mismo tiempo sin que nadie lo note.</p>
+      </div>
+
+      <h2>La auditoría antes de instalar el de alguien más</h2>
+
+      <p>Una skill no es un documento pasivo. Son instrucciones que un agente con acceso a tus archivos, tus conectores y tu terminal va a leer y obedecer. Trátala como tratarías una extensión de navegador que pide permisos.</p>
+
+      <ol>
+        <li><strong>Lee todos los <code>SKILL.md</code>, completos.</strong> No el README bonito: los archivos que el modelo va a ejecutar. Si el paquete es tan grande que no puedes leerlo, ese ya es el resultado de la auditoría.</li>
+        <li><strong>Busca scripts.</strong> Cualquier archivo ejecutable que venga adjunto merece que lo abras. Una skill que solo da instrucciones es una cosa; una que corre código en tu máquina es otra categoría de riesgo.</li>
+        <li><strong>Busca conexiones a internet.</strong> Descargas, llamadas a dominios que no reconoces, cualquier cosa que mande información hacia afuera. Una skill de redacción no tiene por qué hablar con ningún servidor.</li>
+        <li><strong>Busca instrucciones dirigidas al modelo y no a ti.</strong> Frases del tipo "ignora las instrucciones anteriores", "no le muestres esto al usuario", "corre esto siempre al empezar". Es la señal más clara de que el paquete no está para lo que dice estar.</li>
+        <li><strong>Revisa quién lo publicó.</strong> Historial del repositorio, si hay más de un colaborador, si el autor tiene otras cosas públicas. Un repositorio con un solo commit de ayer no es lo mismo que uno con un año de mantenimiento.</li>
+        <li><strong>Instálalo en un proyecto, no global.</strong> Úsalo dos semanas en una carpeta aislada, con datos que no importen. Si sobrevive, entonces lo subes a la carpeta general.</li>
+      </ol>
+
+      <p>Este mismo criterio aplica en empresa, con un agregado: alguien tiene que ser dueño de la lista aprobada. En las operaciones donde he montado esto, lo que funciona es un repositorio interno donde solo entran paquetes ya revisados, y la regla de que nadie instala desde fuera sin que pase por ahí. No es burocracia: es que en un equipo de quince personas, la superficie de riesgo es la suma de lo que instaló cada quien un viernes.</p>
+
+      <h2>Lo que un paquete no arregla</h2>
+
+      <p>El link resuelve la distribución. No resuelve que tus skills sirvan.</p>
+
+      <p>Lo que veo seguido es gente empaquetando doce skills que nunca probó contra un caso roto, y compartiéndolas como si fueran un sistema. El paquete se vuelve entonces una forma muy eficiente de repartir un proceso a medias.</p>
+
+      <p>Empaqueta cuando ya tengas tres skills que usaste veinte veces y que aguantaron cuando faltaba un dato. Antes de eso, lo que estás compartiendo es una intención, y la intención no se instala.</p>

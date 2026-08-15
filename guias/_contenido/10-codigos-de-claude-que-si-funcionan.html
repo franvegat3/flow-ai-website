@@ -1,0 +1,166 @@
+      <p>Cada semana circula una lista de "palabras mágicas" para Claude. Casi todas son humo: frases que suenan a hechizo y que el modelo procesa como texto normal, sin ningún efecto especial.</p>
+
+      <p>Hay una prueba fácil de esto, y está en la documentación oficial. En Claude Code, <code>ultrathink</code> sí es una palabra clave reconocida: el programa la detecta y agrega una instrucción extra. Pero "think", "think hard" y "think more" —que aparecen en todas las listas virales— pasan como texto cualquiera. No son palabras clave de nada.</p>
+
+      <p>Eso no significa que la forma de pedir no importe. Importa muchísimo. Lo que pasa es que lo que funciona no son palabras sueltas: son <strong>marcos</strong>. Estructuras que cambian el trabajo que el modelo tiene que hacer antes de contestarte. Estos son los 10 que uso, con el prompt completo de cada uno.</p>
+
+      <h2>Por qué un marco le gana a una palabra</h2>
+
+      <p>Un prompt normal le pide al modelo que produzca una respuesta. Un marco le pide que produzca <em>otra cosa primero</em>: preguntas, criterios, hipótesis de fracaso, versiones alternativas. Y esa cosa intermedia es la que sube la calidad de lo que sale al final.</p>
+
+      <p>Por eso los marcos se sienten más lentos. También por eso sirven.</p>
+
+      <div class="plugin-card">
+        <h3>1. Entrevístame</h3>
+        <p>El más rentable de todos y el más ignorado. Invierte quién pregunta. En lugar de que tú adivines qué contexto hace falta, el modelo lo saca. Casi todas las respuestas mediocres son respuestas a preguntas mal planteadas.</p>
+        <pre><code>Antes de contestar nada, entrevístame.
+
+Hazme las preguntas que necesitas para dar una respuesta que de verdad
+sirva en mi situación. Una pregunta a la vez, y espera mi respuesta antes
+de la siguiente. No más de siete.
+
+Cuando ya tengas lo suficiente, dímelo, resume lo que entendiste en cinco
+líneas, y hasta que yo confirme, empiezas a trabajar.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Modo socrático</h3>
+        <p>Aquí no quieres una respuesta: quieres pensar mejor. Sirve para decisiones donde el problema no es falta de información sino falta de claridad. Lo uso antes de decisiones de precio, de contratación y de a qué cliente decirle que no.</p>
+        <pre><code>No me des tu opinión ni tu recomendación en ningún momento de esta
+conversación, aunque te la pida.
+
+Tu único trabajo es hacerme preguntas que me obliguen a examinar lo que
+estoy dando por hecho. Cuando yo conteste algo con un supuesto adentro,
+señálalo y pregunta por él.
+
+Si detectas que estoy dando vueltas para no ver algo, dilo en una frase y
+sigue preguntando.
+
+El tema es: [ponlo aquí]</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Ultrathink</h3>
+        <p>La excepción real: sí es una palabra clave, y está documentada. Escríbela en cualquier parte de tu mensaje en Claude Code y pide razonamiento más profundo en ese turno, sin cambiar la configuración de la sesión. En la app la palanca equivalente es el control de razonamiento extendido, no una palabra.</p>
+        <pre><code>ultrathink: tengo tres formas de estructurar el cobro de este servicio
+—suscripción mensual, pago por proyecto, o retainer con horas incluidas—.
+Analiza cada una contra mi realidad: clientes chicos, ventas irregulares,
+y un solo operador que soy yo. Quiero la que menos riesgo de flujo de
+efectivo me deja, no la que más factura en teoría.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Segundo orden</h3>
+        <p>Todo el mundo pregunta qué pasa si hace algo. Casi nadie pregunta qué pasa <em>después</em> de que pasa eso. Ahí es donde viven los errores caros: la promoción que sí vendió y te dejó sin inventario, la contratación que sí funcionó y descuadró los sueldos del resto.</p>
+        <pre><code>Voy a hacer esto: [describe la decisión].
+
+Analízalo en tres niveles:
+
+1. Consecuencias directas. Lo que pasa la primera semana.
+2. Consecuencias de segundo orden. Lo que pasa como reacción a lo anterior,
+   entre el mes 1 y el mes 6. Incluye cómo reaccionan otras personas:
+   clientes, equipo, competencia.
+3. Consecuencias de tercer orden. Qué se vuelve difícil o imposible de
+   revertir después de un año.
+
+Termina con la consecuencia de segundo orden que más gente subestima en
+este tipo de decisión.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Inversión</h3>
+        <p>En vez de preguntar cómo lograr algo, pides cómo garantizar que fracase. El cerebro —el tuyo y el del modelo— es mucho mejor encontrando fallas que diseñando aciertos. La lista de fracasos, volteada, es tu plan.</p>
+        <pre><code>No me digas cómo lograr [el objetivo].
+
+Dime lo contrario: si tu trabajo fuera garantizar que esto fracase de la
+forma más silenciosa posible —sin que yo me diera cuenta hasta que fuera
+tarde—, ¿qué harías exactamente?
+
+Dame las 8 formas más probables, ordenadas por cuál me pasaría a mí con
+más facilidad dado lo que ya te conté.
+
+Después voltea cada una y conviértela en algo que yo pueda revisar cada
+semana.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. La rúbrica primero</h3>
+        <p>Le pides que defina cómo se ve un buen resultado <em>antes</em> de producirlo, y que después se califique a sí mismo. Es el marco que más cambia la salida en tareas de escritura, porque lo obliga a comprometerse con un estándar antes de tener el incentivo de aprobarse.</p>
+        <pre><code>Antes de escribir nada, arma la rúbrica.
+
+Define 5 criterios con los que se evaluaría un excelente [entregable], y
+para cada uno describe qué se ve como 10 y qué se ve como 5. Muéstramela.
+
+Después escribe la pieza.
+
+Al final, califícate en cada criterio con su número y su justificación, y
+reescribe únicamente las partes donde te pusiste menos de 8.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Cinco versiones, no una</h3>
+        <p>La primera respuesta de cualquier modelo es la del centro de la distribución: lo más probable, lo más visto. Pedir variedad con ejes explícitos es lo que te saca de ahí. Sin los ejes, te da cinco veces lo mismo con distintas palabras.</p>
+        <pre><code>Dame cinco versiones de esto, y que sean realmente distintas entre sí:
+
+1. La más conservadora, la que cualquiera aprobaría.
+2. La más agresiva, la que incomoda.
+3. Una que ataque el problema desde un ángulo completamente distinto.
+4. Una que funcione con la mitad del presupuesto.
+5. La que tú escribirías si nadie te fuera a juzgar.
+
+Ninguna puede compartir la idea central con otra. Al final, dime cuál
+elegirías y por qué, en dos líneas.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. El revisor hostil</h3>
+        <p>Distinto al abogado del diablo genérico: aquí le das un rol con motivo. Alguien que gana algo si tu plan falla. Eso produce críticas concretas en lugar de objeciones de manual.</p>
+        <pre><code>Toma el papel de la persona que más se beneficia si esto que armé sale
+mal: mi competidor directo, o el socio que estaba en contra desde el
+principio.
+
+Desde ahí, destroza el plan. Busca el supuesto más débil, el número que no
+cuadra, y la parte donde estoy confundiendo lo que quiero con lo que es
+probable.
+
+Sé específico. "Es riesgoso" no me sirve; "el mes 3 se te acaba el
+efectivo porque asumiste cobranza a 30 días y tus clientes pagan a 60"
+sí.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Marca lo que no sabes</h3>
+        <p>El antídoto contra el problema real de estos modelos, que no es equivocarse: es equivocarse con el mismo tono seguro con el que acierta. Este marco separa el piso firme del pantano.</p>
+        <pre><code>Contesta, pero marca cada afirmación con una etiqueta:
+
+[VERIFICABLE] — lo puedo comprobar en una fuente pública, y me dices cuál.
+[INFERENCIA] — lo estás deduciendo de lo que te di, no lo sabes.
+[SUPUESTO] — lo estás asumiendo porque hacía falta para contestar.
+
+Al final, lista aparte las tres cosas que tendría que confirmar yo antes
+de tomar cualquier decisión con esto. Si algo no lo sabes, escribe "no lo
+sé" en vez de rellenar.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. El ejemplo en lugar de la descripción</h3>
+        <p>Describir el formato que quieres casi nunca funciona. Enseñar uno, sí. Este es el marco más aburrido de la lista y el que más tiempo ahorra en la operación diaria de una empresa.</p>
+        <pre><code>No te voy a describir el formato: te voy a dar un ejemplo de una salida
+que me pareció perfecta.
+
+[pega aquí un ejemplo real, completo]
+
+Estudia ese ejemplo y dime, en cinco puntos, qué reglas detectas en él:
+estructura, largo, tono, qué incluye y qué deliberadamente omite.
+
+Cuando yo confirme esas reglas, produce lo mismo para este caso nuevo:
+[el caso]</code></pre>
+      </div>
+
+      <h2>Cómo se combinan sin que se estorben</h2>
+
+      <p>El error clásico es pegar tres marcos en un mismo mensaje. Se anulan: le pides que te entreviste, que se autocalifique y que te dé cinco versiones, y hace las tres cosas a medias.</p>
+
+      <p>Van en secuencia, no apilados. El orden que funciona es <strong>entrevístame</strong> para fijar el contexto, luego <strong>cinco versiones</strong> o <strong>la rúbrica primero</strong> para producir, y al final <strong>inversión</strong> o <strong>el revisor hostil</strong> para tratar de tumbar lo que salió. Tres mensajes, no uno.</p>
+
+      <p>Y guárdalos. Un marco que tienes que reescribir cada vez es un marco que vas a dejar de usar en dos semanas. Pégalos en un archivo, o mejor, conviértelos en instrucciones permanentes —ahí está <a href="/guias/plantilla-de-claude-md/">la plantilla de CLAUDE.md</a> si trabajas en Claude Code, y <a href="/guias/anatomia-del-prompt-perfecto/">la anatomía del prompt perfecto</a> para la estructura de fondo.</p>

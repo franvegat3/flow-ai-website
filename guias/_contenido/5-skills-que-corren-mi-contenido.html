@@ -1,0 +1,208 @@
+      <p>Publico en mis propias cuentas y además opero el contenido de un cliente con varias marcas y varios podcasts. Son dos operaciones distintas con el mismo problema: la parte creativa es la más chica del trabajo. Lo que se come la semana es todo lo demás —buscar qué está funcionando, adaptar, medir, volver a empezar.</p>
+
+      <p>Hace unos meses bajé ese "todo lo demás" a cinco skills de Claude. No son cinco prompts guardados: son cinco procedimientos escritos, cada uno con sus reglas y su fuente de datos, que Claude carga solo cuando toca. La diferencia entre un prompt y una skill es que el prompt lo tienes que recordar y la skill ya sabe cuándo aplica.</p>
+
+      <p>Estas son las cinco, en el orden en que corren durante la semana, con el prompt completo de cada una y el setup de datos que necesitan atrás.</p>
+
+      <h2>El setup de datos, antes de las skills</h2>
+
+      <p>Tres de las cinco necesitan datos de afuera. Sin esa parte, las skills escriben bonito y adivinan.</p>
+
+      <p><strong>Para redes ajenas uso un servicio de scraping, nunca mi cuenta.</strong> Trabajo con actores de Apify para traer publicaciones por hashtag o por cuenta en TikTok e Instagram. La regla es dura y no la negocio: solo lectura, nunca interactuar, y nunca con mi cuenta personal ni con la del cliente. Automatizar una cuenta real para que dé likes o siga gente es la forma más rápida de perderla.</p>
+
+      <p><strong>Para YouTube uso <code>yt-dlp</code></strong>, que baja metadatos y subtítulos de videos públicos sin API ni costo. Con eso tengo títulos, duración, vistas y transcripción.</p>
+
+      <p><strong>Cuando no hay subtítulos, transcribo local.</strong> Whisper corriendo en mi máquina, no un servicio. Sale gratis y no mando material de cliente a un tercero.</p>
+
+      <p><strong>Para mis propias métricas uso las APIs oficiales</strong> de cada red y la plataforma de programación que ya pago. Ahí sí hay números confiables; en lo scrapeado los números públicos son aproximados y así los trato.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> separar la fuente del juicio. El script baja los datos y no opina; la skill opina y no baja datos. Cuando mezclas las dos cosas en un solo prompt acabas con un modelo que inventa métricas para completar el análisis. La parte mecánica tiene que ser determinista y verificable, siempre.</p>
+      </div>
+
+      <h2>Las 5 skills</h2>
+
+      <div class="plugin-card">
+        <h3>1. El explorador de tendencias</h3>
+        <p>Corre los lunes. Trae lo que se publicó en mi nicho en los últimos siete días desde tres o cuatro hashtags y un puñado de cuentas de referencia, y me devuelve no las publicaciones sino los <em>patrones</em>: qué ángulo se está repitiendo, qué formato está rindiendo, qué se saturó.</p>
+        <p>La clave está en lo que le prohíbo. Sin la regla de comparar contra el promedio de la propia cuenta, el explorador me trae siempre las cuentas más grandes y concluye que hay que ser una cuenta grande.</p>
+      </div>
+
+      <pre><code>Eres un analista de contenido corto. Te paso publicaciones
+recientes de mi nicho, cada una con cuenta, texto, formato,
+fecha y métricas públicas.
+
+TAREA
+Encuentra patrones, no publicaciones. Quiero saber qué ángulo
+está funcionando esta semana y por qué.
+
+REGLAS
+- Compara cada publicación contra el promedio de SU PROPIA
+  cuenta, no contra el total. Una cuenta grande con desempeño
+  normal no es una tendencia.
+- Descarta lo que funcionó por la cara de quien lo publicó y
+  no por la idea.
+- Las métricas públicas son aproximadas. Úsalas para ordenar,
+  nunca las cites como dato exacto.
+- Si un patrón aparece en menos de tres cuentas distintas, no
+  es patrón. Dilo y descártalo.
+
+FORMATO
+Cinco patrones. Cada uno: nombre del patrón, en qué consiste,
+en qué cuentas lo viste, por qué creo que funciona ahora, y
+cómo se vería aplicado a mi tema.
+Cierra con lo que se está saturando y conviene evitar.
+
+DATOS:
+[pega el archivo de publicaciones]</code></pre>
+
+      <div class="plugin-card">
+        <h3>2. El guionista</h3>
+        <p>Toma un patrón del lunes y lo convierte en guion para grabar. No es "escríbeme un video sobre X": la skill trae adentro mi forma de hablar, las palabras que no uso, el largo de mis frases y la regla de una sola idea por video.</p>
+        <p>Esta es la que más veces reescribí. Las primeras versiones me daban guiones correctos que sonaban a otra persona. Lo que lo arregló no fue describir mi tono con adjetivos, fue pegarle ejemplos míos reales y ejemplos de lo que no quiero.</p>
+      </div>
+
+      <pre><code>Eres mi guionista de video corto. Escribes para que yo lo diga
+en cámara, no para que se lea.
+
+CONTEXTO
+- Hablo de automatización con IA para dueños de negocio que no
+  son técnicos.
+- Mi público ya probó las herramientas y le parecieron poco
+  útiles. No hay que convencerlo de que la IA sirve; hay que
+  mostrarle qué estaba haciendo mal.
+- Duración: 45 a 60 segundos.
+
+ASÍ SÍ
+[pega aquí dos guiones tuyos que ya funcionaron]
+
+ASÍ NO
+[pega aquí un guion que suene genérico o corporativo]
+
+REGLAS
+- Una sola idea. Si aparece una segunda, la cortas.
+- Frases de máximo 15 palabras.
+- El primer renglón funciona sin contexto previo y no promete
+  un resultado que el video no entrega.
+- Sin cifras, sin estudios, sin nombres de empresas.
+- Sin emojis, sin signos de exclamación, sin "en resumen".
+
+FORMATO
+Guion corrido, listo para teleprompter, sin marcas de escena.
+Debajo: tres alternativas de primer renglón y una nota de qué
+se ve en pantalla en los primeros tres segundos.
+
+PATRÓN A DESARROLLAR:
+[pega el patrón del explorador]</code></pre>
+
+      <div class="plugin-card">
+        <h3>3. El armador de carruseles</h3>
+        <p>Reusa lo que ya grabé. Toma la transcripción de un video largo —un episodio, una clase, una junta grabada— y saca de ahí carruseles: una idea por tarjeta, con la tarjeta uno cargando todo el peso.</p>
+        <p>Es la skill con mejor relación entre esfuerzo y salida de las cinco, porque el material ya existe y nadie lo está usando. En la operación del cliente, un episodio de podcast rinde varias piezas de texto sin grabar nada nuevo.</p>
+      </div>
+
+      <pre><code>Eres editor de contenido para redes. Te paso la transcripción
+de una pieza larga y sacas carruseles de texto.
+
+TAREA
+Encuentra las ideas que se sostienen solas fuera del contexto
+del episodio. Cada una se vuelve un carrusel.
+
+REGLAS
+- Una idea por carrusel. Entre 6 y 8 tarjetas.
+- La tarjeta 1 tiene que funcionar sola: si alguien solo ve esa,
+  entiende de qué va y le interesa.
+- Máximo 25 palabras por tarjeta.
+- Nada de "parte 1 de 3" ni de cortar una idea a la mitad.
+- No inventes ejemplos que no estén en la transcripción. Si una
+  idea necesita un ejemplo que no está, márcala como
+  "necesita ejemplo" en vez de rellenar.
+- Última tarjeta: una acción concreta, no "sígueme".
+
+FORMATO
+Por carrusel: título interno, las tarjetas numeradas, y el pie
+de publicación en máximo 40 palabras.
+Al final, ordénalos por cuál publicaría primero y por qué.
+
+TRANSCRIPCIÓN:
+[pega la transcripción]</code></pre>
+
+      <div class="plugin-card">
+        <h3>4. El minero de comentarios</h3>
+        <p>La que menos gente monta y la que más ideas produce. Baja los comentarios de mis publicaciones y de las de referencia, y los clasifica: preguntas repetidas, objeciones, malentendidos y peticiones explícitas.</p>
+        <p>Cada pregunta que aparece tres veces es un video que ya tiene demanda comprobada. Dejé de inventar temas hace rato. Los comentarios ya me dicen cuáles son, y además me dicen con qué palabras los está pensando la gente, que es lo que después va en el primer renglón.</p>
+      </div>
+
+      <pre><code>Eres analista de audiencia. Te paso comentarios de
+publicaciones sobre mi tema.
+
+TAREA
+Clasifícalos en cuatro cubetas y saca de ahí temas de contenido
+con demanda demostrada.
+
+CUBETAS
+1. Preguntas: qué quieren saber que no les contesté.
+2. Objeciones: por qué creen que esto no les va a funcionar.
+3. Malentendidos: qué entendieron mal de lo que dije.
+4. Peticiones: qué están pidiendo explícitamente.
+
+REGLAS
+- Ignora elogios, insultos y spam. No los cuentes en nada.
+- Agrupa por intención, no por palabras. "No tengo tiempo" y
+  "esto suena a que tarda meses" son la misma objeción.
+- Un tema solo califica si la misma intención aparece en tres
+  comentarios distintos o más.
+- Conserva la forma exacta en que lo dice la gente. Esas
+  palabras me sirven más que tu paráfrasis.
+
+FORMATO
+Las cuatro cubetas con sus grupos, cada grupo con cuántas veces
+apareció y dos citas textuales.
+Cierra con cinco temas de contenido ordenados por demanda, cada
+uno con el primer renglón sugerido usando las palabras del
+público.
+
+COMENTARIOS:
+[pega los comentarios]</code></pre>
+
+      <div class="plugin-card">
+        <h3>5. El analista de desempeño</h3>
+        <p>Corre los viernes contra mis métricas propias, las de las APIs oficiales. No me dice qué publicación ganó: eso ya lo veo. Me dice qué <em>decisión</em> ganó —el formato, el tipo de apertura, la duración, el día— y qué probar la semana siguiente.</p>
+        <p>Con la regla de no concluir sobre muestras chicas, es la única de las cinco que se atreve a decirme que esta semana no hay conclusión. Esa honestidad es todo el valor: sin ella, cada semana me inventaba una teoría nueva sobre por qué algo funcionó.</p>
+      </div>
+
+      <pre><code>Eres analista de desempeño de contenido. Te paso mis métricas
+propias de las últimas semanas, publicación por publicación,
+con formato, tema, duración, tipo de apertura y día.
+
+TAREA
+Dime qué decisión está funcionando, no qué publicación ganó.
+
+REGLAS
+- Compara siempre contra mi propio promedio móvil, no contra
+  números absolutos.
+- No concluyas sobre menos de cinco publicaciones con la misma
+  característica. Si no hay suficientes, dilo así.
+- Distingue correlación de causa. Si dos cosas cambiaron a la
+  vez, no le atribuyas el resultado a una sola.
+- Prohibido decir "publica más seguido" y "usa mejores hooks".
+- Si esta semana no hay señal clara, dilo en una línea y no
+  inventes explicación.
+
+FORMATO
+1. Qué funcionó, con la evidencia.
+2. Qué no funcionó, con la evidencia.
+3. Un solo experimento para la próxima semana: qué cambio,
+   contra qué lo comparo y cuántas publicaciones necesito
+   para saber si sirvió.
+
+MÉTRICAS:
+[pega el archivo de métricas]</code></pre>
+
+      <h2>Cómo se conectan y por dónde empezar</h2>
+
+      <p>Corren en cadena: el explorador alimenta al guionista, el guionista produce lo que después recicla el armador, el minero de comentarios corrige el rumbo, y el analista dice si la semana valió. El ciclo se cierra solo.</p>
+
+      <p>Pero no las construí en ese orden, y si empiezas por el explorador te vas a atorar. Empieza por el <strong>minero de comentarios</strong>: es el único que funciona con datos que ya tienes, sin montar scraping, y es el que más rápido te da algo que no sabías. El explorador de tendencias déjalo al final, porque es el que más infraestructura pide y el que menos sirve si todavía no tienes claro tu tono.</p>
+
+      <p>Y la advertencia que me hubiera ahorrado semanas: ninguna de estas skills decide qué publicar. Te quitan el trabajo de buscar, adaptar y medir, que es donde se va el tiempo de verdad. El criterio de qué vale la pena decir sigue siendo tuyo, y es lo único que no se puede escribir en un <code>SKILL.md</code>.</p>

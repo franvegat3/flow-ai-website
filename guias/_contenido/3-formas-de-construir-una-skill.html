@@ -1,0 +1,117 @@
+      <p>Casi todas las skills que veo en empresas están escritas y casi ninguna se usa. No porque estén mal redactadas: porque describen cómo alguien cree que hace su trabajo, no cómo lo hace.</p>
+
+      <p>Hay tres maneras de construir una skill. Dos son las que usa todo el mundo y las dos producen documentos correctos que no cambian nada. La tercera se lleva más trabajo la primera vez y es la única que sobrevive al mes.</p>
+
+      <h2>Qué es una skill, en una frase</h2>
+
+      <p>Un archivo de instrucciones que el modelo carga cuando la tarea lo pide, para que no tengas que volver a explicarle cómo se hace bien ese trabajo en tu empresa. No se ejecuta sola ni toca tus herramientas. Solo cambia la calidad de lo que sale.</p>
+
+      <p>Eso quiere decir que el valor de una skill es exactamente el valor del criterio que le metiste. Una skill que dice "escribe con tono profesional y estructura clara" no tiene criterio adentro. Tiene relleno.</p>
+
+      <h2>Las tres formas</h2>
+
+      <div class="plugin-card">
+        <h3>1. La escribes tú desde la página en blanco</h3>
+        <p>Abres un archivo y empiezas a redactar cómo se hace la tarea. Es lo que hace la mayoría, y es la que peor sale.</p>
+        <p>El problema no es la flojera. Es que la parte valiosa de tu trabajo es la que ya no piensas. Cuando revisas una propuesta detectas en cuatro segundos que el alcance está mal delimitado, y si te sientas a escribirlo te sale "revisar que el alcance sea claro". Se perdió todo. Lo que hace útil ese juicio son las seis excepciones que aprendiste a fuerza de que te fallaran, y ninguna de las seis te va a venir a la cabeza frente a un documento vacío.</p>
+        <p class="plugin-for"><strong>Cuándo sí sirve:</strong> cuando la tarea tiene reglas duras y externas —un formato fiscal, una política de la empresa, una plantilla de contrato—. Ahí no hay criterio tácito que rescatar: hay un reglamento que transcribir.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Le pides a Claude que la genere</h3>
+        <p>Le describes la tarea en un párrafo y le pides la skill. Sale en treinta segundos, bien estructurada, con secciones y viñetas. Se siente como haber avanzado.</p>
+        <p>Lo que te devuelve es la versión de libro de texto de tu oficio: cómo se hace una auditoría de contenido en general, no cómo la haces tú para clientes de retail que no tienen catálogo digital. Es un buen andamiaje y un mal producto final. Si la sueltas así, vas a obtener respuestas mejor formateadas y con el mismo problema de fondo: no suenan a tu empresa y no traen tus excepciones.</p>
+        <p>Hay una versión más fina de esta ruta, que es usar la skill que construye skills o el creador que viene en la propia herramienta. Ayuda con la forma. No resuelve de dónde sale el contenido.</p>
+        <p class="plugin-for"><strong>Cuándo sí sirve:</strong> como primer borrador que vas a destrozar, o para tareas donde el estándar de la industria te basta y no tienes una forma propia de hacerlo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. La extraes de trabajo que ya hiciste</h3>
+        <p>En vez de describir tu criterio, le das las pruebas: tres a cinco entregables reales que te parecen buenos, uno o dos que salieron mal, y le pides que infiera las reglas que explican la diferencia.</p>
+        <p>Esto funciona porque invierte la carga. Tú no tienes que acordarte de nada; solo tienes que reconocer si lo que te propone es cierto. Y reconocer es mucho más fácil que recordar. Cuando te dice "en tus propuestas buenas siempre pones el precio antes del alcance, en la mala lo pusiste al final", sabes de inmediato si eso es una regla tuya o una coincidencia.</p>
+        <p>Los ejemplos malos son la mitad del valor y son los que nadie sube. Sin un contraejemplo, el modelo no puede distinguir qué de tus documentos buenos es criterio y qué es costumbre.</p>
+        <p class="plugin-for"><strong>Cuándo sirve:</strong> siempre que exista trabajo previo. Que es casi siempre, aunque la gente jure que no.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> cerrar la skill el día que la escribes. Una skill nueva está a la mitad. Lo que la termina son las primeras cinco veces que falla: cada corrección que le haces al resultado es una regla que le faltaba. Si corriges en el chat y no lo bajas al archivo, vas a corregir lo mismo para siempre.</p>
+      </div>
+
+      <h2>Los prompts</h2>
+
+      <p>Son tres y van en orden. El primero saca el borrador de tus ejemplos, el segundo llena lo que ningún ejemplo contiene, y el tercero es el que corres cada vez que la skill falla.</p>
+
+      <p><strong>Uno: la extracción.</strong> Sube los archivos antes de mandarlo.</p>
+
+      <pre><code>Te voy a dar trabajo que ya hice. Tu tarea es descubrir las reglas
+que sigo, no proponer buenas prácticas.
+
+Adjunto:
+- Ejemplos que considero buenos: [súbelos]
+- Ejemplos que salieron mal o que tuve que rehacer: [súbelos]
+- Qué es esta tarea y para quién es: [dos líneas]
+
+Analízalos y devuélveme:
+
+1. PATRONES. Qué hacen en común los buenos y qué falta en los malos.
+   Sepáralo en tres cubetas: estructura, contenido y lenguaje. Cita
+   el fragmento exacto que te llevó a cada conclusión.
+
+2. REGLAS CANDIDATAS. Máximo doce, escritas como instrucciones
+   accionables, no como principios. "Nunca prometas fecha de entrega
+   en la propuesta" sirve; "sé claro con los tiempos" no.
+
+3. LO INCIERTO. Qué diferencias viste entre los ejemplos que podrían
+   ser regla o podrían ser casualidad. Pregúntamelo, no lo asumas.
+
+4. LO QUE NO PUEDES VER. Qué parte de esta tarea no queda registrada
+   en los entregables.
+
+Aún no escribas la skill. Espera a que yo confirme las reglas.</code></pre>
+
+      <p><strong>Dos: la entrevista.</strong> Va después de confirmar las reglas. Es el que rescata lo que nunca llegó al papel.</p>
+
+      <pre><code>Ya tenemos las reglas visibles. Ahora vas a entrevistarme para sacar
+lo que no aparece en ningún entregable.
+
+Hazme una pregunta a la vez y espera mi respuesta. Después de cada
+una, si mi respuesta trae una regla implícita, escríbela y sigue.
+
+Cubre estos terrenos:
+- Qué hago primero cuando llega este trabajo, antes de escribir nada.
+- Qué información pido siempre y qué hago si no me la dan.
+- La última vez que esto salió mal: qué pasó y qué cambié después.
+- Qué me hace rechazar un borrador de un colega en diez segundos.
+- Qué excepción existe que rompe la regla general, y en qué caso.
+- Qué parte de esto NO quiero que se automatice nunca, y por qué.
+
+Cuando ya no saques reglas nuevas, dilo y escribe la skill completa:
+propósito en una frase, cuándo debe activarse, el procedimiento paso
+a paso, las reglas duras, las excepciones con su condición, y un
+ejemplo corto de entrada y salida esperada.</code></pre>
+
+      <p><strong>Tres: el ajuste por falla.</strong> Este es el que hace que la skill mejore en vez de envejecer.</p>
+
+      <pre><code>Esta skill acaba de fallar. Te doy la skill, lo que produjo y lo que
+yo esperaba.
+
+[skill actual]
+[resultado que dio]
+[lo que yo hubiera entregado]
+
+1. Diagnostica la causa: ¿falta una regla, hay una regla ambigua, o
+   hay dos reglas que se contradicen? Elige una, no las tres.
+2. Propón el cambio mínimo que corrige esto sin romper los casos que
+   ya salían bien. Muéstrame solo las líneas que cambian.
+3. Dime qué caso anterior podría romperse con este cambio.
+
+No reescribas la skill completa. Si crees que hace falta reescribirla
+entera, dime primero por qué.</code></pre>
+
+      <h2>El orden que ahorra la mitad del trabajo</h2>
+
+      <p>La ruta que uso con clientes es la tres, apoyada en la dos para el formato. Extraigo las reglas de sus entregables reales, entrevisto a la persona que hace el trabajo, y hasta el final le pido a Claude que lo acomode en la estructura del archivo. Al revés no funciona: si empiezas por la forma, terminas rellenando secciones vacías con lugares comunes.</p>
+
+      <p>Una advertencia de por dónde empezar. No hagas la skill de la tarea más importante de tu operación. Haz la de la tarea que repites más seguido y que menos te importa. Es donde vas a tener veinte ejemplos, donde el error no cuesta caro, y donde vas a aprender cómo se siente una skill que sí jala. Cuando llegues a la tarea que de verdad pesa, ya vas a saber qué le falta.</p>
+
+      <p>Si la tuya ya está escrita y aun así no la usa nadie, el diagnóstico está en <a href="/guias/por-que-no-jala-tu-skill/">por qué tu skill de Claude no está jalando</a>. Y si lo que quieres es convertir material que ya tienes —un manual, un procedimiento, una guía— en una skill, esa ruta está en <a href="/guias/convierte-cualquier-guia-en-skill/">convierte cualquier guía en una skill</a>.</p>

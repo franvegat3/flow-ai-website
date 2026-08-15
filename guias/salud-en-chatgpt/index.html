@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo armar tu expediente de salud en ChatGPT — Guías Flow AI</title>
+  <meta name="description" content="Conecta tus estudios médicos y los datos de tu reloj, y arma una sola línea del tiempo de salud. El setup exacto y el prompt que la construye." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/salud-en-chatgpt/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo armar tu expediente de salud en ChatGPT" />
+  <meta property="og:description" content="Conecta tus estudios médicos y los datos de tu reloj, y arma una sola línea del tiempo de salud. El setup exacto y el prompt que la construye." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/salud-en-chatgpt/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">ChatGPT</span><span class="tag">Productividad</span></div>
+      <h1>Cómo armar tu expediente de salud en ChatGPT</h1>
+      <p class="lead">Conecta tus estudios médicos y los datos de tu reloj, y arma una sola línea del tiempo de salud. El setup exacto y el prompt que la construye.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Tu historial médico está repartido en seis lugares: los PDFs del laboratorio en el correo, la receta que te tomaste foto, el resumen que te dio el especialista en papel, los datos del reloj en una app que nunca abres, y lo que recuerdas de memoria cuando el doctor pregunta desde cuándo.</p>
+
+      <p>Por eso cada consulta empieza igual: reconstruyendo tu propia historia mal y de memoria. Y por eso nadie ve el patrón obvio de que ese valor lleva tres años subiendo poco a poco.</p>
+
+      <p>OpenAI lanzó una función para resolver justo eso. Tiene un límite grande que conviene saber antes de empezar, y hay una ruta alterna que funciona sin ella.</p>
+
+      <h2>Qué es la función y dónde está disponible</h2>
+
+      <p>Se llama Health en ChatGPT y permite conectar información de salud para que el asistente la use en la conversación: comparar resultados de laboratorio entre fechas, resumir qué cambió desde tu última cita, llevar el control de medicamentos, y relacionar sueño y actividad con lo que estás midiendo.</p>
+
+      <p>Las fuentes que conecta son Apple Health, expedientes de sistemas hospitalarios compatibles de Estados Unidos, One Medical y Function Health.</p>
+
+      <p><strong>El límite duro:</strong> se está liberando para usuarios en Estados Unidos, mayores de 18 años, en web y iOS. Los expedientes que conecta son de sistemas hospitalarios estadounidenses. Si estás en México o en cualquier otro lado, la parte de expedientes no te aplica hoy.</p>
+
+      <p>Sobre privacidad, lo que declara OpenAI: pide permiso antes de usar la información de salud en una conversación, puedes darle acceso una vez, siempre, o desactivarlo desde los ajustes de Health, y los expedientes conectados, los datos de Apple Health y las conversaciones relacionadas no se usan para entrenar modelos ni para publicidad.</p>
+
+      <h2>El setup nativo, si estás en Estados Unidos</h2>
+
+      <ol>
+        <li>Entra a los ajustes de ChatGPT y abre la sección de Health.</li>
+        <li>Conecta Apple Health desde la app de iOS y elige qué categorías compartes. No las prendas todas: empieza con sueño, actividad y frecuencia cardiaca, que es donde hay señal.</li>
+        <li>Conecta tu sistema hospitalario si está en la lista de compatibles.</li>
+        <li>Decide el modo de permiso. Yo dejaría "preguntar cada vez" al principio, hasta que veas qué está jalando en cada conversación.</li>
+      </ol>
+
+      <h2>La ruta manual, que funciona en cualquier país</h2>
+
+      <p>Esta es la que uso yo y la que aplica para la mayoría de quien lee esto. Es más trabajo la primera vez y en realidad da un resultado más limpio, porque tú controlas qué entra.</p>
+
+      <h3>Paso 1: junta el material</h3>
+
+      <p>Una carpeta. Adentro, en PDF o foto legible: todos los estudios de laboratorio que tengas, los reportes de imagen, las recetas actuales, y los resúmenes de consulta que conserves. Ordénalos por fecha en el nombre del archivo —<code>2024-03-quimica-sanguinea.pdf</code>— porque eso solo ya le ahorra la mitad del trabajo de reconstruir la cronología.</p>
+
+      <h3>Paso 2: exporta lo del reloj</h3>
+
+      <p>Casi todas las apps de salud y de relojes permiten exportar. Busca la opción de exportar datos en los ajustes de la tuya. Lo que interesa es sueño, pasos, frecuencia cardiaca en reposo y variabilidad si la mide.</p>
+
+      <h3>Paso 3: crea un proyecto dedicado</h3>
+
+      <p>Un Proyecto en ChatGPT o en Claude, solo para esto. Sube ahí los archivos. La ventaja sobre pegarlos en un chat suelto es que el material queda disponible en todas las conversaciones futuras sin volver a subirlo, y que lo de salud no se mezcla con el resto de tu vida.</p>
+
+      <h2>El prompt que construye la línea del tiempo</h2>
+
+      <p>Con el material cargado, este es el prompt. Está escrito para forzar dos cosas que el modelo no hace solo: citar el estudio de cada dato y separar lo que sabe de lo que supone.</p>
+
+      <pre><code>Adjunté todos mis estudios médicos y mis datos de actividad.
+Quiero que construyas mi expediente en una sola línea del tiempo.
+
+Trabaja en este orden y no te saltes pasos:
+
+1. INVENTARIO
+   Lista cada documento: fecha, tipo de estudio, quién lo
+   ordenó. Si un archivo está ilegible o le falta la fecha,
+   dímelo y no lo uses.
+
+2. LINEA DEL TIEMPO
+   Ordena todo cronológicamente. Para cada evento: fecha, qué
+   se midió, resultado, y si el resultado estaba dentro o
+   fuera del rango de referencia que aparece EN ESE MISMO
+   estudio (no uses rangos de memoria: los rangos cambian
+   entre laboratorios).
+
+3. MARCADORES QUE SE REPITEN
+   Identifica qué se ha medido más de una vez. Para cada uno,
+   arma una tabla de fecha contra valor y dime la tendencia:
+   sube, baja o estable. Marca cuál sí tiene suficientes
+   puntos para hablar de tendencia y cuál no.
+
+4. LO QUE FALTA
+   Qué estudios de seguimiento parecen indicados y no
+   aparecen. Qué periodos no tienen ningún dato.
+
+5. PARA MI PROXIMA CONSULTA
+   Cinco preguntas concretas para llevarle a mi médico,
+   basadas en lo que viste. No preguntas genéricas: preguntas
+   que solo tienen sentido con MIS datos.
+
+REGLAS QUE NO SE ROMPEN
+- Cada dato que menciones tiene que venir de un archivo que
+  te di. Cita cuál. Si no está, di "no aparece en el
+  material" — no lo completes con lo típico.
+- Separa siempre lo que dice el documento de lo que tú
+  infieres. Marca lo segundo como inferencia.
+- No me des diagnósticos ni me digas qué tomar. Tu trabajo
+  es organizar y señalar, no tratar.
+- Si algo se ve fuera de rango de forma importante, dilo
+  claro y recomiéndame que lo vea un médico, sin dramatizar.
+
+Salida en markdown, para que la pueda guardar y actualizar.</code></pre>
+
+      <p>La regla de citar cada dato es la que más trabajo hace. Sin ella, el modelo rellena con valores de referencia típicos y termina describiendo a un paciente promedio en vez de a ti.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar la línea del tiempo antes de usarla. Abre tres estudios al azar y compara los números contra lo que escribió. Es el material con el que vas a tomar decisiones y a hablar con tu médico; un valor mal transcrito ahí vale mucho más caro que en cualquier otro documento. Cinco minutos.</p>
+      </div>
+
+      <h2>Las cinco preguntas que sí rinden después</h2>
+
+      <p>Con la línea del tiempo lista, el valor está en las preguntas de seguimiento. Estas son las que rinden de verdad:</p>
+
+      <ul>
+        <li><strong>"¿Qué cambió entre mi último estudio y el anterior, y qué se mantuvo igual?"</strong> Nadie hace esta comparación en la consulta de veinte minutos.</li>
+        <li><strong>"Prepárame un resumen de una página para un médico nuevo."</strong> Historia relevante, medicamentos actuales, alergias, estudios recientes. Cambia por completo cómo arranca una primera consulta.</li>
+        <li><strong>"¿Qué relación se ve entre mi sueño de las últimas semanas y mi frecuencia cardiaca en reposo?"</strong> Ahí es donde los datos del reloj aportan algo que el laboratorio no ve.</li>
+        <li><strong>"Explícame este estudio en lenguaje normal, sin quitarle los matices."</strong> La segunda mitad de la frase importa: sin ella recibes una simplificación que te tranquiliza de más.</li>
+        <li><strong>"¿Qué me preguntaría un médico que ve esto por primera vez?"</strong> Te prepara para la consulta en vez de dejarte reaccionando.</li>
+      </ul>
+
+      <h2>Los límites, dichos claro</h2>
+
+      <p>Esto organiza información. No diagnostica, no sustituye a nadie y no debe cambiar tu tratamiento. La utilidad real es que llegas a la consulta con tu historia ordenada y con preguntas específicas, no que tengas una segunda opinión en el bolsillo.</p>
+
+      <p>Y sobre privacidad: estás subiendo lo más sensible que tienes. Antes de conectar nada o de subir archivos, vale la pena pasar por <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión antes de que la IA toque algo sensible</a>. Revisa qué guarda el proveedor, qué usa para entrenar y cómo se borra. Que la función sea útil no quita que la decisión sea tuya.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

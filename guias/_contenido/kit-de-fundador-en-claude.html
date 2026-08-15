@@ -1,0 +1,139 @@
+      <p>Entre tener la idea y tener algo que enseñar hay un tramo que mata más proyectos que la falta de mercado. Necesitas un nombre, una identidad que no se vea hecha en una plantilla, pantallas que muestren cómo se ve el producto, un video que lo explique y otro en el que tú des la cara. Cotizado por fuera son semanas y varios proveedores.</p>
+
+      <p>Ese tramo ya se puede correr desde un solo lugar. Conectas un servidor MCP de generación visual a Claude y ejecutas cuatro skills en orden, cada una alimentándose de la anterior. Sales con un paquete de lanzamiento completo, no con cuatro archivos sueltos que no se parecen entre sí.</p>
+
+      <p>Aquí va el orden exacto, con lo que hay que pedirle a cada paso y dónde se rompe la cadena.</p>
+
+      <h2>Qué es esto, en una frase</h2>
+
+      <p>Cuatro trabajos encadenados —marca, pantallas, video de producto, video de fundador— corriendo dentro de Claude, donde el resultado de cada uno es el material de entrada del siguiente.</p>
+
+      <p>Lo importante es la cadena, no las herramientas. Cualquiera puede generar un logo suelto. Lo que casi nadie logra es que el logo, las pantallas y los dos videos se vean como si los hubiera hecho la misma persona. Eso solo pasa si el paso uno deja escrito el criterio y los siguientes lo obedecen.</p>
+
+      <h2>Paso 0: conectar el MCP</h2>
+
+      <p>Un MCP es la forma estándar de darle a Claude acceso a una herramienta externa. En este caso, a una plataforma de generación de imagen y video. Yo uso <a href="https://higgsfield.ai/" target="_blank" rel="noopener">Higgsfield</a>, pero el patrón aplica igual con otra: lo que cambia es el catálogo de modelos, no el método.</p>
+
+      <p>La conexión se hace desde la configuración de conectores en Claude, o agregando el servidor desde la terminal si trabajas en Claude Code. Después necesitas tu cuenta de la plataforma autorizada. Ese es todo el setup técnico.</p>
+
+      <div class="callout-box">
+        <p><strong>Antes de arrancar:</strong> esto consume créditos de la plataforma de generación, y los videos consumen bastante más que las imágenes. Corre el paso uno y el dos completos antes de tocar los videos, porque los videos hechos sobre una marca sin definir se rehacen, y rehacer video es donde se va el presupuesto. La secuencia no es un capricho estético: es control de gasto.</p>
+      </div>
+
+      <h2>Skill 1: construir la marca</h2>
+
+      <p>Es la única de las cuatro que no produce nada bonito y la que decide todo lo demás. Su salida es un documento: nombre, posicionamiento, paleta, tipografías, tono y reglas visuales. Ese documento es el que las otras tres van a leer.</p>
+
+      <pre><code>Vamos a construir el sistema de marca de este producto.
+No generes imágenes todavía.
+
+Contexto:
+- Qué hace el producto: [una frase, sin adjetivos]
+- Para quién: [perfil concreto, no "todos"]
+- Qué usa esa persona hoy en su lugar: [alternativa real]
+- Qué quiero que sienta al verlo: [tres palabras]
+- Qué NO quiero que parezca: [tres cosas]
+
+Entrégame:
+1. Tres rutas de nombre, con el razonamiento de cada una y
+   con qué se puede confundir.
+2. La frase de posicionamiento en una línea.
+3. Una paleta de color con los valores exactos y para qué
+   se usa cada uno.
+4. Dos tipografías: una para títulos y una para texto.
+5. Reglas visuales duras: qué sí aparece siempre en una
+   pieza de esta marca y qué está prohibido.
+6. El tono de voz, con dos ejemplos de la misma frase bien
+   y mal escrita.
+
+Al final, resume todo en un bloque llamado GUÍA DE MARCA
+que yo pueda pegarle a los siguientes pasos.</code></pre>
+
+      <p>Guarda ese bloque. Es la pieza que vas a pegar al inicio de las tres skills restantes.</p>
+
+      <h2>Skill 2: las pantallas de la app</h2>
+
+      <p>Aquí se generan las vistas del producto. No para programarlo: para poder enseñarlo. Es lo que va en la landing, en el pitch y en los videos que siguen.</p>
+
+      <p>El error clásico es pedir "pantallas de mi app" y recibir cinco imágenes bonitas de aplicaciones que no tienen nada que ver entre sí. Se resuelve definiendo el recorrido antes que las pantallas:</p>
+
+      <pre><code>Usa la GUÍA DE MARCA de arriba sin desviarte de ella.
+
+Antes de generar nada, define el recorrido mínimo del
+usuario: las cuatro pantallas que cuentan la historia de
+cómo esto le resuelve el problema. Dime cuáles son y por
+qué esas cuatro, y espera mi aprobación.
+
+Cuando apruebe, genera cada pantalla con:
+- Contenido realista, con datos que parezcan de un usuario
+  de verdad. Nada de texto de relleno.
+- Los mismos componentes y espaciados en las cuatro.
+- El estado interesante, no el estado vacío: muéstrame la
+  pantalla con el trabajo ya hecho.
+
+Entrégalas en el formato que voy a necesitar para la
+landing y también recortadas para vertical.</code></pre>
+
+      <p>"El estado interesante, no el vacío" es la instrucción que más sube la calidad. Una pantalla llena de datos plausibles vende; una pantalla recién instalada no le dice nada a nadie.</p>
+
+      <h2>Skill 3: el video de producto</h2>
+
+      <p>Corto, sin cara, para el sitio y para redes. Su trabajo es que alguien entienda en menos de un minuto qué hace esto y por qué debería importarle.</p>
+
+      <pre><code>Usa la GUÍA DE MARCA y las pantallas ya generadas.
+
+Escribe primero el guion, en tomas, con la duración de cada
+una y qué se ve exactamente. Estructura:
+- Segundo 0 a 3: el problema, mostrado, no explicado.
+- Después: el producto resolviéndolo, usando las pantallas
+  reales que ya generamos.
+- Cierre: qué hace la persona ahora y con qué se queda.
+
+Reglas:
+- Máximo 45 segundos.
+- Nada de texto que no se alcance a leer en el celular.
+- Nada de música que tape la locución si la lleva.
+- Que la primera toma funcione aunque el video se vea sin
+  sonido.
+
+Muéstrame el guion y espera aprobación antes de generar
+cualquier video.</code></pre>
+
+      <p>Aprobar el guion antes de generar es lo que separa un ciclo de dos horas de uno de dos días. El video es lo caro de rehacer; el texto no cuesta nada.</p>
+
+      <h2>Skill 4: el video de fundador</h2>
+
+      <p>El último, y el que más rinde en distribución. La gente comparte a una persona explicando por qué construyó algo, no a un producto explicándose solo.</p>
+
+      <pre><code>Usa la GUÍA DE MARCA. Este video soy yo hablando a cámara.
+
+Escribe el guion para 60 segundos, en primera persona, con
+esta estructura:
+- Por qué me topé con este problema (concreto, con la
+  situación específica, sin épica).
+- Qué intenté antes y por qué no funcionó.
+- Qué construí y qué cambia.
+- Qué le pido a quien está viendo esto.
+
+Reglas de voz:
+- Como se lo contaría a un colega en un café, no como un
+  anuncio.
+- Sin "revolucionario", sin "la solución definitiva", sin
+  cifras que no le di.
+- Frases cortas. Va a leerse en teleprompter.
+
+Después del guion, dame las indicaciones de grabación:
+encuadre, fondo, ropa y qué b-roll de las pantallas insertar
+en qué segundo.</code></pre>
+
+      <h2>Qué sale y qué no</h2>
+
+      <p>Al final del ciclo tienes: guía de marca, cuatro pantallas consistentes, un video de producto y un guion de fundador listo para grabar con su plan de tomas. Eso es un paquete de lanzamiento.</p>
+
+      <p>Lo que no tienes es un producto, ni validación, ni una lista de gente a quien mandárselo. El riesgo real de esto es que es tan satisfactorio armar el paquete que se siente como avanzar. Un lanzamiento impecable de algo que nadie pidió sigue siendo un lanzamiento que no va a ninguna parte; si esa parte todavía está floja, pásala primero por <a href="/guias/que-sam-altman-califique-tu-idea/">una evaluación dura de la idea</a>.</p>
+
+      <h2>El mismo kit dentro de una empresa que ya factura</h2>
+
+      <p>No es solo para fundadores. En una empresa establecida esto se usa para presentar una línea nueva sin abrir un proyecto con la agencia: mismo orden, con la restricción de que el paso uno no inventa marca sino que hereda la existente. Le pegas el manual de identidad que ya tienes en lugar de generar la guía, y los tres pasos siguientes se comportan igual.</p>
+
+      <p>Ahí el ahorro no está en el dinero de la agencia, está en el tiempo de ida y vuelta. Poder llegar a la junta con la línea nueva ya visualizada cambia la conversación de "qué te parece la idea" a "qué le movemos".</p>

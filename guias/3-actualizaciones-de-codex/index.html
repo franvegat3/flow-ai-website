@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 actualizaciones de Codex que uso cada semana — Guías Flow AI</title>
+  <meta name="description" content="Codex tuvo un mes enorme. Las tres actualizaciones que sí uso cada semana —plugins por rol, sitios, y trabajos grandes de una noche— con los prompts exactos de cómo pongo cada una a trabajar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/3-actualizaciones-de-codex/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="3 actualizaciones de Codex que uso cada semana" />
+  <meta property="og:description" content="Codex tuvo un mes enorme. Las tres actualizaciones que sí uso cada semana —plugins por rol, sitios, y trabajos grandes de una noche— con los prompts exactos de cómo pongo cada una a trabajar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/3-actualizaciones-de-codex/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Novedades</p>
+      <div class="guide-tags"><span class="tag">ChatGPT</span><span class="tag">Novedades</span><span class="tag">Productividad</span></div>
+      <h1>3 actualizaciones de Codex que uso cada semana</h1>
+      <p class="lead">Codex tuvo un mes enorme. Las tres actualizaciones que sí uso cada semana —plugins por rol, sitios, y trabajos grandes de una noche— con los prompts exactos de cómo pongo cada una a trabajar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Codex dejó de ser un autocompletado con esteroides hace rato. Hoy es un agente que corre en tu terminal, dentro de tu editor y también en la nube, y en las últimas semanas le cayeron encima suficientes cambios como para que la forma de usarlo ya no se parezca a la de hace tres meses.</p>
+
+      <p>El problema con las actualizaciones es que todas suenan importantes en el anuncio y la mayoría no cambian nada en tu semana. Estas tres sí. Son las que uso cada semana, y aquí va el prompt exacto con el que pongo a trabajar cada una.</p>
+
+      <h2>Dónde vive Codex, para ubicarnos</h2>
+
+      <p>Hay tres puertas al mismo agente y conviene saber cuál te toca. La terminal, que es donde tienes control fino y donde corren los trabajos largos. La extensión del editor, para cuando ya estás viendo el archivo y quieres un cambio acotado. Y la versión en la nube desde ChatGPT, que trabaja contra tu repositorio sin ocupar tu máquina.</p>
+
+      <p>La diferencia práctica es dónde se está gastando el tiempo: si es tuyo o si es de un servidor. Las tres actualizaciones de abajo empujan justo hacia el segundo.</p>
+
+      <h2>1. Paquetes de configuración por rol</h2>
+
+      <p>Esta es la que más cambió mi semana y la que menos se ve en los resúmenes de novedades. La idea es que la configuración del agente —qué sabe, qué puede tocar, cómo entrega— deje de vivir en tu cabeza y se empaquete por rol, para que viaje con el proyecto y la use todo el equipo.</p>
+
+      <p>Antes cada persona tenía su propio arreglo y el resultado dependía de quién lo corriera. Con el paquete por rol, quien entra nuevo hereda el criterio del que lleva un año. Ese es el valor real, y no tiene nada que ver con escribir código más rápido.</p>
+
+      <p>Este es el prompt con el que armo uno. Se corre dentro del proyecto, con el agente ya viendo los archivos:</p>
+
+      <pre><code>Vas a construir el paquete de configuración del rol
+[nombre del rol: revisor de código / integrador de datos /
+encargado de la documentación] para este repositorio.
+
+Primero, sin escribir nada, recorre el proyecto y dime:
+- Qué convenciones ya existen aunque no estén escritas.
+- Qué partes son peligrosas de tocar y por qué.
+- Qué tareas de este rol se repiten cada semana.
+
+Después escribe el paquete, con:
+1. El encargo del rol en tres frases.
+2. Las rutas y archivos que puede modificar, y los que no.
+3. Los comandos de verificación que debe correr antes de
+   dar por terminado cualquier cambio.
+4. El formato del reporte con el que entrega su trabajo.
+5. Tres ejemplos de tareas típicas de este rol, con el
+   resultado esperado de cada una.
+6. La lista de cosas que siempre debe consultar conmigo.
+
+No inventes convenciones que no viste en el código. Si algo
+no está definido en el proyecto, márcalo como decisión
+pendiente en vez de resolverlo tú.</code></pre>
+
+      <p>El punto tres es el que hace que esto funcione sin supervisión. Un agente que sabe cómo verificar su propio trabajo entrega otra cosa que uno que solo escribe.</p>
+
+      <h2>2. Sitios completos desde el agente</h2>
+
+      <p>La segunda es que armar y publicar un sitio dejó de ser un proyecto y se volvió un encargo. No hablo de una landing bonita: hablo de esa herramienta interna que llevas dos años pidiendo y que nadie ha priorizado porque "no justifica un sprint".</p>
+
+      <p>El uso que le doy en operación real es ese: tableros y calculadoras internas. La cotizadora que hoy es un Excel con macros que solo entiende una persona. El tablero de pedidos que se arma a mano cada lunes. Cosas que no valen un desarrollo formal y que sí valen mucho cuando existen.</p>
+
+      <pre><code>Construye un sitio de una sola página para uso interno del
+área de [área].
+
+Qué resuelve: [describe el proceso manual que reemplaza,
+quién lo hace hoy y cuánto le toma].
+
+Entradas: [qué datos captura o de dónde los lee].
+Salidas: [qué tiene que mostrar o calcular exactamente].
+Quién lo usa: [perfil, y si es desde computadora o celular].
+
+Requisitos:
+- Que funcione sin conexión a servicios externos.
+- Que la lógica de negocio esté en un solo archivo y
+  comentada en español, para que alguien no técnico
+  pueda ajustar los valores.
+- Nada de dependencias que haya que instalar.
+
+Antes de escribir nada, hazme las preguntas que te falten
+para no asumir reglas de negocio. Después muéstrame el plan
+y espera mi visto bueno.</code></pre>
+
+      <p>La última línea es la que evita que te entregue algo precioso que calcula mal. Las reglas de negocio nunca están completas en el pedido inicial, y un agente que asume en vez de preguntar te devuelve un problema con buena tipografía.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> leer el cambio antes de integrarlo. Cuando el agente trabaja solo durante horas, la tentación es revisar el resultado final en pantalla y darlo por bueno. Revisa el conjunto de cambios archivo por archivo, aunque sea rápido. No es desconfianza del modelo: es que ahora el volumen de cambios que puede generar en una noche es mayor que el que alcanzas a revisar en una mañana, y ese desbalance es nuevo.</p>
+      </div>
+
+      <h2>3. Trabajos grandes que corren de noche</h2>
+
+      <p>La tercera es la que más cambia la planeación. Un trabajo largo ya no necesita tu máquina ni tu presencia: se encarga, corre en la nube y amanece con el resultado y su bitácora.</p>
+
+      <p>Eso mueve qué tipo de tareas vale la pena empezar. Migrar una convención en 200 archivos, escribir la batería de pruebas que nadie ha escrito, actualizar dependencias y arreglar lo que truene: todas son tareas donde el trabajo es tedioso pero verificable. Justo el perfil que quieres soltar de noche.</p>
+
+      <p>El encargo nocturno se escribe distinto a una petición normal. Necesita criterio de aceptación, límite y bitácora, porque no vas a estar ahí para corregir el rumbo:</p>
+
+      <pre><code>Trabajo nocturno. No voy a estar disponible para preguntas.
+
+Objetivo: [una sola frase, verificable].
+
+Alcance:
+- Puedes tocar: [rutas].
+- No toques: [rutas, migraciones, configuración, secretos].
+
+Criterio de terminado (los tres deben cumplirse):
+1. [Comando de verificación] pasa sin errores.
+2. [Segunda verificación objetiva].
+3. No hay cambios fuera de las rutas autorizadas.
+
+Si te topas con una decisión que no puedes tomar sin mí:
+detente, no adivines, y déjalo anotado como pendiente.
+Prefiero avanzar 60% bien que 100% con una decisión
+inventada.
+
+Entrega al terminar:
+- Resumen de qué hiciste, en español, para alguien que no
+  vio el proceso.
+- Lista de decisiones que tomaste y por qué.
+- Lista de pendientes que dejaste y qué te faltó para
+  resolverlos.
+- Los riesgos que detectaste aunque no fueran parte del
+  encargo.</code></pre>
+
+      <p>Ese "prefiero 60% bien" es la línea más importante del prompt. Sin ella, un agente que trabaja seis horas sin supervisión toma cuarenta decisiones pequeñas y tú te enteras de todas al mismo tiempo, cuando ya están entrelazadas.</p>
+
+      <h2>En qué orden vale la pena adoptarlas</h2>
+
+      <p>La tentación es ir directo a los trabajos nocturnos, porque es lo que suena impresionante. Es el orden equivocado.</p>
+
+      <p>Empieza por el paquete de rol, aunque no sea la actualización más vistosa: es la que define los límites y las verificaciones, y sin esos dos las otras dos son peligrosas. Sigue con los sitios internos, que son de bajo riesgo y te enseñan cómo pide las cosas el agente cuando le falta información. Y hasta que ya confíes en cómo se comporta con supervisión, suéltale la noche.</p>
+
+      <p>Si vienes de Claude Code, el salto conceptual es corto y vale compararlos con calma; <a href="/guias/empezar-con-un-agente-de-codex/">la guía de arranque de Codex</a> cubre el setup, y <a href="/guias/deja-de-ser-ninera-de-claude/">esta otra</a> trata el mismo problema de fondo: cómo dejar de vigilar al agente sin perder el control de lo que hace.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

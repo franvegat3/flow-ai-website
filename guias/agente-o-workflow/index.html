@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Agente o workflow? Cuál necesitas de verdad — Guías Flow AI</title>
+  <meta name="description" content="Una sola pregunta te dice si tienes que construir un agente o basta con un flujo simple. La diferencia en palabras llanas, cuándo usar cada uno, y una hoja que elige por ti." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/agente-o-workflow/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="¿Agente o workflow? Cuál necesitas de verdad" />
+  <meta property="og:description" content="Una sola pregunta te dice si tienes que construir un agente o basta con un flujo simple. La diferencia en palabras llanas, cuándo usar cada uno, y una hoja que elige por ti." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/agente-o-workflow/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Agentes</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Agentes</span><span class="tag">Automatización</span></div>
+      <h1>¿Agente o workflow? Cuál necesitas de verdad</h1>
+      <p class="lead">Una sola pregunta te dice si tienes que construir un agente o basta con un flujo simple. La diferencia en palabras llanas, cuándo usar cada uno, y una hoja que elige por ti.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La pregunta llega siempre igual: "queremos un agente que haga esto". Y en ocho de cada diez casos, lo que describen después es un flujo de cinco pasos fijos que no necesita ningún agente.</p>
+
+      <p>Equivocarse de lado es caro en las dos direcciones. Un agente donde bastaba un flujo te cuesta permisos, bitácora, revisión y una caja negra que nadie sabe defender cuando falla. Un flujo donde hacía falta un agente te cuesta seis meses de estar parchando excepciones hasta que el equipo deja de usarlo.</p>
+
+      <p>Hay una sola pregunta que separa los dos casos, y una hoja para cuando la pregunta no basta.</p>
+
+      <h2>La pregunta</h2>
+
+      <p><strong>¿Puedes escribir hoy, en una servilleta y sin correr nada, todos los caminos que puede tomar este proceso?</strong></p>
+
+      <p>Si la respuesta es sí, es un workflow. Tú ya sabes la secuencia; lo único que falta es que alguien la ejecute rápido y sin equivocarse.</p>
+
+      <p>Si la respuesta es no —porque el paso tres depende de lo que se encontró en el paso dos, y no sabes de antemano cuántas ramas hay— es un agente. El modelo tiene que decidir el camino sobre la marcha porque nadie puede escribirlo por adelantado.</p>
+
+      <p>Ojo con la trampa: mucha gente contesta "no" cuando la respuesta honesta es "sí, pero son diez caminos y me da flojera escribirlos". Diez caminos conocidos son un workflow con diez ramas, no un agente. La diferencia no es el número de caminos, es si los conoces.</p>
+
+      <h2>Los cuatro flujos que resuelven la mayoría de los casos</h2>
+
+      <p>Antes de saltar al agente vale la pena ver lo que un workflow ya puede hacer, porque la gente subestima cuánto cabe aquí.</p>
+
+      <ul>
+        <li><strong>El encadenado.</strong> Salida de un paso, entrada del siguiente. Extrae los datos del correo, valida contra el catálogo, redacta la respuesta. Cada paso hace una cosa y se puede revisar solo.</li>
+        <li><strong>El de ruteo.</strong> Un primer paso clasifica y manda a la rama que toca. Los tickets de facturación por acá, los técnicos por allá. Clasificar es la tarea donde el modelo brilla y el ruteo es determinista: sabes exactamente a dónde puede ir cada cosa.</li>
+        <li><strong>El paralelo.</strong> Tres revisiones distintas del mismo documento al mismo tiempo, y al final se juntan. Sirve cuando quieres criterios independientes que no se contaminen entre sí, como en una revisión legal, de marca y de datos.</li>
+        <li><strong>El de doble pasada.</strong> Uno produce, otro critica contra un criterio explícito, el primero corrige. Es el que más sube la calidad y el que casi nadie monta, porque exige escribir el criterio de evaluación.</li>
+      </ul>
+
+      <p>Los cuatro son predecibles, se auditan paso por paso, y cuando fallan sabes en cuál renglón. Esa propiedad es la que pierdes al subir a agente, y hay que perderla a cambio de algo.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> preguntar qué pasa cuando falla, antes de elegir. En un flujo, la falla es visible: se rompió el paso cuatro. En un agente, la falla es que entregó algo plausible por un camino que nadie vio. Si tu proceso toca dinero, clientes o algo irreversible, y todavía no tienes forma de ver qué hizo el agente y por qué, la respuesta correcta es workflow aunque el proceso parezca pedir agente.</p>
+      </div>
+
+      <h2>La hoja que elige por ti</h2>
+
+      <p>Ocho preguntas. Cada sí suma un punto. Contéstalas del proceso como es hoy, no como te gustaría que fuera.</p>
+
+      <ol>
+        <li>¿El siguiente paso cambia según lo que devolvió el anterior, de formas que no puedes enumerar?</li>
+        <li>¿El número de vueltas es distinto en cada caso y no lo sabes de antemano?</li>
+        <li>¿Hace falta buscar información que no está en un lugar fijo?</li>
+        <li>¿Hay que reintentar con otro enfoque cuando algo no da resultado?</li>
+        <li>¿La entrada llega en formatos y calidades muy distintas cada vez?</li>
+        <li>¿Un humano experto tarda más de veinte minutos y toma varias decisiones intermedias?</li>
+        <li>¿Intentaste dibujar el diagrama y te salieron más de seis ramas de excepción?</li>
+        <li>¿El resultado bueno se reconoce cuando lo ves, pero no se puede describir como una regla?</li>
+      </ol>
+
+      <p>Cero a dos puntos: workflow, sin discusión. Tres a cinco: workflow con un paso de juicio del modelo adentro —normalmente el de ruteo o el de doble pasada—. Seis a ocho: agente, y ahora sí toca hablar de límites, permisos y bitácora antes de escribir nada.</p>
+
+      <p>La lectura importante de la hoja: si sacaste seis puntos pero el proceso toca algo irreversible, no construyas el agente todavía. Construye el workflow de la parte que sí es predecible, y deja la parte incierta en manos de una persona. Casi siempre resulta que el 70% del proceso era mecánico y solo un tramo requería criterio.</p>
+
+      <h2>El prompt para el caso concreto</h2>
+
+      <pre><code>Ayúdame a decidir entre un workflow y un agente. No propongas
+soluciones hasta terminar el diagnóstico.
+
+Mi proceso, como pasa hoy: [descríbelo en cuatro o cinco líneas]
+
+Primero hazme estas preguntas, una a la vez, y espera respuesta:
+1. Dame tres casos reales recientes de este proceso, incluyendo uno
+   que se haya salido de lo normal.
+2. ¿En qué punto exacto las tres corridas dejaron de parecerse?
+3. ¿Qué sistemas hay que tocar y en cuáles se puede escribir, no
+   solo leer?
+4. ¿Qué pasa si sale mal y nadie se da cuenta hasta el día
+   siguiente?
+5. ¿Quién va a revisar lo que produzca, y cuánto tiempo tiene al día
+   para eso?
+
+Con mis respuestas, entrégame:
+
+A. VEREDICTO. Workflow o agente. Una sola respuesta, sin "depende".
+   Si es workflow, di cuál de estos cuatro: encadenado, de ruteo,
+   paralelo o de doble pasada.
+B. EL DIAGRAMA. Los pasos concretos, con las ramas que sí existen
+   según los casos que te di.
+C. LA FRONTERA. Qué parte del proceso queda automatizada y qué parte
+   sigue siendo de una persona, y por qué esa línea y no otra.
+D. LOS LÍMITES. Qué no debe poder hacer nunca sin aprobación.
+E. LA VERSIÓN DE UNA SEMANA. Qué construyo primero para saber si
+   esto funciona, sin construirlo completo.
+F. LA SEÑAL DE QUE ME EQUIVOQUÉ DE LADO. Qué voy a ver en el primer
+   mes si elegí mal, en cada dirección.
+
+Si de mis respuestas concluyes que el proceso está mal diseñado y
+automatizarlo sería un error, dilo en la primera línea.</code></pre>
+
+      <h2>Por qué la respuesta prudente casi siempre es empezar abajo</h2>
+
+      <p>Un agente tiene tres costos que no aparecen en la propuesta: los permisos que hay que dar, la bitácora que alguien tiene que poder leer, y las primeras semanas en que una persona revisa todo lo que hizo. Ninguno de los tres se ve en la demostración y los tres llegan puntuales.</p>
+
+      <p>El workflow no tiene ese costo y tiene una ventaja que se subestima: te obliga a escribir el proceso. Ese documento —el orden real, las excepciones, quién aprueba qué— es el activo. Si algún día subes a agente, es lo que le vas a dar como reglas. Y si nunca subes, resulta que era lo que te faltaba desde el principio.</p>
+
+      <p>Si además estás dudando si lo tuyo es solo escribir el criterio y ya, esa tercera capa está en <a href="/guias/skill-workflow-o-agente/">skill, workflow o agente</a>. Y cuando ya tengas el veredicto de agente, pásale <a href="/guias/plantilla-de-guardrails-para-agentes/">la plantilla de guardrails</a> antes de conectarlo a nada.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

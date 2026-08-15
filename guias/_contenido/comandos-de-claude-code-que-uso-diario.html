@@ -1,0 +1,117 @@
+      <p>Casi todo el mundo usa Claude Code como una caja de chat con permisos de escritura: abre la terminal, pide algo, espera. Funciona. Pero a la tercera hora del día ya se le acabó el contexto, no sabe qué cambió, y va a pagar por tokens que se fueron en repetirle cosas que ya le había dicho.</p>
+
+      <p>Los comandos son la diferencia. No son atajos de teclado bonitos: son las palancas que deciden qué sabe Claude, qué está autorizado a tocar y cuánto te va a costar la sesión.</p>
+
+      <p>Estos son los 13 que toco todos los días, agrupados por el momento en que los necesitas de verdad. La lista completa vive en la <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener">referencia oficial de comandos</a>; esta es la parte que sí se usa.</p>
+
+      <h2>Tres cosas que hay que saber antes</h2>
+
+      <ul>
+        <li>Un comando solo se reconoce <strong>al principio del mensaje</strong>. Si lo pones a la mitad de un párrafo, es texto.</li>
+        <li>Escribes <code>/</code> y aparece la lista; sigue escribiendo letras y se filtra. No hace falta memorizar nada.</li>
+        <li>Lo que va después del nombre del comando son sus argumentos. Y las skills se pueden encadenar, hasta seis en un mismo mensaje.</li>
+      </ul>
+
+      <h2>Al arrancar la sesión</h2>
+
+      <p>Los primeros tres minutos deciden el resto. Aquí es donde le pones el terreno.</p>
+
+      <div class="plugin-card">
+        <h3>1. Sumar carpetas <code>/add-dir</code></h3>
+        <p>Agrega otra carpeta de trabajo al alcance de la sesión. Es el que uso cuando el repo del producto y el repo de la documentación viven separados y necesito que Claude lea los dos sin que yo ande copiando archivos.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> arrancas en el repo del backend y le sumas la carpeta donde tienes los contratos del cliente para que valide que el endpoint hace lo que se firmó.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Editar la memoria <code>/memory</code></h3>
+        <p>Abre los archivos <code>CLAUDE.md</code> y la memoria automática. Es el comando más rentable de todos y el que menos gente usa: cada cosa que escribes ahí deja de explicarse en cada sesión.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> Claude vuelve a correr el linter equivocado. Abres <code>/memory</code>, anotas cuál es el bueno, y no lo repite. Eso da para su propia guía: <a href="/guias/plantilla-de-claude-md/">la plantilla de CLAUDE.md que se mejora sola</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Elegir modelo <code>/model</code></h3>
+        <p>Cambia el modelo y lo deja guardado como tu default. La decisión no es "el mejor siempre": es modelo pesado para arquitectura y para decisiones que se pagan caro si salen mal, modelo ligero para lo mecánico.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> el rediseño del esquema de base de datos con el modelo grande; el renombrado de 200 variables, con el rápido.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Fijar permisos <code>/permissions</code></h3>
+        <p>Administra las reglas de permitir, preguntar y negar por herramienta. En una operación real esto no es paranoia: es que el agente no borre una rama ni mande un correo mientras tú fuiste por café.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> permitir <code>git status</code> y <code>npm test</code> sin preguntar, y dejar en "preguntar" cualquier cosa que escriba fuera del repo.</p>
+      </div>
+
+      <h2>Mientras estás trabajando</h2>
+
+      <p>Aquí es donde se pierde o se gana la sesión. Los cuatro de abajo son los que evitan que tengas que empezar de cero.</p>
+
+      <div class="plugin-card">
+        <h3>5. Ver el contexto <code>/context</code></h3>
+        <p>Dibuja el uso de contexto como una cuadrícula de colores. Es el tablero de gasolina. Sin él te enteras de que ibas lleno cuando Claude ya empezó a olvidar la mitad de la conversación.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> lo corro antes de meterle un archivo grande, para decidir si primero limpio o si aguanta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Liberar contexto <code>/compact</code></h3>
+        <p>Resume la conversación para liberar espacio. Y acepta instrucciones: no es lo mismo un resumen genérico que decirle qué parte tiene que sobrevivir intacta.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> <code>/compact conserva las decisiones de arquitectura y los nombres de las tablas; el debugging ya no importa</code>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Ver el diff <code>/diff</code></h3>
+        <p>Abre un visor interactivo de los cambios sin confirmar. Suena obvio y aun así la mayoría revisa el trabajo del agente leyendo el chat, que es exactamente donde el agente te va a decir que todo salió bien.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> después de un cambio que tocó ocho archivos, es la única forma de ver si además tocó un noveno que no le pediste.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Deshacer <code>/rewind</code></h3>
+        <p>Regresa el código y la conversación a un punto anterior. Es el comando que cambia tu relación con el riesgo: si puedes volver, dejas que intente cosas más ambiciosas.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> el refactor se fue por un camino que no era; en lugar de pelearte quince mensajes, regresas al punto bueno y replanteas.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> <code>/compact</code> no es gratis. Comprimir cuesta tokens y siempre pierde matiz. Si la tarea que sigue no tiene nada que ver con la anterior, <code>/clear</code> es más barato y más limpio que compactar. Compacta cuando necesitas continuidad; limpia cuando cambias de tema.</p>
+      </div>
+
+      <h2>Cuando quieres delegar</h2>
+
+      <p>Esta es la parte que separa a quien usa Claude Code de quien lo opera. Una sesión no tiene que hacer todo en línea recta.</p>
+
+      <div class="plugin-card">
+        <h3>9. Mandar una tarea aparte <code>/subtask</code></h3>
+        <p>Entrega un pendiente lateral a un subagente. La ganancia real no es velocidad: es que la investigación pesada no te ensucie el contexto de la sesión principal.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> "revisa cómo está implementada la autenticación en todo el repo" se va a un subagente y regresa con la conclusión, no con los 40 archivos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. Mandarlo al fondo <code>/background</code></h3>
+        <p>Desprende la sesión para que corra como agente en segundo plano. Para lo que tarda y no necesita que estés viendo.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> la migración de estilos de toda una carpeta corre sola mientras tú atiendes otra cosa en la terminal de al lado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>11. Ver qué trae corriendo <code>/tasks</code></h3>
+        <p>Lista el trabajo en segundo plano de la sesión. Complemento obligado del anterior: si delegas y no revisas, en algún momento vas a tener tres agentes editando el mismo archivo.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> antes de hacer commit, checas que no quede nada a medias corriendo.</p>
+      </div>
+
+      <h2>Antes de cerrar</h2>
+
+      <div class="plugin-card">
+        <h3>12. Revisión de seguridad <code>/security-review</code></h3>
+        <p>Revisa el diff buscando vulnerabilidades, y acepta <code>--fix</code> para aplicar arreglos. Si estás construyendo con IA sin saber leer código a fondo, este es tu piso mínimo. Lo desarrollo en <a href="/guias/plugin-que-caza-codigo-inseguro/">el plugin gratis que caza código inseguro</a>.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> el formulario que el agente conectó a la base de datos sin sanitizar nada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>13. Revisión de código <code>/code-review</code></h3>
+        <p>Revisa el diff buscando errores de correctitud y cosas por simplificar. Recibe un nivel de esfuerzo, y puede dejar los comentarios directo en el pull request.</p>
+        <p class="plugin-for"><strong>Ejemplo real:</strong> en un equipo chico, es el revisor que no existe. No sustituye a un humano, pero atrapa lo que un humano cansado deja pasar.</p>
+      </div>
+
+      <h2>El error de siempre: aprendérselos todos</h2>
+
+      <p>La lista oficial trae más de setenta comandos. Memorizarlos no sirve de nada, porque el que no usas en la semana se te olvida.</p>
+
+      <p>Lo que sí funciona es adoptarlos de dos en dos. Empieza por <code>/memory</code> y <code>/context</code>, que son los que atacan el problema real —que Claude no sabe lo que tú sabes, y que el contexto se acaba—. Cuando esos dos ya sean reflejo, agrega <code>/rewind</code> y <code>/diff</code>, que son los que te dan permiso de arriesgar.</p>
+
+      <p>El resto llega solo. Y cuando ya tengas los seis en el cuerpo, el paso siguiente no es un comando: es dejar de dar instrucciones y empezar a repartir trabajo entre varios agentes. Eso está en <a href="/guias/workflows-dinamicos-de-claude-code/">los workflows dinámicos</a>.</p>

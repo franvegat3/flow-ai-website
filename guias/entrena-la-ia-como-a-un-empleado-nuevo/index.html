@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrena a la IA como a un empleado nuevo — Guías Flow AI</title>
+  <meta name="description" content="El MIT encontró que el 95% de las empresas no le saca nada a la IA, y casi nunca es culpa del modelo. Cómo entrenarla como a alguien que acaba de entrar: los 3 niveles y el ciclo de retroalimentación." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/entrena-la-ia-como-a-un-empleado-nuevo/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Entrena a la IA como a un empleado nuevo" />
+  <meta property="og:description" content="El MIT encontró que el 95% de las empresas no le saca nada a la IA, y casi nunca es culpa del modelo. Cómo entrenarla como a alguien que acaba de entrar: los 3 niveles y el ciclo de retroalimentación." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/entrena-la-ia-como-a-un-empleado-nuevo/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Negocio</span><span class="tag">Empezar</span></div>
+      <h1>Entrena a la IA como a un empleado nuevo</h1>
+      <p class="lead">El MIT encontró que el 95% de las empresas no le saca nada a la IA, y casi nunca es culpa del modelo. Cómo entrenarla como a alguien que acaba de entrar: los 3 niveles y el ciclo de retroalimentación.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Circuló mucho un reporte del MIT sobre adopción de IA en empresas, y el número que se quedó en la cabeza de todos fue ese: alrededor del 95% de los pilotos de IA generativa no producían ningún impacto medible en los resultados. Se leyó en todos lados como "la IA no sirve".</p>
+
+      <p>No es eso lo que dice. Los modelos que usan esas empresas son los mismos que usan las que sí están sacando valor. Lo que cambia no es la herramienta: es que unas la tratan como software y otras la tratan como alguien que acaba de entrar a trabajar.</p>
+
+      <p>Y es una distinción muy práctica. A un software lo instalas. A una persona nueva la induces, le explicas el puesto, le enseñas ejemplos, le das acceso por partes y la corriges durante tres meses. Nadie espera que un empleado nuevo rinda el primer día sin nada de eso, y sin embargo eso es exactamente lo que se espera de la IA.</p>
+
+      <h2>Por qué se cae la mayoría de los pilotos</h2>
+
+      <p>El patrón es idéntico en casi todas las empresas donde entro. Alguien prueba la herramienta, le pide algo real, recibe una respuesta genérica correcta pero inservible, y concluye que "todavía no está para nuestro caso". El piloto muere ahí, sin que nadie haya escrito una sola línea de contexto.</p>
+
+      <p>Compáralo con contratar a un analista senior excelente, sentarlo el lunes sin decirle a qué se dedica la empresa, sin darle acceso a nada y sin enseñarle un solo entregable anterior, y pedirle el reporte de cierre. Va a entregar algo mediocre, y nadie diría que el problema fue la contratación.</p>
+
+      <p>La inducción no es un trámite. Es literalmente el trabajo.</p>
+
+      <h2>Nivel 1: la inducción</h2>
+
+      <p>Lo que le cuentas a cualquiera que entra, sin importar el puesto. Esto se escribe una vez y sirve para todos los usos de la empresa.</p>
+
+      <ul>
+        <li><strong>Qué vende la empresa y a quién.</strong> Con nombres de producto, segmentos reales y tamaños de operación, no con la frase de la página de inicio.</li>
+        <li><strong>El vocabulario interno.</strong> Las siglas, los nombres de los sistemas, cómo le dicen aquí a las cosas. Este apartado es el que más rápido mejora las respuestas y el que nadie escribe.</li>
+        <li><strong>Quién es quién.</strong> Las áreas, quién decide qué, a quién se le entrega cada cosa.</li>
+        <li><strong>Lo que aquí no se hace.</strong> Las políticas duras: qué no se promete a un cliente, qué descuento no existe, qué información no sale de la empresa.</li>
+      </ul>
+
+      <p>Va en un solo documento en el conocimiento del proyecto o del espacio de trabajo. Media hora de escritura, y es la diferencia entre respuestas de manual de negocios y respuestas sobre tu negocio.</p>
+
+      <h2>Nivel 2: el manual del puesto</h2>
+
+      <p>Aquí ya no hablamos de la empresa sino de una tarea específica: la cotización, la respuesta al cliente, el reporte semanal, la revisión del contrato. Un manual por tarea, no uno gigante.</p>
+
+      <p>Cuatro cosas, y la tercera es la que casi siempre falta:</p>
+
+      <ol>
+        <li><strong>El proceso real,</strong> como lo hace hoy la persona que lo hace bien. No el proceso del diagrama de calidad: el de verdad, con los atajos y las excepciones.</li>
+        <li><strong>El criterio de aceptación.</strong> Cómo sabes que quedó bien. Si no lo puedes escribir, tampoco lo puedes delegar a un humano, y ahí está el problema de fondo.</li>
+        <li><strong>Dos ejemplos buenos y uno malo.</strong> El malo con la explicación de por qué está mal. Un ejemplo de trabajo rechazado enseña más que tres páginas de instrucciones, y es lo que nadie guarda.</li>
+        <li><strong>Los límites de decisión.</strong> Qué resuelve solo, qué consulta contigo, qué no toca nunca.</li>
+      </ol>
+
+      <p>Con el nivel 1 y el 2 puestos, la calidad de las respuestas cambia de forma que la gente no se espera. No porque el modelo se haya vuelto más listo, sino porque por primera vez tiene con qué.</p>
+
+      <h2>Nivel 3: autonomía supervisada</h2>
+
+      <p>El tercer nivel es dar accesos: al CRM, al calendario, a la base de datos, al correo. Es donde deja de responder y empieza a hacer.</p>
+
+      <p>Y es donde más se equivoca la gente, por las dos puntas. Unos no llegan nunca —llevan un año pegando información a mano en un chat— y otros conectan todo el primer día, incluida la capacidad de escribir y de mandar correos.</p>
+
+      <p>La forma de hacerlo es la misma que con una persona: primero lectura, luego borradores, luego ejecución en lo reversible, y las acciones irreversibles nunca sin un humano en medio. Mandar un correo a un cliente, aplicar un descuento y borrar un registro no se delegan porque haya funcionado bien un mes.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> los niveles no se brincan. La mayoría de los pilotos que veo muertos empezaron en el nivel 3 —conectaron herramientas y armaron un agente— sin haber escrito nunca el nivel 1. Un agente con acceso a todo y sin contexto de la empresa no es un empleado autónomo: es alguien que acaba de llegar tomando decisiones con la información de nadie. La secuencia importa más que la sofisticación.</p>
+      </div>
+
+      <h2>El ciclo de retroalimentación</h2>
+
+      <p>Los tres niveles te dan el arranque. Lo que hace que un sistema mejore en vez de estancarse es el ciclo, y es la pieza que casi ninguna empresa construye.</p>
+
+      <p>Todo el mundo corrige a la IA. Nadie escribe la corrección. Se corrige en el chat, funciona, se cierra la ventana, y el lunes vuelve a pasar lo mismo. Eso no es entrenar: es repetirse.</p>
+
+      <p>El ciclo tiene cinco pasos y se corre una vez por semana:</p>
+
+      <ol>
+        <li><strong>Corre la tarea</strong> con el contexto que ya tienes.</li>
+        <li><strong>Revisa y corrige</strong> como corregirías a alguien nuevo: no solo qué está mal, sino qué criterio te hizo verlo.</li>
+        <li><strong>Aplica la regla de las dos veces:</strong> si corriges lo mismo por segunda vez, deja de corregirlo en el chat y escríbelo en el manual. Sin excepción.</li>
+        <li><strong>Guarda el caso.</strong> El entregable rechazado y el corregido se van a la carpeta de ejemplos. Con el tiempo esa carpeta vale más que las instrucciones.</li>
+        <li><strong>Prueba contra lo viejo.</strong> Vuelve a correr dos casos que ya funcionaban. Es la única forma de saber si la regla nueva rompió algo, y es el paso que todos se saltan.</li>
+      </ol>
+
+      <p>Para el paso tres uso este prompt, porque convertir una corrección en regla escrita es más difícil de lo que parece:</p>
+
+      <pre><code>Acabo de corregirte esto:
+[pega la corrección que hiciste]
+
+Conviértelo en una regla permanente para tu manual.
+Entrégame:
+1. La regla en una frase, en imperativo.
+2. Cuándo aplica y cuándo NO aplica. Sé específico: una
+   regla sin excepciones escritas se sobreaplica.
+3. Un ejemplo de trabajo que la cumple y uno que no.
+4. Si esta regla contradice o hace redundante alguna que
+   ya tienes en las instrucciones, dímelo y propón cómo
+   quedaría el texto unificado.
+
+No agregues nada que yo no haya corregido.</code></pre>
+
+      <p>Ese último punto —revisar contradicciones— es el que evita que a los seis meses tengas un manual de cuarenta reglas donde la doce anula a la treinta y uno.</p>
+
+      <div class="callout-box">
+        <p><strong>Sin dueño no hay ciclo:</strong> esto necesita un nombre y media hora fija a la semana en el calendario de una persona. No un comité, no "el área de sistemas", no "entre todos". El único predictor confiable que he visto de que una implementación de IA siga viva a los seis meses es que alguien tenga esa media hora agendada y le rinda cuentas a alguien.</p>
+      </div>
+
+      <h2>Cómo se ve cuando sí está funcionando</h2>
+
+      <p>No se ve como un tablero impresionante. Se ve aburrido: los prompts se vuelven cortos, las correcciones bajan de volumen, y la gente nueva del equipo produce trabajo aceptable desde la primera semana porque hereda el manual en lugar de aprender por osmosis.</p>
+
+      <p>Ese último efecto es el que casi nadie anticipa y el que más vale. El manual que escribiste para la IA resulta ser el manual de incorporación que tu empresa nunca tuvo. En varias implementaciones ese ha sido el beneficio más grande, y ni siquiera era el objetivo.</p>
+
+      <p>Empieza por una sola tarea. La que más se repite y más te choca. Escribe su nivel 1 y su nivel 2 esta semana, corre el ciclo cuatro veces, y compara. Si quieres armar bien la parte del contexto, <a href="/guias/ingeniero-de-contexto/">esta guía</a> tiene la plantilla completa, y <a href="/guias/ciclo-de-retroalimentacion/">esta otra</a> desarrolla el ciclo a fondo.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

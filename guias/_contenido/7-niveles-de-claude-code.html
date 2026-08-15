@@ -1,0 +1,93 @@
+      <p>Casi todos los que instalan Claude Code se quedan en el mismo lugar: abren la terminal, escriben lo que quieren, se pelean un rato con el resultado y cierran. Funciona lo suficiente para no cambiar nada. Y ese es exactamente el problema.</p>
+
+      <p>Claude Code no es una herramienta con una forma de usarse. Es una escalera. Cada escalón cambia qué tipo de trabajo le puedes soltar, y los escalones de arriba no se parecen en nada a los de abajo: en el nivel 1 le pides que escriba algo, en el nivel 7 le dejas un proceso corriendo y revisas el resultado al día siguiente.</p>
+
+      <p>Abajo están los siete, con la señal de que ahí estás parado, el archivo que hay que tocar para subir, y el ejercicio concreto de esta semana. No los saltes: cada nivel arregla el problema que hace ruidoso al siguiente.</p>
+
+      <h2>La escalera, en una frase</h2>
+
+      <p>Vas subiendo conforme dejas de darle instrucciones y empiezas a darle entorno. Prompt, contexto, permisos, accesos, procedimientos, delegación y por último orquestación.</p>
+
+      <p>La mayoría de la gente que conozco vive entre el 2 y el 3. Los que ya montaron algo que corre solo están en el 6. El 7 todavía es raro y por eso rinde tanto.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir de nivel no es instalar más cosas. Es escribir lo que ya sabes en un archivo que Claude lea solo. Si tu setup crece en integraciones pero tú sigues explicando lo mismo en cada sesión, no subiste de nivel: nada más te compraste más superficie que mantener.</p>
+      </div>
+
+      <h2>Cómo saber en qué nivel estás</h2>
+
+      <p>Hay una prueba de diez segundos. Abre una sesión nueva, en frío, y pídele algo real de tu trabajo en una sola frase, sin explicar nada.</p>
+
+      <ul>
+        <li>Si te pregunta de qué se trata el proyecto: nivel 1.</li>
+        <li>Si entiende el proyecto pero te pide permiso en cada comando: nivel 2.</li>
+        <li>Si trabaja solo pero no puede ver tus herramientas reales: nivel 3.</li>
+        <li>Si ve tus herramientas pero hace el proceso a su manera cada vez: nivel 4.</li>
+        <li>Si repite tu proceso igual siempre, pero solo puede hacer una cosa a la vez: nivel 5.</li>
+        <li>Si reparte el trabajo entre varios y junta el resultado: nivel 6.</li>
+        <li>Si terminó sin ti: nivel 7.</li>
+      </ul>
+
+      <h2>Los 7 niveles</h2>
+
+      <div class="plugin-card">
+        <h3>1. Prompting: pedir bien</h3>
+        <p>El nivel donde Claude Code es una terminal con un modelo adentro. Le escribes, te contesta, tú decides. Aquí toda la calidad depende de cómo formules la petición: qué quieres, con qué restricciones, en qué formato, y contra qué se va a considerar terminado.</p>
+        <p>No es un nivel para menospreciar. Es el que sostiene a los otros seis: un mal prompt dentro de un agente automatizado nada más multiplica el error. Si tus peticiones son vagas, todo lo que construyas encima va a ser vago más rápido.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> toma tus tres peticiones más frecuentes y reescríbelas con la estructura completa de <a href="/guias/anatomia-del-prompt-perfecto/">rol, contexto, ejemplo, reglas y formato</a>. Guárdalas en un archivo de texto. Vas a notar que la mitad de tus quejas con el modelo eran ambigüedad tuya.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Contexto: el archivo <code>CLAUDE.md</code></h3>
+        <p>Aquí dejas de explicar lo mismo cada vez. <code>CLAUDE.md</code> es un archivo en la raíz del proyecto que Claude Code lee al arrancar cada sesión. Adentro va lo que un empleado nuevo necesitaría en su primer día: qué es este proyecto, cómo está organizado, con qué comandos se corre, qué convenciones se respetan y qué está prohibido tocar.</p>
+        <p>La diferencia se siente inmediato. En una operación de contenido, por ejemplo, ahí escribes que las miniaturas van en cierta carpeta, que los reportes se entregan en cierto formato y que nunca se publica sin aprobación. Deja de ser algo que tú repites y pasa a ser algo que el sistema sabe.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> corre <code>/init</code> dentro de tu proyecto para que Claude escriba un primer borrador leyendo los archivos, y después edítalo a mano. La parte de "no toques esto" la tienes que escribir tú: el modelo no la puede adivinar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Herramientas y permisos: dejarlo trabajar</h3>
+        <p>El nivel 3 es donde Claude deja de pedirte autorización para todo. Vive en <code>.claude/settings.json</code>, donde defines qué comandos puede correr sin preguntar y cuáles nunca. Correr las pruebas, leer archivos, consultar el estado del repositorio: eso se autoriza una vez. Borrar cosas o publicar en producción: eso se queda pidiendo permiso siempre.</p>
+        <p>Es el nivel que más gente evita por miedo, y es el que más tiempo devuelve. Un agente al que interrumpes cada 30 segundos no es un agente: es un autocompletado caro. La regla que uso: permito todo lo que sea reversible, bloqueo todo lo que no.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> revisa qué comandos te pidió permiso Claude en los últimos días y mete a la lista de permitidos los tres que aprobaste siempre sin pensarlo. Ese es el punto exacto donde la fricción no te estaba protegiendo de nada.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. MCP: conectarlo a tus sistemas reales</h3>
+        <p>Model Context Protocol es el estándar que le da a Claude acceso a herramientas externas: tu base de datos, tu CRM, tu gestor de proyectos, tu navegador. Se agregan con <code>claude mcp add</code> y quedan disponibles como herramientas más.</p>
+        <p>Aquí es donde el sistema empieza a valer dinero. Un agente que solo lee archivos de tu disco está adivinando cómo va la operación. Un agente conectado a tu tablero de proyectos y a tu base de datos sabe cómo va. La diferencia entre "escríbeme un reporte" y "escríbeme el reporte con los números de esta semana" es exactamente un servidor MCP.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> conecta un solo servidor, el de la herramienta donde vive el dato que más copias y pegas a mano. En <a href="/guias/24-cosas-para-instalar-en-claude/">esta guía</a> están los que yo instalaría primero, con su comando.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Skills: enseñarle tu procedimiento</h3>
+        <p>Una skill es una carpeta con un archivo <code>SKILL.md</code> adentro, en <code>.claude/skills/</code>, que describe cómo se hace una tarea específica en tu casa. Claude la carga sola cuando detecta que aplica, sin que se la invoques.</p>
+        <p>La distinción con el nivel 2 importa: <code>CLAUDE.md</code> es contexto permanente que se lee siempre; una skill es un procedimiento que se activa cuando toca. Si le metes tus 15 procesos al <code>CLAUDE.md</code>, le llenas la cabeza de cosas irrelevantes en cada sesión. Si los conviertes en skills, cada una aparece nada más cuando se necesita.</p>
+        <p>El buen candidato a skill es el proceso que haces igual siempre, con criterios que se pueden escribir: cómo se arma el reporte mensual, cómo se revisa un guion antes de grabarlo, qué se valida antes de subir un anuncio.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> la próxima vez que le corrijas algo a Claude tres veces seguidas, no lo corrijas la cuarta. Escribe la corrección en un <code>SKILL.md</code>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Subagentes: delegar en paralelo</h3>
+        <p>Un subagente es una sesión con su propia ventana de contexto, sus propias herramientas y su propia instrucción, que la sesión principal lanza y luego recoge. Se definen en <code>.claude/agents/</code>.</p>
+        <p>Sirven para dos cosas distintas y conviene no confundirlas. La primera es paralelismo: cinco búsquedas al mismo tiempo tardan lo que la más lenta, no lo que la suma. La segunda, y más importante, es aislamiento: el subagente se lleva toda la basura de la exploración a su propio contexto y solo devuelve la conclusión. La sesión principal se mantiene limpia y por lo tanto sigue siendo buena.</p>
+        <p>En la práctica esto es lo que te deja atacar trabajos grandes sin que la calidad se degrade a la mitad. También es donde empiezan los errores caros: si le das a un subagente permisos de escritura y una instrucción ambigua, va a hacer un desastre en paralelo.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> arma un solo subagente de investigación, de puros permisos de lectura, y úsalo para la parte de tu trabajo que consiste en revisar muchas fuentes y traer un resumen.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Equipos de agentes y loops: que termine sin ti</h3>
+        <p>El último nivel no es un agente más grande. Es un ciclo: algo que descubre trabajo, lo reparte, verifica el resultado contra un criterio y vuelve a empezar hasta que se cumple la condición de salida. Tú ya no escribes las instrucciones una por una, escribes el bucle y la condición.</p>
+        <p>Boris Cherny, que dirige Claude Code, describió su propio trabajo justo así: pasó de escribir código, a prompear varias sesiones en paralelo, a escribir loops que prompean a Claude. El salto de nivel es que el humano deja de ser el operador y pasa a ser el que diseña el circuito.</p>
+        <p>Lo que hace que este nivel funcione no es el modelo, es la verificación. Un loop sin forma automática de saber si el resultado está bien es una máquina de generar trabajo malo a gran velocidad. Necesitas pruebas, validaciones, un linter, un checador: algo determinista que diga sí o no sin que tú mires.</p>
+        <p class="plugin-for"><strong>Para subir esta semana:</strong> toma la tarea repetitiva más aburrida que tengas, escribe la condición exacta de "esto ya quedó" y móntale un loop con tope de iteraciones. La mecánica completa está en <a href="/guias/ingenieria-de-loops/">la guía de ingeniería de loops</a>.</p>
+      </div>
+
+      <h2>El error que hace que la gente se atore en el 3</h2>
+
+      <p>Casi nadie se atora por falta de capacidad técnica. Se atora porque los niveles 4 en adelante piden algo que el 1, 2 y 3 no piden: tener claro tu propio proceso.</p>
+
+      <p>Para escribir una skill tienes que saber cómo se hace bien la tarea. Para armar un subagente tienes que saber qué parte del trabajo es separable. Para montar un loop tienes que poder decir, sin ambigüedad, cuándo está terminado. Eso no es trabajo de IA: es trabajo de operación, y es el que la gente pospone.</p>
+
+      <p>Por eso la escalera premia a quien ya tiene procesos ordenados y castiga a quien no. Si tu operación vive en la cabeza de tres personas, los niveles altos no te van a servir de nada hasta que la bajes a texto.</p>
+
+      <p>Mi recomendación de ritmo: un nivel cada dos semanas, y no avances hasta que el anterior se sienta aburrido. El aburrimiento es la señal de que ya se automatizó lo evidente y toca subir. La prisa es la señal de que vas a construir tres capas encima de un piso que no está firme.</p>

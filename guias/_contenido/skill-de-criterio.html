@@ -1,0 +1,85 @@
+      <p>El primer borrador de cualquier modelo es el promedio de todo lo que se ha escrito sobre el tema. No es un defecto: es literalmente cómo funciona. Le pides un nombre para un producto y te da el nombre que cualquiera daría. Le pides el ángulo de una campaña y te da el ángulo que ya está en veinte anuncios de tu categoría.</p>
+
+      <p>El problema no es que esté mal. Es que está bien de la manera más predecible posible, y en un mercado donde todos usan la misma herramienta, lo predecible ya no distingue a nadie.</p>
+
+      <p>Esta skill existe para romper eso. No le pide al modelo que "sea creativo", porque esa instrucción no hace nada. Le pide que produzca su respuesta promedio, la nombre como tal, y después la use como lista de lo que tiene prohibido entregar.</p>
+
+      <h2>Qué hace, en una frase</h2>
+
+      <p>Obliga a Claude a escribir primero la respuesta obvia, marcarla como obvia, y solo entonces buscar la respuesta que sobrevive a tres filtros: que no la dé cualquiera, que sea específica de tu caso, y que aguante una objeción.</p>
+
+      <h2>La skill completa</h2>
+
+      <pre><code>---
+name: criterio
+description: Fuerza respuestas no promedio en tareas de juicio. Úsala
+  cuando el usuario pida ángulos, nombres, ideas, estrategia,
+  posicionamiento, un titular, un enfoque de campaña, o cuando rechace
+  algo por sonar genérico, obvio o hecho con inteligencia artificial.
+---
+
+Esta skill aplica a tareas de juicio, no a tareas de formato.
+
+Trabaja en cuatro pasos y muestra los cuatro.
+
+PASO 1 — EL PROMEDIO
+Escribe rápido las tres respuestas que darías sin pensar. Rotúlalas
+como "lo predecible". No las adornes: entre más honesto sea este paso,
+mejor sale el resto.
+
+PASO 2 — POR QUÉ SON PREDECIBLES
+Para cada una, di de dónde viene. Es el consejo estándar de la
+categoría, la estructura que usa todo el mundo, o la metáfora que ya
+está gastada. Nombra el patrón, no la respuesta.
+
+PASO 3 — LA LISTA NEGRA
+Convierte lo anterior en reglas explícitas de lo que ya no puedes usar
+en esta conversación: estructuras, palabras, ángulos y comparaciones
+quemadas. Escríbela como lista.
+
+PASO 4 — LA RESPUESTA
+Ahora responde de verdad, respetando la lista negra. La respuesta tiene
+que pasar los tres filtros y tú lo verificas por escrito:
+
+- ESPECIFICIDAD: usa al menos dos hechos del caso concreto del usuario
+  (su industria, su cliente, su restricción, su historia). Si no tienes
+  esos hechos, pídelos antes de escribir. No los inventes.
+- PROPIEDAD: si un competidor pudiera firmar esta respuesta sin cambiar
+  nada, no sirve. Explica en una línea por qué solo el usuario puede
+  decirla.
+- RESISTENCIA: escribe la mejor objeción contra tu respuesta y
+  contéstala. Si no puedes contestarla, cambia la respuesta.
+
+REGLAS
+- Nunca entregues solo el paso 4. El valor está en ver el contraste.
+- Nunca inventes datos, cifras, casos ni nombres para verse específico.
+  Un dato falso destruye el ejercicio completo.
+- Una sola respuesta final. No devuelvas cinco opciones para que el
+  usuario elija: eso es devolverle el trabajo.
+- Si después de los cuatro pasos la respuesta obvia sigue siendo la
+  mejor, dilo con esas palabras y explica por qué. Es un resultado
+  válido y poco frecuente.</code></pre>
+
+      <h2>Dónde va el archivo</h2>
+
+      <p>En Claude Code, dentro de tu proyecto: <code>.claude/skills/criterio/SKILL.md</code>. En la app de escritorio o en el navegador, se sube desde la sección de capacidades de la configuración. Es el mismo archivo en los dos lados.</p>
+
+      <p>Un detalle que importa más de lo que parece: la <code>description</code> incluye a propósito las palabras con las que uno rechaza un borrador, como "genérico" o "suena a inteligencia artificial". Así la skill se activa sola en el momento en que la necesitas, que es cuando ya viste algo que no te gustó, no cuando te acordaste de que la tenías instalada.</p>
+
+      <h2>Cómo se ve trabajando</h2>
+
+      <p>Un ejemplo real de forma, no de cifras. Una empresa de servicios industriales quería el ángulo de su campaña anual. Sin la skill, salió lo de siempre: años de experiencia, calidad garantizada, atención personalizada. Tres respuestas que podría firmar cualquiera de sus competidores, que es exactamente el criterio del filtro de propiedad.</p>
+
+      <p>Con la skill, el paso 2 nombró el patrón: todo el sector vende confianza genérica porque nadie quiere hablar de precio. La lista negra prohibió experiencia, calidad y personalización. Y el paso 4 obligó a usar hechos del caso, que en su operación era un dato que ellos daban por aburrido: el tiempo que tardan en mandar a alguien cuando algo se rompe de madrugada. Ese fue el ángulo. Estaba ahí desde el principio y nadie lo veía porque no sonaba a publicidad.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> darle hechos. La skill exige dos datos concretos de tu caso, y si no se los das, va a pedirlos. Ahí es donde la mayoría se rinde y vuelve a pedir "algo creativo". Si respondes con la restricción real, el cliente que sí tienes y lo que de verdad te distingue en la operación, la salida cambia por completo. La skill no inventa criterio: te obliga a poner el tuyo sobre la mesa.</p>
+      </div>
+
+      <h2>Cuándo no usarla</h2>
+
+      <p>Esta skill hace el trabajo más lento y más caro en tokens. En tareas de formato es un estorbo: para resumir una junta, ordenar un CSV, redactar una respuesta de servicio o armar una minuta, lo que quieres es exactamente la respuesta estándar. Ahí el promedio del mundo es la respuesta correcta.</p>
+
+      <p>Úsala donde el resultado depende de tener un punto de vista: posicionamiento, ángulos de anuncio, nombres, propuestas, la estructura de una oferta, la decisión entre dos caminos. Y si la respuesta que produce te incomoda un poco, es buena señal. Lo que no incomoda a nadie es justo lo que nadie recuerda.</p>
+
+      <p>Cuando quieras el complemento, la que va con esta es <a href="/guias/prueba-de-presion-de-4-preguntas/">la prueba de presión de cuatro preguntas</a>: una genera el criterio y la otra lo golpea.</p>

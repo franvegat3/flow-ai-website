@@ -1,0 +1,112 @@
+      <p>Casi todo el mundo conoce una: el <code>CLAUDE.md</code>. Y como es la única que conoce, mete ahí todo. Procedimientos de quince pasos, reglas que solo aplican a una carpeta, instrucciones de tono, cosas que deberían ser obligatorias y no lo son.</p>
+
+      <p>El resultado es un archivo de seiscientas líneas donde la instrucción importante se perdió, y la conclusión de que "Claude no hace caso". Claude sí hace caso; el mecanismo estaba mal elegido.</p>
+
+      <p>Hay siete formas de dirigir Claude Code. No compiten: viven en capas distintas, cargan en momentos distintos y tienen fuerza distinta. Esta guía es cuál usar para qué.</p>
+
+      <h2>Las tres capas, antes de las siete</h2>
+
+      <p>Si entiendes esto, el resto se acomoda solo. Una instrucción puede vivir en tres lugares, y de ahí sale toda su fuerza:</p>
+
+      <ul>
+        <li><strong>En el prompt de sistema.</strong> Es lo primero que ve el modelo y lo que más pesa. Ahí viven los estilos de salida y lo que agregas con la bandera de prompt de sistema.</li>
+        <li><strong>En un mensaje de usuario.</strong> Ahí viven el <code>CLAUDE.md</code> y las reglas: llegan justo después del prompt de sistema, como si tú los hubieras escrito. Claude los lee y trata de seguirlos, pero no hay cumplimiento garantizado.</li>
+        <li><strong>Fuera del modelo.</strong> Los hooks no son texto: son comandos que Claude Code ejecuta en puntos fijos. Pasan sí o sí, decida lo que decida el modelo.</li>
+      </ul>
+
+      <p>De ahí sale la regla más útil de toda esta guía: <strong>si algo tiene que pasar siempre, no lo escribas, ejecútalo</strong>. Todo lo demás es cuestión de cuándo quieres que la instrucción entre al contexto.</p>
+
+      <h2>Las 7 formas</h2>
+
+      <div class="plugin-card">
+        <h3>1. CLAUDE.md <code>./CLAUDE.md</code></h3>
+        <p><strong>Qué hace:</strong> le da a Claude los hechos permanentes de tu proyecto: comandos, convenciones, decisiones de arquitectura, trampas conocidas.</p>
+        <p><strong>Cuándo carga:</strong> completo, al inicio de cada sesión. Se recorre el árbol de directorios hacia arriba desde donde arrancaste, y todos los archivos encontrados se concatenan de lo general a lo específico. Hay cuatro niveles: política de organización, tus preferencias en <code>~/.claude/CLAUDE.md</code>, el del proyecto, y tu <code>CLAUDE.local.md</code> personal.</p>
+        <p><strong>Cuánto pesa:</strong> medio. Llega como mensaje de usuario, no como prompt de sistema, así que es contexto y no configuración obligatoria. Y pesa menos entre más largo sea: la recomendación oficial es quedarse debajo de 200 líneas por archivo.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> hechos que aplican a todo el proyecto, todo el tiempo. Nada más. El detalle completo está en <a href="/guias/el-archivo-mas-importante-de-claude-code/">la guía del archivo más importante</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Reglas por ruta <code>.claude/rules/</code></h3>
+        <p><strong>Qué hace:</strong> lo mismo que el <code>CLAUDE.md</code>, pero partido por tema y —esta es la gracia— con la opción de amarrarlo a rutas de archivo.</p>
+        <p><strong>Cuándo carga:</strong> depende. Un archivo de reglas sin encabezado especial se carga al arranque, con la misma prioridad que el <code>CLAUDE.md</code> del proyecto. Si le pones un campo <code>paths</code> con patrones tipo <code>src/api/**/*.ts</code>, esa regla solo entra al contexto cuando Claude toca un archivo que coincide.</p>
+        <p><strong>Cuánto pesa:</strong> igual que el <code>CLAUDE.md</code>. La ventaja no es fuerza, es puntería: tus reglas de API dejan de ocupar contexto mientras estás en otra parte del código.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> convenciones que aplican a una zona del repositorio. También hay una versión personal en <code>~/.claude/rules/</code> que aplica a todos tus proyectos.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Skills <code>.claude/skills/nombre/SKILL.md</code></h3>
+        <p><strong>Qué hace:</strong> empaqueta un procedimiento o un cuerpo de conocimiento que solo hace falta a veces. Un archivo con un encabezado —nombre y descripción— y las instrucciones abajo. Puede traer archivos de apoyo en su carpeta.</p>
+        <p><strong>Cuándo carga:</strong> bajo demanda. Claude ve la descripción y decide si aplica, o tú la invocas directo escribiendo <code>/nombre-de-la-skill</code>. El cuerpo no ocupa contexto hasta que se usa, y eso cambia toda la economía: un manual de doscientas líneas cuesta casi nada mientras no lo llames.</p>
+        <p><strong>Cuánto pesa:</strong> alto cuando está cargada, cero cuando no. Si es un flujo con efectos secundarios que solo tú debes disparar, se marca en el encabezado con <code>disable-model-invocation: true</code> para que Claude no la invoque solo.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> todo lo que sea un <em>procedimiento</em>. Si una sección de tu <code>CLAUDE.md</code> se convirtió en una lista de pasos, esa sección ya no es memoria: es una skill mal ubicada. Los comandos personalizados de <code>.claude/commands/</code> se fusionaron con este mecanismo y siguen funcionando igual.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Subagentes <code>.claude/agents/nombre.md</code></h3>
+        <p><strong>Qué hace:</strong> define un asistente aparte, con su propio prompt de sistema, su propio conjunto de herramientas permitidas, su propio modelo y sus propios permisos. Corre en una ventana de contexto aislada y regresa un resumen.</p>
+        <p><strong>Cuándo carga:</strong> cuando Claude delega, o cuando lo llamas por su nombre. Arranca en frío: no hereda tu conversación, ni el estilo de salida de la sesión principal, ni la memoria automática. Sí hereda los archivos <code>CLAUDE.md</code>. La excepción es una bifurcación de la conversación actual, que sí se lleva todo el contexto.</p>
+        <p><strong>Cuánto pesa:</strong> total dentro de su burbuja: su prompt de sistema es el que tú escribiste, no el de Claude Code. Y cero fuera de ella.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> dos cosas. Investigar sin ensuciar tu contexto, y revisar con ojos frescos. Un revisor que solo puede leer, definido con su lista de herramientas acotada, es más útil que uno que puede escribir. También se puede correr una sesión entera como un subagente con la bandera correspondiente al arrancar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Hooks <code>.claude/settings.json</code></h3>
+        <p><strong>Qué hace:</strong> ejecuta comandos de shell en puntos fijos del ciclo de vida. No le pide nada al modelo: le pasa por encima.</p>
+        <p><strong>Cuándo carga:</strong> nunca entra al contexto como instrucción. Se dispara por evento. Hay eventos para casi todo: antes de una llamada a herramienta, después, al enviar un prompt, al arrancar la sesión, al terminarla, antes de compactar, cuando termina un subagente, cuando Claude termina de responder.</p>
+        <p><strong>Cuánto pesa:</strong> el máximo. Un hook de <code>PreToolUse</code> puede cancelar una acción antes de que ocurra y explicarle a Claude por qué. Un hook de <code>Stop</code> puede impedir que el turno termine hasta que tu verificación pase.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> lo innegociable. Correr el formateador después de cada edición, bloquear escrituras a la carpeta de migraciones, registrar cada comando ejecutado. Puedes pedirle a Claude que te escriba el hook, y <code>/hooks</code> abre el navegador de lo que tienes configurado.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Estilos de salida <code>.claude/output-styles/</code></h3>
+        <p><strong>Qué hace:</strong> cambia cómo responde Claude, no lo que sabe. Modifica directamente el prompt de sistema para fijar rol, tono y formato.</p>
+        <p><strong>Cuándo carga:</strong> al inicio de la sesión, y por eso un cambio no surte efecto hasta que corres <code>/clear</code> o abres una sesión nueva. Se elige desde <code>/config</code>, en la opción de estilo de salida, o fijando el campo <code>outputStyle</code> en un archivo de ajustes.</p>
+        <p><strong>Cuánto pesa:</strong> alto: está en el prompt de sistema. Vienen varios integrados —uno proactivo que ejecuta en vez de preguntar, uno explicativo y uno de aprendizaje— y puedes escribir el tuyo en un archivo de markdown. La decisión clave del encabezado es <code>keep-coding-instructions</code>: si lo dejas en falso, se van las instrucciones de ingeniería de software que trae Claude Code de fábrica, que es lo que quieres si lo vas a usar para escribir o analizar y no para programar.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> cuando te descubras repitiendo la misma indicación de formato en cada turno. Ojo: aplica solo a la conversación principal, no a los subagentes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. El prompt de sistema <code>--append-system-prompt</code></h3>
+        <p><strong>Qué hace:</strong> agrega texto al prompt de sistema sin quitar nada de lo que ya trae. Es la forma de meter una instrucción al nivel más alto sin escribir un estilo de salida completo.</p>
+        <p><strong>Cuándo carga:</strong> en esa invocación y nada más. Hay que pasarlo cada vez.</p>
+        <p><strong>Cuánto pesa:</strong> el máximo del lado del texto. Por eso mismo, es el mecanismo más incómodo para uso interactivo y el más natural para automatización.</p>
+        <p class="plugin-for"><strong>Úsalo para:</strong> corridas en modo no interactivo. Cuando lanzas <code>claude -p</code> desde un script o desde una tarea programada y necesitas fijar el rol de esa corrida en particular, esta es la vía.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> comprobar que la instrucción llegó. <code>/context</code> te dice qué archivos de memoria se cargaron en esta sesión, y existe un evento de hook que registra exactamente qué archivo de instrucciones se cargó, cuándo y por qué. He visto reescribir la misma regla cinco veces cuando el problema era que el archivo estaba en una carpeta que no se recorre. Antes de mejorar la redacción, verifica que existe en el contexto.</p>
+      </div>
+
+      <h2>Cómo elegir en diez segundos</h2>
+
+      <p>Cuatro preguntas, en orden. La primera que conteste que sí, gana:</p>
+
+      <ol>
+        <li><strong>¿Tiene que pasar siempre, sin excepción?</strong> Es un hook. No lo escribas como regla y esperes disciplina del modelo.</li>
+        <li><strong>¿Es un procedimiento de varios pasos que solo aplica a veces?</strong> Es una skill.</li>
+        <li><strong>¿Es un hecho que solo importa en cierta parte del código?</strong> Es una regla con <code>paths</code>.</li>
+        <li><strong>¿Es un hecho que importa siempre?</strong> Ahora sí, va al <code>CLAUDE.md</code>.</li>
+      </ol>
+
+      <p>Y aparte de esas cuatro: si lo que quieres es cambiar el <em>tono</em> de todas las respuestas, es un estilo de salida. Si lo que quieres es aislar una tarea con sus propias herramientas, es un subagente.</p>
+
+      <h2>En qué orden montarlas</h2>
+
+      <p>La tentación es configurar las siete el primer día. No sirve: acabas con una máquina que no entiendes y que no sabes cuál pieza está fallando.</p>
+
+      <ol>
+        <li><strong>Semana 1 — el <code>CLAUDE.md</code>, corto.</strong> Corre <code>/init</code>, quítale la mitad, y vive con eso.</li>
+        <li><strong>Semana 2 — la primera skill.</strong> El procedimiento que más veces repites a mano.</li>
+        <li><strong>Semana 3 — el primer hook.</strong> Uno solo, el más obvio: formateo o verificación después de editar.</li>
+        <li><strong>Semana 4 — un subagente revisor.</strong> Solo lectura, con criterios escritos.</li>
+        <li><strong>Después — reglas por ruta,</strong> cuando el <code>CLAUDE.md</code> empiece a crecer de nuevo. Ese crecimiento es la señal, no el calendario.</li>
+      </ol>
+
+      <p>Los estilos de salida y la bandera de prompt de sistema quedan al final a propósito. Son los que menos gente necesita: el primero solo si vas a usar Claude Code fuera de programación, el segundo solo si ya estás automatizando corridas.</p>
+
+      <h2>Lo que ninguna de las siete arregla</h2>
+
+      <p>Ninguna hace que Claude sepa si su trabajo quedó bien. Puedes tener las siete perfectamente configuradas y seguir siendo tú el único que verifica.</p>
+
+      <p>Esa pieza va aparte y es la que más rinde: darle una comprobación que produzca un pasa o no pasa. Cuando eso existe, todo lo demás de esta lista funciona sin supervisión. Sin eso, lo único que lograste es que se equivoque con mejor estilo.</p>

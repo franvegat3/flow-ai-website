@@ -1,0 +1,106 @@
+      <p>Una acción cae fuerte y la conversación se vuelve siempre la misma: ¿está barata o se está muriendo? La gente contesta esa pregunta con el gráfico, que es justo lo único que no la contesta.</p>
+
+      <p>La distinción que importa es vieja y aburrida: el precio bajó porque el negocio se deterioró, o bajó porque la percepción se deterioró. En el primer caso lo barato es una trampa. En el segundo es una oportunidad. Warren Buffett hizo su carrera sobre esa diferencia, y no la resolvió con velas japonesas: la resolvió leyendo reportes.</p>
+
+      <p>Leer reportes es exactamente el trabajo aburrido que Claude hace bien. Abajo está el prompt completo que uso para eso, con las salvaguardas que evitan que se invente números.</p>
+
+      <p><strong>Esto no es asesoría financiera.</strong> No lo es lo que escribo aquí ni lo que te conteste el modelo. Es una herramienta para leer más rápido y preguntar mejor. Las decisiones de inversión son tuyas y de tu asesor, y un modelo de lenguaje puede equivocarse en un dato con toda la confianza del mundo.</p>
+
+      <h2>La pregunta correcta, en una frase</h2>
+
+      <p>No es "¿va a subir?". Es: <em>¿qué cambió en la capacidad del negocio de generar efectivo, y qué solo cambió en el ánimo de quien lo mira?</em></p>
+
+      <p>Todo lo que sigue es una forma de forzar esa separación. Deterioro de negocio son márgenes que se comprimen, clientes que se van, deuda que vence sin refinanciamiento, un producto que perdió su ventaja, una demanda regulatoria que cambia el modelo. Deterioro de percepción es un trimestre que quedó abajo del consenso, una nota de prensa, una rotación sectorial, un directivo que dijo algo torpe en la llamada.</p>
+
+      <h2>Antes del prompt: cómo evitar que invente</h2>
+
+      <p>El riesgo real de este ejercicio no es que Claude te dé una opinión mala. Es que te dé un número inventado con formato de dato duro. Tres reglas que uso siempre:</p>
+
+      <ul>
+        <li><strong>Búsqueda web prendida.</strong> Sin acceso a la web, el modelo contesta con lo que recuerda de su entrenamiento, y eso está viejo. Un balance de hace dos años no sirve para decidir hoy.</li>
+        <li><strong>Fuente obligatoria por cifra.</strong> Toda cifra tiene que venir con su documento y su fecha. Si no la encontró, quiero que lo diga, no que la estime.</li>
+        <li><strong>Cero precio objetivo.</strong> En el momento en que le pides un precio, el ejercicio deja de ser análisis y se vuelve adivinanza con decimales.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> verificar dos cifras a mano. Toma las dos que más peso tienen en la conclusión, ábrelas en el reporte original de la empresa y compáralas. Si las dos cuadran, el resto del análisis es confiable. Si una no cuadra, tira todo el análisis y vuelve a empezar. Toma cuatro minutos y es la diferencia entre una herramienta y un generador de excusas.</p>
+      </div>
+
+      <h2>El prompt</h2>
+
+      <p>Cambia el ticker y el nombre. Lo demás déjalo tal cual: cada restricción está ahí porque sin ella el resultado se degrada.</p>
+
+      <pre><code>Vas a actuar como analista de renta variable escéptico. No eres asesor y no vas a recomendar comprar ni vender.
+
+EMPRESA: [nombre] ([ticker], [bolsa])
+CONTEXTO: la acción cayó de forma notable en los últimos [periodo].
+
+Antes de escribir nada, busca en la web y usa solo fuentes primarias o de prensa financiera reconocida:
+- Los dos reportes trimestrales más recientes y el reporte anual (busca en la sección de relación con inversionistas de la empresa y en el regulador que le corresponda).
+- La transcripción o el resumen de las dos últimas llamadas con analistas.
+- Las noticias de los últimos 90 días sobre la empresa y su sector.
+- Cambios recientes en dirección, en deuda o en regulación.
+
+REGLAS DURAS
+1. Cada cifra que escribas lleva entre paréntesis su fuente y la fecha del documento.
+2. Si no encontraste un dato, escribe "no encontrado". Está prohibido estimarlo.
+3. No des precio objetivo, ni valuación implícita, ni recomendación.
+4. Separa siempre lo que dice un documento de lo que es interpretación tuya.
+5. Si las fuentes se contradicen, muéstrame las dos y di cuál es más confiable y por qué.
+
+ENTREGA ESTA ESTRUCTURA
+
+1) QUÉ PASÓ
+Cronología breve de la caída. Qué evento coincidió con cada tramo.
+
+2) EL NEGOCIO, EN NÚMEROS
+Ingresos, margen bruto, margen operativo y flujo de efectivo libre de los últimos periodos comparables.
+Deuda total, efectivo y vencimientos próximos.
+Marca con una flecha lo que empeoró y con un igual lo que se mantuvo.
+
+3) DETERIORO REAL — evidencia de que el negocio vale menos
+Lista solo lo que esté sostenido en un documento. Para cada punto: qué dice, dónde, y si es reversible o permanente.
+
+4) DETERIORO DE PERCEPCIÓN — evidencia de que solo cambió el ánimo
+Expectativas de analistas contra resultados, tono de la prensa, movimientos de todo el sector, cambios de flujo sin noticia de la empresa.
+
+5) EL VEREDICTO SEPARADO
+Dos párrafos. Uno arma el caso de que el mercado tiene razón. El otro arma el caso de que el mercado está equivocado. Escribe los dos con la misma fuerza.
+
+6) QUÉ TENDRÍA QUE SER CIERTO
+Tres condiciones verificables que tendrían que cumplirse para que la tesis optimista funcione, y dónde se verifica cada una en el próximo reporte.
+
+7) LO QUE NO SÉ
+Los tres huecos más importantes de información y qué documento los cerraría.
+
+Termina con: "Esto no es asesoría de inversión."</code></pre>
+
+      <h2>Los tres seguimientos que valen más que el primer análisis</h2>
+
+      <p>La primera respuesta es materia prima. El valor sale de aquí:</p>
+
+      <h3>1. La inversión de la carga</h3>
+
+      <pre><code>Toma tu sección 6. Para cada condición, dime qué probabilidad histórica tiene de cumplirse en una empresa de este sector y de este tamaño, con base en casos comparables que puedas citar. Si no hay comparables citables, dilo.</code></pre>
+
+      <h3>2. El caso bajista honesto</h3>
+
+      <pre><code>Ahora escribe el caso bajista como si administraras un fondo que ya está corto en esta acción y tienes que defender la posición ante tu comité. Usa solo hechos de las fuentes que ya citaste. Sin adjetivos.</code></pre>
+
+      <h3>3. La autopsia adelantada</h3>
+
+      <pre><code>Es un año después y esta inversión salió muy mal. Escribe la explicación de por qué, en orden de probabilidad. Luego dime cuál de esas causas ya se puede detectar hoy en los documentos.</code></pre>
+
+      <h2>Cómo se usa esto en una operación real</h2>
+
+      <p>Fuera del ahorro personal, este mismo esqueleto sirve para decisiones que sí toman las empresas. Un área de tesorería lo usa para evaluar la salud del banco o del proveedor al que le está confiando saldo. Un equipo comercial lo corre sobre un cliente grande antes de otorgarle crédito a 90 días: los reportes públicos dicen mucho sobre si va a pagar. Un comité de compras lo corre sobre el proveedor único de un insumo crítico antes de firmar un contrato de varios años.</p>
+
+      <p>Es la misma pregunta con otro traje: ¿esta contraparte se está deteriorando de verdad, o solo tiene mala prensa?</p>
+
+      <h2>El error que arruina el ejercicio</h2>
+
+      <p>Usarlo para que te dé permiso. Si ya compraste y estás buscando quién te diga que aguantes, vas a redactar el prompt de forma que salga lo que quieres, y va a salir. Los modelos son complacientes por diseño y ese sesgo es el más caro de todos aquí.</p>
+
+      <p>La prueba es simple: si nunca te ha hecho cambiar de opinión, no lo estás usando como análisis. Estás usándolo como espejo. Cuando eso pase, cárgalo con <a href="/guias/consejo-contra-la-adulacion/">un consejo contra la adulación</a> o pásale la tesis a <a href="/guias/abogado-del-diablo/">un abogado del diablo</a> antes de mover un peso. Y si quieres el recorrido completo del análisis paso a paso, está en <a href="/guias/analizar-cualquier-accion-en-5-pasos/">analizar cualquier acción en 5 pasos</a>.</p>
+
+      <p>Dicho una última vez, porque importa: nada de esto es asesoría financiera.</p>

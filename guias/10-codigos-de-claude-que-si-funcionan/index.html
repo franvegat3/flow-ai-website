@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 códigos de Claude que sí funcionan — Guías Flow AI</title>
+  <meta name="description" content="Entrevístame, socrático, ultrathink, segundo orden, inversión, más los 5 originales. Los 10 marcos de prompt que cambian por completo la salida, probados contra las listas virales que no sirven." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/10-codigos-de-claude-que-si-funcionan/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="10 códigos de Claude que sí funcionan" />
+  <meta property="og:description" content="Entrevístame, socrático, ultrathink, segundo orden, inversión, más los 5 originales. Los 10 marcos de prompt que cambian por completo la salida, probados contra las listas virales que no sirven." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/10-codigos-de-claude-que-si-funcionan/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span></div>
+      <h1>10 códigos de Claude que sí funcionan</h1>
+      <p class="lead">Entrevístame, socrático, ultrathink, segundo orden, inversión, más los 5 originales. Los 10 marcos de prompt que cambian por completo la salida, probados contra las listas virales que no sirven.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Cada semana circula una lista de "palabras mágicas" para Claude. Casi todas son humo: frases que suenan a hechizo y que el modelo procesa como texto normal, sin ningún efecto especial.</p>
+
+      <p>Hay una prueba fácil de esto, y está en la documentación oficial. En Claude Code, <code>ultrathink</code> sí es una palabra clave reconocida: el programa la detecta y agrega una instrucción extra. Pero "think", "think hard" y "think more" —que aparecen en todas las listas virales— pasan como texto cualquiera. No son palabras clave de nada.</p>
+
+      <p>Eso no significa que la forma de pedir no importe. Importa muchísimo. Lo que pasa es que lo que funciona no son palabras sueltas: son <strong>marcos</strong>. Estructuras que cambian el trabajo que el modelo tiene que hacer antes de contestarte. Estos son los 10 que uso, con el prompt completo de cada uno.</p>
+
+      <h2>Por qué un marco le gana a una palabra</h2>
+
+      <p>Un prompt normal le pide al modelo que produzca una respuesta. Un marco le pide que produzca <em>otra cosa primero</em>: preguntas, criterios, hipótesis de fracaso, versiones alternativas. Y esa cosa intermedia es la que sube la calidad de lo que sale al final.</p>
+
+      <p>Por eso los marcos se sienten más lentos. También por eso sirven.</p>
+
+      <div class="plugin-card">
+        <h3>1. Entrevístame</h3>
+        <p>El más rentable de todos y el más ignorado. Invierte quién pregunta. En lugar de que tú adivines qué contexto hace falta, el modelo lo saca. Casi todas las respuestas mediocres son respuestas a preguntas mal planteadas.</p>
+        <pre><code>Antes de contestar nada, entrevístame.
+
+Hazme las preguntas que necesitas para dar una respuesta que de verdad
+sirva en mi situación. Una pregunta a la vez, y espera mi respuesta antes
+de la siguiente. No más de siete.
+
+Cuando ya tengas lo suficiente, dímelo, resume lo que entendiste en cinco
+líneas, y hasta que yo confirme, empiezas a trabajar.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Modo socrático</h3>
+        <p>Aquí no quieres una respuesta: quieres pensar mejor. Sirve para decisiones donde el problema no es falta de información sino falta de claridad. Lo uso antes de decisiones de precio, de contratación y de a qué cliente decirle que no.</p>
+        <pre><code>No me des tu opinión ni tu recomendación en ningún momento de esta
+conversación, aunque te la pida.
+
+Tu único trabajo es hacerme preguntas que me obliguen a examinar lo que
+estoy dando por hecho. Cuando yo conteste algo con un supuesto adentro,
+señálalo y pregunta por él.
+
+Si detectas que estoy dando vueltas para no ver algo, dilo en una frase y
+sigue preguntando.
+
+El tema es: [ponlo aquí]</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Ultrathink</h3>
+        <p>La excepción real: sí es una palabra clave, y está documentada. Escríbela en cualquier parte de tu mensaje en Claude Code y pide razonamiento más profundo en ese turno, sin cambiar la configuración de la sesión. En la app la palanca equivalente es el control de razonamiento extendido, no una palabra.</p>
+        <pre><code>ultrathink: tengo tres formas de estructurar el cobro de este servicio
+—suscripción mensual, pago por proyecto, o retainer con horas incluidas—.
+Analiza cada una contra mi realidad: clientes chicos, ventas irregulares,
+y un solo operador que soy yo. Quiero la que menos riesgo de flujo de
+efectivo me deja, no la que más factura en teoría.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Segundo orden</h3>
+        <p>Todo el mundo pregunta qué pasa si hace algo. Casi nadie pregunta qué pasa <em>después</em> de que pasa eso. Ahí es donde viven los errores caros: la promoción que sí vendió y te dejó sin inventario, la contratación que sí funcionó y descuadró los sueldos del resto.</p>
+        <pre><code>Voy a hacer esto: [describe la decisión].
+
+Analízalo en tres niveles:
+
+1. Consecuencias directas. Lo que pasa la primera semana.
+2. Consecuencias de segundo orden. Lo que pasa como reacción a lo anterior,
+   entre el mes 1 y el mes 6. Incluye cómo reaccionan otras personas:
+   clientes, equipo, competencia.
+3. Consecuencias de tercer orden. Qué se vuelve difícil o imposible de
+   revertir después de un año.
+
+Termina con la consecuencia de segundo orden que más gente subestima en
+este tipo de decisión.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Inversión</h3>
+        <p>En vez de preguntar cómo lograr algo, pides cómo garantizar que fracase. El cerebro —el tuyo y el del modelo— es mucho mejor encontrando fallas que diseñando aciertos. La lista de fracasos, volteada, es tu plan.</p>
+        <pre><code>No me digas cómo lograr [el objetivo].
+
+Dime lo contrario: si tu trabajo fuera garantizar que esto fracase de la
+forma más silenciosa posible —sin que yo me diera cuenta hasta que fuera
+tarde—, ¿qué harías exactamente?
+
+Dame las 8 formas más probables, ordenadas por cuál me pasaría a mí con
+más facilidad dado lo que ya te conté.
+
+Después voltea cada una y conviértela en algo que yo pueda revisar cada
+semana.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. La rúbrica primero</h3>
+        <p>Le pides que defina cómo se ve un buen resultado <em>antes</em> de producirlo, y que después se califique a sí mismo. Es el marco que más cambia la salida en tareas de escritura, porque lo obliga a comprometerse con un estándar antes de tener el incentivo de aprobarse.</p>
+        <pre><code>Antes de escribir nada, arma la rúbrica.
+
+Define 5 criterios con los que se evaluaría un excelente [entregable], y
+para cada uno describe qué se ve como 10 y qué se ve como 5. Muéstramela.
+
+Después escribe la pieza.
+
+Al final, califícate en cada criterio con su número y su justificación, y
+reescribe únicamente las partes donde te pusiste menos de 8.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Cinco versiones, no una</h3>
+        <p>La primera respuesta de cualquier modelo es la del centro de la distribución: lo más probable, lo más visto. Pedir variedad con ejes explícitos es lo que te saca de ahí. Sin los ejes, te da cinco veces lo mismo con distintas palabras.</p>
+        <pre><code>Dame cinco versiones de esto, y que sean realmente distintas entre sí:
+
+1. La más conservadora, la que cualquiera aprobaría.
+2. La más agresiva, la que incomoda.
+3. Una que ataque el problema desde un ángulo completamente distinto.
+4. Una que funcione con la mitad del presupuesto.
+5. La que tú escribirías si nadie te fuera a juzgar.
+
+Ninguna puede compartir la idea central con otra. Al final, dime cuál
+elegirías y por qué, en dos líneas.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. El revisor hostil</h3>
+        <p>Distinto al abogado del diablo genérico: aquí le das un rol con motivo. Alguien que gana algo si tu plan falla. Eso produce críticas concretas en lugar de objeciones de manual.</p>
+        <pre><code>Toma el papel de la persona que más se beneficia si esto que armé sale
+mal: mi competidor directo, o el socio que estaba en contra desde el
+principio.
+
+Desde ahí, destroza el plan. Busca el supuesto más débil, el número que no
+cuadra, y la parte donde estoy confundiendo lo que quiero con lo que es
+probable.
+
+Sé específico. "Es riesgoso" no me sirve; "el mes 3 se te acaba el
+efectivo porque asumiste cobranza a 30 días y tus clientes pagan a 60"
+sí.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Marca lo que no sabes</h3>
+        <p>El antídoto contra el problema real de estos modelos, que no es equivocarse: es equivocarse con el mismo tono seguro con el que acierta. Este marco separa el piso firme del pantano.</p>
+        <pre><code>Contesta, pero marca cada afirmación con una etiqueta:
+
+[VERIFICABLE] — lo puedo comprobar en una fuente pública, y me dices cuál.
+[INFERENCIA] — lo estás deduciendo de lo que te di, no lo sabes.
+[SUPUESTO] — lo estás asumiendo porque hacía falta para contestar.
+
+Al final, lista aparte las tres cosas que tendría que confirmar yo antes
+de tomar cualquier decisión con esto. Si algo no lo sabes, escribe "no lo
+sé" en vez de rellenar.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. El ejemplo en lugar de la descripción</h3>
+        <p>Describir el formato que quieres casi nunca funciona. Enseñar uno, sí. Este es el marco más aburrido de la lista y el que más tiempo ahorra en la operación diaria de una empresa.</p>
+        <pre><code>No te voy a describir el formato: te voy a dar un ejemplo de una salida
+que me pareció perfecta.
+
+[pega aquí un ejemplo real, completo]
+
+Estudia ese ejemplo y dime, en cinco puntos, qué reglas detectas en él:
+estructura, largo, tono, qué incluye y qué deliberadamente omite.
+
+Cuando yo confirme esas reglas, produce lo mismo para este caso nuevo:
+[el caso]</code></pre>
+      </div>
+
+      <h2>Cómo se combinan sin que se estorben</h2>
+
+      <p>El error clásico es pegar tres marcos en un mismo mensaje. Se anulan: le pides que te entreviste, que se autocalifique y que te dé cinco versiones, y hace las tres cosas a medias.</p>
+
+      <p>Van en secuencia, no apilados. El orden que funciona es <strong>entrevístame</strong> para fijar el contexto, luego <strong>cinco versiones</strong> o <strong>la rúbrica primero</strong> para producir, y al final <strong>inversión</strong> o <strong>el revisor hostil</strong> para tratar de tumbar lo que salió. Tres mensajes, no uno.</p>
+
+      <p>Y guárdalos. Un marco que tienes que reescribir cada vez es un marco que vas a dejar de usar en dos semanas. Pégalos en un archivo, o mejor, conviértelos en instrucciones permanentes —ahí está <a href="/guias/plantilla-de-claude-md/">la plantilla de CLAUDE.md</a> si trabajas en Claude Code, y <a href="/guias/anatomia-del-prompt-perfecto/">la anatomía del prompt perfecto</a> para la estructura de fondo.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

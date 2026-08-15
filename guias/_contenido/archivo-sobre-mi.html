@@ -1,0 +1,142 @@
+      <p>Le pides un correo y te lo devuelve firmado por alguien que no existe. Le pides que priorice tu semana y te propone algo que no cabe. No es que el modelo esté mal: es que no sabe nada de ti y tú lo asumes cada vez.</p>
+
+      <p>El arreglo es un archivo. Un solo texto que Claude lee antes de cada conversación y que te ahorra explicar lo mismo veinte veces al día. En una operación real, este archivo es la diferencia entre un asistente y alguien que ya sabe cómo se hacen las cosas aquí.</p>
+
+      <p>Van las ocho secciones, lo que casi nadie escribe, la plantilla para copiar, y el prompt por voz que lo arma completo en un rato.</p>
+
+      <h2>Dónde vive</h2>
+
+      <p>En la app de Claude va en las preferencias personales de tu configuración: eso aplica a todas tus conversaciones. Si además usas proyectos, la parte del contexto de cada trabajo va en las instrucciones del proyecto. Y en Claude Code el archivo es <code>CLAUDE.md</code> en la raíz de tu carpeta.</p>
+
+      <p>Los tres se complementan: lo tuyo va arriba, lo del proyecto va abajo. Escribe primero el de arriba, que es el que sirve todos los días.</p>
+
+      <h2>Las ocho secciones</h2>
+
+      <div class="plugin-card">
+        <h3>1. Quién eres, en términos de trabajo</h3>
+        <p>Puesto, empresa, qué vende, de qué tamaño. No tu biografía: el contexto que cambia una respuesta. "Dirijo operaciones en una distribuidora de 40 personas" produce respuestas distintas a "trabajo en logística".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Cómo es tu día de verdad</h3>
+        <p>Horario, en qué se te va el tiempo, cuándo tienes bloques largos y cuándo estás en juntas. Sin esto, cualquier plan que te proponga va a asumir un día de ocho horas continuas que nadie tiene.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Con quién trabajas</h3>
+        <p>Nombres, roles y quién decide qué. Es la sección que más rinde y la que casi nadie pone. Con ella puedes escribir "prepárame el mensaje para Pilar" sin explicar quién es Pilar ni qué le importa.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Tus herramientas</h3>
+        <p>Dónde vive tu información: el CRM, el gestor de proyectos, dónde están los documentos, qué hoja de cálculo es la buena. Sirve también para lo contrario: si tu empresa no usa cierta herramienta, decirlo evita recomendaciones inútiles.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Cómo quieres las respuestas</h3>
+        <p>Largo, formato, idioma, si prefieres viñetas o prosa, si vas a pegar el resultado en otro lado. Sé específico: "sin tablas, porque las pego en un documento y se rompen" es una instrucción que se cumple; "sé claro" no.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Las líneas rojas</h3>
+        <p>Lo que no debe hacer nunca. Nombres de clientes que no salen de una conversación, cifras que no se estiman, temas donde quieres que diga "no sé" en vez de aproximar. Escribe también las palabras que no soportas leer.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. Cómo decides</h3>
+        <p>Qué te importa cuando eliges: velocidad contra calidad, barato contra bien hecho, qué riesgos sí tomas. Esta es la sección que convierte un asistente en alguien que puede proponerte algo y no solo ejecutar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. En qué andas ahora</h3>
+        <p>Tres o cuatro objetivos vivos con fecha. Es la única sección que caduca, y por eso es la que hay que actualizar. Un objetivo de hace seis meses es peor que ninguno: hace que te empuje hacia donde ya no vas.</p>
+      </div>
+
+      <h2>Los agregados que casi todos se saltan</h2>
+
+      <p>Estos aplican para cualquiera, sin importar a qué te dediques, y son los que más cambian el resultado:</p>
+
+      <ul>
+        <li><strong>Cómo te llamas y cómo firmas.</strong> Nombre completo, cómo te dicen, y cómo cierras un correo. Evita que firme por ti con una fórmula que jamás usarías.</li>
+        <li><strong>Tu ciudad, tu zona horaria y tu moneda.</strong> Sin esto, "el próximo martes" y cualquier cifra de dinero quedan a interpretación.</li>
+        <li><strong>Tu nivel real en los temas que tocas.</strong> Dónde eres experto y dónde estás empezando. Determina cuánto te explica antes de responder.</li>
+        <li><strong>Quién más va a leer lo que sale.</strong> No es lo mismo un texto para tu jefe que para un cliente que para ti mismo.</li>
+        <li><strong>Cuándo preguntar y cuándo asumir.</strong> Yo pongo: toma el default obvio y sigue; pregunta solo si la acción es irreversible o si hay dos lecturas que llevan a trabajos muy distintos.</li>
+      </ul>
+
+      <h2>La plantilla de arranque</h2>
+
+      <p>Cópiala, llénala y pégala en tus preferencias. Diez minutos ahorita valen más que cualquier truco de prompting.</p>
+
+      <pre><code>SOBRE MÍ
+Me llamo [nombre]. Me dicen [nombre corto]. Vivo en [ciudad],
+zona horaria [zona], moneda [moneda].
+
+TRABAJO
+Soy [puesto] en [empresa], que [qué vende, a quién, qué tamaño].
+Mi responsabilidad concreta es [una línea].
+Mi día: [horario y cómo se reparte].
+
+GENTE
+[Nombre] — [rol]. Decide [qué]. Le importa [qué].
+[Nombre] — [rol]. Decide [qué]. Le importa [qué].
+
+HERRAMIENTAS
+CRM: [cuál]. Proyectos: [cuál]. Documentos: [dónde].
+No usamos [herramientas que no aplican].
+
+CÓMO QUIERO LAS RESPUESTAS
+Español de México, de tú. Directo, sin preámbulo.
+[Largo, formato, dónde voy a pegar el resultado.]
+Nivel: soy experto en [temas], principiante en [temas].
+
+NUNCA
+No inventes cifras, fechas ni fuentes. Si no sabes, dilo.
+No uses [palabras que odias].
+[Confidencialidad y otras líneas rojas.]
+
+CÓMO DECIDO
+Prefiero [criterio] sobre [criterio].
+Toma el default obvio y sigue. Pregunta solo si es irreversible.
+
+AHORA MISMO
+1. [Objetivo] para [fecha].
+2. [Objetivo] para [fecha].
+3. [Objetivo] para [fecha].</code></pre>
+
+      <h2>El prompt por voz, para llenarlo en un rato</h2>
+
+      <p>Si escribir la plantilla en frío se te hace pesado, hazlo al revés: que te entreviste. Abre un chat, activa el dictado y pega esto. Contestas hablando y sale el archivo armado.</p>
+
+      <pre><code>Vas a entrevistarme para construir mi archivo de contexto personal,
+el que vas a leer antes de cada conversación conmigo.
+
+Reglas de la entrevista:
+- Una pregunta a la vez. Espera mi respuesta.
+- Voy a contestar dictando, así que mis respuestas van a salir
+  desordenadas y con muletillas. Ordénalas tú.
+- Si una respuesta es vaga, repregunta una sola vez pidiendo un
+  ejemplo concreto. Si sigue vaga, pasa a la siguiente.
+- No me des consejos ni comentes mis respuestas.
+
+Cubre en este orden: trabajo y responsabilidad; cómo es mi día;
+con quién trabajo y quién decide qué; herramientas y dónde vive mi
+información; cómo quiero las respuestas y dónde las pego; qué no
+debes hacer nunca; cómo tomo decisiones; en qué ando ahora.
+
+Cuando termines, devuélveme el archivo completo en texto plano,
+con encabezados en mayúsculas, listo para pegar. Después dime las
+tres cosas que quedaron flojas y qué pregunta me harías para
+cerrarlas.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probarlo. Al terminar, abre un chat nuevo y pídele algo que hagas a diario sin dar contexto. Si te pregunta cosas que están en el archivo, o si el resultado sigue siendo genérico, el archivo está largo pero no específico. Casi siempre el problema es el mismo: describiste tu puesto en vez de describir tus decisiones.</p>
+      </div>
+
+      <h2>El error de la versión 1</h2>
+
+      <p>Casi todos escriben una biografía. Larga, ordenada, bonita, inútil. El archivo no es para que Claude sepa quién eres: es para que sepa qué hacer contigo.</p>
+
+      <p>La prueba está en el nivel de detalle. "Trabajo en marketing" no cambia ninguna respuesta. "Reviso tres campañas activas y lo que escribo lo aprueba el director comercial antes de publicarse" cambia todas, porque explica el filtro por el que pasa cada texto.</p>
+
+      <p>Revísalo una vez al mes, y sobre todo la última sección. Si vas a construir encima de esto, sigue con <a href="/guias/plantilla-de-claude-md/">la plantilla de CLAUDE.md</a> para tus proyectos y con <a href="/guias/memoria-perfecta-en-3-capas/">el sistema de memoria en tres capas</a>, que es lo que hace que el contexto sobreviva a la conversación.</p>

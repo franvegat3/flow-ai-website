@@ -1,0 +1,118 @@
+      <p>El agente te entrega el borrador. Tú lo lees, le quitas dos adjetivos, le cambias el arranque porque nunca empiezas así, le metes el dato que faltaba y lo publicas.</p>
+
+      <p>Mañana pides lo mismo. Y el agente te entrega otra vez el borrador con los dos adjetivos, el arranque equivocado y el dato faltante.</p>
+
+      <p>Esa es la fuga. No es que el modelo sea malo: es que la corrección que hiciste vive en tu cabeza y en el documento final, y ninguno de los dos es un lugar que el agente pueda leer la próxima vez. Lo que sigue es el setup para cerrar ese ciclo: cómo capturar lo que cambiaste, cómo convertirlo en una regla y cómo hacer que esa regla termine escrita dentro del archivo de la skill.</p>
+
+      <h2>Por qué la memoria del chat no resuelve esto</h2>
+
+      <p>La respuesta reflejo es "actívale memoria". No alcanza, por tres razones.</p>
+
+      <p>La memoria guarda hechos sobre ti, no criterios sobre tu trabajo. Sabe que trabajas en una agencia; no sabe que tus correos nunca abren con una pregunta retórica. Segundo, es global: no distingue entre el tono de un correo a cliente y el de una nota interna, y acaba mezclándolos. Tercero, y esto es lo que rompe el asunto en un equipo, la memoria es tuya. Si tu colega corre la misma skill, arranca desde cero.</p>
+
+      <p>Una regla escrita en el archivo de la skill no tiene ninguno de esos problemas. Es específica de ese trabajo, viaja en el repositorio y aplica para todo el que use la skill. La memoria es un cuaderno personal; la skill es el manual del área.</p>
+
+      <h2>El ciclo, en cuatro piezas</h2>
+
+      <p>Todo sistema de retroalimentación que funciona tiene estas cuatro y en este orden. La mayoría de la gente monta la primera y la tercera, y por eso no cierra.</p>
+
+      <ol>
+        <li><strong>Congelar el borrador.</strong> Guardar la salida del agente antes de tocarla. Sin esto no hay contra qué comparar.</li>
+        <li><strong>Capturar el delta.</strong> La diferencia entre lo que entregó y lo que publicaste. Ahí está toda la información.</li>
+        <li><strong>Destilar la regla.</strong> Convertir ese delta en una instrucción general. Este es el paso de juicio y el único que no se puede automatizar del todo.</li>
+        <li><strong>Escribirla de vuelta.</strong> Meter la regla en el <code>SKILL.md</code> para que la próxima corrida ya la traiga.</li>
+      </ol>
+
+      <h2>El setup, paso a paso</h2>
+
+      <p>Lo monto igual en todos lados. Necesitas una carpeta y tres minutos.</p>
+
+      <h3>1. Dos archivos, no uno</h3>
+
+      <p>Cuando el agente entregue, la salida se guarda en un archivo aparte —<code>borrador.md</code>— y tú editas una copia —<code>final.md</code>. Nunca edites encima del borrador. Es la regla más simple de todas y es la que se salta todo el mundo, porque editar encima se siente natural.</p>
+
+      <p>Si trabajas en la terminal, esto es literalmente copiar el archivo antes de abrirlo. Si trabajas en la aplicación, es pegar la salida cruda en un documento antes de empezar a modificarla.</p>
+
+      <h3>2. Sacar el delta</h3>
+
+      <p>Con los dos archivos en disco, la diferencia se obtiene con la herramienta que ya tienes:</p>
+
+      <pre><code>diff -u borrador.md final.md &gt; delta.txt</code></pre>
+
+      <p>Si no eres de terminal, hay una versión que funciona igual de bien: pega los dos textos en el chat y pídele al modelo que te liste las diferencias. El punto no es el comando, es tener el delta como texto y no como recuerdo.</p>
+
+      <h3>3. Destilar la regla</h3>
+
+      <p>Este es el prompt. Va completo porque la mitad de su valor está en las restricciones del final, que son las que evitan que te devuelva veinte reglas inútiles.</p>
+
+      <pre><code>Te voy a pasar tres cosas: la instrucción original, el borrador que
+generaste y la versión final que yo publiqué después de editarla.
+
+Tu trabajo NO es disculparte ni explicarme los cambios. Tu trabajo es
+inferir qué reglas tendrías que haber tenido para producir la versión
+final desde el principio.
+
+Instrucción original:
+[pega aquí lo que pediste]
+
+Borrador que generaste:
+[pega el borrador]
+
+Versión final publicada:
+[pega el final]
+
+Analiza las diferencias y clasifícalas en tres cubetas:
+
+A. PATRÓN — cambios que se repetirían en cualquier pieza parecida
+   (tono, estructura, palabras que siempre quito, formato).
+B. CONTEXTO — cambios que vienen de información que tú no tenías
+   (un dato de la empresa, una restricción del cliente, una política).
+C. IRRELEVANTE — cambios de gusto puntual que no se generalizan.
+
+Para la cubeta A, escribe cada regla así:
+- En imperativo y en segunda persona.
+- Con el ejemplo concreto de este caso: "no escribas X, escribe Y".
+- Máximo dos líneas por regla.
+
+Para la cubeta B, escribe el dato como hecho, no como regla.
+
+Ignora por completo la cubeta C. No me la muestres.
+
+Al final dime cuántas reglas de A salieron. Si salieron más de cinco,
+quédate solo con las tres que más veces aparecen en el delta.</code></pre>
+
+      <p>El tope de tres reglas por ciclo no es capricho. Una skill con cuarenta reglas es una skill que el modelo lee por encima. La disciplina de quedarte con las tres que más pesan es lo que la mantiene afilada.</p>
+
+      <h3>4. Escribirlas de vuelta</h3>
+
+      <p>Las reglas de la cubeta A se pegan en la sección de criterios del <code>SKILL.md</code>. Los hechos de la cubeta B van en una sección aparte de contexto, porque envejecen distinto: una regla de tono dura años, el nombre del responsable de un área dura meses.</p>
+
+      <p>Y una línea más, al final del archivo: la fecha del último ajuste. Cuando la skill lleve seis meses sin cambios, o está perfecta o nadie la está usando, y conviene saber cuál de las dos.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedirle al modelo que analice sus propios cambios sin darle la instrucción original. Sin ella no puede distinguir entre "me equivoqué de tono" y "me pediste otra cosa". Va a inventar reglas para justificar cada edición, incluidas las que hiciste porque cambiaste de opinión a medio camino. Las tres piezas o ninguna.</p>
+      </div>
+
+      <h2>Cuándo correrlo</h2>
+
+      <p>Después de cada pieza es demasiado. Vas a abandonar en la tercera y el sistema muere.</p>
+
+      <p>Lo que funciona en operación real es por lote. En una operación de contenido con la que trabajo, se acumulan los pares borrador–final de la semana y el viernes se corre el ciclo una sola vez con los cinco o seis pares juntos. Eso tiene una ventaja que no es obvia: con un solo par, cualquier cambio parece un patrón. Con seis, los patrones de verdad aparecen tres veces y el gusto del día aparece una. La cubeta A se llena sola con lo correcto.</p>
+
+      <p>La misma lógica aplica a un equipo comercial que edita correos de seguimiento, o a un área de finanzas que corrige el resumen del cierre. El lote semanal es la unidad correcta casi siempre.</p>
+
+      <h2>La regla de las tres veces</h2>
+
+      <p>No toda corrección merece volverse regla. El filtro que uso: una corrección se promueve a regla cuando la hiciste tres veces en piezas distintas.</p>
+
+      <p>Antes de eso es ruido. Después de eso, ya no es opinión: es cómo se trabaja aquí. Y si nunca llega a tres, la corrección no era del agente, era tuya, del día que la hiciste.</p>
+
+      <div class="callout-box">
+        <p><strong>La prueba de que está cerrando el ciclo:</strong> el volumen de tus ediciones tiene que bajar mes con mes. Si a los dos meses sigues editando lo mismo con la misma intensidad, no estás capturando el delta —estás editando encima del borrador y tirándolo. Revisa ahí antes de cambiar de modelo o de reescribir la skill entera.</p>
+      </div>
+
+      <h2>Lo que este sistema no arregla</h2>
+
+      <p>No te va a dar criterio. Si tus ediciones son inconsistentes —hoy quitas los adjetivos, mañana los pones—, el ciclo va a capturar esa inconsistencia con una fidelidad incómoda y te la va a devolver escrita. Eso duele, pero es información: significa que el estándar no existía y ahora tienes que decidirlo.</p>
+
+      <p>Ese es probablemente el beneficio real de montar esto. No que el agente mejore. Que tú tengas que escribir, por primera vez y en imperativo, qué es lo que consideras bien hecho.</p>

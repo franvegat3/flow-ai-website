@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arma tu propia herramienta de impuestos en Claude — Guías Flow AI</title>
+  <meta name="description" content="Casi todos pagan de más de impuestos y nunca se enteran. Construye una herramienta dinámica y gratuita que te muestre tus opciones, con el prompt exacto para crearla." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/herramienta-de-impuestos-en-claude/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Arma tu propia herramienta de impuestos en Claude" />
+  <meta property="og:description" content="Casi todos pagan de más de impuestos y nunca se enteran. Construye una herramienta dinámica y gratuita que te muestre tus opciones, con el prompt exacto para crearla." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/herramienta-de-impuestos-en-claude/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Negocio</span></div>
+      <h1>Arma tu propia herramienta de impuestos en Claude</h1>
+      <p class="lead">Casi todos pagan de más de impuestos y nunca se enteran. Construye una herramienta dinámica y gratuita que te muestre tus opciones, con el prompt exacto para crearla.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de la gente en México no paga de más por hacer algo mal. Paga de más porque nunca comparó. Su contador le dice qué declarar y cuánto sale; nadie le dice cuáles eran las otras opciones ni qué habría pasado si hubiera decidido distinto en marzo.</p>
+
+      <p>Y no es culpa del contador. Un contador con cincuenta clientes no tiene tiempo de modelarte tres escenarios cada trimestre. Lo que sí puedes tener es una herramienta que corra esos escenarios con tus números, para llegar a esa conversación con preguntas en vez de con dudas.</p>
+
+      <p>Eso es lo que vamos a construir: una aplicación de una sola pantalla, hecha en una tarde, que compara escenarios con tus datos y te muestra dónde está la diferencia.</p>
+
+      <div class="callout-box">
+        <p><strong>Esto no es asesoría fiscal.</strong> No lo es, ni pretende serlo, y yo no soy contador. Las tasas, los límites, los topes de deducción y las reglas de cada régimen las define el SAT, cambian, y dependen de tu situación particular. La herramienta que vas a construir <em>no</em> trae reglas fiscales adentro: tú las cargas desde fuentes oficiales o desde lo que te confirme tu contador, y ellas quedan a la vista para que se puedan revisar. Cualquier decisión que salga de aquí se valida con un profesional antes de ejecutarse.</p>
+      </div>
+
+      <h2>Por qué una herramienta y no una pregunta suelta</h2>
+
+      <p>Podrías preguntarle al modelo directamente "¿cuánto pagaría yo de impuestos si...?" y te va a contestar. Ese es exactamente el error.</p>
+
+      <p>Un modelo de lenguaje puede tener tasas desactualizadas, confundir un régimen con otro o mezclar reglas de años distintos, y te lo va a decir con la misma seguridad con la que te dice cualquier otra cosa. La confianza de la respuesta no tiene relación con qué tan vigente es el dato.</p>
+
+      <p>Una herramienta bien construida invierte esa relación. La aritmética la hace el código, que no se equivoca ni improvisa. Las reglas las cargas tú, con fecha y fuente, visibles y editables. Y el modelo solo hace lo que sí hace bien: construir la interfaz, ordenar los escenarios y explicarte qué estás viendo.</p>
+
+      <h2>Qué datos vas a necesitar</h2>
+
+      <p>Junta esto antes de abrir el chat. Sin los datos reales, la herramienta es un juguete.</p>
+
+      <ul>
+        <li><strong>Tus ingresos por fuente</strong>, mes a mes del último año: sueldo, honorarios, actividad empresarial, arrendamiento, plataformas, lo que aplique. Por separado, porque cada fuente se trata distinto.</li>
+        <li><strong>Tu régimen o regímenes actuales</strong>, tal como aparecen en tu constancia de situación fiscal.</li>
+        <li><strong>Tus gastos</strong>, separados en dos montones: los que ya están facturados a tu nombre con los datos correctos, y los que no. Esa separación es media herramienta.</li>
+        <li><strong>Lo que ya pagaste</strong> en el año: pagos provisionales, retenciones, saldos a favor.</li>
+        <li><strong>Los eventos previsibles</strong> de los próximos meses: un ingreso grande que ya sabes que va a entrar, una compra de equipo, un cambio de esquema.</li>
+        <li><strong>Las reglas aplicables</strong>: tasas, topes y condiciones de tu caso, tomadas de fuentes oficiales o confirmadas por tu contador, cada una con su fecha de vigencia.</li>
+      </ul>
+
+      <p>Ese último punto es el trabajo de verdad y no lo puedes saltar. Todo lo demás es teclear.</p>
+
+      <h2>El prompt</h2>
+
+      <p>Este construye la herramienta. Léelo antes de pegarlo: la parte importante es la sección de reglas, que es la que evita que el modelo invente números.</p>
+
+      <pre><code>Vas a construir una herramienta interactiva de una sola pantalla
+para comparar escenarios fiscales personales en México. Yo la voy
+a usar para preparar mi conversación con mi contador, no para
+tomar decisiones por mi cuenta.
+
+REGLA NÚMERO UNO, POR ENCIMA DE TODO LO DEMÁS:
+No incorpores ninguna tasa, tope, límite ni regla fiscal que
+salga de tu conocimiento. Ninguna. Todas las reglas van como
+parámetros editables que yo cargo en un panel visible, cada una
+con un campo de "fuente" y uno de "vigente desde". Si el
+parámetro está vacío, la herramienta no calcula esa parte:
+muestra "falta cargar este parámetro" y sigue.
+
+Si en algún momento te dan ganas de rellenar un número fiscal
+"para que se vea completo", no lo hagas. Deja el campo vacío.
+
+QUÉ DEBE HACER LA HERRAMIENTA:
+
+1. Panel de datos personales (entrada):
+   - Ingresos mensuales por fuente, con la fuente etiquetada.
+   - Régimen o regímenes actuales.
+   - Gastos del periodo, cada uno marcado como FACTURADO A MI
+     NOMBRE o NO FACTURADO.
+   - Pagos provisionales y retenciones ya efectuados.
+   - Eventos previsibles con su mes estimado.
+
+2. Panel de reglas (entrada, separado y muy visible):
+   - Una fila por parámetro fiscal, con: nombre, valor, unidad,
+     fuente y vigente desde.
+   - Que yo pueda agregar filas. Que ninguna traiga valor por
+     defecto.
+   - Un aviso arriba del panel: "Estos valores los cargo yo. La
+     herramienta no los verifica."
+
+3. Comparador de escenarios (salida):
+   - Que yo pueda definir 2 a 4 escenarios y verlos lado a lado.
+   - Cada escenario es una combinación de: régimen, qué gastos
+     alcanzo a facturar, y en qué mes ocurren los eventos.
+   - Para cada escenario muestra: base gravable estimada, monto
+     estimado a pagar, y la diferencia contra el escenario
+     actual, en pesos y en porcentaje.
+   - Debajo de cada número, un desglose expandible de CÓMO se
+     calculó, paso por paso, citando qué parámetro se usó en
+     cada paso.
+
+4. Panel de huecos (salida):
+   - Lista de gastos NO facturados con su monto, ordenados de
+     mayor a menor. Este es el panel más útil de todos.
+   - Lista de parámetros faltantes que impiden completar algún
+     cálculo.
+   - Lista de supuestos que tuvo que hacer el cálculo.
+
+5. Exportar: un botón que genera un resumen en texto plano con
+   los escenarios, los supuestos y las preguntas abiertas, listo
+   para mandárselo a mi contador.
+
+REQUISITOS TÉCNICOS:
+- Una sola página, autocontenida, que corra en el navegador.
+- Todos los datos se quedan en mi máquina. Sin llamadas a
+  servicios externos, sin analítica, sin nada que salga.
+- Que pueda guardar y cargar mi configuración como un archivo
+  local.
+- Toda la aritmética explícita y visible en el desglose. Nada
+  de cajas negras.
+- Interfaz en español, montos en pesos mexicanos con separador
+  de miles.
+
+AVISO PERMANENTE EN LA INTERFAZ, arriba y visible siempre:
+"Herramienta de exploración. No es asesoría fiscal. Los
+parámetros los cargó el usuario. Validar con un contador antes
+de tomar cualquier decisión."
+
+Antes de construir: hazme las preguntas que necesites para no
+suponer nada de mi situación. Una a la vez.</code></pre>
+
+      <h2>Cómo cargar las reglas sin romper todo</h2>
+
+      <p>Este es el paso donde la herramienta se gana o se pierde.</p>
+
+      <p>Cada parámetro se carga con tres cosas: el valor, de dónde salió y desde cuándo aplica. Si no puedes llenar las tres, no lo cargues: déjalo vacío y que la herramienta te diga que ese cálculo está incompleto. Un hueco visible es infinitamente mejor que un número plausible que nadie puede rastrear.</p>
+
+      <p>La fuente puede ser la publicación oficial correspondiente o el correo donde tu contador te lo confirmó. Las dos sirven. Lo que no sirve es "me lo dijo la IA".</p>
+
+      <p>Y ponle fecha de revisión al archivo. Las reglas cambian de un ejercicio a otro; una herramienta con parámetros del año pasado corriendo sobre datos de este año da resultados que se ven perfectamente bien y están completamente mal.</p>
+
+      <h2>Cómo validarla antes de creerle</h2>
+
+      <p>No uses la herramienta para decidir nada hasta que pase esta prueba.</p>
+
+      <p>Toma un periodo del que ya conozcas el resultado real —tu declaración anterior, un pago provisional ya presentado— carga esos datos exactos y compara lo que arroja contra lo que de verdad pagaste.</p>
+
+      <p>Si el número coincide, la herramienta está bien construida y los parámetros están bien cargados. Si no coincide, ahí tienes dos posibilidades y las dos son valiosas: o un parámetro está mal, o hay algo de tu situación que el modelo no está considerando. Persigue la diferencia hasta entenderla. Ese ejercicio, por sí solo, ya te enseña más de tu propia situación fiscal que tres años de firmar declaraciones sin leerlas.</p>
+
+      <h2>Las preguntas que sí vale la pena correr</h2>
+
+      <p>Una vez validada, estas son las comparaciones que en la práctica mueven más dinero:</p>
+
+      <ul>
+        <li><strong>El costo de no facturar.</strong> El panel de gastos no facturados, sumado y puesto enfrente, suele ser el número que más incomoda. No requiere ningún cambio de estrategia: requiere pedir la factura.</li>
+        <li><strong>El momento de las cosas.</strong> Qué pasa si un ingreso grande cae en un periodo o en el siguiente, y qué pasa si una compra se adelanta o se pospone.</li>
+        <li><strong>La comparación entre regímenes aplicables a tu caso</strong>, con tus números reales y no con ejemplos de folleto.</li>
+        <li><strong>El escenario de crecimiento.</strong> Si tus ingresos suben lo que esperas, ¿el esquema que tienes hoy sigue siendo el adecuado el año que entra?</li>
+      </ul>
+
+      <p>Ninguna de esas preguntas la contesta la herramienta sola. Lo que hace es convertir una intuición vaga en un número específico que sí puedes llevar a revisión.</p>
+
+      <h2>El error de fondo</h2>
+
+      <p>El error no es construir la herramienta. Es empezar a creerle.</p>
+
+      <p>Una interfaz limpia con números bien formateados se siente autoritativa aunque los parámetros de atrás estén mal. Por eso el desglose expandible del prompt no es un adorno: es lo que te obliga a poder rastrear cada resultado hasta el parámetro que lo produjo, y lo que le permite a tu contador revisar el razonamiento en dos minutos en vez de rehacerlo.</p>
+
+      <p>Usada así, la herramienta no reemplaza a nadie. Cambia la conversación: llegas con escenarios, con los supuestos escritos y con las preguntas ya formuladas. Esa reunión vale diez veces más que la de siempre, y esa es toda la ganancia.</p>
+
+      <p>Si te gustó el enfoque de construir tus propias herramientas en vez de buscar la app que ya existe, el mismo método aplicado a tu dinero está en <a href="/guias/8-prompts-para-tu-plan-de-riqueza/">8 prompts que convierten tu sueldo en un plan de riqueza</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
