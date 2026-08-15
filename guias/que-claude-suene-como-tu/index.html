@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haz que Claude suene como tú — Guías Flow AI</title>
+  <meta name="description" content="Entrena a Claude para que copie tu voz, y que todo lo que salga se lea como si tú lo hubieras escrito." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/que-claude-suene-como-tu/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Haz que Claude suene como tú" />
+  <meta property="og:description" content="Entrena a Claude para que copie tu voz, y que todo lo que salga se lea como si tú lo hubieras escrito." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/que-claude-suene-como-tu/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Contenido</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Contenido</span><span class="tag">Prompts</span></div>
+      <h1>Haz que Claude suene como tú</h1>
+      <p class="lead">Entrena a Claude para que copie tu voz, y que todo lo que salga se lea como si tú lo hubieras escrito.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Se nota. Siempre se nota. No por una palabra en particular, sino por el ritmo: frases del mismo largo, tríos de adjetivos, transiciones que nadie usa al hablar, y ese cierre que resume lo que acabas de leer como si se te hubiera olvidado.</p>
+
+      <p>El problema no es que escriba mal. Escribe correcto. Y "correcto" es exactamente el registro que hace que alguien deje de leerte, porque suena a comunicado y no a persona.</p>
+
+      <p>Hay tres formas de arreglarlo, de menos a más trabajo. La primera toma dos minutos y resuelve el ochenta por ciento. La tercera es la que uso cuando la voz es de una marca y varias personas tienen que escribir con ella.</p>
+
+      <h2>Ruta 1: un estilo guardado, dos minutos</h2>
+
+      <p>Claude tiene una función de estilos que analiza textos tuyos y guarda el perfil para todas las conversaciones siguientes.</p>
+
+      <ol>
+        <li>En un chat nuevo, abre el selector de estilo abajo a la izquierda.</li>
+        <li>Entra a crear y editar estilos, y crea uno personalizado.</li>
+        <li>Agrega muestras de escritura. Cinco.</li>
+        <li>Ponle nombre y actívalo.</li>
+      </ol>
+
+      <p>Lo importante no es el procedimiento, son las cinco muestras. La gente pega cinco textos del mismo tipo —cinco correos de trabajo— y el resultado es un Claude que solo sabe escribir correos de trabajo. Lo que hay que darle es rango:</p>
+
+      <ul>
+        <li><strong>Un mensaje casual</strong>, de los que le mandas a alguien de confianza.</li>
+        <li><strong>Un correo de trabajo</strong> real, de los que sí mandaste.</li>
+        <li><strong>Un texto para redes</strong>, donde escribes corto y con gancho.</li>
+        <li><strong>Algo que escribiste emocionado</strong>, cuando algo salió bien.</li>
+        <li><strong>Algo formal</strong>, una propuesta o un documento serio.</li>
+      </ul>
+
+      <p>Con esas cinco, el perfil aprende dónde se mueve tu registro y no solo dónde se para. Funciona en planes gratuitos y de paga, y no requiere instalar nada.</p>
+
+      <h2>Ruta 2: la huella medida</h2>
+
+      <p>Hay un plugin de la comunidad, <code>voiceprint</code>, que hace el mismo ejercicio con más rigor: te pide muestras en cinco registros distintos, extrae la huella y te deja construir además una lista de frases prohibidas.</p>
+
+      <pre><code>/plugin marketplace add jamesckemp/claude-plugins
+/plugin install voiceprint@jamesckemp/claude-plugins
+/voiceprint</code></pre>
+
+      <p>Las cinco muestras que pide van por emoción, no por formato: algo casual, algo donde explicas, algo donde estás entusiasmado, algo donde estás molesto, y algo donde estás convenciendo a alguien. Esa última categoría es la más reveladora: la forma en que argumentas cuando quieres algo es la parte más personal de cómo escribes.</p>
+
+      <p>Es un plugin de comunidad, no oficial. Aplica la misma cautela que con una extensión de navegador: mira quién lo hizo y qué permisos pide antes de instalarlo.</p>
+
+      <h2>Ruta 3: el archivo de voz</h2>
+
+      <p>Esta es la que uso cuando la voz no es de una persona sino de una marca, o cuando quiero que la voz viaje: que la misma voz funcione en el chat, en Claude Code, dentro de una skill y en manos de otra persona del equipo.</p>
+
+      <p>Un estilo guardado vive en tu cuenta. Un archivo de voz es un documento que puedes versionar, corregir, compartir y meter dentro de cualquier skill. Es más trabajo y es lo único que escala.</p>
+
+      <p>Se construye en dos pasos.</p>
+
+      <h3>Paso 1: junta el material</h3>
+
+      <p>Entre diez y veinte textos tuyos, de verdad. Nada editado por alguien más, nada escrito con IA. Si es una marca, usa lo que publicó el fundador o quien de verdad define el tono, no lo que salió de la agencia.</p>
+
+      <p>La cantidad importa menos que la variedad y la autenticidad. Diez textos crudos tuyos valen más que cincuenta pasados por un editor.</p>
+
+      <h3>Paso 2: el análisis</h3>
+
+      <pre><code>Te voy a pegar entre 10 y 20 textos míos. Quiero que extraigas mi
+voz como un documento reutilizable, no que me halagues.
+
+Analiza y devuélveme un archivo con estas secciones:
+
+1. RITMO
+   - Largo promedio de frase y qué tanto varía.
+   - Largo promedio de párrafo.
+   - ¿Uso frases de una sola palabra? ¿Con qué frecuencia?
+
+2. VOCABULARIO
+   - Las 20 palabras y expresiones que más uso y que no son comunes.
+   - Nivel de formalidad, de 1 a 10, y si cambia según el tema.
+   - ¿Uso tecnicismos? ¿Los explico o los doy por sabidos?
+
+3. ESTRUCTURA
+   - ¿Cómo abro un texto? Encuentra el patrón real, con ejemplos.
+   - ¿Cómo cierro? ¿Resumo, remato, dejo una pregunta, corto seco?
+   - ¿Uso listas? ¿Subtítulos? ¿Cuándo?
+
+4. RECURSOS
+   - ¿Uso analogías? ¿De qué campos las saco?
+   - ¿Uso humor? ¿De qué tipo?
+   - ¿Cómo doy una opinión fuerte: directo, con matiz, con datos?
+
+5. LO QUE NUNCA HAGO
+   - Palabras, muletillas y estructuras que NO aparecen ni una vez
+     en todas las muestras. Esta sección es la más importante.
+
+6. TRES REGLAS
+   - Si alguien tuviera que escribir como yo y solo pudiera recordar
+     tres reglas, cuáles serían.
+
+Para cada punto cita el ejemplo exacto de mis textos que lo prueba.
+Si un patrón aparece en menos de la mitad de las muestras, no lo
+declares como patrón: dilo como tendencia.</code></pre>
+
+      <p>El resultado se guarda como <code>voz.md</code> y se referencia desde donde lo necesites: dentro de una skill de redacción, en el archivo de contexto de un proyecto, o pegado al inicio de una conversación.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la sección de lo que nunca haces. Todo el mundo quiere la lista de lo que sí, y esa es la parte fácil. La lista de lo que no aparece jamás en tu escritura es la que de verdad borra el acento de IA, porque el problema casi nunca es que falte algo tuyo: es que sobra algo que tú no dirías nunca.</p>
+      </div>
+
+      <h2>La lista de prohibiciones</h2>
+
+      <p>Sea cual sea la ruta que elijas, agrega esta lista. Es lo que más rápido cambia el resultado:</p>
+
+      <ul>
+        <li><strong>Las frases de transición de ensayo escolar.</strong> "En resumen", "es importante destacar", "cabe mencionar", "en la era digital".</li>
+        <li><strong>Los tríos.</strong> Tres adjetivos seguidos, tres ejemplos seguidos, tres beneficios. Es el tic más reconocible que existe.</li>
+        <li><strong>El cierre que resume.</strong> Si el último párrafo repite lo que ya dijiste, sobra completo.</li>
+        <li><strong>Los superlativos vacíos.</strong> "Revolucionario", "sin duda", "increíble", "poderoso".</li>
+        <li><strong>Las frases del mismo largo.</strong> Pide variación explícita: alguna de tres palabras, alguna de treinta.</li>
+        <li><strong>El "no es solo X, es Y".</strong> Aparece en todo texto generado y casi en ninguno humano.</li>
+      </ul>
+
+      <p>Si tienes tus propios detestables, agrégalos. La lista personal siempre funciona mejor que la genérica.</p>
+
+      <h2>Cómo saber si funcionó</h2>
+
+      <p>La prueba honesta no es leer la salida y decir "sí, suena a mí". Todo suena a ti cuando acabas de pedirlo.</p>
+
+      <p>Haz esto: toma tres textos tuyos reales y tres generados con tu voz, quítales el contexto, revuélvelos, y dáselos a alguien que te lea seguido. Si no puede separarlos, ya está. Si los acierta todos, pídele que te diga cómo lo supo. Esa respuesta —"tú nunca empiezas así", "tú no usarías esa palabra"— es exactamente lo que le falta a tu archivo de voz.</p>
+
+      <p>Y una advertencia que casi no se dice: la voz no arregla el contenido. Un texto tuyo bien imitado sobre algo que no tienes nada que decir sigue siendo un texto vacío, nada más que ahora suena a ti. Lo que hace que alguien te lea no es el ritmo de tus frases, es que tengas algo que solo tú puedes decir. La voz solo evita que ese algo llegue disfrazado de comunicado.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/skill-que-ve-youtube-por-ti/" class="stack-link">
+            <span>La skill que ve YouTube por ti →</span>
+            <small>Una skill que se ve el video completo —lo visual y el audio— para que puedas hacerle ingeniería inversa a un creador viral y sacar el paso a paso de cualquier video.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

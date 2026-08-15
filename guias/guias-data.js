@@ -4181,6 +4181,21 @@ window.GUIAS = [
   "meta": "8 min · Claude"
  },
  {
+  "slug": "claude-dispatch",
+  "titulo": "Claude Dispatch: configuración y trucos",
+  "desc": "Deja configuradas tareas programadas que corren solas. Tu IA trabajando mientras duermes.",
+  "badge": "Flujos",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "automatizacion",
+   "agentes"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
   "slug": "nunca-confies-sin-hacer-esto",
   "titulo": "Nunca confíes en lo que sale de Claude sin hacer esto",
   "desc": "Usa un segundo agente para auditar el trabajo del primero. Copia el prompt.",
@@ -4537,6 +4552,36 @@ window.GUIAS = [
   "meta": "9 min · Claude"
  },
  {
+  "slug": "claude-te-construye-herramientas",
+  "titulo": "Claude te puede construir herramientas",
+  "desc": "5 prompts que convierten a Claude en un constructor de herramientas para tus necesidades específicas.",
+  "badge": "Prompts",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "creativo"
+  ],
+  "min": 8,
+  "meta": "8 min · Claude"
+ },
+ {
+  "slug": "que-claude-suene-como-tu",
+  "titulo": "Haz que Claude suene como tú",
+  "desc": "Entrena a Claude para que copie tu voz, y que todo lo que salga se lea como si tú lo hubieras escrito.",
+  "badge": "Configuración",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "contenido",
+   "prompts"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "5-skills-que-corren-mi-vida-parte-2",
   "titulo": "5 skills de Claude que me corren la vida (parte 2)",
   "desc": "Resumen matutino, mantenimiento de la casa, estilista de guardarropa, planeador de cenas y pulso financiero. Se configuran una vez y sirven todo el año.",
@@ -4684,6 +4729,35 @@ window.GUIAS = [
   ],
   "min": 9,
   "meta": "9 min · Claude"
+ },
+ {
+  "slug": "10-prompts-que-hacen-util-a-la-ia",
+  "titulo": "10 prompts que de verdad hacen útil a la IA",
+  "desc": "Stanford probó que la IA se va por defecto a darte la razón. Estos 10 prompts lo arreglan para decisiones, escritura, negociaciones, dinero y tu reset semanal.",
+  "badge": "Prompts",
+  "tool": [
+   "multi"
+  ],
+  "topic": [
+   "prompts"
+  ],
+  "min": 9,
+  "meta": "9 min · Multi-herramienta"
+ },
+ {
+  "slug": "2-prompts-que-me-hacen-10x",
+  "titulo": "2 prompts que me hacen 10 veces más productivo",
+  "desc": "Uno encuentra tu objetivo más importante. El otro audita tu semana buscando productividad de teatro. Copia, pega, y cambia tu enfoque.",
+  "badge": "Prompts",
+  "tool": [
+   "claude"
+  ],
+  "topic": [
+   "prompts",
+   "productividad"
+  ],
+  "min": 7,
+  "meta": "7 min · Claude"
  },
  {
   "slug": "analizador-de-riesgo-de-tu-puesto",

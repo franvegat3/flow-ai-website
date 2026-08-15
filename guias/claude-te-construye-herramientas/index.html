@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude te puede construir herramientas — Guías Flow AI</title>
+  <meta name="description" content="5 prompts que convierten a Claude en un constructor de herramientas para tus necesidades específicas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-te-construye-herramientas/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Claude te puede construir herramientas" />
+  <meta property="og:description" content="5 prompts que convierten a Claude en un constructor de herramientas para tus necesidades específicas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-te-construye-herramientas/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Prompts</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Prompts</span><span class="tag">Creativo</span></div>
+      <h1>Claude te puede construir herramientas</h1>
+      <p class="lead">5 prompts que convierten a Claude en un constructor de herramientas para tus necesidades específicas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Hay una categoría entera de suscripciones que la gente paga por cosas que caben en una sola pantalla: un rastreador de hábitos, una hoja de presupuesto, un calendario de contenido, una lista de pendientes con prioridades. Ocho dólares al mes cada una, con anuncios, con la función que necesitas detrás del plan premium, y con tus datos en el servidor de alguien más.</p>
+
+      <p>Casi todas esas herramientas son una tabla, un par de cálculos y un gráfico. Claude las construye en una respuesta, funcionando y con tus datos guardados, y quedan hechas exactamente como tú las querías en lugar de como las diseñó alguien para un promedio de usuarios.</p>
+
+      <p>Aquí van cinco prompts completos para copiar. Ninguno requiere que sepas nada técnico.</p>
+
+      <h2>Qué es lo que construye</h2>
+
+      <p>La salida es una herramienta interactiva dentro de la conversación: la abres, le das clic, escribes, y guarda lo que capturaste para cuando vuelvas. No es un plan de cómo construirla ni un código que tengas que instalar. Es la cosa, corriendo.</p>
+
+      <p>Necesitas tener activada la creación de archivos y ejecución de código en la configuración de tu cuenta. Es un interruptor y va una sola vez.</p>
+
+      <h2>Las tres cosas que hacen la diferencia al pedirlo</h2>
+
+      <ul>
+        <li><strong>Di qué quieres ver, no cómo hacerlo.</strong> "Quiero ver mi racha de cada hábito" produce mejor resultado que cualquier instrucción técnica que se te ocurra.</li>
+        <li><strong>Pide que guarde los datos, explícitamente.</strong> Si no lo dices, puede construirte algo que se vacía al recargar. Es la corrección número uno que hace la gente en el segundo intento.</li>
+        <li><strong>Pide una cosa a la vez.</strong> La herramienta que hace seis cosas sale mediocre en las seis. Constrúyela con lo esencial, úsala una semana, y después pide la función que de verdad extrañaste.</li>
+      </ul>
+
+      <h2>Los cinco prompts</h2>
+
+      <div class="plugin-card">
+        <h3>1. Rastreador de hábitos</h3>
+        <p>El más fácil de arrancar y el que más se usa. Lo que hace que funcione no es la lista, es ver la racha: rompe la cadena y se nota.</p>
+        <pre><code>Constrúyeme un rastreador de hábitos interactivo para usar todos
+los días.
+
+- Hasta 10 hábitos, que yo pueda agregar, editar y borrar.
+- Vista de la semana en curso, con una casilla por hábito y por día.
+- Racha actual y racha más larga de cada hábito, visibles siempre.
+- Porcentaje de cumplimiento del mes por hábito.
+- Que guarde mis datos automáticamente para que al volver siga todo
+  ahí.
+- Que funcione bien en celular, porque lo voy a marcar desde ahí.
+
+Diseño limpio, sin decoración de más. Lo importante son las casillas
+y las rachas.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Control de presupuesto mensual</h3>
+        <p>La versión que sirve es la que te dice a dónde se fue el dinero, no la que solo suma. Por eso el gráfico por categoría no es adorno.</p>
+        <pre><code>Constrúyeme un control de presupuesto mensual.
+
+- Registrar ingresos y gastos con fecha, monto, categoría y nota.
+- Categorías que yo pueda editar: crea unas de arranque
+  (despensa, comida fuera, transporte, servicios, suscripciones,
+  salud, ocio, otros).
+- Presupuesto asignado por categoría, y qué tanto llevo gastado de
+  cada uno, con alerta visual cuando pase del 80%.
+- Balance del mes: ingresos menos gastos, arriba y grande.
+- Gráfica de a dónde se está yendo el dinero.
+- Comparación contra el mes anterior por categoría.
+- Que guarde todo para que pueda volver mes con mes.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Planeador de contenido</h3>
+        <p>Deja de tener el calendario en un lado, las métricas en otro y las ideas en notas del celular.</p>
+        <pre><code>Constrúyeme un planeador de contenido para redes.
+
+- Programar publicaciones por fecha y por red: Instagram, TikTok,
+  YouTube, LinkedIn.
+- Cada publicación con: gancho, formato, estado (idea, grabado,
+  editado, publicado) y notas.
+- Vista de calendario mensual y vista de lista filtrable por red y
+  por estado.
+- Después de publicar, registrar métricas: alcance, guardados,
+  comentarios, seguidores ganados.
+- Un panel con el desempeño por formato y por gancho, para ver qué
+  tipo de contenido rinde de verdad.
+- Que guarde todo automáticamente.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Tablero de la semana</h3>
+        <p>Lo que hace útil a este y no a las otras cien listas de pendientes es que lo diseñas alrededor de cómo tú priorizas.</p>
+        <pre><code>Constrúyeme un administrador de tareas de la semana.
+
+- Agregar tareas con prioridad (alta, media, baja), fecha límite y
+  categoría o proyecto.
+- Agrupar por categoría, y poder ordenar por prioridad o por fecha.
+- Marcar como completadas, con las completadas visibles pero
+  atenuadas al final.
+- Que lo vencido se vea distinto y siempre hasta arriba.
+- Contador arriba: cuántas quedan esta semana y cuántas ya cerré.
+- Que guarde los datos y que al empezar semana nueva pueda arrastrar
+  lo que no terminé, en vez de perderlo.</code></pre>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Avance de metas</h3>
+        <p>Sirve para lo que se mide con un número y una fecha. Si tu meta no tiene esas dos cosas, el problema es la meta.</p>
+        <pre><code>Constrúyeme un tablero de avance de metas.
+
+- Crear metas con nombre, número objetivo, unidad y fecha límite.
+- Registrar avance con fecha, para llevar el histórico.
+- Por cada meta: porcentaje alcanzado, cuánto falta, y cuánto
+  tendría que avanzar por semana para llegar a tiempo.
+- Gráfica de avance en el tiempo contra la línea de ritmo necesario,
+  para ver si voy adelantado o atrasado.
+- Marcar visualmente las metas cuyo ritmo ya no da para la fecha.
+- Que guarde todo.</code></pre>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> usarla una semana antes de pedirle funciones. La tentación al ver la herramienta funcionando es pedir cinco cosas más de inmediato. Espera. Después de siete días vas a saber cuál es la única función que de verdad te faltó, y esa petición sí vale la pena. Las otras cuatro que ibas a pedir el primer día resultan ser adorno.</p>
+      </div>
+
+      <h2>Lo mismo, pero para el equipo</h2>
+
+      <p>Los cinco de arriba son personales porque son los más fáciles de probar. El patrón funciona igual para operación, y ahí es donde el ahorro se mide en horas de gente que cobra.</p>
+
+      <p>El caso más común que veo: un equipo comercial con el pipeline en una hoja de cálculo que se rompe cada mes porque cuatro personas la editan a la vez. El prompt es el mismo, cambiando el contenido:</p>
+
+      <pre><code>Constrúyeme un tablero de pipeline comercial.
+
+- Registrar oportunidades con: cliente, contacto, monto estimado,
+  etapa, fecha de cierre probable, responsable y última actividad.
+- Etapas configurables. De arranque: prospecto, contactado,
+  propuesta enviada, negociación, cerrado ganado, cerrado perdido.
+- Vista de tablero por etapa con el monto total de cada columna.
+- Alertas visuales: oportunidades sin actividad en más de [N] días,
+  y las que ya pasaron su fecha probable de cierre.
+- Resumen arriba: monto total del pipeline, monto ponderado por
+  etapa, y cuánto se cerró este mes.
+- Filtro por responsable.
+- Que guarde los datos.
+
+Al final dime qué campos me faltaron según lo que suele necesitar un
+equipo comercial, pero no los agregues sin preguntarme.</code></pre>
+
+      <p>Ese último renglón lo uso siempre. Es más barato que te diga qué falta a que lo construya de más.</p>
+
+      <h2>Cuándo esto no es la respuesta</h2>
+
+      <p>Estas herramientas viven en tu conversación y guardan tus datos ahí. Eso es perfecto para uso personal y para una prueba rápida en equipo, y es insuficiente cuando necesitas que quince personas escriban al mismo tiempo, cuando manejas datos sensibles de clientes bajo alguna normativa, o cuando la herramienta tiene que hablar con tus sistemas en vivo.</p>
+
+      <p>Para lo último hay una ruta intermedia: los tableros que se quedan conectados a tus aplicaciones y se actualizan solos, que están en <a href="/guias/artifacts-vivos/">artifacts vivos</a>. Y si lo que quieres es algo con usuarios, permisos y base de datos de verdad, eso ya es <a href="/guias/claude-code-sin-codigo/">construirlo en Claude Code</a>.</p>
+
+      <p>La regla que uso para decidir: si la herramienta la usa una persona, constrúyela aquí en cinco minutos. Si la usan varias y alguien va a tomar decisiones con esos datos, súbela un nivel. Lo que ya no tiene sentido es pagar una suscripción por una tabla con tres cálculos.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/7-modos-de-pensamiento/" class="stack-link">
+            <span>7 modos de pensamiento para tu IA →</span>
+            <small>Casi todos le dicen a la IA qué hacer. Los que saben le dicen cómo pensar. Siete modos para copiar y pegar, de Red Team a CEO a Consultor, que cambian cualquier respuesta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
