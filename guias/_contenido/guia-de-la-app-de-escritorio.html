@@ -1,0 +1,82 @@
+      <p>La mayoría de la gente usa Claude en el navegador y asume que la app de escritorio es lo mismo con un icono. No lo es. Es un producto distinto, y las funciones que separan a Claude de un chat cualquiera solo existen ahí.</p>
+
+      <p>La versión corta: en el navegador, Claude habla de tus archivos. En la app de escritorio, Claude abre tus archivos, los edita, y sigue trabajando cuando tú te levantas por un café.</p>
+
+      <p>Esta es la guía de arranque. Descarga, las seis funciones que solo viven ahí, el orden en que conviene prenderlas, y el ajuste del sistema operativo que nadie te dice y que hace que la mitad de esto funcione o no.</p>
+
+      <h2>Descarga y requisitos</h2>
+
+      <p>Se baja de <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>. Instalación normal, sin nada raro.</p>
+
+      <p>Necesitas plan Pro o Max. En el gratuito la app se instala pero las funciones que la hacen valer la pena no aparecen, así que si estás en gratuito, esta guía es para después.</p>
+
+      <h2>Las seis cosas que solo hay aquí</h2>
+
+      <div class="plugin-card">
+        <h3>1. Cowork</h3>
+        <p>Una pestaña aparte del chat, donde Claude trabaja solo. Lee, crea y edita archivos reales en tu máquina, arma su propia lista de tareas y las va ejecutando. Le das acceso explícito a las carpetas que puede tocar, y antes de ejecutar te enseña el plan; antes de borrar algo, te pide permiso.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que tenga una carpeta con doscientos archivos que alguien debería ordenar y nadie ordena.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Tareas programadas</h3>
+        <p>Corren solas en horario recurrente: diario, semanal, mensual. Se crean con el comando <code>/schedule</code> dentro de Cowork y se administran en la sección "Programadas" de la barra lateral.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el reporte del lunes, el resumen del viernes, cualquier cosa que alguien hace por obligación y siempre tarde.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Conectores</h3>
+        <p>Gmail, Outlook, Google Drive, Google Calendar, Slack y Notion. Se prenden en Personalizar, Conectores. Dan acceso de lectura y, si lo autorizas, de escritura.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> todo el mundo. Es lo primero que hay que prender y lo que más gente deja apagado. Ver <a href="/guias/10-conectores-que-cambian-tu-dia/">los conectores que cambian tu día</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Plugins</h3>
+        <p>Paquetes por área —marketing, finanzas, legal— que se instalan de un clic y configuran solos las skills y los conectores de esa función. Es la vía rápida para no armar tu setup pieza por pieza.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien quiere el andamiaje de su oficio sin construirlo. Los diez oficiales están en <a href="/guias/plugins-cowork/">la guía de plugins</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Dispatch</h3>
+        <p>Conecta tu teléfono con la computadora. Le mandas una tarea desde el celular y se ejecuta en tu escritorio, con tus archivos locales, tus conectores y tus plugins. Se activa en Cowork, sección Dispatch, emparejando con un código QR desde la app móvil.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que se acuerda de las cosas en el coche y no cuando está frente a la máquina.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Skills y Proyectos</h3>
+        <p>Las skills son instrucciones reusables que convierten una tarea de tres párrafos en un comando; se administran en Personalizar, Skills. Los proyectos son espacios separados que aíslan archivos, contexto y tareas programadas por área de trabajo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que hace la misma tarea cada semana y la vuelve a explicar cada semana.</p>
+      </div>
+
+      <h2>El ajuste que casi nadie hace</h2>
+
+      <p>Aquí está el detalle que decide si todo lo anterior funciona o si te llevas una decepción: para que las funciones autónomas corran, <strong>tu computadora tiene que estar despierta y la app abierta</strong>.</p>
+
+      <p>Eso significa que una tarea programada a las 7 de la mañana no va a correr si tu máquina se durmió a las 11 de la noche. No es un bug, es cómo funciona: la app corre en tu equipo, no en la nube.</p>
+
+      <p>Entra a la configuración de energía de tu sistema y ajusta el suspender para que la máquina siga despierta en el horario en que programaste cosas. Si trabajas en laptop, esto implica dejarla conectada. Es el precio de que Claude tenga tus archivos locales en lugar de una copia en un servidor, y para la mayoría de la gente ese intercambio vale la pena.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> dar acceso a la carpeta correcta. La tentación es darle acceso a todo el disco de una vez para que "no moleste". No lo hagas. Dale una carpeta de trabajo específica y trabaja adentro de ella las primeras semanas. Vas a saber exactamente dónde puede meter la mano, y cuando algo salga raro vas a saber dónde buscar.</p>
+      </div>
+
+      <h2>El orden de arranque</h2>
+
+      <p>Cuatro pasos, una tarde. No los hagas en otro orden porque cada uno depende del anterior.</p>
+
+      <ol>
+        <li><strong>Conecta tus herramientas.</strong> Correo, calendario y Drive primero. Es lo que le da contexto real de tu trabajo, y sin eso todo lo demás opera a ciegas.</li>
+        <li><strong>Entra a Cowork y autoriza una carpeta.</strong> Una. La de trabajo activo.</li>
+        <li><strong>Dale una tarea de verdad y quédate viendo.</strong> Algo que puedas verificar: ordenar esa carpeta, o sacar los datos de doce PDFs a una tabla. Ver cómo trabaja es lo que te enseña qué se le puede pedir; leerlo no sirve.</li>
+        <li><strong>Programa una tarea recurrente</strong> con <code>/schedule</code>. Una sola. El resumen del lunes por la mañana, por ejemplo.</li>
+      </ol>
+
+      <p>Ese tercer paso es el que hace clic. La primera vez que le dices "toma estos cuarenta correos de proveedores, sácame el monto y el vencimiento de cada uno y arma la hoja" y regresas en diez minutos a un archivo terminado, entiendes por qué la app de escritorio no es el navegador con icono.</p>
+
+      <h2>Dónde se atora en la práctica</h2>
+
+      <p>Dos cosas que veo seguido cuando instalo esto en un equipo.</p>
+
+      <p>La primera es de permisos corporativos. En muchas empresas el correo y el Drive están administrados con políticas que bloquean conectores de terceros. Eso no lo resuelves tú desde la app: es una conversación con sistemas, y conviene tenerla antes de prometer resultados.</p>
+
+      <p>La segunda es más humana. La gente instala la app, prende todo, y sigue usándola como chat. Después dice que "es lo mismo". Claro que es lo mismo si le sigues pegando preguntas sueltas. Lo que cambia el juego es la primera tarea que le encargas y no supervisas —y para eso hay que aguantarse las ganas de estar viendo la pantalla.</p>

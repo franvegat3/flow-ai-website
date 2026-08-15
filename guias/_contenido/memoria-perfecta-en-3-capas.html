@@ -1,0 +1,162 @@
+      <p>Le explicas a Claude cómo trabaja tu empresa. Te da una respuesta buenísima. Al día siguiente abres un chat nuevo y es un desconocido otra vez.</p>
+
+      <p>Ese es el impuesto que paga todo el mundo y casi nadie contabiliza: veinte minutos diarios reconstruyendo contexto que ya explicaste. No se siente como trabajo perdido porque va en pedacitos de dos minutos, pero al mes son horas.</p>
+
+      <p>La solución no es un truco. Es un sistema de tres capas que se montan en orden, y cada una resuelve un problema distinto. La primera te toma quince minutos y arregla el 60% del dolor. La tercera es un proyecto de fin de semana y cambia cómo trabajas.</p>
+
+      <h2>Por qué olvida</h2>
+
+      <p>Vale la pena entender el mecanismo, porque explica qué capa necesitas.</p>
+
+      <p>Un chat es una sesión aislada. Lo único que el modelo "sabe" es lo que está en esa conversación más lo que la plataforma le inyecte por fuera. Claude tiene una función de memoria que guarda cosas entre chats, pero es selectiva y no la controlas del todo: decide qué le parece memorable.</p>
+
+      <p>Las tres capas son tres formas de meter contexto por fuera, cada una con más control que la anterior. Capa 1: le dices qué recordar. Capa 2: le das archivos que siempre lee. Capa 3: le das una base de conocimiento entera que además puede escribir.</p>
+
+      <h2>Capa 1 — Memoria básica (quince minutos)</h2>
+
+      <p>Cuatro movimientos, todos dentro de la aplicación. Es lo mínimo y ya cambia bastante.</p>
+
+      <h3>Limpia lo que ya guardó</h3>
+
+      <p>Entra a <em>Configuración → Memoria</em>. Ahí está todo lo que Claude ha decidido recordar de ti. Lee la lista completa: casi siempre hay entradas viejas que ya no aplican —un proyecto que cerraste, una preferencia que cambiaste, un dato de un cliente que ya no es tuyo— y esas están contaminando cada respuesta.</p>
+
+      <p>Borra lo caduco. Y agrega a mano lo que sí importa, porque en esa misma pantalla puedes escribir entradas nuevas sin esperar a que él las deduzca.</p>
+
+      <h3>Dile qué recordar, en voz alta</h3>
+
+      <p>A media conversación, cuando notes que algo se va a repetir, díselo directo: "recuerda que mis respuestas nunca pasan de 400 palabras". Lo guarda en ese momento. Es el mecanismo más simple y el más subutilizado.</p>
+
+      <h3>Usa las instrucciones de proyecto</h3>
+
+      <p>Si ya trabajas con proyectos, el campo de instrucciones personalizadas es memoria permanente para todo lo que pase dentro de ese proyecto. Ahí va el rol, las reglas, la audiencia y qué archivos son la fuente de verdad.</p>
+
+      <h3>Impórtate desde otra IA</h3>
+
+      <p>Si llevas dos años usando ChatGPT, ahí hay un perfil tuyo bastante armado. Pídeselo y pégalo en Claude:</p>
+
+      <pre><code>Dame un resumen completo de todo lo que sabes sobre mí: a qué me
+dedico, cómo trabajo, mis preferencias de comunicación, mis
+proyectos, mis herramientas y las correcciones que te he hecho.
+Escríbelo en segunda persona, dirigido a otra IA que va a
+trabajar conmigo desde cero. Sin relleno.</code></pre>
+
+      <p>También existe la ruta directa: en <em>Configuración → Memoria</em> hay opciones de importar y exportar entre plataformas.</p>
+
+      <p>Y para sembrar la memoria de golpe, este es el bloque que pego en un chat nuevo cuando arranco de cero:</p>
+
+      <pre><code>Necesito que recuerdes lo siguiente sobre mí de forma permanente.
+Guárdalo en memoria y confírmame qué guardaste.
+
+QUIÉN SOY
+- Nombre y rol:
+- Empresa y a qué se dedica:
+- A quién le reporto y quién me reporta:
+
+CÓMO TRABAJO
+- Mis tres prioridades de este trimestre:
+- Las herramientas que uso todos los días:
+- Las decisiones que puedo tomar solo y las que tengo que consultar:
+
+CÓMO QUIERO QUE ME HABLES
+- Idioma y tono:
+- Largo por defecto de tus respuestas:
+- Formato que prefiero (prosa, bullets, tablas):
+- Palabras y frases que no quiero leer nunca:
+
+QUÉ ESPERO DE TI
+- Cuando no sepas algo, dilo en vez de suponer.
+- Cuando yo esté equivocado, dímelo antes de ejecutar.
+- Cuando algo tenga más de un camino razonable, dame las opciones
+  con su costo, no solo tu favorita.</code></pre>
+
+      <h2>Capa 2 — Los cuatro archivos</h2>
+
+      <p>Aquí es donde la cosa se vuelve un sistema. En vez de depender de lo que la plataforma decida guardar, creas una carpeta con cuatro archivos de texto y se la das a Claude. Él los lee, los obedece y actualiza uno de ellos solo.</p>
+
+      <p>La carpeta vive en tu computadora. La adjuntas cuando trabajas en Cowork o la apuntas desde Claude Code. Los cuatro archivos son estos:</p>
+
+      <div class="plugin-card">
+        <h3>1. <code>Instructions.md</code> — las reglas</h3>
+        <p>Cómo debe comportarse siempre: tono, estilo, formato de salida, frases prohibidas, qué hacer cuando no sepa algo. Y una instrucción explícita de que actualice el archivo de memoria cuando aprenda algo nuevo de ti.</p>
+        <p class="plugin-for"><strong>Cambia:</strong> casi nunca. Lo escribes una vez y lo ajustas cada par de meses.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. <code>Memory.md</code> — lo que aprende</h3>
+        <p>Este se escribe solo. Cinco secciones: preferencias, correcciones que le has hecho, patrones que ha detectado, decisiones ya tomadas, y contexto personal. Cada vez que le corriges algo, lo anota ahí y no vuelve a caer.</p>
+        <p class="plugin-for"><strong>Cambia:</strong> constantemente. Es el archivo vivo del sistema.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. <code>Context.md</code> — el negocio</h3>
+        <p>A qué se dedica tu empresa, quiénes son los clientes, quién es quién en el equipo, cuáles son las prioridades del trimestre, qué herramientas se usan. Es la diferencia entre una respuesta genérica y una que ya sabe que tu ciclo de venta dura cuatro meses.</p>
+        <p class="plugin-for"><strong>Cambia:</strong> una vez al mes, o cuando cambie algo grande.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. <code>Archive-Guide.md</code> — el respaldo</h3>
+        <p>El que nadie hace y el que evita el desastre. Es el protocolo de respaldo semanal del archivo de memoria, para que un día Claude no lo sobreescriba entero y te deje sin seis meses de aprendizaje.</p>
+        <p class="plugin-for"><strong>Cambia:</strong> nunca. Es la póliza de seguro.</p>
+      </div>
+
+      <p>El bloque que va en <code>Instructions.md</code> para que la memoria se actualice sola:</p>
+
+      <pre><code>## Protocolo de memoria
+
+Antes de responder cualquier cosa, lee Memory.md y Context.md.
+
+Actualiza Memory.md cuando pase cualquiera de estas tres cosas:
+1. Te corrijo algo. Anota qué hiciste mal y qué querías, en una
+   línea, bajo "Correcciones".
+2. Me ves decidir algo que va a aplicar más de una vez. Anótalo
+   bajo "Decisiones", con la fecha.
+3. Te digo un dato nuevo sobre mi trabajo, mi equipo o mis
+   clientes. Va bajo "Contexto".
+
+Reglas al escribir en Memory.md:
+- AGREGAS líneas. Nunca reescribes ni borras el archivo completo.
+- Una línea por hecho. Con fecha absoluta, no "la semana pasada".
+- Si un hecho nuevo contradice uno viejo, marca el viejo como
+  SUPERADO y deja los dos. No borres historia.
+- Si el archivo pasa de 300 líneas, avísame para archivarlo. No
+  lo recortes tú.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el respaldo. Un archivo de memoria que se construyó solo durante seis meses vale más que cualquier prompt de esta guía, y vive en un archivo de texto que cualquier instrucción mal escrita puede vaciar. Copia esa carpeta a otro lado cada viernes. Si le pones control de versiones con git, mejor: ahí además puedes ver cómo evolucionó y recuperar cualquier estado anterior.</p>
+      </div>
+
+      <h2>Capa 3 — El segundo cerebro</h2>
+
+      <p>Las dos primeras capas le dan a Claude un perfil tuyo. La tercera le da tu archivo entero: juntas, notas, investigaciones, perfiles de cliente, plantillas, todo lo que has escrito en años. Y con permiso de escribir, no solo de leer.</p>
+
+      <p>Hay dos caminos.</p>
+
+      <h3>Camino A — Notion</h3>
+
+      <p>El más rápido si tu equipo ya vive ahí. Activas el conector de Notion en <em>Configuración → Conectores</em>, creas una base de datos que funcione como memoria, y Claude puede leer tu espacio de trabajo completo y editarlo directo.</p>
+
+      <p>La ventaja es que no montas nada nuevo. La desventaja es que dependes de un servicio externo y de que la información esté ordenada; si tu Notion es un basurero, Claude va a leer un basurero muy rápido.</p>
+
+      <h3>Camino B — Obsidian</h3>
+
+      <p>El más potente, y el que uso. Obsidian es un editor de notas que guarda todo como archivos de texto plano en una carpeta de tu computadora. Nada de nube obligatoria, nada de formato propietario.</p>
+
+      <p>El montaje son tres pasos: instalas Obsidian y creas tu bóveda, le das a Claude acceso de lectura y escritura a esa carpeta, e instalas desde los plugins de la comunidad el que conecta Obsidian con Claude Code para que la búsqueda dentro de la bóveda sea decente.</p>
+
+      <p>Después le vacías todo lo que tengas: notas viejas, minutas, perfiles de cliente, investigaciones, plantillas, tu diario de trabajo. No importa el orden. Importa el volumen.</p>
+
+      <p>Hay un system prompt público de Andrej Karpathy, para operar una base de conocimiento con un modelo de lenguaje, que vale la pena inyectar aquí. Está en un gist suyo de GitHub y define cómo el modelo debe navegar, enlazar y hacer crecer las notas en vez de solo consultarlas. Es la diferencia entre un archivero y un cerebro.</p>
+
+      <p>Lo que ganas: le preguntas "qué acordamos con este cliente en mayo" y te contesta con la cita de la minuta. Le pides que prepare la junta del jueves y arranca de los tres pendientes que quedaron de la anterior. Y cuando termina, escribe la nota nueva dentro de la misma bóveda, enlazada a las que ya existían. El sistema crece solo. Si quieres comparar los enfoques antes de comprometerte, están las <a href="/guias/3-formas-de-segundo-cerebro/">tres formas de montar un segundo cerebro</a>.</p>
+
+      <h2>En qué orden montarlo</h2>
+
+      <p>No hagas las tres. Es el error clásico: alguien lee esto, se emociona con la capa 3, monta Obsidian el sábado, y el lunes sigue abriendo chats en blanco porque nunca hizo la capa 1.</p>
+
+      <ol>
+        <li><strong>Hoy.</strong> Limpia la pantalla de memoria y pega el bloque de perfil. Quince minutos.</li>
+        <li><strong>Esta semana.</strong> Los cuatro archivos de la capa 2. Empieza con <code>Context.md</code>, que es el que más rinde, y deja que <code>Memory.md</code> se llene solo.</li>
+        <li><strong>Cuando la capa 2 te quede chica.</strong> Vas a saber cuándo: es el día que le preguntes algo y te des cuenta de que la respuesta está en una nota de hace ocho meses que él no puede ver.</li>
+      </ol>
+
+      <p>La señal de que el sistema funciona no es que Claude te recuerde el nombre de tu perro. Es que dejes de escribir párrafos de contexto antes de cada petición. Si a las dos semanas sigues explicando quién eres, la memoria está montada pero no la estás usando.</p>

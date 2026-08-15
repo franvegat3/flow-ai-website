@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deja listo Claude para tu negocio en 15 minutos — Guías Flow AI</title>
+  <meta name="description" content="El setup completo del plugin de Claude para negocios pequeños dentro de Cowork. Conectores, los 5 pasos, el primer flujo que hay que correr, y el ajuste de privacidad que casi todos olvidan mover." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-para-tu-negocio-pequeno/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Deja listo Claude para tu negocio en 15 minutos" />
+  <meta property="og:description" content="El setup completo del plugin de Claude para negocios pequeños dentro de Cowork. Conectores, los 5 pasos, el primer flujo que hay que correr, y el ajuste de privacidad que casi todos olvidan mover." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-para-tu-negocio-pequeno/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Cowork</span><span class="tag">Claude</span><span class="tag">Negocio</span><span class="tag">Empezar</span></div>
+      <h1>Deja listo Claude para tu negocio en 15 minutos</h1>
+      <p class="lead">El setup completo del plugin de Claude para negocios pequeños dentro de Cowork. Conectores, los 5 pasos, el primer flujo que hay que correr, y el ajuste de privacidad que casi todos olvidan mover.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Un negocio de diez personas no tiene un área de datos, ni un analista financiero, ni alguien que consolide el lunes en la mañana cómo viene la semana. Tiene al dueño abriendo seis pestañas: el banco, la pasarela de cobro, el CRM, el calendario, la contabilidad y un Excel que ya nadie recuerda quién armó.</p>
+
+      <p>Ese ritual de las seis pestañas es exactamente lo que resuelve el plugin de Claude para negocios pequeños dentro de Cowork. No es una herramienta nueva que aprender: es un paquete que conecta las que ya usas y las lee por ti.</p>
+
+      <p>Se deja listo en quince minutos. Aquí va el setup completo, incluido el ajuste de privacidad que casi todo mundo pasa de largo y que yo movería antes de conectar nada.</p>
+
+      <h2>Qué trae adentro</h2>
+
+      <p>El plugin trae flujos de trabajo ya armados para la operación de un negocio pequeño, y conectores hacia las herramientas donde vive tu información real:</p>
+
+      <ul>
+        <li><strong>Dinero:</strong> QuickBooks Online, PayPal, Stripe, Square.</li>
+        <li><strong>Clientes:</strong> HubSpot.</li>
+        <li><strong>Documentos y firma:</strong> Google Workspace, Microsoft 365, DocuSign.</li>
+        <li><strong>Comunicación:</strong> Gmail, Outlook, Slack.</li>
+        <li><strong>Diseño:</strong> Canva.</li>
+      </ul>
+
+      <p>No los conectes todos. Más adelante explico por qué, pero adelanto la regla: conecta solo las herramientas donde de verdad se toman decisiones en tu negocio. Las demás nada más agregan ruido y superficie de riesgo.</p>
+
+      <h2>Los 5 pasos del setup</h2>
+
+      <ol>
+        <li><strong>Abre Cowork e instala el plugin.</strong> Se busca en el marketplace desde la barra lateral. Es un clic. Si nunca has instalado uno, tengo <a href="/guias/plugins-cowork/">una guía completa de cómo funcionan los plugins de Cowork</a>.</li>
+        <li><strong>Escribe <code>/smb-onboard</code>.</strong> Arranca la configuración guiada: te va preguntando qué tipo de negocio tienes, qué herramientas usas y qué te duele más de la semana. Contéstale en serio, no en automático. Esa conversación es la que define qué tan útiles salen los flujos después.</li>
+        <li><strong>Conecta tus herramientas.</strong> Aquí es donde aplica lo que dije arriba: pocas y las que importan. Empieza con la de cobros y la de contabilidad.</li>
+        <li><strong>Apaga el entrenamiento con tus chats.</strong> El paso que casi nadie hace. Detalle completo abajo.</li>
+        <li><strong>Corre tu primer flujo.</strong> El de arranque es el pulso de negocio, con <code>/monday-brief</code>.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el ajuste de privacidad. Está en <strong>Settings › Privacy › Model improvement</strong> y hay que apagarlo. En los planes Pro y Max viene activado por defecto, y en un negocio pequeño tus chats no traen preguntas abstractas: traen nombres de clientes, montos, contratos y conversaciones internas. Es el ajuste de mayor apalancamiento de todo el setup porque toma diez segundos y aplica a todo lo que hagas después. Muévelo <em>antes</em> de conectar herramientas, no después.</p>
+      </div>
+
+      <h2>El primer flujo: el pulso del lunes</h2>
+
+      <p>El comando <code>/monday-brief</code> arma un reporte de una página con el estado real del negocio: posición de efectivo, liquidaciones pendientes de tu pasarela de cobro, tendencia de ventas, cómo viene el pipeline y qué trae la semana en el calendario.</p>
+
+      <p>Lo importante no es que se vea bonito. Es que sustituye la reconstrucción manual que hoy le come a alguien entre 45 minutos y dos horas cada semana, y que además cada quien hace distinto.</p>
+
+      <p>Córrelo tres lunes seguidos antes de tocar cualquier otra cosa. Al tercero vas a saber dos cosas: qué información te falta conectar, y qué parte del reporte no te sirve. Con eso ajustas y te queda un brief que sí lees.</p>
+
+      <p>Los otros flujos que trae el plugin y que valen la pena cuando ya domines el primero:</p>
+
+      <ul>
+        <li><code>/plan-payroll</code> — planear la nómina contra tu posición de efectivo real, no contra la que crees que tienes.</li>
+        <li><code>/close-month</code> — ordenar el cierre mensual. Este es el que más sufre un negocio pequeño porque casi siempre depende de una sola persona y su hoja de cálculo.</li>
+        <li><code>/run-campaign</code> — armar y dar seguimiento a una campaña.</li>
+      </ul>
+
+      <p>Si en algún momento no te acuerdas qué hay disponible, funcionan dos frases sueltas en el chat: <em>get me started</em> y <em>what workflows can I run?</em>. El plugin te enumera lo que tiene.</p>
+
+      <p>Un detalle de operación que hace toda la diferencia: pídele que el brief incluya explícitamente qué <em>no</em> pudo verificar. Un reporte que dice "no tengo el corte de PayPal de esta semana" es infinitamente más útil que uno que rellena el hueco con una estimación silenciosa. En un negocio pequeño no hay quién audite el reporte; el reporte tiene que auditarse solo.</p>
+
+      <h2>Qué conectar primero, con honestidad</h2>
+
+      <p>El orden que recomiendo después de haber montado esto en varias empresas chicas:</p>
+
+      <ol>
+        <li><strong>La pasarela de cobro.</strong> Stripe, PayPal o Square. Es el dato más limpio y el más accionable: entra dinero, sale dinero, cuándo se liquida.</li>
+        <li><strong>La contabilidad.</strong> QuickBooks Online. Es el que convierte el pulso en algo que tu contador reconoce.</li>
+        <li><strong>El correo y el calendario.</strong> Aquí es donde el brief deja de ser un reporte y empieza a ser contexto: por qué bajaron las ventas esa semana, qué cliente está callado, qué junta se movió.</li>
+        <li><strong>El CRM.</strong> Solo si de verdad lo usas. Un HubSpot mal alimentado le va a dar a Claude una foto falsa del pipeline y las conclusiones van a salir con mucha confianza y cero base.</li>
+      </ol>
+
+      <p>Todo en permisos de lectura al principio. Si te interesa el tema de permisos, escribí <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión que corro antes de conectar cualquier cosa sensible</a>: tarda cinco minutos y varias veces me ha hecho no conectar.</p>
+
+      <h2>Dónde truena esto en la vida real</h2>
+
+      <p>Tres cosas que veo repetirse y que no son culpa del plugin:</p>
+
+      <p><strong>Datos sucios.</strong> Si tu QuickBooks lleva cuatro meses sin conciliar, el brief del lunes va a estar mal y va a sonar convincente. Eso es peor que no tenerlo. Antes de instalar nada, pregúntate si tus números aguantan una decisión encima.</p>
+
+      <p><strong>Herramientas conectadas que nadie usa.</strong> Es tentador conectar el CRM, el Canva, el DocuSign y el Slack el primer día porque están ahí en la lista. Cada conector que agregas es información que Claude va a considerar, y la mitad de las veces no aporta nada al brief pero sí lo alarga. Un reporte de tres páginas no se lee. Uno de una página sí.</p>
+
+      <p><strong>Nadie lo lee.</strong> El brief se genera, llega, y a la tercera semana nadie lo abre. Se arregla con un ritual, no con tecnología: quince minutos el lunes, con alguien más presente, en voz alta. Si no tiene dueño ni horario, muere.</p>
+
+      <p><strong>Se pide demasiado, demasiado pronto.</strong> La tentación es correr los cinco flujos la primera semana y automatizar la nómina el jueves. No. La nómina es el flujo más delicado de todos y es el último que yo tocaría, cuando ya llevas un par de meses viendo que los números que te devuelve cuadran con la realidad.</p>
+
+      <h2>Antes de la nómina, media hora de curso</h2>
+
+      <p>Anthropic tiene un curso gratuito de fluidez con IA orientado a negocios pequeños en <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener">anthropic.skilljar.com</a>. No es marketing disfrazado: es la explicación de qué hace bien y qué hace mal un modelo, que es justo lo que necesitas antes de dejarlo cerca de tu contabilidad.</p>
+
+      <p>Tómalo antes de habilitar cualquier flujo que toque dinero de otras personas. La diferencia entre alguien que usa esto bien y alguien que se mete en problemas casi nunca es técnica. Es saber en qué momento la respuesta hay que verificarla a mano.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

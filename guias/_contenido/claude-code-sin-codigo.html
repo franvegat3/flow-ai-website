@@ -1,0 +1,135 @@
+      <p>El nombre es el peor obstáculo que tiene esta herramienta. "Claude Code" suena a producto para programadores, y la mayoría de la gente que más lo necesita lo descarta antes de abrirlo.</p>
+
+      <p>Lo que en realidad hace es distinto: le describes lo que quieres y lo construye. Portales de cliente, calculadoras, tableros internos, aplicaciones a la medida. Tú escribes en español y él escribe el código. Nunca tienes que leerlo.</p>
+
+      <p>Yo he visto a gente de operaciones sin ninguna formación técnica montar en una tarde la herramienta interna que llevaban dos años pidiéndole a sistemas. Esta es la ruta para llegar ahí.</p>
+
+      <h2>Por dónde se entra</h2>
+
+      <p>Hay cinco puertas y no todas son para ti:</p>
+
+      <ul>
+        <li><strong>El navegador, en <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>.</strong> Sin instalar nada. Es donde debes empezar si no eres técnico, punto.</li>
+        <li><strong>La app de escritorio.</strong> El siguiente paso natural, cuando quieras que trabaje sobre archivos de tu máquina.</li>
+        <li><strong>La terminal, en Mac o Windows.</strong> La versión completa. Requiere instalación, y las instrucciones están en la documentación oficial en <a href="https://docs.claude.com/" target="_blank" rel="noopener">docs.claude.com</a>.</li>
+        <li><strong>Extensiones de VS Code y de JetBrains.</strong> Si ya usas esos editores, ya sabes por qué te sirven. Si no sabes qué son, ignóralas.</li>
+      </ul>
+
+      <p>Sobre el plan: funciona en Pro, pero en proyectos grandes vas a topar el límite pronto. Si vas a construir seguido, Max es el que aguanta las idas y venidas, que es exactamente el modo en que se construye sin saber programar.</p>
+
+      <h2>Qué puede construir alguien que no programa</h2>
+
+      <p>La lista no es teórica. Es lo que la gente construye de verdad la primera semana:</p>
+
+      <ul>
+        <li><strong>Portales de cliente</strong> con acceso, entregables y línea de tiempo. El que resuelve el "oye, ¿cómo va lo mío?" que llega por WhatsApp cada tres días.</li>
+        <li><strong>Herramientas de agenda</strong> hechas a la medida de cómo tú reservas, no de cómo asume la herramienta genérica.</li>
+        <li><strong>Tableros internos</strong> del negocio.</li>
+        <li><strong>Calculadoras de retorno, cotizadores, cuestionarios de calificación.</strong> Estos son los que más rápido pagan si vendes algo.</li>
+        <li><strong>Sitios web y landing pages completas.</strong></li>
+        <li><strong>Aplicaciones internas:</strong> control de inventario, un CRM sencillo, seguimiento de hábitos.</li>
+      </ul>
+
+      <p>El patrón: todo lo que hoy vive en una hoja de cálculo compartida que ya se rompió, o que le pediste a un desarrollador y te cotizó en semanas.</p>
+
+      <h2>Tu primer proyecto, paso por paso</h2>
+
+      <ol>
+        <li><strong>Abre <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a> con tu cuenta.</strong></li>
+        <li><strong>Describe lo que quieres construir.</strong> Empieza simple. La tentación de pedir la aplicación completa el primer día es la razón número uno por la que la gente abandona.</li>
+        <li><strong>Míralo construir.</strong> Va a hacer y deshacer. Eso es normal.</li>
+        <li><strong>Itera hasta que quede.</strong> Aquí es donde se hace el trabajo de verdad, y donde se separa quien saca algo usable de quien saca una demo.</li>
+      </ol>
+
+      <p>Una petición mínima se ve así, y con esto basta para empezar:</p>
+
+      <pre><code>Quiero una landing page sencilla para mi negocio de coaching,
+con un titular, tres servicios listados y un formulario de
+contacto.</code></pre>
+
+      <p>Va a funcionar. Y va a quedar genérica, porque le diste una descripción genérica. Por eso la siguiente sección.</p>
+
+      <h2>La diferencia entre una demo y algo que uses</h2>
+
+      <p>La regla es que entre más detalle das, mejor construye. Pero "más detalle" no significa más palabras: significa decidir tú las cosas que si no decides, las decide él.</p>
+
+      <p>Cinco cosas que conviene traer decididas antes de escribir:</p>
+
+      <ul>
+        <li><strong>Quién lo va a usar</strong> y desde dónde. Celular o computadora cambia todo el diseño.</li>
+        <li><strong>Qué datos entran y qué sale.</strong> Literalmente los campos.</li>
+        <li><strong>Dónde se guarda lo que la gente captura.</strong> Si no lo dices, no se guarda en ningún lado y te vas a dar cuenta al final.</li>
+        <li><strong>Cómo se ve.</strong> Colores, tipografía, o un sitio de referencia.</li>
+        <li><strong>Qué pasa cuando algo sale mal.</strong> Campo vacío, correo inválido, sin conexión.</li>
+      </ul>
+
+      <p>Esa misma petición de arriba, con esas cinco decisiones tomadas, se vuelve esto:</p>
+
+      <pre><code>Construye una landing page para mi negocio de coaching ejecutivo.
+
+Quién la usa: personas de 35 a 50 años, la mayoría desde el
+celular. El diseño tiene que verse bien en móvil primero.
+
+Estructura, en este orden:
+1. Titular y una frase de apoyo
+2. Tres servicios, cada uno con nombre, una descripción de dos
+   líneas y el precio
+3. Una sección de "para quién es esto" con tres viñetas
+4. Formulario de contacto
+5. Pie con mis redes
+
+El formulario pide: nombre, correo, teléfono, y un menú
+desplegable de "qué te trae aquí" con cuatro opciones. Los
+datos se guardan y me los quiero poder descargar como CSV.
+
+Validaciones: el correo tiene que tener formato válido, el
+teléfono solo números, y ningún campo puede quedar vacío. Si
+falta algo, márcalo en rojo debajo del campo y no dejes enviar.
+
+Al enviar, muestra un mensaje de confirmación en la misma
+página. No redirijas a otra página.
+
+Estilo: sobrio y profesional. Fondo claro, un solo color de
+acento, tipografía sans serif. Nada de degradados, nada de
+fotos de gente sonriendo en oficinas. Mucho espacio en blanco.
+
+Antes de construir, dime qué entendiste y qué decisiones vas a
+tomar por tu cuenta. Si algo de lo que pedí no se puede hacer
+sin un servicio externo, dímelo ahora en vez de improvisar.</code></pre>
+
+      <p>Esa última instrucción es la más valiosa de todo el prompt y casi nadie la usa. Pedirle que te diga qué entendió antes de construir te ahorra la ronda entera donde descubres al final que asumió algo distinto.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> pedir una cosa a la vez. La forma más rápida de acabar con algo roto es pedir el portal completo con acceso, base de datos, notificaciones por correo y panel de administración en un solo mensaje. Construye la pantalla principal. Pruébala. Después agrega el acceso. Pruébalo. Cada capa encima de una capa que ya funciona. Si algo truena, sabes exactamente qué lo tronó.</p>
+      </div>
+
+      <h2>Cómo se itera sin volverte loco</h2>
+
+      <p>El error de quien no es técnico es describir el problema en lugar de describir el resultado. "No me gusta cómo se ve" no es información. Esto sí:</p>
+
+      <pre><code>El botón de enviar está muy pegado al último campo. Sepáralo
+más y hazlo del ancho completo del formulario en móvil.
+
+El titular se corta en pantallas chicas. Bájale el tamaño en
+móvil hasta que quepa en dos líneas.
+
+El menú desplegable no muestra qué opción está seleccionada.
+Arréglalo.
+
+No toques nada más.</code></pre>
+
+      <p>Esas tres últimas palabras son las que salvan la tarde. Sin ellas, hay una probabilidad alta de que al arreglar el botón te reacomode otras dos cosas que ya estaban bien.</p>
+
+      <h2>El caso de empresa que más veo funcionar</h2>
+
+      <p>No es el sitio web. Es la herramienta interna que nadie va a construir porque no le alcanza al presupuesto de sistemas y no justifica comprar un SaaS.</p>
+
+      <p>El ejemplo típico: el área de operaciones tiene un proceso de aprobación que hoy vive en una cadena de correos. Todo mundo sabe que debería ser un formulario con estados y notificaciones. Nadie lo hace porque cotizarlo cuesta más que aguantarse.</p>
+
+      <p>Eso son dos tardes en Claude Code, hechas por la misma persona que sufre el proceso —que además es la única que entiende bien las excepciones—. Y ese es el punto que suele perderse: la ventaja no es que sale más barato, es que lo construye quien conoce el problema.</p>
+
+      <h2>Lo siguiente, cuando ya construiste algo</h2>
+
+      <p>Cuando lleves dos o tres proyectos, el cuello de botella deja de ser saber pedir y pasa a ser que cada proyecto nuevo empieza de cero explicando tu contexto otra vez. Ahí es donde entra el archivo de instrucciones permanentes del proyecto, que es lo que hace que la herramienta se acuerde de cómo trabajas: <a href="/guias/el-archivo-mas-importante-de-claude-code/">el archivo más importante de Claude Code</a> y <a href="/guias/plantilla-de-claude-md/">su plantilla</a>.</p>
+
+      <p>Y si quieres ver hasta dónde llega esto cuando ya le agarraste el modo, la escalera completa está en <a href="/guias/7-niveles-de-claude-code/">los 7 niveles de Claude Code</a>. Pero no empieces por ahí. Empieza por una landing fea que funcione.</p>

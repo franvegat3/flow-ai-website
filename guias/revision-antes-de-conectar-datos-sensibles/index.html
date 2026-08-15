@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corre esta revisión antes de que la IA toque algo sensible — Guías Flow AI</title>
+  <meta name="description" content="Todas las plataformas ya sacaron formas de conectar la IA a tu banco. El prompt exacto que corro antes de prender cualquier conector sensible, más la lista de cuentas delicadas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/revision-antes-de-conectar-datos-sensibles/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Corre esta revisión antes de que la IA toque algo sensible" />
+  <meta property="og:description" content="Todas las plataformas ya sacaron formas de conectar la IA a tu banco. El prompt exacto que corro antes de prender cualquier conector sensible, más la lista de cuentas delicadas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/revision-antes-de-conectar-datos-sensibles/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Multi-herramienta</span><span class="tag">Empezar</span><span class="tag">Negocio</span></div>
+      <h1>Corre esta revisión antes de que la IA toque algo sensible</h1>
+      <p class="lead">Todas las plataformas ya sacaron formas de conectar la IA a tu banco. El prompt exacto que corro antes de prender cualquier conector sensible, más la lista de cuentas delicadas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Este año todas las plataformas grandes se movieron al mismo lugar: conectar la IA directo a tu dinero. ChatGPT sacó su módulo de finanzas personales, Perplexity lanzó su vista financiera apoyada en Plaid, y Claude lleva meses conectando bancos, contabilidad y pagos a través de conectores. Ya no es una promesa de conferencia. Es un switch que tienes disponible en tu cuenta hoy.</p>
+
+      <p>La pregunta ya no es si se puede. Es qué estás autorizando exactamente cuando das clic en "conectar", porque esa pantalla está diseñada para que digas que sí, no para que entiendas.</p>
+
+      <p>Tengo una revisión que corro antes de prender cualquier conector sensible. Toma cinco minutos y varias veces me ha hecho no conectar. Aquí está entera.</p>
+
+      <h2>La distinción que cambia todo</h2>
+
+      <p>Antes del prompt, la idea que hay que tener clara: <strong>leer y actuar son dos niveles de riesgo distintos</strong>, y las interfaces los presentan como si fueran el mismo trámite.</p>
+
+      <p>Un conector de solo lectura que se equivoca te da un análisis malo. Molesto, recuperable. Un conector con permiso de acción que se equivoca manda un correo, transfiere dinero, cancela una cita, borra un archivo o publica algo. Eso no se deshace con un refresh.</p>
+
+      <p>La mayoría de los permisos vienen empaquetados: aceptas uno y vienen los dos. Por eso el ejercicio de abajo separa explícitamente "qué puede leer" de "qué puede hacer en mi nombre". Casi siempre la segunda lista es más larga de lo que esperabas.</p>
+
+      <h2>El prompt de revisión</h2>
+
+      <p>Se lo pegas al mismo modelo al que le vas a dar acceso, antes de dárselo. No es magia: es obligarte a ver el alcance escrito en una hoja en vez de en una pantalla de autorización con un botón azul.</p>
+
+      <pre><code>Vas a ser mi oficial de incorporación de IA. Antes de conectar esta IA a algo sensible, necesito que me escribas una revisión de una página para saber exactamente a qué estoy accediendo.
+
+Plataforma de IA: [ej. Claude, ChatGPT, Perplexity]
+Cuenta que voy a conectar: [ej. mi banco, mi contabilidad, mi correo de trabajo]
+Para qué la quiero: [una frase]
+
+Devuélveme estas seis secciones, en este orden:
+
+1. QUÉ VA A PODER LEER. Lista específica de los datos a los que la IA tendrá acceso de lectura una vez que conecte. Sé granular: no digas "información de la cuenta", di qué campos.
+
+2. QUÉ VA A PODER HACER EN MI NOMBRE. La lista completa de acciones que la IA puede ejecutar una vez conectada. Enviar, transferir, cancelar, agendar, borrar, publicar, compartir, cualquier cosa que cambie el estado de algo.
+
+3. QUÉ SE GUARDA. Dónde vive lo que consulta, cuánto tiempo se retiene, si pasa por servidores de terceros, y si por defecto se usa para entrenar modelos.
+
+4. LA FORMA MÁS SEGURA DE USARLO. Los ajustes, alcances y hábitos concretos que reducen mi exposición. Dime cuáles permisos puedo quitar sin perder el caso de uso que te describí.
+
+5. CÓMO DESCONECTAR Y BORRAR DESPUÉS. Los pasos exactos para revocar el acceso y eliminar lo que ya se haya almacenado, en ambos lados: en la plataforma de IA y en la cuenta conectada.
+
+6. LOS TRES PEORES ESCENARIOS. Tres modos de falla realistas, no de película, y qué haría yo en cada uno para recuperarme.
+
+Si en algún punto no tienes certeza de cómo funciona esta integración en particular, dilo explícitamente en lugar de suponer. Prefiero un "no sé" que un dato inventado sobre mi propia seguridad.</code></pre>
+
+      <p>La sección 6 es la que hace que la gente cierre la pestaña sin conectar. Está bien. Ese es el punto.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la última línea del prompt. Sin ella, el modelo llena los huecos con lo que suena razonable, y termina describiéndote los permisos de una integración genérica en vez de la que tienes enfrente. Cuando el tema es tu banco, un dato plausible pero falso es peor que ningún dato. Contrasta siempre lo que te devuelva contra la pantalla de permisos real antes de aceptar.</p>
+      </div>
+
+      <h2>Las cuentas que ameritan esta revisión</h2>
+
+      <p>No todas. Con tu carpeta de recetas o tu lista de música no vale la pena el trámite. Estas sí:</p>
+
+      <ul>
+        <li><strong>Bancos y tarjetas.</strong> El caso obvio. Aquí lectura y acción están a un permiso de distancia.</li>
+        <li><strong>Casas de bolsa y cuentas de inversión.</strong> Peor que el banco: una acción equivocada aquí es irreversible y tiene costo fiscal.</li>
+        <li><strong>Correo.</strong> El más subestimado de la lista. Tu bandeja es el llavero maestro: ahí llegan los códigos de recuperación de todo lo demás.</li>
+        <li><strong>Calendario.</strong> Suena inocente hasta que alguien ve con quién te reúnes, dónde vives y a qué hora no estás en tu casa.</li>
+        <li><strong>Expedientes médicos.</strong> Categoría aparte por regulación y porque no hay forma de "cambiar la contraseña" de un diagnóstico.</li>
+        <li><strong>Almacenamiento en la nube con documentos personales.</strong> Identificaciones, contratos, actas, declaraciones. Casi nadie sabe qué tiene ahí realmente.</li>
+        <li><strong>Herramientas agénticas con acceso a navegador.</strong> Las más nuevas y las que menos entiende la gente: si un agente puede abrir tu navegador, hereda tus sesiones abiertas. Todas.</li>
+      </ul>
+
+      <p>Del lado empresa, agrega tu CRM, tu pasarela de cobro y tu sistema de nómina. En una empresa la pregunta además cambia: no es solo qué puede hacer la IA, es quién en tu equipo va a poder pedírselo una vez conectado.</p>
+
+      <h2>Cómo lo hago en la práctica</h2>
+
+      <p>Cuatro reglas que aplico y que no me he arrepentido de aplicar:</p>
+
+      <ol>
+        <li><strong>Solo lectura primero, siempre.</strong> Sin excepciones el primer mes. Si el caso de uso no sobrevive sin permiso de acción, probablemente no era un buen primer caso de uso.</li>
+        <li><strong>Una cuenta a la vez.</strong> Conectas una, la usas una semana, y hasta entonces consideras la siguiente. Conectar cinco el mismo día hace imposible saber de dónde salió un comportamiento raro.</li>
+        <li><strong>Apagar el entrenamiento con tus chats antes de conectar, no después.</strong> Está en los ajustes de privacidad de cada plataforma. Si conectas primero y lo apagas después, ya pasó lo que iba a pasar.</li>
+        <li><strong>Una fecha en el calendario para revisar.</strong> A los 90 días, revisa qué conectores siguen prendidos. La cantidad de accesos vivos que nadie usa desde hace medio año es la falla de seguridad más común que veo, y no requiere ningún ataque sofisticado: solo olvido.</li>
+      </ol>
+
+      <h2>Lo que no te va a decir ninguna pantalla de permisos</h2>
+
+      <p>Que el riesgo real casi nunca es el escenario de película donde alguien vacía tu cuenta.</p>
+
+      <p>El riesgo real es aburrido: un agente que interpreta mal una instrucción y manda un correo a la lista equivocada, una integración que sigue viva en una herramienta que dejaste de usar, un permiso de escritura que aceptaste hace ocho meses en una tarde ocupada y del que ya nadie se acuerda.</p>
+
+      <p>Contra eso no sirve desconfiar en abstracto. Sirve escribir en una hoja lo que estás autorizando y volver a revisarlo con calendario en mano. Eso es todo lo que hace esta revisión, y por eso funciona.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

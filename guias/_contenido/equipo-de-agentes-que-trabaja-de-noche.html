@@ -1,0 +1,122 @@
+      <p>A las tres de la mañana un anuncio se rompió. El enlace de destino dejó de responder y el conjunto siguió entregando impresiones contra una página muerta. Nadie lo vio, porque nadie estaba viendo nada: era martes de madrugada.</p>
+
+      <p>Lo cachó el agente que revisa esa cuenta cada hora. Pausó el conjunto, escribió en el canal de pauta qué pasó y por qué lo pausó, y a las ocho de la mañana el reporte ya estaba ahí. El trabajo humano de ese día fue leer tres párrafos y decidir si se reactivaba.</p>
+
+      <p>Esa es la diferencia entera entre usar IA y tener agentes. Un chat espera a que llegues. Un agente encendido trabaja el turno que tú no puedes cubrir.</p>
+
+      <h2>Qué es un agente siempre encendido</h2>
+
+      <p>Un agente siempre encendido es un proceso que se despierta solo, revisa algo real, decide si hay que actuar y deja constancia de lo que hizo.</p>
+
+      <p>Las cuatro partes importan. Si no se despierta solo, es un chat. Si no revisa datos reales, es una opinión. Si no puede actuar, es una alerta más que nadie va a leer. Y si no deja constancia, no vas a poder confiarle nada más grande.</p>
+
+      <h2>Las tres piezas que hay que armar</h2>
+
+      <ol>
+        <li><strong>El disparador.</strong> Qué lo despierta: una hora, una frecuencia, o un evento. En Claude Code esto se resuelve con tareas programadas, que corren aunque tengas la computadora apagada. Lo desarmé completo en <a href="/guias/deja-de-ser-ninera-de-claude/">la guía de /goal, /loop y /schedule</a>.</li>
+        <li><strong>Los permisos.</strong> A qué tiene acceso y qué tiene prohibido. Esta es la parte que la gente configura al final y debería configurar primero.</li>
+        <li><strong>El canal de reporte.</strong> Dónde escribe lo que hizo. Un canal de Slack, un documento, un correo. Si el reporte llega a un lugar que nadie abre, el agente no existe.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> definir qué puede hacer solo y qué solo puede proponer. Mi corte es sencillo. Puede hacer solo todo lo que sea reversible y defensivo: pausar, etiquetar, avisar, archivar, redactar un borrador. Necesita autorización para todo lo que gasta dinero, manda algo a un cliente o borra información. Un agente que pausa un anuncio de más te cuesta unas horas de entrega. Un agente que sube presupuesto de más te cuesta el mes.</p>
+      </div>
+
+      <h2>Los cinco turnos de noche que sí valen la pena</h2>
+
+      <p>Los ordené por lo que más rápido se paga solo en una empresa que factura.</p>
+
+      <div class="plugin-card">
+        <h3>1. Guardia de la cuenta de anuncios</h3>
+        <p>Revisa cada hora las campañas activas contra los umbrales que tú definiste: gasto sin conversiones, caída de tasa de clics, frecuencia disparada, enlaces que dejaron de responder. Pausa lo que se rompió y reporta.</p>
+        <p>Es el que más dinero salva porque la pauta se rompe en horarios donde no hay nadie. Un fin de semana largo con un anuncio roto es la diferencia entre un mes bueno y un mes que hay que explicar.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que gaste más de lo que le duele perder en un día.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Triaje de bandeja y de mensajes entrantes</h3>
+        <p>Corre a las seis de la mañana. Clasifica lo que entró de noche, separa lo urgente de lo que puede esperar, redacta borradores de las respuestas repetidas y deja una lista corta de lo que sí necesita tu criterio.</p>
+        <p>No manda nada. Deja todo en borradores. Esa restricción es la que hace que la gente lo deje encendido más de una semana.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien empieza el día con más de treinta correos sin leer.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Reporte de datos del día anterior</h3>
+        <p>Jala las cifras de las fuentes reales —ventas, tráfico, alcance, tickets— y escribe el reporte con la comparación contra la semana pasada y contra la meta. No un tablero: un texto que dice qué se movió y qué habría que revisar.</p>
+        <p>Aquí la ganancia no es la velocidad. Es que el reporte deje de depender de que una persona tenga tiempo el lunes.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> equipos donde el reporte semanal lo arma alguien a mano en una hoja de cálculo.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Vigilante de lo que se cae</h3>
+        <p>Revisa que las cosas críticas sigan de pie: el sitio responde, el formulario manda, la integración con el CRM sigue escribiendo registros, el proceso nocturno terminó bien. Avisa en cuanto algo deja de pasar.</p>
+        <p>El caso clásico es el formulario que dejó de mandar leads y nadie se entera hasta que un vendedor pregunta por qué está tan tranquilo el pipeline.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquier operación donde el dinero entra por un formulario o una integración.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Rastreador de competencia y de menciones</h3>
+        <p>Cada noche revisa qué publicaron tus competidores, qué anuncios nuevos pusieron a correr, qué se dijo de tu marca. Al día siguiente tienes un resumen de lo que cambió, no cien enlaces.</p>
+        <p>Es el que menos urgencia tiene y el que más se agradece a los tres meses, porque acumula historia que nadie más de tu mercado está guardando.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> marketing y producto en categorías que se mueven rápido.</p>
+      </div>
+
+      <h2>El prompt con el que arranco cualquiera de los cinco</h2>
+
+      <p>Un agente encendido es, sobre todo, un documento de instrucciones bien escrito. Este es el molde que uso: se copia entero y solo se cambia lo que está entre corchetes.</p>
+
+      <pre><code>Eres un agente que corre solo, sin nadie viendo la pantalla.
+
+TU TURNO
+Corres [cada hora / todos los días a las 6:00 / los lunes a las 7:00].
+
+QUE REVISAS
+[Describe la fuente exacta: la cuenta de anuncios X, la bandeja Y,
+la tabla Z. Nombra la cuenta y el periodo que debes mirar.]
+
+QUE BUSCAS (umbrales)
+- [Condición 1, con su número. Ej: gasto mayor a X sin una sola conversion.]
+- [Condición 2, con su número.]
+- [Condición 3, con su número.]
+Si ninguna se cumple, escribe una linea: "Sin novedades" y termina.
+
+QUE PUEDES HACER SOLO
+[Lista cerrada de acciones reversibles: pausar, etiquetar, archivar,
+dejar un borrador. Nada mas que esto.]
+
+QUE NO PUEDES HACER NUNCA
+- Gastar, subir presupuesto o cambiar una puja.
+- Mandar cualquier cosa a un cliente o publicar en cualquier canal.
+- Borrar informacion.
+Si crees que algo de esto hace falta, escribelo como recomendacion
+y espera autorizacion.
+
+COMO REPORTAS
+Escribe en [canal / documento] con esta estructura y nada mas:
+1. Que revisaste y de que periodo.
+2. Que encontraste, con el numero exacto que disparo la alerta.
+3. Que hiciste, si hiciste algo.
+4. Que recomiendas que haga un humano, en una sola frase.
+Si no estas seguro de algo, dilo. No adivines.
+
+REGLA DURA
+Si los datos no cargaron o vienen incompletos, no interpretes.
+Reporta que la fuente fallo y termina.</code></pre>
+
+      <p>La última regla es la que más veces me ha salvado. Un agente que interpreta datos a medias inventa una historia coherente y falsa, y tú te enteras tres días después.</p>
+
+      <h2>Cómo se comparte con el equipo</h2>
+
+      <p>Un agente que solo tú puedes leer es un asistente personal. Un agente que reporta a un canal compartido se vuelve infraestructura.</p>
+
+      <p>El cambio es más de organización que de técnica. Cuando el reporte de la guardia de pauta cae en el canal donde está el equipo comercial, el vendedor ve lo mismo que el que compra medios. Cuando el reporte de datos cae en el canal de dirección, se acaba la discusión de qué cifra es la buena.</p>
+
+      <p>Tres reglas para que eso no se vuelva ruido: un canal por agente, un reporte por corrida, y silencio cuando no hay nada que decir. Un agente que escribe "todo bien" quince veces al día entrena al equipo a ignorarlo, y el día que sí pasa algo nadie lo va a leer.</p>
+
+      <h2>El error que veo en todos los que empiezan</h2>
+
+      <p>Prender cinco agentes el mismo día.</p>
+
+      <p>Un agente encendido acumula confianza o la pierde, y eso solo se sabe con tiempo. Prende uno. Déjalo dos semanas sin permiso de actuar, solo reportando lo que habría hecho. Lee esos reportes: ahí vas a ver que tus umbrales estaban mal, que la fuente traía un dato que no esperabas, que la mitad de las alertas eran falsas.</p>
+
+      <p>Cuando lleves una semana leyendo reportes que no tienes que corregir, ahí le das permiso de actuar. Y hasta entonces prendes el segundo.</p>

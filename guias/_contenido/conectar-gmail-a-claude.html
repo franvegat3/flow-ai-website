@@ -1,0 +1,96 @@
+      <p>La queja más común de quien paga Claude y no le encuentra el uso diario es siempre la misma: "está bien, pero termino copiando y pegando todo". Claro. Le estás pidiendo que te ayude con tu día sin dejarlo ver tu día.</p>
+
+      <p>Conectar Gmail toma menos de dos minutos y es el cambio más grande por minuto invertido que hay en toda la herramienta. A partir de ahí dejas de pegar correos y empiezas a preguntar.</p>
+
+      <h2>Lo que necesitas</h2>
+
+      <ul>
+        <li><strong>Plan de paga.</strong> Los conectores son función de Pro y superiores. En el gratuito no aparecen.</li>
+        <li><strong>Una cuenta de Google con Gmail.</strong> Personal o corporativa, aunque sobre la corporativa hay algo que decir más abajo.</li>
+      </ul>
+
+      <h2>Los tres pasos</h2>
+
+      <ol>
+        <li><strong>Entra a <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, clic en tu icono de perfil arriba a la derecha, y ve a Ajustes.</strong></li>
+        <li><strong>Busca la sección de Conectores o Integraciones, encuentra Gmail y dale conectar.</strong> Te manda a iniciar sesión con Google y a autorizar el acceso a tu bandeja. Es la pantalla de permisos de siempre. Tarda alrededor de un minuto.</li>
+        <li><strong>Abre una conversación nueva.</strong> Ya está. Claude ve tu correo en tiempo real y le pides directo lo que necesitas.</li>
+      </ol>
+
+      <p>El paso 3 importa más de lo que parece: la conexión no aplica retroactivamente a las conversaciones que ya tenías abiertas. Si conectas y luego le preguntas en el chat viejo, te va a decir que no tiene acceso. Abre uno nuevo.</p>
+
+      <h2>Qué puede hacer una vez conectado</h2>
+
+      <ul>
+        <li>Leer el contenido de tu bandeja en tiempo real, no una copia de ayer.</li>
+        <li>Identificar qué correos necesitan respuesta y cuáles no.</li>
+        <li>Resumir lo que no has leído.</li>
+        <li>Redactar respuestas en tu tono.</li>
+        <li>Buscar por remitente y filtrar por urgencia o por fecha.</li>
+      </ul>
+
+      <p>Lo que hay que tener claro sobre el permiso: no le estás dando acceso "a los correos que le pidas". Le estás dando acceso a leer tu bandeja. Es lectura, no una lectura selectiva.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> preguntar antes de conectar la cuenta del trabajo. Muchas empresas tienen política sobre qué aplicaciones de terceros pueden leer el correo corporativo, y en varias el administrador de Google Workspace lo tiene bloqueado de fábrica —vas a ver el botón, vas a darle clic, y te va a rebotar. Si trabajas en una organización con área de sistemas, esa es la conversación de cinco minutos que te ahorra media hora de pelearte con la pantalla de permisos. Y si quieres probarlo hoy sin esperar a nadie, conecta primero tu cuenta personal.</p>
+      </div>
+
+      <h2>Los tres prompts con los que arrancaría</h2>
+
+      <p>Estos tres cubren el 80% del uso real. Los pongo completos porque la diferencia entre uno vago y uno específico es enorme.</p>
+
+      <pre><code>Revisa mi bandeja y dime qué correos necesitan respuesta hoy.
+
+Dame una lista priorizada. Para cada uno:
+- Quién escribió y de qué empresa
+- Qué está pidiendo, en una línea
+- Por qué es urgente o por qué puede esperar
+- Qué le contestaría yo en dos oraciones
+
+Ordena de lo más urgente a lo menos. Si algo lleva más de tres
+días esperando mi respuesta, ponlo hasta arriba y márcalo.
+
+No incluyas promociones, notificaciones automáticas ni correos
+donde solo estoy en copia.</code></pre>
+
+      <pre><code>Resume todos los correos sin leer de las últimas 24 horas.
+
+Formato: una viñeta por correo, con el remitente en negritas y
+después qué quiere en una sola oración.
+
+Agrúpalos en tres bloques:
+- Requiere acción mía
+- Solo informativo
+- Se puede ignorar
+
+Al final, una línea que diga si hay algo que se me esté pasando.</code></pre>
+
+      <pre><code>Busca todos los correos de [PERSONA O EMPRESA] y dime dónde
+quedó esa conversación.
+
+Quiero:
+- Un resumen cronológico de qué se ha hablado
+- Qué me comprometí a hacer yo y si ya lo hice
+- Qué se comprometieron ellos y si ya lo hicieron
+- Qué quedó abierto sin resolver
+- Cuál sería el siguiente paso lógico
+
+Si hay algo que yo dejé pendiente, dímelo primero.</code></pre>
+
+      <h2>El caso que lo justifica en una empresa</h2>
+
+      <p>El uso personal está bien, pero donde esto paga solo es en un equipo comercial.</p>
+
+      <p>Antes de cada llamada, en lugar de que el vendedor abra el CRM, busque el hilo de correo y trate de acordarse de qué se dijo la última vez, le pide a Claude el tercer prompt con el nombre de la cuenta. En veinte segundos tiene el historial, sus propios pendientes incumplidos y el siguiente paso propuesto.</p>
+
+      <p>Esa preparación es la que todo mundo sabe que debería hacer y casi nadie hace, porque cuesta quince minutos y hay seis llamadas seguidas. Bajarle el costo a veinte segundos es lo que hace que sí ocurra.</p>
+
+      <h2>Lo que no arregla</h2>
+
+      <p>Conectar Gmail no ordena tu bandeja. Si tienes ocho mil correos sin leer, Claude te va a resumir ocho mil correos sin leer, y eso no es un resumen: es otra bandeja.</p>
+
+      <p>Los prompts de arriba funcionan porque acotan —últimas 24 horas, un remitente específico, lo que necesita respuesta—. Pedirle "dime qué hay en mi correo" sin acotar es la forma más rápida de concluir que no sirve.</p>
+
+      <p>Y el otro límite: leer no es actuar. Para que el correo se convierta en trabajo hecho —clasificación diaria automática, borradores esperándote a las 7 de la mañana, seguimientos que salen solos— hace falta que corra sin ti. Eso ya es otra capa, y vive en la app de escritorio: <a href="/guias/guia-de-la-app-de-escritorio/">la guía de la app de escritorio</a>.</p>
+
+      <p>Cuando ya tengas Gmail funcionando, el siguiente conector que más cambia el día es el calendario, por una razón simple: el correo te dice qué te pidieron y el calendario te dice cuándo puedes hacerlo. La lista completa está en <a href="/guias/10-conectores-que-cambian-tu-dia/">los diez conectores que cambian tu día</a>.</p>

@@ -1,0 +1,106 @@
+      <p>La gente que le saca provecho real a Claude no es más lista que tú. Nada más se sentó diez minutos a configurarlo antes de empezar a pedirle cosas.</p>
+
+      <p>Sin ese setup, cada conversación arranca de cero: le explicas quién eres, a qué te dedicas, cómo quieres la respuesta, y para cuando terminaste de dar contexto ya hubieras escrito tú el correo. Con el setup, escribes una frase y sale bien.</p>
+
+      <p>Son cinco pasos. Ninguno es técnico.</p>
+
+      <h2>Paso 1: no abras un chat. Abre un proyecto</h2>
+
+      <p>Este es el que se salta el 90% de la gente y es el que sostiene los otros cuatro.</p>
+
+      <p>Un chat suelto no recuerda nada. Un <strong>proyecto</strong> es un espacio donde Claude conserva contexto entre conversaciones: los archivos que subiste, las instrucciones que le diste, la forma en que quieres que trabaje contigo.</p>
+
+      <p>En la barra lateral está "Projects", y de ahí "Create Project". Nómbralo simple: Trabajo, Personal, o el nombre de tu empresa. Y crea proyectos separados por área de tu vida. Mezclar el proyecto donde planeas tus vacaciones con el proyecto donde analizas tu operación comercial hace que las dos cosas salgan peor.</p>
+
+      <h2>Paso 2: dile quién eres</h2>
+
+      <p>Adentro del proyecto, sube o pega un documento con tu contexto. Estas son las secciones que funcionan:</p>
+
+      <ul>
+        <li><strong>QUIÉN SOY</strong> — nombre, dónde vives y en qué zona horaria, etapa de vida.</li>
+        <li><strong>A QUÉ ME DEDICO</strong> — puesto o negocio, de qué eres responsable, industria, cómo es tu cliente.</li>
+        <li><strong>EN QUÉ ESTOY AHORITA</strong> — tus metas de los próximos seis meses, tu problema más difícil, y lo que llevas semanas posponiendo.</li>
+        <li><strong>CÓMO ME COMUNICO</strong> — tu estilo, las frases que usas mucho, las que no soportas.</li>
+        <li><strong>CÓMO QUIERO QUE TRABAJES CONMIGO</strong> — qué tan largas quieres las respuestas, en qué formato quieres lo complejo, qué hacer cuando no estés de acuerdo conmigo, qué hacer cuando no tengas certeza.</li>
+        <li><strong>QUÉ NO HACER</strong> — lo que te choca. Sé concreto.</li>
+      </ul>
+
+      <p>Si te da flojera llenarlo en frío, hay un atajo: pídele que te entreviste. "Hazme 15 preguntas para llenar esto." Contestar es mucho más fácil que redactar.</p>
+
+      <p>Aquí es donde te recomiendo invertir de verdad. La diferencia entre cinco minutos y media hora en este paso es la diferencia entre respuestas genéricas y respuestas que suenan a alguien que te conoce.</p>
+
+      <h2>Paso 3: que él escriba tus instrucciones personalizadas</h2>
+
+      <p>Ya que tienes el documento de arriba, pégalo en un chat del proyecto y pídele que lo convierta en instrucciones. Este es el prompt:</p>
+
+      <pre><code>Con base en todo lo que acabo de contarte sobre mí, escríbeme un set limpio de instrucciones personalizadas para este proyecto de Claude. Las instrucciones deben:
+
+1. Describir quién soy y a qué me dedico en 2 o 3 frases.
+2. Fijar mi estilo de comunicación, tono y formato por defecto.
+3. Listar las cosas que NUNCA debes hacer cuando trabajes conmigo.
+4. Definir cómo manejar la incertidumbre o el desacuerdo conmigo.
+5. Incluir cualquier comportamiento que yo querría en todas y cada una de las sesiones.
+
+Escribe las instrucciones en segunda persona, como si Claude estuviera leyendo reglas sobre cómo ayudarme. Sé específico. Nada de consejos genéricos tipo "sé útil". Menos de 400 palabras en total.
+
+Cuando termines, dame las instrucciones en un bloque de código limpio que yo pueda copiar y pegar en la pestaña de instrucciones personalizadas.</code></pre>
+
+      <p>El resultado va en la pestaña de instrucciones personalizadas del proyecto. Ahí vive permanente, sin que tengas que repetirlo.</p>
+
+      <h2>Paso 4: dale 5 ejemplos de cómo escribes</h2>
+
+      <p>Este es el paso que convierte respuestas correctas en respuestas que suenan a ti.</p>
+
+      <p>Junta entre tres y cinco textos tuyos reales: correos que mandaste, mensajes de Slack, una presentación, publicaciones. Reales, no los que te hubiera gustado escribir. Y pégalos con esto:</p>
+
+      <pre><code>Te voy a dar 5 ejemplos de mi escritura real. Analízalos a detalle. Después guarda mi voz como regla permanente de este proyecto.
+
+Aquí van mis muestras:
+[MUESTRA 1]
+[MUESTRA 2]
+[MUESTRA 3]
+[MUESTRA 4]
+[MUESTRA 5]
+
+Analiza mi estilo a detalle. Fíjate en:
+1. Largo y ritmo de las frases. ¿Escribo corto y seco o largo y fluido?
+2. Vocabulario. ¿Hacia qué palabras me voy? ¿Cuáles evito?
+3. Cómo abro y cómo cierro. ¿Con qué suelo empezar? ¿En qué suelo aterrizar?
+4. Formalidad. ¿Soy casual, formal, o algo intermedio?
+5. Patrones. ¿Qué estructuras, transiciones o movimientos repito entre muestras?
+6. Marcas de voz. Lo que hace que esto suene a mí y no a IA genérica.
+
+Cuando termines, dame un resumen limpio de "Reglas de voz" en unas 200 palabras. Después guarda esta voz como regla permanente del proyecto: siempre que te pida escribir algo, iguala este estilo exacto. No regreses a tus patrones de voz por defecto.</code></pre>
+
+      <p>Pruébalo con un párrafo. Si suena raro, dile qué falló con palabras tuyas —"esto es demasiado formal", "yo nunca usaría esa palabra"— y guarda la corrección.</p>
+
+      <h2>Paso 5: las reglas de comportamiento</h2>
+
+      <p>Al final de tus instrucciones personalizadas, agrega entre 8 y 12 reglas numeradas. Estas son las que matan la paja de IA:</p>
+
+      <ul>
+        <li>Nunca empieces con "Excelente pregunta", "Por supuesto" o "Con gusto".</li>
+        <li>Nunca repitas mi pregunta antes de contestarla.</li>
+        <li>Nunca cierres con un resumen a menos que te lo pida.</li>
+        <li>Nunca agregues advertencias innecesarias ni recordatorios de que eres una IA.</li>
+        <li>Nunca uses lenguaje corporativo tipo "potenciar", "sinergia", "robusto", "elevar", "desbloquear".</li>
+        <li>Nunca me des la razón por cortesía cuando estoy equivocado.</li>
+        <li>Nunca finjas seguridad cuando no la tienes. Di que no sabes.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la penúltima regla. Es la más incómoda y la más valiosa. Un modelo entrenado para ser agradable te va a dar la razón, y si lo usas para tomar decisiones eso es exactamente lo contrario de lo que necesitas. Escríbela explícita y, cuando te contradiga, no la quites.</p>
+      </div>
+
+      <h2>Cómo se mantiene esto vivo</h2>
+
+      <p>El setup no es de una sola vez. Cuatro hábitos que hacen que siga sirviendo:</p>
+
+      <ol>
+        <li><strong>Un chat nuevo por tema</strong>, siempre dentro del proyecto. El contexto acumulado de una conversación larga contamina la siguiente pregunta.</li>
+        <li><strong>Dictado para los primeros borradores.</strong> Hablas más natural de lo que escribes, y para desahogar una idea desordenada eso es una ventaja.</li>
+        <li><strong>Cinco minutos cada semana</strong> para preguntarle: de qué quiero más, de qué quiero menos, y qué es lo único que si cambio destraba lo demás.</li>
+        <li><strong>Si las respuestas siguen genéricas, vuelve al paso 2.</strong> Casi nunca es culpa del modelo. Es que tu documento de contexto tiene cuatro líneas.</li>
+      </ol>
+
+      <p>Y la diferencia mental más importante: deja de tratarlo como buscador. Un buscador te da una respuesta y se acaba la conversación. Esto sirve para pensar en voz alta con alguien que ya sabe cómo trabajas y no se cansa de la tercera versión.</p>

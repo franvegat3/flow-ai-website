@@ -1,0 +1,103 @@
+      <p>Casi todo el análisis de competencia que he visto en equipos de marketing termina en lo mismo: una hoja de cálculo con los posts que más likes tuvieron y una junta donde alguien dice "deberíamos hacer más de esto". Eso no es estrategia. Es copiar con pasos extra.</p>
+
+      <p>El problema es que estás mirando el envoltorio. Ves el formato, la miniatura, el número de vistas. No ves lo que se dijo, en qué orden, ni qué pregunta quedó sin responder en los comentarios. Y ahí es exactamente donde está el hueco que puedes tomar.</p>
+
+      <p>Esto es un flujo que corre en una tarde y sale con dos cosas: los patrones que sí están funcionando en tu nicho, con evidencia, y los temas que nadie está tocando. Más un calendario de 90 días armado sobre esos dos hallazgos. La primera corrida se lleva como hora y media. Las siguientes, veinte minutos.</p>
+
+      <h2>Qué hace distinto este flujo</h2>
+
+      <p>Descarga el contenido de tus competidores, lo <strong>transcribe</strong>, y le da a Claude el texto completo de lo que dijeron, no solo los metadatos.</p>
+
+      <p>Sin transcripciones estás analizando el empaque. Con transcripciones puedes ver que los seis videos que reventaron en tu nicho abren con una objeción del cliente en los primeros cuatro segundos, y que ninguno de ellos habla de precio. Ese es el tipo de patrón que te cambia el calendario.</p>
+
+      <h2>El setup, paso por paso</h2>
+
+      <ol>
+        <li><strong>Abre una cuenta gratis en Apify.</strong> Trae crédito mensual de $5 USD, que alcanza para una corrida completa de este flujo si no te pones a bajar cuentas de más.</li>
+        <li><strong>Elige a quién vas a analizar.</strong> Entre 5 y 10 cuentas, y aquí importa la mezcla: directos (los que te compiten de frente), adyacentes (le hablan a tu mismo cliente con otro producto) y comodines (otro nicho, mismo formato, mucho más grandes que tú). Los comodines son los que traen los patrones de formato que en tu nicho nadie ha usado.</li>
+        <li><strong>Baja Instagram.</strong> Con el Instagram Scraper de Apify, 30 posts por cuenta. El costo va por resultado, del orden de $1.50 USD por cada mil.</li>
+        <li><strong>Baja TikTok.</strong> Con el scraper de Clockworks, otros 30 por cuenta. Este sale más caro, alrededor de $5 USD por mil resultados.</li>
+        <li><strong>Baja YouTube.</strong> Aquí van dos jalones separados: metadatos por un lado, transcripciones por otro. Solo de los canales que de verdad compiten contigo.</li>
+        <li><strong>Transcribe los videos cortos.</strong> Hay actores específicos para analizar reels de Instagram y para transcribir TikToks. El costo por video es de centavos, del orden de $0.007 USD.</li>
+        <li><strong>Ordena los CSV en una carpeta de Drive.</strong> Una subcarpeta por red. Sin esto, el último paso se vuelve un desastre.</li>
+        <li><strong>Corre el prompt maestro</strong> en Claude con el conector de Google Drive prendido.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la transcripción. Es el paso 6 y es el que hace que todo lo demás valga la pena. Sin él tienes un reporte de vistas que ya podías sacar mirando los perfiles a mano. Si vas a recortar el flujo por presupuesto, recorta cuentas —no recortes transcripciones.</p>
+      </div>
+
+      <h2>El prompt maestro</h2>
+
+      <p>Este es el que corre al final, una sola vez, sobre toda la carpeta. Cambia lo que está entre corchetes y no le quites las secciones numeradas: son las que fuerzan a que la salida sea utilizable en vez de un ensayo.</p>
+
+      <pre><code>Eres analista de contenido. Tienes acceso a una carpeta de Google Drive
+llamada [NOMBRE DE LA CARPETA] con CSVs de Instagram, TikTok y YouTube de
+competidores de mi nicho, incluyendo transcripciones de los videos.
+
+Mi negocio: [QUÉ VENDES, A QUIÉN, EN QUÉ MERCADO]
+Mi oferta principal: [PRODUCTO O SERVICIO]
+Lo que quiero lograr en 90 días: [OBJETIVO CONCRETO]
+
+Lee TODOS los archivos antes de responder. No opines hasta haberlos leído.
+
+Entrégame, en este orden:
+
+1. LÍNEA BASE DE ENGAGEMENT
+Ordena las cuentas por tasa de engagement (interacciones / seguidores),
+no por números absolutos. Marca cuáles publican mucho y rinden poco.
+Dime cuál es el piso y el techo del nicho.
+
+2. LOS 10 PATRONES QUE ESTÁN FUNCIONANDO
+Para cada uno: qué es, en qué formato aparece, el hook literal de dos
+ejemplos reales (cítalos de la transcripción), en cuántas cuentas
+distintas se repite, y un nivel de confianza de alto/medio/bajo según
+cuánta evidencia tengas. Si un patrón solo aparece en una cuenta,
+dilo y bájale la confianza.
+
+3. LOS 5 HUECOS QUE NADIE ESTÁ TOCANDO
+Un hueco es un tema que el público pide y nadie responde bien, o un
+ángulo que todos evitan. Para cada uno: el tema, por qué crees que
+nadie lo toca, tres ángulos posibles y un hook escrito para cada ángulo.
+
+4. LO QUE DICEN LOS COMENTARIOS
+Las preguntas que se repiten, las objeciones, las quejas sobre el
+producto de alguien más, y el vocabulario exacto que usa la gente.
+Dame las frases textuales, no tu paráfrasis.
+
+5. CALENDARIO DE 90 DÍAS — 12 PIEZAS
+8 piezas apoyadas en los patrones del punto 2 y 4 piezas apoyadas en
+los huecos del punto 3. Cada pieza con: título de trabajo, formato,
+red donde va primero, hook y el patrón o hueco del que sale.
+
+6. POSICIONAMIENTO
+Una frase de posicionamiento afilada contra lo que ya vimos, más tres
+variantes de bio de menos de 150 caracteres.
+
+Reglas: cero relleno. Si un dato no está en los archivos, di que no
+está en vez de estimarlo. Cita el nombre de la cuenta y la fecha cada
+vez que uses un ejemplo.</code></pre>
+
+      <h2>Qué sale de ahí, en concreto</h2>
+
+      <p>La salida útil no es el listado de patrones. Es el punto 4 cruzado con el punto 3.</p>
+
+      <p>En un caso de un cliente de servicios B2B, los diez patrones dijeron lo que ya sospechábamos: videos cortos a cámara, formato de "tres errores", nada de branding. El hallazgo real estaba en los comentarios: la pregunta que más se repetía era sobre integración con el sistema que ya tenían, y ninguno de los seis competidores había hecho una sola pieza sobre eso. Cuatro piezas del calendario salieron de esa sola pregunta.</p>
+
+      <p>Ese es el patrón general. Los patrones te dicen cómo hablar. Los huecos te dicen de qué. Los comentarios te dan las palabras.</p>
+
+      <h2>Cuánto cuesta y cuándo repetirlo</h2>
+
+      <p>Con 6 cuentas y 30 posts por cuenta en dos redes, más transcripciones, cabes en el crédito gratis de Apify o muy cerca. Si te vas a 10 cuentas y tres redes, ya pagas —y sigue siendo la investigación de mercado más barata que vas a hacer.</p>
+
+      <p>La cadencia que recomiendo es trimestral. Mensual es demasiado: no le das tiempo al nicho de moverse y acabas persiguiendo ruido. Semestral es muy poco: para entonces el hueco que encontraste ya lo tapó alguien más.</p>
+
+      <p>Y guarda los CSV de cada corrida. En la segunda ya puedes pedirle a Claude que compare contra la anterior y te diga qué patrón murió, cuál se saturó, y si el hueco que detectaste sigue abierto. Esa comparación vale más que la primera corrida completa.</p>
+
+      <h2>El error que hace inútil todo esto</h2>
+
+      <p>Correr el análisis y no cambiar nada del calendario.</p>
+
+      <p>Lo he visto varias veces: sale el reporte, todo mundo dice que está buenísimo, se comparte en Slack, y a la semana el equipo sigue publicando lo mismo que publicaba antes. El análisis no es el entregable. El entregable son las 12 piezas con fecha y responsable en el tablero donde ya trabajan.</p>
+
+      <p>Si no vas a mover el calendario, no corras el flujo. Y si lo vas a correr, bloquea el día siguiente para meter las 12 piezas al tablero antes de que el reporte se enfríe. Aquí aplica lo mismo que en <a href="/guias/publicar-mejor-no-mas/">publicar mejor en vez de publicar más</a>: el volumen sin criterio no compra nada.</p>

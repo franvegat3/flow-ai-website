@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arma una tienda de Shopify desde un solo chat — Guías Flow AI</title>
+  <meta name="description" content="Los tres prompts exactos: construye tu tienda, convierte una hoja de cálculo en fichas de producto, y crece con campañas hechas desde tus datos de venta. Más el desglose honesto de costo." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/tienda-shopify-desde-un-chat/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Arma una tienda de Shopify desde un solo chat" />
+  <meta property="og:description" content="Los tres prompts exactos: construye tu tienda, convierte una hoja de cálculo en fichas de producto, y crece con campañas hechas desde tus datos de venta. Más el desglose honesto de costo." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/tienda-shopify-desde-un-chat/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Multi-herramienta</span><span class="tag">Negocio</span><span class="tag">Automatización</span></div>
+      <h1>Arma una tienda de Shopify desde un solo chat</h1>
+      <p class="lead">Los tres prompts exactos: construye tu tienda, convierte una hoja de cálculo en fichas de producto, y crece con campañas hechas desde tus datos de venta. Más el desglose honesto de costo.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Montar una tienda siempre se atoró en el mismo punto: no en decidir qué vender, sino en las cuarenta tareas chiquitas entre la decisión y la primera venta. El tema, las páginas de políticas, las fichas de producto, las fotos con nombres que no coinciden con nada, la sección de preguntas frecuentes que nadie escribe nunca.</p>
+
+      <p>Manus abrió un conector con Shopify que se come esa parte. Le describes el negocio en un chat, construye la tienda contra el backend de Shopify —que sigue manejando el carrito, el cobro y el envío— y de ahí en adelante le pides cambios hablando.</p>
+
+      <p>Abajo están los tres prompts con los que se hace el trabajo completo: construir, llenar y crecer. Están enteros para copiarse. Y al final el costo real, que es donde la gente se lleva la sorpresa.</p>
+
+      <h2>Qué hace el conector y qué no</h2>
+
+      <p>Construye la fachada y administra el contenido. Shopify sigue siendo el motor: pagos, inventario, envíos, impuestos y el panel de pedidos siguen ahí y siguen siendo tu responsabilidad.</p>
+
+      <p>Eso es bueno. La parte regulada y delicada del comercio se queda en una plataforma que lleva años resolviéndola, y la IA se encarga de la parte que es puro trabajo repetido. Lo que se construye no es una tienda de juguete: es una tienda de desarrollo de Shopify de verdad, que puedes ver y probar antes de publicarla.</p>
+
+      <h2>Prompt 1 — construir la tienda</h2>
+
+      <p>El error clásico es pedirle "hazme una tienda de café". Sale una tienda genérica, con copy de plantilla y fotos de banco de imágenes. Este prompt lo obliga a entregar primero un plano y a esperar tu visto bueno antes de construir.</p>
+
+      <pre><code>Eres mi constructor de tiendas. Vas a armar una tienda de desarrollo
+completa en Shopify a partir de este brief.
+
+EL NEGOCIO
+- Nombre de la marca: [nombre]
+- Que vendo: [productos o categorias]
+- Rango de precios: [de X a Y]
+- Personalidad de la marca: [tres adjetivos y una marca de referencia]
+- Cliente objetivo: [quien es, que problema tiene, como habla]
+- Que me hace distinto: [una o dos razones reales, no adjetivos]
+
+PROCESO, EN ESTE ORDEN
+1. Primero entregame el plano y detente ahi. El plano incluye:
+   estructura del sitio, propuesta de valor en una frase, paleta y
+   tipografia, y el mensaje principal de la portada. Espera mi visto
+   bueno antes de construir nada.
+2. Cuando lo apruebe, construye la tienda con esas paginas:
+   Inicio, Tienda, Nosotros, Contacto, Preguntas frecuentes, y
+   Envios y devoluciones.
+3. Crea de 4 a 6 productos de muestra con precio, descripcion y
+   variantes, para que la tienda se pueda ver y probar.
+
+REGLAS
+- Copy simple y en frases cortas. Nada de lenguaje corporativo.
+- Cero resenas inventadas, cero testimonios, cero cifras de clientes.
+- No prometas tiempos de envio ni garantias que yo no te di.
+- La misma voz en las seis paginas.
+- Los textos legales van como borrador y marcados como borrador.
+
+FORMATO DE ENTREGA
+Primero el plano. Despues de mi aprobacion, construyes y me devuelves
+una lista de verificacion de lo que quedo hecho, lo que quedo a medias
+y las tres decisiones que tomaste por mi y deberia revisar.</code></pre>
+
+      <h2>Prompt 2 — de la hoja de cálculo a las fichas</h2>
+
+      <p>Esta es la parte que en una tienda con inventario real se lleva días. Ochenta productos, ochenta descripciones, ochenta títulos, y una carpeta de fotos con nombres tipo IMG_4471.</p>
+
+      <pre><code>Eres mi administrador de catalogo. Te adjunto una hoja de calculo de
+productos y una carpeta de imagenes.
+
+COLUMNAS DE LA HOJA
+SKU, Nombre del producto, Categoria, Precio, Inventario,
+Caracteristicas clave, Nombre del archivo de imagen.
+
+QUE NECESITO QUE HAGAS
+1. Empata cada imagen con su producto usando el nombre del archivo.
+2. Escribe la descripcion de cada producto: dos o tres parrafos en mi
+   voz de marca, mas de 3 a 5 vinetas de caracteristicas.
+3. Escribe el titulo para que se lea rapido en una lista, y la
+   descripcion para buscadores de cada ficha.
+4. Agrupa los productos en colecciones segun la categoria.
+5. Carga el inventario tal como viene. Lo que este en cero se marca
+   como agotado, no se borra.
+
+REGLAS
+- Usa unicamente los datos de la hoja. Si una caracteristica no esta,
+  no la inventes: dejala fuera.
+- Nada de superlativos ni de promesas de resultado.
+- Precios exactamente como vienen. Si un precio se ve raro, no lo
+  corrijas: reportalo.
+
+MI VOZ DE MARCA
+[pega aqui dos descripciones que ya te gusten, o describe el tono]
+
+FORMATO DE ENTREGA
+Una tabla resumen con SKU, titulo nuevo, coleccion e inventario.
+Aparte, dos listas: imagenes que no empataron con ningun producto, y
+productos a los que les falto algun dato. Esas dos listas primero.</code></pre>
+
+      <p>Las dos listas del final son lo importante. Un catálogo cargado con datos faltantes se ve completo hasta que un cliente entra a la ficha vacía.</p>
+
+      <h2>Prompt 3 — crecer con tus propios datos de venta</h2>
+
+      <p>Este es el que casi nadie usa y es el que cambia el negocio. La tienda ya tiene datos de qué se vende: ese es tu mejor insumo de marketing y no hay que comprarlo.</p>
+
+      <pre><code>Eres mi encargado de crecimiento. Lee los datos de ventas y de
+productos de mi tienda y armame una campana alrededor de lo que ya
+se vende bien.
+
+CONTEXTO
+- Cliente objetivo: [quien es y como habla]
+- Voz de marca: [tono]
+- Canales donde publico: [ej. Instagram, correo, TikTok]
+- Periodo a analizar: [ej. ultimos 60 dias]
+
+QUE NECESITO
+1. Los 3 productos mas vendidos, por unidades y por ingreso. Di si
+   coinciden o no, y que significa que no coincidan.
+2. Por cada uno de esos 3 productos:
+   - 5 ganchos de apertura, cada uno con un angulo distinto.
+   - 3 textos de publicacion con su llamado a la accion.
+   - 3 angulos de anuncio, indicando a que objecion responde cada uno.
+   - 5 etiquetas relevantes, sin las genericas.
+3. Una propuesta de codigo de descuento: el porcentaje, la condicion
+   y por que ese numero y no otro, con el margen en mente.
+4. Un calendario de 7 dias con columnas: Dia, Canal, Tipo de
+   publicacion, Gancho.
+
+REGLAS
+- Nada de urgencia falsa, escasez inventada ni cuentas regresivas
+  que no existan.
+- No prometas resultados. Habla de lo que hace el producto.
+- Si los datos no alcanzan para sostener una conclusion, dilo en vez
+  de rellenar.
+
+CIERRE
+En cinco lineas: que apuesta esta haciendo esta campana, y cual seria
+la campana contraria que valdria la pena probar en paralelo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>Antes de publicar, revisa a mano cinco cosas:</strong> precios, inventario, las páginas de políticas, que cada foto sea del producto correcto, y que la voz sea la misma en toda la tienda. La IA construye rápido y se equivoca en silencio. Un precio mal puesto en una tienda abierta no es un error de estilo: es una venta que tienes que honrar o cancelar, y las dos opciones cuestan.</p>
+      </div>
+
+      <h2>El costo, sin adorno</h2>
+
+      <p>Aquí es donde conviene ser claro, porque el titular de "una tienda desde un chat" suena a gratis y no lo es.</p>
+
+      <ul>
+        <li><strong>Manus:</strong> necesitas plan de paga. El de entrada ronda los 20 dólares al mes. Desde el plan gratuito no se puede usar el conector.</li>
+        <li><strong>Shopify:</strong> necesitas un plan de paga para publicar y cobrar. Construir y ver la tienda en desarrollo no cuesta; salir al aire sí.</li>
+        <li><strong>Lo que no se ve:</strong> fotos de producto de verdad. Ni Manus ni Shopify te las dan, y son la diferencia entre una tienda que vende y una que se ve armada en una tarde. Presupuesta eso.</li>
+      </ul>
+
+      <p>Súmalo bien antes de empezar. Sigue siendo mucho más barato que contratar a alguien para montarla, pero no es cero.</p>
+
+      <h2>El error que veo más seguido</h2>
+
+      <p>Publicar la tienda el mismo día que se construyó.</p>
+
+      <p>La sensación de velocidad es adictiva: en dos horas tienes algo que se ve como una tienda real, y la tentación es abrirla ya. El problema es que en esas dos horas se tomaron unas treinta decisiones por ti —precios de muestra, textos de políticas, tiempos de envío— y ninguna la revisaste.</p>
+
+      <p>Construye un día, revisa al siguiente con la lista de arriba y publica al tercero. Si vas a mandarle tráfico pagado, revisa también a dónde cae cada clic: la campaña más cara del mundo no arregla una ficha de producto sin foto.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/medio-tiempo-de-la-ia-2026/" class="stack-link">
+            <span>El reporte de medio tiempo de la IA en 2026 →</span>
+            <small>Los 3 cambios que movieron el tablero este año, una autoevaluación de 2 minutos para ver dónde estás parado, y 3 apuestas de lo que viene.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

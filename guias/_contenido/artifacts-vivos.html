@@ -1,0 +1,149 @@
+      <p>El problema de todo tablero que hace Claude no era la calidad. Era la fecha de caducidad. Le pedías un reporte de KPIs, salía impecable, cerrabas el chat, y al día siguiente esos números ya eran historia. Para actualizarlo tenías que volver a pedir todo.</p>
+
+      <p>Los Artifacts vivos arreglan exactamente eso. Se quedan conectados a tus aplicaciones y jalan datos frescos cada vez que los abres. Lo construyes una vez y después solo lo abres.</p>
+
+      <p>Suena a poco. No lo es: es la diferencia entre un reporte y una herramienta. Un reporte se hace, se manda y se muere. Una herramienta se usa todos los días.</p>
+
+      <h2>Qué son, en una frase</h2>
+
+      <p>Un Artifact vivo es un tablero que Claude construye y guarda, con una conexión permanente a las apps que le autorizaste, y que se actualiza solo al abrirse.</p>
+
+      <p>La diferencia con el artifact de siempre: el de siempre es una foto del momento en que se creó. El vivo vuelve a consultar la fuente cada vez. No hay botón de refrescar y no hay que pedírselo.</p>
+
+      <h2>Lo que necesitas antes de empezar</h2>
+
+      <p>Aquí hay tres requisitos duros que conviene saber antes de invertir media tarde:</p>
+
+      <ul>
+        <li><strong>App de escritorio.</strong> Los Artifacts vivos viven en Cowork, dentro de la aplicación de escritorio de Claude. En el navegador no están. Si nunca la has instalado, empieza por <a href="/guias/guia-de-la-app-de-escritorio/">la guía de la app de escritorio</a>.</li>
+        <li><strong>Plan de paga.</strong> Pro, Max, Team o Enterprise. En el plan gratuito no aparecen.</li>
+        <li><strong>Conectores autorizados antes.</strong> Un Artifact vivo no puede conectarse a algo que no le diste permiso de ver. Esto se hace en Ajustes, Conectores, y se hace primero.</li>
+      </ul>
+
+      <p>Lo que se puede conectar hoy: Google Drive, Google Calendar, Gmail, Slack, Asana, Linear, GitHub, Notion, y lo demás que tengas dado de alta en conectores.</p>
+
+      <h2>Cómo se arma uno</h2>
+
+      <ol>
+        <li>Abre la app de escritorio y entra a Cowork.</li>
+        <li>Ve a Ajustes, Conectores, y autoriza las aplicaciones que va a leer el tablero. Solo esas.</li>
+        <li>Arranca una tarea de Cowork describiendo el tablero que quieres. Claude lo construye y lo guarda en la barra lateral de Artifacts vivos.</li>
+        <li>Ábrelo cuando quieras. Jala los datos frescos solo.</li>
+      </ol>
+
+      <p>El paso 3 es donde se gana o se pierde. Una descripción vaga te da un tablero bonito e inútil. Estos son los tres que sí uso, con el prompt completo.</p>
+
+      <h2>1. Tablero de KPIs</h2>
+
+      <p>El caso obvio y el que más rápido paga. La condición es que tus números ya vivan en algún lado consultable —una hoja de cálculo, normalmente—.</p>
+
+      <pre><code>Construye un tablero de KPIs como Artifact vivo.
+
+Conecta a: mi hoja de Google Sheets llamada [NOMBRE DE LA HOJA],
+pestaña [PESTAÑA].
+
+Muestra estas métricas:
+- Ingresos del mes en curso
+- Leads nuevos de la semana
+- Tasa de conversión de lead a cliente
+- Ticket promedio
+- Pipeline abierto
+
+Para cada métrica muestra:
+- El valor actual, grande y en negrita
+- El cambio contra el mismo periodo anterior, con signo y porcentaje
+- Verde si mejoró, rojo si empeoró, gris si el cambio es menor a 2%
+- Una línea de tendencia de las últimas 8 semanas
+
+Arriba de todo, una línea de texto que diga en español qué es lo
+que más cambió esta semana y por qué, deducido de los datos.
+
+Ordena las métricas de más a menos importante para tomar una
+decisión hoy, no en orden alfabético.
+
+Guárdalo como Artifact vivo para que jale datos frescos de la hoja
+cada vez que lo abra.</code></pre>
+
+      <p>Lo que hace la diferencia en ese prompt es la línea de texto de arriba. Un tablero de números te obliga a interpretarlo tú cada mañana. Un tablero que además te dice qué se movió te ahorra el paso de interpretación, que es el que la gente se salta cuando anda con prisa.</p>
+
+      <h2>2. Calendario de contenido</h2>
+
+      <p>Para una operación de contenido, el dolor no es producir: es saber qué pieza va con qué fecha y en qué estado está. Ese dato normalmente vive partido entre el calendario y una carpeta de Drive.</p>
+
+      <pre><code>Construye un calendario de contenido como Artifact vivo.
+
+Conecta a:
+- Mi Google Calendar, específicamente el calendario [NOMBRE]
+- Mi carpeta de Google Drive [NOMBRE DE LA CARPETA]
+
+Muestra una vista semanal, cada día como columna. En cada día:
+- Las publicaciones programadas para ese día, con su canal
+- El estado de cada pieza según el archivo que le corresponde en
+  Drive: sin empezar, en borrador, en revisión, lista
+- Quién es el responsable, si está en el archivo
+
+Debajo de la semana, tres bloques:
+- Piezas sin archivo asociado en Drive
+- Piezas cuya fecha ya pasó y siguen en borrador
+- Días de la semana que quedaron vacíos
+
+Nada de decoración. Que quepa completo en una pantalla.
+
+Guárdalo como Artifact vivo. Cada vez que lo abra debe jalar mis
+eventos de calendario actuales y el estado actual de los archivos.</code></pre>
+
+      <p>Los tres bloques de abajo son el verdadero producto. Un calendario te enseña lo que hay. Esos bloques te enseñan lo que falta, que es donde se cae la operación.</p>
+
+      <h2>3. Resumen matutino</h2>
+
+      <p>Este es el que más uso y el que más gente subestima porque suena a lujo. No lo es: es el que reemplaza los primeros veinte minutos del día abriendo pestañas.</p>
+
+      <pre><code>Construye un resumen matutino diario como Artifact vivo.
+
+Conecta a: Google Calendar, Gmail y Slack.
+
+Estructura, en este orden:
+
+1. Mi día: las juntas de hoy con hora, quién va y una línea de para
+   qué es cada una. Marca los huecos de más de 90 minutos como
+   bloques de trabajo profundo disponibles.
+
+2. Correo: mis 5 correos sin leer más importantes. Importante =
+   viene de un cliente, tiene una pregunta directa, o menciona una
+   fecha límite. Una línea por correo: quién, qué quiere, qué
+   tendría que contestar.
+
+3. Slack: menciones directas y mensajes en hilos donde participé,
+   de las últimas 24 horas, que sigan sin respuesta mía.
+
+4. Lo que se me está pasando: cualquier cosa de arriba que lleve
+   más de 48 horas esperándome.
+
+Que sea corto. Esto se lee en 30 segundos parado con el café. Sin
+introducciones, sin cierres, sin resúmenes de lo que ya dijiste.
+
+Guárdalo como Artifact vivo para que jale datos frescos cada
+mañana.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar el tablero contra la realidad la primera semana. Un Artifact vivo que lee mal tu hoja de cálculo no te va a avisar: te va a mostrar números con toda confianza. Los primeros cinco días, abre el tablero y verifica dos cifras a mano. Si cuadran, ya puedes confiar. Si no, casi siempre es que la fuente tiene columnas con nombres distintos a los que asumió.</p>
+      </div>
+
+      <h2>Los límites que sí duelen</h2>
+
+      <p>Hay cuatro, y ninguno es menor:</p>
+
+      <ul>
+        <li><strong>Solo escritorio.</strong> No hay versión web. Si vives en el navegador, esto no es para ti todavía.</li>
+        <li><strong>No se comparten con el equipo.</strong> Hoy no hay forma de darle tu tablero a otra persona. Es una herramienta personal, no de equipo.</li>
+        <li><strong>Un solo dispositivo.</strong> No se sincronizan entre máquinas. El tablero que armaste en la laptop de la oficina no está en la de tu casa.</li>
+        <li><strong>Consumen cuota, y no poca.</strong> Cada apertura vuelve a consultar todo. Un tablero abierto diez veces al día pesa.</li>
+      </ul>
+
+      <p>Ese último punto es el que determina cuántos vale la pena tener. Mi regla: máximo tres tableros vivos, y solo de cosas que de verdad abro todos los días. Cinco tableros que abres una vez a la semana consumen más de lo que devuelven, y ninguno se te vuelve hábito.</p>
+
+      <h2>Por dónde empezaría</h2>
+
+      <p>Por el resumen matutino, aunque el de KPIs suene más serio. La razón es de adopción, no de valor: el resumen matutino se usa solo, porque sustituye algo que ya haces todas las mañanas. El tablero de KPIs hay que acordarse de abrirlo, y la mitad de la gente no se acuerda.</p>
+
+      <p>Cuando lleves dos semanas abriendo el resumen sin pensarlo, ahí sí arma el de números. Para entonces ya vas a saber qué métricas revisas de verdad, que casi nunca son las que hubieras puesto el primer día.</p>

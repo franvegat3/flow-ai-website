@@ -1,0 +1,80 @@
+      <p>Este año todas las plataformas grandes se movieron al mismo lugar: conectar la IA directo a tu dinero. ChatGPT sacó su módulo de finanzas personales, Perplexity lanzó su vista financiera apoyada en Plaid, y Claude lleva meses conectando bancos, contabilidad y pagos a través de conectores. Ya no es una promesa de conferencia. Es un switch que tienes disponible en tu cuenta hoy.</p>
+
+      <p>La pregunta ya no es si se puede. Es qué estás autorizando exactamente cuando das clic en "conectar", porque esa pantalla está diseñada para que digas que sí, no para que entiendas.</p>
+
+      <p>Tengo una revisión que corro antes de prender cualquier conector sensible. Toma cinco minutos y varias veces me ha hecho no conectar. Aquí está entera.</p>
+
+      <h2>La distinción que cambia todo</h2>
+
+      <p>Antes del prompt, la idea que hay que tener clara: <strong>leer y actuar son dos niveles de riesgo distintos</strong>, y las interfaces los presentan como si fueran el mismo trámite.</p>
+
+      <p>Un conector de solo lectura que se equivoca te da un análisis malo. Molesto, recuperable. Un conector con permiso de acción que se equivoca manda un correo, transfiere dinero, cancela una cita, borra un archivo o publica algo. Eso no se deshace con un refresh.</p>
+
+      <p>La mayoría de los permisos vienen empaquetados: aceptas uno y vienen los dos. Por eso el ejercicio de abajo separa explícitamente "qué puede leer" de "qué puede hacer en mi nombre". Casi siempre la segunda lista es más larga de lo que esperabas.</p>
+
+      <h2>El prompt de revisión</h2>
+
+      <p>Se lo pegas al mismo modelo al que le vas a dar acceso, antes de dárselo. No es magia: es obligarte a ver el alcance escrito en una hoja en vez de en una pantalla de autorización con un botón azul.</p>
+
+      <pre><code>Vas a ser mi oficial de incorporación de IA. Antes de conectar esta IA a algo sensible, necesito que me escribas una revisión de una página para saber exactamente a qué estoy accediendo.
+
+Plataforma de IA: [ej. Claude, ChatGPT, Perplexity]
+Cuenta que voy a conectar: [ej. mi banco, mi contabilidad, mi correo de trabajo]
+Para qué la quiero: [una frase]
+
+Devuélveme estas seis secciones, en este orden:
+
+1. QUÉ VA A PODER LEER. Lista específica de los datos a los que la IA tendrá acceso de lectura una vez que conecte. Sé granular: no digas "información de la cuenta", di qué campos.
+
+2. QUÉ VA A PODER HACER EN MI NOMBRE. La lista completa de acciones que la IA puede ejecutar una vez conectada. Enviar, transferir, cancelar, agendar, borrar, publicar, compartir, cualquier cosa que cambie el estado de algo.
+
+3. QUÉ SE GUARDA. Dónde vive lo que consulta, cuánto tiempo se retiene, si pasa por servidores de terceros, y si por defecto se usa para entrenar modelos.
+
+4. LA FORMA MÁS SEGURA DE USARLO. Los ajustes, alcances y hábitos concretos que reducen mi exposición. Dime cuáles permisos puedo quitar sin perder el caso de uso que te describí.
+
+5. CÓMO DESCONECTAR Y BORRAR DESPUÉS. Los pasos exactos para revocar el acceso y eliminar lo que ya se haya almacenado, en ambos lados: en la plataforma de IA y en la cuenta conectada.
+
+6. LOS TRES PEORES ESCENARIOS. Tres modos de falla realistas, no de película, y qué haría yo en cada uno para recuperarme.
+
+Si en algún punto no tienes certeza de cómo funciona esta integración en particular, dilo explícitamente en lugar de suponer. Prefiero un "no sé" que un dato inventado sobre mi propia seguridad.</code></pre>
+
+      <p>La sección 6 es la que hace que la gente cierre la pestaña sin conectar. Está bien. Ese es el punto.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la última línea del prompt. Sin ella, el modelo llena los huecos con lo que suena razonable, y termina describiéndote los permisos de una integración genérica en vez de la que tienes enfrente. Cuando el tema es tu banco, un dato plausible pero falso es peor que ningún dato. Contrasta siempre lo que te devuelva contra la pantalla de permisos real antes de aceptar.</p>
+      </div>
+
+      <h2>Las cuentas que ameritan esta revisión</h2>
+
+      <p>No todas. Con tu carpeta de recetas o tu lista de música no vale la pena el trámite. Estas sí:</p>
+
+      <ul>
+        <li><strong>Bancos y tarjetas.</strong> El caso obvio. Aquí lectura y acción están a un permiso de distancia.</li>
+        <li><strong>Casas de bolsa y cuentas de inversión.</strong> Peor que el banco: una acción equivocada aquí es irreversible y tiene costo fiscal.</li>
+        <li><strong>Correo.</strong> El más subestimado de la lista. Tu bandeja es el llavero maestro: ahí llegan los códigos de recuperación de todo lo demás.</li>
+        <li><strong>Calendario.</strong> Suena inocente hasta que alguien ve con quién te reúnes, dónde vives y a qué hora no estás en tu casa.</li>
+        <li><strong>Expedientes médicos.</strong> Categoría aparte por regulación y porque no hay forma de "cambiar la contraseña" de un diagnóstico.</li>
+        <li><strong>Almacenamiento en la nube con documentos personales.</strong> Identificaciones, contratos, actas, declaraciones. Casi nadie sabe qué tiene ahí realmente.</li>
+        <li><strong>Herramientas agénticas con acceso a navegador.</strong> Las más nuevas y las que menos entiende la gente: si un agente puede abrir tu navegador, hereda tus sesiones abiertas. Todas.</li>
+      </ul>
+
+      <p>Del lado empresa, agrega tu CRM, tu pasarela de cobro y tu sistema de nómina. En una empresa la pregunta además cambia: no es solo qué puede hacer la IA, es quién en tu equipo va a poder pedírselo una vez conectado.</p>
+
+      <h2>Cómo lo hago en la práctica</h2>
+
+      <p>Cuatro reglas que aplico y que no me he arrepentido de aplicar:</p>
+
+      <ol>
+        <li><strong>Solo lectura primero, siempre.</strong> Sin excepciones el primer mes. Si el caso de uso no sobrevive sin permiso de acción, probablemente no era un buen primer caso de uso.</li>
+        <li><strong>Una cuenta a la vez.</strong> Conectas una, la usas una semana, y hasta entonces consideras la siguiente. Conectar cinco el mismo día hace imposible saber de dónde salió un comportamiento raro.</li>
+        <li><strong>Apagar el entrenamiento con tus chats antes de conectar, no después.</strong> Está en los ajustes de privacidad de cada plataforma. Si conectas primero y lo apagas después, ya pasó lo que iba a pasar.</li>
+        <li><strong>Una fecha en el calendario para revisar.</strong> A los 90 días, revisa qué conectores siguen prendidos. La cantidad de accesos vivos que nadie usa desde hace medio año es la falla de seguridad más común que veo, y no requiere ningún ataque sofisticado: solo olvido.</li>
+      </ol>
+
+      <h2>Lo que no te va a decir ninguna pantalla de permisos</h2>
+
+      <p>Que el riesgo real casi nunca es el escenario de película donde alguien vacía tu cuenta.</p>
+
+      <p>El riesgo real es aburrido: un agente que interpreta mal una instrucción y manda un correo a la lista equivocada, una integración que sigue viva en una herramienta que dejaste de usar, un permiso de escritura que aceptaste hace ocho meses en una tarde ocupada y del que ya nadie se acuerda.</p>
+
+      <p>Contra eso no sirve desconfiar en abstracto. Sirve escribir en una hoja lo que estás autorizando y volver a revisarlo con calendario en mano. Eso es todo lo que hace esta revisión, y por eso funciona.</p>

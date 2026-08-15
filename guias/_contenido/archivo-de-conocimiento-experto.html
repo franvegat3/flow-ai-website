@@ -1,0 +1,102 @@
+      <p>Haz la prueba. Pregúntale a Claude algo específico de tu industria y pídele lo mismo a alguien que compite contigo. Van a salir dos respuestas casi idénticas. Correctas, razonables, y exactamente iguales de inútiles como ventaja.</p>
+
+      <p>La razón es aburrida y es estructural: los modelos se entrenaron con internet abierto. Wikipedia, blogs, foros. Reddit pesa desproporcionadamente en lo que citan las plataformas de IA hoy —OpenAI firmó un acuerdo de licenciamiento con Reddit en 2024 y desde entonces esa presencia se nota en las respuestas. Lo que está detrás de un muro de pago no entró: los Substack de suscripción, las transcripciones de podcasts de nicho, los hilos de la gente que de verdad opera.</p>
+
+      <p>O sea que el consenso genérico de internet te está llegando a ti y a todos tus competidores al mismo tiempo. La salida no es cambiar de modelo. Es cambiar lo que lee antes de contestarte.</p>
+
+      <h2>Qué es un archivo de conocimiento experto</h2>
+
+      <p>Una carpeta privada con el material de las fuentes que tú ya consideras buenas, en texto, que el modelo consulta <em>antes</em> de recurrir a lo que aprendió en el entrenamiento.</p>
+
+      <p>El modelo base es un commodity: tú y tu competencia usan el mismo. Lo que no es commodity es el corpus que tú le pones enfrente.</p>
+
+      <h2>Paso 1 — Elige entre 3 y 5 fuentes, no veinte</h2>
+
+      <p>La tentación es meter todo. No lo hagas: un corpus enorme y desigual hace que las respuestas se vuelvan promedio otra vez, que es justo lo que querías evitar.</p>
+
+      <p>La mezcla que uso:</p>
+
+      <ul>
+        <li><strong>Uno o dos Substack de paga</strong> de operadores en los que confías. No de comentaristas: de gente que hace lo que escribe.</li>
+        <li><strong>Tres o cuatro podcasts</strong> que ya escuchas cada semana. Aquí está lo mejor: nadie escribe lo que dice en un podcast, entonces nadie lo tiene indexado.</li>
+        <li><strong>Diez a quince cuentas de X</strong> con señal alta. Cuentas de gente que publica su trabajo, no que opina sobre el trabajo de otros.</li>
+        <li><strong>Los boletines de tu industria</strong>, los específicos, esos que llegan a 3,000 personas y no a 300,000.</li>
+      </ul>
+
+      <p>El filtro: si la fuente es lo bastante popular como para que un modelo ya la conozca bien, aporta poco. Buscas lo que está en un correo, no en un blog abierto.</p>
+
+      <h2>Paso 2 — Baja el contenido con Apify</h2>
+
+      <p>Apify tiene actores para casi todo lo que necesitas aquí: raspar Substack, transcribir podcasts desde YouTube o Spotify, jalar hilos de X y archivar boletines.</p>
+
+      <p>Configúralos para correr <strong>cada semana</strong>, no cada día. Semanal es la cadencia correcta: suficiente para no perderte nada, poco suficiente para que el costo no se te vaya y para que no acumules ruido.</p>
+
+      <h2>Paso 3 — La estructura de carpetas</h2>
+
+      <p>Simple y por tipo de fuente, porque cada tipo se lee distinto:</p>
+
+      <pre><code>conocimiento/
+  substacks/
+  podcasts/
+  x/
+  boletines/</code></pre>
+
+      <p>Las salidas de cada actor de Apify caen directo en su carpeta. Y una convención de nombres que sí importa: <code>fuente-AAAA-MM-DD-tema.md</code>. Cuando el modelo te cite algo, quieres saber de quién es y de cuándo sin abrir el archivo. Una nota de hace dos años en un tema que se mueve rápido vale distinto que una de la semana pasada.</p>
+
+      <h2>Paso 4 — Conectarlo</h2>
+
+      <p>En un proyecto de Claude, la instrucción que hace todo el trabajo es corta:</p>
+
+      <pre><code>Antes de contestar cualquier pregunta sobre [MI INDUSTRIA], busca
+primero en la carpeta conocimiento/ y usa lo que encuentres ahí
+como fuente principal.
+
+Reglas de cita:
+- Cuando uses algo del corpus, di de qué fuente viene y de qué fecha.
+- Cuando algo NO esté en el corpus y lo estés contestando con
+  conocimiento general, dilo explícitamente: "esto no está en tu
+  archivo, viene de conocimiento general".
+- Si dos fuentes del corpus se contradicen, muéstrame las dos
+  posturas y quién sostiene cada una. No promedies.
+- Prefiere lo más reciente cuando el tema se mueve rápido, pero
+  dime si estás descartando algo por antigüedad.</code></pre>
+
+      <p>Esa distinción entre lo que salió del corpus y lo que salió del modelo es la mitad del valor. Sin ella no sabes cuál respuesta es tuya y cuál es la misma que le está dando a todos.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las transcripciones de podcast. Es el paso con más fricción y el que más rinde, porque es material que existe solo en audio y por lo tanto no está indexado en ningún lado. Un año de un podcast semanal de tu nicho son cincuenta conversaciones con operadores que nadie más tiene en texto. Si solo vas a hacer una parte de esto, haz esta.</p>
+      </div>
+
+      <h2>La curva: qué esperar y cuándo</h2>
+
+      <p>Esto no rinde el primer día y conviene saberlo antes de empezar.</p>
+
+      <ul>
+        <li><strong>Semanas 1 a 4.</strong> El corpus está flaco. Las respuestas mejoran poco. Aquí es donde la gente abandona.</li>
+        <li><strong>Mes 3.</strong> Ya se nota. Las respuestas empiezan a traer matices que no venían antes, y ocasionalmente te contradicen con evidencia de una fuente que tú mismo elegiste.</li>
+        <li><strong>Mes 12.</strong> Tienes un corpus que ningún competidor puede replicar rápido, porque no es contenido: es un año de curaduría acumulada.</li>
+      </ul>
+
+      <p>Ese último punto es la parte estratégica. Un competidor puede copiar tu prompt en una tarde. Copiar doce meses de captura semanal de las fuentes correctas le toma doce meses.</p>
+
+      <h2>Dónde lo he visto pagar en operación</h2>
+
+      <p>El caso más claro no fue de contenido, fue comercial. Un equipo de ventas que le vende a un sector muy específico armó su corpus con dos boletines de la industria y las transcripciones de los podcasts donde salen los directores de sus cuentas objetivo.</p>
+
+      <p>La preparación de llamada cambió de nivel de inmediato: en vez de "esta empresa se dedica a X", el resumen traía la postura pública de esa persona sobre el tema que iban a discutir, con la cita y la fecha. Ese material no está en internet abierto. Estaba en dos horas de audio que nadie había transcrito.</p>
+
+      <h2>Los riesgos que la versión bonita de esto no menciona</h2>
+
+      <p><strong>Amplificas el sesgo de quien elegiste.</strong> Si tus cinco fuentes piensan igual, construiste una cámara de eco privada y ahora tiene la autoridad de salir por boca de tu IA. Mete a propósito una fuente que te caiga mal y con la que discrepes seguido. Es el único contrapeso que funciona.</p>
+
+      <p><strong>El corpus envejece.</strong> Una nota de hace dieciocho meses sobre precios, herramientas o regulación puede ser peor que no tener nada, porque suena autorizada. Por eso las fechas en el nombre del archivo y por eso la regla de cita.</p>
+
+      <p><strong>Es contenido de terceros.</strong> Úsalo como insumo para tu trabajo, no lo republiques. Lo que estás construyendo es una ventaja de criterio, no una biblioteca para copiar y pegar.</p>
+
+      <p><strong>Todo lo que entra es texto que el modelo va a tratar como confiable.</strong> No metas fuentes que no revisarías tú mismo. Un corpus sin curaduría es solo internet otra vez, más caro.</p>
+
+      <h2>Por dónde empezar esta semana</h2>
+
+      <p>Una fuente. La que más te haya cambiado la forma de pensar este año. Bájala completa, ponla en la carpeta, agrega la instrucción del paso 4 y haz las mismas cinco preguntas que le harías al modelo sin corpus.</p>
+
+      <p>Si la respuesta no cambia, la fuente no era tan buena como creías. Ese diagnóstico solo ya vale el ejercicio.</p>

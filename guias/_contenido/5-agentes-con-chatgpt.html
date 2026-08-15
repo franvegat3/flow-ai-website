@@ -1,0 +1,220 @@
+      <p>Un chat te ayuda cuando te acuerdas de abrirlo. Ese es todo el problema. La tarea que de verdad te está costando dinero —revisar la bandeja, preparar la llamada, mandar el seguimiento— es justo la que se te olvida delegarle, porque para pedírsela ya tuviste que sentarte a hacerla.</p>
+
+      <p>Los agentes de ChatGPT rompen eso. Corren solos, en horario, conectados a tus herramientas, y te entregan el trabajo hecho. Tú no los invocas: aparecen.</p>
+
+      <p>Estos son cinco que se arman en una tarde y que cubren el 80% del trabajo administrativo de cualquier persona con cuota o con equipo. De cada uno pongo las instrucciones completas, listas para pegar.</p>
+
+      <h2>Antes de empezar: quién puede y dónde se hace</h2>
+
+      <p>Dos cosas que conviene saber antes de invertir el rato:</p>
+
+      <ul>
+        <li><strong>Solo en planes de organización.</strong> Business, Enterprise, Education y Teachers. En Plus y en el gratuito no aparecen. Esto no es un detalle: es la razón por la que mucha gente lee sobre agentes y no los encuentra en su cuenta.</li>
+        <li><strong>El administrador tiene que habilitarlos.</strong> Vienen apagados por defecto. Si eres el admin, préndelos tú. Si no, esa es tu primera conversación.</li>
+      </ul>
+
+      <p>La ruta es ChatGPT, barra lateral izquierda, Agentes, Crear. Ahí eliges empezar de cero o desde una plantilla, agregas las apps que va a usar, y defines el disparador: manual o por horario.</p>
+
+      <p>Sobre el costo: durante la vista previa fue gratis hasta el 6 de mayo de 2026, y después pasó a un modelo por créditos. Antes de dejar cinco agentes corriendo diario, revisa cómo se consume en tu plan.</p>
+
+      <h2>Cómo se escribe un agente que sirve</h2>
+
+      <p>La estructura que uso para los cinco es la misma, y es la que separa un agente útil de uno que manda ruido:</p>
+
+      <ol>
+        <li><strong>Qué hace</strong>, en una frase.</li>
+        <li><strong>Qué lee</strong>, con nombres concretos de carpetas, canales o calendarios.</li>
+        <li><strong>Cómo clasifica</strong>, con categorías cerradas. Sin categorías, todo le parece importante.</li>
+        <li><strong>Qué entrega</strong>, con formato y longitud máxima.</li>
+        <li><strong>Qué nunca hace</strong>. Esta es la sección que más gente omite y la que evita el desastre.</li>
+      </ol>
+
+      <h2>1. Triaje de bandeja</h2>
+
+      <p>Procesa el correo sin leer de la mañana, lo clasifica por urgencia y deja borradores listos. El que más rápido se siente, porque ataca lo primero que abres al llegar.</p>
+
+      <p><strong>Conecta:</strong> Gmail u Outlook. <strong>Disparador:</strong> horario, 7:00 a.m. diario.</p>
+
+      <pre><code>Eres mi asistente de bandeja de entrada. Cada mañana revisas mis
+correos sin leer de las últimas 24 horas y me dejas la bandeja
+ordenada antes de que yo la abra.
+
+Clasifica cada correo en una de estas cuatro categorías, sin
+inventar categorías nuevas:
+
+URGENTE — hay que contestar hoy. Cliente esperando, fecha límite
+  próxima, o alguien bloqueado por mi respuesta.
+RESPONDER — necesita respuesta mía pero no hoy.
+INFORMATIVO — solo hay que leerlo. No requiere acción.
+IGNORAR — promociones, notificaciones automáticas, copias donde
+  no soy el destinatario real.
+
+Para todo lo que caiga en URGENTE y RESPONDER, deja un borrador
+en mi voz: directo, en español, de 2 a 4 oraciones máximo, sin
+frases de relleno tipo "espero que te encuentres bien".
+
+Reglas que nunca rompes:
+- Nunca clasifiques como IGNORAR un correo de mi jefe, de alguien
+  de mi equipo directo, o de un cliente. Aunque parezca trivial.
+- Nunca mandes un correo. Solo dejas borradores.
+- Si no entiendes qué quiere el remitente, ponlo en RESPONDER y
+  dilo en una línea en vez de adivinar.
+
+Entrégame el resumen ordenado por categoría, con una línea por
+correo: quién, qué quiere, qué propuse contestar.</code></pre>
+
+      <h2>2. Respuesta a prospectos</h2>
+
+      <p>Investiga cada lead nuevo, lo califica, redacta el acercamiento personalizado y lo registra en el CRM. Este es el que más dinero mueve, porque el tiempo de respuesta a un lead es de las pocas variables comerciales que están completamente bajo tu control.</p>
+
+      <p><strong>Conecta:</strong> correo, Salesforce o tu CRM, y navegación web. <strong>Disparador:</strong> manual o cada 2 horas.</p>
+
+      <pre><code>Eres mi analista de prospectos. Cuando entra un lead nuevo,
+investigas, calificas y dejas listo el primer contacto.
+
+Para cada lead:
+
+1. Investiga la empresa: a qué se dedica, tamaño aproximado,
+   noticias recientes, y el perfil de LinkedIn de la persona si
+   lo encuentras.
+
+2. Califícalo como CALIENTE, TIBIO o FRÍO según:
+   - Si el perfil de la empresa se parece a nuestros clientes
+     actuales
+   - Si la persona tiene poder de decisión o presupuesto
+   - Si hay una señal de intención concreta en cómo llegó
+
+3. Redacta un correo de primer contacto de 4 a 6 oraciones que
+   mencione algo específico y verificable de esa empresa. No
+   genérico: específico. Si no encontraste nada específico que
+   decir, no inventes nada y márcalo como "sin información
+   suficiente para personalizar".
+
+4. Registra en el CRM la calificación y el resumen de lo que
+   encontraste.
+
+Reglas que nunca rompes:
+- Nunca inventes un dato de la empresa. Si no lo encontraste, lo
+  dices.
+- Nunca mandes el correo sin que yo lo apruebe.
+- Si el lead ya existe en el CRM, no crees uno nuevo: actualiza
+  el existente y avísame que era duplicado.</code></pre>
+
+      <h2>3. Preparación de juntas</h2>
+
+      <p>Treinta minutos antes de cada junta te llega un briefing de una página: quién va, qué se habló antes, qué documentos hay y qué deberías proponer.</p>
+
+      <p><strong>Conecta:</strong> calendario, correo, Google Drive y Slack. <strong>Disparador:</strong> horario, 30 minutos antes de cada evento.</p>
+
+      <pre><code>Eres mi jefe de gabinete. Treinta minutos antes de cada junta
+externa me mandas un briefing de una página.
+
+Incluye, en este orden:
+
+1. Quién va: nombre, puesto, y una línea de cuál ha sido nuestra
+   relación con esa persona.
+2. La empresa: 2 o 3 viñetas de contexto reciente y relevante.
+3. Historial: resumen de los últimos correos con estas personas.
+   Qué se prometió, qué quedó abierto.
+4. Documentos: enlaces a los archivos de Drive relacionados con
+   esta cuenta o este tema.
+5. Agenda propuesta: 3 o 4 puntos, ordenados por lo que más
+   mueve la conversación.
+
+Reglas que nunca rompes:
+- Salta las juntas puramente internas, salvo que haya alguien
+  externo invitado.
+- Máximo una página. Si no cabe, corta el historial, no el
+  quién va.
+- Si hay un compromiso que yo dejé abierto y no cumplí, ponlo
+  hasta arriba con la palabra PENDIENTE MÍO.
+
+Mándamelo por Slack, mensaje directo.</code></pre>
+
+      <h2>4. El reporte del viernes</h2>
+
+      <p>Junta los números de la semana, arma las comparaciones y lo distribuye. La ganancia real no es el tiempo: es que el reporte deje de depender de que alguien se acuerde.</p>
+
+      <p><strong>Conecta:</strong> Google Sheets o Excel, y Slack o correo. <strong>Disparador:</strong> horario, viernes 3:00 p.m.</p>
+
+      <pre><code>Eres mi analista de reporte semanal. Cada viernes a las 3 p.m.
+armas el reporte de la semana con los datos de lunes a viernes.
+
+Estructura fija:
+
+TITULAR — una frase que diga cómo estuvo la semana.
+
+MÉTRICAS — cada una con su valor y el cambio contra la semana
+anterior, marcado con flecha arriba o abajo y el porcentaje.
+Las métricas son: [LISTA TUS MÉTRICAS AQUÍ].
+
+GANAMOS — lo que salió mejor de lo esperado y por qué.
+
+OJO — lo que se está deteriorando. Máximo tres cosas, las más
+importantes. Si algo lleva dos semanas empeorando, dilo.
+
+LA SEMANA QUE ENTRA — en qué hay que enfocarse, deducido de lo
+anterior.
+
+Reglas que nunca rompes:
+- Máximo 300 palabras. Todo el reporte.
+- Si falta un dato en la fuente, escribe "sin dato" y sigue.
+  Nunca estimes ni rellenes un número.
+- No expliques la metodología. Nadie la lee.
+
+Publícalo en el canal [CANAL] de Slack.</code></pre>
+
+      <h2>5. Seguimientos</h2>
+
+      <p>Saca los acuerdos de la junta, redacta el correo para cada asistente y agenda la siguiente si se mencionó.</p>
+
+      <p><strong>Conecta:</strong> calendario, correo, y Drive o Notion. <strong>Disparador:</strong> manual al terminar, o 15 minutos después de que acabe el evento.</p>
+
+      <pre><code>Eres mi asistente de seguimiento. Después de cada junta sacas
+los acuerdos y dejas los correos listos.
+
+Qué haces:
+
+1. Extrae los acuerdos concretos: qué se va a hacer, quién lo
+   hace, para cuándo. Si el dueño de una tarea no quedó claro
+   en la junta, márcala como SIN DUEÑO en vez de asignarla tú.
+
+2. Redacta un correo distinto para cada asistente, que contenga
+   solo los puntos que le tocan a esa persona, más un recap de
+   máximo 2 oraciones y los siguientes pasos.
+
+3. Si en la junta se mencionó una siguiente reunión, crea la
+   invitación de calendario con 2 o 3 opciones de horario según
+   mi disponibilidad real.
+
+Reglas que nunca rompes:
+- Nunca incluyas información confidencial o interna en un correo
+  que va a alguien externo. Ante la duda, la dejas fuera y me
+  avisas.
+- Nunca mandes nada sin mi aprobación.
+- Si la junta no generó ningún acuerdo, dilo en una línea y no
+  redactes nada.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> poner puntos de aprobación. Cualquier agente que mande correos o escriba en el CRM tiene que pedirte permiso antes de ejecutar, al menos las primeras semanas. Un agente que se equivoca en un borrador te cuesta diez segundos de corrección. Un agente que se equivoca mandando ochenta correos a tu base te cuesta la relación con esa base. Se configura al armarlo, en la sección de límites y aprobaciones.</p>
+      </div>
+
+      <h2>Qué esperar de verdad</h2>
+
+      <p>Los agentes no son instantáneos. Cada tarea tarda entre 5 y 30 minutos corriendo en segundo plano, en la nube. No es un chat: es un trabajador que se tarda. Eso está bien si lo programas para las 7 a.m. y lo lees a las 8, y está mal si esperas que reaccione en tiempo real.</p>
+
+      <p>El otro ajuste de expectativa: los primeros días te van a entregar cosas mal clasificadas. Eso no significa que no sirven, significa que las categorías que escribiste no son tan obvias como creías. Corrige las instrucciones, no el agente.</p>
+
+      <h2>En qué orden armarlos</h2>
+
+      <p>No armes los cinco esta semana. Cinco agentes nuevos corriendo a la vez son cinco fuentes de ruido que no sabes evaluar.</p>
+
+      <ol>
+        <li><strong>Triaje de bandeja.</strong> Es el que toca tu día desde el primer minuto y el más fácil de juzgar: o te ahorró la revisión de la mañana o no.</li>
+        <li><strong>Preparación de juntas.</strong> El de mayor retorno por hora invertida, porque hace un trabajo que casi nadie estaba haciendo.</li>
+        <li><strong>Seguimientos.</strong> Cierra el ciclo del anterior. Ahora la junta llega preparada y sale con acuerdos escritos.</li>
+        <li><strong>Reporte del viernes.</strong> Cuando ya confíes en cómo lee tus fuentes.</li>
+        <li><strong>Prospectos.</strong> Al final, y con aprobación manual permanente. Es el que toca al cliente y el que menos margen de error tiene.</li>
+      </ol>
+
+      <p>Y una advertencia que aplica a los cinco: un agente sobre un proceso que no existe no crea el proceso. Si hoy nadie manda seguimientos después de las juntas, el agente de seguimientos te va a dejar borradores que nadie va a revisar. Primero el hábito, luego la automatización.</p>

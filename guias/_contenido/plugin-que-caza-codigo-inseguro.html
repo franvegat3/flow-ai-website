@@ -1,0 +1,92 @@
+      <p>Mucha gente está construyendo software sin saber leer código. Le pide a Claude una herramienta interna, funciona, la sube y la empieza a usar el equipo. Yo he hecho eso decenas de veces y es una de las cosas más útiles que permite la IA hoy.</p>
+
+      <p>El problema no es que el código no funcione. Es que funciona perfecto y aun así tiene un hueco por el que se sale información. Y si no sabes leer código, no tienes forma de saberlo: se ve igual de bien que el código correcto.</p>
+
+      <p>Para eso existe el plugin de seguridad de Claude Code. Revisa lo que Claude escribe mientras lo escribe, y marca lo riesgoso antes de que llegue a tu servidor. Es gratis en todos los planes y se instala en una línea.</p>
+
+      <h2>Qué es, en una frase</h2>
+
+      <p>Es un revisor de seguridad que corre en automático sobre el código que Claude genera, y que te avisa en español llano cuando algo tiene un patrón peligroso conocido.</p>
+
+      <p>La palabra importante es <em>avisa</em>. No reescribe tu código a escondidas ni bloquea nada. Levanta la mano y te dice qué encontró, y tú decides.</p>
+
+      <h2>Cómo se instala</h2>
+
+      <p>Un comando dentro de Claude Code:</p>
+
+      <pre><code>/plugin install security-guidance@claude-plugins-official</code></pre>
+
+      <p>Es del marketplace oficial de Anthropic. No hay configuración después: desde la siguiente edición ya está trabajando. Si quieres el panorama completo de cómo funcionan los plugins y cuáles vale la pena tener, está en <a href="/guias/plugins-cowork/">la guía de plugins</a>.</p>
+
+      <h2>Las tres capas</h2>
+
+      <p>Lo que me parece bien resuelto es que no revisa una sola vez. Revisa tres, con distinta profundidad, en los tres momentos donde el error tiene distinto costo.</p>
+
+      <ol>
+        <li><strong>En cada edición, una revisión rápida.</strong> Barata y superficial. Está para cachar lo obvio en el momento en que se escribe, cuando corregirlo cuesta cero.</li>
+        <li><strong>Al terminar cada turno, una revisión más profunda.</strong> Ya con la vista completa de lo que se hizo, no línea por línea. Aquí aparecen los problemas que solo se ven cuando dos archivos se combinan.</li>
+        <li><strong>Al confirmar los cambios, la revisión más profunda de todas.</strong> Es el último punto antes de que el código salga de tu máquina, y es donde conviene que la revisión sea la más lenta.</li>
+      </ol>
+
+      <p>Esa escalera es la razón por la que no estorba. Si revisara a fondo en cada tecla, lo apagarías el primer día.</p>
+
+      <h2>Qué caza</h2>
+
+      <div class="plugin-card">
+        <h3>1. Inyección de comandos</h3>
+        <p>Es cuando algo que escribe un usuario termina ejecutándose como si fuera una instrucción de tu servidor. Suena rebuscado y es de los errores más comunes en herramientas hechas rápido.</p>
+        <p>Traducido a negocio: alguien llena un campo de un formulario tuyo con algo que no es texto, y tu servidor lo obedece. Es el tipo de hueco por el que se sale una base de datos completa.</p>
+        <p class="plugin-for"><strong>Dónde aparece:</strong> en cualquier herramienta que tome datos de afuera y haga algo con ellos. O sea, casi todas.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. HTML inseguro y ejecución de scripts en el navegador</h3>
+        <p>El caso clásico: tu página muestra algo que otra persona escribió, y en vez de mostrarlo como texto lo ejecuta. Ahí es donde alguien inyecta código que roba la sesión de quien está viendo la página.</p>
+        <p>Traducido a negocio: un cliente entra a tu sitio y su sesión termina en manos de un tercero, sin que él ni tú se enteren de nada.</p>
+        <p class="plugin-for"><strong>Dónde aparece:</strong> en portales, tableros internos y cualquier página que muestre contenido cargado por usuarios.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Patrones peligrosos de Python</h3>
+        <p>Aquí entran cosas como evaluar texto arbitrario como si fuera programa, y cargar archivos de datos con métodos que pueden ejecutar código al abrirlos. Es una trampa fácil de pisar porque el ejemplo que encuentras en internet casi siempre usa la versión insegura.</p>
+        <p>Traducido a negocio: subes un archivo de un proveedor a tu script de reportes y ese archivo hace algo más que traer números.</p>
+        <p class="plugin-for"><strong>Dónde aparece:</strong> en todo lo que sea automatización de datos, que es donde más scripts hechos con IA hay en las empresas.</p>
+      </div>
+
+      <h2>Qué hacer cuando marca algo</h2>
+
+      <p>No necesitas entender el hallazgo para arreglarlo, pero sí necesitas pedirlo bien. Esto es lo que pego cuando aparece una advertencia:</p>
+
+      <pre><code>Explicame esta advertencia de seguridad en terminos simples, como si
+no supiera leer codigo:
+
+1. Que puede pasar en la practica si dejo esto asi. Dame el escenario
+   concreto, no la definicion tecnica.
+2. Que tan probable es que pase en mi caso, considerando quien usa
+   esta herramienta y desde donde.
+3. Arreglalo de la forma mas segura, no de la mas rapida.
+4. Muestrame que cambiaste y por que esa version ya no tiene el hueco.
+5. Dime si este mismo error esta en otra parte del proyecto.
+
+Si el arreglo seguro rompe alguna funcionalidad, dimelo antes de
+hacerlo en vez de decidir por mi.</code></pre>
+
+      <p>El punto 5 es el que más rinde. Un patrón inseguro casi nunca está una sola vez: si lo escribiste así una vez, lo escribiste así en tres lugares.</p>
+
+      <div class="callout-box">
+        <p><strong>Lo que este plugin no es:</strong> no sustituye una revisión de seguridad de verdad. Si tu herramienta toca dinero, contraseñas o datos sensibles de clientes, esto es la primera red, no la única. La diferencia entre un revisor automático y una auditoría es la misma que entre un detector de humo y un bombero: el detector te salva de la mayoría de los incendios, y aun así no quieres que sea lo único que tengas.</p>
+      </div>
+
+      <h2>Cuánto mueve la aguja</h2>
+
+      <p>En las pruebas de Anthropic, tener el plugin encendido redujo los problemas de seguridad que llegaban a revisión de código entre 30 y 40 por ciento.</p>
+
+      <p>Ese número me parece la forma correcta de venderlo: no elimina el riesgo, le quita un tercio largo. Para alguien que no sabe leer código y que hoy tiene cero revisión, pasar de cero a eso, gratis y con un comando, es de las mejores relaciones de esfuerzo contra beneficio que hay en todo el ecosistema.</p>
+
+      <h2>El orden que le recomiendo a quien construye sin saber programar</h2>
+
+      <p>Instala el plugin antes de escribir la primera línea de tu próxima herramienta, no después. Es un hábito de tres segundos y evita la conversación incómoda de revisar hacia atrás lo que ya está corriendo.</p>
+
+      <p>Después, dos reglas. La primera: cualquier cosa que vayas a exponer a internet o a gente fuera de tu equipo, la revisas con alguien que sí sepa antes de publicarla. La segunda: nunca metas credenciales, tokens ni contraseñas directo en el código, ni siquiera "por mientras". Ese "por mientras" es el origen de la mitad de las filtraciones que he visto de cerca.</p>
+
+      <p>Con eso, más el plugin encendido, ya estás por arriba de la mayoría de la gente que está construyendo con IA hoy. Si quieres el resto del panorama, sigue con <a href="/guias/manual-de-seguridad-con-ia/">el manual de seguridad con IA</a>.</p>

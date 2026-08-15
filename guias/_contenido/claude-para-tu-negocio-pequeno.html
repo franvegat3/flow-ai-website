@@ -1,0 +1,84 @@
+      <p>Un negocio de diez personas no tiene un área de datos, ni un analista financiero, ni alguien que consolide el lunes en la mañana cómo viene la semana. Tiene al dueño abriendo seis pestañas: el banco, la pasarela de cobro, el CRM, el calendario, la contabilidad y un Excel que ya nadie recuerda quién armó.</p>
+
+      <p>Ese ritual de las seis pestañas es exactamente lo que resuelve el plugin de Claude para negocios pequeños dentro de Cowork. No es una herramienta nueva que aprender: es un paquete que conecta las que ya usas y las lee por ti.</p>
+
+      <p>Se deja listo en quince minutos. Aquí va el setup completo, incluido el ajuste de privacidad que casi todo mundo pasa de largo y que yo movería antes de conectar nada.</p>
+
+      <h2>Qué trae adentro</h2>
+
+      <p>El plugin trae flujos de trabajo ya armados para la operación de un negocio pequeño, y conectores hacia las herramientas donde vive tu información real:</p>
+
+      <ul>
+        <li><strong>Dinero:</strong> QuickBooks Online, PayPal, Stripe, Square.</li>
+        <li><strong>Clientes:</strong> HubSpot.</li>
+        <li><strong>Documentos y firma:</strong> Google Workspace, Microsoft 365, DocuSign.</li>
+        <li><strong>Comunicación:</strong> Gmail, Outlook, Slack.</li>
+        <li><strong>Diseño:</strong> Canva.</li>
+      </ul>
+
+      <p>No los conectes todos. Más adelante explico por qué, pero adelanto la regla: conecta solo las herramientas donde de verdad se toman decisiones en tu negocio. Las demás nada más agregan ruido y superficie de riesgo.</p>
+
+      <h2>Los 5 pasos del setup</h2>
+
+      <ol>
+        <li><strong>Abre Cowork e instala el plugin.</strong> Se busca en el marketplace desde la barra lateral. Es un clic. Si nunca has instalado uno, tengo <a href="/guias/plugins-cowork/">una guía completa de cómo funcionan los plugins de Cowork</a>.</li>
+        <li><strong>Escribe <code>/smb-onboard</code>.</strong> Arranca la configuración guiada: te va preguntando qué tipo de negocio tienes, qué herramientas usas y qué te duele más de la semana. Contéstale en serio, no en automático. Esa conversación es la que define qué tan útiles salen los flujos después.</li>
+        <li><strong>Conecta tus herramientas.</strong> Aquí es donde aplica lo que dije arriba: pocas y las que importan. Empieza con la de cobros y la de contabilidad.</li>
+        <li><strong>Apaga el entrenamiento con tus chats.</strong> El paso que casi nadie hace. Detalle completo abajo.</li>
+        <li><strong>Corre tu primer flujo.</strong> El de arranque es el pulso de negocio, con <code>/monday-brief</code>.</li>
+      </ol>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el ajuste de privacidad. Está en <strong>Settings › Privacy › Model improvement</strong> y hay que apagarlo. En los planes Pro y Max viene activado por defecto, y en un negocio pequeño tus chats no traen preguntas abstractas: traen nombres de clientes, montos, contratos y conversaciones internas. Es el ajuste de mayor apalancamiento de todo el setup porque toma diez segundos y aplica a todo lo que hagas después. Muévelo <em>antes</em> de conectar herramientas, no después.</p>
+      </div>
+
+      <h2>El primer flujo: el pulso del lunes</h2>
+
+      <p>El comando <code>/monday-brief</code> arma un reporte de una página con el estado real del negocio: posición de efectivo, liquidaciones pendientes de tu pasarela de cobro, tendencia de ventas, cómo viene el pipeline y qué trae la semana en el calendario.</p>
+
+      <p>Lo importante no es que se vea bonito. Es que sustituye la reconstrucción manual que hoy le come a alguien entre 45 minutos y dos horas cada semana, y que además cada quien hace distinto.</p>
+
+      <p>Córrelo tres lunes seguidos antes de tocar cualquier otra cosa. Al tercero vas a saber dos cosas: qué información te falta conectar, y qué parte del reporte no te sirve. Con eso ajustas y te queda un brief que sí lees.</p>
+
+      <p>Los otros flujos que trae el plugin y que valen la pena cuando ya domines el primero:</p>
+
+      <ul>
+        <li><code>/plan-payroll</code> — planear la nómina contra tu posición de efectivo real, no contra la que crees que tienes.</li>
+        <li><code>/close-month</code> — ordenar el cierre mensual. Este es el que más sufre un negocio pequeño porque casi siempre depende de una sola persona y su hoja de cálculo.</li>
+        <li><code>/run-campaign</code> — armar y dar seguimiento a una campaña.</li>
+      </ul>
+
+      <p>Si en algún momento no te acuerdas qué hay disponible, funcionan dos frases sueltas en el chat: <em>get me started</em> y <em>what workflows can I run?</em>. El plugin te enumera lo que tiene.</p>
+
+      <p>Un detalle de operación que hace toda la diferencia: pídele que el brief incluya explícitamente qué <em>no</em> pudo verificar. Un reporte que dice "no tengo el corte de PayPal de esta semana" es infinitamente más útil que uno que rellena el hueco con una estimación silenciosa. En un negocio pequeño no hay quién audite el reporte; el reporte tiene que auditarse solo.</p>
+
+      <h2>Qué conectar primero, con honestidad</h2>
+
+      <p>El orden que recomiendo después de haber montado esto en varias empresas chicas:</p>
+
+      <ol>
+        <li><strong>La pasarela de cobro.</strong> Stripe, PayPal o Square. Es el dato más limpio y el más accionable: entra dinero, sale dinero, cuándo se liquida.</li>
+        <li><strong>La contabilidad.</strong> QuickBooks Online. Es el que convierte el pulso en algo que tu contador reconoce.</li>
+        <li><strong>El correo y el calendario.</strong> Aquí es donde el brief deja de ser un reporte y empieza a ser contexto: por qué bajaron las ventas esa semana, qué cliente está callado, qué junta se movió.</li>
+        <li><strong>El CRM.</strong> Solo si de verdad lo usas. Un HubSpot mal alimentado le va a dar a Claude una foto falsa del pipeline y las conclusiones van a salir con mucha confianza y cero base.</li>
+      </ol>
+
+      <p>Todo en permisos de lectura al principio. Si te interesa el tema de permisos, escribí <a href="/guias/revision-antes-de-conectar-datos-sensibles/">la revisión que corro antes de conectar cualquier cosa sensible</a>: tarda cinco minutos y varias veces me ha hecho no conectar.</p>
+
+      <h2>Dónde truena esto en la vida real</h2>
+
+      <p>Tres cosas que veo repetirse y que no son culpa del plugin:</p>
+
+      <p><strong>Datos sucios.</strong> Si tu QuickBooks lleva cuatro meses sin conciliar, el brief del lunes va a estar mal y va a sonar convincente. Eso es peor que no tenerlo. Antes de instalar nada, pregúntate si tus números aguantan una decisión encima.</p>
+
+      <p><strong>Herramientas conectadas que nadie usa.</strong> Es tentador conectar el CRM, el Canva, el DocuSign y el Slack el primer día porque están ahí en la lista. Cada conector que agregas es información que Claude va a considerar, y la mitad de las veces no aporta nada al brief pero sí lo alarga. Un reporte de tres páginas no se lee. Uno de una página sí.</p>
+
+      <p><strong>Nadie lo lee.</strong> El brief se genera, llega, y a la tercera semana nadie lo abre. Se arregla con un ritual, no con tecnología: quince minutos el lunes, con alguien más presente, en voz alta. Si no tiene dueño ni horario, muere.</p>
+
+      <p><strong>Se pide demasiado, demasiado pronto.</strong> La tentación es correr los cinco flujos la primera semana y automatizar la nómina el jueves. No. La nómina es el flujo más delicado de todos y es el último que yo tocaría, cuando ya llevas un par de meses viendo que los números que te devuelve cuadran con la realidad.</p>
+
+      <h2>Antes de la nómina, media hora de curso</h2>
+
+      <p>Anthropic tiene un curso gratuito de fluidez con IA orientado a negocios pequeños en <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener">anthropic.skilljar.com</a>. No es marketing disfrazado: es la explicación de qué hace bien y qué hace mal un modelo, que es justo lo que necesitas antes de dejarlo cerca de tu contabilidad.</p>
+
+      <p>Tómalo antes de habilitar cualquier flujo que toque dinero de otras personas. La diferencia entre alguien que usa esto bien y alguien que se mete en problemas casi nunca es técnica. Es saber en qué momento la respuesta hay que verificarla a mano.</p>

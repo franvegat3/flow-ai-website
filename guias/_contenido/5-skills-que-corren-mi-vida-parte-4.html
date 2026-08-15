@@ -1,0 +1,211 @@
+      <p>Hay un tipo de trabajo que no aparece en ningún puesto y que igual te toca: reportar lo que hiciste, acordarte de lo que prometiste, llegar preparado a la junta y tener con qué defenderte cuando llega la evaluación. Nadie te paga por eso y todos asumen que lo traes resuelto.</p>
+
+      <p>Estas cinco skills cubren ese hueco. No te hacen mejor en tu oficio: te quitan la contabilidad de tu propio trabajo, que es lo que casi todos hacen mal o de plano no hacen. Las anteriores están en <a href="/guias/5-skills-que-corren-mi-vida-parte-3/">la parte 3</a> y <a href="/guias/5-skills-que-corren-mi-vida-parte-5/">la parte 5</a>.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>En Claude Code cada skill es una carpeta <code>.claude/skills/nombre/</code> con un <code>SKILL.md</code>; en escritorio y navegador se suben desde la sección de capacidades. Tres de las cinco solo sirven si Claude puede leer tus herramientas: conecta correo, calendario y Slack antes, o vas a tener una skill que sabe qué preguntar y no tiene dónde buscar (<a href="/guias/10-conectores-que-cambian-tu-dia/">los conectores que valen la pena</a>).</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la primera corrida no es la buena. Están escritas para preguntarte cosas de configuración —tus prioridades, qué cuenta como "terminado" en tu equipo. Si contestas de prisa, todo lo demás sale genérico.</p>
+      </div>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. El reporte de estatus semanal <code>reporte-semanal</code></h3>
+        <p>Arma tu update del viernes leyendo calendario, correo y Slack, y lo ordena contra las prioridades del trimestre en vez de contra tu memoria. A mano siempre se te olvida lo del lunes.</p>
+        <pre><code>---
+name: reporte-semanal
+description: Arma el reporte de estatus semanal a partir del calendario,
+  correo y Slack del usuario. Úsala cuando pida "mi update de la
+  semana", "el reporte para mi jefe" o "qué reporto el viernes".
+---
+
+La primera vez pregunta y guarda: para quién es el reporte, en qué
+formato lo manda, cuáles son sus tres prioridades del trimestre, qué
+cuenta como "terminado" en su equipo y qué palabras no quiere leer.
+
+Cada vez que lo pida, revisa los últimos siete días y devuelve cuatro
+bloques y nada más:
+
+TERMINADO. De tres a cinco puntos, cada uno con el resultado y no con
+la actividad. "Cerré el acuerdo con la agencia" en vez de "avancé con
+la agencia". Si algo no se puede medir, di por qué importó.
+
+EN CURSO. Con estatus explícito: en tiempo, en riesgo o detenido. Si
+está en riesgo, di qué lo pone en riesgo.
+
+DETENIDO. Qué es, quién lo detiene, qué se necesita y qué cuesta cada
+semana que siga así.
+
+LA SEMANA QUE ENTRA. Máximo tres cosas. Si son más, no son prioridades.
+
+Reglas: amarra cada punto a una de las tres prioridades; lo que no
+amarre a ninguna, agrúpalo aparte bajo "trabajo que no mueve las
+prioridades" y déjalo visible. Si una sección está vacía, escribe que
+está vacía. No elogies el trabajo del usuario.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que le reporte a alguien. El bloque de "trabajo que no mueve las prioridades" abre conversaciones incómodas y necesarias.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El coach de sueño <code>coach-de-sueno</code></h3>
+        <p>La única que no es de trabajo, y la que más cambia el resto. No da consejos de internet: cruza tus registros con lo que hiciste ese día y te dice a qué hora acostarte según lo que traes mañana.</p>
+        <pre><code>---
+name: coach-de-sueno
+description: Lleva el registro de sueño, encuentra los patrones que lo
+  arruinan y recomienda hora de dormir según la agenda del día
+  siguiente. Úsala cuando el usuario reporte cómo durmió, pregunte por
+  qué duerme mal o pida a qué hora acostarse.
+---
+
+La primera vez pregunta y guarda: cómo se ve una noche buena y una mala
+para él, qué sospecha que le arruina el sueño, qué ya intentó, si usa
+reloj o app de salud, y si tiene algún diagnóstico o tratamiento.
+
+REGISTRO. Cuando reporte una noche, guarda hora de acostarse, hora de
+levantarse, despertares, y qué hubo ese día: cafeína y a qué hora,
+alcohol, ejercicio, pantallas, estrés, viaje.
+
+PATRÓN. Cada semana cruza lo registrado y nombra las dos variables con
+más correlación con sus noches malas. Di en cuántas noches se cumple.
+No propongas más de un cambio a la vez.
+
+HOY. Si te da la agenda de mañana, calcula la hora de acostarse para
+llegar a su rango objetivo y la hora de corte de cafeína de hoy.
+
+NOCHE MALA. No le des la rutina completa: pregunta tres cosas del día
+anterior y luego un solo ajuste para hoy.
+
+Reglas: no eres médico y lo dices cuando aparezca algo clínico —apnea,
+insomnio sostenido, medicación. No moralices. Si lleva más de siete
+días sin registrar, pregúntale una vez y no insistas.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que ya probó todo lo genérico. El valor está en el cruce con su propio día.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. El rastreador de compromisos <code>que-prometi</code></h3>
+        <p>Barre correo, Slack y notas de junta de los últimos treinta días y saca cada "sí, yo lo veo" que soltaste. La más incómoda de la lista y la que más problemas evita.</p>
+        <pre><code>---
+name: que-prometi
+description: Encuentra todo lo que el usuario prometió en correo, Slack
+  y juntas, y lo ordena por urgencia. Úsala cuando pregunte qué debe,
+  qué prometió o quién está esperando algo de él.
+---
+
+La primera vez pregunta y guarda: dónde vive la mayoría de sus
+compromisos, qué cuenta como compromiso para él, de qué tres personas
+nunca quiere dejar caer nada, y a los cuántos días algo está vencido.
+
+Cada corrida:
+
+1. Revisa los últimos 30 días en las fuentes conectadas y extrae toda
+   frase donde se haya comprometido a algo, incluidas las implícitas:
+   "yo te lo mando", "déjame lo reviso", "va". Esas son las que se caen.
+
+2. Devuelve una tabla en tres bloques —vencidos, esta semana, abiertos—
+   con qué prometió, a quién, dónde lo dijo, cuándo, y si ya se cumplió
+   según lo que ves en las mismas fuentes.
+
+3. Marca aparte QUIÉN ESTÁ ESPERANDO EN SILENCIO: personas que
+   preguntaron una vez, no recibieron respuesta y no volvieron a
+   insistir. Ese es el bloque caro.
+
+4. Para cada vencido, escribe el mensaje de dos líneas que mandaría
+   hoy. Sin disculpas largas. Fecha nueva concreta.
+
+Reglas: no inventes compromisos por inferencia débil; si no hay una
+frase que lo sostenga, no lo listes. Si no hay nada vencido, dilo en
+una línea y para.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> gerentes y ejecutivos de cuenta. En un equipo comercial, correrla el lunes mueve más el pipeline que cualquier reporte.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Los recibos de tu carrera <code>recibos-de-carrera</code></h3>
+        <p>Registra tus logros cuando pasan, con fecha, número e impacto, y los convierte en munición cuando llega la evaluación. Reconstruir el año la semana antes nunca sale bien.</p>
+        <pre><code>---
+name: recibos-de-carrera
+description: Registra los logros del usuario con fecha, impacto y
+  métrica, y arma paquetes de evaluación, argumentos de aumento y
+  viñetas de currículum. Úsala cuando reporte un logro o pida preparar
+  su evaluación.
+---
+
+La primera vez pregunta y guarda: su puesto, los indicadores por los
+que lo miden, cuándo es su próxima evaluación y los logros de los
+últimos 90 días que recuerde.
+
+REGISTRO. Cuando cuente algo que hizo, guárdalo con fecha, para quién,
+el número (monto, tiempo ahorrado, porcentaje, volumen), quién lo vio,
+y etiquetas de competencia: liderazgo, criterio técnico, comercial,
+proceso, gente. Si no hay número, pregunta una sola vez si existe; si
+no, márcalo como impacto sin medir.
+
+VIERNES. Si es viernes y no ha registrado nada, pregunta una vez: "¿Qué
+salió esta semana que valga la pena guardar?".
+
+PAQUETE DE EVALUACIÓN. La narrativa de una página, los logros agrupados
+por indicador, tres historias contadas como situación, acción y
+resultado, y las viñetas listas para CV.
+
+ARGUMENTO DE AUMENTO. El número total de impacto, el comparativo contra
+el nivel siguiente y la objeción más probable de su jefe con respuesta.
+
+Reglas: no infles. Un logro sin número se etiqueta como tal. Si el
+registro del trimestre está flaco, dilo antes de la evaluación.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que va a pedir aumento este año. Si ya llevas <a href="/guias/10-flujos-que-me-ahorran-15-horas/">la bitácora diaria</a>, esta se alimenta sola de ahí.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. La preparación de juntas en automático <code>preparar-juntas</code></h3>
+        <p>Lee la agenda de mañana y arma una hoja por junta: quién viene, qué se decidió la última vez, qué preguntar y qué te van a objetar. La que más tiempo devuelve y la que menos gente monta.</p>
+        <pre><code>---
+name: preparar-juntas
+description: Genera un brief de una página por cada junta del día
+  siguiente, con contexto de los asistentes, decisiones previas,
+  preguntas y objeciones probables. Úsala cuando el usuario pida
+  preparar sus juntas o con quién se va a ver mañana.
+---
+
+La primera vez pregunta y guarda: qué tipos de junta preparar, cuáles
+ignorar siempre, su rol y cómo decide, dónde guardar los briefs y de
+qué personas quiere contexto extendido.
+
+Para cada junta que califique, una página con:
+
+LA JUNTA. Título, hora, duración, quién convoca y en una frase el
+objetivo real según la invitación y el hilo previo. Si no se entiende,
+escríbelo así: objetivo no claro, pedir agenda.
+
+QUIÉNES VIENEN. Por persona: rol, empresa, dos o tres líneas de quién
+es, y qué le importa a esa persona en esta junta.
+
+QUÉ PASÓ ANTES. El último hilo con esa gente en tres puntos: qué se
+discutió, qué quedó abierto, qué prometió cada quien.
+
+PREGUNTAS. De tres a cinco, específicas de este tema y esta gente.
+
+OBJECIONES. Las dos o tres cosas que van a empujar en contra, con la
+respuesta en dos frases.
+
+MI PETICIÓN. Con qué quiere salir de esa junta. Si no está claro,
+déjalo en blanco para que lo llene él.
+
+Reglas: si hay más de cinco juntas, prioriza externos. Una página por
+junta, sin relleno. No inventes datos de una persona que no
+encontraste: escribe que no hay información.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> ventas y dirección. Programada la noche anterior vale el doble.</p>
+      </div>
+
+      <h2>En qué orden montarlas</h2>
+
+      <p>No instales las cinco el mismo día. Cada skill compite por la atención del modelo, y una que se dispara cuando no debe es peor que no tenerla.</p>
+
+      <ol>
+        <li><strong><code>preparar-juntas</code> primero.</strong> Devuelve tiempo desde el día uno y es la que menos configuración pide.</li>
+        <li><strong><code>que-prometi</code> a la semana.</strong> Córrela un lunes y prepárate para encontrar tres cosas que ya deberías haber mandado.</li>
+        <li><strong><code>recibos-de-carrera</code> y <code>reporte-semanal</code> juntas.</strong> Comparten fuente: lo que registras el viernes es lo que reportas y lo que defiendes en la evaluación.</li>
+        <li><strong><code>coach-de-sueno</code> al final</strong>, cuando ya confíes en el sistema. Exige más constancia y no perdona que la abandones tres semanas.</li>
+      </ol>
+
+      <p>La prueba de que funcionan no es que las uses: es que dejes de tener la conversación de "¿en qué quedamos?". Si a las tres semanas sigues reconstruyendo tu semana de memoria el viernes, el problema no son las skills: son los conectores.</p>

@@ -1,0 +1,87 @@
+      <p>La escena la conoces. Le pides algo, hace una parte, se detiene y te pregunta si sigue. Tú dices que sí. Hace otra parte, se detiene, pregunta. Y así veinte veces, hasta que te das cuenta de que llevas cuarenta minutos frente a la pantalla apretando enter para algo que se supone que iba a trabajar solo.</p>
+
+      <p>Eso no es usar IA. Eso es cuidar a un becario.</p>
+
+      <p>Hay tres comandos en Claude Code que rompen ese ciclo, y cada uno resuelve un tipo distinto de trabajo: <code>/goal</code> trabaja hasta cumplir una meta, <code>/loop</code> repite algo con una frecuencia mientras la sesión está abierta, y <code>/schedule</code> corre aunque tú estés dormido. La mayoría de la gente usa el primero para todo y por eso se decepciona.</p>
+
+      <h2>/goal — trabaja hasta que esté terminado</h2>
+
+      <p>Le das una línea de meta y trabaja hacia ella sin detenerse a pedir permiso en cada paso. Se escribe <code>/goal</code> seguido de la meta. Si escribes <code>/goal</code> solo, te dice cómo va. Con <code>/goal clear</code> lo cancelas.</p>
+
+      <p>Necesitas la versión 2.1.139 de Claude Code o más nueva. Si no te aparece el comando, actualiza antes de pelearte con él.</p>
+
+      <h3>La única regla que hace que funcione</h3>
+
+      <p>Una sola línea de meta, y tiene que ser algo que él pueda verificar por sí mismo.</p>
+
+      <p>Esa es toda la diferencia. "Mejora mi sitio" no es una meta: no hay forma de que sepa cuándo terminó, así que va a hacer tres cosas y va a parar. "Todas las páginas del sitio cargan en menos de dos segundos y ninguna imagen pesa más de 300 KB" sí es una meta: puede medir, puede seguir, puede saber que acabó.</p>
+
+      <p>La prueba es simple. Léele tu meta a alguien y pregúntale cómo sabría, sin opinar, si ya se cumplió. Si no puede contestarte, tampoco puede Claude.</p>
+
+      <p>Este es el molde que uso:</p>
+
+      <pre><code>/goal Deja mi bandeja de entrada en cero.
+
+Para cada correo sin leer haces una de tres cosas y ninguna mas:
+- Lo archivas, si no requiere accion.
+- Lo eliminas, si es promocional o duplicado.
+- Dejas un borrador de respuesta, si requiere accion mia.
+
+Condicion de termino: cero correos sin leer en la bandeja principal,
+y una lista al final con cuantos archivaste, cuantos borraste y
+cuantos borradores dejaste.
+
+No mandes ningun correo. Solo borradores.
+Si dudas de que hacer con uno, dejalo sin tocar y reportalo al final.</code></pre>
+
+      <p>Otras metas que sí funcionan, para que veas el patrón: un itinerario de cinco días con desayuno, comida y cena para cada día y nota de reservación en cada lugar. Una comparación de tres proveedores con precio, ventajas, desventajas y para quién es mejor cada uno, en una sola tabla. Una carpeta ordenada por tipo y fecha, con cero archivos sin clasificar.</p>
+
+      <p>Todas comparten lo mismo: la meta trae adentro el criterio de terminado.</p>
+
+      <h2>/loop — repite mientras estés trabajando</h2>
+
+      <p>Corre la misma tarea cada cierto tiempo, dentro de tu sesión abierta. Se escribe <code>/loop</code> con el intervalo y la tarea. Se detiene con Escape.</p>
+
+      <p>Sirve para vigilar algo que está pasando ahorita: revisar cada cinco minutos si un proceso largo ya terminó, jalar cada hora las respuestas nuevas de un formulario, checar si un despliegue ya quedó. Es un comando de "estoy trabajando en otra cosa mientras esto avanza".</p>
+
+      <p>Dos límites que hay que tener claros. Corre dentro de tu sesión: si cierras la terminal, se acabó. Y el historial de esas corridas se limpia a los siete días, así que no lo uses como registro de nada que necesites conservar.</p>
+
+      <p>El uso que más veo desperdiciado es ponerlo a revisar algo cada minuto. Cada corrida consume, y revisar un proceso de dos horas cada sesenta segundos te quema el límite de uso sin darte información nueva. Ajusta el intervalo al ritmo real de lo que estás vigilando.</p>
+
+      <h2>/schedule — corre aunque no estés</h2>
+
+      <p>Este es el que convierte a Claude en infraestructura. Las tareas programadas corren en la nube, con la computadora apagada y tú dormido.</p>
+
+      <p>El horario se describe en español normal: cada día hábil a las 8 de la mañana, los lunes a las 7, el primer día de cada mes. Con <code>/schedule list</code> ves lo que tienes programado y con <code>/schedule run</code> más el nombre lo corres de inmediato para probarlo sin esperar.</p>
+
+      <p>Dos condiciones. Requiere plan de paga —Pro, Max, Team o Enterprise— y la frecuencia mínima es una vez por hora. No hay tareas programadas cada cinco minutos.</p>
+
+      <p>Dónde rinde en una operación real: el triaje de la bandeja a las seis de la mañana, para que el equipo llegue con lo urgente ya separado. El reporte de cifras del día anterior antes de la junta de las nueve. El ordenamiento semanal de la carpeta compartida donde todos tiran archivos. La revisión de los lunes de qué quedó abierto en el sistema de proyectos y quién lo trae.</p>
+
+      <div class="callout-box">
+        <p><strong>Nunca programes algo que borra o que manda.</strong> Y si vas a hacerlo, primero córrelo veinte veces a mano hasta que no te sorprenda ni una sola vez. Un flujo que archiva mal te cuesta una tarde de recuperación. Un flujo programado que manda correos con un error se ejecuta cinco veces antes de que te enteres, y para entonces ya salió a tus clientes. Empieza siempre en modo borrador y sube el permiso después.</p>
+      </div>
+
+      <h2>Cuál de los tres, en una frase cada uno</h2>
+
+      <ul>
+        <li><strong>Si tiene un final claro y quieres llegar a él sin supervisar:</strong> <code>/goal</code>.</li>
+        <li><strong>Si quieres vigilar algo que está pasando mientras trabajas:</strong> <code>/loop</code>.</li>
+        <li><strong>Si tiene que pasar todos los días, con o sin ti:</strong> <code>/schedule</code>.</li>
+      </ul>
+
+      <p>El error de asignación más común es usar <code>/loop</code> para algo que debería estar programado. Alguien pone un loop para revisar sus pendientes cada hora, y a las seis de la tarde cierra la computadora y todo se muere. Si lo quieres mañana también, no es un loop.</p>
+
+      <h2>Cómo se combinan</h2>
+
+      <p>Los tres juntos arman un turno completo. Una tarea programada dispara a las seis de la mañana, esa tarea trae una meta con criterio de terminado, y mientras corre puedes vigilarla con un loop desde tu sesión si te interesa ver el avance.</p>
+
+      <p>Ese es el paso de "le pido cosas a una IA" a "tengo procesos corriendo". Lo desarmé completo en <a href="/guias/equipo-de-agentes-que-trabaja-de-noche/">la guía del equipo de agentes que trabaja de noche</a>, incluyendo qué permisos dar y cuáles no.</p>
+
+      <h2>El error que hace que <code>/goal</code> se sienta inútil</h2>
+
+      <p>Meterle tres metas en una.</p>
+
+      <p>"Ordena mi carpeta, actualiza el reporte y mándame el resumen" son tres finales distintos, y con tres finales no hay ninguno. Va a avanzar en el primero, tocar el segundo y detenerse a preguntarte por el tercero, que es exactamente el comportamiento que querías evitar.</p>
+
+      <p>Una meta por corrida. Si necesitas tres cosas, son tres corridas encadenadas, y cada una con su criterio de terminado. Suena más lento y termina siendo más rápido, porque ninguna de las tres se queda a la mitad esperando que tú regreses a apretar enter.</p>

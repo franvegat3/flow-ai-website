@@ -1,0 +1,134 @@
+      <p>El primer agente que casi todo fundador construye es uno que hace tareas. Redacta correos, arma reportes, publica contenido. Está bien y se siente productivo. Pero a los dos meses tienes seis agentes que trabajan solos y ninguno sabe de la existencia de los otros, y tú te volviste el pegamento entre todos ellos.</p>
+
+      <p>El agente que hacía falta desde el principio es otro. No hace tareas: sostiene el contexto. Conoce tus metas, tus números y a tu equipo. Lee lo que producen los demás agentes y te entrega una sola cosa. Y —esta es la parte que nadie construye— te dice cuando estás mal.</p>
+
+      <p>Este es el que uso a diario dentro de operaciones que facturan. No es una plantilla bonita, es la estructura completa: el contexto que necesita, las conexiones, los flujos que corre y cómo se le hace la memoria para que sirva más en el mes seis que en el mes uno.</p>
+
+      <h2>Las cuatro piezas</h2>
+
+      <p>Un socio de IA que funcione tiene cuatro partes, y en este orden. Si te saltas la primera, las otras tres son teatro.</p>
+
+      <h3>1. El contexto: lo que sabe de tu negocio</h3>
+
+      <p>Aquí está el 80% del resultado. No es un prompt: son archivos que vives actualizando. Yo los tengo en una carpeta que el agente lee en cada corrida.</p>
+
+      <ul>
+        <li><strong><code>negocio.md</code></strong> — qué vendes, a quién, cómo ganas dinero. La economía unitaria real: cuánto cuesta traer un cliente, cuánto deja, en cuánto tiempo. Márgenes por línea. Si no tienes esos números escritos, ese es tu primer trabajo, no el agente.</li>
+        <li><strong><code>metas.md</code></strong> — el objetivo del año, el del trimestre y los tres números que lo miden. Con la fecha de cuándo se fijaron.</li>
+        <li><strong><code>equipo.md</code></strong> — quién hace qué, de qué responde cada quien, y qué está fuera del alcance de cada persona. Esto es lo que permite que el agente diga "eso no se lo pidas a ella, se lo pides a él".</li>
+        <li><strong><code>numeros.md</code></strong> — los indicadores clave con su valor actual y el del mes pasado. Se actualiza el primer lunes de cada mes.</li>
+        <li><strong><code>cementerio.md</code></strong> — lo que ya intentaste y no funcionó, con la razón. Este archivo es el más valioso y el que nadie escribe. Sin él, tu socio te va a proponer cada trimestre la misma idea que ya te costó dinero.</li>
+        <li><strong><code>como-trabajo.md</code></strong> — tu forma de operar. Qué decisiones tomas rápido y cuáles arrastras. Qué formato de información te sirve. Qué te desespera.</li>
+      </ul>
+
+      <h3>2. Las conexiones: de dónde saca la verdad</h3>
+
+      <p>El contexto es estático; los datos no. Las conexiones mínimas que le pondría, por orden de rendimiento:</p>
+
+      <ul>
+        <li><strong>Calendario y correo</strong> — para saber contra qué estás peleando esta semana.</li>
+        <li><strong>El CRM</strong> — pipeline, cuentas frías, lo que se cerró.</li>
+        <li><strong>Contabilidad o el sistema de pagos</strong> — ingreso real, no el proyectado.</li>
+        <li><strong>El tablero donde vive el trabajo</strong> — lo que está atorado y desde cuándo.</li>
+      </ul>
+
+      <p>Autoriza solo estas cuatro y déjalo así un mes. Un socio conectado a doce fuentes que no sabe cuál importa es peor que uno conectado a cuatro que sí. Sobre qué implica dar esos accesos, está <a href="/guias/es-seguro-conectar-tus-herramientas/">la guía de seguridad de conectores</a>.</p>
+
+      <h3>3. Los flujos: qué corre y cuándo</h3>
+
+      <p>Tres rituales fijos. Ni uno más al principio.</p>
+
+      <ol>
+        <li><strong>Brief diario, en la mañana.</strong> Una sola pieza de información, no seis reportes.</li>
+        <li><strong>Revisión semanal, viernes.</strong> Qué se movió contra las metas del trimestre y qué se atoró.</li>
+        <li><strong>Cierre mensual.</strong> Números actualizados, decisiones tomadas, y qué se aprendió. Aquí es donde se alimenta la memoria.</li>
+      </ol>
+
+      <h3>4. La memoria: por qué sirve más en el mes seis</h3>
+
+      <p>Un agente sin memoria te da consejos de consultor recién llegado, cada día. La memoria es lo que lo convierte en socio.</p>
+
+      <p>La estructura que funciona es una bitácora de decisiones. Cada vez que decides algo relevante, se registra: <strong>la fecha, la decisión, la razón, lo que esperabas que pasara y la fecha en que se revisa.</strong> Nada más. Y cuando llega la fecha de revisión, el agente te la trae de vuelta con lo que sí pasó.</p>
+
+      <p>A los seis meses, ese archivo es lo que hace que te pueda decir "esto que estás proponiendo se parece a lo que decidiste en marzo, que no salió, y la razón que diste entonces sigue vigente". Ningún prompt reemplaza eso.</p>
+
+      <h2>Las instrucciones completas</h2>
+
+      <pre><code>Eres mi socio fundador. No eres asistente y no eres consultor.
+Tienes acceso a los archivos de contexto de mi negocio y a mis
+herramientas conectadas. Léelos antes de cada respuesta.
+
+CÓMO OPERAS
+- Lideras con una recomendación específica, no con un menú de
+  opciones. Si hay tres caminos, dices cuál tomarías y por qué,
+  y luego mencionas los otros dos en una línea cada uno.
+- Esperas mi aprobación antes de ejecutar cualquier cosa que salga
+  hacia afuera: correos, publicaciones, pagos, mensajes al equipo.
+- Prohibido el lenguaje que se cubre las espaldas. Nada de
+  "depende", "podrías considerar", "hay varios factores". Si de
+  verdad no alcanza la información, dices exactamente qué dato te
+  falta y cómo lo consigo.
+
+CUÁNDO ME CONTRADICES
+Contradecirme es parte del trabajo, no una descortesía. Me paras
+en seco cuando:
+- Lo que propongo contradice una decisión anterior de la bitácora
+  y no reconocí la contradicción.
+- Ya intentamos algo parecido y está en cementerio.md.
+- El movimiento no mueve ninguno de los números de metas.md.
+- Estoy resolviendo un problema de ejecución cuando el problema
+  real es de demanda, o al revés.
+- Le estoy pidiendo a alguien del equipo algo que está fuera de lo
+  que dice equipo.md que le toca.
+Cuando me contradigas: primero la objeción en una frase, después
+la evidencia con la referencia al archivo, después tu alternativa.
+Si insisto y tu objeción sigue viva, la registras en la bitácora
+como riesgo aceptado y seguimos. No la repites cada semana.
+
+TU FUNCIÓN DE JEFE DE GABINETE
+Otros agentes producen reportes: pauta, contenido, correo, ventas.
+Tú los lees todos y me entregas UNA síntesis. No me pases sus
+salidas. Si dos se contradicen, esa contradicción es lo primero
+que me dices.
+
+FORMATO DEL BRIEF DIARIO — máximo 250 palabras
+1. LO ÚNICO QUE IMPORTA HOY — una línea.
+2. NÚMEROS — solo los que se movieron desde ayer, con la
+   dirección del cambio.
+3. LO QUE SE ATORÓ — qué, desde cuándo y de quién depende.
+4. LO QUE NECESITA MI DECISIÓN — máximo tres puntos, cada uno
+   con tu recomendación ya tomada.
+5. LO QUE HICE — lo que corrió sin mí desde el brief anterior.
+Si un bloque no tiene nada, escribe "nada" y sigue. No lo rellenes.
+
+BITÁCORA DE DECISIONES
+Cada decisión que tomemos se registra así:
+FECHA | DECISIÓN | RAZÓN | QUÉ ESPERO QUE PASE | REVISAR EL
+Cuando llegue una fecha de revisión, la traes al brief con la
+comparación entre lo que esperaba y lo que pasó. Sin suavizar.
+
+LO QUE NUNCA HACES
+- Felicitarme por una idea. Evalúala.
+- Ejecutar algo hacia afuera sin aprobación.
+- Inventar un número. Si no está en los archivos ni en las
+  herramientas conectadas, dices que no lo tienes.
+- Darme un plan de cinco fases cuando la pregunta era si hago X
+  esta semana.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el archivo del cementerio. Es incómodo de escribir porque es la lista de tus errores caros, y por eso nadie lo hace. Sin él tienes un socio con amnesia que cada trimestre te sugiere el canal que ya probaste, la contratación que no funcionó y el producto que nadie compró. Siéntate una hora, escribe los últimos dos años de intentos fallidos con su razón, y ese archivo solo va a pagar el sistema completo.</p>
+      </div>
+
+      <h2>Cómo se arranca sin ahogarse</h2>
+
+      <p>La primera semana no conectes nada. Escribe los seis archivos de contexto y conversa con el agente sobre tu negocio a mano, pegándole datos. Vas a descubrir dos o tres números que creías tener y no tienes. Eso solo ya valió la semana.</p>
+
+      <p>La segunda semana conectas calendario y correo, y prendes el brief diario. La tercera, el CRM y el sistema de pagos, y empiezas la bitácora de decisiones. A partir de la cuarta, la única disciplina que importa es actualizar los números el primer lunes de cada mes y registrar cada decisión el día que la tomas.</p>
+
+      <h2>El error que lo vuelve un asistente caro</h2>
+
+      <p>Dejar de escribir en la bitácora.</p>
+
+      <p>Es lo primero que se cae cuando hay una semana pesada, y es exactamente lo que sostiene la diferencia entre un socio y un chat con contexto. La memoria compuesta es lo único que este sistema tiene y que tú no tienes: tú recuerdas lo que decidiste el trimestre pasado con el sesgo de cómo salió. Él lo recuerda como lo escribiste ese día, cuando todavía no sabías.</p>
+
+      <p>Y si a los tres meses tu socio nunca te ha contradicho, no es que estés tomando buenas decisiones. Es que las reglas de contradicción no están funcionando y hay que revisarlas.</p>

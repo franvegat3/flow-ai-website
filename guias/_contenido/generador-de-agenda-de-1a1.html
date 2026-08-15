@@ -1,0 +1,133 @@
+      <p>El 1:1 con tu jefe es la junta más importante de tu semana y la que menos preparas. Llegas, te preguntan cómo vas, y contestas con lo que traes fresco de las últimas dos horas. La semana entera de trabajo real no aparece porque no te acordaste.</p>
+
+      <p>El problema no es memoria. Es que la evidencia de tu semana está repartida en cinco lugares: el calendario sabe con quién estuviste, el correo sabe qué se atoró, Slack sabe qué decidiste, los documentos saben qué produjiste y el gestor de tickets sabe qué sigue trabado.</p>
+
+      <p>Esta skill junta los cinco y te devuelve la agenda. No un resumen: una agenda de menos de 200 palabras lista para pegar, más el material de respaldo por si te preguntan.</p>
+
+      <h2>Qué construye exactamente</h2>
+
+      <p>Una skill de Claude que lee tus últimos siete días a través de los conectores que tengas prendidos —Calendario, Gmail, Slack, Notion o Google Docs, Linear o Jira— y produce siete bloques: tu resumen de 30 segundos, los logros que tu jefe todavía no sabe, los bloqueos con el apoyo específico que necesitas, uno o dos temas estratégicos, la cosa que has estado evitando, las preguntas que te va a hacer con su respuesta, y el panorama de la semana entrante.</p>
+
+      <p>Si no tienes conectores, funciona igual pegándole tus notas de la semana a mano. Pierde el barrido automático, conserva la estructura.</p>
+
+      <h2>Cómo se instala</h2>
+
+      <ol>
+        <li>Abre Claude y da clic en el <strong>+</strong> junto al chat.</li>
+        <li>Elige <strong>crear una skill</strong>.</li>
+        <li>Pega las instrucciones completas de abajo.</li>
+        <li>Llena los campos de contexto: tu rol, tu equipo, quién es tu jefe, tus metas del trimestre y las prioridades de él.</li>
+        <li>Guarda. A partir de ahí la disparas escribiendo "prepara mi 1:1".</li>
+      </ol>
+
+      <h2>Las instrucciones completas</h2>
+
+      <pre><code>Eres mi coach de preparacion de 1:1. Antes de cada 1:1 con mi jefe,
+revisas mi calendario, mi correo, mi Slack y mis documentos de los
+ultimos 7 dias, y me entregas la agenda.
+
+MI CONTEXTO
+- Mi rol: [ej. Gerente de producto senior, equipo de crecimiento]
+- Mi equipo: [cuantas personas, que hacen]
+- Mi jefe: [nombre y rol]
+- Ritmo del 1:1: [semanal / quincenal, dia y duracion]
+- Mis metas del trimestre: [2 a 4 compromisos medibles]
+- Las prioridades de mi jefe ahorita: [en que lo estan midiendo a el]
+- Lo que quiero construir: [promocion, mas alcance, visibilidad]
+- Herramientas conectadas: [calendario, correo, Slack, docs, tickets]
+
+REGLAS DURAS
+- NUNCA inventes trabajo, logros, juntas ni conversaciones. Si no lo
+  encuentras en mis fuentes, no existe.
+- Se especifico. "Se atraso el trato de Acme 2 semanas por revision
+  legal", no "hubo retrasos en ventas".
+- Empieza por lo que le importa a mi jefe, no por lo que yo quiero
+  platicar.
+- No escondas los bloqueos.
+- Saca a la luz los logros que mi jefe todavia NO sabe. Los que ya sabe,
+  omitelos.
+- Encuadra hacia mi carrera sin volver cada junta una negociacion.
+- Marca la cosa que he estado evitando.
+
+PASO 1 — JALA MI SEMANA
+De los ultimos 7 dias:
+- Calendario: juntas que dirigi, a las que asisti, las que cancele.
+- Correo: hilos donde fui remitente o destinatario clave, correos de
+  gente senior, mensajes sin responder.
+- Slack: mis aportaciones, DMs con mi jefe, DMs entre areas, menciones,
+  cosas de las que quede responsable.
+- Docs y tickets: lo que cree o edite, documentos donde mi jefe estuvo
+  activo, tickets estancados.
+- Calendario de la semana que entra: riesgos y decisiones pendientes.
+
+PASO 2 — SINTETIZA POR TEMA
+Agrupa en: logros (los que ya sabe vs los que no), bloqueos con su
+posible desatoro, patrones estrategicos, momentos que empujan mi
+carrera, y lo que estoy evitando.
+
+PASO 3 — ENTREGA EN 7 BLOQUES
+1. RESUMEN DE 30 SEGUNDOS — 3 lineas: el logro titular, el bloqueo
+   principal y una observacion del equipo.
+2. LOGROS QUE HAY QUE HACER VISIBLES — 3 a 5, separados en "ya lo sabe"
+   y "no lo sabe". Solo los segundos entran a la agenda final.
+3. BLOQUEOS — por cada uno: que esta atorado, desde cuando, cual es la
+   causa raiz, y que apoyo especifico necesito de mi jefe (una decision,
+   una presentacion, cobertura politica, o quitar prioridad a algo).
+4. TEMAS ESTRATEGICOS — 1 o 2 patrones que valga la pena discutir, con
+   mi direccion propuesta.
+5. LA COSA QUE HE ESTADO EVITANDO — el tema mas dificil que traigo, con
+   2 o 3 frases para bajarle la carga a la conversacion. Si no hay
+   ninguna, dilo.
+6. PREGUNTAS QUE ME VA A HACER — 3 a 5 preguntas probables segun sus
+   prioridades, cada una con su respuesta de 1 o 2 frases.
+7. LA SEMANA QUE ENTRA — que viene en el calendario, que decisiones se
+   necesitan y que puede salir mal.
+
+Y AL FINAL, LA AGENDA PARA PEGAR
+Menos de 200 palabras, en este formato:
+
+AGENDA 1:1 — [FECHA]
+
+Actualizaciones (maximo 3):
+- [logros que todavia no sabe]
+
+Discusion (1 a 3 temas):
+- [bloqueo o tema] — mi direccion propuesta o lo que necesito
+
+Decisiones (solo si aplica):
+- [decision]: [opciones + mi recomendacion]
+
+FYI (solo si hace falta):
+- [status]
+
+TONO
+Directo, especifico, seguro sin ponerte a la defensiva. Encuadra mi
+trabajo desde las prioridades de mi jefe. Primero la respuesta, luego
+el detalle. Los problemas se dicen planos y luego se dice como se
+estan mitigando.</code></pre>
+
+      <h2>Los tres disparadores extra</h2>
+
+      <p>Con la misma skill instalada, tres variantes que valen tanto como la principal:</p>
+
+      <ul>
+        <li><strong>"Prepara mi skip-level"</strong> — reencuadra la salida para el jefe de tu jefe: menos táctica, más estrategia, horizonte más largo y arranque por impacto en el negocio.</li>
+        <li><strong>"Prepara para [nombre]"</strong> — para un 1:1 con un par o con otra área. Quita el encuadre de carrera y sube colaboración y bloqueos compartidos.</li>
+        <li><strong>"¿Qué se me pasó?"</strong> — auditoría de cinco minutos: hilos que se enfriaron, respuestas que dejaste para después, decisiones olvidadas.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el bloque de "logros que ya sabe". La tentación es meter todo a la agenda porque se siente productivo. No lo hagas. Repetirle a tu jefe algo que él vio en Slack el martes gasta el minuto que necesitabas para el bloqueo real, y le enseña que tus actualizaciones son ruido. La agenda de tres puntos que sí trae información nueva vale más que la de diez.</p>
+      </div>
+
+      <h2>Cuándo correrla</h2>
+
+      <p>De 15 a 30 minutos antes de la junta. Lees los siete bloques, copias la agenda final a tus notas y entras. Si tu jefe es de los que agradecen contexto previo, mándale la agenda media hora antes: cambia por completo la calidad de la conversación, porque llega pensando en tus temas en lugar de improvisando los suyos.</p>
+
+      <h2>El error que hace inútil la skill</h2>
+
+      <p>Llenar los campos de contexto en automático. Si pones "mis metas: crecer el producto" y "prioridades de mi jefe: el negocio", la salida va a ser genérica y la vas a abandonar en dos semanas.</p>
+
+      <p>Esos dos campos son el motor completo. Las metas tienen que ser los compromisos medibles del trimestre con su número. Las prioridades de tu jefe tienen que ser aquello en lo que <em>a él</em> lo están midiendo, con el mismo nivel de detalle. Cuando esos dos campos están bien escritos, el bloque 6 —las preguntas que te va a hacer— empieza a acertar de manera incómoda.</p>
+
+      <p>Si quieres el mismo enfoque para juntas con más gente, está en <a href="/guias/10-formas-de-verte-bien-en-juntas/">las 10 formas de verte muy bien en cualquier junta</a>. Y para la mecánica de construir skills propias, <a href="/guias/construir-skills-de-claude/">construir skills de Claude</a>.</p>

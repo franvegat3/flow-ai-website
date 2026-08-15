@@ -1,0 +1,105 @@
+      <p>Te pasa cada semana. Después de veinte mensajes de ida y vuelta, por fin sale el entregable como lo querías. Cierras la conversación satisfecho. Y a los diez días necesitas lo mismo, abres un chat nuevo y vuelves a explicar todo desde cero.</p>
+
+      <p>Ese trabajo de afinar —el "no, más corto", "quítale el emoji", "esta parte va primero"— es criterio tuyo. Es lo único que no se puede sacar de un manual. Y lo estás tirando cada vez que cierras la pestaña.</p>
+
+      <p>La solución obvia es convertir ese flujo en una skill. El problema es que escribir skills a mano es tedioso y la mayoría salen mal: dos párrafos vagos que no capturan ni la mitad de lo que corregiste. Por eso armé una meta-skill: una skill cuyo único trabajo es escribir tus otras skills, leyendo la conversación donde ya resolviste el problema.</p>
+
+      <h2>Qué hace, en cuatro fases</h2>
+
+      <p>La invocas escribiendo una palabra al final de una conversación que salió bien. A partir de ahí:</p>
+
+      <ol>
+        <li><strong>Lee la conversación completa.</strong> Identifica cuál era el trabajo de fondo, qué intentos rechazaste, cuál fue la versión final, qué preguntas tuyas mejoraron el resultado y qué casos raros aparecieron en el camino.</li>
+        <li><strong>Te entrevista treinta segundos.</strong> Dos o tres preguntas puntuales sobre lo que nunca dijiste en voz alta. Del tipo "¿esto siempre aplica o solo cuando el cliente es nuevo?" y "¿qué es lo que nunca debe pasar?".</li>
+        <li><strong>Escribe la skill.</strong> Con nombre, disparador, entradas, pasos numerados, formato de salida y —esto es lo que casi nadie incluye— al menos dos ejemplos, uno de ellos un caso borde.</li>
+        <li><strong>Se prueba sola.</strong> Antes de entregártela, la corre contra una entrada inventada que se parezca a tu caso original y verifica que la salida sea lo que esperabas.</li>
+      </ol>
+
+      <p>Esa última fase es la diferencia entre una skill que sirve y una que se ve bien. Una skill sin probar es una hipótesis.</p>
+
+      <h2>Dónde se instala</h2>
+
+      <p>En la app de escritorio o en el navegador, entra a la sección de <strong>Skills</strong> desde configuración o desde la barra lateral. Creas una skill nueva, le pones nombre y pegas el texto completo de abajo. El disparador es la frase <code>GUÁRDALO</code> en mayúsculas.</p>
+
+      <p>Si nunca has creado una skill a mano, la mecánica básica está en <a href="/guias/3-formas-de-construir-una-skill/">las tres formas de construir una skill</a>.</p>
+
+      <h2>La skill completa</h2>
+
+      <pre><code>NOMBRE: Guárdalo
+DISPARADOR: cuando el usuario escriba GUÁRDALO en mayúsculas.
+QUÉ HACE: convierte la conversación actual en una skill reusable,
+bien escrita y ya probada.
+
+Tu trabajo NO es escribir una skill genérica sobre el tema. Es
+capturar el criterio específico que este usuario aplicó en esta
+conversación. Ese criterio es todo el valor.
+
+FASE 1 — LEER LA CONVERSACIÓN
+Antes de escribir nada, recorre el hilo completo y anota:
+- Cuál era el trabajo real (no el pedido literal del primer mensaje).
+- Qué versiones se rechazaron y con qué palabras las rechazó.
+- Cuál fue la versión final aprobada y qué la distingue.
+- Qué preguntas hiciste tú que mejoraron el resultado.
+- Qué casos raros aparecieron y cómo se resolvieron.
+Si la conversación no tiene un resultado claramente aprobado, dilo y
+pregunta cuál fue el bueno antes de seguir.
+
+FASE 2 — ENTREVISTA CORTA
+Haz exactamente 2 o 3 preguntas, y solo sobre cosas que el usuario
+NO dejó explícitas. Prohibido preguntar lo que ya está en el hilo.
+Al menos una de las preguntas debe ser sobre el límite. Por ejemplo:
+- "¿Esto siempre aplica, o solo cuando pasa X?"
+- "¿Qué es lo que NUNCA debe hacer esta skill?"
+- "¿Quién lee la salida: tú, tu equipo o un cliente?"
+Espera la respuesta. No escribas la skill antes de tenerla.
+
+FASE 3 — ESCRIBIR LA SKILL
+Entrega la skill con esta estructura y en este orden:
+1. NOMBRE — corto, en dos o tres palabras.
+2. DESCRIPCIÓN — una frase de qué hace y para quién.
+3. DISPARADOR — cuándo se activa, con frases concretas.
+4. ENTRADAS — qué necesita el usuario tener a la mano.
+5. PASOS — numerados, en imperativo, uno por acción.
+6. FORMATO DE SALIDA — la estructura exacta del entregable.
+7. EJEMPLOS — mínimo dos, con entrada y salida completas. Uno de
+   los dos tiene que ser un caso borde, no el caso feliz.
+8. REGLAS DE CASO BORDE — qué hacer cuando falta un dato, cuando la
+   entrada viene incompleta, y qué NUNCA debe hacer.
+
+Restricciones duras:
+- Mínimo 30 líneas. Una skill más corta que eso no capturó nada.
+- La sección de ejemplos es obligatoria. Sin ejemplos no entregas.
+- Usa el vocabulario del usuario, no el tuyo. Si él dice "pieza" y
+  no "post", la skill dice "pieza".
+- Nada de instrucciones vagas tipo "hazlo bien" o "sé profesional".
+  Cada regla tiene que ser verificable.
+
+FASE 4 — PROBARLA
+Antes de entregar, invéntate una entrada realista parecida a la del
+caso original y corre la skill contra ella. Revisa tres cosas:
+- ¿La salida cumple el formato que acabas de definir?
+- ¿Las reglas de caso borde se pueden aplicar de verdad?
+- ¿Hay algún paso ambiguo que en la prueba tuviste que interpretar?
+Si algo falla, corrige la skill y vuelve a probar. Solo entonces
+muestra al usuario: primero el resultado de la prueba, después la
+skill completa lista para copiar.
+
+SI EL USUARIO TE CORRIGE
+Reescribe. No argumentes ni defiendas la versión anterior. Aplica el
+cambio, vuelve a correr la Fase 4 y entrega otra vez.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> invocarla en el momento correcto. La skill sale buena si la disparas cuando el trabajo <em>acaba de quedar bien</em>, con todo el ida y vuelta fresco en el hilo. Si abres una conversación nueva y le pides "hazme una skill de cómo redacto propuestas", no tiene de dónde sacar tu criterio y te va a escribir un manual genérico. La conversación es el material.</p>
+      </div>
+
+      <h2>Dónde la uso en operación</h2>
+
+      <p>El caso donde más rinde no es personal, es de equipo. En un área comercial armamos el resumen semanal de pipeline en una conversación larga: qué columnas iban, cómo se marcaban las cuentas frías, en qué tono se escribía el comentario de cada oportunidad. Al final, <code>GUÁRDALO</code>. Esa skill la usa hoy alguien que nunca estuvo en la conversación original, y el reporte sale igual.</p>
+
+      <p>Ahí está el valor real: el criterio de la persona que sabe queda escrito y ejecutable, en vez de vivir en su cabeza y salir de la empresa el día que ella salga.</p>
+
+      <h2>El error que le quita el sentido</h2>
+
+      <p>Guardar todo. En la primera semana la tentación es convertir cada conversación decente en skill, y a los quince días tienes cuarenta skills que ni recuerdas, compitiendo entre ellas por activarse.</p>
+
+      <p>El filtro que uso es simple: solo se guarda lo que ya hice al menos tres veces. Menos de tres veces no es un flujo, es una petición. Y una skill de algo que hiciste una vez es documentación de un evento que no se va a repetir.</p>

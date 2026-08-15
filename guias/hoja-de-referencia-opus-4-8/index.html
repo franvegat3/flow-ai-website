@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La hoja de referencia de Claude Opus 4.8 — Guías Flow AI</title>
+  <meta name="description" content="El control de esfuerzo por fin llegó a la app normal, el modelo se volvió medible más honesto, y las notas de migración si construyes sobre la API. Cómo aprovechar de verdad la actualización." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/hoja-de-referencia-opus-4-8/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La hoja de referencia de Claude Opus 4.8" />
+  <meta property="og:description" content="El control de esfuerzo por fin llegó a la app normal, el modelo se volvió medible más honesto, y las notas de migración si construyes sobre la API. Cómo aprovechar de verdad la actualización." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/hoja-de-referencia-opus-4-8/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Novedades</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Novedades</span></div>
+      <h1>La hoja de referencia de Claude Opus 4.8</h1>
+      <p class="lead">El control de esfuerzo por fin llegó a la app normal, el modelo se volvió medible más honesto, y las notas de migración si construyes sobre la API. Cómo aprovechar de verdad la actualización.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La función más útil de esta actualización no es que el modelo sea más listo. Es que por fin puedes decidir cuánto esfuerzo le pones a cada cosa, desde la app normal, sin tocar código.</p>
+
+      <p>Hasta hace poco el control de esfuerzo vivía solo en la API y en la terminal. Ahora está en el Claude de todos los días. Eso significa que la misma suscripción te rinde distinto según cómo la uses, y la mayoría de la gente ni sabe que existe la perilla.</p>
+
+      <p>Esto es lo que trae Opus 4.8, qué cambia en la práctica y qué revisar si construiste algo sobre la API.</p>
+
+      <h2>Qué es el esfuerzo, en una frase</h2>
+
+      <p>Es cuánto piensa el modelo antes de contestar, y cuántos tokens está dispuesto a gastar en llegar a la respuesta.</p>
+
+      <p>No cambia qué tan capaz es. Cambia qué tan a fondo trabaja. Un esfuerzo bajo te da una respuesta rápida y suficiente; uno alto explora, verifica y se tarda. Es la diferencia entre preguntarle algo a un colega en el pasillo y pedirle que se siente una hora a revisarlo.</p>
+
+      <h2>Los cuatro niveles</h2>
+
+      <div class="plugin-card">
+        <h3>1. Bajo <code>low</code></h3>
+        <p>Reescrituras de una vez, dar formato, resúmenes cortos. Todo lo que puedes revisar de un vistazo y corregir en diez segundos.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> limpiar un texto, cambiar el tono de un correo, sacar los puntos de una nota.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Medio <code>medium</code></h3>
+        <p>Correos que sí quieres que alguien lea dos veces, borradores de contenido, tareas normales de código. Es el punto donde la calidad ya se nota y el tiempo todavía no molesta.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> el 60% del trabajo de oficina de un día normal.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Alto <code>high</code></h3>
+        <p>El que viene por defecto en 4.8. Análisis, cualquier cosa de varios pasos, código que de verdad tiene que funcionar.</p>
+        <p>Que sea el default importa: si nunca tocaste la perilla, ya estás aquí. Bajarle a medio en tareas simples te ahorra tiempo y consumo sin que la calidad se note distinta.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> lo que va a tomar una decisión o llegar a un cliente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El nivel extra de Claude Code <code>xhigh</code></h3>
+        <p>Un escalón arriba del alto, disponible en la terminal. Está pensado para migraciones complejas y para depurar cosas que llevan horas sin resolverse.</p>
+        <p>Aquí el intercambio es explícito: se tarda bastante más y consume bastante más. Vale la pena cuando el problema ya te costó dos días.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> trabajo largo y autónomo, no conversación.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir el esfuerzo no arregla una instrucción vaga. Si le pediste algo ambiguo, el modelo va a pensar más profundo sobre la pregunta equivocada y te va a entregar una respuesta desenfocada, más lenta y más cara. El orden correcto es: primero escribe bien la petición con esfuerzo medio, y cuando ya salga bien tres veces seguidas, ahí decides si subirle.</p>
+      </div>
+
+      <h2>Cómo lo uso en un día de trabajo</h2>
+
+      <p>Aterrizado a una operación real, así se reparte en una semana:</p>
+
+      <ul>
+        <li><strong>Bajo</strong> para la limpieza de transcripciones de juntas y el formato de reportes que ya vienen armados.</li>
+        <li><strong>Medio</strong> para el copy de campañas, los seguimientos comerciales y la primera versión de cualquier documento.</li>
+        <li><strong>Alto</strong> para revisar contratos, armar el análisis de por qué se cayó una campaña, y cualquier cosa que le voy a mandar a un cliente sin que pase por otra revisión.</li>
+        <li><strong>El nivel extra</strong> solo cuando estoy en la terminal peleándome con un proceso que lleva días sin correr bien.</li>
+      </ul>
+
+      <p>La regla de dedo: si el error se detecta en un vistazo y corregirlo cuesta poco, bájale. Si el error se descubre tres días después con un cliente enojado, súbele.</p>
+
+      <h2>El cambio que menos se anuncia y más importa</h2>
+
+      <p>4.8 es medible más honesto que la versión anterior. Baja la tasa de respuestas incorrectas y es bastante menos probable que deje pasar una falla al revisar código.</p>
+
+      <p>Suena aburrido comparado con "es más inteligente", y es lo contrario. En una operación real, el costo no está en las respuestas que salen bien: está en las que salen mal y suenan convincentes. Un modelo que se equivoca menos y que admite más seguido que no sabe te ahorra el trabajo de verificar todo dos veces.</p>
+
+      <p>Lo que no cambia: sigue necesitando que tú sepas cuándo dudar. Un modelo más honesto no es un modelo infalible, y en cualquier cosa que toque dinero o datos de clientes la revisión humana sigue siendo obligatoria.</p>
+
+      <h2>Notas de migración si construyes sobre la API</h2>
+
+      <p>Aquí es donde algunos flujos se rompen sin aviso. El identificador del modelo es <code>claude-opus-4-8</code>.</p>
+
+      <ol>
+        <li><strong>Los parámetros de muestreo se fueron.</strong> <code>temperature</code>, <code>top_p</code> y <code>top_k</code> ya no se aceptan. Si tu código los manda, la petición falla. La forma de guiar el comportamiento ahora es el prompt, no la perilla.</li>
+        <li><strong>El presupuesto fijo de pensamiento se fue.</strong> Ya no se define un número de tokens de razonamiento. Se usa pensamiento adaptativo y se controla la profundidad con el nivel de esfuerzo.</li>
+        <li><strong>Los mensajes de sistema a media conversación ya no rompen el caché.</strong> Este es el cambio que más dinero ahorra en agentes largos: antes, meter una instrucción nueva a la mitad invalidaba todo el prefijo cacheado y volvías a pagar el contexto completo. Ahora no.</li>
+        <li><strong>Las negativas vienen con categoría.</strong> Cuando el modelo se rehúsa, la respuesta trae un detalle estructurado con el motivo, en vez de un texto que tenías que interpretar a mano. Si tu flujo tenía lógica de reintento basada en leer el mensaje, cámbiala a leer el campo.</li>
+      </ol>
+
+      <p>Sobre el costo: es el modelo más caro del catálogo de Claude, y esa es toda la decisión. Úsalo donde una respuesta mejor te ahorra dinero real —problemas nuevos, análisis que sostienen una decisión, código que no se puede caer— y usa modelos más baratos en el volumen repetitivo. Los precios exactos por millón de tokens cambian; confírmalos en la documentación oficial antes de presupuestar.</p>
+
+      <h2>El error que veo más seguido</h2>
+
+      <p>Poner el esfuerzo más alto en la parte más repetitiva del proceso.</p>
+
+      <p>Alguien monta un flujo que clasifica trescientos correos al día, le pone el máximo porque "así sale mejor", y a fin de mes la factura llega tres veces más alta con exactamente la misma calidad. Clasificar un correo no necesita razonamiento profundo: necesita consistencia.</p>
+
+      <p>Haz el ejercicio contrario. Toma tu flujo más caro, bájale un nivel de esfuerzo, y corre veinte casos comparando contra la versión anterior. En la mayoría de los procesos operativos no vas a poder distinguir cuál es cuál, y acabas de bajar el costo sin tocar nada más.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/sesiones-de-claude-que-se-hablan/" class="stack-link">
+            <span>Tus sesiones de Claude se pueden mandar mensajes entre ellas →</span>
+            <small>Deja de copiar y pegar entre chats. Cómo verificar que ya lo tienes, el paso de nombrarlas que hace que sirva, y la carta de equipo que las mantiene sincronizadas.</small>
+          </a>
+          <a href="/guias/un-link-instala-todo-tu-setup/" class="stack-link">
+            <span>Un solo link que instala todo tu setup de IA →</span>
+            <small>Los Skill Packs empaquetan todo lo que le has enseñado a tu IA en un link que funciona en Claude, Cursor y Codex. Más la auditoría que corres antes de instalar el de alguien más.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

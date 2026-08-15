@@ -1,0 +1,81 @@
+      <p>Abres Claude, ves el selector de modelo arriba, y hay tres o cuatro opciones con nombres que no dicen nada. Lo dejas en el que venía y sigues. Eso hace el 90% de la gente, y casi siempre es la decisión correcta —hasta el día que no lo es y no sabes por qué el resultado salió flojo.</p>
+
+      <p>Esta guía no es la tabla de precios ni la comparación entre proveedores. Eso ya está en <a href="/guias/hoja-de-referencia-de-modelos/">la hoja de referencia de modelos</a>, que es lo que consultas cuando vas a automatizar algo por API. Esto es lo otro: qué opción del menú picas tú, hoy, adentro de la aplicación, y cómo eso se lleva con tu límite de uso semanal.</p>
+
+      <p>Porque en el chat no pagas por token. Pagas una mensualidad y consumes una cuota. Y cada modelo se come esa cuota a distinta velocidad, que es el único número que de verdad te afecta.</p>
+
+      <h2>La estructura, sin nombres</h2>
+
+      <p>Los nombres de versión cambian cada pocos meses y la estructura no. Aprende la estructura y no vuelves a tener que releer un anuncio.</p>
+
+      <ul>
+        <li><strong>El nivel rápido.</strong> Hoy es Sonnet. Es el default y el que menos cuota consume. Está a un pelo del modelo grande en la mayoría de las tareas.</li>
+        <li><strong>El nivel insignia.</strong> Hoy es Opus. Razona más profundo, tarda más, y consume bastante más de tu límite.</li>
+        <li><strong>El nivel de volumen.</strong> Hoy es Haiku. Rápido y barato, pensado para tareas simples repetidas muchas veces. En el chat casi no lo vas a necesitar; en automatizaciones sí.</li>
+        <li><strong>El razonamiento extendido.</strong> Esto no es un modelo: es un modo que prendes encima del modelo que ya elegiste. Trabaja el problema paso a paso antes de contestar. Consume más.</li>
+      </ul>
+
+      <p>Esa última distinción es la que más confunde. Pensar más y ser un modelo más grande son dos palancas distintas, y puedes usarlas por separado.</p>
+
+      <h2>Cuándo usar el rápido</h2>
+
+      <p>Casi siempre. Y no lo digo por ahorrar: lo digo porque en la mayoría de las tareas la diferencia de calidad no se nota, y la de velocidad sí.</p>
+
+      <p>Redactar y editar, resumir, lluvia de ideas, sintetizar investigación, preguntas del día a día, cualquier trabajo rutinario. Todo eso va en el nivel rápido y va bien.</p>
+
+      <p>El dato que ordena esta decisión: en las pruebas de código, la diferencia entre el nivel rápido y el insignia es de poco más de un punto porcentual. Si en la tarea más exigente que existe la brecha es esa, en tu correo de seguimiento es cero.</p>
+
+      <h2>Cuándo subir al insignia</h2>
+
+      <p>Cuatro situaciones, y ninguna es "porque quiero la mejor respuesta". Todas son "porque equivocarme aquí me cuesta caro":</p>
+
+      <ul>
+        <li><strong>Estrategia con muchas variables.</strong> Cuando la respuesta correcta depende de sostener seis factores a la vez sin soltar ninguno.</li>
+        <li><strong>Precisión técnica, financiera o legal.</strong> Donde un matiz mal entendido no es un error de estilo, es un error caro.</li>
+        <li><strong>Documentos largos.</strong> El nivel insignia tiene ventana de contexto muy grande, y esa es la diferencia entre analizar el contrato completo o analizar el pedazo que cupo.</li>
+        <li><strong>Escritura difícil.</strong> No la escritura larga: la que necesita tono, la que va a leer alguien importante, la que no puede sonar a plantilla.</li>
+      </ul>
+
+      <h2>Cuándo prender el razonamiento extendido</h2>
+
+      <p>Este es el que la gente subutiliza más, porque no está en el selector de modelos y hay que acordarse de él.</p>
+
+      <p>Se prende con el interruptor de pensamiento en la interfaz cuando aparece, o simplemente agregando a tu prompt la instrucción de que piense el problema con cuidado antes de responder.</p>
+
+      <p>Sirve cuando el proceso de razonamiento importa tanto como la respuesta. Tres casos: problemas genuinamente difíciles, decisiones con varios factores en tensión, y análisis de causa raíz —el clásico "las ventas cayeron 20% y no sabemos por qué".</p>
+
+      <p>Lo que gana no es solo la respuesta. Es que puedes leer cómo llegó ahí y detectar dónde se equivocó de supuesto. En una decisión importante, eso vale más que la conclusión.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir de modelo cuando el problema es el prompt. Si te salió flojo, cambiar de modelo suele darte lo mismo pero más lento y consumiendo el doble. La secuencia correcta es: primero arregla el prompt —contexto, ejemplo de lo que esperas, formato de salida—, luego prende razonamiento extendido, y solo si eso no bastó, sube de modelo. En ese orden gastas menos y aprendes más.</p>
+      </div>
+
+      <h2>La cuota: el número que sí te afecta</h2>
+
+      <p>En el plan de paga tienes un límite de uso, y los modelos lo consumen a distinta velocidad. El insignia se lo come mucho más rápido que el rápido, y el razonamiento extendido lo acelera todavía más.</p>
+
+      <p>Esto tiene una consecuencia práctica que casi nadie planea: si dejas todo en el modelo insignia por si acaso, vas a toparte con el límite un martes a media tarde, justo cuando lo necesitabas de verdad.</p>
+
+      <p>La forma en que lo administro, y que le sugiero a los equipos con los que trabajo:</p>
+
+      <ol>
+        <li><strong>Default en el rápido.</strong> Siempre. Es el estado de reposo.</li>
+        <li><strong>Sube solo para la tarea específica</strong>, y regresa al rápido en cuanto termines. No dejes el selector arriba "por si acaso".</li>
+        <li><strong>Reserva presupuesto mental para el final de la semana.</strong> Si el jueves ya vas al 80% de tu límite, deja de usar el insignia para cosas que no lo necesitan.</li>
+      </ol>
+
+      <p>Si esto te suena a que ya has topado el límite, hay guías dedicadas: <a href="/guias/no-quemar-tu-limite-de-uso/">cómo no quemar tu límite de uso</a>.</p>
+
+      <h2>El caso de empresa que cambia la regla</h2>
+
+      <p>Todo lo anterior aplica a una persona en el chat. En cuanto lo que corres es un proceso —un flujo que se ejecuta cien veces al mes, un agente que revisa correos todas las mañanas— la lógica se invierte.</p>
+
+      <p>Ahí no eliges un modelo: repartes. El modelo caro planea y verifica; el rápido ejecuta; el de volumen lee, clasifica y extrae. Un flujo de calificación de leads bien armado usa el nivel de volumen para leer los cien correos y el insignia solo para los ocho que quedaron dudosos.</p>
+
+      <p>Ese reparto ahorra más que cualquier elección de modelo individual, y es la parte que la gente descubre tarde porque en el chat nunca la necesitó.</p>
+
+      <h2>La regla en una línea</h2>
+
+      <p>Quédate en el rápido, prende razonamiento extendido cuando el problema sea difícil, y sube al insignia solo cuando el costo de equivocarte supere el costo de esperar.</p>
+
+      <p>Y revisa esta decisión cada seis meses, no cada anuncio. La versión nueva casi siempre reacomoda los nombres y deja la estructura intacta.</p>

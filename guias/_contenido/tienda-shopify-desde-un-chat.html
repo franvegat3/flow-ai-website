@@ -1,0 +1,149 @@
+      <p>Montar una tienda siempre se atoró en el mismo punto: no en decidir qué vender, sino en las cuarenta tareas chiquitas entre la decisión y la primera venta. El tema, las páginas de políticas, las fichas de producto, las fotos con nombres que no coinciden con nada, la sección de preguntas frecuentes que nadie escribe nunca.</p>
+
+      <p>Manus abrió un conector con Shopify que se come esa parte. Le describes el negocio en un chat, construye la tienda contra el backend de Shopify —que sigue manejando el carrito, el cobro y el envío— y de ahí en adelante le pides cambios hablando.</p>
+
+      <p>Abajo están los tres prompts con los que se hace el trabajo completo: construir, llenar y crecer. Están enteros para copiarse. Y al final el costo real, que es donde la gente se lleva la sorpresa.</p>
+
+      <h2>Qué hace el conector y qué no</h2>
+
+      <p>Construye la fachada y administra el contenido. Shopify sigue siendo el motor: pagos, inventario, envíos, impuestos y el panel de pedidos siguen ahí y siguen siendo tu responsabilidad.</p>
+
+      <p>Eso es bueno. La parte regulada y delicada del comercio se queda en una plataforma que lleva años resolviéndola, y la IA se encarga de la parte que es puro trabajo repetido. Lo que se construye no es una tienda de juguete: es una tienda de desarrollo de Shopify de verdad, que puedes ver y probar antes de publicarla.</p>
+
+      <h2>Prompt 1 — construir la tienda</h2>
+
+      <p>El error clásico es pedirle "hazme una tienda de café". Sale una tienda genérica, con copy de plantilla y fotos de banco de imágenes. Este prompt lo obliga a entregar primero un plano y a esperar tu visto bueno antes de construir.</p>
+
+      <pre><code>Eres mi constructor de tiendas. Vas a armar una tienda de desarrollo
+completa en Shopify a partir de este brief.
+
+EL NEGOCIO
+- Nombre de la marca: [nombre]
+- Que vendo: [productos o categorias]
+- Rango de precios: [de X a Y]
+- Personalidad de la marca: [tres adjetivos y una marca de referencia]
+- Cliente objetivo: [quien es, que problema tiene, como habla]
+- Que me hace distinto: [una o dos razones reales, no adjetivos]
+
+PROCESO, EN ESTE ORDEN
+1. Primero entregame el plano y detente ahi. El plano incluye:
+   estructura del sitio, propuesta de valor en una frase, paleta y
+   tipografia, y el mensaje principal de la portada. Espera mi visto
+   bueno antes de construir nada.
+2. Cuando lo apruebe, construye la tienda con esas paginas:
+   Inicio, Tienda, Nosotros, Contacto, Preguntas frecuentes, y
+   Envios y devoluciones.
+3. Crea de 4 a 6 productos de muestra con precio, descripcion y
+   variantes, para que la tienda se pueda ver y probar.
+
+REGLAS
+- Copy simple y en frases cortas. Nada de lenguaje corporativo.
+- Cero resenas inventadas, cero testimonios, cero cifras de clientes.
+- No prometas tiempos de envio ni garantias que yo no te di.
+- La misma voz en las seis paginas.
+- Los textos legales van como borrador y marcados como borrador.
+
+FORMATO DE ENTREGA
+Primero el plano. Despues de mi aprobacion, construyes y me devuelves
+una lista de verificacion de lo que quedo hecho, lo que quedo a medias
+y las tres decisiones que tomaste por mi y deberia revisar.</code></pre>
+
+      <h2>Prompt 2 — de la hoja de cálculo a las fichas</h2>
+
+      <p>Esta es la parte que en una tienda con inventario real se lleva días. Ochenta productos, ochenta descripciones, ochenta títulos, y una carpeta de fotos con nombres tipo IMG_4471.</p>
+
+      <pre><code>Eres mi administrador de catalogo. Te adjunto una hoja de calculo de
+productos y una carpeta de imagenes.
+
+COLUMNAS DE LA HOJA
+SKU, Nombre del producto, Categoria, Precio, Inventario,
+Caracteristicas clave, Nombre del archivo de imagen.
+
+QUE NECESITO QUE HAGAS
+1. Empata cada imagen con su producto usando el nombre del archivo.
+2. Escribe la descripcion de cada producto: dos o tres parrafos en mi
+   voz de marca, mas de 3 a 5 vinetas de caracteristicas.
+3. Escribe el titulo para que se lea rapido en una lista, y la
+   descripcion para buscadores de cada ficha.
+4. Agrupa los productos en colecciones segun la categoria.
+5. Carga el inventario tal como viene. Lo que este en cero se marca
+   como agotado, no se borra.
+
+REGLAS
+- Usa unicamente los datos de la hoja. Si una caracteristica no esta,
+  no la inventes: dejala fuera.
+- Nada de superlativos ni de promesas de resultado.
+- Precios exactamente como vienen. Si un precio se ve raro, no lo
+  corrijas: reportalo.
+
+MI VOZ DE MARCA
+[pega aqui dos descripciones que ya te gusten, o describe el tono]
+
+FORMATO DE ENTREGA
+Una tabla resumen con SKU, titulo nuevo, coleccion e inventario.
+Aparte, dos listas: imagenes que no empataron con ningun producto, y
+productos a los que les falto algun dato. Esas dos listas primero.</code></pre>
+
+      <p>Las dos listas del final son lo importante. Un catálogo cargado con datos faltantes se ve completo hasta que un cliente entra a la ficha vacía.</p>
+
+      <h2>Prompt 3 — crecer con tus propios datos de venta</h2>
+
+      <p>Este es el que casi nadie usa y es el que cambia el negocio. La tienda ya tiene datos de qué se vende: ese es tu mejor insumo de marketing y no hay que comprarlo.</p>
+
+      <pre><code>Eres mi encargado de crecimiento. Lee los datos de ventas y de
+productos de mi tienda y armame una campana alrededor de lo que ya
+se vende bien.
+
+CONTEXTO
+- Cliente objetivo: [quien es y como habla]
+- Voz de marca: [tono]
+- Canales donde publico: [ej. Instagram, correo, TikTok]
+- Periodo a analizar: [ej. ultimos 60 dias]
+
+QUE NECESITO
+1. Los 3 productos mas vendidos, por unidades y por ingreso. Di si
+   coinciden o no, y que significa que no coincidan.
+2. Por cada uno de esos 3 productos:
+   - 5 ganchos de apertura, cada uno con un angulo distinto.
+   - 3 textos de publicacion con su llamado a la accion.
+   - 3 angulos de anuncio, indicando a que objecion responde cada uno.
+   - 5 etiquetas relevantes, sin las genericas.
+3. Una propuesta de codigo de descuento: el porcentaje, la condicion
+   y por que ese numero y no otro, con el margen en mente.
+4. Un calendario de 7 dias con columnas: Dia, Canal, Tipo de
+   publicacion, Gancho.
+
+REGLAS
+- Nada de urgencia falsa, escasez inventada ni cuentas regresivas
+  que no existan.
+- No prometas resultados. Habla de lo que hace el producto.
+- Si los datos no alcanzan para sostener una conclusion, dilo en vez
+  de rellenar.
+
+CIERRE
+En cinco lineas: que apuesta esta haciendo esta campana, y cual seria
+la campana contraria que valdria la pena probar en paralelo.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>Antes de publicar, revisa a mano cinco cosas:</strong> precios, inventario, las páginas de políticas, que cada foto sea del producto correcto, y que la voz sea la misma en toda la tienda. La IA construye rápido y se equivoca en silencio. Un precio mal puesto en una tienda abierta no es un error de estilo: es una venta que tienes que honrar o cancelar, y las dos opciones cuestan.</p>
+      </div>
+
+      <h2>El costo, sin adorno</h2>
+
+      <p>Aquí es donde conviene ser claro, porque el titular de "una tienda desde un chat" suena a gratis y no lo es.</p>
+
+      <ul>
+        <li><strong>Manus:</strong> necesitas plan de paga. El de entrada ronda los 20 dólares al mes. Desde el plan gratuito no se puede usar el conector.</li>
+        <li><strong>Shopify:</strong> necesitas un plan de paga para publicar y cobrar. Construir y ver la tienda en desarrollo no cuesta; salir al aire sí.</li>
+        <li><strong>Lo que no se ve:</strong> fotos de producto de verdad. Ni Manus ni Shopify te las dan, y son la diferencia entre una tienda que vende y una que se ve armada en una tarde. Presupuesta eso.</li>
+      </ul>
+
+      <p>Súmalo bien antes de empezar. Sigue siendo mucho más barato que contratar a alguien para montarla, pero no es cero.</p>
+
+      <h2>El error que veo más seguido</h2>
+
+      <p>Publicar la tienda el mismo día que se construyó.</p>
+
+      <p>La sensación de velocidad es adictiva: en dos horas tienes algo que se ve como una tienda real, y la tentación es abrirla ya. El problema es que en esas dos horas se tomaron unas treinta decisiones por ti —precios de muestra, textos de políticas, tiempos de envío— y ninguna la revisaste.</p>
+
+      <p>Construye un día, revisa al siguiente con la lista de arriba y publica al tercero. Si vas a mandarle tráfico pagado, revisa también a dónde cae cada clic: la campaña más cara del mundo no arregla una ficha de producto sin foto.</p>

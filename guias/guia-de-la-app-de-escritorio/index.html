@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de arranque de la app de escritorio de Claude — Guías Flow AI</title>
+  <meta name="description" content="Todo lo que necesitas para instalar y empezar a usar la app de escritorio de Claude." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/guia-de-la-app-de-escritorio/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Guía de arranque de la app de escritorio de Claude" />
+  <meta property="og:description" content="Todo lo que necesitas para instalar y empezar a usar la app de escritorio de Claude." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/guia-de-la-app-de-escritorio/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>Guía de arranque de la app de escritorio de Claude</h1>
+      <p class="lead">Todo lo que necesitas para instalar y empezar a usar la app de escritorio de Claude.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de la gente usa Claude en el navegador y asume que la app de escritorio es lo mismo con un icono. No lo es. Es un producto distinto, y las funciones que separan a Claude de un chat cualquiera solo existen ahí.</p>
+
+      <p>La versión corta: en el navegador, Claude habla de tus archivos. En la app de escritorio, Claude abre tus archivos, los edita, y sigue trabajando cuando tú te levantas por un café.</p>
+
+      <p>Esta es la guía de arranque. Descarga, las seis funciones que solo viven ahí, el orden en que conviene prenderlas, y el ajuste del sistema operativo que nadie te dice y que hace que la mitad de esto funcione o no.</p>
+
+      <h2>Descarga y requisitos</h2>
+
+      <p>Se baja de <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>. Instalación normal, sin nada raro.</p>
+
+      <p>Necesitas plan Pro o Max. En el gratuito la app se instala pero las funciones que la hacen valer la pena no aparecen, así que si estás en gratuito, esta guía es para después.</p>
+
+      <h2>Las seis cosas que solo hay aquí</h2>
+
+      <div class="plugin-card">
+        <h3>1. Cowork</h3>
+        <p>Una pestaña aparte del chat, donde Claude trabaja solo. Lee, crea y edita archivos reales en tu máquina, arma su propia lista de tareas y las va ejecutando. Le das acceso explícito a las carpetas que puede tocar, y antes de ejecutar te enseña el plan; antes de borrar algo, te pide permiso.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que tenga una carpeta con doscientos archivos que alguien debería ordenar y nadie ordena.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Tareas programadas</h3>
+        <p>Corren solas en horario recurrente: diario, semanal, mensual. Se crean con el comando <code>/schedule</code> dentro de Cowork y se administran en la sección "Programadas" de la barra lateral.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el reporte del lunes, el resumen del viernes, cualquier cosa que alguien hace por obligación y siempre tarde.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Conectores</h3>
+        <p>Gmail, Outlook, Google Drive, Google Calendar, Slack y Notion. Se prenden en Personalizar, Conectores. Dan acceso de lectura y, si lo autorizas, de escritura.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> todo el mundo. Es lo primero que hay que prender y lo que más gente deja apagado. Ver <a href="/guias/10-conectores-que-cambian-tu-dia/">los conectores que cambian tu día</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Plugins</h3>
+        <p>Paquetes por área —marketing, finanzas, legal— que se instalan de un clic y configuran solos las skills y los conectores de esa función. Es la vía rápida para no armar tu setup pieza por pieza.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien quiere el andamiaje de su oficio sin construirlo. Los diez oficiales están en <a href="/guias/plugins-cowork/">la guía de plugins</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Dispatch</h3>
+        <p>Conecta tu teléfono con la computadora. Le mandas una tarea desde el celular y se ejecuta en tu escritorio, con tus archivos locales, tus conectores y tus plugins. Se activa en Cowork, sección Dispatch, emparejando con un código QR desde la app móvil.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que se acuerda de las cosas en el coche y no cuando está frente a la máquina.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. Skills y Proyectos</h3>
+        <p>Las skills son instrucciones reusables que convierten una tarea de tres párrafos en un comando; se administran en Personalizar, Skills. Los proyectos son espacios separados que aíslan archivos, contexto y tareas programadas por área de trabajo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que hace la misma tarea cada semana y la vuelve a explicar cada semana.</p>
+      </div>
+
+      <h2>El ajuste que casi nadie hace</h2>
+
+      <p>Aquí está el detalle que decide si todo lo anterior funciona o si te llevas una decepción: para que las funciones autónomas corran, <strong>tu computadora tiene que estar despierta y la app abierta</strong>.</p>
+
+      <p>Eso significa que una tarea programada a las 7 de la mañana no va a correr si tu máquina se durmió a las 11 de la noche. No es un bug, es cómo funciona: la app corre en tu equipo, no en la nube.</p>
+
+      <p>Entra a la configuración de energía de tu sistema y ajusta el suspender para que la máquina siga despierta en el horario en que programaste cosas. Si trabajas en laptop, esto implica dejarla conectada. Es el precio de que Claude tenga tus archivos locales en lugar de una copia en un servidor, y para la mayoría de la gente ese intercambio vale la pena.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> dar acceso a la carpeta correcta. La tentación es darle acceso a todo el disco de una vez para que "no moleste". No lo hagas. Dale una carpeta de trabajo específica y trabaja adentro de ella las primeras semanas. Vas a saber exactamente dónde puede meter la mano, y cuando algo salga raro vas a saber dónde buscar.</p>
+      </div>
+
+      <h2>El orden de arranque</h2>
+
+      <p>Cuatro pasos, una tarde. No los hagas en otro orden porque cada uno depende del anterior.</p>
+
+      <ol>
+        <li><strong>Conecta tus herramientas.</strong> Correo, calendario y Drive primero. Es lo que le da contexto real de tu trabajo, y sin eso todo lo demás opera a ciegas.</li>
+        <li><strong>Entra a Cowork y autoriza una carpeta.</strong> Una. La de trabajo activo.</li>
+        <li><strong>Dale una tarea de verdad y quédate viendo.</strong> Algo que puedas verificar: ordenar esa carpeta, o sacar los datos de doce PDFs a una tabla. Ver cómo trabaja es lo que te enseña qué se le puede pedir; leerlo no sirve.</li>
+        <li><strong>Programa una tarea recurrente</strong> con <code>/schedule</code>. Una sola. El resumen del lunes por la mañana, por ejemplo.</li>
+      </ol>
+
+      <p>Ese tercer paso es el que hace clic. La primera vez que le dices "toma estos cuarenta correos de proveedores, sácame el monto y el vencimiento de cada uno y arma la hoja" y regresas en diez minutos a un archivo terminado, entiendes por qué la app de escritorio no es el navegador con icono.</p>
+
+      <h2>Dónde se atora en la práctica</h2>
+
+      <p>Dos cosas que veo seguido cuando instalo esto en un equipo.</p>
+
+      <p>La primera es de permisos corporativos. En muchas empresas el correo y el Drive están administrados con políticas que bloquean conectores de terceros. Eso no lo resuelves tú desde la app: es una conversación con sistemas, y conviene tenerla antes de prometer resultados.</p>
+
+      <p>La segunda es más humana. La gente instala la app, prende todo, y sigue usándola como chat. Después dice que "es lo mismo". Claro que es lo mismo si le sigues pegando preguntas sueltas. Lo que cambia el juego es la primera tarea que le encargas y no supervisas —y para eso hay que aguantarse las ganas de estar viendo la pantalla.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

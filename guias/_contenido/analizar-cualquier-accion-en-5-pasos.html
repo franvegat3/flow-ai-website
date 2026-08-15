@@ -1,0 +1,140 @@
+      <p>Le pides a un modelo que analice una acción y te devuelve un texto que suena a analista de banco. Márgenes, vientos de cola, riesgos regulatorios. Suena bien y no sirve para nada, porque una parte viene de datos de entrenamiento viejos, otra de una nota que leyó en algún lado y el resto de la nada.</p>
+
+      <p>El problema no es el modelo. Es que lo dejaste opinar. Una empresa pública publica todo lo que necesitas —cientos de páginas al año, auditadas, con responsabilidad legal encima— y tú le estás pidiendo a la IA que recuerde en vez de que lea.</p>
+
+      <p>Este setup arregla eso: un proyecto por empresa, encerrado en documentos oficiales, sin acceso a su propio conocimiento. Toma como una hora armarlo la primera vez y después cada trimestre son quince minutos.</p>
+
+      <p><strong>Esto no es asesoría financiera.</strong> No soy asesor y esta guía no recomienda comprar ni vender nada. Es un método para leer documentos oficiales más rápido y con menos sesgo. Las decisiones de inversión son tuyas y las consecuencias también.</p>
+
+      <h2>Paso 1 — Un proyecto por empresa, con candado</h2>
+
+      <p>Crea un proyecto de Claude y ponle de nombre la clave de pizarra de la empresa. Uno por empresa, nunca uno general para todas: la mezcla de documentos entre emisoras es la primera fuente de errores.</p>
+
+      <p>En las instrucciones del proyecto va este texto. Es el candado y es lo más importante de todo el setup.</p>
+
+      <pre><code>Eres mi analista de renta variable para [CLAVE DE PIZARRA].
+
+Regla número uno: solo respondes con base en los documentos que yo
+subí a este proyecto. No usas conocimiento externo, ni tus datos de
+entrenamiento, ni noticias, ni tu propia opinión sobre esta empresa.
+
+Si algo no está en los documentos, tu respuesta es exactamente:
+"No está en los documentos que subiste." Y ahí te detienes. No
+completas con lo que suele ser cierto en la industria.
+
+Cada afirmación factual va citada: nombre del documento, año y
+sección o página. Sin cita, no se afirma.
+
+Prohibido:
+- Especular sobre lo que va a pasar.
+- Dar precios objetivo o proyecciones de precio.
+- Recomendar comprar, vender o mantener.
+- Suavizar un dato malo con contexto que no está en el documento.
+
+Cuando yo te pida una opinión, tu trabajo es mostrarme qué dice la
+empresa de sí misma y dónde se contradice entre un año y otro.
+El juicio es mío.</code></pre>
+
+      <h2>Paso 2 — El panorama de la industria, antes de subir nada</h2>
+
+      <p>Este paso va primero a propósito, con el proyecto todavía vacío. Aquí sí quieres el conocimiento general del modelo: necesitas entender el sector antes de leer a una empresa del sector, o no vas a saber qué es normal y qué es raro.</p>
+
+      <pre><code>Antes de que suba documentos, dame contexto de la industria de
+[INDUSTRIA]. Esto es conocimiento general de sector, no análisis
+de una empresa específica.
+
+1. Cómo gana dinero una empresa de esta industria. Las líneas de
+   ingreso típicas y la economía unitaria: qué mueve el margen.
+2. Los motores de crecimiento de los últimos cinco años y cuáles
+   ya se agotaron.
+3. Los riesgos estructurales del sector, no los coyunturales.
+4. Cómo se ve el mapa competitivo y en qué compiten de verdad:
+   precio, distribución, tecnología o regulación.
+5. Las tres o cuatro métricas que un analista de esta industria
+   mira primero, y por qué esas.
+
+Sé concreto. Si algo varía mucho por región, dilo.</code></pre>
+
+      <p>La salida de esto guárdala como documento dentro del proyecto, con el nombre "Panorama de industria". Queda como contexto permanente y no lo vuelves a correr.</p>
+
+      <h2>Paso 3 — Cargar los documentos oficiales</h2>
+
+      <p>Cinco años de material, bajado de la fuente. Para empresas listadas en Estados Unidos, todo está en <a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">EDGAR</a> o en la sección de relación con inversionistas del sitio de la empresa. Para emisoras de otros mercados, la bolsa local publica el equivalente.</p>
+
+      <ul>
+        <li><strong>Reportes anuales</strong> (el 10-K en Estados Unidos). Es el documento pesado y el que más rinde.</li>
+        <li><strong>Reportes trimestrales</strong> (10-Q).</li>
+        <li><strong>Transcripciones de las llamadas de resultados.</strong> Aquí es donde la dirección se compromete a cosas en voz alta.</li>
+        <li><strong>Presentaciones de día del inversionista</strong>, si las hay.</li>
+        <li><strong>Tus propias notas</strong> de investigación, si ya tenías.</li>
+      </ul>
+
+      <p>Nómbralos con una convención rígida: <code>CLAVE-AÑO-TIPO.pdf</code>. Por ejemplo <code>AAPL-2024-10K.pdf</code>. Suena a detalle menor y no lo es: las citas del modelo solo sirven si el nombre del archivo te dice de un vistazo de qué año y qué documento está hablando.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las transcripciones de las llamadas. Todo el mundo sube el reporte anual y ahí se queda. Las llamadas son donde la dirección dice en voz alta lo que va a lograr, y donde los analistas preguntan lo incómodo. Sin ellas no puedes correr el paso 5, que es el que de verdad vale.</p>
+      </div>
+
+      <h2>Paso 4 — Memo alcista y memo bajista</h2>
+
+      <p>Dos análisis, cada uno de 500 palabras máximo. El límite de palabras no es capricho: obliga a jerarquizar. Un memo de tres mil palabras es un volcado, no un análisis.</p>
+
+      <pre><code>Escribe el MEMO ALCISTA. Máximo 500 palabras.
+
+Las tres razones más fuertes para ser dueño de esta empresa, según
+sus propios documentos. Para cada razón:
+- El argumento en una frase.
+- Los números que lo sostienen, con la cita del documento.
+- Qué tendría que seguir siendo cierto hacia adelante para que el
+  argumento aguante.
+
+Ordénalas de más fuerte a menos fuerte. Si la tercera razón es
+débil, dilo en vez de inflarla.</code></pre>
+
+      <pre><code>Ahora el MEMO BAJISTA. Máximo 500 palabras.
+
+Los tres riesgos de caída más serios, sacados de los documentos y
+en particular de la sección de factores de riesgo del reporte anual.
+Para cada uno:
+- El riesgo en una frase, en lenguaje llano.
+- La métrica específica que yo debería vigilar cada trimestre para
+  saber si se está materializando.
+- El nivel de esa métrica hoy, con su cita.
+
+No me des riesgos genéricos de la industria. Quiero los que esta
+empresa reconoce sobre sí misma.</code></pre>
+
+      <p>Cuando los tengas los dos, hay una pregunta de seguimiento que vale más que ambos memos: <em>"¿en qué se contradicen el memo alcista y el bajista, y cuál de los dos se apoya en datos más recientes?"</em></p>
+
+      <h2>Paso 5 — La revisión trimestral</h2>
+
+      <p>Este es el paso que convierte el ejercicio en un sistema. Cada vez que salgan resultados, subes el documento nuevo y corres esto.</p>
+
+      <pre><code>Acabo de subir el reporte del trimestre más reciente.
+
+1. La dirección prometió cosas en las llamadas anteriores. Lista
+   cada promesa con su cita, y dime si la cumplieron, la
+   incumplieron o dejaron de mencionarla. Lo tercero es lo más
+   importante: señálalo aparte.
+2. Qué cambió de forma material contra el trimestre anterior.
+   Cambios de lenguaje en los factores de riesgo cuentan.
+3. La tendencia de los últimos cuatro trimestres en: crecimiento
+   de ingresos, márgenes, flujo libre de efectivo y número de
+   clientes o la métrica de volumen que aplique.
+
+Máximo 350 palabras. Cero especulación. Si un dato no viene en el
+reporte, dilo.</code></pre>
+
+      <p>Lo que dejó de mencionarse es la señal más subestimada de todas. Una meta que la dirección repitió cuatro trimestres seguidos y este no apareció rara vez es un olvido.</p>
+
+      <h2>Dónde truena esto</h2>
+
+      <p>Tres límites que conviene tener claros antes de confiarle nada.</p>
+
+      <p><strong>Los documentos oficiales son parte y juez.</strong> Los escribe la empresa. Están auditados, pero el marco narrativo es suyo. Este método te blinda contra alucinaciones, no contra el sesgo del emisor.</p>
+
+      <p><strong>No hay precio.</strong> A propósito. Nada de lo que sale de aquí te dice si la acción está cara o barata; eso depende de valuación y de mercado, y ninguna de las dos cosas está en un reporte anual. Si el modelo te suelta un precio objetivo, el candado del paso 1 se rompió y hay que revisarlo.</p>
+
+      <p><strong>Solo lees a una empresa.</strong> Sin comparativo contra sus pares no sabes si un margen de 12% es bueno. Si vas en serio, arma el mismo proyecto para dos competidores y corre los mismos memos. Ahí la lectura cambia por completo.</p>
+
+      <p>Y lo obvio, otra vez: esto ordena información, no decide por ti. Si te encuentras copiando la conclusión del memo alcista a una orden de compra sin haber leído el bajista, el problema ya no es la herramienta.</p>

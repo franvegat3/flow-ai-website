@@ -1,0 +1,76 @@
+      <p>OpenAI dejó de sacar un modelo por generación. Ahora saca tres, y el trabajo de decidir cuál usar te lo pasó a ti.</p>
+
+      <p>La generación se llama GPT-5.6 y salió el 9 de julio de 2026. Dentro vienen tres modelos con nombre propio: <strong>Sol</strong>, <strong>Terra</strong> y <strong>Luna</strong>. No son versiones distintas del mismo cerebro con más o menos filtros. Son tres puntos distintos en la curva de precio contra capacidad, y elegir mal cuesta dinero real cuando corres volumen.</p>
+
+      <p>Esta es la traducción sin adorno: qué hace bien cada uno, cuánto cuesta y en qué momento del día usarías cuál.</p>
+
+      <h2>Cómo se lee el nombre</h2>
+
+      <p>El número dice qué tan nueva es la tecnología. El nombre dice qué tan potente es el modelo dentro de esa generación.</p>
+
+      <p>Es la misma lógica que un fabricante de autos: el año del modelo te dice qué tan reciente es la plataforma, la versión te dice qué motor trae. Un Luna de la generación 5.6 puede ser mejor que un modelo tope de una generación vieja, porque la plataforma completa se movió hacia adelante.</p>
+
+      <p>Los tres comparten tres números que importan más de lo que parece:</p>
+
+      <ul>
+        <li><strong>Un millón de tokens de contexto.</strong> Cabe un año de correos de un cliente, un repositorio completo o el histórico entero de una cuenta de anuncios en una sola conversación.</li>
+        <li><strong>128,000 tokens de salida.</strong> Puede devolver documentos largos de verdad, no cortarse a la mitad del entregable.</li>
+        <li><strong>Corte de conocimiento en febrero de 2026.</strong> Todo lo posterior lo tiene que buscar o se lo tienes que dar tú.</li>
+      </ul>
+
+      <h2>Los tres</h2>
+
+      <div class="plugin-card">
+        <h3>1. Sol <code>el que piensa</code></h3>
+        <p>El más capaz de los tres. Está hecho para investigación profunda, código complejo, trabajo de estrategia e investigación de seguridad. Se tarda porque razona de verdad antes de contestar.</p>
+        <p>Aquí el criterio no es "es el mejor, úsalo siempre". Es: úsalo cuando una respuesta mejor te ahorra dinero o te evita un error caro. Un análisis de riesgo antes de firmar un contrato, la arquitectura de una migración, el diagnóstico de por qué una campaña se cayó. Para redactar un correo es un desperdicio absurdo.</p>
+        <p class="plugin-for"><strong>Costo por API:</strong> 5 dólares por millón de tokens de entrada, 30 por millón de salida.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Terra <code>el de diario</code></h3>
+        <p>El balanceado. Atención a clientes, herramientas internas, leer y clasificar documentos. Es el que aguanta volumen sin que la calidad se caiga.</p>
+        <p>Si vas a montar un solo modelo para toda la empresa y no quieres pensarlo más, es este. La mayoría del trabajo de una operación no necesita razonamiento profundo: necesita consistencia a las nueve de la mañana y a las siete de la noche, sobre trescientos tickets.</p>
+        <p class="plugin-for"><strong>Costo por API:</strong> 2.50 dólares por millón de entrada, 15 por millón de salida.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Luna <code>el barato y rápido</code></h3>
+        <p>Resúmenes, primeros borradores, automatización de rutina. Es el más rápido y el más barato de los tres.</p>
+        <p>Su lugar natural es todo lo que nadie lee con lupa: clasificar correos entrantes, etiquetar registros, sacar el resumen de una transcripción, convertir un formato en otro. Trabajo de volumen donde el error se detecta a simple vista y cuesta poco corregir.</p>
+        <p class="plugin-for"><strong>Costo por API:</strong> 1 dólar por millón de entrada, 6 por millón de salida.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>Esos precios son de la API, no de tu suscripción.</strong> Si usas ChatGPT desde la app, ya pagas una mensualidad y estos números no te cobran nada extra. Importan cuando conectas los modelos a un flujo que corre solo: ahí sí, cada corrida se cobra por token y la diferencia entre Sol y Luna es de treinta a uno en la salida.</p>
+      </div>
+
+      <h2>Cuándo usar cuál, sin pensarlo mucho</h2>
+
+      <p>La regla que uso con los equipos que asesoro tiene tres preguntas, en este orden:</p>
+
+      <ol>
+        <li><strong>¿Alguien va a leer esto tal cual, sin revisarlo?</strong> Si la respuesta es sí, sube de modelo.</li>
+        <li><strong>¿Esto corre una vez o mil veces al mes?</strong> Si corre mil veces, baja de modelo y compensa con mejores instrucciones.</li>
+        <li><strong>¿Un error aquí cuesta dinero o solo cuesta tiempo?</strong> Si cuesta dinero, Sol. Si cuesta tiempo, Terra alcanza.</li>
+      </ol>
+
+      <p>Aterrizado a una operación real. Una empresa que recibe pedidos por correo: Luna clasifica el correo entrante y extrae los campos, Terra redacta la respuesta al cliente y actualiza el sistema, y Sol entra una vez a la semana a revisar el patrón completo y decir qué se está atorando. Tres modelos, tres costos, un solo proceso.</p>
+
+      <p>El error contrario es igual de común: poner el modelo más caro en la parte más repetitiva del flujo porque "así sale mejor". Sale igual, y la factura llega tres veces más alta.</p>
+
+      <h2>El millón de tokens no es una invitación</h2>
+
+      <p>La ventana de un millón es la función que más se malinterpreta. La gente lee "cabe todo" y empieza a echarle todo: el histórico completo, los treinta documentos, el año de conversaciones.</p>
+
+      <p>Que quepa no significa que ayude. Entre más ruido metes, más se diluye la instrucción y más caro sale, porque el contexto se cobra en cada llamada. La ventana grande sirve para no tener que partir un documento largo en pedazos, no para dejar de curar lo que le das.</p>
+
+      <p>Mi prueba: si no puedes explicar en una frase por qué cada documento que pegaste es necesario para esta tarea, sácalo. La calidad sube y el costo baja al mismo tiempo, que es la única situación donde no hay que decidir nada.</p>
+
+      <h2>El error que veo más seguido</h2>
+
+      <p>Elegir modelo antes de escribir bien la instrucción.</p>
+
+      <p>Nueve de cada diez veces que alguien me dice que el modelo se equivocó, el problema no era el modelo. Era que le pidió algo ambiguo, sin ejemplo de cómo se ve el resultado bueno, sin decirle qué no hacer. Subir de Terra a Sol no arregla un prompt vago: te da la misma respuesta desenfocada, más cara y más lenta.</p>
+
+      <p>Haz al revés. Escribe la instrucción con el modelo más barato hasta que salga bien tres veces seguidas. Ahí ya sabes que la instrucción sirve. Si después subes de modelo, sabes exactamente qué mejoró y si valió la pena pagarlo.</p>

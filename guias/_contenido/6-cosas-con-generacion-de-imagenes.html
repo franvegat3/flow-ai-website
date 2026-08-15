@@ -1,0 +1,183 @@
+      <p>Durante años el chiste sobre la IA de imágenes fue el mismo: se ve increíble hasta que le pides texto y te escribe "MARKETNIG" en el cartel. Por eso casi nadie la usaba para trabajo real. Servía para conceptos, no para entregables.</p>
+
+      <p>ChatGPT Images 2 salió el 21 de abril de 2026 y reemplazó por completo a DALL-E, que ya fue retirado. El cambio que importa es justo ese: ahora escribe texto correcto dentro de la imagen. Eso mueve la herramienta de "juguete" a "puede salir un anuncio de aquí".</p>
+
+      <p>Aquí van seis cosas que sí puede hacer, cada una con el prompt completo. Y al final, lo que sigue sin poder, que también conviene saber antes de perder una tarde.</p>
+
+      <h2>Antes de los prompts: tres reglas que cambian el resultado</h2>
+
+      <ul>
+        <li><strong>Lo importante va en las primeras 50 palabras.</strong> El modelo pesa mucho más el arranque del prompt. Si el texto exacto del cartel es lo que más te importa, no lo pongas al final.</li>
+        <li><strong>El texto literal se marca.</strong> Escribe el texto que quieres en mayúsculas y márcalo como exacto. Y agrega la línea de que no ponga nada de texto adicional, porque si no, se inventa etiquetas.</li>
+        <li><strong>Modo pensamiento para lo complicado.</strong> En el plan de paga hay un modo de razonamiento que mejora bastante las peticiones con muchas restricciones. Tarda más y vale la pena cuando el prompt tiene más de tres condiciones.</li>
+      </ul>
+
+      <p>Sobre límites: el plan gratuito da apenas unas cuantas imágenes al día y el de paga sube el tope de forma importante y habilita el modo pensamiento. Cada imagen tarda entre uno y tres minutos, así que esto no es un flujo de iterar veinte veces por minuto.</p>
+
+      <h2>1. Sacar la paleta de cualquier foto</h2>
+
+      <p>Le subes una imagen y te devuelve la paleta con sus códigos hex. Suena a curiosidad y es la función más útil de las seis para una operación de marca, porque resuelve el momento en que el cliente te manda una foto y dice "quiero que se vea así".</p>
+
+      <pre><code>Analiza esta imagen y dame su paleta de color.
+
+Quiero:
+- 6 colores, del dominante al de acento
+- El código hex de cada uno
+- Para qué sirve cada uno en un sistema de marca: fondo, texto,
+  acento, secundario
+- Dos combinaciones de fondo y texto que pasen contraste accesible
+
+Después, genera una imagen de muestra de la paleta: seis bloques
+verticales con el hex escrito abajo de cada uno, en texto EXACTO
+tal como lo calculaste. Fondo blanco.
+
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <h2>2. Una campaña de marketing completa</h2>
+
+      <p>Foto de producto, tipografía y layout en una sola pieza. Este es el que cambia el costo de probar ángulos: en lugar de encargar una sesión para averiguar si el ángulo funciona, generas seis y averiguas antes.</p>
+
+      <pre><code>Genera un anuncio de una sola pieza, formato vertical 4:5, para
+[PRODUCTO].
+
+El texto que va en la imagen, EXACTO:
+Titular: "[TITULAR, MÁXIMO 6 PALABRAS]"
+Subtítulo: "[SUBTÍTULO, MÁXIMO 12 PALABRAS]"
+Botón: "[CTA, 2 PALABRAS]"
+
+Composición:
+- El producto ocupa la mitad inferior, fotografía de estudio,
+  luz suave lateral, fondo de color sólido [COLOR/HEX]
+- El titular arriba, tipografía sans serif condensada, alto
+  contraste contra el fondo
+- El botón abajo a la derecha, esquinas redondeadas
+- Deja margen limpio en los cuatro bordes
+
+Estilo: publicidad editorial contemporánea. Nada de degradados
+llamativos, nada de brillos, nada de gente.
+
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <h2>3. Layouts de revista con texto legible</h2>
+
+      <p>Aguanta pasajes largos con ortografía y espaciado correctos. Es lo que habilita el one-pager, la portada de reporte y la página de revista falsa que sí se puede leer.</p>
+
+      <pre><code>Genera una página de revista, formato vertical carta.
+
+Texto EXACTO que debe aparecer:
+
+Kicker: "[CATEGORÍA]"
+Titular: "[TITULAR]"
+Bajada: "[UNA FRASE DE CONTEXTO]"
+Cuerpo, dos columnas, este texto completo:
+"[PEGA AQUÍ TU TEXTO, 80 A 120 PALABRAS]"
+Pie de foto: "[PIE]"
+
+Diseño:
+- Retícula de dos columnas, márgenes generosos
+- Titular en serif de alto contraste, cuerpo en sans serif
+- Una fotografía a sangre en el tercio superior
+- Paleta de dos tintas: negro y [COLOR]
+
+El texto debe estar perfectamente escrito y ser legible al 100%.
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <h2>4. Escritura a mano realista</h2>
+
+      <p>Notas manuscritas, entradas de diario, cartas. El uso comercial obvio es el empaque y el material impreso que quiere sentirse humano —la tarjeta que va dentro de la caja, el post que se ve como una libreta—.</p>
+
+      <pre><code>Genera la foto de una hoja de libreta con este texto escrito
+a mano, EXACTO:
+
+"[TU TEXTO, MÁXIMO 40 PALABRAS]"
+
+Detalles:
+- Letra manuscrita cursiva, ligeramente inclinada a la derecha
+- Tinta azul de bolígrafo, con variación natural de presión
+- Papel de libreta rayada, ligeramente amarillento
+- La hoja fotografiada desde arriba, sobre una mesa de madera
+- Luz natural de ventana desde la izquierda, sombra suave
+- Una pluma recargada en la esquina inferior derecha
+
+La letra debe verse de una persona real: no perfectamente
+uniforme, con algún trazo más grueso que otro.
+
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <h2>5. Infografías completas</h2>
+
+      <p>Desgloses, gráficas y cifras con texto legible. Advertencia importante: el modelo dibuja la gráfica, no la calcula. Los números se los das tú o se los inventa.</p>
+
+      <pre><code>Genera una infografía vertical con estos datos EXACTOS. No
+cambies ninguna cifra ni agregues datos que no te di.
+
+Título: "[TÍTULO]"
+
+Bloque 1, tres cifras grandes en fila:
+"[CIFRA 1]" — "[ETIQUETA 1]"
+"[CIFRA 2]" — "[ETIQUETA 2]"
+"[CIFRA 3]" — "[ETIQUETA 3]"
+
+Bloque 2, gráfica de barras horizontales con estos valores:
+[CATEGORÍA A]: [VALOR]
+[CATEGORÍA B]: [VALOR]
+[CATEGORÍA C]: [VALOR]
+[CATEGORÍA D]: [VALOR]
+
+Bloque 3, una línea de conclusión: "[CONCLUSIÓN EN UNA FRASE]"
+
+Pie: "Fuente: [FUENTE]"
+
+Estilo: plano, dos colores más gris, sin ilustraciones, sin
+iconos decorativos. Que se entienda de un vistazo impreso en
+blanco y negro.
+
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <h2>6. Cómics con personajes consistentes</h2>
+
+      <p>Varias viñetas manteniendo al mismo personaje. Para marketing esto sirve para el formato que más se comparte: la historia de tres cuadros que explica un problema.</p>
+
+      <pre><code>Genera un cómic de 3 viñetas horizontales, en una sola imagen.
+
+Personaje, el mismo en las tres viñetas:
+[DESCRIPCIÓN FÍSICA DETALLADA: edad, pelo, ropa, complexión.
+Sé específico, esto es lo que mantiene la consistencia.]
+
+Viñeta 1: [SITUACIÓN]. Globo de diálogo, texto EXACTO:
+"[DIÁLOGO 1]"
+
+Viñeta 2: [SITUACIÓN]. Globo de diálogo, texto EXACTO:
+"[DIÁLOGO 2]"
+
+Viñeta 3: [SITUACIÓN]. Globo de diálogo, texto EXACTO:
+"[DIÁLOGO 3]"
+
+Estilo: línea limpia, color plano, sin sombreado complejo.
+El personaje debe verse idéntico en las tres viñetas: misma
+cara, misma ropa, mismo color de pelo.
+
+No agregues ningún texto además del que especifiqué.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> quedarse en el mismo chat para editar. Si la imagen quedó casi bien, pide el ajuste ahí mismo en lugar de reescribir el prompt en una conversación nueva. El modelo conserva el contexto de lo que acaba de hacer y el cambio sale más limpio. Empezar de cero cada vez es la razón número uno por la que la gente siente que "no le atina".</p>
+      </div>
+
+      <h2>Lo que sigue sin poder</h2>
+
+      <p>Cuatro límites reales, y ninguno se arregla con un mejor prompt:</p>
+
+      <ul>
+        <li><strong>No genera PNG con fondo transparente.</strong> Si necesitas el logo recortado o el producto sin fondo, hay que quitarlo después con otra herramienta.</li>
+        <li><strong>Es lento.</strong> Uno a tres minutos por imagen. No es un flujo de exploración rápida.</li>
+        <li><strong>Se atora con física complicada.</strong> Origami, cubos de Rubik, piezas mecánicas que tienen que encajar. Le sale plausible y mal.</li>
+        <li><strong>Una primera imagen mala rara vez se compone iterando.</strong> Este es el que más tiempo ahorra saber. Si la primera salió muy lejos de lo que querías, el problema es el prompt, no la generación. Reescríbelo en lugar de pedir diez ajustes.</li>
+      </ul>
+
+      <h2>Cómo lo metería en una operación</h2>
+
+      <p>No como reemplazo del diseñador. Como la etapa de antes del diseñador.</p>
+
+      <p>El flujo que funciona en un equipo de marketing: quien tiene la idea genera tres o cuatro versiones de la pieza con el prompt completo, elige la que sirve, y esa es la que se le pasa a diseño para producirla bien. El diseñador deja de recibir "algo moderno, tú sabes" y empieza a recibir una referencia concreta con el texto ya definido.</p>
+
+      <p>Eso ahorra la ronda de ida y vuelta que se come la mitad del tiempo de cualquier pieza. Y si quieres que la salida sea editable y no un JPG, exporta a un editor de verdad: <a href="/guias/canva-como-agente-de-diseno/">Canva ya lo hace desde una descripción</a>.</p>

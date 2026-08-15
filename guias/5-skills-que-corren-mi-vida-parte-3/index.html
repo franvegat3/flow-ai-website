@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 skills de Claude que me corren la vida (parte 3) — Guías Flow AI</title>
+  <meta name="description" content="Línea del tiempo de salud, mantenimiento del coche, bóveda de documentos, revisión de salud mental, y triaje de lecturas y contenido. Cinco prompts de nivel, se configuran una vez y sirven todo el año." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/5-skills-que-corren-mi-vida-parte-3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="5 skills de Claude que me corren la vida (parte 3)" />
+  <meta property="og:description" content="Línea del tiempo de salud, mantenimiento del coche, bóveda de documentos, revisión de salud mental, y triaje de lecturas y contenido. Cinco prompts de nivel, se configuran una vez y sirven todo el año." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/5-skills-que-corren-mi-vida-parte-3/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Skills</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Productividad</span></div>
+      <h1>5 skills de Claude que me corren la vida (parte 3)</h1>
+      <p class="lead">Línea del tiempo de salud, mantenimiento del coche, bóveda de documentos, revisión de salud mental, y triaje de lecturas y contenido. Cinco prompts de nivel, se configuran una vez y sirven todo el año.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Todo el mundo tiene la misma carpeta mental: dónde quedó la póliza, cuándo toca la afinación, qué le dije al doctor la vez pasada, qué era ese artículo que guardé hace tres meses. Nadie la administra. Simplemente se paga el costo cuando explota.</p>
+
+      <p>Estas cinco skills no te hacen más productivo en el trabajo. Se configuran una vez, viven todo el año y evitan el tipo de problema que cuesta dinero o una tarde entera. Las otras entregas de la serie están en <a href="/guias/5-skills-que-corren-mi-vida-parte-4/">la parte 4</a> y <a href="/guias/5-skills-que-corren-mi-vida-parte-5/">la parte 5</a>.</p>
+
+      <h2>Cómo se instalan</h2>
+
+      <p>Cada una es un archivo <code>SKILL.md</code> dentro de <code>.claude/skills/nombre/</code> si usas Claude Code, o una carga desde la sección de capacidades si usas la app. Encabezado con <code>name</code> y <code>description</code>, y abajo las instrucciones tal cual te las doy.</p>
+
+      <p>Las cinco funcionan sin conectores: viven del historial de la conversación. Eso las hace las más fáciles de montar de toda la serie y también las que exigen que alimentes bien la primera vez.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> ninguna de estas skills debe guardar datos completos. Últimos cuatro dígitos, dónde está el documento, cuándo vence. Nunca el número entero de una tarjeta, ni una cuenta bancaria, ni una contraseña, ni un expediente clínico completo. Si lo escribes en el chat, queda en el historial. La skill sirve para saber dónde buscar, no para ser la bóveda.</p>
+      </div>
+
+      <h2>Las cinco</h2>
+
+      <div class="plugin-card">
+        <h3>1. La línea del tiempo de salud <code>linea-de-salud</code></h3>
+        <p>Guarda síntomas, estudios, medicamentos y consultas, y arma el resumen que ningún doctor tiene tiempo de reconstruir contigo en veinte minutos. Cambiar de médico deja de significar empezar de cero.</p>
+        <pre><code>---
+name: linea-de-salud
+description: Lleva el historial médico del usuario —síntomas,
+  medicamentos, estudios, consultas— y prepara resúmenes para citas.
+  Úsala cuando reporte un síntoma, suba un estudio, pida preparar una
+  consulta o pregunte por sus medicamentos.
+---
+
+La primera vez pregunta y guarda: edad, alergias, medicamentos vigentes
+con dosis, condiciones diagnosticadas, cirugías, antecedentes
+familiares relevantes, y quiénes son sus médicos.
+
+REGISTRO. Cuando reporte un síntoma, guarda fecha, qué sintió,
+intensidad del 1 al 10, cuánto duró, qué estaba haciendo antes y qué
+tomó. Si el mismo síntoma aparece tres veces, dilo y muestra el patrón.
+
+ANTES DE LA CITA. Arma una hoja: motivo de la consulta, cronología de
+lo que ha pasado desde la última vez, medicamentos actuales, y tres
+preguntas concretas que valga la pena hacer.
+
+RECETAS. Avisa siete días antes de que se acabe un medicamento crónico.
+
+ESTUDIOS. Cuando suba un laboratorio, registra los valores fuera de
+rango y compáralos contra los anteriores. No interpretes: reporta el
+cambio y di que lo revise su médico.
+
+Reglas: no diagnosticas ni recomiendas tratamientos. Si aparece algo
+que suena urgente —dolor de pecho, pérdida de conciencia, sangrado—,
+dilo de una vez y no sigas con el registro.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que tiene una condición crónica, o el que cuida a alguien. La hoja previa a la consulta es lo que convierte una cita de quince minutos en una cita útil.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. El mantenimiento del coche <code>mantenimiento-auto</code></h3>
+        <p>Kilometraje, servicios, garantías y costos. Sirve para dos cosas: que no se te venza una garantía sin usarla, y que sepas cuánto te cuesta de verdad el coche al año antes de decidir si lo cambias.</p>
+        <pre><code>---
+name: mantenimiento-auto
+description: Lleva el mantenimiento, garantías, costos y kilometraje de
+  los vehículos del usuario. Úsala cuando reporte un servicio, pregunte
+  qué le toca al coche, planee un viaje largo o quiera saber cuánto le
+  cuesta el auto.
+---
+
+Por cada vehículo pregunta y guarda: año, marca, modelo, kilometraje
+actual, fecha de compra, vigencia de garantía, verificación y seguro,
+últimos servicios con fecha y kilometraje, y taller de confianza.
+
+QUÉ TOCA. Clasifica cada servicio pendiente en tres niveles: vencido,
+dentro de los próximos 30 días o mil kilómetros, y próximo. Calcula con
+el kilometraje que estima recorrer al mes, no con la fecha sola.
+
+REGISTRO. Cuando reporte un servicio, guarda fecha, kilometraje, qué se
+hizo, cuánto costó y dónde. Recalcula el siguiente.
+
+ANTES DE UN VIAJE. Si menciona un viaje largo, revisa llantas, frenos,
+aceite y vigencias, y di qué conviene atender antes de salir.
+
+COSTOS. Cuando lo pida, el gasto del año por vehículo separado en
+mantenimiento programado, reparaciones, seguro y trámites.
+
+Reglas: si algo toca por seguridad —frenos, llantas fuera de vida útil—
+no lo listes junto a lo demás: sepáralo arriba. Si lleva 90 días sin
+reportar nada, pregunta una vez por el kilometraje.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que tiene más de un coche en casa, y cualquier operación con flotilla chica. El desglose anual es el que decide si vender o aguantar.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. La bóveda de documentos <code>boveda-de-documentos</code></h3>
+        <p>No guarda los documentos: guarda dónde están y cuándo vencen. Es la skill que responde "¿dónde está el acta?" en cinco segundos en vez de en dos horas de cajones.</p>
+        <pre><code>---
+name: boveda-de-documentos
+description: Registra dónde vive cada documento importante del usuario y
+  cuándo vence. Úsala cuando pregunte dónde está un documento, registre
+  uno nuevo, o pida saber qué está por vencer.
+---
+
+La primera vez recorre ocho categorías, una por una: identificación,
+vehículos, casa, salud, financiero, garantías, dependientes y fechas
+importantes. Por cada documento guarda: qué es, dónde está físico,
+dónde está digital, cuándo vence y los últimos cuatro dígitos de su
+número de referencia.
+
+NUNCA guardes números completos de tarjeta, cuentas bancarias, CURP o
+RFC completos, ni contraseñas. Si el usuario los escribe, dile que no
+los vas a registrar y guarda solo los últimos cuatro dígitos.
+
+BÚSQUEDA. Cuando pregunte por un documento, responde en una línea:
+dónde está y si está vigente. Nada más.
+
+VENCIMIENTOS. Avisa a 60, 30 y 7 días. Cuando avises, di también qué se
+necesita para renovarlo.
+
+REPOSICIÓN. Si reporta algo perdido o robado, da el orden de los pasos
+para reponerlo y qué otros documentos dependen de ese.
+
+AUDITORÍA. Una vez al año, lista lo que no se ha confirmado en doce
+meses y pide que lo verifique.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> familias, y cualquier negocio chico donde los papeles viven en tres lugares distintos y nadie sabe cuál es el bueno.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El chequeo de salud mental <code>chequeo-mental</code></h3>
+        <p>Tres minutos al día de registro, y a la semana un patrón que no ibas a ver solo. No sustituye a un terapeuta: le da material al terapeuta que ya tienes.</p>
+        <pre><code>---
+name: chequeo-mental
+description: Registro diario breve de estado de ánimo, energía y estrés,
+  con detección de patrones y preparación para terapia. Úsala cuando el
+  usuario reporte cómo se siente, pida su chequeo, o quiera prepararse
+  para una sesión.
+---
+
+La primera vez pregunta y guarda: cómo es un día normal para él, qué
+cosas lo tumban, con quién cuenta, si está en terapia o tratamiento, y
+qué quiere sacar de esto.
+
+DIARIO. Cinco campos y ya: energía del 1 al 10, ánimo del 1 al 10,
+horas de sueño, nivel de estrés, y una línea libre. No hagas preguntas
+de seguimiento a menos que él abra el tema.
+
+PATRÓN. Cada semana, di qué días fueron los más bajos y qué tenían en
+común. Una observación, no cinco.
+
+RECURSOS QUE SÍ. Guarda lo que a él le ha funcionado cuando está mal y
+devuélveselo cuando lo necesite, con sus propias palabras.
+
+ANTES DE TERAPIA. Arma una página: qué pasó desde la última sesión, los
+dos temas que más pesaron y una pregunta concreta que llevar.
+
+Reglas: no diagnostiques. No des consejo clínico. Si aparece riesgo
+para su vida o la de alguien, deja todo lo demás, dilo directo y
+dirígelo al servicio de emergencias de su país y a alguien de su red de
+apoyo. Si lleva siete días sin registrar, pregunta una vez.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que va a terapia y llega a la sesión sin acordarse de la semana. Esa página previa hace rendir el doble cada consulta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. El triaje de lecturas <code>triaje-de-lecturas</code></h3>
+        <p>Todos tenemos cincuenta cosas guardadas que nunca vamos a leer. Esta skill las califica contra tus objetivos reales y te dice cuáles cinco valen la pena esta semana. Y tira el resto sin culpa.</p>
+        <pre><code>---
+name: triaje-de-lecturas
+description: Prioriza artículos, videos, pódcast y libros guardados
+  contra los objetivos del usuario. Úsala cuando guarde algo, pregunte
+  qué leer, o quiera limpiar su pila de pendientes.
+---
+
+La primera vez pregunta y guarda: sus tres objetivos de los próximos 90
+días, los temas que está estudiando, cuánto tiempo real tiene al día
+para consumir contenido, y qué formato prefiere.
+
+CAPTURA. Cuando guarde algo, califícalo del 1 al 10 contra sus tres
+objetivos y di en una línea por qué. Registra formato y duración.
+
+SEMANA. Recomienda de cinco a siete piezas, no más, ordenadas por
+calificación y ajustadas al tiempo que dijo tener.
+
+HOY. Si pregunta qué leer ahora, da una sola pieza que quepa en el
+tiempo que tiene disponible en este momento.
+
+DESPUÉS. Cuando termine algo, pregunta una cosa: qué va a hacer
+distinto por haberlo leído. Si no hay respuesta, baja el peso de esa
+fuente para la próxima.
+
+LIMPIEZA. Cada trimestre, lista lo que lleva más de 30 días sin abrir y
+propón borrarlo. Si una fuente nunca pasa de 5, propón dejar de
+seguirla.
+
+Reglas: no recomiendes por popularidad. Si nada de la pila califica
+arriba de 6, dilo: el problema es la pila, no el orden.</code></pre>
+        <p class="plugin-for"><strong>Para quién:</strong> el que guarda todo y no lee nada. También sirve en equipos de marketing para filtrar qué material de industria se lee y cuál se ignora.</p>
+      </div>
+
+      <h2>El error que se comete con estas</h2>
+
+      <p>La tentación es cargar los cinco años de historia el primer día. No sirve: te vas a cansar a la mitad, la información va a quedar incompleta y vas a acabar con una skill que contesta con datos viejos y sin decir que son viejos.</p>
+
+      <p>Lo que sí funciona: capturas lo de hoy y hacia adelante, y agregas historia solo cuando la ocasión te obliga. La primera consulta médica que prepares te va a hacer llenar tres años de antecedentes en diez minutos, porque ahí sí hay una razón para hacerlo. Lo mismo con el coche cuando toque servicio y con los documentos cuando venza el primero.</p>
+
+      <p>A los seis meses vas a tener el historial completo sin haber dedicado una sola tarde a construirlo. Ese es el punto de que se configure una vez.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

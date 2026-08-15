@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El validador de negocio — Guías Flow AI</title>
+  <meta name="description" content="Deja de lanzar negocios por corazonada. Pega este prompt en investigación profunda con tu idea, vete 5 minutos, y regresas a un PDF completo: datos de mercado, competidores con nombre, señales de demanda, y un veredicto de seguir o parar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/validador-de-negocio/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="El validador de negocio" />
+  <meta property="og:description" content="Deja de lanzar negocios por corazonada. Pega este prompt en investigación profunda con tu idea, vete 5 minutos, y regresas a un PDF completo: datos de mercado, competidores con nombre, señales de demanda, y un veredicto de seguir o parar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/validador-de-negocio/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Perplexity</span><span class="tag">Multi-herramienta</span><span class="tag">Negocio</span><span class="tag">Prompts</span></div>
+      <h1>El validador de negocio</h1>
+      <p class="lead">Deja de lanzar negocios por corazonada. Pega este prompt en investigación profunda con tu idea, vete 5 minutos, y regresas a un PDF completo: datos de mercado, competidores con nombre, señales de demanda, y un veredicto de seguir o parar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La forma en que casi todo mundo valida una idea de negocio es preguntarle a tres amigos si suena bien. Los tres dicen que sí, porque decir que no es incómodo, y seis meses después alguien tiene un producto terminado y ningún cliente.</p>
+
+      <p>La versión con IA de ese mismo error es peor: le describes la idea a un chat, te contesta que tiene mucho potencial, y ahora tienes validación con formato profesional que sigue sin valer nada.</p>
+
+      <p>Esto es distinto. Es un prompt de investigación profunda que sale a buscar competidores con nombre y liga, comunidades donde tu cliente ya se está quejando, precios comparables y trámites que no sabías que existían. Lo pegas, te vas cinco minutos, y regresas a un reporte con veredicto.</p>
+
+      <h2>Con qué se corre</h2>
+
+      <p>El prompt está escrito para el modo de investigación profunda de <a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a>, que en la cuenta gratuita permite varias corridas al día. Tarda entre tres y cinco minutos y el resultado se exporta a PDF desde el menú de compartir.</p>
+
+      <p>Funciona también en las funciones de investigación profunda de Claude y de ChatGPT. La estructura es la misma; lo que cambia es la profundidad de las citas. Lo que no funciona es correrlo en un chat normal sin búsqueda: sin acceso a la web te devuelve el reporte con datos inventados, que es exactamente lo que estamos tratando de evitar.</p>
+
+      <h2>El prompt completo</h2>
+
+      <pre><code>Eres mi validador de ideas de negocio. Te voy a describir una idea que
+estoy considerando construir. Usa investigacion profunda para darme una
+evaluacion honesta y sostenida en datos de si vale la pena.
+
+MI IDEA
+- Que quiero construir: [2 o 3 frases, especifico]
+- Cliente objetivo: [quien es exactamente: rol, etapa de vida, momento
+  en que compra]
+- Modelo de negocio: [como cobro]
+- Precio estimado: [monto o tarifa concreta]
+- Mi punto de partida: [habilidades, red de contactos, audiencia,
+  capital disponible, horas por semana que le puedo dar]
+
+INVESTIGA ESTAS 8 SECCIONES
+
+1. TAMAÑO Y TRAYECTORIA DEL MERCADO
+   Tamaño estimado, tasa de crecimiento de los ultimos 3 años, hacia
+   donde va, y como se ha movido la demanda en los ultimos 24 meses.
+
+2. PANORAMA COMPETITIVO
+   De 5 a 10 competidores directos. Nombralos. Ponme la liga. Precio,
+   tamaño, fortalezas y debilidades de cada uno. Luego de 3 a 5
+   competidores indirectos o sustitutos. Dime si el mercado esta
+   fragmentado o dominado por pocos.
+
+3. SEÑALES DE DEMANDA
+   Comunidades donde vive este cliente, con liga: Reddit, grupos de
+   Facebook, Discord, foros, gremios. Citame textualmente de 3 a 5
+   quejas reales sobre las soluciones actuales. Tendencia de busquedas
+   de las palabras clave del tema. Que tan fuerte es la señal.
+
+4. PRECIO Y ECONOMIA UNITARIA
+   Que cobran los productos comparables, que tan sensible es este
+   mercado al precio, margenes brutos tipicos del giro, y si mi precio
+   estimado aguanta o no.
+
+5. DISTRIBUCION Y SALIDA AL MERCADO
+   Por que canales adquieren clientes los competidores, cuanto cuesta
+   tipicamente adquirir un cliente, que tan bien funcionan los canales
+   organicos, y si hay alguna ventaja de distribucion defendible.
+
+6. TRAMPAS REGULATORIAS, LEGALES Y TECNICAS
+   Licencias o certificaciones necesarias, riesgos legales, complejidad
+   tecnica real, costos de infraestructura, y cualquier dificultad
+   escondida que no se ve desde afuera.
+
+7. CAPITAL NECESARIO
+   Costo minimo para lanzar una v1, cuanto suele tardar en llegar el
+   primer ingreso, y en cuanto tiempo llega el punto de equilibrio en
+   negocios comparables.
+
+8. AJUSTE CON MI PERFIL
+   Que ventajas reales tengo, que me falta en habilidades o recursos,
+   si mi disponibilidad de horas alcanza, y la unica pregunta que
+   deberia contestarme antes de comprometerme.
+
+FORMATO DE SALIDA
+
+A. RESUMEN EJECUTIVO — un parrafo.
+B. VEREDICTO — SEGUIR, ESPERAR o PARAR, con 2 o 3 razones sostenidas
+   en datos.
+C. LOS 3 RIESGOS MAS GRANDES — los que matan el negocio.
+D. LAS 3 OPORTUNIDADES MAS GRANDES.
+E. LAS 3 SIGUIENTES ACCIONES — tareas concretas de esta semana con
+   entregable, no intenciones.
+F. EL DESGLOSE COMPLETO — las 8 secciones con sus fuentes citadas.
+
+REGLAS
+- Se honesto. No me hagas la barba.
+- Si los datos de una seccion son delgados, dilo. No inventes cifras.
+- Saca a la luz lo que no esperaba encontrar: una regulacion, un
+  competidor grande, un problema estructural.
+- ESPERAR es un veredicto legitimo, no una salida diplomatica.
+- Cita fuente en cada afirmacion.</code></pre>
+
+      <h2>Cómo se lee el veredicto</h2>
+
+      <p>Los tres significan cosas distintas y ninguno significa "ya sabes qué hacer".</p>
+
+      <p><strong>SEGUIR.</strong> Hay demanda real, la economía cierra y tu perfil embona. No empieces a construir: empieza por las tres acciones de la sección E. Casi siempre son conversaciones, no producto.</p>
+
+      <p><strong>ESPERAR.</strong> El más útil y el que más gente ignora. Significa que hay una o dos incógnitas que deciden todo. El trabajo es identificarlas, probarlas específicamente, y volver a correr el reporte en 60 o 90 días. No es un no.</p>
+
+      <p><strong>PARAR.</strong> Los datos contradicen la premisa o la aritmética no cierra. Lee dos veces la sección de riesgos antes de convencerte de que tu caso es la excepción. Guarda el PDF: dentro de un año vas a querer recordar por qué lo dejaste.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> llenar bien el campo del cliente objetivo. Si escribes "dueños de negocios pequeños", el reporte completo sale genérico y no sirve. Si escribes "dueños de talleres mecánicos de 3 a 8 empleados que ya facturan electrónicamente y todavía agendan por WhatsApp", el buscador encuentra los foros donde esa gente habla, y ahí es donde está el valor real del ejercicio. La calidad del reporte es la calidad de esa línea.</p>
+      </div>
+
+      <h2>Qué haces con el reporte</h2>
+
+      <p>La sección que más se usa después no es el veredicto. Son las ligas a comunidades de la sección 3 y las quejas textuales que trae.</p>
+
+      <p>Con eso armas las diez conversaciones que sí validan la idea. Ya sabes dónde vive tu cliente y con qué palabras describe su problema, así que puedes entrar a preguntar en su lenguaje en lugar de en el tuyo. Un negocio que factura no se valida con un PDF; se valida cuando alguien te dice el precio que pagaría y por qué el proveedor actual lo tiene harto.</p>
+
+      <p>Los competidores con nombre sirven para lo mismo. No para copiarlos: para llamarle a tres clientes suyos y preguntarles qué les falta.</p>
+
+      <h2>El error que arruina la corrida</h2>
+
+      <p>Escribir la idea de forma bonita en lugar de específica. "Una plataforma que conecta a profesionales con oportunidades" no se puede investigar. "Un servicio de suscripción de $2,000 pesos al mes que le arma el contenido de LinkedIn a asesores financieros independientes en México" sí, porque tiene precio, cliente, geografía y entregable.</p>
+
+      <p>El segundo error es correrlo una vez. Este prompt está hecho para volver: si el veredicto fue ESPERAR y en dos meses ya probaste el supuesto que faltaba, lo corres otra vez con esa información encima y el reporte cambia. Es una herramienta de decisión recurrente, no un diagnóstico único.</p>
+
+      <p>Si lo que necesitas es dejar de generar ideas y empezar a filtrar las que ya tienes, revisa <a href="/guias/deja-de-pedirle-ideas-de-negocio/">deja de pedirle ideas de negocio</a>. Y para elegir entre dos opciones que sobrevivieron el filtro, <a href="/guias/matriz-de-decision/">la matriz de decisión</a>.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

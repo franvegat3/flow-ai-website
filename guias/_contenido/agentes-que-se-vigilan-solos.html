@@ -1,0 +1,93 @@
+      <p>El problema real de tener agentes corriendo no es que fallen. Es que fallan igual todas las veces y nadie lo corrige, porque corregirlo implica que alguien se acuerde de abrir el archivo de instrucciones y editarlo.</p>
+
+      <p>Lo he visto en varias operaciones: el agente de reportes lleva once semanas usando el corte de mes equivocado. Alguien lo detectó en la semana dos, lo arregló a mano en su copia, y nadie tocó el original.</p>
+
+      <p>Anthropic soltó tres funciones que apuntan justo a eso, y aunque se anunciaron por separado, se leen mejor juntas: agentes que se observan, se corrigen y mejoran con el tiempo sin que tú entres a editarles nada.</p>
+
+      <h2>1. Dreaming — el agente ordena lo que aprendió</h2>
+
+      <p>Está en vista previa de investigación. Es un proceso agendado que corre en segundo plano cuando el agente no está trabajando: revisa las sesiones recientes y su memoria, busca patrones —errores que se repiten, flujos que convergieron, preferencias del equipo— y los convierte en notas de texto plano y manuales estructurados.</p>
+
+      <p>Lo importante de entender: <strong>no reentrena el modelo</strong>. Reescribe la documentación de operación del propio agente. Es la diferencia entre cambiar el cerebro y actualizar el manual, y para efectos prácticos el manual es lo que importaba.</p>
+
+      <p>Aplicado al caso de arriba: en vez de que once semanas de correcciones a mano se pierdan, el agente detecta que cada vez lo corriges igual y lo escribe en su propio manual.</p>
+
+      <h2>2. Orquestación multiagente — un líder que reparte</h2>
+
+      <p>En beta pública. Un agente líder descompone la tarea, delega cada pedazo a agentes especialistas con su propio modelo, su propio prompt y sus propias herramientas, y arma la salida final con lo que le reportan. Los especialistas trabajan en paralelo sobre un sistema de archivos compartido.</p>
+
+      <p>El cambio contra el modelo anterior: antes, un solo agente hacía investigación, redacción, diseño y revisión de calidad en secuencia, con el mismo prompt para las cuatro cosas. Cualquiera que haya intentado eso sabe cómo termina —el prompt se vuelve un documento de tres páginas que intenta ser cuatro personas distintas y no es ninguna.</p>
+
+      <p>Un especialista con un prompt de quince líneas y una sola responsabilidad rinde mejor que un generalista con trescientas.</p>
+
+      <h2>3. Outcomes — trabajar hasta que cumpla la rúbrica</h2>
+
+      <p>También en beta pública, y para mí la más subestimada de las tres. Defines una rúbrica de calidad. Un evaluador aparte, con su propia ventana de contexto, califica la salida contra tus criterios. Si no pasa, el agente sigue: revisa, reintenta, afina, hasta que cumple.</p>
+
+      <p>Reemplaza el modelo de una sola entrega por autocorrección iterativa. Y el detalle técnico que hace que funcione es que el evaluador esté <em>aparte</em>: un modelo calificando su propio trabajo dentro del mismo contexto tiende a aprobarse.</p>
+
+      <p>Aquí está el trabajo real, y no es técnico: es escribir la rúbrica. Si tu criterio de calidad es "que quede bien", esto no te sirve. Si es "cada afirmación con cita, máximo 350 palabras, sin recomendación de compra", ahí sí tienes un evaluador.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> escribir la rúbrica antes que el agente. Casi todo el mundo construye el agente, lo ve fallar, y después intenta describir qué estaba mal. Al revés funciona mejor: escribe primero los cinco criterios que va a tener que pasar el entregable. Ese ejercicio te obliga a saber qué quieres, que es donde de verdad fallan los agentes, no en la tecnología.</p>
+      </div>
+
+      <h2>La estructura de cuatro partes</h2>
+
+      <p>Los cinco agentes de abajo siguen todos el mismo esqueleto, y vale aprenderlo porque sirve para cualquier agente que armes:</p>
+
+      <ul>
+        <li><strong>Contexto</strong> — el archivo que le enseña tu situación: tu negocio, tus criterios, tus excepciones.</li>
+        <li><strong>Conexiones</strong> — de dónde saca los datos reales.</li>
+        <li><strong>Flujos</strong> — qué corre y cada cuándo.</li>
+        <li><strong>Memoria</strong> — qué guarda entre corridas para servir más el mes que viene que hoy.</li>
+      </ul>
+
+      <p>La parte que casi nadie llena es la cuarta, y es la única que hace que un agente valga más con el tiempo. Un agente sin memoria es un script con mejor redacción.</p>
+
+      <h2>Cinco agentes que puedes construir hoy</h2>
+
+      <div class="plugin-card">
+        <h3>1. Triage de bandeja de entrada</h3>
+        <p>Se conecta a tu correo y cada mañana te saca los cinco que de verdad necesitan respuesta tuya, con el borrador ya escrito. La memoria es lo que lo hace bueno: aprende qué remitentes son prioritarios de verdad y qué hilos vienes siguiendo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> cualquiera que reciba más de cincuenta correos al día. Es el primero que construiría.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Reporte semanal de desempeño</h3>
+        <p>Jala las métricas de donde vivan —tu tienda, tu pasarela de pagos, tu plataforma de correo, tu analítica— y entrega el mismo reporte cada lunes, con el mismo formato. Matas la revisión de cuatro tableros distintos.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> operaciones de comercio y de marketing donde alguien pierde media mañana del lunes copiando números.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Brief personal diario</h3>
+        <p>Cruza tu calendario, tu documento de prioridades y lo que hiciste la semana pasada, y te dice en qué enfocarte hoy. Rastrea lo que prometiste, lo que se te está resbalando y lo que ya se volvió urgente.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> quien decide su propia agenda. Es la base de <a href="/guias/socio-fundador-de-ia/">un socio de IA completo</a>.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Motor de ideas de contenido</h3>
+        <p>Analiza las cuentas que respetas y tus propias publicaciones, y cada semana te entrega cinco ideas de tu nicho. Recuerda lo que ya publicaste y cómo rindió, así que no te repite ni te propone lo que ya fracasó.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que publica de forma consistente y se le acaban las ideas el jueves.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Minero de voz del cliente</h3>
+        <p>Revisa reseñas, tickets de soporte y comentarios, y saca los temas: qué opinan del producto, de qué se quejan y con qué palabras exactas hablan de ti. Ese vocabulario es material directo para tu copy.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> productos con volumen de clientes. Es el agente que más rápido cambia una campaña.</p>
+      </div>
+
+      <h2>Cómo lo aterrizaría en una operación</h2>
+
+      <p>Estas funciones son nuevas y dos de las tres están en beta. Eso significa que se pueden mover, y una operación que factura no puede depender de algo que se mueve.</p>
+
+      <p>Lo que sí haría desde ya, en orden:</p>
+
+      <ol>
+        <li><strong>Escribe la rúbrica del agente que ya tienes corriendo.</strong> Aunque no uses Outcomes todavía. El ejercicio vale por sí solo y ya te va a mostrar dónde está fallando.</li>
+        <li><strong>Parte tu agente sobrecargado en dos.</strong> Si tienes uno con un prompt de tres páginas haciendo cuatro cosas, esa es la señal para separar. No necesitas orquestación formal para eso.</li>
+        <li><strong>Empieza a guardar las correcciones.</strong> Cada vez que corrijas al agente a mano, anótalo en un archivo. Eso es lo que Dreaming automatiza; hacerlo a mano un mes te dice si vale la pena.</li>
+        <li><strong>Deja lo crítico en una sola cabeza.</strong> Lo que toca dinero o clientes no va todavía a un sistema que se reescribe solo. Ahí sigue mandando la aprobación humana.</li>
+      </ol>
+
+      <p>El cambio de fondo de estas tres funciones no es técnico. Es que el trabajo de mantener a un agente —lo que hoy nadie hace y por eso los agentes se degradan— deja de depender de que alguien se acuerde. Y eso, en una operación real, importa más que cualquier salto de capacidad del modelo.</p>

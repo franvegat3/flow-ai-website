@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo dejar de topar tus límites de uso — Guías Flow AI</title>
+  <meta name="description" content="5 trucos para que tus créditos rindan muchísimo más. Más prompts gratis que ahorran tokens cada vez que los usas." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/dejar-de-topar-limites-de-uso/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cómo dejar de topar tus límites de uso" />
+  <meta property="og:description" content="5 trucos para que tus créditos rindan muchísimo más. Más prompts gratis que ahorran tokens cada vez que los usas." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/dejar-de-topar-limites-de-uso/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span></div>
+      <h1>Cómo dejar de topar tus límites de uso</h1>
+      <p class="lead">5 trucos para que tus créditos rindan muchísimo más. Más prompts gratis que ahorran tokens cada vez que los usas.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La mayoría de los consejos para no toparte tratan sobre higiene: cierra los chats largos, usa proyectos, elige bien el modelo. Todo eso sirve y ya está escrito en otro lado —los <a href="/guias/4-hacks-para-gastar-menos-tokens/">cuatro hacks para gastar menos tokens</a> y <a href="/guias/no-volver-a-topar-tu-limite-semanal/">cómo no volver a topar tu límite semanal</a> lo cubren completo.</p>
+
+      <p>Esta guía va por otro lado. Aquí no se trata de cómo administras tus chats sino de <strong>cómo escribes dentro de uno</strong>. Cinco movimientos de interfaz que la gente no usa porque no sabe que existen o porque la costumbre pide otra cosa, y que cambian el consumo sin cambiar nada más de tu forma de trabajar.</p>
+
+      <p>El principio que los une es uno solo: cada mensaje que mandas hace que el modelo relea la conversación entera desde arriba. No pagas por lo que escribes. Pagas por todo lo que ya está ahí, otra vez.</p>
+
+      <h2>1. Edita el mensaje en vez de mandar otro</h2>
+
+      <p>Es el movimiento con mejor retorno de los cinco y casi nadie lo usa.</p>
+
+      <p>Le pides algo, la respuesta no queda, y tu reflejo es escribir "no, hazlo más corto y con otro tono". Ese mensaje nuevo hace que se relea tu petición original, la respuesta mala completa, y encima tu corrección.</p>
+
+      <p>En vez de eso: pasa el cursor sobre tu mensaje original, dale editar, agrega ahí lo que faltaba y vuelve a enviar. La respuesta mala desaparece del historial y el modelo relee una conversación más corta que la que tenías antes de intentarlo.</p>
+
+      <p>La regla práctica: <strong>si tu siguiente mensaje empieza con "no" o con "mejor", ese mensaje era una edición</strong>. Los primeros dos o tres intentos de cualquier tarea siempre son ediciones, no mensajes nuevos.</p>
+
+      <h2>2. Pide correcciones quirúrgicas, no rehacer todo</h2>
+
+      <p>Te entrega un documento de dos páginas y el problema está en el tercer párrafo. Lo que dice todo el mundo: "está bueno pero rehazlo con este enfoque". Y él regenera las dos páginas completas.</p>
+
+      <p>Acabas de pagar dos páginas para cambiar un párrafo, y de paso perdiste las tres frases que sí te gustaban.</p>
+
+      <p>Este es el prompt que uso para eso:</p>
+
+      <pre><code>No regeneres el texto completo. Vas a hacer solo los cambios que
+te pido y nada más.
+
+Cambios:
+1. [sección o párrafo] → [qué debe decir ahora]
+2. [sección o párrafo] → [qué debe decir ahora]
+
+Devuélveme ÚNICAMENTE las secciones que tocaste, con un
+encabezado que diga a cuál corresponde cada una. No repitas el
+resto del documento. No cambies nada que no esté en la lista de
+arriba, aunque creas que mejora.
+
+Si un cambio que te pido rompe algo en otra parte del texto,
+dímelo en una línea al final en vez de arreglarlo por tu cuenta.</code></pre>
+
+      <p>Esa última instrucción es la importante. Sin ella, el modelo "arregla" cosas alrededor y regresas al problema original.</p>
+
+      <h2>3. Deja de subir el PDF completo</h2>
+
+      <p>Una página de PDF puede consumir del orden de tres mil tokens. Un reporte de cien páginas, entonces, no es un archivo adjunto: es una conversación entera de costo, y viaja otra vez en cada mensaje que mandes después.</p>
+
+      <p>Casi siempre necesitas dos páginas. Ábrelo, copia esas dos, pégalas como texto. Es literalmente diez segundos de trabajo y baja el costo del chat en dos órdenes de magnitud.</p>
+
+      <p>Cuando de verdad necesitas el documento completo —porque no sabes dónde está lo que buscas— el patrón es: chat dedicado solo para eso, sacas lo que necesitas, cierras ese chat, y sigues en uno nuevo con el resumen pegado. Lo que no se vale es dejar el documento colgado en el chat donde vas a trabajar las siguientes tres horas.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar qué archivos siguen vivos en el chat. La gente sube un documento en el mensaje cuatro, lo usa, y sigue trabajando cuarenta mensajes más con ese archivo colgando del contexto. Nunca se le ocurre que se sigue pagando. Antes de una sesión larga, pregúntate qué archivos están adjuntos y si todavía los necesitas. Si ya sacaste lo que querías, ese es el momento de cerrar y empezar limpio.</p>
+      </div>
+
+      <h2>4. Planea en el chat, construye en Cowork</h2>
+
+      <p>Este es el que menos gente conoce y aplica a cualquier trabajo de varios pasos: un análisis, un documento largo, una herramienta, una campaña.</p>
+
+      <p>El instinto es entrar directo a construir y ahí ir decidiendo. Pero decidir dentro de la ejecución es carísimo: cada duda que resuelves a medio camino te obliga a rehacer parte de lo hecho, y cada versión descartada se queda en el contexto.</p>
+
+      <p>La forma barata es separar. En el chat normal defines qué se va a hacer, en qué orden y con qué criterio. Eso es texto: cuesta poco. Cuando el plan está firme, te lo llevas a Cowork y ahí se ejecuta de corrido, sin discusión.</p>
+
+      <p>Piensa en un cierre financiero mensual. Discutir en Cowork cómo se van a clasificar tres cuentas raras mientras el proceso corre significa arrancar y reiniciar el proceso tres veces. Decidirlo antes, por escrito, y luego correrlo una vez, cuesta una fracción y sale mejor.</p>
+
+      <h2>5. Junta las preguntas antes de mandarlas</h2>
+
+      <p>Tres preguntas en tres mensajes hacen que la conversación se relea tres veces. Las mismas tres en un mensaje, una sola.</p>
+
+      <p>El hábito que hay que romper es preguntar conforme se te ocurre. Se anotan y se mandan juntas:</p>
+
+      <pre><code>Te voy a hacer varias peticiones sobre el mismo material.
+Contéstalas todas en una sola respuesta, numeradas, con un
+encabezado por cada una.
+
+No repitas el contexto entre una y otra. Si dos se contestan igual,
+dilo en una sola. Si alguna no se puede contestar con lo que te di,
+ponla al final en una lista de "me falta información para esto" en
+vez de suponer.
+
+1.
+2.
+3.</code></pre>
+
+      <p>Y el hermano de ese, para cuando arrancas algo nuevo. Este ahorra porque evita las tres o cuatro rondas de aclaración que normalmente vienen después:</p>
+
+      <pre><code>Contexto de esta tarea, para que no tengas que preguntarme:
+
+- Mi rol y mi empresa:
+- Qué necesito exactamente:
+- Para quién es y qué sabe esa persona del tema:
+- Tono:
+- Formato de salida:
+- Largo máximo:
+- Lo que NO debe incluir:
+
+Con eso, entrégame el resultado directo. Si algo de arriba te
+falta y sin eso no puedes trabajar, pregúntamelo TODO en una sola
+lista antes de empezar. No me hagas preguntas de una en una.</code></pre>
+
+      <h2>El orden en que se adoptan</h2>
+
+      <p>De los cinco, dos son hábitos y tres son técnica. Empieza por los hábitos, que son los que más rinden y los únicos que cuesta trabajo adoptar.</p>
+
+      <p><strong>Semana uno: editar en vez de responder.</strong> Cada vez que vayas a escribir "no, mejor…", detente y edita el mensaje de arriba. Se siente raro tres días y luego ya no.</p>
+
+      <p><strong>Semana dos: nada de documentos completos.</strong> Copia y pega la parte que importa. Sin excepciones, hasta que se vuelva automático.</p>
+
+      <p>Los otros tres —correcciones quirúrgicas, planear aparte, juntar preguntas— son prompts. Guárdalos y péganos cuando apliquen; no requieren cambiar nada de cómo piensas.</p>
+
+      <p>Y si después de un mes con los cinco sigues topando cada semana, entonces ya no es desperdicio. Estás haciendo un volumen de trabajo que tu plan no cubre, y esa conversación ya no es de técnica: es de plan.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/limpieza-de-contexto/" class="stack-link">
+            <span>La lista para limpiar el contexto de tu IA →</span>
+            <small>Anthropic recortó el 80% de las reglas de Claude Code sin perder calidad. La lista exacta para podar tu propio setup, más un prompt de limpieza listo para pegar.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

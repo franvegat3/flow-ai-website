@@ -1,0 +1,85 @@
+      <p>La función más útil de esta actualización no es que el modelo sea más listo. Es que por fin puedes decidir cuánto esfuerzo le pones a cada cosa, desde la app normal, sin tocar código.</p>
+
+      <p>Hasta hace poco el control de esfuerzo vivía solo en la API y en la terminal. Ahora está en el Claude de todos los días. Eso significa que la misma suscripción te rinde distinto según cómo la uses, y la mayoría de la gente ni sabe que existe la perilla.</p>
+
+      <p>Esto es lo que trae Opus 4.8, qué cambia en la práctica y qué revisar si construiste algo sobre la API.</p>
+
+      <h2>Qué es el esfuerzo, en una frase</h2>
+
+      <p>Es cuánto piensa el modelo antes de contestar, y cuántos tokens está dispuesto a gastar en llegar a la respuesta.</p>
+
+      <p>No cambia qué tan capaz es. Cambia qué tan a fondo trabaja. Un esfuerzo bajo te da una respuesta rápida y suficiente; uno alto explora, verifica y se tarda. Es la diferencia entre preguntarle algo a un colega en el pasillo y pedirle que se siente una hora a revisarlo.</p>
+
+      <h2>Los cuatro niveles</h2>
+
+      <div class="plugin-card">
+        <h3>1. Bajo <code>low</code></h3>
+        <p>Reescrituras de una vez, dar formato, resúmenes cortos. Todo lo que puedes revisar de un vistazo y corregir en diez segundos.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> limpiar un texto, cambiar el tono de un correo, sacar los puntos de una nota.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Medio <code>medium</code></h3>
+        <p>Correos que sí quieres que alguien lea dos veces, borradores de contenido, tareas normales de código. Es el punto donde la calidad ya se nota y el tiempo todavía no molesta.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> el 60% del trabajo de oficina de un día normal.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Alto <code>high</code></h3>
+        <p>El que viene por defecto en 4.8. Análisis, cualquier cosa de varios pasos, código que de verdad tiene que funcionar.</p>
+        <p>Que sea el default importa: si nunca tocaste la perilla, ya estás aquí. Bajarle a medio en tareas simples te ahorra tiempo y consumo sin que la calidad se note distinta.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> lo que va a tomar una decisión o llegar a un cliente.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. El nivel extra de Claude Code <code>xhigh</code></h3>
+        <p>Un escalón arriba del alto, disponible en la terminal. Está pensado para migraciones complejas y para depurar cosas que llevan horas sin resolverse.</p>
+        <p>Aquí el intercambio es explícito: se tarda bastante más y consume bastante más. Vale la pena cuando el problema ya te costó dos días.</p>
+        <p class="plugin-for"><strong>Para qué:</strong> trabajo largo y autónomo, no conversación.</p>
+      </div>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> subir el esfuerzo no arregla una instrucción vaga. Si le pediste algo ambiguo, el modelo va a pensar más profundo sobre la pregunta equivocada y te va a entregar una respuesta desenfocada, más lenta y más cara. El orden correcto es: primero escribe bien la petición con esfuerzo medio, y cuando ya salga bien tres veces seguidas, ahí decides si subirle.</p>
+      </div>
+
+      <h2>Cómo lo uso en un día de trabajo</h2>
+
+      <p>Aterrizado a una operación real, así se reparte en una semana:</p>
+
+      <ul>
+        <li><strong>Bajo</strong> para la limpieza de transcripciones de juntas y el formato de reportes que ya vienen armados.</li>
+        <li><strong>Medio</strong> para el copy de campañas, los seguimientos comerciales y la primera versión de cualquier documento.</li>
+        <li><strong>Alto</strong> para revisar contratos, armar el análisis de por qué se cayó una campaña, y cualquier cosa que le voy a mandar a un cliente sin que pase por otra revisión.</li>
+        <li><strong>El nivel extra</strong> solo cuando estoy en la terminal peleándome con un proceso que lleva días sin correr bien.</li>
+      </ul>
+
+      <p>La regla de dedo: si el error se detecta en un vistazo y corregirlo cuesta poco, bájale. Si el error se descubre tres días después con un cliente enojado, súbele.</p>
+
+      <h2>El cambio que menos se anuncia y más importa</h2>
+
+      <p>4.8 es medible más honesto que la versión anterior. Baja la tasa de respuestas incorrectas y es bastante menos probable que deje pasar una falla al revisar código.</p>
+
+      <p>Suena aburrido comparado con "es más inteligente", y es lo contrario. En una operación real, el costo no está en las respuestas que salen bien: está en las que salen mal y suenan convincentes. Un modelo que se equivoca menos y que admite más seguido que no sabe te ahorra el trabajo de verificar todo dos veces.</p>
+
+      <p>Lo que no cambia: sigue necesitando que tú sepas cuándo dudar. Un modelo más honesto no es un modelo infalible, y en cualquier cosa que toque dinero o datos de clientes la revisión humana sigue siendo obligatoria.</p>
+
+      <h2>Notas de migración si construyes sobre la API</h2>
+
+      <p>Aquí es donde algunos flujos se rompen sin aviso. El identificador del modelo es <code>claude-opus-4-8</code>.</p>
+
+      <ol>
+        <li><strong>Los parámetros de muestreo se fueron.</strong> <code>temperature</code>, <code>top_p</code> y <code>top_k</code> ya no se aceptan. Si tu código los manda, la petición falla. La forma de guiar el comportamiento ahora es el prompt, no la perilla.</li>
+        <li><strong>El presupuesto fijo de pensamiento se fue.</strong> Ya no se define un número de tokens de razonamiento. Se usa pensamiento adaptativo y se controla la profundidad con el nivel de esfuerzo.</li>
+        <li><strong>Los mensajes de sistema a media conversación ya no rompen el caché.</strong> Este es el cambio que más dinero ahorra en agentes largos: antes, meter una instrucción nueva a la mitad invalidaba todo el prefijo cacheado y volvías a pagar el contexto completo. Ahora no.</li>
+        <li><strong>Las negativas vienen con categoría.</strong> Cuando el modelo se rehúsa, la respuesta trae un detalle estructurado con el motivo, en vez de un texto que tenías que interpretar a mano. Si tu flujo tenía lógica de reintento basada en leer el mensaje, cámbiala a leer el campo.</li>
+      </ol>
+
+      <p>Sobre el costo: es el modelo más caro del catálogo de Claude, y esa es toda la decisión. Úsalo donde una respuesta mejor te ahorra dinero real —problemas nuevos, análisis que sostienen una decisión, código que no se puede caer— y usa modelos más baratos en el volumen repetitivo. Los precios exactos por millón de tokens cambian; confírmalos en la documentación oficial antes de presupuestar.</p>
+
+      <h2>El error que veo más seguido</h2>
+
+      <p>Poner el esfuerzo más alto en la parte más repetitiva del proceso.</p>
+
+      <p>Alguien monta un flujo que clasifica trescientos correos al día, le pone el máximo porque "así sale mejor", y a fin de mes la factura llega tres veces más alta con exactamente la misma calidad. Clasificar un correo no necesita razonamiento profundo: necesita consistencia.</p>
+
+      <p>Haz el ejercicio contrario. Toma tu flujo más caro, bájale un nivel de esfuerzo, y corre veinte casos comparando contra la versión anterior. En la mayoría de los procesos operativos no vas a poder distinguir cuál es cuál, y acabas de bajar el costo sin tocar nada más.</p>

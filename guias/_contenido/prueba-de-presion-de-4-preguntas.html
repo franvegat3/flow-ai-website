@@ -1,0 +1,146 @@
+      <p>Claude se equivoca. No mucho, pero se equivoca. Y lo hace con el mismo tono tranquilo y ordenado con el que acierta, que es exactamente el problema: no hay ninguna señal en la respuesta que te diga cuál de los dos casos estás leyendo.</p>
+
+      <p>La solución no es desconfiar de todo. Es tener un protocolo para las respuestas que sí importan: las que vas a reenviar a tu jefe, las que van dentro de una propuesta a un cliente, las que tocan dinero, contratos o salud.</p>
+
+      <p>Son cuatro prompts. Se corren en orden, en el mismo chat, después de la respuesta que quieres verificar. Cada uno caza un tipo distinto de error, y los cuatro juntos toman menos de cinco minutos.</p>
+
+      <h2>Cuándo se corre y cuándo no</h2>
+
+      <p>Esto no es para todo. Si estás en lluvia de ideas, sáltatelo: el objetivo ahí es volumen, no precisión. Córrelo cuando la decisión es difícil de revertir, cuando el texto va a llevar tu nombre frente a alguien con autoridad, o cuando el tema tiene consecuencias legales, médicas o financieras.</p>
+
+      <p>Y córrelo en el mismo hilo, no en uno nuevo. Los cuatro dependen de que Claude tenga a la vista la respuesta que está auditando.</p>
+
+      <h2>Prompt 1 — Calibración de confianza</h2>
+
+      <p>Caza el exceso de seguridad. La respuesta uniforme esconde que algunas partes son sólidas y otras son adivinanzas educadas; esto las separa.</p>
+
+      <pre><code>Del 1 al 10, que tan seguro estas de la respuesta que acabas de darme.
+Se honesto: la calibracion importa mas que sonar convencido.
+
+Dame exactamente esto:
+
+1. EL NUMERO. Uno solo, del 1 al 10.
+
+2. POR QUE NO ES MAS ALTO. Que te esta quitando certeza: datos de
+   entrenamiento delgados, pregunta ambigua, campo que se mueve rapido,
+   fuentes que se contradicen, contexto mio que te falta.
+
+3. POR QUE NO ES MAS BAJO. Que parte de tu respuesta si esta firme.
+
+4. ETIQUETA CADA AFIRMACION. Recorre tu respuesta y marca cada
+   afirmacion importante como:
+   - ALTA: la defiendo
+   - MEDIA: va en la direccion correcta, los detalles pueden fallar
+   - BAJA: es una estimacion, verificala antes de actuar
+
+5. QUE SUBIRIA EL NUMERO. Las 2 o 3 cosas concretas que necesitarias
+   saber o revisar para pasar de un 6 a un 9. ¿Mas contexto mio? ¿Una
+   fuente especifica? ¿Otra forma de plantear la pregunta?</code></pre>
+
+      <p>Lo que sale de aquí no es el número: es la lista de afirmaciones marcadas como BAJA. Esas son las únicas que tienes que verificar.</p>
+
+      <h2>Prompt 2 — Cacería de modos de falla</h2>
+
+      <p>Caza los supuestos que nadie declaró y los casos borde. Es el que más veces me ha salvado, porque las respuestas de IA suelen ser correctas en el caso general e inaplicables en el mío.</p>
+
+      <pre><code>¿Donde se rompe la respuesta que acabas de darme? ¿Cual es la version
+de esa respuesta que estaria mal, y para quien?
+
+1. LAS 3 FORMAS MAS PROBABLES DE QUE ESTES MAL. Los escenarios mas
+   plausibles donde tu respuesta no aplica. Ordenalos por probabilidad
+   y dime que tendria que ser cierto para que cada falla ocurra.
+
+2. LOS SUPUESTOS QUE HICISTE. Todos. Sobre mi situacion, mi industria,
+   mi nivel de experiencia, mis objetivos. Marca los que yo no te
+   confirme.
+
+3. LOS CASOS BORDE QUE TE SALTASTE. Situaciones raras pero reales donde
+   tu respuesta se cae. Se especifico: no "en algunos casos puede no
+   aplicar", sino "si estas en [X situacion], la respuesta se invierte
+   porque [Y]".
+
+4. EL ARGUMENTO CONTRARIO EN SU MEJOR VERSION. Defiende lo opuesto a lo
+   que dijiste, lo mas fuerte que puedas. ¿Que diria la persona
+   inteligente que no esta de acuerdo contigo?
+
+5. LA SEÑAL. ¿Que cosa concreta de MI situacion me indicaria que tu
+   respuesta no aplica en mi caso? ¿Que tengo que buscar para saber que
+   soy la excepcion?</code></pre>
+
+      <h2>Prompt 3 — Revisión de experto</h2>
+
+      <p>Caza los errores de aficionado. Una respuesta de IA suele ser el equivalente a alguien muy leído pero sin oficio: técnicamente correcta y torpe en las decisiones que solo se aprenden habiendo estado ahí.</p>
+
+      <pre><code>Ahora ponte en los zapatos de un experto de primer nivel en este campo:
+alguien con mas de 20 años haciendo esto y con las cicatrices que lo
+prueban. Critica tu respuesta anterior como el lo haria.
+
+1. DEFINE AL EXPERTO. No una persona real, el rol: "abogado senior de
+   propiedad intelectual con 20 años en transacciones tecnologicas",
+   "director de finanzas que ha llevado 3 empresas a Serie B". Se
+   especifico sobre su lente.
+
+2. QUE SI ESTA BIEN. Solo lo genuinamente solido. No rellenes.
+
+3. QUE SIMPLIFICASTE DE MAS. Donde aplanaste algo que tiene mas matiz.
+   Donde este experto empujaria contra una generalizacion tuya.
+
+4. EL ERROR DE AFICIONADO. Los 1 a 3 errores que comete tipicamente
+   alguien listo pero sin oficio en este dominio, y cuales de esos
+   aparecieron en tu respuesta.
+
+5. LA REESCRITURA DEL EXPERTO. Reescribe tu respuesta como el la
+   entregaria. Mismo objetivo, otra profundidad, con los marcos, el
+   vocabulario y los criterios que usaria de verdad.
+
+6. SU PREGUNTA DE VUELTA. La unica pregunta que este experto me haria
+   antes de comprometerse con una respuesta.</code></pre>
+
+      <p>El punto 6 suele ser la frase más útil de toda la prueba de presión. Si solo vas a correr un prompt de los cuatro, corre este.</p>
+
+      <h2>Prompt 4 — Ruta de verificación</h2>
+
+      <p>Caza la confianza ciega. Los tres anteriores te dicen dónde dudar; este te dice qué hacer con la duda, y en cuánto tiempo.</p>
+
+      <pre><code>¿Como verifico tu respuesta por mi cuenta? Dime exactamente que revisar,
+donde revisarlo y cuanto me va a tomar.
+
+1. LAS 3 A 5 COSAS A VERIFICAR. Nada de "investiga mas". Para cada una:
+   - QUE verificar (la afirmacion especifica de tu respuesta)
+   - DONDE (la fuente real: sitio oficial, calculadora, documento,
+     persona a la que llamar)
+   - POR QUE esa verificacion tiene mas señal que otra mas facil
+
+2. EL PLAN DE 30 MINUTOS. Si tengo media hora, la secuencia exacta:
+   primero A, luego B, luego C.
+
+3. LA VERSION DE 5 MINUTOS. Si voy con prisa, la unica revision mas
+   rapida que cacharia el error mas probable.
+
+4. LA MAS IMPORTANTE. Si solo verifico UNA cosa antes de actuar, ¿cual?
+   La afirmacion donde equivocarse cuesta mas caro.
+
+5. CUANDO METER A UN HUMANO. El umbral en el que debo dejar de confiar
+   en la verificacion con IA y hablar con un abogado, un contador, un
+   medico o un ingeniero. ¿Que señal me lo diria?
+
+6. QUE CAMBIARIA TU RESPUESTA. Si regreso con un hallazgo de la
+   verificacion, ¿cual me haria revisar materialmente lo que dijiste?</code></pre>
+
+      <h2>Por qué el orden importa</h2>
+
+      <p>Cada uno se apoya en el anterior. El primero identifica las zonas débiles. El segundo caza fallas dentro de esas zonas. El tercero aplica criterio de oficio ya con la calibración y los casos borde a la vista. El cuarto convierte todo eso en tareas concretas con tiempo estimado.</p>
+
+      <p>Correrlos al revés funciona peor: le pides verificación antes de saber qué merece verificarse, y acabas con una lista de diez fuentes de las cuales ocho no importaban.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> volver con lo que encontraste. El punto 6 del último prompt existe para eso. Si verificaste y algo no cuadró, regresa al mismo chat y dilo. Ahí es donde la respuesta se corrige de verdad, en lugar de quedarte con una versión que sabes que tiene un hueco.</p>
+      </div>
+
+      <h2>El error que comete todo el mundo</h2>
+
+      <p>Correr la prueba de presión y quedarse con la sensación de haber sido riguroso, sin abrir una sola de las fuentes que salieron en el prompt 4.</p>
+
+      <p>La prueba no verifica nada. Te dice dónde mirar. Si no miras, lo único que hiciste fue gastar cinco minutos en sentirte responsable, que es peor que no haberla corrido, porque ahora vas más confiado.</p>
+
+      <p>Para el otro lado del problema —cómo evitar que la respuesta salga mal desde el principio— revisa <a href="/guias/3-prompts-contra-las-alucinaciones/">los 3 prompts contra las alucinaciones</a> y <a href="/guias/nunca-confies-sin-hacer-esto/">nunca confíes sin hacer esto</a>.</p>

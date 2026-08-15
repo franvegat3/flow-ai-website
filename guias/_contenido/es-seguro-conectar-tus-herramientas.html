@@ -1,0 +1,78 @@
+      <p>Es la pregunta que más me hacen, y casi siempre viene de la persona correcta: el dueño del negocio o el que responde por los datos. "Si le conecto el correo y el CRM, ¿qué pasa con esa información?"</p>
+
+      <p>La respuesta honesta tiene dos partes. La arquitectura está mejor pensada de lo que la mayoría supone. Y aun así hay una fuga que casi nadie ve, que no tiene nada que ver con los conectores.</p>
+
+      <p>Aquí va cómo funciona de verdad, qué hace y qué no hace Anthropic con tus datos, y una lista de blindaje de cinco pasos que corres en diez minutos.</p>
+
+      <h2>Las tres capas</h2>
+
+      <h3>1. Permisos: no ve más de lo que tú ves</h3>
+
+      <p>Un conector se autoriza con <em>tu</em> cuenta. Hereda tus permisos, ni uno más. Si en Google Drive no tienes acceso a la carpeta de nómina, Claude tampoco la ve. Si en el CRM tu usuario solo alcanza a su propia cartera, eso es lo que alcanza el modelo.</p>
+
+      <p>Esto suena obvio y es la capa que más tranquiliza a un área de sistemas: conectar no crea un canal nuevo de acceso. Extiende el que ya tiene el usuario. Lo cual, por cierto, es también el argumento para revisar los permisos de tus usuarios antes de conectar nada. Si tu equipo comercial tiene acceso de lectura a toda la base de clientes porque nadie ha limpiado los roles en tres años, ese es el problema y ya lo tenías.</p>
+
+      <h3>2. Aprobación: redacta, tú mandas</h3>
+
+      <p>Las acciones con consecuencia real —enviar, borrar, publicar, pagar— piden autorización explícita antes de ejecutarse. Claude prepara el correo; tú le das enviar. Arma la factura; tú la apruebas.</p>
+
+      <p>Esta capa es la que hace la diferencia entre un asistente y un riesgo operativo, y es la que más gente quiere apagar en la semana dos porque le parece lenta. No la apagues. La primera vez que un flujo de cobranza automática le mande recordatorio de pago a un cliente que ya pagó, vas a entender para qué está.</p>
+
+      <h3>3. Control: desconectar, borrar, incógnito</h3>
+
+      <p>Cualquier conector se desconecta al instante. Borrar una conversación elimina lo asociado a ella. Y hay modo incógnito para el trabajo que no quieres que quede en historial.</p>
+
+      <p>En cuentas de empresa hay una capa más: configuración de administrador, accesos de solo lectura y restricciones de permisos a nivel equipo. Si vas a meter esto en una operación con más de cinco personas, esa es la cuenta que necesitas —no cinco cuentas personales conectadas al mismo CRM.</p>
+
+      <h2>Qué hace y qué no hace Anthropic con tus datos</h2>
+
+      <p>Lo que <strong>no</strong> hace:</p>
+
+      <ul>
+        <li><strong>No entrena con lo que entra por conector.</strong> El contenido crudo que llega de Gmail, Drive, tu contabilidad o un servidor MCP queda excluido de datos de entrenamiento. Esto aplica incluso si tienes prendida la opción de ayudar a mejorar el modelo.</li>
+        <li><strong>No vigila tus herramientas de fondo.</strong> No hay un proceso leyendo tu correo mientras duermes. Cada acción de un conector la dispara una petición tuya dentro de una conversación.</li>
+      </ul>
+
+      <p>Y aquí está la parte que casi nadie sabe:</p>
+
+      <div class="callout-box">
+        <p><strong>La fuga que nadie ve:</strong> el texto que <em>pegas a mano</em> en el chat no tiene la misma protección que el que entra por conector. Si tienes activada la opción de mejora del modelo, ese contenido pegado sí puede entrar. O sea: conectar Drive y pedirle que lea el contrato es más seguro que abrir el contrato, copiarlo y pegarlo. Es exactamente al revés de lo que asume la mayoría.</p>
+      </div>
+
+      <p>Esa asimetría es la que más cambia el comportamiento de un equipo cuando se la explicas. La gente prudente evita conectar y pega todo a mano, convencida de que está siendo cuidadosa. Está haciendo justo lo contrario.</p>
+
+      <h2>La lista de blindaje: cinco pasos, diez minutos</h2>
+
+      <ol>
+        <li><strong>Apaga la mejora del modelo.</strong> En <code>Configuración → Privacidad</code>, la opción de ayudar a mejorar Claude. Es opcional y viene apagada por defecto, pero verifícalo tú en vez de asumirlo —sobre todo si tu cuenta la abrió alguien más del equipo.</li>
+        <li><strong>Audita los conectores activos.</strong> En <code>Configuración → Conectores</code>. Quita todo lo que autorizaste para probar y no volviste a usar. Cada conector vivo es superficie de ataque; los que no usas son superficie de ataque gratis.</li>
+        <li><strong>Usa modo incógnito para lo sensible.</strong> Temas financieros, médicos, legales o de personal. Nada se guarda en historial. Cuesta cero y resuelve el 80% de la incomodidad de "no quiero que esto quede escrito en ningún lado".</li>
+        <li><strong>Acorta la retención.</strong> En planes Pro y de equipo puedes bajar la retención de conversaciones de negocio a 30 días. Si no tienes una razón concreta para guardar un año de chats, no lo guardes.</li>
+        <li><strong>Mantenimiento cada 90 días.</strong> Borra conversaciones que ya no sirven, verifica permisos de conectores y revisa qué autorizaciones siguen vivas. Ponlo en el calendario del mismo día que revisas accesos del resto del stack.</li>
+      </ol>
+
+      <h2>Lo que sí me preocuparía en una operación real</h2>
+
+      <p>Los conectores no son mi lista de riesgos. Esta sí:</p>
+
+      <ul>
+        <li><strong>Permisos heredados sucios.</strong> Ya lo dije arriba y lo repito porque es el número uno. Conectar amplifica lo que ya está mal configurado. Limpia roles antes.</li>
+        <li><strong>Cuentas personales operando datos de la empresa.</strong> El día que esa persona se va, tú no controlas ni la conversación ni las autorizaciones. Cuenta de empresa, siempre.</li>
+        <li><strong>Pegar contratos y estados de cuenta a mano.</strong> Por lo de arriba. Si el documento vive en Drive, léelo desde Drive.</li>
+        <li><strong>Apagar la capa de aprobación por comodidad.</strong> El día que le des permiso permanente a un flujo de enviar correos sin revisión, aceptaste que un error de datos salga con tu firma.</li>
+        <li><strong>Prompts con credenciales adentro.</strong> Tokens, contraseñas o llaves de API escritas en el chat. Eso va en un gestor de secretos, nunca en una conversación.</li>
+      </ul>
+
+      <h2>El orden que yo seguiría</h2>
+
+      <p>Si estás empezando y te da nervio, no conectes todo el lunes. Este es el orden con el que meto esto en una empresa que factura:</p>
+
+      <ol>
+        <li><strong>Solo lectura primero.</strong> Semana uno, conectas lo que solo lee: documentos, calendario, tablero de proyectos. Cero riesgo de acción, ganancia inmediata de contexto.</li>
+        <li><strong>Escritura con aprobación después.</strong> Semana dos o tres, agregas lo que redacta y propone: correo, CRM. Con la capa de aprobación intacta.</li>
+        <li><strong>Lo financiero al final, y con cuenta de empresa.</strong> Contabilidad y pagos, cuando ya tengas claro cómo se comporta el equipo con los dos pasos anteriores.</li>
+      </ol>
+
+      <p>Y antes de conectar la primera herramienta, escribe en una hoja qué información específica te dolería que saliera de la empresa. Si esa hoja está vacía, el análisis de riesgo que hiciste fue un sentimiento, no un análisis.</p>
+
+      <p>La pregunta de fondo casi nunca es si Claude es seguro. Es si tu casa está en orden. Los conectores solo lo hacen evidente más rápido.</p>

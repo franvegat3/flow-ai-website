@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de vibe coding para principiantes — Guías Flow AI</title>
+  <meta name="description" content="Construye apps solo platicando con la IA, sin experiencia programando. El flujo de 3 pasos que evita que el 95% de estas apps se rompa, más el prompt de brief que lo hace funcionar." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/guia-de-vibe-coding/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Guía de vibe coding para principiantes" />
+  <meta property="og:description" content="Construye apps solo platicando con la IA, sin experiencia programando. El flujo de 3 pasos que evita que el 95% de estas apps se rompa, más el prompt de brief que lo hace funcionar." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/guia-de-vibe-coding/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Creativo</p>
+      <div class="guide-tags"><span class="tag">Multi-herramienta</span><span class="tag">Creativo</span><span class="tag">Empezar</span></div>
+      <h1>Guía de vibe coding para principiantes</h1>
+      <p class="lead">Construye apps solo platicando con la IA, sin experiencia programando. El flujo de 3 pasos que evita que el 95% de estas apps se rompa, más el prompt de brief que lo hace funcionar.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 10 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le describes a una IA la app que quieres, en español, y te la construye. Sin saber programar, sin instalar nada, sin abrir una terminal. Eso es vibe coding, y funciona mejor de lo que suena.</p>
+
+      <p>También truena mucho más de lo que la gente cuenta. El número que circula es que el 95% de las apps hechas así se rompen. No tengo cómo verificar esa cifra y no me hace falta: la causa sí la he visto una y otra vez, y siempre es la misma. La persona escribe un párrafo describiendo la app completa, le da enter, y espera que salga funcionando de un jalón.</p>
+
+      <p>Esta guía es el flujo que evita eso. Tres pasos, un prompt de brief que va entero más abajo, y la lista de errores que hacen que una app se caiga a la mitad.</p>
+
+      <h2>Qué es y qué no es</h2>
+
+      <p>Vibe coding es construir software describiendo lo que quieres en lenguaje normal. La IA escribe el código; tú describes, pruebas y corriges.</p>
+
+      <p>Lo que no es: no es magia y no te vuelve programador. El código existe, tiene errores, y en algún momento vas a tener que entender qué se rompió. La diferencia es que ahora puedes preguntarle a la misma IA qué se rompió, en vez de aprender cuatro años de sintaxis primero.</p>
+
+      <p>Y aterrizando el caso de uso real: esto es perfecto para la herramienta interna que nadie te va a construir. El tablero que tu área comercial pide desde hace un año. La calculadora de cotizaciones que hoy vive en un Excel con siete pestañas. El formulario que alimenta el proceso de alta de clientes. Cosas que un equipo de desarrollo nunca va a priorizar porque solo las usan ocho personas.</p>
+
+      <h2>Con qué se construye</h2>
+
+      <p>Hay tres herramientas que valen la pena para empezar, y se eligen por lo que quieres sacar de la experiencia, no por cuál es "mejor".</p>
+
+      <div class="plugin-card">
+        <h3>1. Lovable <code>lovable.dev</code></h3>
+        <p>La más amable si nunca has tocado código. Trae base de datos integrada con Supabase, así que las apps que guardan información —usuarios, registros, formularios— se arman sin que tú tengas que configurar nada por separado.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que quiere una app que funcione y no le interesa ver el código.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Bolt <code>bolt.new</code></h3>
+        <p>La más rápida para prototipar. Te devuelve una versión funcionando en unos ocho a diez minutos, lo cual la vuelve ideal para enseñarle una idea a alguien antes de decidir si vale la pena construirla en serio.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que necesita algo que se pueda tocar en la junta del jueves.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Replit <code>replit.com</code></h3>
+        <p>Te muestra el código conforme la IA lo escribe. Es la más lenta de las tres si solo quieres el resultado, y la única de las tres que te enseña algo.</p>
+        <p class="plugin-for"><strong>Para quién:</strong> el que quiere entender qué está pasando, no solo que pase.</p>
+      </div>
+
+      <h2>El flujo de tres pasos</h2>
+
+      <p>Este es el orden que separa las apps que sobreviven de las que se caen. Ninguno de los tres pasos se salta.</p>
+
+      <h3>Paso 1 — El brief, fuera de la herramienta</h3>
+
+      <p>Antes de abrir Lovable o Bolt, abres Claude o ChatGPT y sacas un documento de una página que describa la app. Suena a burocracia y es el paso que más rendimiento da.</p>
+
+      <p>La razón es mecánica. Estas herramientas construyen a partir de lo que les dices, y si tú no tienes claro cuántas pantallas hay, qué datos guardas y quién se registra, la IA lo va a inventar. Va a inventar bien la primera vez y distinto la segunda, y para la tercera pantalla ya vas a tener tres criterios peleados adentro de la misma app.</p>
+
+      <h3>Paso 2 — Solo la primera pantalla</h3>
+
+      <p>Pegas el brief en la herramienta y le pides <strong>únicamente la primera pantalla</strong>. Nada más. Ni el login, ni el panel de administración, ni la vista de reportes.</p>
+
+      <p>Luego la pruebas de verdad: clic en cada botón, llenar cada campo, meter datos mal a propósito. Lo que falle, se arregla ahí. Una pantalla rota es un problema de veinte minutos; cinco pantallas rotas que dependen entre sí es un problema del que no sales.</p>
+
+      <h3>Paso 3 — Una pantalla a la vez</h3>
+
+      <p>Cuando la primera funciona, pides la segunda. Cuando la segunda funciona, la tercera. Cada vez le recuerdas qué ya existe y le pides que no lo toque.</p>
+
+      <p>Es lento y se siente tonto cuando la IA claramente podría hacer las cinco de un jalón. Puede hacerlas. También puede romper las dos que ya servían mientras hace la tercera, y tú no vas a tener forma de saber cuál cambio fue el que rompió qué.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> probar antes de pedir lo siguiente. La tentación es ver que la pantalla "se ve bien" y seguir. Se ve bien no es funciona. Dale clic a todo, mete un correo sin arroba, deja un campo vacío, refresca la página a media captura. El 90% de las apps que se caen es porque nadie hizo eso en la pantalla dos y el error quedó enterrado bajo cuatro pantallas más.</p>
+      </div>
+
+      <h2>El prompt del brief</h2>
+
+      <p>Este es el prompt completo. Va en Claude o ChatGPT, antes de tocar la herramienta de construcción. Te entrevista primero y luego te devuelve el documento que vas a pegar.</p>
+
+      <pre><code>Vas a ayudarme a escribir el brief de una app que voy a construir
+con una herramienta de IA (Lovable, Bolt o Replit). No sé programar.
+
+Primero hazme estas nueve preguntas, UNA POR UNA, esperando mi
+respuesta antes de pasar a la siguiente. Si mi respuesta es vaga,
+repregunta hasta que sea concreta. No avances con respuestas
+ambiguas.
+
+1. En una frase, ¿qué hace esta app?
+2. ¿Quién la va a usar y cuántas personas son?
+3. ¿Cuál es el recorrido principal? Desde que alguien entra hasta
+   que logra lo que vino a hacer.
+4. ¿Qué pantallas necesita? Nómbralas.
+5. ¿Qué información hay que guardar? Lista los datos, no las tablas.
+6. ¿Hay que iniciar sesión? ¿Todos ven lo mismo o hay roles?
+7. ¿Cómo se debe ver? Dame dos referencias de sitios que te gusten.
+8. ¿Qué es innegociable? Lo que si no está, la app no sirve.
+9. ¿Qué NO debe hacer esta app? Lo que explícitamente queda fuera.
+
+Cuando termines las nueve, escríbeme el brief con estas diez
+secciones, en este orden, sin agregar ninguna otra:
+
+1. QUÉ HACE ESTA APP — dos líneas.
+2. PARA QUIÉN ES — el usuario y el contexto en el que la abre.
+3. RECORRIDO PRINCIPAL — numerado, paso por paso.
+4. PANTALLAS — cada una con su nombre y qué se ve en ella.
+5. DATOS QUE SE GUARDAN — nombre del dato y de qué tipo es.
+6. ACCESO — si hay registro, qué roles existen y qué ve cada uno.
+7. DIRECCIÓN VISUAL — estilo, paleta y tono, en tres líneas.
+8. REQUISITOS INNEGOCIABLES — lista corta.
+9. QUÉ SE CONSTRUYE PRIMERO — una sola pantalla, la más importante,
+   y por qué esa.
+10. INSTRUCCIONES PARA LA HERRAMIENTA — escritas en imperativo,
+    dirigidas a la IA que va a construir, incluyendo la orden de
+    construir SOLO lo que se le pida en cada turno y de no modificar
+    lo que ya funciona.
+
+Reglas del brief: máximo una página. Sin adjetivos de marketing.
+Nada de "moderno e intuitivo". Si algo no lo definí, ponlo en una
+lista al final de "pendientes por definir" en vez de inventarlo.</code></pre>
+
+      <h2>Los cinco errores que rompen todo</h2>
+
+      <ul>
+        <li><strong>Pedir la app completa en un prompt.</strong> Es el error número uno y es el que produce la mayoría de los desastres. La IA acepta el encargo, produce algo que parece completo, y adentro hay seis piezas a medias que no se hablan entre sí.</li>
+        <li><strong>Saltarse el brief.</strong> Sin brief, cada prompt es una negociación nueva sobre qué es la app. Terminas con cinco versiones de la misma idea peleando dentro del mismo proyecto.</li>
+        <li><strong>No probar mientras construyes.</strong> Ya lo dije arriba y lo repito porque es el que más caro sale.</li>
+        <li><strong>Prompts vagos.</strong> "Hazlo mejor" no es una instrucción. "El botón de guardar debe quedar abajo a la derecha y mostrar un mensaje de confirmación de dos segundos" sí lo es. La calidad de la app es proporcional a la especificidad de tus correcciones.</li>
+        <li><strong>Ignorar los errores.</strong> Cuando algo truena y la herramienta escupe un mensaje rojo, la reacción normal es volver a pedir "arréglalo". A veces funciona. Lo que funciona siempre es copiar el mensaje completo, pegarlo y preguntar qué significa antes de pedir el arreglo. Si no entiendes qué se rompió, la siguiente vez se rompe igual.</li>
+      </ul>
+
+      <h2>Antes de que alguien más lo use</h2>
+
+      <p>Aquí va la parte que las guías de vibe coding no te dicen. En el momento en que tu app deja de ser un juguete personal y guarda información de otras personas —correos de clientes, datos de un formulario, cualquier cosa que no sea tuya— dejas de estar construyendo un prototipo y empiezas a tener una responsabilidad.</p>
+
+      <p>Antes de compartir el enlace con alguien fuera de tu escritorio, mínimo: pregúntale a la herramienta qué datos está guardando y quién puede verlos, revisa que no haya ninguna clave ni contraseña escrita dentro del código, y confirma que si alguien cambia el número en la dirección web no acabe viendo el registro de otra persona. Ese último es el error clásico de las apps hechas así.</p>
+
+      <p>Y si la app va a manejar información sensible de verdad, esa ya no es una app de vibe coding. Ahí necesitas a alguien que sepa. Reconocer ese límite es más útil que cualquier prompt de esta guía.</p>
+
+      <h2>Por dónde empezar hoy</h2>
+
+      <p>No empieces con la idea grande que traes en la cabeza. Empieza con la herramienta más aburrida que uses todos los días: el cálculo que haces a mano cada lunes, la lista que mantienes en una hoja suelta, el formato que llenas y reenvías.</p>
+
+      <p>Esa cosa aburrida tiene tres pantallas y la vas a poder probar tú mismo, que es exactamente lo que necesitas para aprender el flujo sin arriesgar nada. Cuando la termines, la idea grande te va a salir mucho mejor.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

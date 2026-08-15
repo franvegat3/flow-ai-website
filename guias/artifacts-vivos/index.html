@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifacts vivos: constrúyelo una vez, siempre actualizado — Guías Flow AI</title>
+  <meta name="description" content="Los tableros de Claude ahora se quedan conectados a tus apps y se actualizan solos. Tablero de KPIs, calendario de contenido y resumen matutino. Con los prompts de configuración." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/artifacts-vivos/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Artifacts vivos: constrúyelo una vez, siempre actualizado" />
+  <meta property="og:description" content="Los tableros de Claude ahora se quedan conectados a tus apps y se actualizan solos. Tablero de KPIs, calendario de contenido y resumen matutino. Con los prompts de configuración." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/artifacts-vivos/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Automatización</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Automatización</span><span class="tag">Creativo</span></div>
+      <h1>Artifacts vivos: constrúyelo una vez, siempre actualizado</h1>
+      <p class="lead">Los tableros de Claude ahora se quedan conectados a tus apps y se actualizan solos. Tablero de KPIs, calendario de contenido y resumen matutino. Con los prompts de configuración.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>El problema de todo tablero que hace Claude no era la calidad. Era la fecha de caducidad. Le pedías un reporte de KPIs, salía impecable, cerrabas el chat, y al día siguiente esos números ya eran historia. Para actualizarlo tenías que volver a pedir todo.</p>
+
+      <p>Los Artifacts vivos arreglan exactamente eso. Se quedan conectados a tus aplicaciones y jalan datos frescos cada vez que los abres. Lo construyes una vez y después solo lo abres.</p>
+
+      <p>Suena a poco. No lo es: es la diferencia entre un reporte y una herramienta. Un reporte se hace, se manda y se muere. Una herramienta se usa todos los días.</p>
+
+      <h2>Qué son, en una frase</h2>
+
+      <p>Un Artifact vivo es un tablero que Claude construye y guarda, con una conexión permanente a las apps que le autorizaste, y que se actualiza solo al abrirse.</p>
+
+      <p>La diferencia con el artifact de siempre: el de siempre es una foto del momento en que se creó. El vivo vuelve a consultar la fuente cada vez. No hay botón de refrescar y no hay que pedírselo.</p>
+
+      <h2>Lo que necesitas antes de empezar</h2>
+
+      <p>Aquí hay tres requisitos duros que conviene saber antes de invertir media tarde:</p>
+
+      <ul>
+        <li><strong>App de escritorio.</strong> Los Artifacts vivos viven en Cowork, dentro de la aplicación de escritorio de Claude. En el navegador no están. Si nunca la has instalado, empieza por <a href="/guias/guia-de-la-app-de-escritorio/">la guía de la app de escritorio</a>.</li>
+        <li><strong>Plan de paga.</strong> Pro, Max, Team o Enterprise. En el plan gratuito no aparecen.</li>
+        <li><strong>Conectores autorizados antes.</strong> Un Artifact vivo no puede conectarse a algo que no le diste permiso de ver. Esto se hace en Ajustes, Conectores, y se hace primero.</li>
+      </ul>
+
+      <p>Lo que se puede conectar hoy: Google Drive, Google Calendar, Gmail, Slack, Asana, Linear, GitHub, Notion, y lo demás que tengas dado de alta en conectores.</p>
+
+      <h2>Cómo se arma uno</h2>
+
+      <ol>
+        <li>Abre la app de escritorio y entra a Cowork.</li>
+        <li>Ve a Ajustes, Conectores, y autoriza las aplicaciones que va a leer el tablero. Solo esas.</li>
+        <li>Arranca una tarea de Cowork describiendo el tablero que quieres. Claude lo construye y lo guarda en la barra lateral de Artifacts vivos.</li>
+        <li>Ábrelo cuando quieras. Jala los datos frescos solo.</li>
+      </ol>
+
+      <p>El paso 3 es donde se gana o se pierde. Una descripción vaga te da un tablero bonito e inútil. Estos son los tres que sí uso, con el prompt completo.</p>
+
+      <h2>1. Tablero de KPIs</h2>
+
+      <p>El caso obvio y el que más rápido paga. La condición es que tus números ya vivan en algún lado consultable —una hoja de cálculo, normalmente—.</p>
+
+      <pre><code>Construye un tablero de KPIs como Artifact vivo.
+
+Conecta a: mi hoja de Google Sheets llamada [NOMBRE DE LA HOJA],
+pestaña [PESTAÑA].
+
+Muestra estas métricas:
+- Ingresos del mes en curso
+- Leads nuevos de la semana
+- Tasa de conversión de lead a cliente
+- Ticket promedio
+- Pipeline abierto
+
+Para cada métrica muestra:
+- El valor actual, grande y en negrita
+- El cambio contra el mismo periodo anterior, con signo y porcentaje
+- Verde si mejoró, rojo si empeoró, gris si el cambio es menor a 2%
+- Una línea de tendencia de las últimas 8 semanas
+
+Arriba de todo, una línea de texto que diga en español qué es lo
+que más cambió esta semana y por qué, deducido de los datos.
+
+Ordena las métricas de más a menos importante para tomar una
+decisión hoy, no en orden alfabético.
+
+Guárdalo como Artifact vivo para que jale datos frescos de la hoja
+cada vez que lo abra.</code></pre>
+
+      <p>Lo que hace la diferencia en ese prompt es la línea de texto de arriba. Un tablero de números te obliga a interpretarlo tú cada mañana. Un tablero que además te dice qué se movió te ahorra el paso de interpretación, que es el que la gente se salta cuando anda con prisa.</p>
+
+      <h2>2. Calendario de contenido</h2>
+
+      <p>Para una operación de contenido, el dolor no es producir: es saber qué pieza va con qué fecha y en qué estado está. Ese dato normalmente vive partido entre el calendario y una carpeta de Drive.</p>
+
+      <pre><code>Construye un calendario de contenido como Artifact vivo.
+
+Conecta a:
+- Mi Google Calendar, específicamente el calendario [NOMBRE]
+- Mi carpeta de Google Drive [NOMBRE DE LA CARPETA]
+
+Muestra una vista semanal, cada día como columna. En cada día:
+- Las publicaciones programadas para ese día, con su canal
+- El estado de cada pieza según el archivo que le corresponde en
+  Drive: sin empezar, en borrador, en revisión, lista
+- Quién es el responsable, si está en el archivo
+
+Debajo de la semana, tres bloques:
+- Piezas sin archivo asociado en Drive
+- Piezas cuya fecha ya pasó y siguen en borrador
+- Días de la semana que quedaron vacíos
+
+Nada de decoración. Que quepa completo en una pantalla.
+
+Guárdalo como Artifact vivo. Cada vez que lo abra debe jalar mis
+eventos de calendario actuales y el estado actual de los archivos.</code></pre>
+
+      <p>Los tres bloques de abajo son el verdadero producto. Un calendario te enseña lo que hay. Esos bloques te enseñan lo que falta, que es donde se cae la operación.</p>
+
+      <h2>3. Resumen matutino</h2>
+
+      <p>Este es el que más uso y el que más gente subestima porque suena a lujo. No lo es: es el que reemplaza los primeros veinte minutos del día abriendo pestañas.</p>
+
+      <pre><code>Construye un resumen matutino diario como Artifact vivo.
+
+Conecta a: Google Calendar, Gmail y Slack.
+
+Estructura, en este orden:
+
+1. Mi día: las juntas de hoy con hora, quién va y una línea de para
+   qué es cada una. Marca los huecos de más de 90 minutos como
+   bloques de trabajo profundo disponibles.
+
+2. Correo: mis 5 correos sin leer más importantes. Importante =
+   viene de un cliente, tiene una pregunta directa, o menciona una
+   fecha límite. Una línea por correo: quién, qué quiere, qué
+   tendría que contestar.
+
+3. Slack: menciones directas y mensajes en hilos donde participé,
+   de las últimas 24 horas, que sigan sin respuesta mía.
+
+4. Lo que se me está pasando: cualquier cosa de arriba que lleve
+   más de 48 horas esperándome.
+
+Que sea corto. Esto se lee en 30 segundos parado con el café. Sin
+introducciones, sin cierres, sin resúmenes de lo que ya dijiste.
+
+Guárdalo como Artifact vivo para que jale datos frescos cada
+mañana.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar el tablero contra la realidad la primera semana. Un Artifact vivo que lee mal tu hoja de cálculo no te va a avisar: te va a mostrar números con toda confianza. Los primeros cinco días, abre el tablero y verifica dos cifras a mano. Si cuadran, ya puedes confiar. Si no, casi siempre es que la fuente tiene columnas con nombres distintos a los que asumió.</p>
+      </div>
+
+      <h2>Los límites que sí duelen</h2>
+
+      <p>Hay cuatro, y ninguno es menor:</p>
+
+      <ul>
+        <li><strong>Solo escritorio.</strong> No hay versión web. Si vives en el navegador, esto no es para ti todavía.</li>
+        <li><strong>No se comparten con el equipo.</strong> Hoy no hay forma de darle tu tablero a otra persona. Es una herramienta personal, no de equipo.</li>
+        <li><strong>Un solo dispositivo.</strong> No se sincronizan entre máquinas. El tablero que armaste en la laptop de la oficina no está en la de tu casa.</li>
+        <li><strong>Consumen cuota, y no poca.</strong> Cada apertura vuelve a consultar todo. Un tablero abierto diez veces al día pesa.</li>
+      </ul>
+
+      <p>Ese último punto es el que determina cuántos vale la pena tener. Mi regla: máximo tres tableros vivos, y solo de cosas que de verdad abro todos los días. Cinco tableros que abres una vez a la semana consumen más de lo que devuelven, y ninguno se te vuelve hábito.</p>
+
+      <h2>Por dónde empezaría</h2>
+
+      <p>Por el resumen matutino, aunque el de KPIs suene más serio. La razón es de adopción, no de valor: el resumen matutino se usa solo, porque sustituye algo que ya haces todas las mañanas. El tablero de KPIs hay que acordarse de abrirlo, y la mitad de la gente no se acuerda.</p>
+
+      <p>Cuando lleves dos semanas abriendo el resumen sin pensarlo, ahí sí arma el de números. Para entonces ya vas a saber qué métricas revisas de verdad, que casi nunca son las que hubieras puesto el primer día.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/robarle-el-diseno-a-un-sitio/" class="stack-link">
+            <span>Cómo robarle el diseño a cualquier sitio web con IA →</span>
+            <small>Los sitios hechos con IA se ven genéricos porque la IA no tiene gusto. El truco de un solo archivo que hace que Claude construya como marca premium, partiendo de un diseño que ya te gusta.</small>
+          </a>
+          <a href="/guias/stack-de-ia-que-reemplaza-tu-saas/" class="stack-link">
+            <span>El stack de IA que reemplaza tu software de suscripción →</span>
+            <small>Las herramientas exactas para reconstruir tú mismo el software caro, la regla honesta de construir contra comprar, y un prompt para dimensionar tu propio reemplazo.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

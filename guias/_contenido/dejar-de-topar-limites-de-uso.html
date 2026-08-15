@@ -1,0 +1,109 @@
+      <p>La mayoría de los consejos para no toparte tratan sobre higiene: cierra los chats largos, usa proyectos, elige bien el modelo. Todo eso sirve y ya está escrito en otro lado —los <a href="/guias/4-hacks-para-gastar-menos-tokens/">cuatro hacks para gastar menos tokens</a> y <a href="/guias/no-volver-a-topar-tu-limite-semanal/">cómo no volver a topar tu límite semanal</a> lo cubren completo.</p>
+
+      <p>Esta guía va por otro lado. Aquí no se trata de cómo administras tus chats sino de <strong>cómo escribes dentro de uno</strong>. Cinco movimientos de interfaz que la gente no usa porque no sabe que existen o porque la costumbre pide otra cosa, y que cambian el consumo sin cambiar nada más de tu forma de trabajar.</p>
+
+      <p>El principio que los une es uno solo: cada mensaje que mandas hace que el modelo relea la conversación entera desde arriba. No pagas por lo que escribes. Pagas por todo lo que ya está ahí, otra vez.</p>
+
+      <h2>1. Edita el mensaje en vez de mandar otro</h2>
+
+      <p>Es el movimiento con mejor retorno de los cinco y casi nadie lo usa.</p>
+
+      <p>Le pides algo, la respuesta no queda, y tu reflejo es escribir "no, hazlo más corto y con otro tono". Ese mensaje nuevo hace que se relea tu petición original, la respuesta mala completa, y encima tu corrección.</p>
+
+      <p>En vez de eso: pasa el cursor sobre tu mensaje original, dale editar, agrega ahí lo que faltaba y vuelve a enviar. La respuesta mala desaparece del historial y el modelo relee una conversación más corta que la que tenías antes de intentarlo.</p>
+
+      <p>La regla práctica: <strong>si tu siguiente mensaje empieza con "no" o con "mejor", ese mensaje era una edición</strong>. Los primeros dos o tres intentos de cualquier tarea siempre son ediciones, no mensajes nuevos.</p>
+
+      <h2>2. Pide correcciones quirúrgicas, no rehacer todo</h2>
+
+      <p>Te entrega un documento de dos páginas y el problema está en el tercer párrafo. Lo que dice todo el mundo: "está bueno pero rehazlo con este enfoque". Y él regenera las dos páginas completas.</p>
+
+      <p>Acabas de pagar dos páginas para cambiar un párrafo, y de paso perdiste las tres frases que sí te gustaban.</p>
+
+      <p>Este es el prompt que uso para eso:</p>
+
+      <pre><code>No regeneres el texto completo. Vas a hacer solo los cambios que
+te pido y nada más.
+
+Cambios:
+1. [sección o párrafo] → [qué debe decir ahora]
+2. [sección o párrafo] → [qué debe decir ahora]
+
+Devuélveme ÚNICAMENTE las secciones que tocaste, con un
+encabezado que diga a cuál corresponde cada una. No repitas el
+resto del documento. No cambies nada que no esté en la lista de
+arriba, aunque creas que mejora.
+
+Si un cambio que te pido rompe algo en otra parte del texto,
+dímelo en una línea al final en vez de arreglarlo por tu cuenta.</code></pre>
+
+      <p>Esa última instrucción es la importante. Sin ella, el modelo "arregla" cosas alrededor y regresas al problema original.</p>
+
+      <h2>3. Deja de subir el PDF completo</h2>
+
+      <p>Una página de PDF puede consumir del orden de tres mil tokens. Un reporte de cien páginas, entonces, no es un archivo adjunto: es una conversación entera de costo, y viaja otra vez en cada mensaje que mandes después.</p>
+
+      <p>Casi siempre necesitas dos páginas. Ábrelo, copia esas dos, pégalas como texto. Es literalmente diez segundos de trabajo y baja el costo del chat en dos órdenes de magnitud.</p>
+
+      <p>Cuando de verdad necesitas el documento completo —porque no sabes dónde está lo que buscas— el patrón es: chat dedicado solo para eso, sacas lo que necesitas, cierras ese chat, y sigues en uno nuevo con el resumen pegado. Lo que no se vale es dejar el documento colgado en el chat donde vas a trabajar las siguientes tres horas.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar qué archivos siguen vivos en el chat. La gente sube un documento en el mensaje cuatro, lo usa, y sigue trabajando cuarenta mensajes más con ese archivo colgando del contexto. Nunca se le ocurre que se sigue pagando. Antes de una sesión larga, pregúntate qué archivos están adjuntos y si todavía los necesitas. Si ya sacaste lo que querías, ese es el momento de cerrar y empezar limpio.</p>
+      </div>
+
+      <h2>4. Planea en el chat, construye en Cowork</h2>
+
+      <p>Este es el que menos gente conoce y aplica a cualquier trabajo de varios pasos: un análisis, un documento largo, una herramienta, una campaña.</p>
+
+      <p>El instinto es entrar directo a construir y ahí ir decidiendo. Pero decidir dentro de la ejecución es carísimo: cada duda que resuelves a medio camino te obliga a rehacer parte de lo hecho, y cada versión descartada se queda en el contexto.</p>
+
+      <p>La forma barata es separar. En el chat normal defines qué se va a hacer, en qué orden y con qué criterio. Eso es texto: cuesta poco. Cuando el plan está firme, te lo llevas a Cowork y ahí se ejecuta de corrido, sin discusión.</p>
+
+      <p>Piensa en un cierre financiero mensual. Discutir en Cowork cómo se van a clasificar tres cuentas raras mientras el proceso corre significa arrancar y reiniciar el proceso tres veces. Decidirlo antes, por escrito, y luego correrlo una vez, cuesta una fracción y sale mejor.</p>
+
+      <h2>5. Junta las preguntas antes de mandarlas</h2>
+
+      <p>Tres preguntas en tres mensajes hacen que la conversación se relea tres veces. Las mismas tres en un mensaje, una sola.</p>
+
+      <p>El hábito que hay que romper es preguntar conforme se te ocurre. Se anotan y se mandan juntas:</p>
+
+      <pre><code>Te voy a hacer varias peticiones sobre el mismo material.
+Contéstalas todas en una sola respuesta, numeradas, con un
+encabezado por cada una.
+
+No repitas el contexto entre una y otra. Si dos se contestan igual,
+dilo en una sola. Si alguna no se puede contestar con lo que te di,
+ponla al final en una lista de "me falta información para esto" en
+vez de suponer.
+
+1.
+2.
+3.</code></pre>
+
+      <p>Y el hermano de ese, para cuando arrancas algo nuevo. Este ahorra porque evita las tres o cuatro rondas de aclaración que normalmente vienen después:</p>
+
+      <pre><code>Contexto de esta tarea, para que no tengas que preguntarme:
+
+- Mi rol y mi empresa:
+- Qué necesito exactamente:
+- Para quién es y qué sabe esa persona del tema:
+- Tono:
+- Formato de salida:
+- Largo máximo:
+- Lo que NO debe incluir:
+
+Con eso, entrégame el resultado directo. Si algo de arriba te
+falta y sin eso no puedes trabajar, pregúntamelo TODO en una sola
+lista antes de empezar. No me hagas preguntas de una en una.</code></pre>
+
+      <h2>El orden en que se adoptan</h2>
+
+      <p>De los cinco, dos son hábitos y tres son técnica. Empieza por los hábitos, que son los que más rinden y los únicos que cuesta trabajo adoptar.</p>
+
+      <p><strong>Semana uno: editar en vez de responder.</strong> Cada vez que vayas a escribir "no, mejor…", detente y edita el mensaje de arriba. Se siente raro tres días y luego ya no.</p>
+
+      <p><strong>Semana dos: nada de documentos completos.</strong> Copia y pega la parte que importa. Sin excepciones, hasta que se vuelva automático.</p>
+
+      <p>Los otros tres —correcciones quirúrgicas, planear aparte, juntar preguntas— son prompts. Guárdalos y péganos cuando apliquen; no requieren cambiar nada de cómo piensas.</p>
+
+      <p>Y si después de un mes con los cinco sigues topando cada semana, entonces ya no es desperdicio. Estás haciendo un volumen de trabajo que tu plan no cubre, y esa conversación ya no es de técnica: es de plan.</p>

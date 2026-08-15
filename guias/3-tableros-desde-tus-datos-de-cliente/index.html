@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arma 3 tableros desde tus datos de clientes — Guías Flow AI</title>
+  <meta name="description" content="Tres prompts para pegar que convierten tus datos de pedidos, horarios de compra y reseñas en tableros interactivos de nivel: un mapa de clientes, un mapa de calor de 24 horas, y un mapa de palabras de marketing." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/3-tableros-desde-tus-datos-de-cliente/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Arma 3 tableros desde tus datos de clientes" />
+  <meta property="og:description" content="Tres prompts para pegar que convierten tus datos de pedidos, horarios de compra y reseñas en tableros interactivos de nivel: un mapa de clientes, un mapa de calor de 24 horas, y un mapa de palabras de marketing." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/3-tableros-desde-tus-datos-de-cliente/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Negocio</p>
+      <div class="guide-tags"><span class="tag">Multi-herramienta</span><span class="tag">Negocio</span><span class="tag">Creativo</span></div>
+      <h1>Arma 3 tableros desde tus datos de clientes</h1>
+      <p class="lead">Tres prompts para pegar que convierten tus datos de pedidos, horarios de compra y reseñas en tableros interactivos de nivel: un mapa de clientes, un mapa de calor de 24 horas, y un mapa de palabras de marketing.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 9 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Tu tienda ya tiene la respuesta a las tres preguntas que más te importan: dónde están tus clientes, a qué hora compran y con qué palabras hablan de ti. Está toda en exportaciones que nadie abre porque son hojas de cálculo con nueve mil renglones.</p>
+
+      <p>Estos tres prompts convierten esas exportaciones en tableros HTML de un solo archivo que se abren en el navegador, sin servidor, sin hosting y sin instalar nada. Los corres en Codex con el CSV en la carpeta y sales con un archivo que puedes mandar por correo.</p>
+
+      <p>Lo importante de los tres es lo mismo: <strong>enseñan el patrón, no los números crudos</strong>. Puedes compartirlos con un socio o un proveedor sin exponer cuánto vendes.</p>
+
+      <h2>Antes de correr nada</h2>
+
+      <p>Necesitas Codex configurado y una carpeta de trabajo con tu CSV adentro. Si nunca lo has usado, en <a href="/guias/empezar-con-un-agente-de-codex/">la guía de arranque de Codex</a> está el setup de quince minutos.</p>
+
+      <p>Y necesitas exportar. Los tres archivos salen de donde ya operas: pedidos de Shopify, WooCommerce, BigCommerce, Stripe o Amazon; horarios de compra de la analítica de tu tienda o de tu plataforma de correo; reseñas de Yotpo, Stamped, Loox, Judge.me o Google.</p>
+
+      <h2>1. Dónde viven tus clientes</h2>
+
+      <p>Un mapa 2D interactivo de Estados Unidos con un punto por ciudad, las diez principales en rojo, con zoom, arrastre y una lista de top 10 abajo. Sin conteos de pedidos a la vista.</p>
+
+      <p>Sirve para decidir dónde abres punto físico, dónde metes pauta local y con qué transportista negocias.</p>
+
+      <pre><code>Construye un tablero HTML autocontenido a partir del CSV de pedidos que subí. Título: "Dónde viven mis clientes".
+
+OBJETIVO: un mapa 2D interactivo, premium, de las ciudades de envío en Estados Unidos. Usa únicamente mi CSV. No expongas conteos exactos de pedidos por ciudad en el archivo final.
+
+DATOS: detecta automáticamente las columnas de ciudad, estado, código postal y país; soporta encabezados estilo Shopify (shipping_city, shipping_province, shipping_zip, shipping_country). Omite en silencio los renglones sin ciudad y filtra a Estados Unidos. Normaliza estados: acepta "CA" y "California", convierte a código de dos letras. Geocodifica con archivos de referencia locales descargados de fuentes públicas; NO mandes mi CSV a ninguna API externa de geocodificación. Agrupa los pedidos de una misma ciudad en un solo punto.
+
+PRIVACIDAD: internamente puedes contar pedidos por ciudad para calcular tamaño y rango de los puntos, pero en el HTML final no incluyas campos llamados count, orders, orderCount, totalOrders ni equivalentes. Los tooltips muestran solo "Ciudad, ST" y la lista de top 10 solo rango, ciudad y estado. El único número visible del negocio es la cantidad de ciudades únicas. Antes de terminar, busca en el HTML cualquier campo de conteo y elimínalo.
+
+MAPA: proyección tipo Albers para el territorio continental, con Alaska y Hawái como recuadros a la IZQUIERDA, escalados y acomodados; no necesitan precisión geográfica. Renderiza en un solo canvas 2D, no en miles de marcadores DOM. Dibuja solo los puntos visibles al hacer zoom o arrastrar. Nada de bucles de animación continuos: redibuja solo al interactuar, redimensionar o seleccionar, y limita el device pixel ratio para no calentar la máquina.
+
+DISEÑO: limpio y premium. Fondo del mapa negro, territorio claro, contornos de estado sutiles, brillo suave en los puntos. Título en una sola línea. Tarjeta de estadística arriba a la derecha con SOLO el número de ciudades. Sección permanente "Top 10 ciudades" debajo del mapa, en filas tipo pastilla con insignia circular roja de rango. Responsivo.
+
+INTERACCIÓN: arrastrar para desplazar, rueda para zoom alrededor del cursor, hover para resaltar la ciudad más cercana, clic para seleccionar y resaltar su fila del top 10, y clic en una fila del top 10 para seleccionarla en el mapa.
+
+SALIDA: un solo archivo HTML autocontenido que abra directo en el navegador, más el script de construcción reutilizable en la misma carpeta. No incluyas el CSV crudo dentro del HTML.
+
+REVISIÓN FINAL: título en una línea, mapa 2D, Alaska y Hawái a la izquierda, top 10 en rojo, tooltips solo con ciudad y estado, cero conteos visibles, zoom fluido, sin errores de consola.</code></pre>
+
+      <h2>2. A qué hora compran</h2>
+
+      <p>Un mapa de calor de las 24 horas del día ordenado por frecuencia de compra, con las tres mejores horas en podio de oro, plata y bronce.</p>
+
+      <p>Este es el que más se pelea con lo que dicen los blogs de marketing. El reloj de compra de tu negocio casi nunca coincide con "la mejor hora para publicar" que leíste en algún lado. Aquí decides a qué hora sale tu correo y a qué hora empujas presupuesto de pauta.</p>
+
+      <p>Necesitas un CSV con dos columnas: <code>hour_0_23</code> y <code>order_count</code>, 24 renglones.</p>
+
+      <pre><code>Voy a subir un CSV con dos columnas: hour_0_23 (hora en formato de 24 horas, 0 a 23) y order_count. Son 24 renglones, uno por hora. Construye un tablero HTML autocontenido de un solo archivo que abra en mi navegador.
+
+PRIVACIDAD: usa order_count solo internamente. No muestres conteos crudos, totales de venta, ingresos, porcentajes ni tasas de conversión en ninguna parte. Quien lo vea debe ver el patrón, no los números.
+
+VISIBLE: mejor hora de compra, top 3 en podio, etiquetas de hora en formato de 12 horas, números de rango, etiquetas de señal, etiquetas de franja del día, intensidad de color y leyenda.
+
+LÓGICA, en orden: parsea el CSV, valida cada renglón, omite en silencio los inválidos, crea una entrada por cada hora de 0 a 23, ordena por order_count de mayor a menor, asigna rango, identifica el top 3, usa el conteo interno solo para calcular intensidad de color.
+
+TITULAR: "Mis clientes compran más a las [hora]", con la hora en formato de 12 horas.
+
+PODIO: las tres mejores horas como tarjetas de oro, plata y bronce. Cada una muestra únicamente el lugar y la hora.
+
+MAPA DE CALOR: las 24 horas en cuadrícula. Cada celda muestra hora y número de rango, por ejemplo "10 AM / #1". Colorea por intensidad relativa con tres niveles: Tranquila, Media, Pico. Agrega leyenda.
+
+TOOLTIP al pasar el cursor: hora, rango, señal y franja del día. Nada de conteos.
+
+PANEL LATERAL al hacer clic: hora, rango, señal, posición en el mapa, franja del día y las horas adyacentes (una antes y una después) con su rango.
+
+ETIQUETAS DE SEÑAL: #1 señal pico; #2 y #3 señal de primer nivel; #4 a #6 señal muy alta; #7 a #12 señal alta; #13 a #18 señal moderada; #19 a #24 señal tranquila.
+
+FRANJAS: 12 AM a 4 AM madrugada; 5 AM a 11 AM mañana; 12 PM a 4 PM tarde; 5 PM a 8 PM noche; 9 PM a 11 PM noche tardía.
+
+DISEÑO: fondo oscuro, paneles de vidrio esmerilado, texto claro, alto contraste, espaciado elegante, poco texto. Fondo animado tipo humo en un canvas WebGL detrás del contenido, sutil, que respete prefers-reduced-motion. Evita fondos blancos brillantes, tablas crudas y paletas de arcoíris.
+
+SALIDA: HTML, CSS y JavaScript en un solo archivo. Sin dependencias externas ni CDN.
+
+REVISIÓN FINAL: abre en el navegador, el titular muestra la hora más fuerte, el podio está completo, el mapa de calor muestra rangos y no conteos, tooltip y panel funcionan, la leyenda es visible, el texto se lee sobre el fondo oscuro, funciona en escritorio y en móvil, sin errores de consola.</code></pre>
+
+      <h2>3. Con qué palabras hablan de ti</h2>
+
+      <p>Un mapa de palabras flotante sobre un fondo animado. La palabra más grande es el descriptor más fuerte de tu producto. Al hacer clic en cualquiera se abre un panel con reseñas reales donde aparece esa palabra.</p>
+
+      <p>Este es mi favorito de los tres y el que menos gente hace. Ahí está, literal, el copy de tus anuncios y de tu página de producto, escrito por la gente que ya te compró.</p>
+
+      <pre><code>Te doy un CSV de reseñas de clientes de mi marca. Ruta: [PEGA LA RUTA LOCAL COMPLETA]. Construye un tablero HTML autocontenido de un solo archivo. Usa solo este CSV. No uses datos de ejemplo, datos viejos ni de otra marca.
+
+OBJETIVO: un mapa interactivo del lenguaje del cliente para estrategia de marketing. No es una nube de palabras genérica.
+
+ENTRADA: detecta la columna de texto de reseña (review, review_text, body, comment, content, text). Opcionales: rating, stars, score, date, product.
+
+PROCESAMIENTO: procesa cada renglón con texto. Pasa a minúsculas, quita puntuación, colapsa espacios, elimina palabras de menos de 3 caracteres y quita palabras vacías del español y del inglés.
+
+FILTRO DE MARKETING (esto es lo importante): no muestres simplemente las palabras más frecuentes. CONSERVA palabras y frases cortas que describan sensación o resultado del cliente, experiencia de producto, ajuste o facilidad de uso, material o textura, calidad o durabilidad, desempeño, apariencia o estilo, versatilidad, e intención de recompra o recomendación. ELIMINA términos de envío, de atención a clientes, transaccionales, de tiempo, conectores gramaticales y nombres de producto que dominen sin aportar. Prueba cada término: ¿me ayudaría a escribir mejor copy de anuncio, de página de producto o de correo? Si no, descártalo.
+
+EXTRACCIÓN: cuenta palabras individuales relevantes y extrae frases de 2 y 3 palabras. Evita conceptos duplicados. Aplica revisión de negación: "no [término]" no cuenta como prueba positiva; revisa si hay "no", "nunca" o "sin" cerca.
+
+SELECCIÓN: genera entre 30 y 40 términos candidatos ordenados. El término héroe es el descriptor de marketing más frecuente, no necesariamente la palabra cruda más frecuente, y no va fijo en el código. Cinco niveles de tamaño, del héroe centrado a los términos de apoyo más chicos.
+
+DISEÑO: oscuro, calmado, técnico, tipografía monocromática marfil y plata sobre fondo casi negro. Fondo de malla animada en canvas WebGL autocontenido, con movimiento lento y visible pero sutil, en negros, grises y blancos, con capa oscura encima para que el texto se lea. Nada de nubes de palabras de colores, tarjetas alrededor del mapa, leyendas ni texto explicativo arriba. La primera pantalla es solo el mapa de palabras. Las palabras flotan levemente, no se traslapan, crecen y se aclaran al pasar el cursor, y se recalcula la posición al redimensionar. Respeta prefers-reduced-motion.
+
+PANEL DE PRUEBA: al hacer clic en una palabra, abre un panel lateral de vidrio oscuro con la etiqueta "Prueba en reseñas", la palabra como título, en cuántas reseñas de este CSV aparece, y tres fragmentos reales de reseña con la palabra resaltada. Botón circular de cierre arriba a la derecha y cierre con Escape.
+
+SECCIÓN DE MARKETING: debajo del mapa, un encabezado centrado en una sola línea que diga exactamente "Aquí está tu ángulo de marketing." Debajo, un párrafo conciso sobre qué sugiere este lenguaje desde marketing, y una línea de copy más fuerte que sirva como dirección de posicionamiento. Ambos generados desde los términos de este CSV.
+
+SALIDA: un solo archivo HTML llamado "Mapa de lenguaje de clientes.html", con CSS, JavaScript y datos procesados embebidos. Sin CDN ni paquetes externos. Sin datos crudos salvo los fragmentos de este CSV.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> las reglas de privacidad de los prompts. Se ven como relleno y son la razón por la que estos archivos se pueden compartir. Un tablero con conteos crudos adentro es un documento confidencial que va a terminar reenviado en un chat. Uno que solo muestra rangos y patrones lo puedes mandar a una agencia, a un socio o a un proveedor sin pensarlo.</p>
+      </div>
+
+      <h2>Cómo se actualizan y cómo se corrigen</h2>
+
+      <p>Para refrescar: sueltas el CSV nuevo en el mismo hilo de Codex y pides que regenere con la misma especificación. El diseño se queda igual, solo cambian los datos.</p>
+
+      <p>Para corregir estética: no describas el problema con palabras. Toma una captura de pantalla, pégala en el chat y di qué está mal. Ajusta la paleta o el tamaño de los puntos en un par de vueltas, sin empezar de nuevo.</p>
+
+      <p>Y el error que sí importa: correr los tres el mismo día. Corre el segundo primero —es el más simple, dos columnas— y úsalo una semana. Si ese tablero no te hizo mover ni un horario de envío de correo, los otros dos tampoco te van a cambiar nada, y el problema no es el tablero. Es que todavía no tienes la decisión que ese dato debía alimentar.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/mentor-ia-que-no-te-da-la-razon/" class="stack-link">
+            <span>Un mentor de IA que no te va a dar la razón →</span>
+            <small>Clasifica qué tipo de decisión estás tomando en realidad, te dice si la nombraste mal, y la manda con los fundadores que mejor piensan ese problema exacto.</small>
+          </a>
+          <a href="/guias/robarle-el-diseno-a-un-sitio/" class="stack-link">
+            <span>Cómo robarle el diseño a cualquier sitio web con IA →</span>
+            <small>Los sitios hechos con IA se ven genéricos porque la IA no tiene gusto. El truco de un solo archivo que hace que Claude construya como marca premium, partiendo de un diseño que ya te gusta.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+      <p>Un negocio de 8 personas no tiene área de finanzas, ni de marketing, ni de legal. Tiene a un dueño que hace las tres cosas los domingos en la noche, con QuickBooks abierto en una pestaña y el WhatsApp de un cliente que no ha pagado en la otra.</p>
+
+      <p>Esa es la asimetría real contra las empresas grandes. No es el presupuesto de pauta. Es que ellos tienen quien persiga las facturas y tú no.</p>
+
+      <p>Anthropic soltó un plugin gratis dentro de Cowork que se llama <strong>Claude for Small Business</strong> y ataca justo ese hueco: 15 flujos completos, 15 skills y conexiones ya cableadas a contabilidad, pagos, CRM, diseño, firma electrónica y ofimática. Te digo cómo se instala, qué trae de verdad y los tres primeros usos que le daría —en ese orden.</p>
+
+      <h2>Qué es esto, sin adornos</h2>
+
+      <p>Un plugin es un paquete que le instala a Claude todo lo que necesita para trabajar un área en un solo paso: el conocimiento del oficio, los accesos a tus herramientas y los atajos para invocarlo. Si nunca has instalado uno, la mecánica está en <a href="/guias/plugins-cowork/">la guía de plugins de Cowork</a>.</p>
+
+      <p>Lo que distingue a este es que no está armado por función —ventas, finanzas, legal— sino por <em>tamaño de empresa</em>. Está pensado para el negocio donde la misma persona cierra el mes, contesta al cliente enojado y revisa el contrato del proveedor.</p>
+
+      <h2>Qué trae adentro</h2>
+
+      <p>Los 15 flujos son automatizaciones de punta a punta, no prompts sueltos. Se agrupan más o menos así:</p>
+
+      <ul>
+        <li><strong>Finanzas</strong> — planeación de nómina, cierre de mes, organización de temas fiscales.</li>
+        <li><strong>Ventas y operación</strong> — cobranza de facturas vencidas, triage de leads que entran, reporte de pulso del negocio.</li>
+        <li><strong>Marketing</strong> — ejecución de campañas, estrategia de contenido, análisis de margen por producto.</li>
+        <li><strong>Recursos humanos y legal</strong> — revisión de contratos, preparación de cierre, flujos de atención a clientes.</li>
+      </ul>
+
+      <p>Las 15 skills son las piezas reusables que esos flujos van llamando: el cobrador de facturas, el analizador de margen, el revisor de contratos. No las invocas una por una; el flujo las usa cuando le tocan.</p>
+
+      <h2>Los conectores que trae cableados</h2>
+
+      <p>Esta es la parte que ahorra el fin de semana de configuración. Vienen listos para:</p>
+
+      <ul>
+        <li><strong>Intuit QuickBooks</strong> — contabilidad.</li>
+        <li><strong>PayPal</strong> — pagos.</li>
+        <li><strong>HubSpot</strong> — CRM.</li>
+        <li><strong>Canva</strong> — diseño.</li>
+        <li><strong>DocuSign</strong> — firma electrónica.</li>
+        <li><strong>Google Workspace</strong> y <strong>Microsoft 365</strong> — correo, hoja de cálculo, documentos.</li>
+      </ul>
+
+      <p>Si tu operación vive en otro stack, revisa esta lista antes de emocionarte. Un flujo de cobranza sin acceso al sistema donde están las facturas es un flujo que redacta correos bonitos con datos que tú le tienes que pegar a mano.</p>
+
+      <h2>Cómo se instala</h2>
+
+      <ol>
+        <li>Abre <strong>Cowork</strong> en la app de escritorio de Claude, desde la barra lateral.</li>
+        <li>Entra a <strong>Customize</strong> y luego a explorar plugins.</li>
+        <li>Busca "Small Business". Antes de darle instalar, revisa la lista de skills y conectores que pide.</li>
+        <li>Instálalo. Es gratis.</li>
+        <li><strong>Conecta solo las herramientas que sí usas.</strong> Instalar no conecta nada; la autorización de cada cuenta es un paso aparte.</li>
+      </ol>
+
+      <p>Anthropic también publicó un curso gratis de fluidez con IA para negocios pequeños, hecho junto con PayPal. Si eres el dueño y vas a ser tú quien opere esto, vale las horas.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> limpiar los datos antes de conectar. Si tu QuickBooks trae 400 transacciones sin categorizar y tres cuentas duplicadas, el flujo de cierre te va a entregar un reporte con la misma basura, solo que más rápido y con mejor formato. Dedica una tarde a poner en orden los últimos tres meses antes de la primera corrida. No hay atajo para esto.</p>
+      </div>
+
+      <h2>Los tres primeros usos, en orden</h2>
+
+      <h3>1. Cobranza de facturas</h3>
+
+      <p>Es el primero porque es el único que te devuelve dinero la misma semana. Casi todo negocio chico trae cuentas por cobrar que nadie persigue porque perseguirlas es incómodo y aburrido.</p>
+
+      <pre><code>Jala todas las facturas abiertas con más de 14 días de vencidas.
+Para cada una, dime: cliente, monto, días de atraso y cuándo fue
+el último contacto que tuvimos con esa cuenta.
+
+Redacta el correo de seguimiento de cada una, en español de México,
+tono cordial pero directo, y ajusta la firmeza según los días de
+atraso: 14-30 días recordatorio suave, 30-60 días con fecha límite,
+más de 60 días escalando a suspensión de servicio.
+
+Adjunta cada borrador al contacto correspondiente en el CRM.
+
+No mandes nada. Muéstrame la lista completa para aprobar.</code></pre>
+
+      <h3>2. Preparación del cierre de mes</h3>
+
+      <p>El segundo porque es el que le quita horas al contador y errores a ti. No hace el cierre: lo deja listo para que alguien con criterio lo cierre.</p>
+
+      <pre><code>Corre la preparación de cierre del mes pasado.
+
+1. Lista las transacciones sin categorizar, con el monto y una
+   propuesta de categoría para cada una.
+2. Marca posibles duplicados.
+3. Señala gastos fuera de lo normal comparando contra el promedio
+   de los tres meses anteriores, y di por qué te llamaron la atención.
+4. Redacta un resumen de estado de resultados con la comparación
+   contra el mes anterior.
+
+Si un dato no lo tienes, dilo. No lo estimes.</code></pre>
+
+      <h3>3. Lanzamiento de campaña</h3>
+
+      <p>El tercero es el que se ve más vistoso y por eso casi todos lo corren primero. Ponlo al final: una campaña sobre un negocio que no cobra sus facturas no arregla nada.</p>
+
+      <pre><code>Planea una campaña de 3 semanas para [PRODUCTO O SERVICIO].
+
+Mi cliente ideal: [DESCRIPCIÓN EN UNA FRASE]
+Mi objetivo: [LEADS / VENTAS / RECOMPRA] — meta concreta: [NÚMERO]
+
+Entrégame:
+- La oferta, con el argumento de por qué compra ahora y no después.
+- Secuencia de correos con asunto y cuerpo completo.
+- 5 publicaciones de redes con el copy final, no con ideas.
+- Los diseños en Canva a partir de nuestra plantilla de marca.
+- Todo cargado en el CRM como campaña, en estado de borrador.
+
+Déjalo para mi aprobación. No publiques ni envíes nada.</code></pre>
+
+      <h2>Dónde está el límite</h2>
+
+      <p>Esto no reemplaza a tu contador. Prepara el cierre, no lo firma. Encuentra la transacción rara, no decide cómo se registra. La última milla de finanzas necesita a alguien con responsabilidad legal encima, y ese no es un modelo.</p>
+
+      <p>Tampoco es gratis del todo en la práctica: el plugin sí lo es, pero correr varios flujos de forma sostenida te va a topar contra los límites de uso del plan gratuito. Ahí ya estás hablando de una suscripción, que sigue siendo barata contra el sueldo de la persona que no vas a contratar.</p>
+
+      <p>Y una regla que no negociaría: Claude pide aprobación antes de mandar comunicaciones importantes, y esa aprobación la das tú. La primera vez que dejes un flujo de cobranza correr solo, vas a mandarle un recordatorio de pago al cliente que ya pagó pero cuyo depósito no se había conciliado. Revisa la lista antes de dar enter.</p>
+
+      <p>El orden importa más que la herramienta: cobra primero, ordena después, promociona al final.</p>

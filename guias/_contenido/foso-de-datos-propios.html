@@ -1,0 +1,125 @@
+      <p>Toda IA que puedes contratar hoy leyó el mismo internet. Los mismos artículos, los mismos foros, la misma Wikipedia. Por eso cuando le pides "escríbeme el copy para mi producto" a cualquiera de ellas, sale lo mismo con distinto envoltorio.</p>
+
+      <p>Eso tiene una consecuencia incómoda: el modelo dejó de ser la ventaja. Tu competencia tiene acceso exactamente al mismo cerebro que tú, por los mismos veinte dólares al mes. Lo único que no puede copiar son los datos que tú tienes y él no.</p>
+
+      <p>Esas son las tres formas de construir ese foso. Ninguna requiere un equipo de datos ni un presupuesto grande.</p>
+
+      <h2>Qué es un foso de datos, en una frase</h2>
+
+      <p>Es cualquier conjunto de información sobre tu mercado que la IA no puede conseguir sola y que tu competencia no está guardando.</p>
+
+      <p>No tiene que ser exótico. Las conversaciones de tus vendedores, las quejas que dejan tus clientes en la reseña de un competidor, las preguntas que te llegan por mensaje directo: todo eso es material que ningún modelo vio durante su entrenamiento y que, cargado a un proyecto, cambia por completo la calidad de lo que produce.</p>
+
+      <h2>Forma 1: saca los datos que los modelos no ven</h2>
+
+      <p>Los modelos se entrenan con una foto del internet, no con el internet de hoy. Lo que se está diciendo esta semana en Reddit sobre tu categoría, las reseñas nuevas de tus competidores, los comentarios en el video que se hizo viral el martes: nada de eso está adentro.</p>
+
+      <p>Herramientas para bajarlo:</p>
+
+      <ul>
+        <li><strong>Apify</strong> — la más versátil. Redes sociales, reseñas, listados, casi cualquier sitio público.</li>
+        <li><strong>Firecrawl</strong> — convierte cualquier URL en texto limpio, listo para pegarle a un modelo.</li>
+        <li><strong>GummySearch</strong> — específica para Reddit, que es donde la gente se queja sin filtro.</li>
+        <li><strong>Bright Data</strong> — para volumen serio, cuando ya es una operación y no un experimento.</li>
+      </ul>
+
+      <p>Dónde está el oro, en orden de rendimiento:</p>
+
+      <ol>
+        <li><strong>Reseñas de tus competidores</strong> en los sitios de tu industria y en las tiendas de apps. Aquí la gente escribe exactamente qué esperaba, qué recibió y por qué se enojó.</li>
+        <li><strong>Conversaciones en tiempo real</strong> en foros y redes sobre tu categoría.</li>
+        <li><strong>Comentarios de videos y podcasts</strong> del nicho, que casi nadie lee y son puro lenguaje de cliente.</li>
+        <li><strong>Boletines y archivos de newsletters</strong> de la gente que ya le habla a tu mercado.</li>
+        <li><strong>Exportaciones de comunidades</strong> a las que perteneces, cuando las reglas lo permiten.</li>
+      </ol>
+
+      <h3>El prompt que convierte eso en algo usable</h3>
+
+      <p>Bajar los datos es la mitad. Este es el prompt con el que los vuelvo un documento que sí sirve. Se copia entero.</p>
+
+      <pre><code>Eres analista de investigacion de clientes. Te voy a pasar lenguaje
+real de clientes, extraido de donde mi mercado se queja de mis
+competidores. No es lenguaje de marketing: son personas escribiendo
+como escriben.
+
+MI CONTEXTO
+- Que vendo: [en una frase]
+- A quien: [describe al cliente]
+- Mis competidores en estos datos: [nombres]
+
+LOS DATOS
+[pega aqui todo lo que bajaste, sin limpiar]
+
+HAZ TODO ESTO, EN ESTE ORDEN
+1. Los 5 trabajos que el cliente esta tratando de resolver cuando
+   compra en esta categoria. No lo que dice que quiere: lo que
+   esta tratando de lograr.
+2. Los 5 dolores que mas se repiten, ordenados por frecuencia real.
+   Pon cuantas veces aparecio cada uno.
+3. Las 20 frases textuales que mas usan los clientes. Copialas tal
+   cual, con sus errores. Esas frases son mi copy.
+4. Los 3 huecos mas grandes que los competidores estan dejando
+   abiertos, con la evidencia que te llevo a cada uno.
+5. Un documento de una pagina de cliente ideal, en prosa, listo
+   para pegarse en un brief.
+6. Un documento de voz de marca: como habla mi mercado, que palabras
+   usa, cuales evita, que tono le cae mal.
+
+REGLAS
+- Todo tiene que salir de los datos que te pase. Si algo no esta
+  ahi, dilo en vez de rellenar con lo que sabes de la categoria.
+- No suavices las quejas. Si la gente esta furiosa, dilo asi.
+- Marca con claridad cuando una conclusion se apoya en pocos casos.
+
+CIERRE
+Termina con un veredicto brutal en cinco lineas: viendo estos datos,
+¿mi producto tiene lugar en este mercado, si o no, y por que?</code></pre>
+
+      <p>El punto 3 es el que más rinde el primer día. Esas veinte frases son el mejor copy de anuncios que vas a tener, y lo escribieron tus clientes.</p>
+
+      <h2>Forma 2: guarda los datos que ya estás tirando</h2>
+
+      <p>Esta es la más barata y la que menos gente hace. Tu operación produce datos propios todos los días y los está borrando.</p>
+
+      <ul>
+        <li><strong>Mensajes y comentarios de clientes.</strong> Expórtalos una vez al mes de cada red donde te escriben.</li>
+        <li><strong>Llamadas de ventas y juntas.</strong> Cualquier herramienta de transcripción de juntas te deja el texto. Ese archivo es tu mejor material de objeciones.</li>
+        <li><strong>Los correos que sí funcionaron.</strong> Guarda los que tuvieron mejor respuesta. Eso es tu biblioteca de tono.</li>
+        <li><strong>Reseñas y testimonios propios</strong>, no solo el promedio de estrellas: el texto completo.</li>
+        <li><strong>Notas de voz.</strong> Lo que grabas manejando después de una junta, transcrito, es contexto que no existe en ningún otro lado.</li>
+        <li><strong>Campañas pasadas con sus números.</strong> Qué se probó, qué rindió, qué se descartó y por qué.</li>
+      </ul>
+
+      <p>Todo eso va a una sola carpeta. Esa carpeta se conecta a un proyecto de Claude, a un cuaderno de investigación o a un asistente personalizado, según con qué trabajes. A partir de ahí, cada vez que pides algo nuevo, el modelo ya trae encima todo lo que tu empresa aprendió antes.</p>
+
+      <div class="callout-box">
+        <p><strong>El ritual que hace que esto exista de verdad:</strong> media hora el domingo. Pegas los mensajes nuevos, las transcripciones de las llamadas de la semana y las reseñas que entraron. Le pides tres cosas: los temas que más se repitieron, qué cambió respecto a la semana pasada y tres acciones concretas. Lo que salga se guarda en la misma carpeta. Sin ese ritual, la carpeta se llena dos semanas y se muere; con él, a los tres meses tienes algo que ningún competidor puede reconstruir.</p>
+      </div>
+
+      <h2>Forma 3: elige el modelo entrenado con tus datos</h2>
+
+      <p>Esta es la menos obvia y la más rápida de aplicar: los modelos grandes tienen acceso privilegiado a distintas capas de datos, y elegir el correcto para cada tarea es ventaja gratis.</p>
+
+      <ul>
+        <li><strong>Para lo social visual</strong>, el modelo del ecosistema de Instagram y Facebook ve lo que pasa ahí dentro.</li>
+        <li><strong>Para tendencias del minuto</strong>, el modelo conectado a la conversación pública en tiempo real.</li>
+        <li><strong>Para lo que necesita datos verificables</strong>, el que está pegado al buscador más grande del mundo.</li>
+        <li><strong>Para cargarle tus propios documentos</strong> y trabajar con contexto largo, Claude.</li>
+        <li><strong>Para conectar herramientas de terceros</strong>, el ecosistema con más integraciones.</li>
+      </ul>
+
+      <p>La consecuencia práctica: deja de buscar "el mejor modelo". Ten dos o tres abiertos y manda cada tarea al que tiene el dato de fondo. Cuesta lo mismo y cambia el resultado.</p>
+
+      <h2>Cuánto cuesta armar esto</h2>
+
+      <p>Entre cuarenta y ochenta dólares al mes cubre las tres formas: una herramienta de extracción, un lugar donde guardar, y dos suscripciones de modelo. Si vas a empezar por una sola, están <a href="/guias/5-herramientas-que-si-valen-el-dinero/">las cinco que sí valen lo que cuestan</a>, y la parte de organización la desarmé en <a href="/guias/3-formas-de-segundo-cerebro/">las tres formas de armar un segundo cerebro</a>.</p>
+
+      <h2>El error que hace que nada de esto sirva</h2>
+
+      <p>Acumular sin destilar.</p>
+
+      <p>La gente entiende la idea, arma la carpeta, mete gigabytes de transcripciones y reseñas, y a los seis meses tiene un basurero que ningún modelo puede usar bien. Meter todo al contexto no ayuda: diluye la instrucción y sale más caro.</p>
+
+      <p>El activo no son los datos crudos. Es el documento destilado que sale de ellos: el de cliente ideal, el de voz de marca, el de objeciones con su respuesta. Esos tres documentos, actualizados cada mes, valen más que el archivo completo.</p>
+
+      <p>Empieza por uno solo: baja las reseñas de tus tres competidores más grandes, córrelas por el prompt de arriba y guarda el resultado. Eso es una tarde de trabajo y es más ventaja de la que la mayoría de tu mercado va a construir este año.</p>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La skill que recorta 75% tu consumo de tokens — Guías Flow AI</title>
+  <meta name="description" content="Una skill gratis de GitHub baja tu consumo de tokens haciendo que Claude hable como cavernícola. Las mismas respuestas con una cuarta parte de las palabras. Tres niveles de intensidad e instalación de una línea." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/skill-que-recorta-tokens-75-por-ciento/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La skill que recorta 75% tu consumo de tokens" />
+  <meta property="og:description" content="Una skill gratis de GitHub baja tu consumo de tokens haciendo que Claude hable como cavernícola. Las mismas respuestas con una cuarta parte de las palabras. Tres niveles de intensidad e instalación de una línea." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/skill-que-recorta-tokens-75-por-ciento/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Productividad</span><span class="tag">Prompts</span></div>
+      <h1>La skill que recorta 75% tu consumo de tokens</h1>
+      <p class="lead">Una skill gratis de GitHub baja tu consumo de tokens haciendo que Claude hable como cavernícola. Las mismas respuestas con una cuarta parte de las palabras. Tres niveles de intensidad e instalación de una línea.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 7 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Le pides a Claude que te diga si conviene subir el precio. Te contesta con un párrafo de introducción, tres apartados con encabezado, un cuadro comparativo y un cierre que resume lo que acaba de decir. La respuesta útil eran cuatro líneas. Las otras cuarenta las pagaste igual.</p>
+
+      <p>Ese es el desperdicio que casi nadie mide: no el que gastas escribiendo, sino el que gastas leyendo. Y como cada mensaje nuevo arrastra toda la conversación anterior, esas cuarenta líneas de relleno no se pagan una vez. Se pagan otra vez en el mensaje siguiente, y en el que sigue.</p>
+
+      <p>Hay una skill gratis en GitHub que ataca exactamente eso. Se llama <code>caveman</code> y hace una sola cosa: obliga a Claude a contestar como cavernícola. Misma información, una cuarta parte de las palabras.</p>
+
+      <h2>Qué hace, en una frase</h2>
+
+      <p>No cambia lo que Claude piensa. Cambia cómo lo escribe: quita muletillas, corta artículos y conjunciones, usa sinónimos más cortos y abrevia los términos que se repiten. El contenido queda; el empaque se va.</p>
+
+      <p>En vez de "Basándome en los datos que compartiste, parece que la opción más recomendable sería aumentar el precio en un rango moderado, aunque vale la pena considerar que…", te devuelve algo del tipo "Sube precio. Rango moderado. Riesgo: churn en cuentas chicas. Mide 30 días."</p>
+
+      <p>Se lee raro los primeros diez minutos. Después ya no quieres volver.</p>
+
+      <h2>Cómo se instala</h2>
+
+      <p>La skill es de un desarrollador llamado JuliusBrussee y vive en su repositorio público <code>caveman</code>. La instalación depende de dónde uses Claude.</p>
+
+      <p><strong>En Claude Code</strong>, es una línea en la terminal:</p>
+
+      <pre><code>npx skills add JuliusBrussee/caveman</code></pre>
+
+      <p><strong>En claude.ai</strong>, es manual y toma dos minutos más. Abres el repositorio en GitHub, entras al archivo <code>skills/caveman/SKILL.md</code> y copias su contenido. Luego vas a <em>Configuración → Personalizar → Skills</em>, das clic en subir una skill nueva y pegas ahí lo que copiaste.</p>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> revisar el archivo antes de instalarlo. Una skill es texto que Claude va a obedecer, y una skill mal intencionada puede pedirle cosas que tú no quieres. Antes de pegar nada, pásale el contenido del <code>SKILL.md</code> al propio Claude y pídele que te diga si hay instrucciones para mandar datos a algún lado, ejecutar código o cambiar permisos. Toma treinta segundos. La lógica completa de cómo filtrar skills de terceros está en el <a href="/guias/mercado-secreto-de-skills/">mercado de skills de Claude</a>.</p>
+      </div>
+
+      <h2>Los tres niveles</h2>
+
+      <p>La skill trae tres intensidades y se cambian con un comando en el chat. La diferencia entre ellas no es cosmética: cada una sirve para un tipo de trabajo distinto.</p>
+
+      <div class="plugin-card">
+        <h3>1. Lite <code>/caveman lite</code></h3>
+        <p>Quita el relleno y el lenguaje corporativo, pero respeta las frases completas y los artículos. Sigue siendo español normal, solo que sin grasa. El ahorro es el más chico de los tres.</p>
+        <p class="plugin-for"><strong>Para cuándo:</strong> todo lo que vas a reenviar. Un correo a un cliente, un resumen que le vas a pasar a tu jefe, texto que va a un documento. Nadie más que tú tiene que enterarse de que estás usando esto.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. Full <code>/caveman full</code></h3>
+        <p>Fragmentos cortos, sinónimos más breves, se caen los artículos. Es el nivel donde aparece la reducción grande de la que habla el autor: alrededor de tres cuartas partes de las palabras desaparecen sin que se pierda la respuesta.</p>
+        <p class="plugin-for"><strong>Para cuándo:</strong> el default. Trabajo tuyo, que solo tú vas a leer: análisis, decisiones, revisión de datos, ida y vuelta sobre un problema.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Ultra <code>/caveman ultra</code></h3>
+        <p>Abrevia los términos que se repiten (base de datos pasa a DB, autenticación a auth), tira las conjunciones y usa flechas para encadenar ideas. Es casi taquigrafía.</p>
+        <p class="plugin-for"><strong>Para cuándo:</strong> volumen alto y con prisa. Revisar cincuenta registros, clasificar tickets, iterar rápido sobre algo que ya entiendes bien. No lo uses para pensar un tema nuevo.</p>
+      </div>
+
+      <p>Para apagarla, le dices <code>stop caveman</code> o le pides modo normal. No hay que desinstalar nada.</p>
+
+      <h2>Dónde rinde de verdad en una operación</h2>
+
+      <p>El caso individual es obvio: gastas menos y llegas menos veces a tu tope. El caso interesante es el de equipo.</p>
+
+      <p>Piensa en un área de atención a clientes que usa Claude para clasificar y proponer respuesta a doscientos tickets al día. Cada ticket dispara un intercambio, y en cada intercambio el modelo devuelve una respuesta con su encabezado, su justificación y su cierre amable. Nadie lee esa justificación: el agente mira la categoría, mira el borrador y sigue. En ese flujo, el modo <code>full</code> le quita la mitad larga a doscientas respuestas diarias y no cambia absolutamente nada del resultado.</p>
+
+      <p>Lo mismo aplica a cualquier cosa que corra en lote: revisar títulos de anuncios, sacar campos de facturas, evaluar currículums, comparar precios de proveedores. Donde el humano solo va a leer el veredicto, la prosa alrededor del veredicto es puro costo.</p>
+
+      <h2>Cuándo no vale la pena</h2>
+
+      <p>Aquí es donde hay que ser honesto, porque la skill se vende sola y tiene un límite claro.</p>
+
+      <p><strong>No la uses cuando el matiz es el trabajo.</strong> Redactar un correo delicado, revisar una cláusula, escribir copy, dar retroalimentación a una persona. En esos casos las palabras que quita son las que estabas comprando.</p>
+
+      <p><strong>No la uses cuando estás aprendiendo algo.</strong> Si le estás pidiendo a Claude que te explique cómo funciona un concepto que no dominas, el texto comprimido te va a dejar con la sensación de haber entendido sin haber entendido. Ahí quieres lo contrario: más explicación, no menos.</p>
+
+      <p><strong>No la uses como sustituto de higiene de contexto.</strong> Recortar la respuesta ayuda, pero el gasto grande casi siempre está en otro lado: chats de sesenta mensajes que nunca se cerraron y archivos enormes que viajan en cada turno. Si eso no lo tienes resuelto, esta skill te va a ahorrar el postre mientras sigues pagando el banquete. Los <a href="/guias/4-hacks-para-gastar-menos-tokens/">cuatro hacks para gastar menos tokens</a> atacan justo esa parte, y conviene hacerlos primero.</p>
+
+      <h2>El orden correcto</h2>
+
+      <p>Instálala en <code>full</code> y déjala una semana entera sin tocar el nivel. Vas a descubrir dos cosas: cuántas de tus preguntas nunca necesitaron una respuesta larga, y cuáles son las tres o cuatro donde sí extrañas el detalle.</p>
+
+      <p>Esas tres o cuatro son las que se hacen en modo normal. Todo lo demás se queda en cavernícola.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/que-la-ia-vaya-al-grano/" class="stack-link">
+            <span>Dos skills para que la IA vaya al grano →</span>
+            <small>Una skill para cuando la IA te habla a ti y otra para cuando escribe para tus clientes. Construidas sobre inglés técnico simplificado y las reglas de Zinsser.</small>
+          </a>
+          <a href="/guias/5-sistemas-de-ia-para-tu-vida/" class="stack-link">
+            <span>5 sistemas de IA para tu vida real, no para tu trabajo →</span>
+            <small>Salud, comida, dinero, carrera y casa. Los prompts de arranque de los cinco proyectos, listos para pegar en Claude o en ChatGPT.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>

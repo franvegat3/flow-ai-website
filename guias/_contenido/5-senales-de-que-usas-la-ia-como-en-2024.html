@@ -1,0 +1,100 @@
+      <p>La IA que tienes hoy no se parece a la de hace dos años. Lo que casi no cambió es cómo la usa la gente: chat en blanco, petición corta, copiar, cerrar. Ese hábito se formó cuando el modelo no podía hacer más, y se quedó pegado.</p>
+
+      <p>El resultado es una brecha rara. Dos personas con la misma suscripción, la misma tarea y resultados incomparables. No es que una sepa prompts mágicos. Es que una configuró la herramienta y la otra la sigue usando como buscador.</p>
+
+      <p>Estas son las cinco señales de que te quedaste atrás, y para cada una la skill que la arregla. Ninguna de las cinco toma más de diez minutos.</p>
+
+      <h2>Cómo se construye cada arreglo</h2>
+
+      <p>Los cinco arreglos son skills: instrucciones guardadas que se activan solas cuando aplican. No hace falta escribirlas a mano ni saber código.</p>
+
+      <p>Entras a <em>Configuración → Personalizar → Skills</em> y usas el creador de skills. Te entrevista sobre el proceso y te devuelve la skill armada. Lo único que tú pones es el encargo, y el encargo de cada una va abajo, listo para pegar. Si prefieres las otras rutas, están las <a href="/guias/3-formas-de-construir-una-skill/">tres formas de construir una skill</a>.</p>
+
+      <h2>Las 5 señales</h2>
+
+      <div class="plugin-card">
+        <h3>Señal 1. Abres un chat en blanco cada vez</h3>
+        <p>Es la más común y la más cara. Cada mañana empiezas de cero, explicando quién eres, en qué trabajas y qué necesitas. Todos los días, el mismo párrafo.</p>
+        <p>La versión de 2026 es que Claude ya sepa todo eso antes de que escribas la primera palabra.</p>
+        <p class="plugin-for"><strong>El arreglo — armador de perfil:</strong> una skill que te hace seis preguntas sobre tu puesto, tus prioridades y cómo quieres que te hablen, y con eso escribe tus instrucciones globales. Se corre una vez y aplica a todo lo que hagas después.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Señal 2. Escribes "hazme un…" y nada más</h3>
+        <p>"Hazme un correo de seguimiento." "Hazme un resumen." Sale genérico, y la conclusión que saca la gente es que la IA no sirve para su trabajo.</p>
+        <p>No es la IA. Es que un modelo sin contexto de audiencia, tono ni criterio de éxito solo puede devolverte el promedio de todo lo que ha leído.</p>
+        <p class="plugin-for"><strong>El arreglo — mejorador de prompts:</strong> una skill que toma tu petición floja y le agrega rol, audiencia, tono, formato y criterio de éxito antes de ejecutarla. Tú sigues escribiendo cinco palabras; ella escribe las otras cincuenta.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Señal 3. Nunca la conectaste a tus herramientas</h3>
+        <p>Copias un correo, lo pegas en el chat, copias la respuesta, la pegas en el correo. Y cuando la información está en tres lugares, ni siquiera lo intentas.</p>
+        <p>Esta es la señal que más separa a los dos grupos. Sin conectores, la IA trabaja con lo que le pegues. Con conectores, trabaja con lo que hay.</p>
+        <p class="plugin-for"><strong>El arreglo — resumen de bandeja:</strong> una skill que lee tu correo directo, filtra lo urgente, te da una línea por mensaje y propone la respuesta. Requiere tener el conector de correo puesto, que es exactamente el punto.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Señal 4. La usas para una sola cosa</h3>
+        <p>La descubriste para redactar correos y ahí se quedó. Mientras tanto, la misma herramienta podría estar leyendo tus hojas de cálculo, preparando tus juntas y armando tus reportes.</p>
+        <p>El patrón es psicológico: encontraste un caso que funciona y no quieres arriesgar la sensación de que funciona probando otro.</p>
+        <p class="plugin-for"><strong>El arreglo — analista de hojas de cálculo:</strong> una skill que toma un archivo de datos y te devuelve tendencias, anomalías y recomendaciones, más un resumen corto listo para pegar en el chat del equipo. Es el mejor segundo caso de uso porque es donde el salto se nota más rápido.</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>Señal 5. Nunca configuraste memoria ni preferencias</h3>
+        <p>Todo lo que sale suena a IA. Le corriges el tono cada vez y a la siguiente vuelve a lo mismo, porque no hay nada que le diga cómo escribes tú.</p>
+        <p class="plugin-for"><strong>El arreglo — calibrador de voz:</strong> una skill que analiza tres textos tuyos, extrae los patrones —largo de frase, muletillas, nivel de formalidad, qué palabras usas y cuáles nunca— y arma un perfil de voz reutilizable. Es la diferencia entre corregir el tono cada vez y no volver a corregirlo.</p>
+      </div>
+
+      <h2>El encargo para el creador de skills</h2>
+
+      <p>Este es el prompt que le pasas al creador. Cambia la parte de arriba según cuál de las cinco estés construyendo:</p>
+
+      <pre><code>Quiero construir una skill. Antes de escribirla, entrevístame:
+hazme las preguntas que te falten, una por una, y no avances con
+respuestas vagas.
+
+QUÉ HACE LA SKILL
+[pega aquí la descripción de una de las cinco. Por ejemplo:
+"toma un texto mío mal escrito y lo reescribe agregándole rol,
+audiencia, tono, formato de salida y criterio de éxito antes de
+ejecutar lo que pedí"]
+
+CUÁNDO DEBE ACTIVARSE SOLA
+[describe la situación. Por ejemplo: "cuando yo escriba una
+petición de menos de quince palabras sin contexto"]
+
+QUÉ DEBE ENTREGAR
+[el formato exacto de la salida, incluyendo el largo]
+
+Reglas para la skill que vas a escribir:
+- Nada de comportamiento genérico. Cada instrucción tiene que ser
+  verificable: o la cumplió o no la cumplió.
+- Incluye qué NO debe hacer, no solo qué sí.
+- Incluye qué hacer cuando le falte información: preguntar en una
+  sola lista, nunca suponer.
+- Que no dependa de herramientas ni conectores que no le nombré.
+
+Cuando termines la entrevista, escríbeme la skill completa lista
+para instalar, y aparte dime en tres líneas cómo voy a saber si
+está funcionando.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> arreglar la señal 1 antes que las otras cuatro. Las skills de las señales 2 a la 5 asumen que Claude ya sabe quién eres. Si tus instrucciones globales están vacías, el mejorador de prompts va a mejorar tu petición hacia un promedio genérico, y el calibrador de voz va a calibrar contra nadie. Media hora en el perfil primero, y las otras cuatro rinden el doble.</p>
+      </div>
+
+      <h2>La señal que no está en la lista</h2>
+
+      <p>Hay una sexta y es la que de verdad separa a los dos grupos: <strong>seguir usándola solo cuando te acuerdas.</strong></p>
+
+      <p>La gente que sacó rendimiento real no la usa mejor. La usa en momentos que no decidió: el resumen del correo llega a las siete de la mañana sin que nadie lo pida, el reporte del viernes se arma solo, la preparación de la junta del martes ya está lista el lunes.</p>
+
+      <p>Eso no se arregla con una skill. Se arregla con tareas programadas, que es el siguiente escalón y depende de que las cinco de arriba ya estén puestas. Sin perfil, sin conectores y sin skills, una tarea programada te va a mandar puntualmente algo genérico todas las mañanas.</p>
+
+      <h2>Por dónde empezar hoy</h2>
+
+      <p>No construyas las cinco. Construir cinco skills en una tarde es la versión productiva de no hacer nada: quedan instaladas, no cambias tu hábito, y en dos semanas sigues abriendo chats en blanco.</p>
+
+      <p>Haz la señal 1 hoy, en quince minutos. Vive con eso una semana entera y fíjate en algo concreto: cuánto más corto se te hace escribir una petición. Si tus mensajes no se acortaron, el perfil está puesto pero le falta información, y ese es el arreglo antes de seguir.</p>
+
+      <p>La segunda semana, la señal 3. Conectar el correo es el movimiento que más gente pospone y el que más cambia la sensación de para qué sirve todo esto.</p>

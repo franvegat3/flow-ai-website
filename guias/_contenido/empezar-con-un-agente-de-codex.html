@@ -1,0 +1,84 @@
+      <p>La diferencia entre un chat y un agente es dónde vive el trabajo. En un chat tú pegas el archivo, él responde, tú copias la respuesta y la guardas. Con un agente, el archivo ya está en tu computadora, él lo abre, hace el trabajo y te deja el resultado ahí.</p>
+
+      <p>Codex, el agente de OpenAI, corre en tu Mac y se empareja con tu teléfono. Eso último suena a adorno y no lo es: significa que le dejas una tarea, cierras la laptop, y desde el celular apruebas lo que va necesitando mientras la máquina trabaja sola.</p>
+
+      <p>El setup completo son quince minutos, emparejamiento incluido. Aquí va, con los tres primeros prompts que yo correría y los cinco errores que hacen que la gente lo abandone en la primera semana.</p>
+
+      <h2>Qué necesitas antes de empezar</h2>
+
+      <ul>
+        <li><strong>Un plan de pago de ChatGPT.</strong> Con Plus, veinte dólares al mes, tienes acceso completo a Codex en web, terminal, editor y móvil, con límites de uso por ventanas de horas.</li>
+        <li><strong>Una Mac</strong> —Apple Silicon o Intel— o una PC con Windows. Linux todavía no.</li>
+        <li><strong>El teléfono</strong>, con la app de ChatGPT instalada.</li>
+        <li><strong>Una carpeta con algo real adentro.</strong> Este es el requisito que nadie menciona y es el que decide si te sirve. Codex sin archivos es un chat caro.</li>
+      </ul>
+
+      <h2>Los 5 pasos del setup</h2>
+
+      <ol>
+        <li><strong>Descarga la app de escritorio.</strong> Está en la documentación oficial de OpenAI, en la guía de inicio rápido de Codex en <a href="https://developers.openai.com/codex/quickstart" target="_blank" rel="noopener">developers.openai.com/codex</a>. Instálala como cualquier aplicación.</li>
+        <li><strong>Entra con tu cuenta de ChatGPT.</strong> Es un inicio de sesión normal, no hay que generar llaves de API ni nada parecido.</li>
+        <li><strong>Elige la carpeta de trabajo.</strong> Yo creo una carpeta nueva en el Escritorio llamada <code>Codex</code> y ahí meto solo lo que quiero que toque. Es la forma más simple de acotar el alcance sin configurar permisos raros.</li>
+        <li><strong>Empareja el teléfono.</strong> La app de escritorio te muestra un código QR. Abres ChatGPT en el celular, entras a la sección de Codex y lo escaneas. Menos de un minuto. A partir de ahí te llegan notificaciones, puedes revisar los cambios propuestos y aprobar comandos desde el teléfono.</li>
+        <li><strong>Elige el modo de aprobación.</strong> Hay tres, y esta decisión importa más que todo lo demás.</li>
+      </ol>
+
+      <h2>Los tres modos, en español claro</h2>
+
+      <ul>
+        <li><strong>Solo lectura.</strong> Pregunta antes de editar archivos, correr comandos o salir a internet. Es lento y es donde deberías vivir los primeros días.</li>
+        <li><strong>Auto</strong> (el que viene por defecto). Edita archivos dentro de la carpeta de trabajo y corre comandos sin preguntar. Sí pregunta cuando quiere tocar algo fuera de esa carpeta o salir a la red.</li>
+        <li><strong>Acceso total.</strong> Sin caja de arena. La propia herramienta lo marca como riesgo elevado, y con razón.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el prompt de reconocimiento antes de pedir cambios. Cada hilo nuevo, arranca con algo como "lee todo lo que hay en esta carpeta y dime qué encontraste, sin modificar nada". Toma treinta segundos y te ahorra la conversación donde el agente asumió mal la estructura de un archivo y editó seis cosas encima de esa suposición. Ver antes de tocar. Siempre.</p>
+      </div>
+
+      <h2>Los tres primeros prompts</h2>
+
+      <p>No arranques con "arréglame el sitio". Arranca con algo acotado, verificable, y donde tú sepas si el resultado está bien. Estos tres cumplen eso y muestran tres capacidades distintas.</p>
+
+      <p><strong>1. Convertir datos en un tablero.</strong> Suelta un CSV en la carpeta y pide:</p>
+
+      <pre><code>Lee sales.csv (o el CSV que hayas dejado en la carpeta) y construye un tablero HTML de un solo archivo con gráficas que muestren el ingreso mensual y los 5 productos con más venta. Ábrelo en el navegador cuando termines. Usa un diseño limpio, estilo Apple.</code></pre>
+
+      <p><strong>2. Reescribir un documento con criterio.</strong> Este es el que convence a la gente que no programa, porque el resultado se juzga a simple vista:</p>
+
+      <pre><code>Lee resume.pdf en esta carpeta. Reescríbelo para un [PUESTO OBJETIVO, por ejemplo: puesto senior de marketing de producto] en una [INDUSTRIA, por ejemplo: startup de SaaS]. Entrégalo como resume-v2.docx y enlista los 5 cambios más grandes que hiciste y por qué.</code></pre>
+
+      <p><strong>3. Ordenar la bandeja de entrada.</strong> Exporta tu correo desde Gmail o Outlook y déjalo en la carpeta:</p>
+
+      <pre><code>Lee inbox-export.mbox (exporta tu bandeja desde Gmail o Outlook antes). Identifica los 10 mensajes sin leer más importantes y redacta una respuesta a cada uno con mi voz. Muéstrame los borradores antes de enviar cualquier cosa.</code></pre>
+
+      <p>Fíjate en la última línea del tercero. Esa frase —"muéstrame antes de enviar"— es la que separa un asistente de un incidente.</p>
+
+      <h2>Los 5 errores que hacen que lo abandones</h2>
+
+      <p><strong>1. Prompts demasiado amplios.</strong> "Refactoriza todo el proyecto" es la forma más rápida de obtener algo enorme, roto y que no sabes revisar. El agente rinde con tareas incrementales que puedes verificar una por una.</p>
+
+      <p><strong>2. Un solo hilo para todo.</strong> El contexto se va contaminando y a la tercera tarea el agente arrastra suposiciones de la primera. Un hilo por tarea. Cuando la tarea termina, el hilo termina.</p>
+
+      <p><strong>3. Usarlo mirándolo.</strong> Mucha gente se queda viendo la pantalla como si fuera un chat. Todo el punto de emparejar el teléfono es que le dejes la tarea, te vayas a hacer otra cosa y regreses cuando te avise. Si te quedas de niñera, estás pagando por un chat con pasos extra.</p>
+
+      <p><strong>4. Instalar el paquete equivocado.</strong> Si además quieres la versión de terminal, el comando correcto es:</p>
+
+      <pre><code>npm i -g @openai/codex</code></pre>
+
+      <p>Sin el <code>@openai/</code> instalas un proyecto sin relación que lleva años abandonado. Este error es más común de lo que parece y deja a la gente creyendo que la herramienta no sirve.</p>
+
+      <p><strong>5. Saltarte a acceso total demasiado pronto.</strong> Las pantallas de aprobación son molestas y son tu curso acelerado sobre qué está haciendo el agente en tu máquina. Quédate en Auto hasta que las aprobaciones te empiecen a parecer obvias. Ese aburrimiento es la señal de que ya entendiste el riesgo.</p>
+
+      <h2>Dónde esto sí cambia una operación</h2>
+
+      <p>Los tres prompts de arriba son personales a propósito, para que arranques hoy. Pero el uso que más he visto rendir en empresas es otro: los reportes repetitivos.</p>
+
+      <p>Toda operación tiene un archivo que alguien reconstruye cada semana a mano —el corte de ventas, el reporte de campañas, la conciliación de un proveedor— y que se arma con dos o tres exportaciones que siempre llegan igual. Ese trabajo es exactamente lo que hace bien un agente con acceso a una carpeta: mismos archivos, mismo formato de salida, cada semana.</p>
+
+      <p>La prueba de que vale la pena: si la persona que lo hace puede explicar el procedimiento en cinco pasos, el agente lo puede correr. Si no lo puede explicar, el problema no es de automatización, es que el proceso no existe todavía.</p>
+
+      <h2>La regla de la primera semana</h2>
+
+      <p>Nada de tutoriales de terceros los primeros siete días. La documentación oficial de OpenAI cubre inicio rápido, precios, caja de arena y casos de uso, y está actualizada.</p>
+
+      <p>Lo que te va a enseñar más que cualquier video es correr tus propias tareas y equivocarte en pequeño. Una semana de eso, y las guías de otros van a dejar de parecerte magia para parecerte lo que son: la misma herramienta usada por alguien con más horas de vuelo que tú.</p>

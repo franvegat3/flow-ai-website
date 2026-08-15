@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configura Claude en 5 pasos: la guía para principiantes — Guías Flow AI</title>
+  <meta name="description" content="El setup de 10 minutos que convierte Claude de chatbot a socio de pensamiento. Proyecto, sobre mí, instrucciones personalizadas, clonado de voz, y las reglas de comportamiento que matan la paja de IA." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/claude-en-5-pasos-para-principiantes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Configura Claude en 5 pasos: la guía para principiantes" />
+  <meta property="og:description" content="El setup de 10 minutos que convierte Claude de chatbot a socio de pensamiento. Proyecto, sobre mí, instrucciones personalizadas, clonado de voz, y las reglas de comportamiento que matan la paja de IA." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/claude-en-5-pasos-para-principiantes/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/#founder">Founder</a>
+        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Empezar</p>
+      <div class="guide-tags"><span class="tag">Claude</span><span class="tag">Empezar</span></div>
+      <h1>Configura Claude en 5 pasos: la guía para principiantes</h1>
+      <p class="lead">El setup de 10 minutos que convierte Claude de chatbot a socio de pensamiento. Proyecto, sobre mí, instrucciones personalizadas, clonado de voz, y las reglas de comportamiento que matan la paja de IA.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>La gente que le saca provecho real a Claude no es más lista que tú. Nada más se sentó diez minutos a configurarlo antes de empezar a pedirle cosas.</p>
+
+      <p>Sin ese setup, cada conversación arranca de cero: le explicas quién eres, a qué te dedicas, cómo quieres la respuesta, y para cuando terminaste de dar contexto ya hubieras escrito tú el correo. Con el setup, escribes una frase y sale bien.</p>
+
+      <p>Son cinco pasos. Ninguno es técnico.</p>
+
+      <h2>Paso 1: no abras un chat. Abre un proyecto</h2>
+
+      <p>Este es el que se salta el 90% de la gente y es el que sostiene los otros cuatro.</p>
+
+      <p>Un chat suelto no recuerda nada. Un <strong>proyecto</strong> es un espacio donde Claude conserva contexto entre conversaciones: los archivos que subiste, las instrucciones que le diste, la forma en que quieres que trabaje contigo.</p>
+
+      <p>En la barra lateral está "Projects", y de ahí "Create Project". Nómbralo simple: Trabajo, Personal, o el nombre de tu empresa. Y crea proyectos separados por área de tu vida. Mezclar el proyecto donde planeas tus vacaciones con el proyecto donde analizas tu operación comercial hace que las dos cosas salgan peor.</p>
+
+      <h2>Paso 2: dile quién eres</h2>
+
+      <p>Adentro del proyecto, sube o pega un documento con tu contexto. Estas son las secciones que funcionan:</p>
+
+      <ul>
+        <li><strong>QUIÉN SOY</strong> — nombre, dónde vives y en qué zona horaria, etapa de vida.</li>
+        <li><strong>A QUÉ ME DEDICO</strong> — puesto o negocio, de qué eres responsable, industria, cómo es tu cliente.</li>
+        <li><strong>EN QUÉ ESTOY AHORITA</strong> — tus metas de los próximos seis meses, tu problema más difícil, y lo que llevas semanas posponiendo.</li>
+        <li><strong>CÓMO ME COMUNICO</strong> — tu estilo, las frases que usas mucho, las que no soportas.</li>
+        <li><strong>CÓMO QUIERO QUE TRABAJES CONMIGO</strong> — qué tan largas quieres las respuestas, en qué formato quieres lo complejo, qué hacer cuando no estés de acuerdo conmigo, qué hacer cuando no tengas certeza.</li>
+        <li><strong>QUÉ NO HACER</strong> — lo que te choca. Sé concreto.</li>
+      </ul>
+
+      <p>Si te da flojera llenarlo en frío, hay un atajo: pídele que te entreviste. "Hazme 15 preguntas para llenar esto." Contestar es mucho más fácil que redactar.</p>
+
+      <p>Aquí es donde te recomiendo invertir de verdad. La diferencia entre cinco minutos y media hora en este paso es la diferencia entre respuestas genéricas y respuestas que suenan a alguien que te conoce.</p>
+
+      <h2>Paso 3: que él escriba tus instrucciones personalizadas</h2>
+
+      <p>Ya que tienes el documento de arriba, pégalo en un chat del proyecto y pídele que lo convierta en instrucciones. Este es el prompt:</p>
+
+      <pre><code>Con base en todo lo que acabo de contarte sobre mí, escríbeme un set limpio de instrucciones personalizadas para este proyecto de Claude. Las instrucciones deben:
+
+1. Describir quién soy y a qué me dedico en 2 o 3 frases.
+2. Fijar mi estilo de comunicación, tono y formato por defecto.
+3. Listar las cosas que NUNCA debes hacer cuando trabajes conmigo.
+4. Definir cómo manejar la incertidumbre o el desacuerdo conmigo.
+5. Incluir cualquier comportamiento que yo querría en todas y cada una de las sesiones.
+
+Escribe las instrucciones en segunda persona, como si Claude estuviera leyendo reglas sobre cómo ayudarme. Sé específico. Nada de consejos genéricos tipo "sé útil". Menos de 400 palabras en total.
+
+Cuando termines, dame las instrucciones en un bloque de código limpio que yo pueda copiar y pegar en la pestaña de instrucciones personalizadas.</code></pre>
+
+      <p>El resultado va en la pestaña de instrucciones personalizadas del proyecto. Ahí vive permanente, sin que tengas que repetirlo.</p>
+
+      <h2>Paso 4: dale 5 ejemplos de cómo escribes</h2>
+
+      <p>Este es el paso que convierte respuestas correctas en respuestas que suenan a ti.</p>
+
+      <p>Junta entre tres y cinco textos tuyos reales: correos que mandaste, mensajes de Slack, una presentación, publicaciones. Reales, no los que te hubiera gustado escribir. Y pégalos con esto:</p>
+
+      <pre><code>Te voy a dar 5 ejemplos de mi escritura real. Analízalos a detalle. Después guarda mi voz como regla permanente de este proyecto.
+
+Aquí van mis muestras:
+[MUESTRA 1]
+[MUESTRA 2]
+[MUESTRA 3]
+[MUESTRA 4]
+[MUESTRA 5]
+
+Analiza mi estilo a detalle. Fíjate en:
+1. Largo y ritmo de las frases. ¿Escribo corto y seco o largo y fluido?
+2. Vocabulario. ¿Hacia qué palabras me voy? ¿Cuáles evito?
+3. Cómo abro y cómo cierro. ¿Con qué suelo empezar? ¿En qué suelo aterrizar?
+4. Formalidad. ¿Soy casual, formal, o algo intermedio?
+5. Patrones. ¿Qué estructuras, transiciones o movimientos repito entre muestras?
+6. Marcas de voz. Lo que hace que esto suene a mí y no a IA genérica.
+
+Cuando termines, dame un resumen limpio de "Reglas de voz" en unas 200 palabras. Después guarda esta voz como regla permanente del proyecto: siempre que te pida escribir algo, iguala este estilo exacto. No regreses a tus patrones de voz por defecto.</code></pre>
+
+      <p>Pruébalo con un párrafo. Si suena raro, dile qué falló con palabras tuyas —"esto es demasiado formal", "yo nunca usaría esa palabra"— y guarda la corrección.</p>
+
+      <h2>Paso 5: las reglas de comportamiento</h2>
+
+      <p>Al final de tus instrucciones personalizadas, agrega entre 8 y 12 reglas numeradas. Estas son las que matan la paja de IA:</p>
+
+      <ul>
+        <li>Nunca empieces con "Excelente pregunta", "Por supuesto" o "Con gusto".</li>
+        <li>Nunca repitas mi pregunta antes de contestarla.</li>
+        <li>Nunca cierres con un resumen a menos que te lo pida.</li>
+        <li>Nunca agregues advertencias innecesarias ni recordatorios de que eres una IA.</li>
+        <li>Nunca uses lenguaje corporativo tipo "potenciar", "sinergia", "robusto", "elevar", "desbloquear".</li>
+        <li>Nunca me des la razón por cortesía cuando estoy equivocado.</li>
+        <li>Nunca finjas seguridad cuando no la tienes. Di que no sabes.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> la penúltima regla. Es la más incómoda y la más valiosa. Un modelo entrenado para ser agradable te va a dar la razón, y si lo usas para tomar decisiones eso es exactamente lo contrario de lo que necesitas. Escríbela explícita y, cuando te contradiga, no la quites.</p>
+      </div>
+
+      <h2>Cómo se mantiene esto vivo</h2>
+
+      <p>El setup no es de una sola vez. Cuatro hábitos que hacen que siga sirviendo:</p>
+
+      <ol>
+        <li><strong>Un chat nuevo por tema</strong>, siempre dentro del proyecto. El contexto acumulado de una conversación larga contamina la siguiente pregunta.</li>
+        <li><strong>Dictado para los primeros borradores.</strong> Hablas más natural de lo que escribes, y para desahogar una idea desordenada eso es una ventaja.</li>
+        <li><strong>Cinco minutos cada semana</strong> para preguntarle: de qué quiero más, de qué quiero menos, y qué es lo único que si cambio destraba lo demás.</li>
+        <li><strong>Si las respuestas siguen genéricas, vuelve al paso 2.</strong> Casi nunca es culpa del modelo. Es que tu documento de contexto tiene cuatro líneas.</li>
+      </ol>
+
+      <p>Y la diferencia mental más importante: deja de tratarlo como buscador. Un buscador te da una respuesta y se acaba la conversación. Esto sirve para pensar en voz alta con alguien que ya sabe cómo trabajas y no se cansa de la tercera versión.</p>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/entrenar-tu-cerebro-para-la-ia/" class="stack-link">
+            <span>Cómo entrenar tu cerebro para volverte muy bueno con IA →</span>
+            <small>Practicar cómodo se siente productivo y no te enseña casi nada. Las cinco formas de practicar que sí pegan, más un plan de 30 días que puedes correr esta semana.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" id="optinForm" novalidate>
+        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../guias.js"></script>
+</body>
+</html>
