@@ -28,6 +28,18 @@
   var SCROLL_PCT = 0.35;      // o 35% de la guía
   var DIAS_REINTENTO = 7;     // si lo cerraron sin suscribirse
 
+  /* Apps Script tarda 2 a 3 segundos en contestar. Es demasiado para
+     dejar un botón muerto, así que ese rato se llena con la marca
+     girando y frases que van rotando. La primera es la informativa; las
+     demás son para que la espera se sienta corta. */
+  var CARGANDO = [
+    'Guardando tu correo…',
+    'Cocinando la IA para sorprenderte…',
+    'Un segundo, esto sí vale la pena…',
+    'Acomodando las guías que te tocan…',
+    'Ya casi, no cierres…'
+  ];
+
   var COPY = {
     ojo:     'Guías gratis de Flow AI',
     titulo:  'Te mando la siguiente antes que a nadie',
@@ -127,6 +139,81 @@
 
   var VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  /* La marca de Flow AI dentro de un anillo que gira. */
+  var GIRANDO =
+    '<span class="fo-spin" aria-hidden="true">' +
+      '<svg viewBox="0 0 44 44" width="20" height="20">' +
+        '<circle class="fo-spin-pista" cx="22" cy="22" r="18" fill="none" stroke-width="4" />' +
+        '<circle class="fo-spin-arco" cx="22" cy="22" r="18" fill="none" stroke-width="4" ' +
+          'stroke-linecap="round" stroke-dasharray="30 84" />' +
+      '</svg>' +
+      '<svg class="fo-spin-marca" viewBox="0 0 100 100" width="11" height="11">' +
+        '<path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="12" ' +
+          'stroke-linecap="round" fill="none"/>' +
+      '</svg>' +
+    '</span>';
+
+  /* Enciende el estado de carga y devuelve la función que lo apaga.
+     El texto que rota va en un nodo aria-hidden y el anuncio para
+     lectores de pantalla se hace una sola vez: cambiar una zona
+     aria-live cada segundo y medio la vuelve insoportable. */
+  function cargando(zonaMsg, btn) {
+    var i = 0;
+    var reloj = null;
+    var textoBtn = btn ? btn.innerHTML : '';
+
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = GIRANDO + '<span>Guardando…</span>';
+    }
+
+    if (zonaMsg) {
+      zonaMsg.textContent = '';
+      var linea = document.createElement('span');
+      linea.className = 'fo-rotando';
+      linea.setAttribute('aria-hidden', 'true');
+      linea.textContent = CARGANDO[0];
+      zonaMsg.appendChild(linea);
+
+      reloj = setInterval(function () {
+        i = (i + 1) % CARGANDO.length;
+        linea.style.opacity = '0';
+        setTimeout(function () {
+          linea.textContent = CARGANDO[i];
+          linea.style.opacity = '1';
+        }, 220);
+      }, 1500);   /* con respuestas de 2-3 s, a 1.9 s casi nunca alcanzaba a salir la segunda frase */
+    }
+
+    return function apagar() {
+      if (reloj) clearInterval(reloj);
+      if (zonaMsg) zonaMsg.textContent = '';
+      if (btn) { btn.disabled = false; btn.innerHTML = textoBtn; }
+    };
+  }
+
+  /* ---------- Estilos del estado de carga ----------
+     Van siempre, no solo con el pop-up: los formularios del HTML
+     también giran, y viven en páginas donde el modal nunca aparece. */
+  (function () {
+    var css =
+      '.fo-spin{position:relative;display:inline-grid;place-items:center;width:20px;height:20px;flex:0 0 auto;vertical-align:-4px;}' +
+      '.fo-spin svg:first-child{animation:fo-gira 1s linear infinite;}' +
+      '.fo-spin-pista{stroke:currentColor;opacity:.22;}' +
+      '.fo-spin-arco{stroke:currentColor;}' +
+      '.fo-spin-marca{position:absolute;opacity:.85;}' +
+      '.fo-rotando{display:inline-block;transition:opacity .2s ease;}' +
+      '.optin-msg .fo-spin,.fo-msg .fo-spin{margin-right:8px;color:#84b6ff;}' +
+      /* .optin-msg es gris apagado por defecto; mientras carga se pone
+         del azul de marca para que se lea que algo está pasando. */
+      '.optin-msg .fo-rotando,.fo-msg .fo-rotando{color:#84b6ff;}' +
+      '@keyframes fo-gira{to{transform:rotate(360deg);}}' +
+      '@media (prefers-reduced-motion:reduce){.fo-spin svg:first-child{animation-duration:3s;}.fo-rotando{transition:none;}}';
+    var el = document.createElement('style');
+    el.textContent = css;
+    document.head.appendChild(el);
+  })();
+
   /* ============================================================
      1. Formularios que ya están en el HTML
      ============================================================ */
@@ -135,7 +222,6 @@
     var btn = form.querySelector('button[type="submit"]');
     /* El mensaje puede ser hermano del form o vivir en el mismo bloque. */
     var msg = (form.parentNode && form.parentNode.querySelector('.optin-msg')) || null;
-    var textoBtn = btn ? btn.textContent : '';
     var decir = function (t) { if (msg) msg.textContent = t; };
 
     form.addEventListener('submit', function (e) {
@@ -144,18 +230,18 @@
 
       if (!VALIDO.test(email)) { decir('Revisa el correo, parece que le falta algo.'); return; }
 
-      if (btn) { btn.disabled = true; btn.textContent = 'Un segundo…'; }
-      decir('');
+      var apagar = cargando(msg, btn);
 
       suscribir(email, form.getAttribute('data-fuente') || 'formulario')
         .then(function () {
+          apagar();
           marcarSuscrito();
           form.reset();
           decir('Listo. Te llega la próxima guía en cuanto salga.');
         })
-        .catch(function (err) { decir(mensajeDeError(err)); })
-        .then(function () {
-          if (btn) { btn.disabled = false; btn.textContent = textoBtn; }
+        .catch(function (err) {
+          apagar();
+          decir(mensajeDeError(err));
         });
     });
   });
@@ -191,6 +277,7 @@
     '.fo-form input[type=email]::placeholder{color:#8893ad;}' +
     '.fo-form input[type=email]:focus-visible{outline:3px solid #60a5fa;outline-offset:2px;}' +
     '.fo-btn{min-height:46px;padding:0 22px;border-radius:999px;border:0;cursor:pointer;font:inherit;font-size:15px;font-weight:600;' +
+      'display:inline-flex;align-items:center;justify-content:center;gap:9px;' +
       'background:linear-gradient(100deg,#84b6ff 0%,#3b82f6 55%,#2563eb 110%);color:#04101f;transition:transform .16s ease,box-shadow .22s ease;}' +
     '.fo-btn:hover{transform:translateY(-1px);box-shadow:0 14px 34px -14px rgba(59,130,246,.8);}' +
     '.fo-btn[disabled]{opacity:.6;cursor:default;transform:none;}' +
@@ -314,17 +401,13 @@
 
     if (!VALIDO.test(email)) { msg.textContent = 'Revisa el correo, parece que le falta algo.'; return; }
 
-    btn.disabled = true;
-    var textoBtn = btn.textContent;
-    btn.textContent = 'Un segundo…';
-    msg.textContent = '';
+    var apagar = cargando(msg, btn);
 
     suscribir(email, 'popup')
-      .then(function () { marcarSuscrito(); mostrarExito(); })
+      .then(function () { apagar(); marcarSuscrito(); mostrarExito(); })
       .catch(function (err) {
+        apagar();
         msg.textContent = mensajeDeError(err);
-        btn.disabled = false;
-        btn.textContent = textoBtn;
       });
   });
 
