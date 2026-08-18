@@ -71,6 +71,11 @@
      Viajan con el JS: el modal solo existe si este script corre, así
      que su CSS no tiene por qué pesar en páginas que no lo usan. */
   var css =
+    /* El reset va dentro del modal a propósito. Las guías no traen un
+       `* { box-sizing: border-box }` global, así que sin esto el botón
+       —width:100% más padding más borde— se sale 22px de la tarjeta.
+       Scoped al modal para no tocar el resto de la página. */
+    '.rp-fondo,.rp-fondo *,.rp-fondo *:before,.rp-fondo *:after{box-sizing:border-box;}' +
     '.rp-fondo{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;' +
       'background:rgba(3,6,14,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .22s ease;}' +
     '.rp-fondo.rp-visible{opacity:1;}' +

@@ -265,6 +265,10 @@
      si este script corre, así que su CSS no tiene por qué cargarse
      en páginas que nunca lo van a usar. */
   var css =
+    /* Mismo motivo que en reto-popup.js: las guías no traen border-box
+       global, y .fo-btn-a (el botón del estado de éxito) es width:100%
+       con padding. Sin esto se desborda de la caja. */
+    '.fo-fondo,.fo-fondo *,.fo-fondo *:before,.fo-fondo *:after{box-sizing:border-box;}' +
     '.fo-fondo{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;' +
       'background:rgba(3,6,14,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .22s ease;}' +
     '.fo-fondo.fo-visible{opacity:1;}' +
