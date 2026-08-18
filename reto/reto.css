@@ -562,6 +562,11 @@
 }
 @media (max-width: 600px) {
   .lp-container, .lp-foot__inner, .lp-nav__inner { padding-left: 1.3rem; padding-right: 1.3rem; }
+  /* En pantalla angosta la etiqueta y el precio no caben en un renglón
+     y casi todos se partían en dos o tres líneas. Un punto menos de
+     tipografía los acomoda sin tocar el diseño. */
+  .lp-value__row { font-size: 0.95rem; padding: 0.55rem 0; gap: 0.7rem; }
+  .lp-value__row b { font-size: 0.9rem; }
   .lp-offer { grid-template-columns: 1fr; gap: 0.5rem; }
   .lp-out-grid, .lp-track-grid, .lp-bonus-grid, .lp-results__grid { grid-template-columns: 1fr; }
   .lp-btn { width: 100%; }
