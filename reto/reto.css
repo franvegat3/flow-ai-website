@@ -403,6 +403,9 @@
   font-family: 'Anton', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--fa-blue); margin-top: 1.2rem;
 }
+/* El precio tachado va en gris y el "Incluido" en azul: el contraste
+   entre los dos es lo que hace el trabajo, no el tache solo. */
+.lp-bonus__value s { color: var(--lp-faint); text-decoration: line-through; margin-right: 0.4rem; }
 
 /* ---------- Precio ---------- */
 .lp-price-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.4rem, 3.5vw, 2.6rem); align-items: stretch; }
@@ -416,9 +419,11 @@
   display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0;
   border-bottom: 1px solid var(--lp-line); line-height: 1.45; color: var(--lp-muted); font-size: 1.06rem;
 }
+/* Cifra, no etiqueta: va en tinta y sin versalitas, como en la
+   referencia. En azul competía con el total y con los CTA. */
 .lp-value__row b {
-  font-family: 'Oswald', sans-serif; color: var(--fa-blue); white-space: nowrap;
-  font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: 'Oswald', sans-serif; color: var(--lp-text); white-space: nowrap;
+  font-size: 1rem; letter-spacing: 0.02em;
 }
 .lp-value__total {
   display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
@@ -426,6 +431,13 @@
 }
 .lp-value__total span:first-child { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 1.05rem; }
 .lp-value__total span:last-child { font-family: 'Anton', sans-serif; font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--fa-blue); }
+
+/* El "$3,913 de valor" arriba del precio, dentro de la tarjeta azul. */
+.lp-price-card__antes {
+  font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 0.04em;
+  font-size: 1.05rem; color: rgba(242, 246, 255, 0.72); margin: 0 0 0.5rem;
+}
+.lp-price-card__antes s { text-decoration: line-through; text-decoration-thickness: 2px; }
 
 .lp-price-card {
   background: var(--fa-blue); color: var(--lp-paper); border-radius: 16px;
@@ -450,6 +462,7 @@
   font-family: 'Anton', sans-serif; text-transform: uppercase;
   font-size: clamp(1.3rem, 2.6vw, 2rem); color: var(--fa-blue); margin-top: 1.8rem; text-align: center;
 }
+.lp-savings s { color: var(--lp-faint); text-decoration: line-through; text-decoration-thickness: 3px; }
 .lp-guarantee { margin: 0.7rem auto 0; max-width: 640px; text-align: center; font-weight: 700; color: var(--lp-text); font-size: 1.06rem; }
 .lp-fineprint { font-size: 0.88rem; color: var(--lp-faint); margin-top: 1.2rem; max-width: 740px; line-height: 1.55; text-align: center; margin-left: auto; margin-right: auto; }
 
