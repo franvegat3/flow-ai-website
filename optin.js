@@ -22,6 +22,10 @@
 
   var CFG = window.FLOW || {};
   var LLAVE = 'flowai_optin';
+  /* La comparte reto-popup.js: el primer pop-up que abre en la sesión
+     levanta esta bandera y el otro se calla. Dos modales en la misma
+     lectura ahuyentan al lector y no capturan ninguno de los dos. */
+  var LLAVE_SESION = 'flowai_popup_abierto';
 
   /* Cuándo aparece el pop-up: lo que ocurra primero. */
   var ESPERA_MS = 25000;      // 25 s leyendo
@@ -65,9 +69,14 @@
     var s = leer(); s.suscrito = true; s.suscritoEl = Date.now(); guardar(s);
   }
 
+  function otroPopupYaAbrio() {
+    try { return sessionStorage.getItem(LLAVE_SESION) === '1'; } catch (e) { return false; }
+  }
+
   function puedeAparecer() {
     var s = leer();
     if (s.suscrito) return false;                       // ya dio el correo: nunca más
+    if (otroPopupYaAbrio()) return false;               // ya salió el del Reto
     /* Una sola aparición por ventana de DIAS_REINTENTO, se haya
        cerrado a propósito o simplemente ignorado. */
     if (s.mostradoEl && (Date.now() - s.mostradoEl) / 86400000 < DIAS_REINTENTO) return false;
@@ -333,6 +342,7 @@
        o abandone la página con el modal abierto, ya cuenta como visto
        y no le vuelve a salir. */
     var s = leer(); s.mostradoEl = Date.now(); guardar(s);
+    try { sessionStorage.setItem(LLAVE_SESION, '1'); } catch (e) {}
     ultimoFoco = document.activeElement;
     document.body.appendChild(fondo);
     requestAnimationFrame(function () { fondo.classList.add('fo-visible'); });
