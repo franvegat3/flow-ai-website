@@ -1,9 +1,9 @@
 /* ============================================================
    Flow AI — landing del Reto 30 Días.
 
-   Solo lo que es de esta página: el nav y la barra fija de compra.
-   El precio y los links de pago los pone ../flowai.js, que corre
-   en todo el sitio.
+   Solo lo que es de esta página: la barra fija de compra y el año
+   del footer. El precio y los links de pago los pone ../flowai.js,
+   que corre en todo el sitio.
    ============================================================ */
 (function () {
   'use strict';
@@ -12,22 +12,9 @@
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
 
-  /* ---------- Nav ---------- */
-  var toggle = document.getElementById('navToggle');
-  var links = document.getElementById('navLinks');
-  if (toggle && links) {
-    toggle.addEventListener('click', function () { links.classList.toggle('open'); });
-  }
-  var nav = document.getElementById('nav');
-  if (nav) {
-    var alScrollNav = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
-    alScrollNav();
-    window.addEventListener('scroll', alScrollNav, { passive: true });
-  }
-
   /* ---------- Barra fija ----------
      Aparece cuando el hero ya se fue de pantalla y se esconde al
-     llegar al bloque de precio: ahí abajo ya hay un botón y dos
+     llegar al bloque de precio: ahí abajo ya hay un botón, y dos
      botones de lo mismo en pantalla se ven a desesperado. */
   var barra = document.getElementById('barraCompra');
   var precio = document.getElementById('precio');

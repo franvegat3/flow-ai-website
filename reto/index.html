@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reto 30 Días de IA — Flow AI</title>
-  <meta name="description" content="30 días construyendo sistemas de inteligencia artificial dentro de tu trabajo, uno por día. No es un curso para ver: es un reto para construir. Con Francisco Vega, dentro de Flow AI Academy." />
+  <title>Construye sistemas de IA que manejen tu trabajo, tu negocio y tu vida | Reto 30 Días — Flow AI</title>
+  <meta name="description" content="30 días construyendo agentes, flujos y sistemas de IA reales para tu trabajo, tu negocio, tu contenido y tu vida. Con Francisco Vega, dentro de Flow AI Academy." />
 
   <link rel="canonical" href="https://flowaigroup.com/reto/" />
   <meta property="og:type" content="website" />
@@ -17,352 +17,574 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="stylesheet" href="../guias/guias.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@700&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="reto.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
-<body data-sin-popup>
+<body class="lp-page" data-sin-popup>
+
+  <!-- BARRA DE URGENCIA -->
+  <div class="lp-urgency">
+    <span>⚡ Inscripciones abiertas · Ronda 1</span>
+    <span><b>Empiezas con la prueba gratis</b></span>
+  </div>
 
   <!-- NAV -->
-  <header class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="/" class="brand">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
-        </span>
-        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
-      </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="/reto/">Reto 30 días</a>
+  <header class="lp-nav">
+    <div class="lp-nav__inner">
+      <a href="/" class="lp-nav__brand">Flow<span>AI</span></a>
+      <nav class="lp-nav__links">
+        <a href="/">Inicio</a>
+        <a href="/reto/">El reto</a>
         <a href="/guias/">Guías gratis</a>
         <a href="/#soluciones">Soluciones</a>
-        <a href="#precio" class="btn btn-sm btn-primary" data-checkout>Entrar al reto</a>
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--sm" data-checkout>Entrar al reto</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="reto-hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container">
-      <p class="eyebrow">Reto 30 Días de IA · Flow AI Academy</p>
-      <h1>Deja de leer sobre IA. <span class="grad">Constrúyela</span>.</h1>
-      <p class="lead">Treinta días, un sistema por día, dentro de tu trabajo real. No es un curso que ves y archivas: cada día hay algo que construyes tú, con la herramienta abierta, y que se queda funcionando cuando cierras la laptop.</p>
-      <div class="reto-hero-cta">
-        <a href="#" class="btn btn-primary btn-lg" data-checkout>Entrar al reto</a>
-        <a href="#construyes" class="btn btn-ghost btn-lg">Ver qué se construye</a>
+  <section class="lp-hero">
+    <div class="lp-hero__left">
+      <span class="lp-hero__badge">Reto 30 Días de IA · Flow AI Academy</span>
+      <h1 class="lp-hero__title">
+        <span class="line">Construye sistemas de <span class="hot">IA</span></span>
+        <span class="line">que manejen tu trabajo,</span>
+        <span class="line">tu negocio y tu vida</span>
+      </h1>
+      <p class="lp-hero__sub">La mayoría guarda tips de IA en redes y no implementa ninguno. Eso se acaba aquí. Te voy a llevar de la mano a construir agentes, flujos y sistemas automatizados reales para tu trabajo, tu negocio, tu contenido y tu vida personal.</p>
+      <div class="lp-cta">
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis. Cancelas con un clic.</p>
       </div>
-      <p class="reto-micro">Empiezas con la prueba gratis de Skool. Cancelas con un clic, sin llamada ni correo de por medio.</p>
+    </div>
+    <div class="lp-hero__media">
+      <img src="../assets/fran-reto.jpg" alt="Francisco Vega" fetchpriority="high" />
+    </div>
+    <div class="lp-hero__ronda" aria-hidden="true">Ronda 1</div>
+  </section>
 
-      <div class="reto-cifras">
-        <div class="reto-cifra"><b>30</b><span>retos, uno por día</span></div>
-        <div class="reto-cifra"><b>368</b><span>guías gratis ya publicadas</span></div>
-        <div class="reto-cifra"><b>$20</b><span>de herramientas al mes, nada más</span></div>
-        <div class="reto-cifra"><b>0</b><span>líneas de código que escribes tú</span></div>
-      </div>
+  <!-- MARQUESINA -->
+  <div class="lp-statbar" aria-label="Qué incluye el reto">
+    <dl class="lp-statbar__track">
+      <div class="lp-statcard"><dt>30 Días</dt><dd>de lecciones, a tu ritmo</dd></div>
+      <div class="lp-statcard"><dt>Videos Largos</dt><dd>+ demos reales en pantalla</dd></div>
+      <div class="lp-statcard"><dt>Construyes</dt><dd>prompts, flujos y agentes</dd></div>
+      <div class="lp-statcard"><dt>Comunidad</dt><dd>con dueños y operadores</dd></div>
+      <div class="lp-statcard"><dt>Todo En Español</dt><dd>hecho con casos de acá</dd></div>
+      <div class="lp-statcard" aria-hidden="true"><dt>30 Días</dt><dd>de lecciones, a tu ritmo</dd></div>
+      <div class="lp-statcard" aria-hidden="true"><dt>Videos Largos</dt><dd>+ demos reales en pantalla</dd></div>
+      <div class="lp-statcard" aria-hidden="true"><dt>Construyes</dt><dd>prompts, flujos y agentes</dd></div>
+      <div class="lp-statcard" aria-hidden="true"><dt>Comunidad</dt><dd>con dueños y operadores</dd></div>
+      <div class="lp-statcard" aria-hidden="true"><dt>Todo En Español</dt><dd>hecho con casos de acá</dd></div>
+    </dl>
+  </div>
+
+  <!-- INTRO -->
+  <section class="lp-section lp-section--tight">
+    <div class="lp-container lp-narrow">
+      <p class="lp-lead lp-lead--center">Yo corro mi negocio y el área de IA de un fondo de inversión casi enteramente con inteligencia artificial. Investiga por mí, opera procesos, escribe por mí y me reporta los números. En los próximos 30 días te voy a mostrar exactamente cómo construí esos sistemas, y después te doy todo lo que necesitas para construir los tuyos.</p>
+      <p class="lp-lead lp-lead--center">Vas a tu propio ritmo, con lecciones reales y demos en vivo, y cada una viene con los prompts, las habilidades, los agentes y los archivos para instalarlos mientras construyes. Así no juntas conocimiento de IA: lo pones a trabajar el mismo día.</p>
+      <p class="lp-lead lp-lead--center">Esto es para la persona que quiere la IA metida en cómo trabaja de verdad. Tu chamba. Tu negocio. Tu contenido. Tu vida personal. Un sistema funcionando a la vez.</p>
     </div>
   </section>
 
-  <!-- PROBLEMA -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container narrow center">
-      <p class="reto-tesis">Llevas meses consumiendo contenido de IA y no tienes ni un solo sistema corriendo.
-        <span>No es falta de información: es exceso. Cada semana sale una herramienta nueva, guardas otro video, y el trabajo sigue igual de manual que hace un año. El problema nunca fue lo que no sabes. Es que no has construido nada.</span>
-      </p>
+  <!-- LA HABILIDAD -->
+  <section class="lp-section lp-glow-top">
+    <div class="lp-container lp-section__head--center">
+      <h2 class="lp-h2">La IA es la habilidad que decide quién se adelanta ahora.</h2>
+      <p class="lp-lead lp-lead--center">Y mucha gente quiere aprender, pero no sabe por dónde empezar. Hacen dos o tres preguntas al azar, guardan un tip que nunca vuelven a abrir, prueban la herramienta de moda una semana, y regresan a hacer el trabajo importante a mano. Ese es exactamente el hueco que cierra este reto.</p>
+      <p class="lp-kicker-line lp-kicker-line--xl">Te voy a enseñar a <span class="hot">pensar</span> con IA, a <span class="hot">construir</span> con IA, y a convertirla en sistemas que de verdad uses.</p>
     </div>
   </section>
 
-  <!-- REPS -->
-  <section class="reto-sec">
-    <div class="container narrow">
-      <p class="kicker">Por qué es un reto y no un curso</p>
-      <h2 style="font-size:clamp(26px,3.6vw,38px);margin:10px 0 18px;">Repeticiones, no investigación.</h2>
-      <p class="lead" style="color:var(--ink-soft);">Cuando alguien se pone a estudiar IA se le abren las compuertas: mil herramientas, mil opiniones, mil formas de empezar. Eso paraliza. Por eso aquí cada día trae una sola cosa concreta que construir en tu trabajo, tu negocio o tu vida. El material que ya viste no te falló por malo; te faltaron las repeticiones.</p>
-      <p class="lead" style="color:var(--ink-soft);margin-top:16px;">Vas a tu ritmo. Un reto diario durante 30 días, o cada tercer día durante dos meses. Lo único que no se negocia es que construyas.</p>
+  <!-- NO ERES INGENIERO -->
+  <section class="lp-section lp-band-2">
+    <div class="lp-container lp-narrow">
+      <h2 class="lp-h2">No estoy aquí para convertirte en un <span class="cursiva">Ingeniero de IA.</span></h2>
+      <p class="lp-lead">No soy programador, y tú no tienes que volverte uno. Soy alguien que se cansó de hacer todo a mano, así que aprendí a pasarle cada vez más cosas a la IA: contenido, marketing, planeación, investigación, operaciones, atención a clientes, hasta la parte personal. En estos 30 días vas a construir los mismos tipos de sistemas que yo uso. Un asistente para tu vida personal. Flujos para tu trabajo. Agentes para tu negocio. Un sistema de contenido que puedes correr aunque estés arrancando una marca, un proyecto aparte o una empresa.</p>
+      <p class="lp-lead">Aprender IA es la habilidad que te ahorra horas cada semana, te sube de puesto, te ayuda a cambiar de trabajo, te deja empezar algo propio y te escala el negocio. Una sola habilidad, detrás de todas esas.</p>
+      <p class="lp-kicker-line">Lo construí. Lo uso todos los días. <span class="hot">Ahora es tu turno.</span></p>
     </div>
   </section>
 
-  <!-- ES / NO ES -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Antes de que entres</p>
-        <h2>Qué es esto y qué no es.</h2>
-        <p class="section-sub">Prefiero perder una venta hoy que una persona decepcionada en la semana dos.</p>
-      </div>
-      <div class="reto-doble">
-
-        <div class="reto-panel reto-panel--no">
-          <h3>Lo que no es</h3>
-          <ul>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8893ad" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-              <span><b>No es hacerse rico rápido.</b> Nadie renuncia el viernes por haber hecho un agente el martes. Lo que ganas es tiempo, y el tiempo después lo conviertes en lo que quieras.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8893ad" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-              <span><b>No son plantillas hechas a la medida de tu negocio.</b> Te doy los archivos de los agentes que yo corro y te enseño a adaptarlos. Adaptarlos es tuyo, y ese es justo el punto.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8893ad" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-              <span><b>No es un curso de programación.</b> Yo no soy ingeniero. El código lo escribe la IA; lo que tú aprendes es a pedirle bien las cosas.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8893ad" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-              <span><b>No es una lista de herramientas nuevas.</b> Todo el reto se hace con un solo modelo. Perseguir cada lanzamiento es la forma más rápida de no construir nada.</span>
-            </li>
-          </ul>
+  <!-- FUNDADOR -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <div class="lp-founder">
+        <div class="lp-founder__media">
+          <img src="../assets/fran-reto.jpg" alt="Francisco Vega, fundador de Flow AI" loading="lazy" />
         </div>
-
-        <div class="reto-panel reto-panel--si">
-          <h3>Lo que sí es</h3>
-          <ul>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.2 5L20 6.5"/></svg>
-              <span><b>Aprendes a construir sistemas de IA.</b> Agentes, automatizaciones y flujos que siguen trabajando cuando tú no estás.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.2 5L20 6.5"/></svg>
-              <span><b>Aprendes a hablarle a la IA de verdad.</b> No son trucos de prompt: es entender por qué un modelo te da lo que te da y cómo darle el contexto que le falta.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.2 5L20 6.5"/></svg>
-              <span><b>Aprendes a partir tu trabajo en pasos.</b> La habilidad de fondo: ver una tarea de tu día y saber exactamente qué pedazo se puede delegar a una máquina.</span>
-            </li>
-            <li>
-              <svg class="reto-marca" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.2 5L20 6.5"/></svg>
-              <span><b>Sales con cosas hechas, no con apuntes.</b> Al día 30 tienes sistemas corriendo con tu nombre encima, no una carpeta de videos vistos.</span>
-            </li>
-          </ul>
+        <div class="lp-founder__body">
+          <h2 class="lp-h2">Hola, soy <span class="cursiva">Fran.</span></h2>
+          <p>Hace no mucho, lo único de IA que había tocado en serio era ChatGPT. Mi carrera venía de ventas, operación y clientes, no de software, así que cualquier cosa más allá de un chat me sonaba demasiado técnica y me contaba solito que eso no era para mí.</p>
+          <p>Después usé IA para resolver algo que normalmente me comía días completos, y quedó listo <strong>en minutos</strong>. Ahí me clavé en automatizar todo lo que se pudiera. Hoy la IA atraviesa todo lo que hago: mi negocio, mi contenido, mis decisiones, mi investigación, mi planeación y mi día a día.</p>
+          <p>Hoy dirijo como <strong>Head of AI</strong> la transformación AI-native del fondo Revolution, de Javier Morodo: desde la captación y el contenido hasta los procesos internos y la inteligencia de negocio. Y antes de fundar Flow AI trabajé con gente que construyó cosas grandes de verdad.</p>
+          <p>Aquí está la parte que necesito que te quede: sigo sin llamarme técnico, y definitivamente no soy un gurú de la IA. Nada más aprendí a construir sistemas simples que funcionan, y no hay razón para que tú no puedas hacer exactamente lo mismo.</p>
+          <p>Me llegan mensajes todos los días preguntándome cómo lo hago, así que armé este reto para llevarte por cada sistema, paso por paso, sin necesidad de fondo técnico. No una carpeta de prompts que nunca vas a usar. <strong>Tus propios sistemas de IA para tu vida, tu trabajo y tu negocio.</strong></p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CÓMO ESTÁ DISEÑADO -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Cómo está armado</p>
-        <h2>Primero los cimientos. Después construyes todos los días.</h2>
-        <p class="section-sub">Aprender IA se parece a aprender a cocinar: cuando entiendes las bases dejas de depender de recetas y puedes hacer lo que quieras.</p>
+  <!-- TRAYECTORIA -->
+  <section class="lp-section lp-band-2">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <p class="lp-eyebrow">Con quién he trabajado</p>
+        <h2 class="lp-h2">Antes de Flow AI, construí con algunos de los mejores.</h2>
+        <p class="lp-lead">No lo pongo de adorno: lo que enseño en el reto salió de resolverles problemas reales a ellos, no de un curso que tomé.</p>
       </div>
-      <div class="reto-semanas">
+      <div class="lp-track-grid">
+        <article class="lp-track">
+          <p class="lp-track__tag">Contenido y medios</p>
+          <h3 class="lp-track__name">Oso Trava</h3>
+          <p class="lp-track__desc">Creador de <strong>Cracks</strong>, uno de los podcasts de negocios más grandes de Latinoamérica, donde ha entrevistado a figuras como Carlos Slim.</p>
+        </article>
+        <article class="lp-track">
+          <p class="lp-track__tag">Tecnología</p>
+          <h3 class="lp-track__name">Poncho de los Ríos</h3>
+          <p class="lp-track__desc">Fundador de <strong>Nowports</strong>, uno de los primeros unicornios de México: una empresa valuada en más de mil millones de dólares.</p>
+        </article>
+        <article class="lp-track">
+          <p class="lp-track__tag">Inversión</p>
+          <h3 class="lp-track__name">Javier Morodo</h3>
+          <p class="lp-track__desc">Lideró la digitalización de <strong>GBM</strong> y fue CPO de <strong>Bitso</strong>, unicornio de más de mil millones de dólares. Hoy soy su Head of AI.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="reto-semana">
-          <span class="reto-semana-n">Semana 1</span>
+  <!-- TESTIMONIOS -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <h2 class="lp-h2">Los primeros ya están construyendo. Y ya les está funcionando.</h2>
+        <p class="lp-lead">Estos son sistemas que la gente ya usa todos los días, armados con lo mismo que vas a construir en el reto.</p>
+      </div>
+      <div class="lp-results">
+        <div class="lp-results__grid">
+          <figure class="lp-result">
+            <span class="lp-result__head">Una landing completa en una noche</span>
+            <blockquote>“Después de nuestra sesión le metí todo, me ayudó a conectarlo, y en la noche, literal, pude hacer toda la landing. Los copies ya salen tal cual como los hago yo. Te ahorra un chorro de tiempo.”</blockquote>
+            <figcaption>Luz · marketing</figcaption>
+          </figure>
+          <figure class="lp-result">
+            <span class="lp-result__head">Entrega casi lista, sin explicar tanto</span>
+            <blockquote>“De verdad está cañón. Ya no le tienes que dar tanta explicación: si le pides las cosas de la forma correcta, te lo entrega casi listo. Son poquitísimos los ajustes que le haces.”</blockquote>
+            <figcaption>Andrea · operaciones</figcaption>
+          </figure>
+          <figure class="lp-result">
+            <span class="lp-result__head">Sola, y quedó igual que la del equipo</span>
+            <blockquote>“Hice la prueba de armar una landing yo solita. Más tarde el equipo mandó la suya, y no manchen: quedó casi igualita a la mía. Está superpoderoso.”</blockquote>
+            <figcaption>Mariana · lanzamientos</figcaption>
+          </figure>
+          <figure class="lp-result">
+            <span class="lp-result__head">De tres días a una tarde</span>
+            <blockquote>“Lo que antes nos tomaba tres días ahora sale en una sesión. Me parece impresionante, y lo mejor es que ya no depende de que yo esté ahí picándole.”</blockquote>
+            <figcaption>Diego · dirección</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="lp-cta lp-cta--center">
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PAQUETE -->
+  <section class="lp-section lp-band-2" id="construyes">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <h2 class="lp-h2">El <span class="cursiva">Paquete.</span></h2>
+      </div>
+      <div class="lp-offer-list">
+
+        <article class="lp-offer">
+          <div class="lp-offer__num">01</div>
           <div>
-            <h3>Fundamentos</h3>
-            <p>Cómo funciona realmente un modelo, qué es un agente, qué es contexto y por qué es lo que decide la calidad de todo lo demás. Es la semana que la gente quiere saltarse y la que separa a quien construye lo suyo de quien va a estar copiando prompts ajenos para siempre.</p>
+            <p class="lp-offer__kicker">Día 1 · Bienvenida + orientación</p>
+            <h3 class="lp-offer__title">Ten claro qué vas a construir y déjalo listo para arrancar.</h3>
+            <p class="lp-offer__meta">Video de orientación largo · repetición para siempre</p>
+            <p class="lp-offer__body">En el momento en que entras, tienes un video de orientación completo que te lleva por todo lo que viene en los próximos 30 días. Cómo funciona el reto, qué esperar, qué herramientas necesitas y cómo dejarte preparado para que la IA te empiece a servir de inmediato.</p>
+            <p class="lp-sublabel">Lo que cubrimos</p>
+            <ul class="lp-check">
+              <li>Cómo se ven los próximos 30 días, sin el susto</li>
+              <li>Cómo uso la IA dentro de negocios reales y en mi día a día</li>
+              <li>Las herramientas que de verdad necesitas</li>
+              <li>Por dónde empezar si vienes desde cero</li>
+              <li>Cómo sacarle todo a la plataforma, la comunidad y las repeticiones</li>
+            </ul>
+            <p class="lp-leave"><b>Sales sabiendo</b> qué estás construyendo, por qué importa, y cómo lograr tu primera victoria útil con IA antes de que empiecen las construcciones pesadas.</p>
           </div>
         </article>
 
-        <article class="reto-semana">
-          <span class="reto-semana-n">Semanas 2 a 4</span>
+        <article class="lp-offer">
+          <div class="lp-offer__num">02</div>
           <div>
-            <h3>Un reto por día</h3>
-            <p>Cada día: el concepto explicado corto, la demostración dentro de la herramienta —yo construyéndolo en pantalla, sin cortes— y el archivo listo para que lo bajes y lo conectes a lo tuyo. Los tres, siempre. Explicar sin demostrar es exactamente lo que ya no te sirvió.</p>
+            <p class="lp-offer__kicker">Días 2 a 5 · Semana de fundamentos</p>
+            <h3 class="lp-offer__title">Arma la base de IA que hace que todo lo demás funcione</h3>
+            <p class="lp-offer__meta">5 entrenamientos base · varias horas de video a fondo</p>
+            <p class="lp-offer__body">Cinco días para quedar genuinamente fluido, no nada más cómodo. Vengas desde cero o ya uses IA todos los días, aquí vamos más profundo que el prompt de superficie y construimos la base para sistemas confiables.</p>
+            <p class="lp-sublabel">Vamos a fondo en</p>
+            <ul class="lp-check">
+              <li>Prompting de verdad e ingeniería de contexto</li>
+              <li>Configurar tu stack: Claude, ChatGPT, Perplexity, transcripción, scraping y más</li>
+              <li>Memoria, archivos, proyectos e instrucciones personalizadas</li>
+              <li>Qué es realmente un agente de IA y cómo construyes el tuyo</li>
+              <li>Cómo verificar el resultado, cachar alucinaciones y confiar en el trabajo</li>
+            </ul>
+            <p class="lp-leave">Al terminar la semana vas a pensar menos como alguien que copia prompts y más como alguien que <b>sabe dirigir</b> a la IA. Con tu Perfil de IA personal, tu stack, tu primer agente y un método repetible para mejores resultados.</p>
           </div>
         </article>
 
-        <article class="reto-semana">
-          <span class="reto-semana-n">Todo el mes</span>
+        <article class="lp-offer">
+          <div class="lp-offer__num">03</div>
           <div>
-            <h3>Comunidad en español</h3>
-            <p>Un lugar donde preguntar cuando algo truena a las once de la noche, y donde ves lo que están construyendo los demás. La mitad de las mejores ideas del reto van a salir de ahí, no de mí.</p>
+            <p class="lp-offer__kicker">Días 6 a 30 · Construcciones y retos diarios</p>
+            <h3 class="lp-offer__title">Construye tu sistema de IA para tu vida, tu trabajo y tu negocio</h3>
+            <p class="lp-offer__meta">Una construcción por día · varias horas de video</p>
+            <p class="lp-offer__body">Aquí se pone real. Todos los días construyes un sistema que te quedas. Vida personal. Flujos de tu chamba. Operación del negocio. Contenido. Investigación. Decisiones. Agentes. Automatización.</p>
+            <p class="lp-sublabel">Vas a construir</p>
+            <ul class="lp-check">
+              <li>Tus propios agentes de IA desde cero, bien hechos</li>
+              <li>Versiones a tu medida de los agentes de negocio que yo uso: pauta, correo, atención a clientes, contenido y asistencia ejecutiva</li>
+              <li>Un sistema para tu vida personal que te ayuda a planear, priorizar y recuperar horas</li>
+              <li>Flujos para tu puesto, tu rol o tu negocio, para que la IA sea parte de cómo operas</li>
+              <li>El motor de contenido con el que produzco reels, guiones y publicaciones en serie</li>
+              <li>Cómo detectar y abrir oportunidades nuevas de ingreso con IA</li>
+              <li>Flujos de varios pasos y vibe coding, para armar tu propia app o sitio sin código chueco</li>
+              <li>Una sesión final grabada desmenuzando un negocio real, en vivo</li>
+            </ul>
+            <p class="lp-leave">Para el día 30 no vas a saber más de IA nada más. Vas a tener <b>sistemas que tú construiste</b>, y la confianza de apuntarle a lo siguiente y sacarle algo útil.</p>
           </div>
         </article>
 
       </div>
-    </div>
-  </section>
-
-  <!-- QUÉ CONSTRUYES -->
-  <section class="reto-sec reto-sec--linea" id="construyes">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Lo que sale de aquí</p>
-        <h2>Diez de los sistemas que vas a construir.</h2>
-        <p class="section-sub">Todos son cosas que corro yo, en Flow AI o en las operaciones de mis clientes. Nada de esto es un ejemplo de demostración.</p>
-      </div>
-      <div class="reto-builds">
-
-        <article class="reto-build"><span class="reto-build-n">01</span>
-          <h3>Tu asistente ejecutivo</h3>
-          <p>Correo, calendario y pendientes. El sistema con el que más gente recupera su primera hora del día.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">02</span>
-          <h3>Tu segundo cerebro</h3>
-          <p>Todo lo que lees, decides y acuerdas, en un solo lugar que la IA puede consultar y conectar por ti.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">03</span>
-          <h3>Máquina de contenido</h3>
-          <p>El flujo con el que se produce contenido para redes a escala sin que todo suene igual ni salga plano.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">04</span>
-          <h3>Un redactor con tu voz</h3>
-          <p>Cómo se entrena a un modelo con tu forma de escribir para que deje de oler a IA a tres metros.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">05</span>
-          <h3>Reportes automáticos</h3>
-          <p>Los números de tu negocio, recogidos y explicados solos cada semana, sin nadie armando el Excel.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">06</span>
-          <h3>Decks y PDFs con tu marca</h3>
-          <p>Presentaciones y documentos que salen bien puestos a la primera y se ven hechos por un diseñador.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">07</span>
-          <h3>Prospección y ventas</h3>
-          <p>Agentes que investigan a la cuenta, escriben con contexto real y te dejan la oportunidad lista.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">08</span>
-          <h3>Inteligencia de pauta</h3>
-          <p>Cómo se leen los anuncios de tu competencia y se convierten en creativos que sí puedes lanzar.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">09</span>
-          <h3>Software y sitios propios</h3>
-          <p>La herramienta interna que necesitas y nadie te va a construir, hecha por ti sin escribir código.</p></article>
-
-        <article class="reto-build"><span class="reto-build-n">10</span>
-          <h3>Mis agentes, con sus archivos</h3>
-          <p>Los agentes que uso todos los días: cómo están hechos por dentro, cómo se adaptan y cómo se hacen nuevos.</p></article>
-
+      <div class="lp-cta lp-cta--center">
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
       </div>
     </div>
   </section>
 
-  <!-- REQUISITOS -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Lo que necesitas</p>
-        <h2>Menos de lo que crees.</h2>
+  <!-- CÓMO FUNCIONA -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <h2 class="lp-h2">Cómo funcionan tus 30 días</h2>
       </div>
-      <div class="reto-req">
-        <div class="reto-req-item">
-          <b>Una suscripción de $20 al mes</b>
-          <span>Claude, ChatGPT o Gemini. Recomiendo Claude para el reto, pero los fundamentos aplican con cualquiera. El plan de entrada basta; no necesitas subir de nivel.</span>
-        </div>
-        <div class="reto-req-item">
-          <b>Una computadora</b>
-          <span>Mac o Windows, la que ya tienes. Varios retos se hacen fuera del navegador, así que el celular solo no alcanza.</span>
-        </div>
-        <div class="reto-req-item">
-          <b>Una hora al día</b>
-          <span>Y si un día no la tienes, no pasa nada: el reto no caduca y el ritmo lo pones tú.</span>
-        </div>
-        <div class="reto-req-item">
-          <b>Un solo foco</b>
-          <span>Un área donde quieras que la IA pegue primero. Elegir una es la diferencia entre terminar con algo funcionando y terminar con veinte ideas.</span>
-        </div>
+      <div class="lp-out-grid">
+        <article class="lp-out">
+          <p class="lp-out__num">01</p>
+          <h3 class="lp-out__title">Todo en un solo lugar</h3>
+          <p>El reto completo vive en tu plataforma privada: cada lección, cada archivo, cada prompt, cada agente y la comunidad, todo junto. Entras cuando quieras, desde cualquier dispositivo.</p>
+        </article>
+        <article class="lp-out">
+          <p class="lp-out__num">02</p>
+          <h3 class="lp-out__title">Una lección nueva cada día</h3>
+          <p>Cada día se abre una lección grabada, más los prompts, archivos y agentes exactos que le van, para que construyas al lado mío en vez de andar adivinando solo.</p>
+        </article>
+        <article class="lp-out">
+          <p class="lp-out__num">03</p>
+          <h3 class="lp-out__title">Lo construyes de verdad</h3>
+          <p>Cada lección se convierte en un sistema que puedes usar en tu vida, tu trabajo o tu negocio. Para la parte práctica vas a querer una computadora.</p>
+        </article>
+        <article class="lp-out">
+          <p class="lp-out__num">04</p>
+          <h3 class="lp-out__title">Nunca lo haces solo</h3>
+          <p>Hay una comunidad activa adentro donde respondo preguntas y donde conoces a otros dueños de negocio y operadores usando IA. Vas a tu ritmo y preguntas cuando te trabes.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- QUIÉN SOY -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container">
-      <div class="founder-grid">
-        <div class="founder-photo" aria-hidden="true">
-          <div class="founder-frame">
-            <div class="founder-fallback">FV</div>
-            <img src="../fran.jpg" alt="Francisco Vega, fundador de Flow AI" onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="founder-copy">
-          <p class="kicker">Quién te lo va a enseñar</p>
-          <h2>Francisco Vega</h2>
-          <p class="founder-role">Fundador de Flow AI · Head of AI en Revolution</p>
-          <p>Mi trabajo diario es meter inteligencia artificial dentro de empresas que ya están operando: no dar la charla, sino dejar el sistema corriendo y funcionando cuando me voy. Eso es lo que hago en Revolution como Head of AI y lo que hago en Flow AI con mis clientes.</p>
-          <p>Publiqué 368 guías gratuitas en este mismo sitio, casi medio millón de palabras, sin pedir nada a cambio. Este reto es lo que sigue: lo que no cabe en una guía porque hay que verlo construir.</p>
-          <p>Y para que quede claro desde el principio: <b>no soy ingeniero y no sé programar</b>. Todo lo que voy a enseñarte lo aprendí en el último año, construyendo. Si hiciera falta una carrera de sistemas, yo no estaría de este lado.</p>
-        </div>
+  <!-- BONOS -->
+  <section class="lp-section lp-band-2">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <h2 class="lp-h2">Bonos <span class="cursiva">acumulados.</span></h2>
+        <p class="lp-lead">Estos son los recursos que hacen más fácil construir, sobre todo si quieres pasar de ver una lección a tener el sistema terminado más rápido.</p>
+      </div>
+      <div class="lp-bonus-grid">
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 01</span>
+          <h3 class="lp-bonus__title">10+ agentes listos para usar</h3>
+          <p class="lp-bonus__sub">Más de diez asistentes de IA ya armados, tuyos.</p>
+          <p class="lp-bonus__body">Son asistentes que ya construí y uso: pauta en Meta, pauta en Google, correo, atención a clientes, asistente ejecutivo, contenido y redes, y un socio estratégico. Cada uno viene con sus instrucciones y ejemplos, así que nada más le metes tu información y lo usas. Asistentes completos, no prompts sueltos.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 02</span>
+          <h3 class="lp-bonus__title">Claude a fondo</h3>
+          <p class="lp-bonus__sub">Un recorrido completo por la IA con la que corro casi todo.</p>
+          <p class="lp-bonus__body">Te llevo por Claude de principio a fin: proyectos, archivos, instrucciones personalizadas y las funciones que casi nadie toca. Al terminar le vas a sacar respuestas muchísimo mejores de las que te da hoy.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 03</span>
+          <h3 class="lp-bonus__title">Cómo hacer que la IA escriba como tú</h3>
+          <p class="lp-bonus__sub">Entrena la IA en tu voz para que lo escrito suene a ti.</p>
+          <p class="lp-bonus__body">El proceso exacto que uso para que la IA escriba con mi voz en vez de esa papilla genérica de IA. Lo configuras una vez con los ejemplos correctos, y tus correos, posts y contenido salen sonando a que los escribiste tú.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 04</span>
+          <h3 class="lp-bonus__title">Cómo construir software y sitios con IA</h3>
+          <p class="lp-bonus__sub">Arma un sitio que funciona, o una app simple, sin escribir código.</p>
+          <p class="lp-bonus__body">Te llevo paso por paso a construir tu propio sitio o un software sencillo con IA, sin programador. Eso que normalmente le pagarías miles de pesos a un freelancer, lo haces tú en un fin de semana.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 05</span>
+          <h3 class="lp-bonus__title">Agentes corriendo en automático</h3>
+          <p class="lp-bonus__sub">Deja tareas de IA agendadas, aunque tu compu esté apagada.</p>
+          <p class="lp-bonus__body">A fondo en el setup que uso para correr agentes y tareas recurrentes solas, en segundo plano. Tu IA sigue trabajando mientras tú duermes, y el reporte te llega hecho.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 06</span>
+          <h3 class="lp-bonus__title">Kit de contenido y video con IA</h3>
+          <p class="lp-bonus__sub">Paso por paso con las apps exactas que uso para hacer video e imagen.</p>
+          <p class="lp-bonus__body">Cuál herramienta va para qué (Higgsfield, Kling, Sora, Veo, ElevenLabs, Suno) y los pasos exactos para convertir una idea en un video, una imagen o un anuncio terminado. Así haces tu propio contenido sin contratar a nadie.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 07</span>
+          <h3 class="lp-bonus__title">Herramienta de inteligencia de competencia</h3>
+          <p class="lp-bonus__sub">Ve todo lo que tu competencia publica y todo lo que trae en pauta, en un solo lugar.</p>
+          <p class="lp-bonus__body">Te llevo por las herramientas que juntan los posts y los anuncios de tus competidores automáticamente, para que veas qué les está funcionando y hagas tu propia versión en vez de adivinar.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 08</span>
+          <h3 class="lp-bonus__title">368 guías de IA, escritas y publicadas</h3>
+          <p class="lp-bonus__sub">La biblioteca completa, gratis y abierta, para consultar mientras construyes.</p>
+          <p class="lp-bonus__body">Ya publiqué 368 guías paso a paso de IA en el sitio. Son tu material de consulta durante el reto: cuando te trabes en algo puntual, seguro ya hay una guía escrita de eso.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 09</span>
+          <h3 class="lp-bonus__title">Comunidad y red de contactos</h3>
+          <p class="lp-bonus__sub">Nunca te quedas trabado solo. Conoces a gente construyendo con IA.</p>
+          <p class="lp-bonus__body">Una comunidad activa donde respondo tus preguntas y donde conoces y te conectas con otros dueños de negocio y operadores usando IA. Comparte lo que estás armando, destrábate y aprende de lo que están construyendo los demás.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
+        <article class="lp-bonus">
+          <span class="lp-bonus__badge">Bono 10</span>
+          <h3 class="lp-bonus__title">Acceso a las lecciones nuevas</h3>
+          <p class="lp-bonus__sub">Todo queda arriba, y lo que agrego después también te toca.</p>
+          <p class="lp-bonus__body">Los videos, las lecciones, las plantillas y los agentes viven en un solo lugar al que entras cuando quieras. Y mientras seas miembro, lo que voy agregando entra sin costo extra: cuando sale un modelo o una herramienta nueva, la lección aparece adentro.</p>
+          <p class="lp-bonus__value">Incluido en el reto</p>
+        </article>
+
       </div>
     </div>
   </section>
 
   <!-- PRECIO -->
-  <section class="reto-sec reto-sec--linea" id="precio">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Entrar</p>
-        <h2>El reto vive dentro de Flow AI Academy.</h2>
-        <p class="section-sub">La primera comunidad en español de gente que construye con IA en vez de solo hablar de ella.</p>
+  <section class="lp-section lp-glow-top" id="precio">
+    <div class="lp-container">
+      <div class="lp-section__head lp-section__head--center">
+        <h2 class="lp-h2">Súmalo <span class="cursiva">todo.</span></h2>
+      </div>
+      <div class="lp-price-grid">
+        <div class="lp-value">
+          <p class="lp-value__group">El reto</p>
+          <div class="lp-value__row"><span>Semana de fundamentos (5 entrenamientos a fondo)</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>25 días de construcciones, retos y flujos</span><b>Incluido</b></div>
+          <p class="lp-value__group">Los bonos</p>
+          <div class="lp-value__row"><span>10+ agentes de IA listos para usar</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Claude a fondo</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Cómo hacer que la IA escriba como tú</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Cómo construir software y sitios con IA</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Agentes corriendo en automático</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Kit de contenido y video con IA</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Inteligencia de competencia</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>368 guías de IA publicadas</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Comunidad y red de contactos</span><b>Incluido</b></div>
+          <div class="lp-value__row"><span>Las lecciones nuevas que voy agregando</span><b>Incluido</b></div>
+          <div class="lp-value__total"><span>Todo por</span><span>$<span data-precio>49</span> USD al mes</span></div>
+        </div>
+
+        <div class="lp-price-card">
+          <p class="lp-price-card__tag">Membresía mensual</p>
+          <p class="lp-price-card__big">$<span data-precio>49</span> <small>USD <span data-periodo>al mes</span></small></p>
+          <p class="lp-price-card__note">Un pago al mes, acceso a todo el reto, todos los bonos y la comunidad. Cancelas cuando quieras con un clic.</p>
+          <a href="#" class="lp-btn lp-btn--cream lp-btn--lg" data-checkout>Entrar al reto</a>
+          <div class="lp-price-split">
+            <p class="lp-price-card__tag">Empieza sin pagar</p>
+            <p class="lp-price-split__big">Prueba gratis</p>
+            <p class="lp-price-split__note">Entras, ves la orientación y las primeras lecciones, y decides. Si no es para ti, cancelas antes de que te cobren.</p>
+            <a href="#" class="lp-btn lp-btn--ghost" data-checkout>Empezar la prueba</a>
+          </div>
+        </div>
       </div>
 
-      <div class="reto-precio">
-        <p class="eyebrow">Flow AI Academy</p>
-        <div class="reto-precio-cifra">
-          <b>$<span data-precio>49</span></b>
-          <span>USD <span data-periodo>al mes</span></span>
-        </div>
-        <p class="reto-micro">Empiezas con la prueba gratis. Cancelas con un clic cuando quieras.</p>
+      <p class="lp-savings">Un mes cuesta menos que una hora de un consultor. Y te llevas los sistemas.</p>
+      <p class="lp-guarantee">Sin contrato y sin llamada de retención: se cancela con un clic desde tu cuenta, cuando tú quieras.</p>
+      <p class="lp-fineprint">$<span data-precio>49</span> USD <span data-periodo>al mes</span>, con prueba gratis para empezar. El cobro y la cancelación los maneja Skool, donde vive la comunidad Flow AI Academy. Necesitas un plan pagado de IA aparte para seguir el reto (Claude Pro o ChatGPT Plus, unos $20 USD al mes) — eso no lo cobro yo.</p>
+    </div>
+  </section>
 
-        <ul class="reto-precio-lista">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M4 12.5l5.2 5L20 6.5"/></svg><span>Los 30 retos, con su demostración en pantalla y su archivo descargable.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M4 12.5l5.2 5L20 6.5"/></svg><span>La semana de fundamentos completa, en video largo.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M4 12.5l5.2 5L20 6.5"/></svg><span>Los archivos de los agentes que corro yo, listos para adaptar.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M4 12.5l5.2 5L20 6.5"/></svg><span>La comunidad en español, para cuando te atores.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84b6ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M4 12.5l5.2 5L20 6.5"/></svg><span>Todo lo que se sume después, mientras seas miembro.</span></li>
-        </ul>
-
-        <a href="#" class="btn btn-primary btn-lg" data-checkout>Entrar al reto</a>
-        <p class="reto-micro" style="margin-top:16px;">El cobro lo hace Skool. Vas a su página segura y regresas con el acceso puesto.</p>
+  <!-- NO ES MAGIA -->
+  <section class="lp-section lp-band-2">
+    <div class="lp-container">
+      <h2 class="lp-h2">Esto no es un reto de <span class="cursiva">"vuélvete experto en IA de la noche a la mañana".</span></h2>
+      <p class="lp-lead lp-lead--center">Es construir una habilidad, y construir una habilidad se hace con repeticiones. Es probable que al principio te sientas confundido, o que te salga una respuesta genérica y decidas que la IA no sirve. Eso es normal, y es exactamente por eso que hacemos las repeticiones juntos en vez de que le eches ganas solo. No te voy a prometer que te vas a volver rico ni que vas a automatizar tu vida entera en 30 días. Lo que sí te prometo: esto está armado para ser el entrenamiento de IA más completo y más útil que encuentres en español, y si te apareces y haces el trabajo, terminas con la IA de verdad metida en tu vida, tu trabajo y tu negocio. No como palabra de moda que asientes. Como algo que usas todos los días.</p>
+      <p class="lp-kicker-line">Te damos todo para que ganes con IA, y vas a ver el efecto <span class="hot">en tu día a día.</span></p>
+      <div class="lp-cta lp-cta--center">
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Preguntas</p>
-        <h2>Lo que me preguntan siempre.</h2>
+  <!-- PARA QUIÉN -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <div class="lp-section__head">
+        <h2 class="lp-h2">Lee esto antes de entrar.</h2>
       </div>
-      <div class="reto-faq">
+      <div class="lp-fit-grid">
+        <div class="lp-fit lp-fit--yes">
+          <p class="lp-eyebrow">// Es para ti si</p>
+          <ul>
+            <li>Sabes que la IA importa, pero todavía no la has convertido en sistemas reales.</li>
+            <li>Quieres IA para tu trabajo, tu negocio, tu proyecto aparte, tu contenido o tu día a día.</li>
+            <li>Ya usas IA, pero sobre todo con prompts sueltos y flujos dispersos.</li>
+            <li>Tienes un negocio y quieres IA metida en operación, marketing, correo, soporte o planeación.</li>
+            <li>Eres profesionista y quieres moverte más rápido sin volverte técnico.</li>
+            <li>Quieres construcciones paso a paso, no otra carpeta de tips.</li>
+            <li>Estás dispuesto a abrir la computadora, seguir el paso y construir de verdad.</li>
+          </ul>
+        </div>
+        <div class="lp-fit lp-fit--no">
+          <p class="lp-eyebrow">// No es para ti si</p>
+          <ul>
+            <li>Buscas el prompt mágico para hacerte rico rápido.</li>
+            <li>Quieres ver videos y nunca implementar nada.</li>
+            <li>No estás dispuesto a usar una laptop o computadora para la parte práctica.</li>
+            <li>Quieres que alguien más te construya todos los sistemas.</li>
+            <li>Esperas que la IA salga perfecta sin aprender a dirigirla.</li>
+            <li>No estás dispuesto a hacer las repeticiones.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lp-cta lp-cta--center">
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS -->
+  <section class="lp-section lp-band-2">
+    <div class="lp-container">
+      <div class="lp-section__head lp-section__head--center">
+        <h2 class="lp-h2">Preguntas</h2>
+      </div>
+      <div class="lp-faq">
+
+        <details open>
+          <summary>¿Y si soy totalmente nuevo en IA?</summary>
+          <p>Perfecto, está hecho justo para eso. Está diseñado para quien empieza desde cero: cómo funciona la IA de verdad, cómo hablarle, qué herramientas usar y cómo darte cuenta cuando se equivoca. Pero no es solo para principiantes. Si ya usas IA y quieres pasar de prompts al azar a sistemas, agentes y flujos que de verdad corran tu vida y tu negocio, le vas a sacar lo mismo. Desde donde estés arrancando, te vas con sistemas que sí usas.</p>
+        </details>
 
         <details>
-          <summary>Empiezo desde cero. ¿Esto es para mí?</summary>
-          <p>Sí, y la semana de fundamentos existe justo por eso. Lo que sí necesitas es haber abierto ChatGPT o Claude alguna vez. Si nunca en tu vida le has escrito a un modelo, empieza por las guías gratis de este sitio y vuelve en una semana.</p>
+          <summary>¿Y si ya soy intermedio o avanzado?</summary>
+          <p>Entonces te van a encantar las semanas 2 a 4. Este reto está hecho para pasarse muy por encima de lo básico: construir agentes reales, personalizar y poner a correr sistemas de negocio, ingeniería de contexto, flujos de varios pasos y vibe coding. Si ya dominas los fundamentos, sáltate o pasa rápido la semana de fundamentos y clávate directo en las construcciones. Mientras seas miembro nada queda bajo llave, así que puedes regresar a lo que te saltaste.</p>
         </details>
 
         <details>
           <summary>¿Necesito saber programar?</summary>
-          <p>No. Yo tampoco sé. El código lo escribe la IA; tu trabajo es explicarle bien qué quieres y revisar lo que te devuelve. Es la parte que más gente malentiende y la que hace que se autodescarten sin razón.</p>
+          <p>No, y de eso se trata todo. Buena parte de lo que construimos usa herramientas como Claude Code, pero nunca vas a necesitar escribir una línea de código ni tener fondo técnico. Te llevo por cada paso en español claro, para que construyas sistemas reales sin ser técnico. Si sabes escribir lo que quieres, puedes hacer esto.</p>
         </details>
 
         <details>
-          <summary>¿Cuánto me cuesta operar esto además de la membresía?</summary>
-          <p>Los $20 al mes del modelo que elijas, y nada más. Las historias de cuentas de miles de dólares son de empresas corriendo IA a escala industrial, no de una persona construyendo sus sistemas.</p>
+          <summary>¿Qué herramientas necesito?</summary>
+          <p>Necesitas un plan pagado de IA para seguir el paso: Claude Pro (unos $20 USD al mes) o ChatGPT Plus (unos $20 USD al mes). Con cualquiera de los dos tienes todo lo que hace falta para el reto. Ese costo va aparte de la membresía y no me lo pagas a mí.</p>
         </details>
 
         <details>
-          <summary>¿Y si me atraso o me voy de vacaciones?</summary>
-          <p>No pasa nada. Un reto diario por 30 días, o uno cada tercer día por dos meses, o uno por semana. El material está ahí mientras seas miembro. Lo único que te pido es que no dejes de construir.</p>
+          <summary>¿Dónde pasa el reto y cómo entro?</summary>
+          <p>Todo vive en un solo lugar privado: la comunidad Flow AI Academy en Skool. Ahí están tus lecciones, prompts, archivos, agentes y la comunidad, así que entras y ya está todo junto. Puedes verlo desde tu laptop o tu celular, a cualquier hora.</p>
         </details>
 
         <details>
-          <summary>¿Esto aplica si no tengo negocio propio?</summary>
-          <p>Aplica igual. Cada sistema del reto tiene su versión personal y su versión de negocio: el agente que le contesta a clientes es el mismo que te organiza la vida. Cuando pienses "esto no es para mí", casi siempre es al revés.</p>
+          <summary>¿Necesito computadora?</summary>
+          <p>Sí, vas a querer una laptop o computadora de escritorio. Construimos sistemas reales con herramientas de escritorio, así que aunque puedas ver las lecciones en el celular, necesitas computadora para construir al lado mío.</p>
         </details>
 
         <details>
-          <summary>¿Puedo cancelar?</summary>
-          <p>Cuando quieras, con un clic dentro de Skool. Empiezas con la prueba gratis, y si en esos días no ves de qué se trata, te sales sin escribirle a nadie.</p>
+          <summary>¿Y si no puedo verlo todos los días?</summary>
+          <p>Sin problema. Vas a tu ritmo, y de hecho te lo recomiendo. El ritmo que te funcione para terminarlo y de verdad lograrlo es el ritmo correcto. Puedes regresar y volver a ver cualquier video las veces que quieras.</p>
         </details>
 
         <details>
-          <summary>Ya vi mil videos de IA en YouTube. ¿Qué cambia aquí?</summary>
-          <p>Que aquí hay algo que entregar todos los días. Los videos que viste no te fallaron por malos: los viste y no construiste nada. Eso es lo único que este formato arregla, y por eso se llama reto.</p>
+          <summary>¿Es en vivo o grabado?</summary>
+          <p>Son lecciones grabadas, así que nunca dependes de un horario. Con cada video comparto los prompts, archivos, agentes y todo el material que le va, para que sigas el paso y construyas de una vez. Puedes repetir cualquier video cuando quieras.</p>
+        </details>
+
+        <details>
+          <summary>¿Hay comunidad? ¿Vas a responder mis preguntas?</summary>
+          <p>Sí. Hay una comunidad activa adentro y ahí estoy respondiendo preguntas. También es donde conoces y te conectas con otros dueños de negocio y operadores usando IA. No te quedas descifrando esto solo: preguntas, compartes lo que estás armando y te destrabas rápido.</p>
+        </details>
+
+        <details>
+          <summary>¿Esto es para ganar dinero con IA?</summary>
+          <p>No, no en el sentido en que la mayoría lo dice. Nunca te voy a prometer el prompt mágico para hacerte rico, y no te puedo garantizar ningún resultado específico. Lo que sí te puedo decir es lo que la IA ha hecho por mí: me dejó fundar mi propio negocio, me puso a dirigir la transformación de IA de un fondo de inversión, y me quitó de encima horas de trabajo manual cada semana. Así que no, esto no es sobre ganar dinero. Es sobre que ganes con IA, en lo que sea que ganar signifique para ti.</p>
+        </details>
+
+        <details>
+          <summary>¿Me va a servir en mi trabajo?</summary>
+          <p>Sí. Una parte importante es aprender a auditar tu puesto, encontrar las tareas que repites, subir la calidad de lo que entregas y construir flujos apoyados en IA que te hagan trabajar más rápido.</p>
+        </details>
+
+        <details>
+          <summary>¿Y si tengo un negocio?</summary>
+          <p>Entonces está hecho para ti. Voy a fondo en cómo he usado IA para automatizar operación, bajar gastos y crecer ingresos: los sistemas reales, no la teoría. Te paso los mismos agentes que corro y te llevo paso por paso a montarlos en tu negocio.</p>
+        </details>
+
+        <details>
+          <summary>¿Es nada más para creadores de contenido?</summary>
+          <p>No. Las lecciones de contenido son una parte. Te voy a mostrar exactamente cómo uso IA para armar mi motor de contenido, producir mucho, mover vistas y convertir esa atención en ventas, y si haces contenido eso te va a encantar. Pero el punto grande del reto es aprender a usar IA en todos lados: sistemas que corren tu negocio, tu trabajo y tu día a día, en lo que sea que hagas.</p>
+        </details>
+
+        <details>
+          <summary>¿Puedo meter a mi equipo?</summary>
+          <p>Sí. Si quieres entrar con tu equipo, escríbeme y lo acomodamos. Cada persona tiene su propio acceso al reto, la comunidad, los prompts, las plantillas y los agentes.</p>
+        </details>
+
+        <details>
+          <summary>¿Es pago único o mensualidad?</summary>
+          <p>Es mensualidad: $<span data-precio>49</span> USD <span data-periodo>al mes</span>, y empiezas con prueba gratis. Lo prefiero así por una razón: la IA cambia cada semana, y yo sigo subiendo lecciones nuevas cuando sale un modelo o una herramienta que vale la pena. Mientras seas miembro, eso entra sin costo extra. Y si en algún punto ya no te suma, cancelas con un clic.</p>
+        </details>
+
+        <details>
+          <summary>¿Cómo cancelo?</summary>
+          <p>Desde tu cuenta, con un clic, cuando quieras. No hay contrato, ni llamada de retención, ni correo que tengas que mandar para que alguien te dé permiso. Terminas el mes que ya pagaste y ya.</p>
+        </details>
+
+        <details>
+          <summary>¿Va a haber otra ronda?</summary>
+          <p>Esta es la primera. Lo estoy corriendo ahora porque llevo meses recibiendo el mismo mensaje preguntándome cómo hago lo que hago. No te voy a prometer cuántas rondas más va a haber, porque de verdad no lo sé. Lo que sí te puedo decir es que el precio que ves hoy es el de la primera ronda, y esos no suelen quedarse ahí para siempre.</p>
         </details>
 
         <details>
           <summary>¿Está en español?</summary>
-          <p>Todo: los videos, los archivos, la comunidad y las respuestas. No es una traducción de un curso gringo, está hecho desde cero con casos de acá.</p>
+          <p>Todo: los videos, los archivos, la comunidad y las respuestas. No es la traducción de un curso gringo, está hecho desde cero con casos de acá.</p>
         </details>
 
       </div>
@@ -370,41 +592,61 @@
   </section>
 
   <!-- CIERRE -->
-  <section class="reto-sec reto-sec--linea">
-    <div class="container narrow reto-cierre">
-      <h2>Los que van a ganar con IA no son los que más saben.</h2>
-      <p>Son los que llevan más repeticiones. Los que aprendieron a preguntar mejor, a dar mejor contexto y a construir sistemas chiquitos que se acumulan. En treinta días te da tiempo de ser uno de ellos, o te da tiempo de ver otros treinta videos. Es literalmente la misma cantidad de días.</p>
-      <a href="#" class="btn btn-primary btn-lg" data-checkout>Entrar al reto</a>
-      <p class="reto-firma">Nos vemos adentro. — Fran</p>
+  <section class="lp-section lp-final">
+    <div class="lp-container">
+      <h2 class="lp-h2">Puedes seguir usando la IA al azar. O puedes empezar a construir sistemas.</h2>
+      <p class="lp-lead">De aquí a treinta días puedes seguir guardando tips de IA, probando herramientas sueltas y preguntándote en silencio cómo es que los demás se mueven tan rápido. O puedes tener un asistente corriendo tu día, agentes encargándose del trabajo repetitivo de tu chamba y de tu negocio, flujos que de verdad entiendes, y la confianza de apuntarle a lo siguiente y sacar algo útil. Son los mismos treinta días. Es una habilidad completamente distinta del otro lado.</p>
+      <div class="lp-cta lp-cta--center">
+        <a href="#precio" class="lp-btn lp-btn--cream lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
+      </div>
     </div>
   </section>
 
-  <!-- CAPTURA para quien no compra hoy -->
-  <main class="container">
-    <section class="optin">
-      <h2>¿Todavía no?</h2>
-      <p>Déjame tu correo y te sigo mandando las guías gratis cada semana. Cuando quieras entrar al reto, aquí va a estar.</p>
-      <form class="optin-form" data-fuente="landing-reto" novalidate>
-        <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
-        <button type="submit" class="btn btn-primary">Mandarme las guías</button>
-      </form>
-      <p class="optin-msg" role="status" aria-live="polite"></p>
-      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
-    </section>
-  </main>
+  <!-- P.D. -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <p class="lp-eyebrow">// P.D. si nada más vas a leer una cosa</p>
+      <div class="lp-ps__body">
+        <p>Sé lo que se siente abrir una herramienta de IA y sentir que ya deberías saber qué hacer con ella. También sé lo que se siente ver a todo mundo hablando de prompts, agentes y automatizaciones mientras tú sigues intentando convertirlo en algo real.</p>
+        <p>Los que se adelantan con IA no son los que conocen todas las herramientas. Son los que llevan más repeticiones. Preguntan mejor, dan mejor contexto, revisan el trabajo, y construyen sistemas chiquitos hasta que la IA deja de parecer impresionante y empieza a ser útil.</p>
+        <p>Eso es lo que vamos a hacer durante 30 días. Te voy a mostrar cómo pienso la IA, cómo la uso, y cómo construir tu versión. ¿Vamos?</p>
+        <p class="lp-ps__sign">— Fran</p>
+        <a href="#precio" class="lp-btn lp-btn--primary lp-btn--lg" data-checkout>Entrar al reto →</a>
+        <p class="lp-micro">Empiezas con la prueba gratis</p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
-      <span>© <span id="year"></span> Flow AI · Francisco Vega</span>
-      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+  <!-- CAPTURA para quien no entra hoy -->
+  <section class="lp-section lp-band-2" id="avisame">
+    <div class="lp-container">
+      <div class="lp-optin">
+        <h2>¿Todavía no?</h2>
+        <p>Déjame tu correo y te sigo mandando las guías gratis cada semana. Cuando quieras entrar al reto, aquí va a estar.</p>
+        <form class="optin-form" data-fuente="landing-reto" novalidate>
+          <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+          <button type="submit" class="lp-btn lp-btn--primary">Mandarme las guías</button>
+        </form>
+        <p class="optin-msg" role="status" aria-live="polite"></p>
+        <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="lp-foot">
+    <div class="lp-foot__inner">
+      <span class="lp-foot__brand">Flow<span>AI</span></span>
+      <span>© <span id="year">2026</span> Flow AI · Francisco Vega</span>
+      <span>Convertimos empresas en AI-native.</span>
     </div>
   </footer>
 
   <!-- BARRA FIJA DE COMPRA -->
-  <div class="barra-compra" id="barraCompra">
-    <span class="barra-compra-texto"><b>Reto 30 Días de IA</b> · $<span data-precio>49</span> USD <span data-periodo>al mes</span>, cancelas cuando quieras</span>
-    <a href="#" class="btn btn-primary" data-checkout>Entrar al reto</a>
+  <div class="lp-buybar" id="barraCompra">
+    <span class="lp-buybar__txt"><b>Reto 30 Días de IA</b> · $<span data-precio>49</span> USD <span data-periodo>al mes</span>, cancelas cuando quieras</span>
+    <a href="#" class="lp-btn lp-btn--primary" data-checkout>Entrar al reto</a>
   </div>
 
   <script src="../flowai-config.js"></script>
