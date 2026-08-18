@@ -1,0 +1,131 @@
+/* ============================================================
+   Flow AI — landing del Reto 30 Días.
+   Hereda tokens, botones y nav de ../styles.css. Aquí solo va
+   lo que esta página necesita y ninguna otra.
+   ============================================================ */
+
+/* ---------- Barra fija de compra ---------- */
+.barra-compra {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  padding: 12px 20px;
+  background: rgba(6, 9, 18, .92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line-strong);
+  transform: translateY(110%); transition: transform .3s ease;
+}
+.barra-compra.visible { transform: none; }
+.barra-compra-texto { font-size: 14.5px; color: var(--ink-soft); }
+.barra-compra-texto b { color: var(--ink); }
+@media (max-width: 640px) {
+  .barra-compra { gap: 12px; padding: 10px 14px; }
+  .barra-compra-texto { display: none; }
+  .barra-compra .btn { width: 100%; }
+}
+
+/* ---------- Hero ---------- */
+.reto-hero { position: relative; padding: 130px 0 76px; overflow: hidden; }
+.reto-hero h1 { font-size: clamp(34px, 5.4vw, 60px); margin: 14px 0 20px; max-width: 15ch; }
+.reto-hero .lead { max-width: 60ch; font-size: clamp(16.5px, 1.9vw, 19.5px); color: var(--ink-soft); }
+.reto-hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 14px; }
+.reto-micro { font-size: 13.5px; color: var(--ink-mut); margin: 0; }
+
+.reto-cifras {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; margin-top: 54px; background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.reto-cifra { background: var(--bg-3); padding: 22px 20px; }
+.reto-cifra b { display: block; font-size: 27px; letter-spacing: -.03em; color: var(--ink); }
+.reto-cifra span { font-size: 13.5px; color: var(--ink-mut); }
+
+/* ---------- Bloques de texto ---------- */
+.reto-sec { padding: 76px 0; }
+.reto-sec--linea { border-top: 1px solid var(--line); }
+.reto-tesis {
+  font-size: clamp(24px, 3.6vw, 38px); font-weight: 700; line-height: 1.2;
+  letter-spacing: -.028em; max-width: 22ch; margin: 0 auto;
+}
+.reto-tesis span { display: block; font-size: 16px; font-weight: 500; letter-spacing: 0;
+  color: var(--ink-mut); line-height: 1.65; margin-top: 20px; max-width: 58ch; }
+
+/* ---------- Es / No es ---------- */
+.reto-doble { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+.reto-panel {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); padding: 30px 28px;
+}
+.reto-panel--si { border-color: rgba(96, 165, 250, .38); background: rgba(59, 130, 246, .07); }
+.reto-panel h3 { font-size: 13px; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 20px; }
+.reto-panel--no h3 { color: var(--ink-mut); }
+.reto-panel--si h3 { color: var(--blue-bright); }
+.reto-panel ul { list-style: none; display: grid; gap: 15px; }
+.reto-panel li { display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); }
+.reto-panel li b { color: var(--ink); font-weight: 600; }
+.reto-marca { flex: 0 0 auto; margin-top: 3px; }
+
+/* ---------- Semanas ---------- */
+.reto-semanas { display: grid; gap: 16px; }
+.reto-semana {
+  display: grid; grid-template-columns: 116px 1fr; gap: 26px; align-items: start;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); padding: 26px 28px;
+}
+.reto-semana-n { font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--blue-bright); padding-top: 4px; }
+.reto-semana h3 { font-size: 20px; margin-bottom: 8px; }
+.reto-semana p { color: var(--ink-soft); font-size: 15.5px; }
+@media (max-width: 640px) { .reto-semana { grid-template-columns: 1fr; gap: 10px; } }
+
+/* ---------- Lo que construyes ---------- */
+.reto-builds { display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); gap: 16px; }
+.reto-build {
+  border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+  padding: 22px 22px 20px; transition: border-color .2s, transform .2s;
+}
+.reto-build:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.reto-build-n { font-size: 12px; font-weight: 700; color: var(--blue-2); letter-spacing: .1em; }
+.reto-build h3 { font-size: 17px; margin: 9px 0 7px; }
+.reto-build p { font-size: 14.5px; color: var(--ink-mut); line-height: 1.6; }
+
+/* ---------- Requisitos ---------- */
+.reto-req { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.reto-req-item { border-left: 2px solid var(--blue); padding-left: 20px; }
+.reto-req-item b { display: block; font-size: 16.5px; margin-bottom: 6px; }
+.reto-req-item span { font-size: 14.5px; color: var(--ink-mut); line-height: 1.6; }
+
+/* ---------- Precio ---------- */
+.reto-precio {
+  max-width: 620px; margin: 0 auto; text-align: center;
+  border: 1px solid rgba(96, 165, 250, .4); border-radius: 22px;
+  background: linear-gradient(180deg, rgba(59, 130, 246, .12), rgba(59, 130, 246, .03));
+  padding: 46px 34px 38px; box-shadow: var(--glow-blue);
+}
+.reto-precio-cifra { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin: 18px 0 6px; }
+.reto-precio-cifra b { font-size: 62px; letter-spacing: -.04em; line-height: 1; }
+/* Solo el span hermano (la moneda). Sin el '>' también encogía el
+   número, que vive dentro del <b> para poder cambiarlo desde la
+   configuración. */
+.reto-precio-cifra > span { font-size: 17px; color: var(--ink-mut); }
+.reto-precio-lista { list-style: none; text-align: left; display: grid; gap: 13px; margin: 30px 0; }
+.reto-precio-lista li { display: flex; gap: 12px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.55; }
+.reto-precio .btn { width: 100%; }
+
+/* ---------- FAQ ---------- */
+.reto-faq { max-width: 780px; margin: 0 auto; display: grid; gap: 2px; }
+.reto-faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+.reto-faq summary {
+  cursor: pointer; list-style: none; padding: 20px 24px; font-weight: 600; font-size: 16.5px;
+  display: flex; justify-content: space-between; gap: 18px; align-items: center;
+}
+.reto-faq summary::-webkit-details-marker { display: none; }
+.reto-faq summary:after { content: '+'; color: var(--blue-2); font-size: 22px; font-weight: 400; flex: 0 0 auto; }
+.reto-faq details[open] summary:after { content: '–'; }
+.reto-faq details p { padding: 0 24px 22px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.7; }
+
+/* ---------- Cierre ---------- */
+.reto-cierre { text-align: center; }
+.reto-cierre h2 { font-size: clamp(28px, 4vw, 44px); max-width: 18ch; margin: 0 auto 20px; }
+.reto-cierre p { max-width: 56ch; margin: 0 auto 30px; color: var(--ink-soft); font-size: 17px; }
+.reto-firma { font-size: 15px; color: var(--ink-mut); margin-top: 26px; }
+
+body { padding-bottom: 0; }

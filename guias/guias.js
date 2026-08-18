@@ -1,18 +1,10 @@
 /* ============================================================
-   Flow AI — Guías. Filtros del índice + captura de correo + nav.
-   Sin dependencias. Nada aquí debe romper la página si falla.
+   Flow AI — Guías. Filtros del índice y nav.
+   La captura de correo vive en ../optin.js, que corre en todo el
+   sitio. Sin dependencias. Nada aquí debe romper la página si falla.
    ============================================================ */
 (function () {
   'use strict';
-
-  /* --------------------------------------------------------
-     CONFIGURA ESTO: endpoint del proveedor de correo.
-     Pega aquí la URL del formulario de tu ESP (Klaviyo,
-     ConvertKit/Kit, Beehiiv, Mailchimp…). Mientras esté vacío
-     el formulario avisa que todavía no está conectado en vez
-     de fingir que guardó el correo.
-     -------------------------------------------------------- */
-  var OPTIN_ENDPOINT = '';
 
   /* ---------- Año del footer ---------- */
   var y = document.getElementById('year');
@@ -130,46 +122,4 @@
     apply();
   }
 
-  /* ---------- Captura de correo ---------- */
-  var form = document.getElementById('optinForm');
-  if (form) {
-    var input = document.getElementById('optinEmail');
-    var msg = document.getElementById('optinMsg');
-    var say = function (text) { if (msg) msg.textContent = text; };
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = (input && input.value || '').trim();
-
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        say('Revisa el correo, parece que le falta algo.');
-        return;
-      }
-
-      if (!OPTIN_ENDPOINT) {
-        say('La lista todavía no está conectada. Escríbeme por WhatsApp y te agrego a mano.');
-        return;
-      }
-
-      var btn = form.querySelector('button[type="submit"]');
-      if (btn) btn.disabled = true;
-      say('Un segundo…');
-
-      var body = new FormData();
-      body.append('email', email);
-
-      fetch(OPTIN_ENDPOINT, { method: 'POST', body: body })
-        .then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          form.reset();
-          say('Listo. Te llega la próxima guía en cuanto salga.');
-        })
-        .catch(function () {
-          say('No se pudo guardar. Inténtalo otra vez en un momento.');
-        })
-        .then(function () {
-          if (btn) btn.disabled = false;
-        });
-    });
-  }
 })();

@@ -34,10 +34,10 @@
         <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
       </a>
       <nav class="nav-links" id="navLinks">
+        <a href="/reto/">Reto 30 días</a>
         <a href="/guias/">Guías gratis</a>
         <a href="/#soluciones">Soluciones</a>
-        <a href="/#founder">Founder</a>
-        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+        <a href="/reto/" class="btn btn-sm btn-primary">Entrar al reto</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
     </div>
@@ -208,6 +208,19 @@ REGLAS
 
       <p>Los otros once los lees cuando el problema que resuelven sea el problema que tienes. Un libro leído a destiempo se olvida completo; leído en el momento correcto, te cambia el año. Y si quieres que la IA te acompañe en la parte de aplicarlos, el <a href="/guias/mentor-ia-que-no-te-da-la-razon/">mentor que no te da la razón</a> y el <a href="/guias/tu-loop-de-aprendizaje-con-ia/">loop de aprendizaje</a> se llevan bien con el prompt de arriba.</p>
 
+      <!-- CTA al reto: va justo donde se acaba de leer la guía,
+           que es el único momento en que alguien ya vio de qué
+           tamaño es lo que sé y todavía tiene el tema en la cabeza. -->
+      <aside class="cta-reto">
+        <p class="cta-reto-ojo">Reto 30 Días de IA</p>
+        <h3>Esta guía te enseña uno. El reto te hace construir treinta.</h3>
+        <p class="cta-reto-sub">Un sistema por día durante un mes, con la demostración en pantalla y el archivo listo para conectarlo a lo tuyo. Dentro de Flow AI Academy, en español, desde $<span data-precio>49</span> USD <span data-periodo>al mes</span>.</p>
+        <div class="cta-reto-fila">
+          <a href="/reto/" class="btn btn-primary">Ver el reto</a>
+          <span class="cta-reto-nota">Empiezas con la prueba gratis. Cancelas con un clic.</span>
+        </div>
+      </aside>
+
       <div class="stack">
         <h4>Combínala con estas</h4>
         <div class="stack-links">
@@ -236,11 +249,11 @@ REGLAS
     <section class="optin">
       <h2>Una guía nueva cada semana</h2>
       <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
-      <form class="optin-form" id="optinForm" novalidate>
-        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+      <form class="optin-form" data-fuente="guia" novalidate>
+        <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
         <button type="submit" class="btn btn-primary">Recibir las guías</button>
       </form>
-      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-msg" role="status" aria-live="polite"></p>
       <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
     </section>
   </main>
@@ -253,6 +266,9 @@ REGLAS
     </div>
   </footer>
 
+  <script src="../../flowai-config.js"></script>
+  <script src="../../flowai.js"></script>
   <script src="../guias.js"></script>
+  <script src="../../optin.js"></script>
 </body>
 </html>

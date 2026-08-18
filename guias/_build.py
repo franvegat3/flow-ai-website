@@ -222,7 +222,7 @@ def main():
     )
 
     # Sitemap
-    urls = [f"{SITIO}/", f"{SITIO}/guias/"] + [
+    urls = [f"{SITIO}/", f"{SITIO}/reto/", f"{SITIO}/guias/"] + [
         f"{SITIO}/guias/{g['slug']}/" for g in publicadas
     ]
     sitemap = (

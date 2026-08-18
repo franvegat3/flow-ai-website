@@ -34,10 +34,10 @@
         <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
       </a>
       <nav class="nav-links" id="navLinks">
+        <a href="/reto/">Reto 30 días</a>
         <a href="/guias/">Guías gratis</a>
         <a href="/#soluciones">Soluciones</a>
-        <a href="/#founder">Founder</a>
-        <a href="/#contacto" class="btn btn-sm btn-primary">Hablemos</a>
+        <a href="/reto/" class="btn btn-sm btn-primary">Entrar al reto</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
     </div>
@@ -102,6 +102,15 @@
 
   <!-- REJILLA -->
   <main class="container">
+
+    <aside class="reto-banda">
+      <div class="reto-banda-txt">
+        <b>Las guías son la parte gratis. El Reto 30 Días es donde construyes.</b>
+        <span>Un sistema de IA por día durante un mes, con la demostración en pantalla y el archivo listo para conectarlo a lo tuyo. En español, desde $<span data-precio>49</span> USD <span data-periodo>al mes</span>.</span>
+      </div>
+      <a href="/reto/" class="btn btn-primary">Ver el reto</a>
+    </aside>
+
     <div class="guide-grid" id="guideGrid">
       <p class="guide-empty" id="guideEmpty" hidden>No hay guías con esa combinación todavía. Prueba con otro filtro.</p>
     </div>
@@ -110,11 +119,11 @@
     <section class="optin">
       <h2>Una guía nueva cada semana</h2>
       <p>Te llega al correo en cuanto sale, con el prompt completo listo para copiar. Se cancela con un clic.</p>
-      <form class="optin-form" id="optinForm" novalidate>
-        <input type="email" name="email" id="optinEmail" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+      <form class="optin-form" data-fuente="indice-guias" novalidate>
+        <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
         <button type="submit" class="btn btn-primary">Recibir las guías</button>
       </form>
-      <p class="optin-msg" id="optinMsg" role="status" aria-live="polite"></p>
+      <p class="optin-msg" role="status" aria-live="polite"></p>
       <p class="optin-note">Tu correo no se comparte con nadie.</p>
     </section>
   </main>
@@ -127,7 +136,10 @@
     </div>
   </footer>
 
+  <script src="../flowai-config.js"></script>
+  <script src="../flowai.js"></script>
   <script src="guias-data.js"></script>
   <script src="guias.js"></script>
+  <script src="../optin.js"></script>
 </body>
 </html>
