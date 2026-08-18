@@ -1,8 +1,14 @@
 # Francisco Vega · Flow AI — sitio web
 
 Sitio de marca + consultora Flow AI, biblioteca de 368 guías gratuitas y la
-landing de venta del Reto 30 Días. HTML/CSS/JS estático, sin build, más una
-función serverless para capturar correos.
+landing de venta del Reto 30 Días. HTML/CSS/JS estático, sin build.
+
+**Se publica en GitHub Pages** (rama `main`, dominio por `CNAME`). O sea: se
+sirven archivos y nada más, **no corren funciones serverless**. El `vercel.json`
+y `api/suscribir.js` están listos para el día que se mueva a Vercel, pero hoy no
+se ejecutan.
+
+**Publicar = hacer push a `main`.** GitHub Pages tarda un par de minutos.
 
 ## Mapa
 
@@ -11,7 +17,8 @@ función serverless para capturar correos.
 | `index.html` | Home (B2B: soluciones, método, founder) + sección del Reto |
 | `reto/` | Landing de venta del Reto 30 Días |
 | `guias/` | Biblioteca: índice, plantilla, contenido y generador |
-| `api/suscribir.js` | Endpoint que guarda los correos |
+| `api/hoja-de-correos.gs` | Web App de Apps Script: escribe en la hoja de suscriptores |
+| `api/suscribir.js` | Endpoint para cuando el sitio se mueva a Vercel (hoy no corre) |
 | `flowai-config.js` | **Precio, link de pago y si las ventas están abiertas** |
 | `flowai.js` | Aplica esa config al HTML de toda página |
 | `optin.js` | Pop-up de captura + formularios de correo |
@@ -44,22 +51,29 @@ El detalle está en `guias/_GUIA-DE-ESTILO.md`.
 
 ## Captura de correos
 
-El navegador **nunca** habla con el proveedor de correo: le pega a
-`/api/suscribir`, que reparte a los destinos configurados. Así las llaves no
-quedan publicadas en 368 páginas y cambiar de proveedor es un archivo.
+Como no hay backend, **el navegador escribe directo en la hoja de cálculo** a
+través de un Web App de Apps Script. La URL está en `flowai-config.js` →
+`SHEETS_URL`, y el código del receptor en `api/hoja-de-correos.gs` (trae sus
+instrucciones de instalación adentro).
 
-Se configura con variables de entorno en Vercel (Settings → Environment
-Variables). Ninguna es obligatoria, pero **si no hay al menos una, el endpoint
-responde 503 y el sitio le dice al visitante que la lista no está conectada**
-en vez de tirar el correo a la basura.
+Cada correo se guarda con la página de la que salió y su UTM, así que se puede
+ver qué guías convierten. Un correo, una fila: si alguien se suscribe otra vez
+solo se actualiza la fecha.
 
-| Variable | Para qué |
-|---|---|
-| `SHEETS_WEBHOOK_URL` | Web App de Apps Script que escribe en la hoja de cálculo. Es el registro propio. Instrucciones dentro de `api/hoja-de-correos.gs`. |
-| `KIT_API_KEY` + `KIT_FORM_ID` | Kit (antes ConvertKit), para poder mandarles correos de verdad. |
+Dos detalles que costaron encontrarse y conviene no deshacer:
 
-Cada correo se guarda con la página de la que salió, así que se puede ver qué
-guías convierten.
+1. El `Content-Type` del POST tiene que ser **`text/plain`**, no
+   `application/json`. Con JSON el navegador manda antes un OPTIONS de
+   preflight, Apps Script no contesta OPTIONS, y la petición muere en CORS sin
+   llegar a la hoja. Con `text/plain` cuenta como petición simple y el cuerpo
+   sigue siendo JSON, que el script parsea igual.
+2. Apps Script tarda **2 a 3 segundos** en contestar. No es que esté roto.
+
+El costo de este montaje: la URL del Web App queda visible en el JS público, así
+que alguien decidido podría meter filas basura. No puede leer ni borrar la hoja,
+solo agregar. Es el mismo trato que hacen todos los formularios de newsletter.
+Se resuelve el día que el sitio esté en Vercel: se pone `OPTIN_ENDPOINT` en
+`/api/suscribir` y la URL se esconde en una variable de entorno.
 
 ### Pop-up
 
@@ -77,11 +91,13 @@ siguen funcionando).
 npx serve .
 ```
 
-Ojo: `/api/suscribir` no corre con un servidor estático. Para probar la captura
-completa hace falta `npx vercel dev`.
+La captura de correos sí funciona en local: le pega directo a Apps Script, que
+no distingue de dónde viene. Ojo con eso — las pruebas caen en la hoja de verdad.
 
-## Deploy (Vercel)
+## Publicar
 
 ```bash
-npx vercel --prod
+git push
 ```
+
+GitHub Pages reconstruye solo. Un par de minutos.

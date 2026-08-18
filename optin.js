@@ -21,7 +21,6 @@
   'use strict';
 
   var CFG = window.FLOW || {};
-  var ENDPOINT = CFG.OPTIN_ENDPOINT || '/api/suscribir';
   var LLAVE = 'flowai_optin';
 
   /* Cuándo aparece el pop-up: lo que ocurra primero. */
@@ -63,33 +62,60 @@
     return true;
   }
 
-  /* ---------- Envío ---------- */
+  /* ---------- Envío ----------
+
+     Dos modos, según dónde esté hosteado el sitio:
+
+     a) OPTIN_ENDPOINT — hay backend propio (Vercel). Se manda JSON y
+        el servidor decide a qué proveedores repartir.
+     b) SHEETS_URL — no hay backend (GitHub Pages). Se escribe directo
+        en la hoja con el Web App de Apps Script.
+
+     En el modo (b) el Content-Type tiene que ser text/plain, no
+     application/json. Con application/json el navegador manda antes un
+     OPTIONS de preflight, y Apps Script no contesta OPTIONS: la
+     petición muere en CORS sin llegar nunca a la hoja. Con text/plain
+     cuenta como petición simple, viaja directo, y el cuerpo sigue
+     siendo JSON que el script parsea igual. Probado en Chrome contra
+     el Web App real. */
   function suscribir(email, fuente) {
-    return fetch(ENDPOINT, {
+    var registro = {
+      fecha: new Date().toISOString(),
+      email: email,
+      fuente: fuente,
+      pagina: location.pathname,
+      referrer: document.referrer || '',
+      utm: location.search || ''
+    };
+
+    var destino = CFG.OPTIN_ENDPOINT || CFG.SHEETS_URL;
+    if (!destino) return Promise.reject(conMotivo('sin-destino'));
+
+    var directo = !CFG.OPTIN_ENDPOINT;
+
+    return fetch(destino, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        fuente: fuente,
-        pagina: location.pathname,
-        referrer: document.referrer || '',
-        utm: location.search || ''
-      })
+      headers: { 'Content-Type': directo ? 'text/plain;charset=utf-8' : 'application/json' },
+      body: JSON.stringify(registro)
     }).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (data) {
-        if (!r.ok || !data.ok) {
-          var err = new Error(data.motivo || ('HTTP ' + r.status));
-          err.motivo = data.motivo;
-          throw err;
-        }
+      return r.text().then(function (txt) {
+        var data = {};
+        try { data = JSON.parse(txt); } catch (e) {}
+        if (!r.ok || !data.ok) throw conMotivo(data.motivo || ('HTTP ' + r.status));
         return data;
       });
     });
   }
 
+  function conMotivo(motivo) {
+    var err = new Error(motivo);
+    err.motivo = motivo;
+    return err;
+  }
+
   function mensajeDeError(err) {
-    /* El endpoint contesta 'sin-destino' cuando todavía no hay lista
-       conectada. Decirlo tal cual es mejor que fingir que se guardó. */
+    /* 'sin-destino' = no hay lista conectada todavía. Decirlo tal cual
+       es mejor que fingir que se guardó el correo. */
     if (err && err.motivo === 'sin-destino') {
       return 'La lista todavía no está conectada. Escríbeme y te agrego a mano.';
     }

@@ -7,7 +7,7 @@
  * de entorno SHEETS_WEBHOOK_URL de Vercel.
  *
  * Instalación (una sola vez, ~3 minutos):
- *   1. Abre la hoja de cálculo → Extensiones → Apps Script.
+ *   1. script.google.com → Nuevo proyecto (o la hoja → Extensiones → Apps Script).
  *   2. Borra lo que haya y pega este archivo completo.
  *   3. Implementar → Nueva implementación → tipo "Aplicación web".
  *        Ejecutar como:  Yo
@@ -18,6 +18,11 @@
  *   4. Copia la URL /exec y pégala en Vercel como SHEETS_WEBHOOK_URL.
  */
 
+/* La hoja se abre por ID y no con getActiveSpreadsheet(), para que esto
+   funcione igual en un proyecto suelto de script.google.com que en uno
+   pegado a la hoja. En un proyecto suelto getActiveSpreadsheet() no
+   devuelve nada y todo truena sin decir por qué. */
+var LIBRO_ID = '1Lo1it3kbCZqCLrW0433pmcAPfjsU3zmRlopHdCPxMzQ';  // Flow AI — Suscriptores
 var HOJA = 'Suscriptores';
 var COLUMNAS = ['fecha', 'email', 'fuente', 'pagina', 'referrer', 'utm', 'pais'];
 
@@ -54,7 +59,7 @@ function doGet() {
 }
 
 function dameLaHoja() {
-  var libro = SpreadsheetApp.getActiveSpreadsheet();
+  var libro = SpreadsheetApp.openById(LIBRO_ID);
   var hoja = libro.getSheetByName(HOJA);
   if (!hoja) {
     hoja = libro.insertSheet(HOJA);
