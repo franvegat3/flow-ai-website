@@ -29,6 +29,35 @@ window.FLOW = {
               de correo. Sirve para cerrar inscripciones sin tocar HTML. */
   VENTAS_ABIERTAS: true,
 
+  /* ---------- Medición ----------
+
+     El Pixel ID NO es secreto: vive en el JS público de cualquier
+     sitio que lo use. El token de la Conversions API sí lo es, y por
+     eso no está aquí: ese vive en Apps Script, del lado del servidor.
+
+     Con estos dos vacíos, tracking.js se apaga solo y el sitio
+     funciona igual. Se pueden llenar después sin tocar nada más. */
+  PIXEL_ID: '2601736186963525',
+  GA4_ID: '',
+
+  /* La página puente por donde pasa todo clic a pagar. Existe para
+     registrar el clic antes de saltar a otro dominio, que es
+     justamente lo que se perdía cuando los botones iban directo a
+     Skool. */
+  IR_SKOOL_URL: '/ir/skool/',
+
+  /* ---------- Base de leads (Supabase) ----------
+
+     Esta llave es PÚBLICA a propósito. La base tiene RLS con política
+     de solo INSERT: con esta llave se pueden agregar filas y nada más
+     — no leer la lista, no editarla, no borrarla. Verificado contra la
+     base real.
+
+     Si estos dos quedan vacíos, datos.js cae solo a la hoja de Google
+     y el sitio sigue funcionando igual. */
+  SUPABASE_URL: 'https://gtdelcbwazcgnzohxmcl.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0ZGVsY2J3YXpjZ256b2h4bWNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyMjU2MjAsImV4cCI6MjEwMzgwMTYyMH0.O_tEk5K7QmH1B4ghHNfsriGjT0Gzs6gk8bZLfilw0uU',
+
   /* ---------- A dónde van los correos ----------
 
      El sitio está en GitHub Pages, que sirve archivos y nada más: no

@@ -29,7 +29,19 @@
   var abiertas = CFG.VENTAS_ABIERTAS !== false;
   Array.prototype.forEach.call(document.querySelectorAll('[data-checkout]'), function (a) {
     if (abiertas) {
-      a.href = CFG.CHECKOUT_URL || (CFG.RETO_URL || '/reto/');
+      /* Ya no van directo al checkout: pasan por la página puente, que
+         registra el clic y recién entonces salta al otro dominio. Sin
+         esto el clic a pagar es invisible — es el último peldaño del
+         embudo que ocurre en terreno propio.
+
+         Si por lo que sea no hay página puente configurada, cae al
+         comportamiento de antes en vez de romperse. */
+      var destino = CFG.IR_SKOOL_URL || CFG.CHECKOUT_URL || (CFG.RETO_URL || '/reto/');
+      if (CFG.IR_SKOOL_URL && window.FLOW_ATRIB) {
+        var q = window.FLOW_ATRIB.aQuery();
+        if (q) destino += (destino.indexOf('?') === -1 ? '?' : '&') + q;
+      }
+      a.href = destino;
       a.target = '_blank';
       a.rel = 'noopener';
     } else {

@@ -1,0 +1,19 @@
+[
+  { "codigo": "CONSEJO",      "red": "instagram", "medio": "reel", "nota": "MARIA-01" },
+  { "codigo": "CODIGOS",      "red": "instagram", "medio": "reel", "nota": "MARIA-02" },
+  { "codigo": "IDIOMA",       "red": "instagram", "medio": "reel", "nota": "MARIA-03" },
+  { "codigo": "KIT",          "red": "instagram", "medio": "reel", "nota": "MARIA-04" },
+  { "codigo": "ENTRENADOR",   "red": "instagram", "medio": "reel", "nota": "MARIA-05" },
+  { "codigo": "VUELOS",       "red": "instagram", "medio": "reel", "nota": "MARIA-06" },
+  { "codigo": "CUATRO",       "red": "instagram", "medio": "reel", "nota": "MARIA-07" },
+  { "codigo": "OUTFIT",       "red": "instagram", "medio": "reel", "nota": "MARIA-08" },
+  { "codigo": "FINANZAS",     "red": "instagram", "medio": "reel", "nota": "MARIA-09" },
+  { "codigo": "NIVELES",      "red": "instagram", "medio": "reel", "nota": "MARIA-10" },
+  { "codigo": "DEPARTAMENTO", "red": "instagram", "medio": "reel", "nota": "MARIA-11" },
+  { "codigo": "FDE",          "red": "instagram", "medio": "reel", "nota": "MARIA-12" },
+  { "codigo": "PLUGINS",      "red": "instagram", "medio": "reel", "nota": "FLOWAI-12" },
+  { "codigo": "GEMMA",        "red": "instagram", "medio": "reel", "nota": "FLOWAI-02" },
+  { "codigo": "BIO",          "red": "instagram", "medio": "bio",  "nota": "link de la bio" },
+  { "codigo": "TIKTOK",       "red": "tiktok",    "medio": "bio",  "nota": "link de la bio de TikTok" },
+  { "codigo": "YOUTUBE",      "red": "youtube",   "medio": "descripcion", "nota": "descripción de YouTube" }
+]

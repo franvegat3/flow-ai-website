@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listo — ya estás dentro del Reto 30 Días | Flow AI</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root { color-scheme: dark; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: #0b1220; color: #e8eefc; padding: 28px;
+    font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  .caja { max-width: 560px; }
+  h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 16px; }
+  .paso { display: flex; gap: 14px; margin: 18px 0; align-items: flex-start; }
+  .num {
+    flex: 0 0 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, #84b6ff, #2563eb);
+    color: #06101f; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+  }
+  .btn {
+    display: inline-block; margin-top: 22px; padding: 15px 28px; border-radius: 10px;
+    background: #2563eb; color: #fff; text-decoration: none; font-weight: 700;
+  }
+  .chico { font-size: 14px; opacity: .7; margin-top: 26px; }
+</style>
+</head>
+<body>
+  <div class="caja">
+    <h1>Listo. Ya estás dentro.</h1>
+    <p>Te acabo de mandar un correo con tu acceso. Si no llega en 5 minutos, revisa spam
+       o escríbeme a <a href="mailto:fran@flowaigroup.com" style="color:#93c5fd">fran@flowaigroup.com</a>.</p>
+
+    <div class="paso"><div class="num">1</div><div>Abre el correo y entra a la comunidad.</div></div>
+    <div class="paso"><div class="num">2</div><div>Preséntate en <b>Discusión General</b>. Los que se presentan terminan el reto; los que no, casi nunca.</div></div>
+    <div class="paso"><div class="num">3</div><div>Empieza la Lección 1 hoy mismo. Son 20 minutos.</div></div>
+
+    <a class="btn" id="ir" href="https://www.skool.com/flow-8356/about">Entrar a la comunidad →</a>
+    <p class="chico">Reto 30 Días de IA · Flow AI Academy</p>
+  </div>
+
+<script src="../flowai-config.js"></script>
+<script src="../atribucion.js"></script>
+  <script src="../datos.js"></script>
+<script src="../tracking.js"></script>
+<script>
+/* Peldaño 6 del embudo: la compra, y por primera vez en dominio propio.
+
+   Esta página está pensada para ser la URL de éxito del checkout (hoy
+   Skool, mañana un Stripe Payment Link). Es lo que permite tener
+   Purchase con valor REAL y ROAS automático, en vez de depender del
+   pixel de un dominio ajeno que subreporta.
+   
+   El `event_id` es el mismo que arma atribucion.js, así que si algún
+   día llega también por Conversions API, Meta cuenta una sola compra. */
+(function () {
+  'use strict';
+  var CFG = window.FLOW || {};
+
+  if (window.FLOW_TRACK) {
+    window.FLOW_TRACK.evento('Purchase', {
+      content_name: 'Reto 30 Días',
+      value: Number(CFG.PRECIO || 0),
+      currency: CFG.MONEDA || 'USD'
+    });
+  }
+
+  /* Se deja constancia para cruzarlo después contra el pago real.
+     No sustituye a Zapier: alguien puede cerrar la pestaña antes de
+     llegar aquí, y el cobro igual ocurrió. */
+  if (window.FLOW_DATOS) window.FLOW_DATOS.evento('compra', { destino: 'gracias' });
+
+  if (CFG.CHECKOUT_URL) document.getElementById('ir').href = CFG.CHECKOUT_URL;
+})();
+</script>
+</body>
+</html>

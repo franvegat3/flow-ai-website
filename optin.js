@@ -101,6 +101,7 @@
      el Web App real. */
   function suscribir(email, fuente) {
     var registro = {
+      tipo: 'lead',
       fecha: new Date().toISOString(),
       email: email,
       fuente: fuente,
@@ -109,22 +110,36 @@
       utm: location.search || ''
     };
 
-    var destino = CFG.OPTIN_ENDPOINT || CFG.SHEETS_URL;
-    if (!destino) return Promise.reject(conMotivo('sin-destino'));
+    /* La atribución REAL viene de atribucion.js, no de location.search.
 
-    var directo = !CFG.OPTIN_ENDPOINT;
+       Antes se guardaba el query string de la página donde se llenaba
+       el formulario. Eso se rompía en el caso más común y más caro:
+       alguien llega por un anuncio a una guía, lee, navega a otra, y
+       ahí deja el correo. En ese salto el fbclid desaparecía y la venta
+       quedaba huérfana. Ahora se manda lo que se capturó al aterrizar.
 
-    return fetch(destino, {
-      method: 'POST',
-      headers: { 'Content-Type': directo ? 'text/plain;charset=utf-8' : 'application/json' },
-      body: JSON.stringify(registro)
-    }).then(function (r) {
-      return r.text().then(function (txt) {
-        var data = {};
-        try { data = JSON.parse(txt); } catch (e) {}
-        if (!r.ok || !data.ok) throw conMotivo(data.motivo || ('HTTP ' + r.status));
-        return data;
-      });
+       `utm` se conserva como estaba para no romper las filas viejas de
+       la hoja. */
+    if (window.FLOW_ATRIB) {
+      var a = window.FLOW_ATRIB.get();
+      for (var k in a) {
+        if (Object.prototype.hasOwnProperty.call(a, k) && registro[k] === undefined) {
+          registro[k] = a[k];
+        }
+      }
+    }
+
+    /* El envío vive en datos.js: hoy escribe en Supabase, antes era la
+       hoja de Google, y mañana puede ser otra cosa. Aquí solo importa
+       que el correo salga y que el evento Lead se dispare cuando de
+       verdad se guardó. */
+    if (!window.FLOW_DATOS) return Promise.reject(conMotivo('sin-capa-de-datos'));
+
+    return window.FLOW_DATOS.lead(registro).then(function (data) {
+      if (window.FLOW_TRACK) {
+        window.FLOW_TRACK.evento('Lead', { content_name: fuente || 'optin' });
+      }
+      return data || { ok: true };
     });
   }
 

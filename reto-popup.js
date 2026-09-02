@@ -122,7 +122,25 @@
     document.head.appendChild(l);
   }
 
-  var destino = (CFG.RETO_URL || '/reto/') + '?utm_source=guias&utm_medium=popup&utm_campaign=reto30';
+  /* El pop-up marca que la visita a /reto/ vino de aquí, pero NO pisa
+     la campaña que trajo a la persona al sitio.
+
+     Antes esto ponía utm_source=guias fijo. El efecto era que alguien
+     que llegaba por un anuncio pagado y luego picaba el pop-up
+     aparecía en los reportes como tráfico de guías: la pauta perdía el
+     crédito de su propia venta. Ahora la campaña de origen se respeta
+     y el pop-up solo se anota el medio. */
+  var destino = (function () {
+    var base = CFG.RETO_URL || '/reto/';
+    var a = window.FLOW_ATRIB ? window.FLOW_ATRIB.get() : {};
+    var q = [
+      'utm_source=' + encodeURIComponent(a.utm_source || 'guias'),
+      'utm_medium=popup',
+      'utm_campaign=' + encodeURIComponent(a.utm_campaign || 'reto30')
+    ];
+    if (a.utm_content) q.push('utm_content=' + encodeURIComponent(a.utm_content));
+    return base + '?' + q.join('&');
+  })();
 
   var fondo = document.createElement('div');
   fondo.className = 'rp-fondo';

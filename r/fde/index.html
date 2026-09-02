@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un momento...</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:#0b1220; color:#e8eefc; text-align:center; padding:24px;
+         font:500 16px/1.5 -apple-system,BlinkMacSystemFont,system-ui,sans-serif; }
+  .anillo { width:40px; height:40px; margin:0 auto 18px; border:3px solid rgba(96,165,250,.25);
+            border-top-color:#60a5fa; border-radius:50%; animation:girar .8s linear infinite; }
+  @keyframes girar { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion:reduce) { .anillo { animation-duration:3s; } }
+  a { color:#93c5fd; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="anillo" role="status" aria-label="Cargando"></div>
+    <p>Un momento...</p>
+    <p style="font-size:14px;opacity:.7">Si no avanza, <a id="manual" href="/reto/?utm_source=instagram&utm_medium=reel&utm_campaign=reto30&utm_content=fde">entra por aqui</a>.</p>
+  </div>
+<script src="../../flowai-config.js"></script>
+<script src="../../atribucion.js"></script>
+<script src="../../datos.js"></script>
+<script>
+/* Registra de que video vino esta persona y la manda al destino.
+   Los utm_ van en la URL para que atribucion.js los capture y los
+   persista 90 dias, igual que con un anuncio pagado. Asi lo organico y
+   lo pagado se leen en la misma tabla, con las mismas columnas. */
+(function () {
+  var destino = "/reto/?utm_source=instagram&utm_medium=reel&utm_campaign=reto30&utm_content=fde";
+  document.getElementById('manual').href = destino;
+  if (window.FLOW_DATOS) window.FLOW_DATOS.evento('clic_video', { destino: 'r/fde' });
+  setTimeout(function () { location.replace(destino); }, 400);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Llevándote al reto…</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: #0b1220; color: #e8eefc;
+    font: 500 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    text-align: center; padding: 24px;
+  }
+  .caja { max-width: 380px; }
+  .anillo {
+    width: 44px; height: 44px; margin: 0 auto 20px;
+    border: 3px solid rgba(96,165,250,.25);
+    border-top-color: #60a5fa; border-radius: 50%;
+    animation: girar .8s linear infinite;
+  }
+  @keyframes girar { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .anillo { animation-duration: 3s; } }
+  a { color: #93c5fd; }
+  .chico { margin-top: 18px; font-size: 14px; opacity: .7; }
+</style>
+</head>
+<body>
+  <div class="caja">
+    <div class="anillo" role="status" aria-label="Redirigiendo"></div>
+    <p>Llevándote al Reto 30 Días…</p>
+    <p class="chico">Si no pasa nada en unos segundos,
+      <a id="manual" href="https://www.skool.com/flow-8356/about">entra por aquí</a>.</p>
+  </div>
+
+<script src="../../flowai-config.js"></script>
+<script src="../../atribucion.js"></script>
+  <script src="../../datos.js"></script>
+<script src="../../tracking.js"></script>
+<script>
+/* Página puente. Su único trabajo es registrar que este lead hizo clic
+   en pagar, y recién entonces mandarlo al checkout.
+
+   Por qué existe: el checkout vive en otro dominio, donde no podemos
+   medir nada. Este es el último punto del embudo que todavía es
+   nuestro, así que aquí se marca el peldaño 5 (clic al checkout) antes
+   de soltar al visitante.
+
+   sendBeacon y no fetch: sendBeacon está hecho para sobrevivir a que la
+   página se descargue. Un fetch normal se cancela cuando arranca la
+   redirección, y el registro se pierde justo el 100% de las veces. */
+(function () {
+  'use strict';
+  var CFG = window.FLOW || {};
+  var atrib = window.FLOW_ATRIB ? window.FLOW_ATRIB.get() : {};
+
+  var destino = CFG.CHECKOUT_URL || 'https://www.skool.com/flow-8356/about';
+
+  /* Los UTMs viajan al destino. Si algún día el checkout es propio
+     (Stripe), esto es lo que permite cerrar el círculo sin tocar nada. */
+  try {
+    var u = new URL(destino);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','lead_id']
+      .forEach(function (k) { if (atrib[k]) u.searchParams.set(k, atrib[k]); });
+    destino = u.toString();
+  } catch (e) {}
+
+  document.getElementById('manual').href = destino;
+
+  /* El registro del clic pasa por la capa de datos (Supabase hoy).
+     Es el último peldaño que ocurre en terreno propio: después de esto
+     el visitante está en otro dominio y ya no se puede medir nada. */
+  if (window.FLOW_DATOS) window.FLOW_DATOS.evento('clic_checkout', { destino: destino });
+
+  if (window.FLOW_TRACK) {
+    window.FLOW_TRACK.evento('InitiateCheckout', {
+      content_name: 'Reto 30 Días',
+      value: Number(CFG.PRECIO || 0),
+      currency: CFG.MONEDA || 'USD'
+    });
+  }
+
+  /* 600 ms le dan aire al pixel para que salga su petición. replace()
+     y no href: así el botón "atrás" del navegador regresa a la landing
+     y no a esta página, que reenviaría al checkout en un bucle. */
+  setTimeout(function () { location.replace(destino); }, 600);
+})();
+</script>
+</body>
+</html>

@@ -1,1 +1,242 @@
-{}
+{
+ "ACCIONES": {
+  "titulo": "Usa Claude para analizar cualquier acción (5 pasos)",
+  "url": "https://flowaigroup.com/guias/analizar-cualquier-accion-en-5-pasos"
+ },
+ "ALTMAN": {
+  "titulo": "Deja que Sam Altman califique tu idea de negocio",
+  "url": "https://flowaigroup.com/guias/que-sam-altman-califique-tu-idea"
+ },
+ "ANGULOS": {
+  "titulo": "La skill que saca ángulos de anuncio de Reddit",
+  "url": "https://flowaigroup.com/guias/angulos-de-anuncio-desde-reddit"
+ },
+ "ARNES": {
+  "titulo": "El arquitecto que diseña tu setup de IA antes de que instales nada",
+  "url": "https://flowaigroup.com/guias/arquitecto-de-tu-setup-de-ia"
+ },
+ "ARRANQUE": {
+  "titulo": "Configura Claude en 5 pasos: la guía para principiantes",
+  "url": "https://flowaigroup.com/guias/claude-en-5-pasos-para-principiantes"
+ },
+ "AUTOMATIZA": {
+  "titulo": "10 cosas para automatizar con Claude este fin de semana",
+  "url": "https://flowaigroup.com/guias/10-cosas-para-automatizar-este-fin-de-semana"
+ },
+ "BANANA": {
+  "titulo": "Por qué tus diseños siempre se ven hechos con IA",
+  "url": "https://flowaigroup.com/guias/por-que-tus-disenos-se-ven-hechos-con-ia"
+ },
+ "BEBE": {
+  "titulo": "El copiloto de embarazo hecho en Claude",
+  "url": "https://flowaigroup.com/guias/copiloto-de-embarazo"
+ },
+ "BODA": {
+  "titulo": "Planea una boda completa con Claude",
+  "url": "https://flowaigroup.com/guias/planear-una-boda-con-claude"
+ },
+ "CAVERNICOLA": {
+  "titulo": "La skill que recorta 75% tu consumo de tokens",
+  "url": "https://flowaigroup.com/guias/skill-que-recorta-tokens-75-por-ciento"
+ },
+ "CERTIFICA": {
+  "titulo": "3 certificaciones gratis de Anthropic para tu LinkedIn",
+  "url": "https://flowaigroup.com/guias/3-certificaciones-gratis-de-anthropic"
+ },
+ "CIMIENTOS": {
+  "titulo": "¿Nuevo en Claude? Haz estas 5 cosas primero",
+  "url": "https://flowaigroup.com/guias/nuevo-en-claude"
+ },
+ "CLON": {
+  "titulo": "Cómo hacer que Claude cache sus propios errores",
+  "url": "https://flowaigroup.com/guias/que-claude-cache-sus-errores"
+ },
+ "CODIGOS": {
+  "titulo": "10 códigos de Claude que sí funcionan",
+  "url": "https://flowaigroup.com/guias/10-codigos-de-claude-que-si-funcionan"
+ },
+ "COMIDAS": {
+  "titulo": "El cerebro de las comidas",
+  "url": "https://flowaigroup.com/guias/cerebro-de-las-comidas"
+ },
+ "CONSEJO": {
+  "titulo": "El prompt del consejo que arregla la adulación de la IA",
+  "url": "https://flowaigroup.com/guias/consejo-contra-la-adulacion"
+ },
+ "CONTRATADO": {
+  "titulo": "3 movimientos con Claude para que te contraten",
+  "url": "https://flowaigroup.com/guias/3-movimientos-para-que-te-contraten"
+ },
+ "CUATRO": {
+  "titulo": "Hay cuatro Claudes distintos",
+  "url": "https://flowaigroup.com/guias/hay-cuatro-claudes-distintos"
+ },
+ "CURRICULUM": {
+  "titulo": "3 certificaciones gratis de Microsoft y LinkedIn",
+  "url": "https://flowaigroup.com/guias/3-certificaciones-gratis-microsoft-linkedin"
+ },
+ "DEPARTAMENTO": {
+  "titulo": "84 skills gratis de Claude, en un solo lugar",
+  "url": "https://flowaigroup.com/guias/84-skills-gratis-de-claude"
+ },
+ "DISENO": {
+  "titulo": "Claude Design está muy subestimado",
+  "url": "https://flowaigroup.com/guias/claude-design-esta-subestimado"
+ },
+ "ENTRENADOR": {
+  "titulo": "El entrenador sin pretextos",
+  "url": "https://flowaigroup.com/guias/entrenador-sin-pretextos"
+ },
+ "ESCRITORIO": {
+  "titulo": "Guía de arranque de la app de escritorio de Claude",
+  "url": "https://flowaigroup.com/guias/guia-de-la-app-de-escritorio"
+ },
+ "FAMILIA": {
+  "titulo": "Arma el asistente familiar viral dentro de Claude",
+  "url": "https://flowaigroup.com/guias/asistente-familiar-en-claude"
+ },
+ "FDE": {
+  "titulo": "El puesto de IA más caliente: el ingeniero desplegado al frente",
+  "url": "https://flowaigroup.com/guias/ingeniero-desplegado-al-frente"
+ },
+ "FINANZAS": {
+  "titulo": "Semana de IA financiera: qué acaba de salir",
+  "url": "https://flowaigroup.com/guias/semana-de-la-ia-financiera"
+ },
+ "GERENTE": {
+  "titulo": "El puesto que más rápido está creciendo en 2026",
+  "url": "https://flowaigroup.com/guias/el-puesto-que-mas-crece-en-2026"
+ },
+ "HORMONAL": {
+  "titulo": "El asistente hormonal",
+  "url": "https://flowaigroup.com/guias/asistente-hormonal"
+ },
+ "IDEA": {
+  "titulo": "Deja de pedirle ideas de negocio a la IA (haz esto)",
+  "url": "https://flowaigroup.com/guias/deja-de-pedirle-ideas-de-negocio"
+ },
+ "IDIOMA": {
+  "titulo": "El tutor de idiomas",
+  "url": "https://flowaigroup.com/guias/tutor-de-idiomas"
+ },
+ "JUEZ": {
+  "titulo": "Cómo dejar de quemar tu límite de uso",
+  "url": "https://flowaigroup.com/guias/no-quemar-tu-limite-de-uso"
+ },
+ "KARPATHY": {
+  "titulo": "De 65% a 94% de precisión en Claude Code en 30 segundos",
+  "url": "https://flowaigroup.com/guias/de-65-a-94-por-ciento-de-precision"
+ },
+ "KIT": {
+  "titulo": "¿Nuevo en Claude? Haz estas 5 cosas primero (parte 2)",
+  "url": "https://flowaigroup.com/guias/nuevo-en-claude-parte-2"
+ },
+ "LEGAL": {
+  "titulo": "Anthropic soltó un abogado de IA gratis",
+  "url": "https://flowaigroup.com/guias/claude-para-temas-legales"
+ },
+ "LIMITE": {
+  "titulo": "Cómo no volver a topar tu límite semanal de Claude",
+  "url": "https://flowaigroup.com/guias/no-volver-a-topar-tu-limite-semanal"
+ },
+ "LINKEDIN": {
+  "titulo": "El imán de LinkedIn",
+  "url": "https://flowaigroup.com/guias/iman-de-linkedin"
+ },
+ "LOOP": {
+  "titulo": "Ingeniería de loops: deja de darle prompts a Claude y constrúyele loops",
+  "url": "https://flowaigroup.com/guias/ingenieria-de-loops"
+ },
+ "MANUAL": {
+  "titulo": "3 ideas del manual de fundador de Anthropic",
+  "url": "https://flowaigroup.com/guias/manual-de-fundador-de-anthropic"
+ },
+ "MARCA": {
+  "titulo": "Cómo reemplazar a un diseñador de $5,000 con IA",
+  "url": "https://flowaigroup.com/guias/reemplazar-un-disenador-de-5000"
+ },
+ "MEJORA": {
+  "titulo": "Claude se mejora solo cada semana si haces esto",
+  "url": "https://flowaigroup.com/guias/claude-mejora-solo-cada-semana"
+ },
+ "MEMORIA": {
+  "titulo": "Cómo darle memoria perfecta a Claude: el sistema de 3 capas",
+  "url": "https://flowaigroup.com/guias/memoria-perfecta-en-3-capas"
+ },
+ "MILLON": {
+  "titulo": "Construir una empresa de un millón con IA y sin equipo",
+  "url": "https://flowaigroup.com/guias/empresa-de-un-millon-con-ia"
+ },
+ "MUSE": {
+  "titulo": "La primera IA que puede buscar dentro de Instagram",
+  "url": "https://flowaigroup.com/guias/buscar-dentro-de-instagram-con-ia"
+ },
+ "NIVELES": {
+  "titulo": "Los 5 niveles de adopción de IA: ¿en cuál estás de verdad?",
+  "url": "https://flowaigroup.com/guias/5-niveles-de-adopcion-de-ia"
+ },
+ "ODISEA": {
+  "titulo": "El Plan Odisea: mapea tres futuros posibles",
+  "url": "https://flowaigroup.com/guias/plan-odisea-tres-futuros"
+ },
+ "OUTFIT": {
+  "titulo": "El selector de outfit",
+  "url": "https://flowaigroup.com/guias/selector-de-outfit"
+ },
+ "PAUTA": {
+  "titulo": "Claude ya puede correr tus Meta Ads: el recorrido completo",
+  "url": "https://flowaigroup.com/guias/claude-corriendo-tus-meta-ads"
+ },
+ "PRISA": {
+  "titulo": "3 movimientos que hacer con tu modelo más caro",
+  "url": "https://flowaigroup.com/guias/tres-movimientos-con-tu-mejor-modelo"
+ },
+ "RESET": {
+  "titulo": "La lista para limpiar el contexto de tu IA",
+  "url": "https://flowaigroup.com/guias/limpieza-de-contexto"
+ },
+ "ROLES": {
+  "titulo": "Los 5 roles que están reemplazando a los puestos de trabajo",
+  "url": "https://flowaigroup.com/guias/5-roles-que-reemplazan-los-puestos"
+ },
+ "SASTRE": {
+  "titulo": "El sastre de currículums",
+  "url": "https://flowaigroup.com/guias/sastre-de-curriculum"
+ },
+ "SESGO": {
+  "titulo": "Las 3 formas en que la IA te miente (y el arreglo de cada una)",
+  "url": "https://flowaigroup.com/guias/3-formas-en-que-la-ia-te-miente"
+ },
+ "SLACK": {
+  "titulo": "Claude Tag: el compañero de equipo dentro de tu Slack",
+  "url": "https://flowaigroup.com/guias/claude-tag-en-slack"
+ },
+ "TARJETAS": {
+  "titulo": "Un tablero en vivo de los beneficios de tus tarjetas",
+  "url": "https://flowaigroup.com/guias/tablero-de-beneficios-de-tarjetas"
+ },
+ "TRABAJO": {
+  "titulo": "3 formas de usar Claude si estás buscando trabajo",
+  "url": "https://flowaigroup.com/guias/3-formas-de-usar-claude-buscando-trabajo"
+ },
+ "TUTOR": {
+  "titulo": "El modo tutor escondido de Claude (y 10 prompts para usarlo)",
+  "url": "https://flowaigroup.com/guias/modo-tutor-escondido"
+ },
+ "VERIFICA": {
+  "titulo": "La prueba de presión de 4 preguntas",
+  "url": "https://flowaigroup.com/guias/prueba-de-presion-de-4-preguntas"
+ },
+ "VISIBILIDAD": {
+  "titulo": "El SEO nuevo: mi manual completo de visibilidad ante la IA",
+  "url": "https://flowaigroup.com/guias/el-nuevo-seo-visibilidad-ante-la-ia"
+ },
+ "VUELOS": {
+  "titulo": "Reserva todos tus vuelos y hoteles con Claude",
+  "url": "https://flowaigroup.com/guias/reservar-vuelos-y-hoteles"
+ },
+ "WARREN": {
+  "titulo": "¿El mercado está equivocado con esta acción? Pregúntale a Claude",
+  "url": "https://flowaigroup.com/guias/analizar-una-accion-con-claude"
+ }
+}
