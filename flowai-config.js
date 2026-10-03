@@ -23,6 +23,21 @@ window.FLOW = {
   MONEDA: 'USD',
   PERIODO: 'al mes',
 
+  /* Prueba gratis. Es el interruptor que manda sobre toda la landing,
+     los pop-ups, la FAQ y la barra fija: 7 muestra el copy de la prueba
+     y 0 lo esconde y deja "$49 al mes, cancelas con un clic". Tiene que
+     coincidir con lo que Skool cobra de verdad (Settings → Pricing). El
+     3-oct-2026 Skool mostraba "JOIN $49/month" sin prueba mientras la
+     landing la prometía 15 veces: eso no puede volver a pasar. */
+  TRIAL_DIAS: 7,
+  PRECIO_MXN_APROX: '900',
+  MIEMBROS: '31',
+
+  /* Videos de la landing (bucket público `pauta` de Supabase). */
+  VIDEO_HERO_URL: 'https://gtdelcbwazcgnzohxmcl.supabase.co/storage/v1/object/public/pauta/reto30/RETO30-f3.mp4',
+  VIDEO_HERO_POSTER: 'https://gtdelcbwazcgnzohxmcl.supabase.co/storage/v1/object/public/pauta/reto30/RETO30-f3.jpg',
+  VIDEO_VSL_URL: 'https://gtdelcbwazcgnzohxmcl.supabase.co/storage/v1/object/public/pauta/reto30/VSL-reto30.mp4',
+
   /* Interruptor de campaña.
      true  -> los CTA dicen "Entrar al reto" y van al checkout.
      false -> los CTA dicen "Avísame cuando abra" y abren la captura

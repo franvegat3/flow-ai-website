@@ -23,6 +23,22 @@
   pon('[data-precio]', CFG.PRECIO);
   pon('[data-periodo]', CFG.PERIODO);
 
+  /* ---------- Prueba gratis y precio en pesos (R3, oct-2026) ----------
+     TRIAL_DIAS manda: con 7 se muestra todo lo de la prueba; con 0 se
+     esconde y queda el copy de "$49 al mes, cancelas con un clic". Así
+     la landing no vuelve a prometer una prueba que Skool no tiene. */
+  var trial = Number(CFG.TRIAL_DIAS || 0);
+  pon('[data-trial-dias]', trial ? String(trial) : '');
+  pon('[data-trial-fin]', trial ? String(trial + 1) : '');
+  pon('[data-precio-mxn]', CFG.PRECIO_MXN_APROX);
+  pon('[data-miembros]', CFG.MIEMBROS);
+  Array.prototype.forEach.call(document.querySelectorAll('[data-solo-trial]'), function (el) { el.hidden = !trial; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-sin-trial]'), function (el) { el.hidden = !!trial; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-txt-trial]'), function (el) {
+    var t = trial ? el.getAttribute('data-txt-trial') : el.getAttribute('data-txt-sin');
+    if (t) el.textContent = t.replace('{n}', String(trial));
+  });
+
   /* Botones que llevan a pagar. Con las ventas cerradas dejan de
      mandar a un checkout que no va a cobrar y se convierten en
      captura de correo. */

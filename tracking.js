@@ -101,18 +101,9 @@
     setTimeout(marcar, 30000);
   })();
 
-  /* ---------- InitiateCheckout: clic a pagar ----------
-     Se engancha a [data-checkout], que es por donde pasan los 11 CTA
-     de la landing y los de las guías. Un solo listener delegado en el
-     documento: así también cubre los botones que se inyectan después
-     con JS (los pop-ups), que un querySelectorAll al cargar no vería. */
-  document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest && e.target.closest('[data-checkout]');
-    if (!a) return;
-    evento('InitiateCheckout', {
-      content_name: 'Reto 30 Días',
-      value: Number(CFG.PRECIO || 0),
-      currency: CFG.MONEDA || 'USD'
-    }, { unaVez: false });
-  }, true);
+  /* ---------- InitiateCheckout ----------
+     Ya NO se dispara aquí con el clic. Todo clic a pagar pasa por la
+     página puente /ir/skool/, que es la que dispara InitiateCheckout
+     (una sola vez por clic) y lo registra en Supabase. Antes se disparaba
+     en los dos lados con el mismo eventID y Meta contaba doble. */
 })();

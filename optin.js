@@ -27,10 +27,14 @@
      lectura ahuyentan al lector y no capturan ninguno de los dos. */
   var LLAVE_SESION = 'flowai_popup_abierto';
 
-  /* Cuándo aparece el pop-up: lo que ocurra primero. */
-  var ESPERA_MS = 25000;      // 25 s leyendo
-  var SCROLL_PCT = 0.35;      // o 35% de la guía
-  var DIAS_REINTENTO = 7;     // si lo cerraron sin suscribirse
+  /* Cuándo aparece el pop-up: lo que ocurra primero. Cada página puede
+     mover los tiempos con window.FLOW_OPTIN_TIEMPOS (la landing del reto
+     lo saca a los 45 s / 60%, para no estorbar a quien ya va a entrar). */
+  var T = window.FLOW_OPTIN_TIEMPOS || {};
+  var ESPERA_MS = T.esperaMs || 25000;      // 25 s leyendo
+  var SCROLL_PCT = T.scrollPct || 0.35;     // o 35% de la guía
+  var DIAS_REINTENTO = T.diasReintento || 7; // si lo cerraron sin suscribirse
+  var LLAVE_CHECKOUT = 'flowai_clic_checkout';
 
   /* Apps Script tarda 2 a 3 segundos en contestar. Es demasiado para
      dejar un botón muerto, así que ese rato se llena con la marca
@@ -54,8 +58,14 @@
     okTit:   'Listo, quedaste dentro.',
     okSub:   'Te llega la próxima guía en cuanto salga. Mientras tanto: las guías son la parte gratis. El Reto de 30 Días es donde de verdad construyes los sistemas, uno por día, conmigo.',
     okBoton: 'Ver el Reto de 30 Días',
-    okCerrar:'Seguir leyendo'
+    okCerrar:'Seguir leyendo',
+    okHref:  '',          // a dónde manda el botón del éxito; vacío = la landing del reto
+    fuente:  'popup'      // cómo se registra el lead en la base
   };
+  /* Cada página puede cambiar el copy del pop-up (la landing del reto
+     ofrece el índice de los 30 días) con window.FLOW_OPTIN_COPY. */
+  var EXTRA = window.FLOW_OPTIN_COPY || {};
+  for (var kk in EXTRA) if (Object.prototype.hasOwnProperty.call(EXTRA, kk)) COPY[kk] = EXTRA[kk];
 
   /* ---------- Estado ---------- */
   function leer() {
@@ -72,11 +82,21 @@
   function otroPopupYaAbrio() {
     try { return sessionStorage.getItem(LLAVE_SESION) === '1'; } catch (e) { return false; }
   }
+  /* Quien ya picó "Empezar" va camino a pagar: ese no recibe pop-up. */
+  function yaPicoCheckout() {
+    try { return sessionStorage.getItem(LLAVE_CHECKOUT) === '1'; } catch (e) { return false; }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('[data-checkout]');
+    if (!a) return;
+    try { sessionStorage.setItem(LLAVE_CHECKOUT, '1'); } catch (e2) {}
+  }, true);
 
   function puedeAparecer() {
     var s = leer();
     if (s.suscrito) return false;                       // ya dio el correo: nunca más
     if (otroPopupYaAbrio()) return false;               // ya salió el del Reto
+    if (yaPicoCheckout()) return false;                 // ya va a pagar: no estorbar
     /* Una sola aparición por ventana de DIAS_REINTENTO, se haya
        cerrado a propósito o simplemente ignorado. */
     if (s.mostradoEl && (Date.now() - s.mostradoEl) / 86400000 < DIAS_REINTENTO) return false;
@@ -261,7 +281,17 @@
           apagar();
           marcarSuscrito();
           form.reset();
-          decir('Listo. Te llega la próxima guía en cuanto salga.');
+          /* El formulario puede traer su propio mensaje de éxito y un
+             link (la landing del reto abre el índice de los 30 días). */
+          decir(form.getAttribute('data-ok') || 'Listo. Te llega la próxima guía en cuanto salga.');
+          var href = form.getAttribute('data-ok-href');
+          if (href && msg) {
+            var a = document.createElement('a');
+            a.href = href; a.textContent = form.getAttribute('data-ok-link') || 'Ábrelo aquí';
+            a.style.marginLeft = '0.4em'; a.style.fontWeight = '700';
+            msg.appendChild(a);
+            setTimeout(function () { a.focus(); }, 60);
+          }
         })
         .catch(function (err) {
           apagar();
@@ -399,7 +429,7 @@
       '<p class="fo-ojo"></p>' +
       '<h2 class="fo-tit"></h2>' +
       '<p class="fo-sub"></p>' +
-      '<a class="fo-btn fo-btn-a" href="' + (CFG.RETO_URL || '/reto/') + '"></a>' +
+      '<a class="fo-btn fo-btn-a" href="' + (COPY.okHref || CFG.RETO_URL || '/reto/') + '"></a>' +
       '<button class="fo-no" type="button"></button>';
     caja.querySelector('.fo-ojo').textContent = 'Ya estás en la lista';
     caja.querySelector('.fo-tit').textContent = COPY.okTit;
@@ -432,7 +462,7 @@
 
     var apagar = cargando(msg, btn);
 
-    suscribir(email, 'popup')
+    suscribir(email, COPY.fuente || 'popup')
       .then(function () { apagar(); marcarSuscrito(); mostrarExito(); })
       .catch(function (err) {
         apagar();

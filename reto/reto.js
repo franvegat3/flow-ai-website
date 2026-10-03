@@ -32,4 +32,37 @@
     window.addEventListener('scroll', revisar, { passive: true });
     window.addEventListener('resize', revisar, { passive: true });
   }
+
+  /* ---------- Video del hero (R3, oct-2026) ----------
+     Arranca mudo en loop, como un reel. El botón prende el sonido y
+     reinicia para que se oiga desde el principio. */
+  var CFG = window.FLOW || {};
+  var hero = document.getElementById('videoHero');
+  var btn = document.querySelector('.lp-sound');
+  if (hero && CFG.VIDEO_HERO_URL && hero.getAttribute('src') !== CFG.VIDEO_HERO_URL) hero.src = CFG.VIDEO_HERO_URL;
+  if (hero && btn) {
+    btn.addEventListener('click', function () {
+      var conSonido = hero.muted;
+      hero.muted = !conSonido;
+      if (conSonido) { try { hero.currentTime = 0; } catch (e) {} hero.play().catch(function () {}); }
+      btn.setAttribute('aria-pressed', conSonido ? 'true' : 'false');
+      btn.textContent = conSonido ? '🔊 Sonido activado' : '🔇 Activar sonido';
+    });
+    /* Si el navegador bloqueó el autoplay, el primer toque en el video lo arranca. */
+    hero.addEventListener('click', function () { if (hero.paused) hero.play().catch(function () {}); });
+  }
+
+  /* ---------- VSL: no se descarga hasta que se ve o se toca ---------- */
+  var vsl = document.getElementById('videoVsl');
+  if (vsl && !vsl.getAttribute('src')) {
+    var src = vsl.getAttribute('data-src') || CFG.VIDEO_VSL_URL;
+    var cargar = function () { if (src && !vsl.getAttribute('src')) { vsl.src = src; vsl.load(); } };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (en) { if (en.isIntersecting) { cargar(); io.disconnect(); } });
+      }, { rootMargin: '400px' });
+      io.observe(vsl);
+    } else { cargar(); }
+    vsl.addEventListener('play', cargar);
+  }
 })();
