@@ -59,6 +59,12 @@ window.FLOW = {
      registrar el clic antes de saltar a otro dominio, que es
      justamente lo que se perdía cuando los botones iban directo a
      Skool. */
+  /* ---------- Chat del Reto (burbuja en /reto/) ----------
+     Backend en Cloudflare Pages Functions; ahí vive la llave del modelo.
+     TURNSTILE_SITE_KEY es pública por diseño (vacía = sin verificación de humano). */
+  CHAT_URL: 'https://reto-chat.pages.dev',
+  TURNSTILE_SITE_KEY: '',
+
   IR_SKOOL_URL: '/ir/skool/',
 
   /* ---------- Base de leads (Supabase) ----------
