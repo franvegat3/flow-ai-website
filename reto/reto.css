@@ -302,6 +302,7 @@
   border-radius: 16px; overflow: hidden; box-shadow: var(--lp-shadow);
   position: sticky; top: 88px; border: 1px solid var(--lp-line);
 }
+.lp-founder__media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .lp-founder__body p { color: var(--lp-muted); line-height: 1.7; margin-bottom: 1rem; font-size: clamp(1.14rem, 1.3vw, 1.28rem); }
 .lp-founder__body p strong { color: var(--lp-text); }
 
