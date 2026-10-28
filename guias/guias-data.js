@@ -1,5 +1,37 @@
 window.GUIAS = [
  {
+  "slug": "personia",
+  "titulo": "PersonIA: cómo volverte una persona nativa en IA",
+  "desc": "Qué es una PersonIA, las 4 piezas que la forman (segundo cerebro, skills, agentes y conexiones) y el orden para armarlas esta semana.",
+  "badge": "PersonIA",
+  "tool": [
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "empezar",
+   "agentes"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
+  "slug": "empresia",
+  "titulo": "EmpresIA: cómo convertir tu empresa en nativa en IA",
+  "desc": "Qué separa a una empresa que usa IA de una nativa en IA, las 3 capas que estamos construyendo en Revolution y el orden para empezar en la tuya.",
+  "badge": "EmpresIA",
+  "tool": [
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "negocio",
+   "agentes"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "plugins-cowork",
   "titulo": "Los 10 plugins de Claude Cowork que sí cambian tu día",
   "desc": "Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.",

@@ -1,5 +1,39 @@
 [
  {
+  "slug": "personia",
+  "titulo": "PersonIA: cómo volverte una persona nativa en IA",
+  "desc": "Qué es una PersonIA, las 4 piezas que la forman (segundo cerebro, skills, agentes y conexiones) y el orden para armarlas esta semana.",
+  "seo": "Qué es una PersonIA, una persona nativa en inteligencia artificial: segundo cerebro, skills, agentes y conexiones, y por dónde empezar. Guía de Francisco Vega, Flow AI.",
+  "lead": "Una PersonIA no es alguien que le pide correos a ChatGPT. Es alguien que dejó de hacer el trabajo y empezó a dirigirlo. Aquí está el mapa corto, y dónde aprender cada pieza paso por paso.",
+  "badge": "PersonIA",
+  "tool": [
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "empezar",
+   "agentes"
+  ],
+  "min": 8
+ },
+ {
+  "slug": "empresia",
+  "titulo": "EmpresIA: cómo convertir tu empresa en nativa en IA",
+  "desc": "Qué separa a una empresa que usa IA de una nativa en IA, las 3 capas que estamos construyendo en Revolution y el orden para empezar en la tuya.",
+  "seo": "Qué es una EmpresIA, una empresa nativa en inteligencia artificial: el segundo cerebro de la empresa, agentes por proceso y un equipo de PersonIAs. Guía de Francisco Vega, Flow AI.",
+  "lead": "Ponerle IA a tu proceso viejo da una mejora chica. Rediseñar el proceso alrededor de la IA cambia la empresa. Aquí está cómo se hace, lo que ya corre en Revolution, y dónde aprender cada pieza paso por paso.",
+  "badge": "EmpresIA",
+  "tool": [
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "negocio",
+   "agentes"
+  ],
+  "min": 8
+ },
+ {
   "slug": "plugins-cowork",
   "titulo": "Los 10 plugins de Claude Cowork que sí cambian tu día",
   "desc": "Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.",

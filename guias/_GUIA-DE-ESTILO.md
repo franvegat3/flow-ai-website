@@ -107,6 +107,19 @@ Puede tener varias líneas.</code></pre>
 skills, los 8 modelos). Úsalo cuando la guía enumere elementos comparables; si no,
 `<h3>` normal.
 
+`cta-curso` es un CTA al Reto dentro del cuerpo, entre secciones. Solo lo usan las
+guías gancho de los reels (`personia`, `empresia`), y cada uno se amarra al día del
+reto que enseña lo que se acaba de leer. Si menciona la prueba gratis, va con
+`<span data-txt-trial="… {n} días gratis." data-txt-sin="Cancelas con un clic.">`
+para que obedezca a `TRIAL_DIAS`. En una guía normal no se usa: el CTA del final ya
+lo pone la plantilla.
+
+```html
+<div class="cta-curso">
+  <p><strong>El día 5 del reto es justo esto:</strong> … <a href="/reto/">Ver el reto →</a></p>
+</div>
+```
+
 Indentación: 6 espacios en el primer nivel, porque el cuerpo se inserta dentro de
 `<article>`. Copia la indentación de `plugins-cowork.html`.
 

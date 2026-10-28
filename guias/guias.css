@@ -158,6 +158,22 @@ pre code { background: none; padding: 0; color: var(--ink); font-size: 14.5px; l
 .prose .cta-reto h3 { color: var(--ink); }
 .prose .cta-reto p { margin: 0 0 12px; }
 .prose .cta-reto p.cta-reto-sub { margin: 0 0 24px; }
+/* .prose a le gana a .btn-primary: sin esto el botón sale azul sobre azul,
+   subrayado y sin padding (.btn no trae padding propio). */
+.prose .cta-reto .btn { color: #04122e; text-decoration: none; padding: 13px 26px; font-size: 15.5px; }
+
+/* CTA al reto DENTRO del cuerpo (guías PersonIA y EmpresIA, oct-2026).
+   Más chico que .cta-reto: va entre secciones, amarrado al día del reto
+   que enseña justo lo que se acaba de leer. */
+.prose .cta-curso {
+  padding: 18px 22px;
+  border: 1px solid rgba(96, 165, 250, .38);
+  border-radius: var(--radius);
+  background: linear-gradient(155deg, rgba(59, 130, 246, .12), rgba(59, 130, 246, .03));
+}
+.prose .cta-curso p { margin: 0; }
+.prose .cta-curso p + p { margin-top: 10px; }
+.prose .cta-curso a { font-weight: 700; }
 
 /* ---------- Banda del reto en el índice ---------- */
 .reto-banda {

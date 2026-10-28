@@ -25,7 +25,7 @@ AQUI = Path(__file__).resolve().parent
 
 ETIQUETAS_OK = {"p", "h2", "h3", "ul", "ol", "li", "strong", "em",
                 "code", "pre", "a", "div", "span", "br"}
-CLASES_OK = {"callout-box", "plugin-card", "plugin-for"}
+CLASES_OK = {"callout-box", "plugin-card", "plugin-for", "cta-curso"}
 VACIAS = {"br", "img", "hr"}
 
 
