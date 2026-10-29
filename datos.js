@@ -96,13 +96,62 @@
     });
   }
 
+  /* ---------- Sesión: el ÚLTIMO toque ----------
+     FLOW_ATRIB guarda el PRIMER toque por 90 días, que es lo que le cobra
+     la venta a la pauta. Para saber por dónde entró ESTA visita (el DM de
+     un reel, un anuncio, Google) hace falta el último, con la regla de
+     GA: 30 min sin actividad cierran la sesión, y un utm_ distinto abre
+     una nueva. Va en localStorage y no en sessionStorage porque los
+     botones de pagar abren /ir/skool/ en pestaña nueva con noopener, y
+     esa pestaña nace con sessionStorage vacío. */
+  var LLAVE_SES = 'flow_sesion';
+  var SES_UTMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var SES_MAX_MS = 30 * 60 * 1000;
+
+  function sesion() {
+    var ahora = Date.now();
+    var s = null;
+    try { s = JSON.parse(localStorage.getItem(LLAVE_SES) || 'null'); } catch (e) {}
+    var q = {};
+    try {
+      var p = new URLSearchParams(location.search);
+      SES_UTMS.forEach(function (k) { if (p.get(k)) q[k] = p.get(k); });
+    } catch (e) {}
+    /* /ir/skool/ recibe en la URL los utm del PRIMER toque (para que viajen
+       a Skool): ahí no abren sesión nueva, o el clic a pagar se le
+       acreditaría a la campaña vieja y no a la de esta visita. */
+    var puente = /^\/ir\//.test(location.pathname);
+    var vencida = !s || ahora - (s.ultimo || 0) > SES_MAX_MS;
+    var otroOrigen = !puente && q.utm_source && (!s || SES_UTMS.some(function (k) { return (q[k] || '') !== (s['ses_' + k] || ''); }));
+    if (vencida || otroOrigen) {
+      s = {
+        ses: ahora.toString(36) + Math.random().toString(36).slice(2, 7),
+        ses_entrada: location.pathname,
+        ses_referrer: (document.referrer || '').slice(0, 200)
+      };
+      SES_UTMS.forEach(function (k) { if (q[k]) s['ses_' + k] = q[k]; });
+    }
+    s.ultimo = ahora;
+    try { localStorage.setItem(LLAVE_SES, JSON.stringify(s)); } catch (e) {}
+    return s;
+  }
+  sesion();   /* al cargar: así la sesión nace con la URL de entrada aunque el primer evento llegue después */
+
   /* ---------- Evento: un peldaño del embudo ----------
      Va con sendBeacon porque casi siempre se dispara justo antes de que
      la página se descargue (el clic al checkout). Un fetch normal se
-     cancela en ese momento y el registro se pierde siempre. */
+     cancela en ese momento y el registro se pierde siempre.
+
+     `datos` lleva la atribución de primer toque, la sesión de último
+     toque, la página y lo que mande quien llama en extra.datos (el
+     recorrido: sección, video, botón). */
   function evento(tipo, extra) {
     extra = extra || {};
     var a = window.FLOW_ATRIB ? window.FLOW_ATRIB.get() : {};
+    var s = sesion(), k;
+    for (k in s) if (Object.prototype.hasOwnProperty.call(s, k) && k !== 'ultimo') a[k] = s[k];
+    a.pagina = location.pathname;
+    if (extra.datos) for (k in extra.datos) if (Object.prototype.hasOwnProperty.call(extra.datos, k)) a[k] = extra.datos[k];
     var cuerpo, url, headers;
 
     if (haySupabase) {

@@ -106,4 +106,17 @@
      página puente /ir/skool/, que es la que dispara InitiateCheckout
      (una sola vez por clic) y lo registra en Supabase. Antes se disparaba
      en los dos lados con el mismo eventID y Meta contaba doble. */
+
+  /* ---------- El recorrido (recorrido.js) ----------
+     Secciones, clics, videos y tiempo de cada visita, a Supabase. Se
+     carga desde aquí porque este archivo ya está en todas las páginas;
+     la ruta sale de la de este mismo script, que cambia de profundidad
+     según la página (../../ en una guía, ../ en el reto). */
+  var yo = document.currentScript && document.currentScript.src;
+  if (yo && window.FLOW_DATOS) {
+    var rec = document.createElement('script');
+    rec.async = true;
+    rec.src = yo.replace(/tracking\.js(\?.*)?$/, 'recorrido.js');
+    document.head.appendChild(rec);
+  }
 })();
