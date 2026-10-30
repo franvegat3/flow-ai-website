@@ -689,3 +689,6 @@
   .lp-week { grid-template-columns: 1fr; }
   .lp-btn--oscuro { margin-left: 0; margin-top: 0.6rem; }
 }
+
+/* link al aviso de privacidad en el pie (30-oct-2026) */
+.lp-foot .footer-priv { color: inherit; text-decoration: underline; text-underline-offset: 3px; }

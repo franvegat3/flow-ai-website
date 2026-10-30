@@ -355,3 +355,7 @@ h2 { font-size: clamp(27px, 3.8vw, 42px); }
   .hero-cta .btn { width: 100%; }
   .proof-band { margin-top: 44px; }
 }
+
+/* link al aviso de privacidad en el pie (30-oct-2026) */
+.footer-priv { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.footer-priv:hover { color: var(--ink); }

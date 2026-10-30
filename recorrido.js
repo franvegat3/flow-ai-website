@@ -172,13 +172,21 @@
      el reporte se queda con la mayor. */
   var visibleMs = 0;
   var desde = document.visibilityState === 'visible' ? Date.now() : 0;
+  var ultimaSalida = 0;
+  function salida() {
+    /* visibilitychange y pagehide llegan los dos al cerrar: una sola salida. */
+    if (Date.now() - ultimaSalida < 1000) return;
+    ultimaSalida = Date.now();
+    revisar();
+    if (desde) { visibleMs += Date.now() - desde; desde = 0; }
+    ev('salida', { seg: Math.round(visibleMs / 1000), max_n: maxN, de: marcas.length });
+  }
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-      revisar();
-      if (desde) { visibleMs += Date.now() - desde; desde = 0; }
-      ev('salida', { seg: Math.round(visibleMs / 1000), max_n: maxN, de: marcas.length });
-    } else {
-      desde = Date.now();
-    }
+    if (document.visibilityState === 'hidden') salida();
+    else desde = Date.now();
   });
+  /* Safari (y el navegador de Instagram en iPhone) no siempre avisa
+     visibilitychange al cerrar la pestaña; pagehide sí. Sin esto, el
+     30-oct hubo visitas a guías sin salida registrada. */
+  window.addEventListener('pagehide', salida);
 })();
