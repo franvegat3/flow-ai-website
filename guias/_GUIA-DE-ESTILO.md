@@ -108,7 +108,10 @@ skills, los 8 modelos). Úsalo cuando la guía enumere elementos comparables; si
 `<h3>` normal.
 
 `cta-curso` es un CTA al Reto dentro del cuerpo, entre secciones. Solo lo usan las
-guías gancho de los reels (`personia`, `empresia`), y cada uno se amarra al día del
+guías gancho de los reels, las que se mandan por DM de ManyChat (`personia`,
+`empresia` y las de la tanda 5: `codigos-para-editar-tus-fotos-con-chatgpt`,
+`tu-foto-profesional-sin-que-se-vea-falsa`, `lo-que-chatgpt-sabe-de-ti`,
+`que-no-se-note-que-lo-escribio-la-ia`), y cada uno se amarra al día del
 reto que enseña lo que se acaba de leer. Si menciona la prueba gratis, va con
 `<span data-txt-trial="… {n} días gratis." data-txt-sin="Cancelas con un clic.">`
 para que obedezca a `TRIAL_DIAS`. En una guía normal no se usa: el CTA del final ya

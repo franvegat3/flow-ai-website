@@ -1,5 +1,70 @@
 [
  {
+  "slug": "codigos-para-editar-tus-fotos-con-chatgpt",
+  "titulo": "10 códigos de una palabra para editar tus fotos con ChatGPT",
+  "desc": "Pro Shot, Blueprint, Exploded View, Color Enhance y 6 más. Subes tu foto, escribes una palabra y listo. Con 10 extra y cuándo cada uno falla.",
+  "seo": "10 códigos de una palabra para editar fotos con ChatGPT: foto de estudio, plano técnico, despiece, restaurar color, vista cenital y más. Guía de Francisco Vega, Flow AI.",
+  "lead": "No son códigos secretos. Son palabras que el generador de imágenes de ChatGPT ya entiende. Aquí están las 10 que más uso, cómo escribirlas y dónde fallan.",
+  "badge": "Imágenes",
+  "tool": [
+   "chatgpt"
+  ],
+  "topic": [
+   "creativo"
+  ],
+  "min": 7
+ },
+ {
+  "slug": "tu-foto-profesional-sin-que-se-vea-falsa",
+  "titulo": "Tu foto profesional con IA, sin que se vea falsa",
+  "desc": "El método de dos pasos: le sacas la receta en JSON a una foto profesional y se la aplicas a una foto tuya, respetando tu cara. Con los dos prompts completos.",
+  "seo": "Cómo hacer una foto profesional con IA que no se vea falsa: el método del JSON en dos pasos con ChatGPT, con los prompts completos. Guía de Francisco Vega, Flow AI.",
+  "lead": "Tus fotos con IA se ven falsas porque se las pides con palabras. Aquí está el método de dos pasos que copia la receta de una foto buena y la pone sobre tu cara.",
+  "badge": "Imágenes",
+  "tool": [
+   "chatgpt"
+  ],
+  "topic": [
+   "creativo"
+  ],
+  "min": 6
+ },
+ {
+  "slug": "lo-que-chatgpt-sabe-de-ti",
+  "titulo": "Lo que ChatGPT sabe de ti, y cómo borrarlo",
+  "desc": "Los dos prompts que te enseñan qué guardó y qué dedujo de ti, la ruta para borrarlo, y los ajustes equivalentes en Claude y Gemini.",
+  "seo": "Cómo ver y borrar lo que ChatGPT sabe de ti: memoria, deducciones y controles de datos, más los ajustes de privacidad de Claude y Gemini. Guía de Francisco Vega, Flow AI.",
+  "lead": "ChatGPT guarda un perfil de ti, y no solo con lo que le dijiste. Dos prompts para verlo, la ruta para borrarlo y la lista de ajustes para ChatGPT, Claude y Gemini.",
+  "badge": "Configuración",
+  "tool": [
+   "chatgpt",
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "productividad",
+   "empezar"
+  ],
+  "min": 7
+ },
+ {
+  "slug": "que-no-se-note-que-lo-escribio-la-ia",
+  "titulo": "Que no se note que lo escribió la IA",
+  "desc": "Wikipedia tiene una página con las señales de un texto escrito por IA. Dos prompts la convierten en reglas permanentes para Claude o ChatGPT.",
+  "seo": "Cómo hacer que los textos de la IA no suenen a IA: las señales de la página Signs of AI writing de Wikipedia convertidas en reglas permanentes, con los prompts completos. Guía de Francisco Vega, Flow AI.",
+  "lead": "Rayas largas, el 'no es solo esto, es aquello', listas para todo. Wikipedia tiene catalogadas las huellas de la IA, y con dos prompts se las prohíbes para siempre.",
+  "badge": "Configuración",
+  "tool": [
+   "claude",
+   "chatgpt"
+  ],
+  "topic": [
+   "contenido",
+   "prompts"
+  ],
+  "min": 8
+ },
+ {
   "slug": "personia",
   "titulo": "PersonIA: cómo volverte una persona nativa en IA",
   "desc": "Qué es una PersonIA, las 4 piezas que la forman (segundo cerebro, skills, agentes y conexiones) y el orden para armarlas esta semana.",

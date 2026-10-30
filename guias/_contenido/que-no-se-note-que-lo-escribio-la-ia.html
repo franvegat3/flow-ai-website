@@ -1,0 +1,160 @@
+      <p>Me regresaron unos guiones de video porque sonaban a IA. Tenían razón. Los había hecho con Claude, y alguien que lee mucho lo nota en dos líneas.</p>
+
+      <p>Lo obvio era reescribirlos a mano. No lo hice. Le enseñé a la IA cómo se ve un texto hecho con IA y le prohibí escribir así.</p>
+
+      <p>Me tomó una página de Wikipedia y dos prompts. Abajo están los dos completos y dónde pegar el resultado para que aplique siempre.</p>
+
+      <h2>La página que usan los editores de Wikipedia</h2>
+
+      <p>Se llama <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" target="_blank" rel="noopener">Signs of AI writing</a>, solo está en inglés y la mantiene WikiProject AI Cleanup, el grupo de editores que limpia artículos hechos con IA. Junta, con ejemplos reales, las costumbres que delatan a un modelo.</p>
+
+      <p>Lo que la hace confiable: avisa que ninguna señal sola prueba nada, y la actualizan conforme salen modelos nuevos.</p>
+
+      <h2>Cómo se hace: dos prompts en el mismo chat</h2>
+
+      <h3>Paso 1: que lea la página y haga la lista</h3>
+
+      <p>Abre un chat nuevo con la búsqueda web activada y pega esto:</p>
+
+      <pre><code>Lee completa la página de Wikipedia "Signs of AI writing",
+incluidas las secciones de señales históricas:
+https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+
+Haz la lista de todos los patrones que delatan un texto escrito
+por IA: palabras, frases, estructuras, puntuación y formato.
+
+Para cada patrón dame su nombre en español, qué es en una línea
+y un ejemplo en español de cómo se vería en un correo de trabajo.
+
+No resumas ni juntes patrones. Quiero la lista completa.</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> sin la búsqueda web activada, el modelo no lee la página y contesta de memoria, con una lista que suena bien y puede estar vieja. Si no puedes activarla, copia el texto de la página y pégalo debajo del prompt.</p>
+      </div>
+
+      <h3>Paso 2: convertir la lista en reglas</h3>
+
+      <p>En el mismo chat, para que tenga la lista a la mano:</p>
+
+      <pre><code>Ahora convierte esa lista en reglas que nunca debes romper
+cuando escribas para mí.
+
+- Escribe cada regla como instrucción directa: "Nunca uses...".
+- Junta en una sola regla los patrones que se parecen.
+- Pon entre comillas los ejemplos en español más claros.
+- Última regla: antes de entregarme cualquier texto, revísalo
+  contra estas reglas y corrige lo que rompa alguna.
+- Todo debe medir menos de 1,400 caracteres con espacios.
+
+Entrégame solo el texto de instrucciones permanentes, sin
+introducción ni comentarios, listo para pegar en la configuración.
+El objetivo: que todo lo que escribas suene a una persona.</code></pre>
+
+      <p>Antes de guardarlo, pásalo por un contador de caracteres. Los modelos cuentan mal.</p>
+
+      <h2>Los 10 patrones que más vas a ver</h2>
+
+      <p>Todos salen de la página. Sus ejemplos son de enciclopedia; aquí van en texto de oficina.</p>
+
+      <div class="plugin-card">
+        <h3>1. Rayas largas de más</h3>
+        <p>Incisos entre rayas en cada párrafo. La página ya la cuenta como señal histórica: desde finales de septiembre de 2026, cada vez más modelos traen la orden de no usarla. Pero cita un estudio de julio de 2026 donde Claude era el único que usaba más rayas que los escritores profesionales.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "La propuesta —pensada para equipos como el tuyo— resuelve el problema."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>2. "No es solo X, es Y"</h3>
+        <p>Corregir una idea que nadie dijo para que la tuya suene más grande. Sus primos: "no se trata de X, sino de Y" y "Y en lugar de X".</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Esto no es solo una herramienta, es una nueva forma de trabajar."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>3. Grupos de tres</h3>
+        <p>Tres adjetivos o tres frases cortas seguidas. Según la página, el trío hace que un análisis flojo parezca completo.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Una solución rápida, sencilla y eficiente."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>4. Frases que inflan la importancia</h3>
+        <p>El modelo le cuelga peso histórico a cosas que no lo tienen.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Esta alianza juega un papel crucial y deja una huella imborrable en la industria."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>5. Tono de folleto</h3>
+        <p>Frases de comunicado de prensa, casi siempre esquivando el "es" y el "tiene" con "funge como" o "cuenta con".</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Ubicada en el corazón de Guadalajara, nuestra oficina cuenta con un vibrante equipo."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>6. El gerundio que no dice nada</h3>
+        <p>Un dato, una coma y un gerundio que le inventa significado. La página lo llama análisis superficial.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Abrimos dos sucursales, reflejando nuestro compromiso con la excelencia."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>7. "Los expertos coinciden"</h3>
+        <p>Una opinión atribuida a nadie en particular. Si no puedes decir quién lo dijo, bórralo.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Diversos estudios señalan que la automatización es el futuro de las ventas."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>8. Retos y futuro prometedor</h3>
+        <p>El párrafo final que admite que hay desafíos y cierra con optimismo vago.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "A pesar de estos desafíos, el futuro del proyecto se ve prometedor."</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>9. Negritas y listas para todo</h3>
+        <p>Negritas sin razón, viñetas que arrancan con una etiqueta en negritas y dos puntos, títulos con Mayúscula En Cada Palabra y emojis de viñeta.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> un correo de cuatro líneas partido en viñetas con etiqueta: "Eficiencia: ahorras tiempo".</p>
+      </div>
+
+      <div class="plugin-card">
+        <h3>10. Hablarte a ti en medio del texto</h3>
+        <p>Frases del chat que se quedan pegadas en el documento final.</p>
+        <p class="plugin-for"><strong>Cómo se ve:</strong> "Claro, aquí tienes la propuesta" al inicio y "Espero que esto te ayude" al final.</p>
+      </div>
+
+      <p>El primer prompt te trae el resto. Las palabras quemadas en español ya están en <a href="/guias/100-palabras-prohibidas/">las 100 palabras prohibidas</a>.</p>
+
+      <div class="cta-curso">
+        <p><strong>El día 11 del reto es el paso siguiente:</strong> que la IA suene como tú. Quitar las marcas es la mitad del trabajo; la otra mitad es darle tu voz. Armas tu perfil de voz en 4 piezas: voz, ejemplos, reglas y feedback. <a href="/reto/">Ver el reto →</a></p>
+      </div>
+
+      <h2>Dónde pegar el resultado</h2>
+
+      <p><strong>En Claude:</strong> da clic en tus iniciales, abajo a la izquierda, y entra a la configuración. Las instrucciones para todas tus conversaciones están en la sección <em>Your Claude</em> (en el diseño anterior, <em>Account</em>). Pega el bloque y guarda. Para un solo tipo de trabajo, pégalo en las instrucciones del proyecto.</p>
+
+      <p><strong>En ChatGPT:</strong> en la configuración, entra a Personalización y pega el bloque en las instrucciones personalizadas. Revisa que la personalización esté activada; si está apagada, no se aplican.</p>
+
+      <p>De ahí sale el límite de 1,400: en ChatGPT, las cuentas Free y Go guardan hasta 1,500 caracteres de instrucciones, y Plus, Pro y los planes de empresa hasta 5,000. Así cabe en cualquier plan. Si todavía no tienes otras reglas, empieza con <a href="/guias/15-instrucciones-globales/">las 15 instrucciones globales</a>.</p>
+
+      <h2>Cómo probar que funcionó</h2>
+
+      <p>Toma una propuesta que hayas escrito con IA hace meses. Ábrela en un chat nuevo, ya con las reglas guardadas, y pega esto:</p>
+
+      <pre><code>Revisa este texto contra mis reglas de escritura.
+Marca cada patrón de IA que encuentres: cita la frase exacta
+y dime qué regla rompe.
+Después dame la versión corregida.
+
+[pega aquí el texto]</code></pre>
+
+      <p>Si marca casi todo, las reglas están trabajando. Si deja pasar algo que tú sí ves, agrégalo al bloque.</p>
+
+      <h2>En un equipo comercial</h2>
+
+      <p>Donde más cuesta es en lo que sale hacia el cliente. Si tu equipo comercial manda propuestas y correos con IA, cada vendedor trae su propia configuración y el cliente recibe textos que suenan a IA de formas distintas.</p>
+
+      <p>Corre los dos prompts una vez, revisa las reglas con quien dirige el equipo y guárdalas para todos: en Claude, en un proyecto del equipo o, mejor, en una skill que cada vendedor usa al redactar. Desde ese día, la propuesta del que entró el lunes pasa por el mismo filtro que la del director comercial.</p>
+
+      <div class="cta-curso">
+        <p><strong>Eso es el día 5 del reto:</strong> skills para tu agente. Guardas una vez el trabajo que repites y la IA lo sigue igual siempre. Tus reglas de escritura son una buena primera skill. <a href="/reto/">Ver el temario completo →</a></p>
+      </div>
+
+      <h2>El error: creer que sin marcas ya suena a ti</h2>
+
+      <p>Las reglas quitan lo que delata a la IA y no ponen nada en su lugar. Un texto sin rayas ni tríos puede seguir siendo correcto y plano. La propia página lo advierte: corregir solo la superficie vuelve el texto más difícil de detectar. Mejor no queda.</p>
+
+      <p>Lo que cambia un texto es lo que le das antes de escribir: tu postura sobre el tema y ejemplos de cómo escribes tú. Estas reglas son el filtro de salida. Tu voz se arma aparte, y en <a href="/guias/que-claude-suene-como-tu/">esta guía</a> están las tres formas de hacerlo.</p>

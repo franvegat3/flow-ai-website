@@ -1,5 +1,66 @@
 window.GUIAS = [
  {
+  "slug": "codigos-para-editar-tus-fotos-con-chatgpt",
+  "titulo": "10 códigos de una palabra para editar tus fotos con ChatGPT",
+  "desc": "Pro Shot, Blueprint, Exploded View, Color Enhance y 6 más. Subes tu foto, escribes una palabra y listo. Con 10 extra y cuándo cada uno falla.",
+  "badge": "Imágenes",
+  "tool": [
+   "chatgpt"
+  ],
+  "topic": [
+   "creativo"
+  ],
+  "min": 8,
+  "meta": "8 min · ChatGPT"
+ },
+ {
+  "slug": "tu-foto-profesional-sin-que-se-vea-falsa",
+  "titulo": "Tu foto profesional con IA, sin que se vea falsa",
+  "desc": "El método de dos pasos: le sacas la receta en JSON a una foto profesional y se la aplicas a una foto tuya, respetando tu cara. Con los dos prompts completos.",
+  "badge": "Imágenes",
+  "tool": [
+   "chatgpt"
+  ],
+  "topic": [
+   "creativo"
+  ],
+  "min": 7,
+  "meta": "7 min · ChatGPT"
+ },
+ {
+  "slug": "lo-que-chatgpt-sabe-de-ti",
+  "titulo": "Lo que ChatGPT sabe de ti, y cómo borrarlo",
+  "desc": "Los dos prompts que te enseñan qué guardó y qué dedujo de ti, la ruta para borrarlo, y los ajustes equivalentes en Claude y Gemini.",
+  "badge": "Configuración",
+  "tool": [
+   "chatgpt",
+   "claude",
+   "multi"
+  ],
+  "topic": [
+   "productividad",
+   "empezar"
+  ],
+  "min": 8,
+  "meta": "8 min · ChatGPT"
+ },
+ {
+  "slug": "que-no-se-note-que-lo-escribio-la-ia",
+  "titulo": "Que no se note que lo escribió la IA",
+  "desc": "Wikipedia tiene una página con las señales de un texto escrito por IA. Dos prompts la convierten en reglas permanentes para Claude o ChatGPT.",
+  "badge": "Configuración",
+  "tool": [
+   "claude",
+   "chatgpt"
+  ],
+  "topic": [
+   "contenido",
+   "prompts"
+  ],
+  "min": 9,
+  "meta": "9 min · Claude"
+ },
+ {
   "slug": "personia",
   "titulo": "PersonIA: cómo volverte una persona nativa en IA",
   "desc": "Qué es una PersonIA, las 4 piezas que la forman (segundo cerebro, skills, agentes y conexiones) y el orden para armarlas esta semana.",

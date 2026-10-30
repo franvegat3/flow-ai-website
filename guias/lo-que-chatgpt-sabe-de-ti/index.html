@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lo que ChatGPT sabe de ti, y cómo borrarlo — Guías Flow AI</title>
+  <meta name="description" content="Cómo ver y borrar lo que ChatGPT sabe de ti: memoria, deducciones y controles de datos, más los ajustes de privacidad de Claude y Gemini. Guía de Francisco Vega, Flow AI." />
+
+  <link rel="canonical" href="https://flowaigroup.com/guias/lo-que-chatgpt-sabe-de-ti/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Lo que ChatGPT sabe de ti, y cómo borrarlo" />
+  <meta property="og:description" content="Los dos prompts que te enseñan qué guardó y qué dedujo de ti, la ruta para borrarlo, y los ajustes equivalentes en Claude y Gemini." />
+  <meta property="og:url" content="https://flowaigroup.com/guias/lo-que-chatgpt-sabe-de-ti/" />
+  <meta property="og:image" content="https://flowaigroup.com/assets/og-guias.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../guias.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Cpath d='M30 28h42M30 50h30M30 72h20' stroke='%2360a5fa' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26"><path d="M28 26h44M28 50h30M28 74h18" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand-text">Flow<span class="brand-ai">AI</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/reto/">Reto 30 días</a>
+        <a href="/guias/">Guías gratis</a>
+        <a href="/#soluciones">Soluciones</a>
+        <a href="/reto/" class="btn btn-sm btn-primary">Entrar al reto</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- CABECERA DE LA GUÍA -->
+  <section class="guide-head">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <p class="crumb"><a href="/guias/">Guías gratuitas</a> <span aria-hidden="true">/</span> Productividad</p>
+      <div class="guide-tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Multi-herramienta</span><span class="tag">Productividad</span><span class="tag">Empezar</span></div>
+      <h1>Lo que ChatGPT sabe de ti, y cómo borrarlo</h1>
+      <p class="lead">ChatGPT guarda un perfil de ti, y no solo con lo que le dijiste. Dos prompts para verlo, la ruta para borrarlo y la lista de ajustes para ChatGPT, Claude y Gemini.</p>
+      <p class="byline">Por Francisco Vega · Flow AI · Lectura de 8 minutos</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <article class="prose">
+
+<p>Abre ChatGPT y pídele que te diga todo lo que sabe de ti. Lo normal es que salgan cosas que ni recordabas haberle contado: a qué te dedicas, con quién trabajas, el proyecto que traes atorado.</p>
+
+      <p>Eso es la mitad. La otra es lo que pudo deducir sin preguntarte: qué tan bien te va por lo que cotizas, cómo andas de ánimo por la hora a la que escribes. No es una falla, es la memoria haciendo su trabajo. El problema es que casi nadie la configuró a propósito.</p>
+
+      <p>Aquí van los dos prompts para ver ese perfil, la ruta para borrarlo y la lista de ajustes, también para Claude y Gemini. Casi nadie lo revisa nunca.</p>
+
+      <h2>Los dos prompts para ver tu perfil</h2>
+
+      <p>Córrelos en un chat normal, no en uno temporal ni incógnito. El primero saca lo que tiene guardado:</p>
+
+      <pre><code>Muéstrame absolutamente todo lo que tienes almacenado sobre mí,
+en una sola lista completa. No resumas nada y no dejes fuera
+nada por parecerte poco importante.</code></pre>
+
+      <p>El segundo, en el mismo chat, saca lo que infirió:</p>
+
+      <pre><code>Ahora dime todo lo que has deducido sobre mí que yo nunca te dije
+explícitamente. Para cada deducción, explícame qué pistas de
+nuestras conversaciones te llevaron a esa conclusión.</code></pre>
+
+      <p>El segundo es el revelador, porque así te lee cuando te contesta: si cree que eres principiante, te explica de más; si cree que traes poco presupuesto, te recomienda lo barato.</p>
+
+      <div class="callout-box">
+        <p><strong>No le creas todo al segundo prompt:</strong> puede incluir deducciones que el modelo inventa en ese momento para cumplir tu petición. Lo que de verdad está guardado es lo que ves en la configuración de memoria. El prompt da pistas; la configuración confirma y borra.</p>
+      </div>
+
+      <div class="cta-curso">
+        <p><strong>El día 3 del reto es este tema, visto al revés:</strong> la IA no se vuelve más lista por el prompt, sino por los archivos que puede leer. En lugar de un perfil que la plataforma arma sin enseñártelo, le das contexto que tú escribiste. <a href="/reto/">Ver el reto →</a></p>
+      </div>
+
+      <h2>La lista de ajustes, herramienta por herramienta</h2>
+
+      <p>Las rutas salen de los centros de ayuda oficiales. Si un menú ya cambió, busca el nombre de la opción en Configuración. En Claude dejo los nombres en inglés, como en su ayuda.</p>
+
+      <h3>ChatGPT</h3>
+
+      <ul>
+        <li><strong>Memoria guardada.</strong> <em>Configuración → Personalización → Memoria</em>. En <em>Administrar recuerdos</em> borras uno por uno o todos. Si apagas <em>Hacer referencia a recuerdos guardados</em>, deja de usarlos.</li>
+        <li><strong>Historial de chats.</strong> En la misma sección está <em>Hacer referencia al historial de chats</em>: le deja usar conversaciones pasadas aunque no estén en tus recuerdos. Apagarlo no borra tus chats; lo que recordaba de ellos se borra en un plazo de hasta 30 días.</li>
+        <li><strong>Chat temporal.</strong> Se elige al abrir un chat nuevo. No crea recuerdos, pero si lo arrancas con personalización sí lee los que ya tienes.</li>
+        <li><strong>Entrenamiento.</strong> <em>Configuración → Controles de datos → Mejorar el modelo para todos</em>. En cuentas personales viene prendido. Apagado, tus chats nuevos dejan de usarse para entrenar. No borra nada.</li>
+      </ul>
+
+      <h3>Claude</h3>
+
+      <ul>
+        <li><strong>Memoria.</strong> <em>Settings → Your Claude</em>, y <em>Manage</em> junto a <em>Your memory</em>. Ahí la ves y la editas. En el interruptor <em>Memory from chats</em> eliges <em>Pause memory</em>, que la conserva sin usarla, o <em>Reset memory</em>, que la borra completa, proyectos incluidos, sin vuelta atrás. Si prefieres limpiar a borrar, usa <a href="/guias/que-claude-se-audite-sobre-ti/">esta auditoría</a>.</li>
+        <li><strong>Búsqueda en chats pasados.</strong> En la misma pantalla, <em>Search and reference chats</em>. Apagado, deja de buscar en tus chats anteriores.</li>
+        <li><strong>Chat incógnito.</strong> El ícono de fantasma, arriba a la derecha de un chat nuevo. No entra al historial ni a la memoria, y no se usa para entrenar. Pero se conserva 30 días por default. Dentro de un proyecto no existe; ahí apaga <em>Memory</em> en el menú <em>+</em> antes del primer mensaje.</li>
+        <li><strong>Entrenamiento.</strong> <em>Settings → Privacy</em>, y apaga el interruptor de <em>Help improve our AI models</em>. Aplica a chats nuevos; lo que ya entró a un entrenamiento ahí se queda.</li>
+      </ul>
+
+      <h3>Gemini</h3>
+
+      <ul>
+        <li><strong>Actividad.</strong> En gemini.google.com: <em>Configuración y ayuda → Actividad</em>, y arriba cambias <em>Activada</em> por <em>Desactivar</em> o <em>Desactivar y borrar la actividad</em>. Aun apagada, Google guarda tus chats hasta 72 horas.</li>
+        <li><strong>Borrado automático.</strong> También en Actividad eliges 3, 18 o 36 meses, o que no se borre nunca. El default es 18.</li>
+        <li><strong>Memoria e instrucciones.</strong> <em>Configuración y ayuda → Inteligencia personalizada</em>. Ahí decides si usa tus chats pasados, y en <em>Instrucciones para Gemini</em> ves, editas o borras lo que guardó de ti. No está en todas las cuentas ni países.</li>
+        <li><strong>Revisión humana.</strong> Google dice que revisores humanos leen una parte de los chats, y que esos se conservan hasta tres años aunque borres tu actividad. Su propia recomendación es no escribir nada confidencial.</li>
+      </ul>
+
+      <h2>Qué hacer si tu equipo trabaja con datos de clientes</h2>
+
+      <p>Un caso que veo seguido: un equipo comercial de seis personas, cada quien con su ChatGPT personal, pegando la nota de la llamada con nombre del cliente, teléfono y monto para que le redacte el seguimiento. Esos datos ya viven en seis cuentas personales, con memoria prendida y entrenamiento activado de fábrica.</p>
+
+      <p>Lo que pongo antes de que vuelvan a pegar algo:</p>
+
+      <ol>
+        <li><strong>Qué no se pega.</strong> Nada que junte a un cliente identificable con su dinero o su salud: RFC, estados de cuenta, contratos, nómina con nombres. Contraseñas y llaves, nunca. Si necesitas el caso, usa "Cliente A" y redondea montos.</li>
+        <li><strong>Cuentas de trabajo, no personales.</strong> OpenAI dice en su ayuda que por default no entrena con el contenido de ChatGPT Business, Enterprise y Edu. Anthropic dice lo mismo de Claude Team y Enterprise. Confírmalo en la página oficial antes de contratar: estas condiciones cambian.</li>
+        <li><strong>Memoria apagada o separada.</strong> En Claude Team y Enterprise viene apagada y el dueño de la cuenta decide si existe. Si la prenden, cada cliente en su proyecto, con <em>Use account memory</em> apagado. El riesgo real no es un hackeo: es que la propuesta del cliente B salga con un dato del cliente A.</li>
+        <li><strong>Una página de reglas.</strong> Corta: qué no se pega y qué cuenta se usa. Mi versión completa está en <a href="/guias/manual-de-seguridad-con-ia/">el manual de seguridad con IA</a>. Antes de conectar el CRM o el banco, corre <a href="/guias/revision-antes-de-conectar-datos-sensibles/">esta revisión</a>.</li>
+      </ol>
+
+      <div class="cta-curso">
+        <p><strong>El día 27 del reto armas tu segundo cerebro:</strong> que la IA recuerde todo lo tuyo y lo encuentre cuando lo necesitas, en archivos que tú controlas y corriges sin buscar en menús. <a href="/reto/">Quiero mi segundo cerebro →</a></p>
+      </div>
+
+      <h2>El error de casi todos: borrar la memoria y dejar los chats</h2>
+
+      <p>Memoria e historial son cosas distintas. En ChatGPT, borrar un chat no borra el recuerdo que sacó de ahí, y borrar el recuerdo no borra el chat. Si el historial sigue prendido, el dato puede regresar. Gemini lo dice directo: para que olvide algo, borra los chats donde aparece, porque pedírselo no siempre funciona.</p>
+
+      <p>El orden: corre los dos prompts. Borra el recuerdo y luego los chats de origen, archivados incluidos. Desconecta las apps que le dieron el dato. Al final apaga lo que no quieres que siga pasando. Y no confundas interruptores: borrar no apaga el entrenamiento, y apagar el entrenamiento no borra nada.</p>
+
+      <!-- CTA al reto: va justo donde se acaba de leer la guía,
+           que es el único momento en que alguien ya vio de qué
+           tamaño es lo que sé y todavía tiene el tema en la cabeza. -->
+      <aside class="cta-reto">
+        <p class="cta-reto-ojo">Reto 30 Días de IA</p>
+        <h3>Esta guía te enseña uno. El reto te hace construir treinta.</h3>
+        <p class="cta-reto-sub">Un sistema por día durante un mes, con la demostración en pantalla y el archivo listo para conectarlo a lo tuyo. Dentro de Flow AI Academy, en español, desde $<span data-precio>49</span> USD <span data-periodo>al mes</span>.</p>
+        <div class="cta-reto-fila">
+          <a href="/reto/" class="btn btn-primary">Ver el reto</a>
+          <span class="cta-reto-nota">Empiezas con la prueba gratis. Cancelas con un clic.</span>
+        </div>
+      </aside>
+
+      <div class="stack">
+        <h4>Combínala con estas</h4>
+        <div class="stack-links">
+          <a href="/guias/personia/" class="stack-link">
+            <span>PersonIA: cómo volverte una persona nativa en IA →</span>
+            <small>Qué es una PersonIA, las 4 piezas que la forman (segundo cerebro, skills, agentes y conexiones) y el orden para armarlas esta semana.</small>
+          </a>
+          <a href="/guias/plugins-cowork/" class="stack-link">
+            <span>Los 10 plugins de Claude Cowork que sí cambian tu día →</span>
+            <small>Qué es un plugin, cómo se instala en dos minutos, y los 10 oficiales de Anthropic ordenados por lo que más mueve la aguja —más el orden en que conviene instalarlos.</small>
+          </a>
+          <a href="/guias/" class="stack-link">
+            <span>Ver todas las guías →</span>
+            <small>La biblioteca completa de Flow AI, filtrable por herramienta y por tema.</small>
+          </a>
+          <a href="/#contacto" class="stack-link">
+            <span>Que lo implementemos contigo →</span>
+            <small>Si quieres esto dentro de tu operación y no solo en tu cuenta personal.</small>
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CAPTURA -->
+    <section class="optin">
+      <h2>Una guía nueva cada semana</h2>
+      <p>Sistemas de IA que ya están corriendo en operaciones reales, explicados paso a paso. Sin relleno y sin teoría.</p>
+      <form class="optin-form" data-fuente="guia" novalidate>
+        <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo" />
+        <button type="submit" class="btn btn-primary">Recibir las guías</button>
+      </form>
+      <p class="optin-msg" role="status" aria-live="polite"></p>
+      <p class="optin-note">Se cancela con un clic. Tu correo no se comparte con nadie.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Flow<span class="brand-ai">AI</span></span>
+      <span>© <span id="year"></span> Flow AI · Francisco Vega · <a class="footer-priv" href="/privacidad/">Privacidad</a></span>
+      <span class="footer-tag">Convertimos empresas en AI-native.</span>
+    </div>
+  </footer>
+
+  <script src="../../flowai-config.js"></script>
+  <script src="../../atribucion.js"></script>
+  <script src="../../datos.js"></script>
+  <script src="../../tracking.js"></script>
+  <script src="../../flowai.js"></script>
+  <script src="../guias.js"></script>
+  <script src="../../reto-popup.js"></script>
+  <script src="../../optin.js"></script>
+</body>
+</html>

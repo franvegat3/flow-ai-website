@@ -1,0 +1,119 @@
+      <p>Le pides a ChatGPT "una foto profesional mía, fondo de estudio, buena luz" y te regresa a alguien que se te parece, con piel de plástico, en una oficina que no existe.</p>
+
+      <p>No es culpa de la IA. Es que se la pides con palabras, y las palabras no alcanzan. "Buena luz" es un deseo, no una instrucción. El modelo lo rellena con el promedio de lo que ha visto, y ese promedio es justo lo que se ve falso.</p>
+
+      <p>El método tiene dos pasos: le sacas la receta a una foto profesional y se la aplicas a tu cara. Abajo van los dos prompts completos.</p>
+
+      <h2>Por qué funciona la receta en JSON</h2>
+
+      <p>Cuando le pides a ChatGPT el JSON completo de una foto, lo obligas a separarla en las decisiones del fotógrafo: iluminación, lente y distancia, composición, fondo, paleta, pose, ropa y expresión. No necesitas saber programar.</p>
+
+      <p>Así el segundo chat recibe instrucciones en lugar de adjetivos, y tú puedes editar un campo sin tocar los demás. Por qué lo genérico se ve falso está en <a href="/guias/por-que-tus-disenos-se-ven-hechos-con-ia/">por qué tus diseños se ven hechos con IA</a>.</p>
+
+      <h2>Cómo se hace</h2>
+
+      <h3>1. Busca la referencia en Pinterest</h3>
+
+      <p>Busca "retrato corporativo" o "headshot de estudio" y elige por la luz y el encuadre, no por la persona. Si quieres foto de busto, no escojas una de cuerpo completo: el JSON hereda el encuadre.</p>
+
+      <h3>2. Sácale el JSON</h3>
+
+      <p>Sube la foto a ChatGPT y pega esto:</p>
+
+      <pre><code>Dame el JSON completo de esta imagen, como lo describiría el fotógrafo que la tomó.
+Usa estos campos y llena cada uno con detalle:
+
+- iluminacion: fuente principal, dirección, calidad, relleno, contraluz, temperatura de color, sombras
+- camara: lente aproximado, distancia al sujeto, altura y ángulo, profundidad de campo
+- composicion: encuadre, posición del sujeto, espacio alrededor
+- fondo
+- paleta: colores dominantes, contraste, saturación
+- pose
+- ropa
+- expresion
+- postproduccion: textura de piel, grano, retoque
+- estilo_general
+
+Reglas:
+- No describas rasgos físicos de la persona: cara, edad, tono de piel ni pelo. Esos los pongo yo.
+- No incluyas texto ni logos que aparezcan en la foto.
+- Responde solo con el JSON.</code></pre>
+
+      <p>La primera regla es la clave: si el JSON describe la cara de la persona de Pinterest, ChatGPT puede mezclarla con la tuya. Si aun así la describe, borra esas líneas.</p>
+
+      <h3>3. Aplícalo a tu cara, en un chat nuevo</h3>
+
+      <p>Abre un chat nuevo, sube una foto tuya y pega esto:</p>
+
+      <pre><code>Te adjunto una foto mía. Quiero un retrato profesional mío.
+
+Identidad (manda sobre todo lo demás):
+- Usa mis rasgos faciales exactos. Respétalos.
+- Conserva la forma de mis ojos, mi nariz, mi boca y mi mandíbula.
+- Conserva mi tono de piel real, sin aclararlo ni oscurecerlo.
+- No suavices la piel ni quites lunares, marcas o textura.
+- No cambies mi edad ni mi complexión.
+- Conserva mi peinado y el color de mi pelo.
+
+Del JSON toma todo lo demás: luz, cámara, composición, fondo, paleta, pose, ropa y expresión. Si algo choca con mi identidad, gana mi foto.
+
+Genera esta imagen con este JSON:
+
+[pega aquí el JSON]</code></pre>
+
+      <div class="callout-box">
+        <p><strong>El paso que todo mundo se salta:</strong> el chat nuevo. En el primero sigue la foto de la otra persona, y su cara se puede colar en tu resultado.</p>
+      </div>
+
+      <div class="cta-curso">
+        <p><strong>El día 26 del reto, "Video e imagen con IA", es el kit completo:</strong> qué herramienta va para qué y los pasos exactos para llegar a un video o un anuncio terminado. <a href="/reto/">Ver el reto →</a></p>
+      </div>
+
+      <h2>Qué foto tuya subir</h2>
+
+      <ul>
+        <li><strong>De frente</strong>, con la cara completa a la vista.</li>
+        <li><strong>Con buena luz</strong>: de día, de ventana, sin sombras duras.</li>
+        <li><strong>Sin lentes de sol.</strong></li>
+        <li><strong>Sin filtros</strong> ni modo belleza. Si la subes suavizada, sale suavizada.</li>
+      </ul>
+
+      <p>Si la cara se desvía:</p>
+
+      <ol>
+        <li><strong>Regenera.</strong> El mismo prompt da resultados distintos.</li>
+        <li><strong>Refuerza la identidad nombrando lo que falló:</strong> "La mandíbula no se parece a la de mi foto. Vuelve a generarla respetando exactamente mis rasgos."</li>
+        <li><strong>Cambia un solo campo por intento.</strong> Si mueves dos y la cara se va, no sabes cuál fue.</li>
+      </ol>
+
+      <p>El límite duro: el modelo no pega tu cara, la vuelve a dibujar. Si tras varios intentos no te pareces, cambia la foto que subiste, no el prompt.</p>
+
+      <h2>Una serie, no una foto</h2>
+
+      <p>Aquí paga el JSON. En el mismo chat escribe "misma imagen, cambia solo el campo fondo a: oficina con ventana, desenfocada", o cambia solo la ropa. La luz y la lente no se mueven, así que todo parece de la misma sesión.</p>
+
+      <p>Donde más rinde es en equipos. Un equipo de ventas de 12 personas necesita fotos para el sitio y LinkedIn, y hoy cada quien tiene una de celular con un fondo distinto. Sacas el JSON una vez y lo compartes. Cada vendedor sube su propia foto, pega el segundo prompt con ese JSON y aprueba su resultado. Salen doce fotos con la misma luz y el mismo encuadre, sin rentar estudio.</p>
+
+      <p>Para retocar una foto que ya tienes, sin rehacerla, usa los <a href="/guias/codigos-para-editar-tus-fotos-con-chatgpt/">códigos de una palabra para editar fotos con ChatGPT</a>.</p>
+
+      <h2>Qué revisar antes de publicar</h2>
+
+      <p>Amplía la imagen y revisa tres zonas:</p>
+
+      <ul>
+        <li><strong>Manos.</strong> Cuenta los dedos. Si fallan seguido, cambia la pose a brazos cruzados o manos fuera de cuadro.</li>
+        <li><strong>Texto.</strong> Letreros y logos al fondo salen con letras inventadas. Pide un fondo sin texto.</li>
+        <li><strong>Reflejos de lentes.</strong> Si usas lentes, revisa que el reflejo cuadre con la luz y que tus ojos se vean detrás.</li>
+      </ul>
+
+      <p>La prueba final: enséñasela a alguien que te ve seguido. Si duda, no la publiques.</p>
+
+      <div class="callout-box">
+        <p><strong>Dos cuidados:</strong> la foto de Pinterest es trabajo de un fotógrafo. Úsala como referencia de estilo y no republiques la original. Y nunca uses la cara de otra persona sin su permiso.</p>
+      </div>
+
+      <h2>El error que comete todo el mundo: corregir con adjetivos</h2>
+
+      <p>Sale una foto que no te convence y escribes "más natural", "más profesional". Es el problema del principio: pedir con palabras algo que las palabras no definen.</p>
+
+      <p>Pregúntate qué campo falla. ¿Luz plana? Edita iluminación. ¿Piel de plástico? Revisa postproducción. ¿Pose tiesa? Cambia la pose. Un campo por intento, y la siguiente foto ya no empieza de cero.</p>
