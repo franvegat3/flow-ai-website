@@ -14,7 +14,8 @@ se ejecutan.
 
 | Ruta | Qué es |
 |---|---|
-| `index.html` | Home (B2B: soluciones, método, founder) + sección del Reto |
+| `index.html` | Home: los tres productos (PersonIA · EmpresIA · IA personalizada), founder y formulario de cotización |
+| `inicio.css` / `inicio.js` | Estilos y formulario SOLO de la home (encima de `styles.css`) |
 | `reto/` | Landing de venta del Reto 30 Días |
 | `guias/` | Biblioteca: índice, plantilla, contenido y generador |
 | `api/hoja-de-correos.gs` | Web App de Apps Script: escribe en la hoja de suscriptores |

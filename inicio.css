@@ -1,0 +1,149 @@
+/* ============================================================
+   Flow AI — estilos SOLO de la home (index.html), encima de styles.css.
+   styles.css lo comparten las guías y el reto; lo que es exclusivo de
+   la portada de los tres productos (PersonIA · EmpresIA · IA
+   personalizada) vive aquí para no tocar a las demás páginas.
+   ============================================================ */
+
+/* El "IA" de PersonIA / EmpresIA, igual que el "AI" del logo. */
+.ia { color: var(--blue-2); }
+/* Que "AI-first" / "AI-native" no se partan en dos renglones. */
+.grad { white-space: nowrap; }
+
+/* Nav: un item más que antes, gap un poco menor. */
+.nav-links { gap: 8px; }
+
+/* ---------- Escalera (sobre las tres tarjetas) ---------- */
+.ladder {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 14px; margin: -22px auto 34px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-mut);
+}
+.ladder i { display: block; width: 44px; height: 1px; background: var(--grad); opacity: .7; }
+
+/* ---------- Tarjetas de camino ---------- */
+.path-card .prod-body { margin-bottom: 20px; }
+.path-meta {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink-mut); font-size: 13.5px; line-height: 1.4; margin-bottom: 22px;
+}
+.path-meta svg { flex: 0 0 auto; color: var(--blue-bright); }
+.path-cta { margin-top: auto; width: 100%; }
+
+/* ---------- Detalle de cada producto ---------- */
+.detail { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.detail.reverse .detail-copy { order: 2; }
+.detail.reverse .detail-side { order: 1; }
+.detail-copy h2 { font-size: clamp(28px, 3.8vw, 42px); margin-bottom: 18px; letter-spacing: -.03em; }
+.detail-copy .lead { font-size: clamp(16.5px, 1.9vw, 18.5px); }
+.detail-side { position: sticky; top: 94px; }
+
+.label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-mut); margin-bottom: 12px;
+}
+.who { margin-top: 30px; }
+.detail-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+.detail-alt { margin-top: 18px; font-size: 14.5px; color: var(--ink-mut); }
+.detail-alt a { color: var(--blue-bright); font-weight: 600; border-bottom: 1px solid transparent; transition: border-color .2s; }
+.detail-alt a:hover { border-color: var(--blue-bright); }
+
+/* ---------- Panel de módulos (syllabus) ---------- */
+.syllabus {
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .022));
+  border: 1px solid var(--line-strong); border-radius: 20px; padding: 30px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 20px 46px -30px rgba(0, 0, 0, .8);
+}
+.syllabus::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad); opacity: .95;
+}
+.syllabus-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.syllabus-head .prod-tag { margin-bottom: 0; }
+.syllabus-title { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mut); }
+.syllabus ol { list-style: none; margin: 0; padding: 0; }
+.syllabus li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 15px 0; border-top: 1px solid var(--line); }
+.syllabus li:first-child { border-top: 0; padding-top: 4px; }
+.syllabus .n {
+  font-weight: 800; font-size: 20px; line-height: 1.25; letter-spacing: -.02em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.syllabus h4 { font-size: 16.5px; margin-bottom: 4px; color: var(--ink); }
+.syllabus p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
+.syllabus-foot {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px;
+  margin-top: 20px; padding-top: 22px; border-top: 1px solid var(--line-strong);
+}
+.syllabus-foot .label { margin-bottom: 8px; }
+.price { font-size: 30px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; color: var(--ink); }
+.price small { font-size: 14px; font-weight: 600; letter-spacing: 0; color: var(--ink-mut); }
+.price-soft { font-size: 22px; font-weight: 700; }
+.price-note { font-size: 13px; color: var(--ink-mut); margin-top: 6px; }
+
+/* ---------- Chips y pasos cortos ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  font-size: 13.5px; font-weight: 600; color: var(--ink-soft);
+  border: 1px solid var(--line-strong); background: var(--surface);
+  padding: 8px 14px; border-radius: 999px;
+}
+.mini-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 30px; }
+.mini-step { border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 14px; }
+.mini-step b { display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--blue-bright); margin-bottom: 6px; }
+.mini-step span { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+#personalizada .callout { max-width: none; }
+#personalizada .callout p { font-size: 16.5px; }
+
+/* ---------- Formulario de cotización ---------- */
+.quote h3 { font-size: 24px; margin-bottom: 6px; letter-spacing: -.025em; }
+.quote-sub { font-size: 15px; color: var(--ink-soft); margin-bottom: 22px; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mut); margin-bottom: 8px; }
+.field input, .field select, .field textarea {
+  width: 100%; height: 46px; padding: 0 16px;
+  font: inherit; font-size: 15.5px; color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 999px;
+  transition: border-color .2s, background .2s;
+}
+.field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(255, 255, 255, .26); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 3px solid var(--blue-2); outline-offset: 2px; border-color: var(--blue-2);
+}
+.field ::placeholder { color: var(--ink-mut); }
+.field textarea { height: auto; min-height: 118px; padding: 12px 16px; border-radius: 16px; resize: vertical; line-height: 1.5; }
+.field select {
+  appearance: none; -webkit-appearance: none; padding-right: 44px; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238893ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center; background-size: 18px;
+}
+.field select:invalid { color: var(--ink-mut); }
+.field select option { background: var(--bg-3); color: var(--ink); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea { border-color: #f87171; }
+.form-error { font-size: 14px; color: #f87171; margin: -2px 0 12px; }
+.quote .btn-primary { width: 100%; margin-top: 6px; }
+.quote-foot { margin-top: 14px; font-size: 13px; color: var(--ink-mut); text-align: center; }
+
+/* ---------- Footer ---------- */
+.footer-links a { color: var(--ink-mut); margin-left: 16px; transition: color .2s; }
+.footer-links a:hover { color: var(--blue-bright); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .detail { grid-template-columns: 1fr; gap: 36px; }
+  .detail.reverse .detail-copy { order: 1; }
+  .detail.reverse .detail-side { order: 2; }
+  .detail-side { position: static; }
+  .mini-steps { grid-template-columns: repeat(2, 1fr); }
+  .ladder { margin-top: -10px; }
+}
+@media (max-width: 680px) {
+  .syllabus { padding: 24px 20px; }
+  .syllabus-foot { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
+  .detail-cta .btn { width: 100%; }
+  .ladder i { display: none; }
+  .ladder { gap: 8px 18px; }
+}
