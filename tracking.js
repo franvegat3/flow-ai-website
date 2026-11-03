@@ -51,6 +51,20 @@
     window.gtag('config', GA4);
   }
 
+  /* ---------- Metricool (analítica web de la marca 6701275) ----------
+     Visitas y de dónde llegan, en el mismo tablero que las redes. Es un
+     extra: lo fino del embudo lo mide recorrido.js. Se carga async y si
+     falla no pasa nada. Hash = el que da Metricool > Conexiones > Web. */
+  (function () {
+    var mc = document.createElement('script');
+    mc.async = true;
+    mc.src = 'https://tracker.metricool.com/resources/be.js';
+    mc.onload = function () {
+      try { window.beTracker.t({ hash: 'fe808e4dc916a0a8378055b19d27f52d' }); } catch (e) {}
+    };
+    document.head.appendChild(mc);
+  })();
+
   /* ---------- Un solo lugar para disparar a las dos plataformas ---------- */
   var yaDisparado = {};
 
