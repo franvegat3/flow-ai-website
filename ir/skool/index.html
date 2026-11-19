@@ -32,7 +32,7 @@
     <div class="anillo" role="status" aria-label="Redirigiendo"></div>
     <p>Llevándote al Reto 30 Días…</p>
     <p class="chico">Si no pasa nada en unos segundos,
-      <a id="manual" href="https://www.skool.com/flow-8356/about">entra por aquí</a>.</p>
+      <a id="manual" href="https://www.skool.com/flowai-academy/about">entra por aquí</a>.</p>
   </div>
 
 <script src="../../flowai-config.js"></script>
@@ -56,13 +56,15 @@
   var CFG = window.FLOW || {};
   var atrib = window.FLOW_ATRIB ? window.FLOW_ATRIB.get() : {};
 
-  var destino = CFG.CHECKOUT_URL || 'https://www.skool.com/flow-8356/about';
+  var destino = CFG.CHECKOUT_URL || 'https://www.skool.com/flowai-academy/about';
 
   /* Los UTMs viajan al destino. Si algún día el checkout es propio
      (Stripe), esto es lo que permite cerrar el círculo sin tocar nada. */
   try {
     var u = new URL(destino);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','lead_id']
+    /* fbclid también: sin él Skool no puede armar su cookie _fbc y Meta
+       no empata el alta con el anuncio (19-nov-2026). */
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','lead_id','fbclid','ttclid']
       .forEach(function (k) { if (atrib[k]) u.searchParams.set(k, atrib[k]); });
     destino = u.toString();
   } catch (e) {}
@@ -82,10 +84,10 @@
     });
   }
 
-  /* 600 ms le dan aire al pixel para que salga su petición. replace()
+  /* 300 ms (antes 600; bajado el 19-nov-2026 para perder menos gente) le dan aire al pixel para que salga su petición. replace()
      y no href: así el botón "atrás" del navegador regresa a la landing
      y no a esta página, que reenviaría al checkout en un bucle. */
-  setTimeout(function () { location.replace(destino); }, 600);
+  setTimeout(function () { location.replace(destino); }, 300);
 })();
 </script>
 </body>
